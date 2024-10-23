@@ -1,6 +1,6 @@
 # Documentation for kluster.ai
 
-This repository contains documentation for kluster.ai, the distributed AI platform to efficiently work with large models, free from computational constraints.
+This repository contains documentation for [kluster.ai](https://kluster.ai), the distributed AI platform to efficiently work with large models, free from computational constraints.
 
 ## About This Site
 
