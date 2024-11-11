@@ -121,15 +121,37 @@ The request body object (chat completion object).
 
     `messages` ++"array"++ <span class="required" markdown>++"required"++</span>
 
-    A list of messages comprising the conversation so far. Currently, `system`, `user`, and `assistant` are supported.
+    A list of messages comprising the conversation so far. The `messages` object can be one of `system`, `user`, or `assistant`.
     
-    ??? child "Show properties"
+    ??? child "Show possible types"
 
-        The `messages` object can be one of `system`, `user`, or `assistant`.
+        System message ++"object"++
+        
+        ??? child "Show properties"
+
+            `content` ++"string or array"++
+
+            The contents of the assistant message.  
+
+            ---
+           
+            `role` ++"string or null"++ <span class="required" markdown>++"required"++</span>
+
+            The role of the messages author, in this case, `assistant`.
+
+            ---
+
+            `name` ++"string"++ <span class="future" markdown>++"future enhancement"++</span>
+            
+            <!--
+            An optional name for the participant. Provides the model information to differentiate between participants of the same role.
+            -->
 
         ---
 
-        ??? child "System message object"
+        User message ++"object"++
+
+        ??? child "Show properties"
 
             `content` ++"string or array"++
 
@@ -149,31 +171,11 @@ The request body object (chat completion object).
             An optional name for the participant. Provides the model information to differentiate between participants of the same role.
             -->
 
-            ---
+        ---
 
-        ??? child "User message object"
+        Assistant message ++"object"++
 
-            `content` ++"string or array"++
-
-            The contents of the assistant message.  
-
-            ---
-           
-            `role` ++"string or null"++ <span class="required" markdown>++"required"++</span>
-
-            The role of the messages author, in this case, `assistant`.
-
-            ---
-
-            `name` ++"string"++ <span class="future" markdown>++"future enhancement"++</span>
-            
-            <!--
-            An optional name for the participant. Provides the model information to differentiate between participants of the same role.
-            -->
-
-            ---
-
-        ??? child "Assistant message object"
+        ??? child "Show properties"
 
             `content` ++"string or array"++
 
@@ -225,11 +227,11 @@ The request body object (chat completion object).
         
         ---
             
-        **Tool** message ++"object"++ <span class="future" markdown>++"future enhancement"++</span>
+        Tool message ++"object"++ <span class="future" markdown>++"future enhancement"++</span>
 
         ---
 
-        **Function** message ++"object"++ *deprecated*
+        Function message ++"object"++ *deprecated*
 
     ---
 
@@ -539,7 +541,7 @@ Upload a [JSON Lines](https://jsonlines.org/){target=\_blank} document to the Kl
 
 `file` ++"file"++ <span class="required" markdown>++"required"++</span>
 
-The [File](#the-file-object) object (not file name) to be uploaded.
+The File object (not file name) to be uploaded.
 
 ---
 
@@ -549,7 +551,7 @@ The intended purpose of the uploaded file. Use `batch` for the Batch API.
 
 **Returns**
 
-The uploaded [File](#the-file-object) object.
+The uploaded File object.
 
 `id` ++"string"++
 
@@ -657,6 +659,8 @@ The time frame within which the Batch should be processed. Currently, only **24h
 `metadata` ++"Object or null"++
 
 Custom metadata for the Batch.
+
+---
 
 **Returns**
 
@@ -890,6 +894,8 @@ To verify that the Batch job has finished, check the `status` property for `comp
 
 The ID of the Batch to retrieve.
 
+---
+
 **Returns**
 
 The Batch object matching the specified `id`.
@@ -962,7 +968,7 @@ The Batch object matching the specified `id`.
 
 `get https://api.kluster.ai/v1/files/{file_id}/content`
 
-To retrieve the file content of the Batch job, send a request to the `files` end point specifying the `output_file_id` and redirecting standard output to a file.
+To retrieve the file content of the Batch job, send a request to the `files` endpoint specifying the `output_file_id` and redirecting standard output to a file.
 
 
 <div class="grid" markdown>
@@ -973,6 +979,8 @@ To retrieve the file content of the Batch job, send a request to the `files` end
 `file_id` ++"string"++ <span class="required" markdown>++"required"++</span>
 
 The ID of the file to use for this request
+
+---
 
 **Returns**
 
@@ -1100,7 +1108,9 @@ A developer-provided per-request id that will be used to match outputs to inputs
 
                     ---
 
-                    `top_logprobs`
+                    `top_logprobs` ++"array or null"++
+
+                    The associated log probability for each token.
 
                     ??? child "Show properties"
                         
@@ -1294,7 +1304,9 @@ A cursor for use in pagination. `after` is an object ID that defines your place 
 
 `limit` ++"integer"++
 
-A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
+A limit on the number of objects to be returned. Limit can range between 1 and 100. Default is 20.
+
+---
 
 **Returns**
 
@@ -1398,13 +1410,15 @@ To cancel an in-progress Batch job, send a cancel request to the batches endpoin
 
 The ID of the Batch to cancel.
 
+---
+
 **Returns**
 
 The Batch object matching the specified ID.
 
 </div>
 <div markdown>
--->
+
 === "Curl"
 
     ```bash title="Example"
@@ -1460,4 +1474,4 @@ The Batch object matching the specified ID.
 
 ## Summary
 
-You've now run a simple Batch use case by sending a collection of Batch request input objects to the chat completion end point, monitored the Batch interface for the progress of the job, and downloaded the result of the Batch job. To learn more about the supported endpoints, refer to the API documentation (link).
+You've now successfully completed a simple Batch use case by submitting a collection of Batch request input objects to the chat completion endpoint, monitored the job's progress, and downloaded the result of the Batch job. For further assistance or to suggest future enhancements, please contact us at support@kluster.ai.
