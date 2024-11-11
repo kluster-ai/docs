@@ -5,7 +5,7 @@ hide:
 - footer
 ---
 
-# Getting started guide
+# Getting Started Guide
 
 Welcome to the Kluster.ai getting started guide! This guide provides a quick introduction to submitting Batch jobs.
 
@@ -24,7 +24,6 @@ First, you can use the models endpoint to list out the supported models that. Cu
 
 <div class="grid" markdown>
 <div markdown>
-
 
 **Request**
 
@@ -75,7 +74,6 @@ curl https://api.kluster.ai/v1/models \
 ]
 ```
 
-
 </div>
 </div>
 
@@ -85,7 +83,6 @@ curl https://api.kluster.ai/v1/models \
 
 Create a [JSON Lines](https://jsonlines.org/) file containing a collection of `batch request input` objects. The body of each request is a `chat completion` object with the endpoint `/v1/chat/completions`. Each request must include a unique `custom_id` used to reference results after the Batch job has been completed.
 
-
 <div class="grid" markdown>
 <div markdown>
 
@@ -93,7 +90,7 @@ Create a [JSON Lines](https://jsonlines.org/) file containing a collection of `b
 
 `custom_id` ++"string"++
 
-A developer-provided per-request ID that will be used to match outputs to inputs. 
+A developer-provided per-request ID that will be used to match outputs to inputs.
 
 ---
 
@@ -126,59 +123,58 @@ The request body object (chat completion object).
     `messages` ++"array"++ <span class="required" markdown>++"required"++</span>
 
     A list of messages comprising the conversation so far. The `messages` object can be one of `system`, `user`, or `assistant`.
-
     
     ??? child "Show possible types"
 
-        `System message` ++"object"++
-
-        ??? child "Show properties"
-
-            `content` ++"string or array"++
-
-            The contents of the assistant message.  
-
-            ---
-           
-            `role` ++"string or null"++ <span class="required" markdown>++"Required"++</span>
-
-            The role of the messages author, in this case `assistant`
-
-            ---
-
-            `name` ++"string"++ <span class="required" markdown>++"future enhancement"++</span>
-            
-            <!--
-            An optional name for the participant. Provides the model information to differentiate between participants of the same role.
-            -->
-
-            ---
-
-        `User message` ++"object"++
-
-        ??? child "Show properties"
-
-            `content` ++"string or array"++
-
-            The contents of the assistant message.  
-
-            ---
-           
-            `role` ++"string or null"++ <span class="required" markdown>++"Required"++</span>
-
-            The role of the messages author, in this case `assistant`
-
-            ---
-
-            `name` ++"string"++ <span class="required" markdown>++"future enhancement"++</span>
-            
-            <!--
-            An optional name for the participant. Provides the model information to differentiate between participants of the same role.
-            -->
-
-            ---
+        System message ++"object"++
         
-        `Assistant message` ++"object"++
+        ??? child "Show properties"
+
+            `content` ++"string or array"++
+
+            The contents of the assistant message.  
+
+            ---
+           
+            `role` ++"string or null"++ <span class="required" markdown>++"required"++</span>
+
+            The role of the messages author, in this case, `assistant`.
+
+            ---
+
+            `name` ++"string"++ <span class="future" markdown>++"future enhancement"++</span>
+            
+            <!--
+            An optional name for the participant. Provides the model information to differentiate between participants of the same role.
+            -->
+
+        ---
+
+        User message ++"object"++
+
+        ??? child "Show properties"
+
+            `content` ++"string or array"++
+
+            The contents of the assistant message.  
+
+            ---
+           
+            `role` ++"string or null"++ <span class="required" markdown>++"required"++</span>
+
+            The role of the messages author, in this case, `assistant`.
+
+            ---
+
+            `name` ++"string"++ <span class="future" markdown>++"future enhancement"++</span>
+            
+            <!--
+            An optional name for the participant. Provides the model information to differentiate between participants of the same role.
+            -->
+
+        ---
+
+        Assistant message ++"object"++
 
         ??? child "Show properties"
 
@@ -188,7 +184,7 @@ The request body object (chat completion object).
 
             ---
 
-            `refusal` ++"string or null"++ <span class="required" markdown>++"future enhancement"++</span>
+            `refusal` ++"string or null"++ <span class="future" markdown>++"future enhancement"++</span>
             
             <!--
             The refusal message by the assistant.
@@ -196,13 +192,13 @@ The request body object (chat completion object).
             
             ---
 
-            `role` ++"string or null"++ <span class="required" markdown>++"Required"++</span>
+            `role` ++"string or null"++ <span class="required" markdown>++"required"++</span>
 
-            The role of the messages author, in this case `assistant`
+            The role of the messages author, in this case, `assistant`.
 
             ---
 
-            `name` ++"string"++ <span class="required" markdown>++"future enhancement"++</span>
+            `name` ++"string"++ <span class="future" markdown>++"future enhancement"++</span>
             
             <!--
             An optional name for the participant. Provides the model information to differentiate between participants of the same role.
@@ -210,7 +206,7 @@ The request body object (chat completion object).
             
             ---
 
-            `audio` ++"object or null"++ <span class="required" markdown>++"future enhancement"++</span>
+            `audio` ++"object or null"++ <span class="future" markdown>++"future enhancement"++</span>
             
             <!--
             Data about a previous audio response from the model.
@@ -218,7 +214,7 @@ The request body object (chat completion object).
             
             ---
 
-            `tool_calls` ++"array"++ <span class="required" markdown>++"future enhancement"++</span>
+            `tool_calls` ++"array"++ <span class="future" markdown>++"future enhancement"++</span>
             
             <!--
             The tool calls generated by the model, such as function calls.
@@ -232,15 +228,15 @@ The request body object (chat completion object).
         
         ---
             
-        `Tool message` ++"object"++ <span class="required" markdown>++"future enhancement"++</span>
+        Tool message ++"object"++ <span class="future" markdown>++"future enhancement"++</span>
 
         ---
 
-        `Function message`  ++"object"++ *deprecated*
+        Function message ++"object"++ *deprecated*
 
     ---
 
-    `store` ++"boolean or null"++ <span class="required" markdown>++"future enhancement"++</span>
+    `store` ++"boolean or null"++ <span class="future" markdown>++"future enhancement"++</span>
     
     <!--
     Whether or not to store the output of this chat completion request for use in our model distillation or evals products. Defaults to `false`.
@@ -248,7 +244,7 @@ The request body object (chat completion object).
   
     ---
 
-    `metadata` ++"object or null"++ <span class="required" markdown>++"future enhancement"++</span>
+    `metadata` ++"object or null"++ <span class="future" markdown>++"future enhancement"++</span>
 
     <!--
     Developer-defined tags and values used for filtering completions in the dashboard.
@@ -262,7 +258,7 @@ The request body object (chat completion object).
 
     ---
 
-    `logit_bias` ++"map"++ 
+    `logit_bias` ++"map"++
 
     Modify the likelihood of specified tokens appearing in the completion. Defaults to `null`.
 
@@ -270,7 +266,7 @@ The request body object (chat completion object).
 
     ---
 
-    `logprobs` ++"boolean or null"++ 
+    `logprobs` ++"boolean or null"++
 
     Whether to return log probabilities of the output tokens or not. If true, returns the log probabilities of each output token returned in the `content` of `message`. Defaults to `false`.
 
@@ -298,7 +294,7 @@ The request body object (chat completion object).
 
     ---
 
-    `n` ++"integer or null"++ <span class="required" markdown>++"future enhancement"++</span>
+    `n` ++"integer or null"++ <span class="future" markdown>++"future enhancement"++</span>
 
     <!--
     The number of chat completion choices to generate for each input message. Note that you will be charged based on the number of generated tokens across all of the choices. Keep `n` as `1` to minimize costs. Defaults to `1`.
@@ -306,7 +302,7 @@ The request body object (chat completion object).
 
     ---
 
-    `modalities` ++"array or null"++ <span class="required" markdown>++"future enhancement"++</span>
+    `modalities` ++"array or null"++ <span class="future" markdown>++"future enhancement"++</span>
     
     <!--
     Output types that you would like the model to generate for this request. Most models are capable of generating text, which is the default:
@@ -320,7 +316,7 @@ The request body object (chat completion object).
 
     ---
 
-    `audio` ++"object or null"++ <span class="required" markdown>++"future enhancement"++</span>
+    `audio` ++"object or null"++ <span class="future" markdown>++"future enhancement"++</span>
     
     <!--
     Parameters for audio output. Required when audio output is requested with modalities: ["audio"].
@@ -334,7 +330,7 @@ The request body object (chat completion object).
 
     ---
 
-    `response_format` ++"object"++ <span class="required" markdown>++"future enhancement"++</span>
+    `response_format` ++"object"++ <span class="future" markdown>++"future enhancement"++</span>
     
     <!--
     An object specifying the format that the model must output. Compatible with Meta-Llama-3.1-405B-Instruct-Turbo.
@@ -348,13 +344,13 @@ The request body object (chat completion object).
 
     ---
 
-    `seed` ++"integer or null"++ <span class="required" markdown>++"future enhancement"++</span>
+    `seed` ++"integer or null"++ <span class="future" markdown>++"future enhancement"++</span>
 
     This feature is in Beta. If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result. Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
 
     ---
 
-    `service_tier` ++"string or null"++ <span class="required" markdown>++"future enhancement"++</span>
+    `service_tier` ++"string or null"++ <span class="future" markdown>++"future enhancement"++</span>
     
     <!--
     Specifies the latency tier to use for processing the request. Defaults to `null`. This parameter is relevant for customers subscribed to the scale tier service:
@@ -380,7 +376,7 @@ The request body object (chat completion object).
 
     ---
 
-    `stream_options` ++"object or null"++ <span class="required" markdown>++"future enhancement"++</span>
+    `stream_options` ++"object or null"++ <span class="future" markdown>++"future enhancement"++</span>
     
     <!--
     Options for streaming response. Only set this when you set `stream: true`. Defaults to `null`
@@ -404,7 +400,7 @@ The request body object (chat completion object).
 
     ---
 
-    `tools` ++"array"++ <span class="required" markdown>++"future enhancement"++</span>
+    `tools` ++"array"++ <span class="future" markdown>++"future enhancement"++</span>
     
     <!--
     A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
@@ -412,7 +408,7 @@ The request body object (chat completion object).
 
     ---
 
-    `tool_choice` ++"string or object"++ <span class="required" markdown>++"future enhancement"++</span>
+    `tool_choice` ++"string or object"++ <span class="future" markdown>++"future enhancement"++</span>
     
     <!--
     Controls which (if any) tool is called by the model.
@@ -426,7 +422,7 @@ The request body object (chat completion object).
 
     ---
 
-    `parallel_tool_calls` ++"boolean"++ <span class="required" markdown>++"future enhancement"++</span>
+    `parallel_tool_calls` ++"boolean"++ <span class="future" markdown>++"future enhancement"++</span>
    
     <!--
     Whether to enable [**parallel function calling**](https://platform.openai.com/docs/guides/function-calling/parallel-function-calling){target=\_blank} during tool use. Defaults to `true`.
@@ -434,7 +430,7 @@ The request body object (chat completion object).
 
     ---
 
-    `user` ++"string"++ <span class="required" markdown>++"future enhancement"++</span>
+    `user` ++"string"++ <span class="future" markdown>++"future enhancement"++</span>
 
     <!--
     A unique identifier representing your end-user.
@@ -464,7 +460,6 @@ The request body object (chat completion object).
 
     A list of functions the model may generate JSON inputs for.
     -->
-
 
 </div>
 <div markdown>
@@ -545,19 +540,19 @@ Upload a [JSON Lines](https://jsonlines.org/){target=\_blank} document to the Kl
 
 **Request**
 
-`file` ++"file"++ <span class="required" markdown>++"Required"++</span>
+`file` ++"file"++ <span class="required" markdown>++"required"++</span>
 
-The [File](#the-file-object) object (not file name) to be uploaded.
+The File object (not file name) to be uploaded.
 
 ---
 
-`purpose` ++"string"++ <span class="required" markdown>++"Required"++</span>
+`purpose` ++"string"++ <span class="required" markdown>++"required"++</span>
 
 The intended purpose of the uploaded file. Use `batch` for the Batch API.
 
 **Returns**
 
-The uploaded [File](#the-file-object) object.
+The uploaded File object.
 
 `id` ++"string"++
 
@@ -631,7 +626,7 @@ The intended purpose of the file. Currently, only `batch` is supported.
 
 ---
 
-## Invoke the batches Endpoint
+## Invoke the Batches Endpoint
 
 `post https://api.kluster.ai/v1/batches`
 
@@ -642,7 +637,7 @@ Next, to create a Batch job, you invoke the `batches` endpoint using the `input_
 
 **Request**
 
-`input_file_id` ++"string"++ <span class="required" markdown>++"Required"++</span>
+`input_file_id` ++"string"++ <span class="required" markdown>++"required"++</span>
 
 The ID of an uploaded file that contains requests for the new Batch.
 
@@ -650,13 +645,13 @@ Your input file must be formatted as a [JSONL file](https://jsonlines.org/){targ
 
 ---
 
-`endpoint` ++"string"++ <span class="required" markdown>++"Required"++</span>
+`endpoint` ++"string"++ <span class="required" markdown>++"required"++</span>
 
 The endpoint to be used for all requests in the Batch. Currently, only `/v1/chat/completions` is supported.
 
 ---
 
-`completion_window` ++"string"++ <span class="required" markdown>++"Required"++</span>
+`completion_window` ++"string"++ <span class="required" markdown>++"required"++</span>
 
 The time frame within which the Batch should be processed. Currently, only **24h** is supported.
 
@@ -665,6 +660,8 @@ The time frame within which the Batch should be processed. Currently, only **24h
 `metadata` ++"Object or null"++
 
 Custom metadata for the Batch.
+
+---
 
 **Returns**
 
@@ -894,9 +891,11 @@ To verify that the Batch job has finished, check the `status` property for `comp
 
 **Path parameters**
 
-`batch_id` ++"string"++ <span class="required" markdown>++"Required"++</span>
+`batch_id` ++"string"++ <span class="required" markdown>++"required"++</span>
 
 The ID of the Batch to retrieve.
+
+---
 
 **Returns**
 
@@ -970,7 +969,7 @@ The Batch object matching the specified `id`.
 
 `get https://api.kluster.ai/v1/files/{file_id}/content`
 
-To retrieve the file content of the Batch job, send a request to the `files` end point specifying the `output_file_id` and redirecting standard output to a file.
+To retrieve the file content of the Batch job, send a request to the `files` endpoint specifying the `output_file_id` and redirecting standard output to a file.
 
 
 <div class="grid" markdown>
@@ -978,9 +977,11 @@ To retrieve the file content of the Batch job, send a request to the `files` end
 
 **Path parameters**
 
-`file_id` ++"string"++ <span class="required" markdown>++"Required"++</span>
+`file_id` ++"string"++ <span class="required" markdown>++"required"++</span>
 
 The ID of the file to use for this request
+
+---
 
 **Returns**
 
@@ -1004,13 +1005,13 @@ A developer-provided per-request id that will be used to match outputs to inputs
 
     `status_code` ++"integer"++
 
-    The HTTP status code of the response
+    The HTTP status code of the response.
 
     ---
 
     `request_id` ++"string"++
 
-    An unique identifier for the request. Please include this request ID when contacting support.
+    A unique identifier for the request. Please include this request ID when contacting support.
 
     ---
 
@@ -1056,11 +1057,11 @@ A developer-provided per-request id that will be used to match outputs to inputs
 
                 ---
 
-                `refusal` ++"string or null"++ <span class="required" markdown>++"future enhancement"++</span>
+                `refusal` ++"string or null"++ <span class="future" markdown>++"future enhancement"++</span>
 
                 ---
 
-                `tool_calls` ++"array"++ <span class="required" markdown>++"future enhancement"++</span>
+                `tool_calls` ++"array"++ <span class="future" markdown>++"future enhancement"++</span>
 
                 ---
                 
@@ -1074,7 +1075,7 @@ A developer-provided per-request id that will be used to match outputs to inputs
 
                 ---
 
-                `audio` ++"object or null"++ <span class="required" markdown>++"future enhancement"++</span>
+                `audio` ++"object or null"++ <span class="future" markdown>++"future enhancement"++</span>
 
             ---
 
@@ -1108,7 +1109,9 @@ A developer-provided per-request id that will be used to match outputs to inputs
 
                     ---
 
-                    `top_logprobs`
+                    `top_logprobs` ++"array or null"++
+
+                    The associated log probability for each token.
 
                     ??? child "Show properties"
                         
@@ -1130,7 +1133,7 @@ A developer-provided per-request id that will be used to match outputs to inputs
 
                 ---
 
-                `refusal` ++"array or null"++ <span class="required" markdown>++"future enhancement"++</span>
+                `refusal` ++"array or null"++ <span class="future" markdown>++"future enhancement"++</span>
 
         ---
 
@@ -1146,11 +1149,11 @@ A developer-provided per-request id that will be used to match outputs to inputs
 
         ---
 
-        `service_tier` ++"string or null"++ <span class="required" markdown>++"future enhancement"++</span>
+        `service_tier` ++"string or null"++ <span class="future" markdown>++"future enhancement"++</span>
 
         ---
 
-        `system_fingerprint` ++"string"++ <span class="required" markdown>++"future enhancement"++</span>
+        `system_fingerprint` ++"string"++ <span class="future" markdown>++"future enhancement"++</span>
 
         ---
 
@@ -1184,11 +1187,11 @@ A developer-provided per-request id that will be used to match outputs to inputs
 
             ---
 
-            `completion_token_details` ++"null"++ <span class="required" markdown>++"Not supported"++</span>
+            `completion_token_details` ++"null"++ <span class="not-supported" markdown>++"Not supported"++</span>
 
             ---
 
-            `prompt_token_details` ++"object"++ <span class="required" markdown>++"future enhancement"++</span>
+            `prompt_token_details` ++"object"++ <span class="future" markdown>++"future enhancement"++</span>
 
 ---
 
@@ -1197,7 +1200,7 @@ A developer-provided per-request id that will be used to match outputs to inputs
 For requests that failed with a non-HTTP error, this will contain more information on the cause of the failure.
 
 ??? child "Show properties"
-    
+
     `code` ++"string"++ 
    
     A machine-readable error code.
@@ -1207,7 +1210,6 @@ For requests that failed with a non-HTTP error, this will contain more informati
     `message` ++"string"++
    
     A human-readable error message. 
-
 
 </div>
 <div markdown>
@@ -1278,9 +1280,9 @@ For requests that failed with a non-HTTP error, this will contain more informati
 "error": null
 }
 ```
-</div>
-</div>
 
+</div>
+</div>
 
 ---
 
@@ -1289,7 +1291,6 @@ For requests that failed with a non-HTTP error, this will contain more informati
 `get https://api.kluster.ai/v1/batches`
 
 To list all of your Batch objects, send a request to the batches endpoint without specifying a batch_id. To constrain the query response, you can also use a limit parameter.
-
 
 <div class="grid" markdown>
 <div markdown>
@@ -1304,7 +1305,9 @@ A cursor for use in pagination. `after` is an object ID that defines your place 
 
 `limit` ++"integer"++
 
-A limit on the number of objects to be returned. Limit can range between 1 and 100, and the
+A limit on the number of objects to be returned. Limit can range between 1 and 100. Default is 20.
+
+---
 
 **Returns**
 
@@ -1326,7 +1329,6 @@ The status of a Batch object can be one of the following:
 </div>
 
 <div markdown>
-
 
 === "Curl"
 
@@ -1400,24 +1402,24 @@ The status of a Batch object can be one of the following:
 
 To cancel an in-progress Batch job, send a cancel request to the batches endpoint specifying the `batch_id`.
 
-
 <div class="grid" markdown>
 <div markdown>
 
 **Path parameters**
 
-`batch_id` ++"string"++ <span class="required" markdown>++"Required"++</span>
+`batch_id` ++"string"++ <span class="required" markdown>++"required"++</span>
 
 The ID of the Batch to cancel.
+
+---
 
 **Returns**
 
 The Batch object matching the specified ID.
 
-
 </div>
 <div markdown>
--->
+
 === "Curl"
 
     ```bash title="Example"
@@ -1473,4 +1475,4 @@ The Batch object matching the specified ID.
 
 ## Summary
 
-You've now run a simple Batch use case by sending a collection of Batch request input objects to the chat completion end point, monitored the Batch interface for the progress of the job, and downloaded the result of the Batch job. To learn more about the end points we support, refer to the API documentation (link).
+You've now successfully completed a simple Batch use case by submitting a collection of Batch request input objects to the chat completion endpoint, monitored the job's progress, and downloaded the result of the Batch job. For further assistance or to suggest future enhancements, please contact us at support@kluster.ai.
