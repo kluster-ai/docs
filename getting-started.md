@@ -19,7 +19,8 @@ Navigate to the [platform.kluster.ai](http://platform.kluster.ai){target=\_blank
 
 ## List Supported Models
 
-First, you can use the models endpoint to list out the supported models that. Currently, only the Meta-Llama-3.1-405B-Instruct-Turbo model is supported. The response is a list of model objects.
+First, you can use the models endpoint to list out the supported models that. Currently, the Meta-Llama-3.1-8B-Instruct-Turbo, Meta-Llama-3.1-70B-Instruct-Turbo, and Meta-Llama-3.1-405B-Instruct-Turbo models are supported. The response is a list of model objects.
+
 
 <div class="grid" markdown>
 <div markdown>
@@ -466,8 +467,8 @@ The request body object (chat completion object).
 === "Curl"
 
     ```json title="Example: Collection of Batch Jobs"
-    {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": "What is the capital of Argentina?"}],"max_tokens":1000}}
-    {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem to a 10 year old child"}],"max_tokens":1000}}
+    {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": "What is the capital of Argentina?"}],"max_tokens":1000}}
+    {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-70B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem to a 10 year old child"}],"max_tokens":1000}}
     {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an astronomer."}, {"role": "user", "content": "What is the distance between the Earth and the Moon"}],"max_tokens":1000}}
     ```
 
@@ -479,7 +480,7 @@ The request body object (chat completion object).
             "method": "POST",
             "url": "/v1/chat/completions",
             "body": {
-                "model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo",
+                "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
                 "messages": [
                     {"role": "system", "content": "You are a helpful assistant."},
                     {"role": "user", "content": "What is the capital of Argentina?"},
@@ -492,7 +493,7 @@ The request body object (chat completion object).
             "method": "POST",
             "url": "/v1/chat/completions",
             "body": {
-                "model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo",
+                "model": "klusterai/Meta-Llama-3.1-70B-Instruct-Turbo",
                 "messages": [
                     {"role": "system", "content": "You are a maths tutor."},
                     {"role": "user", "content": "Explain the Pythagorean theorem."},
@@ -1262,7 +1263,7 @@ For requests that failed with a non-HTTP error, this will contain more informati
     ],
     "created": 1731059413,
     "id": "mychatcompletion-123",
-    "model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo",
+    "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
     "object": "chat.completion.chunk",
     "service_tier": null,
     "system_fingerprint": null,
