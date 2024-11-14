@@ -704,11 +704,9 @@ The time frame within which the Batch should be processed. Currently, only **24h
 
 ---
 
-`metadata` ++"null"++ <span class="future" markdown>++"future enhancement"++</span>
+`metadata` ++"Object or null"++
 
-<!--
 Custom metadata for the Batch.
--->
 
 ---
 
