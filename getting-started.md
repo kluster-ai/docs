@@ -65,13 +65,12 @@ The organization that owns the model.
     -H "Authorization: Bearer $API_KEY" 
     ```
 
-
 === "Python"
 
     ```python title="Example request"
     from openai import OpenAI
 
-    kluster_api_key = "your-api-key"
+    kluster_api_key = "INSERT_API_KEY"
 
     client = OpenAI(
     api_key=kluster_api_key,
@@ -642,10 +641,10 @@ The intended purpose of the file. Currently, only `batch` is supported.
     # Upload the file to the kluster.ai
     from openai import OpenAI
 
-    file_name="mybatchtest.jsonl" #replace with you input jsonl file
+    file_name="mybatchtest.jsonl" # Replace with you input jsonl file
 
     client = OpenAI(
-        api_key="INSERT_API_KEY", #replace with your API key
+        api_key="INSERT_API_KEY", # Replace with your API key
         base_url="http://api.kluster.ai/v1"
     )
 
@@ -892,10 +891,10 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 
     from openai import OpenAI
     
-    file_name="mybatchtest.jsonl" #replace with you input jsonl file
+    file_name="mybatchtest.jsonl" # Replace with you input jsonl file
 
     client = OpenAI(
-        api_key="INSERT_API_KEY", #replace with your API key
+        api_key="INSERT_API_KEY", # Replace with your API key
         base_url="http://api.kluster.ai/v1"
     )
 
@@ -990,10 +989,10 @@ The Batch object matching the specified `id`.
     from openai import OpenAI
     import time
 
-    file_name="mybatchtest.jsonl" #replace with you input jsonl file
+    file_name="mybatchtest.jsonl" # Replace with you input jsonl file
 
     client = OpenAI(
-        api_key="INSERT_API_KEY", #replace with your API key
+        api_key="INSERT_API_KEY", # Replace with your API key
         base_url="http://api.kluster.ai/v1"
     )
 
@@ -1323,10 +1322,10 @@ For requests that failed with a non-HTTP error, this will contain more informati
     from openai import OpenAI
     import time
 
-    file_name="mybatchtest.jsonl" #replace with you input jsonl file
+    file_name="mybatchtest.jsonl" # Replace with you input jsonl file
 
     client = OpenAI(
-        api_key="INSERT_API_KEY", #replace with your API key
+        api_key="INSERT_API_KEY", # Replace with your API key
         base_url="http://api.kluster.ai/v1"
     )
 
@@ -1574,9 +1573,9 @@ The Batch object matching the specified ID.
     from openai import OpenAI
     client = OpenAI(
         base_url="https://api.kluster.ai/v1",  
-        api_key=INSERT_API_KEY,  # Replace with your actual API key
+        api_key=INSERT_API_KEY, # Replace with your actual API key
     )
-    client.batches.cancel("mybatch-123") #replace with your batch id
+    client.batches.cancel("mybatch-123") # Replace with your batch id
     ```
 
 ```Json title="Response"
