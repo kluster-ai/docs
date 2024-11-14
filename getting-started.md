@@ -645,13 +645,13 @@ The intended purpose of the file. Currently, only `batch` is supported.
     file_name="mybatchtest.jsonl" #replace with you input jsonl file
 
     client = OpenAI(
-    api_key="your-api-key", #replace with your API key
-    base_url="http://api.kluster.ai/v1"
+        api_key="INSERT_API_KEY", #replace with your API key
+        base_url="http://api.kluster.ai/v1"
     )
 
     batch_input_file = client.files.create(
-    file=open(file_name, "rb"),
-    purpose="batch"
+        file=open(file_name, "rb"),
+        purpose="batch"
     )
 
     print(f"Batch file uploaded. File id: {batch_input_file.id}")
@@ -895,13 +895,13 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
     file_name="mybatchtest.jsonl" #replace with you input jsonl file
 
     client = OpenAI(
-    api_key="your-api-key", #replace with your API key
-    base_url="http://api.kluster.ai/v1"
+        api_key="INSERT_API_KEY", #replace with your API key
+        base_url="http://api.kluster.ai/v1"
     )
 
     batch_input_file = client.files.create(
-    file=open(file_name, "rb"),
-    purpose="batch"
+        file=open(file_name, "rb"),
+        purpose="batch"
     )
 
     print(f"Batch file uploaded. File id: {batch_input_file.id}")
@@ -993,13 +993,13 @@ The Batch object matching the specified `id`.
     file_name="mybatchtest.jsonl" #replace with you input jsonl file
 
     client = OpenAI(
-    api_key="your-api-key", #replace with your API key
-    base_url="http://api.kluster.ai/v1"
+        api_key="INSERT_API_KEY", #replace with your API key
+        base_url="http://api.kluster.ai/v1"
     )
 
     batch_input_file = client.files.create(
-    file=open(file_name, "rb"),
-    purpose="batch"
+        file=open(file_name, "rb"),
+        purpose="batch"
     )
 
     print(f"Batch file uploaded. File id: {batch_input_file.id}")
@@ -1326,13 +1326,13 @@ For requests that failed with a non-HTTP error, this will contain more informati
     file_name="mybatchtest.jsonl" #replace with you input jsonl file
 
     client = OpenAI(
-    api_key="your-api-key", #replace with your API key
-    base_url="http://api.kluster.ai/v1"
+        api_key="INSERT_API_KEY", #replace with your API key
+        base_url="http://api.kluster.ai/v1"
     )
 
     batch_input_file = client.files.create(
-    file=open(file_name, "rb"),
-    purpose="batch"
+        file=open(file_name, "rb"),
+        purpose="batch"
     )
 
     print("batch file uploaded. File id= " + batch_input_file.id)
@@ -1482,7 +1482,7 @@ The status of a Batch object can be one of the following:
     # Configure OpenAI client
     client = OpenAI(
         base_url="https://api.kluster.ai/v1", 
-        api_key=my_api_key,  # Replace with your actual API key
+        api_key=INSERT_API_KEY,  # Replace with your actual API key
     )
 
     print(client.batches.list(limit=2))
@@ -1574,7 +1574,7 @@ The Batch object matching the specified ID.
     from openai import OpenAI
     client = OpenAI(
         base_url="https://api.kluster.ai/v1",  
-        api_key=my_api_key,  # Replace with your actual API key
+        api_key=INSERT_API_KEY,  # Replace with your actual API key
     )
     client.batches.cancel("mybatch-123") #replace with your batch id
     ```
