@@ -641,7 +641,7 @@ The intended purpose of the file. Currently, only `batch` is supported.
     # Upload the file to kluster.ai
     from openai import OpenAI
 
-    file_name="mybatchtest.jsonl" # Replace with you input jsonl file
+    file_name="mybatchtest.jsonl" # Replace with your input jsonl file
 
     client = OpenAI(
         api_key="INSERT_API_KEY", # Replace with your API key
@@ -889,7 +889,7 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 
     from openai import OpenAI
     
-    file_name="mybatchtest.jsonl" # Replace with you input jsonl file
+    file_name="mybatchtest.jsonl" # Replace with your input jsonl file
 
     client = OpenAI(
         api_key="INSERT_API_KEY", # Replace with your API key
@@ -987,7 +987,7 @@ The Batch object matching the specified `id`.
     from openai import OpenAI
     import time
 
-    file_name="mybatchtest.jsonl" # Replace with you input jsonl file
+    file_name="mybatchtest.jsonl" # Replace with your input jsonl file
 
     client = OpenAI(
         api_key="INSERT_API_KEY", # Replace with your API key
@@ -1320,7 +1320,7 @@ For requests that failed with a non-HTTP error, this will contain more informati
     from openai import OpenAI
     import time
 
-    file_name="mybatchtest.jsonl" # Replace with you input jsonl file
+    file_name="mybatchtest.jsonl" # Replace with your input jsonl file
 
     client = OpenAI(
         api_key="INSERT_API_KEY", # Replace with your API key
