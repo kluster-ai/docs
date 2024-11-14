@@ -638,7 +638,7 @@ The intended purpose of the file. Currently, only `batch` is supported.
 === "Python"
 
     ```python title="Example request"
-    # Upload the file to the kluster.ai
+    # Upload the file to kluster.ai
     from openai import OpenAI
 
     file_name="mybatchtest.jsonl" # Replace with you input jsonl file
@@ -885,7 +885,7 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 
     ```python title="Example request"
 
-    # Upload the file to the kluster.ai
+    # Upload the file to kluster.ai
 
     from openai import OpenAI
     
