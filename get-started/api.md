@@ -1,8 +1,6 @@
 ---
-title: Getting Started Guide
+title: kluster API
 description: The kluster.ai getting started guide provides examples and instructions for submitting and managing Batch jobs using kluster.ai's OpenAI-compatible API.
-hide:
-- footer
 ---
 
 # Getting Started Guide
@@ -1374,16 +1372,16 @@ A list of paginated Batch objects.
 
 The status of a Batch object can be one of the following:
 
-| Status          | Description                                                            |
-|-----------------|------------------------------------------------------------------------|
-| `validating`    | The input file is being validated.                                     |
-| `failed`        | The input file failed the validation process.                          |
-| `in_progress`   | The input file was successfully validated and the Batch is in progress.|
-| `finalizing`    | The Batch job has completed and the results are being finalized.       |
-| `completed`     | The Batch has completed and the results are ready.                     |
-| `expired`       | The Batch was not completed within the 24-hour time window.            |
-| `cancelling`    | The Batch is being cancelled (may take up to 10 minutes).              |
-| `cancelled`     | The Batch was cancelled.                                               |
+| Status        | Description                                                             |
+|---------------|-------------------------------------------------------------------------|
+| `validating`  | The input file is being validated.                                      |
+| `failed`      | The input file failed the validation process.                           |
+| `in_progress` | The input file was successfully validated and the Batch is in progress. |
+| `finalizing`  | The Batch job has completed and the results are being finalized.        |
+| `completed`   | The Batch has completed and the results are ready.                      |
+| `expired`     | The Batch was not completed within the 24-hour time window.             |
+| `cancelling`  | The Batch is being cancelled (may take up to 10 minutes).               |
+| `cancelled`   | The Batch was cancelled.                                                |
 
 </div>
 
