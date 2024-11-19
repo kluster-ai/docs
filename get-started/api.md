@@ -1,15 +1,11 @@
 ---
-title: Getting Started Guide
-description: The kluster.ai getting started guide provides examples and instructions for submitting and managing Batch jobs using kluster.ai's OpenAI-compatible API.
-hide:
-- footer
+title: kluster.ai API
+description: The kluster.ai API getting started guide provides examples and instructions for submitting and managing Batch jobs using kluster.ai's OpenAI-compatible API.
 ---
 
-# Getting Started Guide
+# Start Using the kluster.ai API
 
-Welcome to the Kluster.ai getting started guide! This guide provides a quick introduction to submitting Batch jobs.
-
-Kluster.ai is API-compatible with the OpenAI library, supporting `model`, `messages`, and `stream` functions. The documentation will clearly indicate which properties are not utilized. If additional request properties are needed, they can be requested during the Early Access Plan. To install the OpenAI Python library, follow the [instructions](https://platform.openai.com/docs/libraries/python-library){target=\_blank} on OpenAI's documentation.
+The kluster.ai API is compatible with the OpenAI library, supporting `model`, `messages`, and `stream` functions. The documentation will clearly indicate which properties are not utilized. If additional request properties are needed, they can be requested during the Early Access Plan. To install the OpenAI Python library, follow the [instructions](https://platform.openai.com/docs/libraries/python-library){target=\_blank} on OpenAI's documentation.
 
 OpenAI object definitions are included to help you get started. For more details, refer to the OpenAI [API reference](https://platform.openai.com/docs/api-reference/introduction){target=\_blank}. The following sections offer Curl and Python examples on locating the API key, defining Batch jobs as a JSON Lines file, uploading the file to the Kluster.ai endpoint, invoking the chat completion endpoint, monitoring job progress, retrieving results, listing Batch objects, and canceling requests.
 
@@ -1374,16 +1370,16 @@ A list of paginated Batch objects.
 
 The status of a Batch object can be one of the following:
 
-| Status          | Description                                                            |
-|-----------------|------------------------------------------------------------------------|
-| `validating`    | The input file is being validated.                                     |
-| `failed`        | The input file failed the validation process.                          |
-| `in_progress`   | The input file was successfully validated and the Batch is in progress.|
-| `finalizing`    | The Batch job has completed and the results are being finalized.       |
-| `completed`     | The Batch has completed and the results are ready.                     |
-| `expired`       | The Batch was not completed within the 24-hour time window.            |
-| `cancelling`    | The Batch is being cancelled (may take up to 10 minutes).              |
-| `cancelled`     | The Batch was cancelled.                                               |
+| Status        | Description                                                             |
+|---------------|-------------------------------------------------------------------------|
+| `validating`  | The input file is being validated.                                      |
+| `failed`      | The input file failed the validation process.                           |
+| `in_progress` | The input file was successfully validated and the Batch is in progress. |
+| `finalizing`  | The Batch job has completed and the results are being finalized.        |
+| `completed`   | The Batch has completed and the results are ready.                      |
+| `expired`     | The Batch was not completed within the 24-hour time window.             |
+| `cancelling`  | The Batch is being cancelled (may take up to 10 minutes).               |
+| `cancelled`   | The Batch was cancelled.                                                |
 
 </div>
 
