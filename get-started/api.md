@@ -3,9 +3,7 @@ title: kluster API
 description: The kluster.ai getting started guide provides examples and instructions for submitting and managing Batch jobs using kluster.ai's OpenAI-compatible API.
 ---
 
-# Getting Started Guide
-
-Welcome to the Kluster.ai getting started guide! This guide provides a quick introduction to submitting Batch jobs.
+# Start Using the kluster.ai API
 
 Kluster.ai is API-compatible with the OpenAI library, supporting `model`, `messages`, and `stream` functions. The documentation will clearly indicate which properties are not utilized. If additional request properties are needed, they can be requested during the Early Access Plan. To install the OpenAI Python library, follow the [instructions](https://platform.openai.com/docs/libraries/python-library){target=\_blank} on OpenAI's documentation.
 
