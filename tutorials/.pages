@@ -1,0 +1,4 @@
+title: Tutorials
+hide: false
+nav:
+ - Notebook: Quick_start_notebook.ipynb
