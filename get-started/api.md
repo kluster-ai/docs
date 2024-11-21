@@ -202,8 +202,7 @@ The request body object (chat completion object).
   
     ---
 
-    `metadata` ++"object or null"++ <span class="future" markdown>++"future enhancement"++</span>
-
+    `metadata` ++"object or null"++ 
     <!--
     Developer-defined tags and values used for filtering completions in the dashboard.
     -->
@@ -388,10 +387,10 @@ The request body object (chat completion object).
 
     ---
 
-    `user` ++"string"++ <span class="future" markdown>++"future enhancement"++</span>
+    `user` ++"string"++
 
     <!--
-    A unique identifier representing your end-user.
+    A unique identifier representing your end-user. We recommend not supplying identifying information, hashing usernames or email addresses instead.
     -->
 
     ---
@@ -783,7 +782,7 @@ The request counts for different statuses within the Batch.
 
 ---
 
-`metadata` ++"map"++ <span class="future" markdown>++"future enhancement"++</span>
+`metadata` ++"Object or null"++
 
 <!--
 Set of 16 key-value pairs that can be attached to an object. This is useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long, and values can be a maximum of 512 characters long.
