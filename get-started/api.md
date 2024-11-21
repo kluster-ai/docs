@@ -3,9 +3,9 @@ title: kluster.ai API
 description: The kluster.ai API getting started guide provides examples and instructions for submitting and managing Batch jobs using kluster.ai's OpenAI-compatible API.
 ---
 
-# Start using the kluster.ai API
+# Start Using the kluster.ai API
 
-The kluster.ai API provides a straightforward way to work with Large Language Models (LLMs) at scale. We are compatible with OpenAI Python library and Batch API, making it easy to integrate into your existing workflows with minimal code changes.
+The kluster.ai API provides a straightforward way to work with Large Language Models (LLMs) at scale. It is compatible with OpenAI Python library and Batch API, making it easy to integrate into your existing workflows with minimal code changes.
 
 Choose your preferred way to interact with the API:
 
@@ -13,7 +13,7 @@ Choose your preferred way to interact with the API:
 - Make direct HTTP requests using curl
 - Use any HTTP client that supports REST APIs
 
-We recommend the OpenAI python library, which can be installed with `pip install openai`.
+The OpenAI python library is recommended, which can be installed with `pip install openai`.
 
 This guide provides copy-and-paste examples for both Python and curl, along with detailed explanations to help you get started quickly.
 
@@ -21,7 +21,7 @@ This guide provides copy-and-paste examples for both Python and curl, along with
 
 Navigate to the [platform.kluster.ai](http://platform.kluster.ai){target=\_blank} web app and select **API Keys** from the left-hand menu. Create a new API key by specifying the API key name. You'll need this for all API requests.
 
-## Creating Batch jobs as JSONL files
+## Creating Batch Jobs as JSON Files
 
 
 To create a Batch job, you'll need to:
@@ -390,7 +390,7 @@ The request body object (chat completion object).
     `user` ++"string"++
 
     <!--
-    A unique identifier representing your end-user. We recommend not supplying identifying information, hashing usernames or email addresses instead.
+    A unique identifier representing your end-user. It is recommended not to supply identifying information, hashing usernames, or email addresses instead.
     -->
 
     ---
@@ -861,7 +861,7 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 
 ---
 
-## Monitor job progress
+## Monitor Job Progress
 
 `get https://api.kluster.ai/v1/batches/{batch_id}`
 
@@ -945,7 +945,7 @@ The Batch object matching the specified `id`.
 
 ---
 
-## Retrieve results
+## Retrieve Results
 
 `get https://api.kluster.ai/v1/files/{output_file_id}/content`
 
@@ -1268,7 +1268,7 @@ For requests that failed with a non-HTTP error, this will contain more informati
 
 ---
 
-## List all Batch jobs
+## List all Batch Jobs
 
 `get https://api.kluster.ai/v1/batches`
 
@@ -1380,7 +1380,7 @@ The status of a Batch object can be one of the following:
 
 ---
 
-## Cancelling a Batch job
+## Cancelling a Batch Job
 
 `post https://api.kluster.ai/v1/batches/{batch_id}/cancel`
 
@@ -1461,7 +1461,7 @@ The Batch object matching the specified ID.
 
 ## List supported models
 
-Use this endpoint to retrieve a list of all available models for the kluster.ai API. Currently supported models:
+You can use this endpoint to retrieve a list of all available models for the kluster.ai API. Currently supported models:
 
 - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-70B-Instruct-Turbo`
@@ -1567,4 +1567,4 @@ Congratulations! You now have all the tools needed to work with the kluster.ai B
 - Cancel jobs when needed
 - View supported models
 
-The kluster.ai Batch API is designed to handle your large-scale LLM workloads efficiently and reliably. Have questions or suggestions? We'd love to hear from you at [support@kluster.ai](mailto:support@kluster.ai).
+The kluster.ai Batch API is designed to efficiently and reliably handle your large-scale LLM workloads. Do you have questions or suggestions? The [support](mailto:support@kluster.ai) team would love to hear from you.
