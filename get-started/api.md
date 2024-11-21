@@ -1335,45 +1335,45 @@ The status of a Batch object can be one of the following:
     ```
 
 ```Json title="Response"
+{
+"object": "list",
+"data": [
     {
-    "object": "list",
-    "data": [
-        {
-        "id": "mybatch-123",
-        "object": "batch",
-        "endpoint": "/v1/chat/completions",
-        "errors": null,
-        "input_file_id": "myfile-123",
-        "completion_window": "24h",
-        "status": "completed",
-        "output_file_id": "myfile-123-output",
-        "error_file_id": null,
-        "created_at": "1730821906",
-        "in_progress_at": null,
-        "expires_at": "1730821906",
-        "finalizing_at": null,
-        "completed_at": null,
-        "failed_at": null,
-        "expired_at": null,
-        "cancelling_at": null,
-        "cancelled_at": null,
-        "request_counts": {
-            "total": 2,
-            "completed": 2,
-            "failed": 0
-        },
-        "metadata": {}
-        },
-    { ... },
-    ],
-    "first_id": "92aa978c-9dd1-49af-baa8-485ae6fb8019",
-    "last_id": "0d29e406-51b2-4e5b-a9f4-6cb460eaeb59",
-    "has_more": false,
-    "count": 1,
-    "page": 1,
-    "page_count": -1,
-    "items_per_page": 9223372036854775807
-    }
+    "id": "mybatch-123",
+    "object": "batch",
+    "endpoint": "/v1/chat/completions",
+    "errors": null,
+    "input_file_id": "myfile-123",
+    "completion_window": "24h",
+    "status": "completed",
+    "output_file_id": "myfile-123-output",
+    "error_file_id": null,
+    "created_at": "1730821906",
+    "in_progress_at": null,
+    "expires_at": "1730821906",
+    "finalizing_at": null,
+    "completed_at": null,
+    "failed_at": null,
+    "expired_at": null,
+    "cancelling_at": null,
+    "cancelled_at": null,
+    "request_counts": {
+        "total": 2,
+        "completed": 2,
+        "failed": 0
+    },
+    "metadata": {}
+    },
+{ ... },
+],
+"first_id": "92aa978c-9dd1-49af-baa8-485ae6fb8019",
+"last_id": "0d29e406-51b2-4e5b-a9f4-6cb460eaeb59",
+"has_more": false,
+"count": 1,
+"page": 1,
+"page_count": -1,
+"items_per_page": 9223372036854775807
+}
 ```
 
 </div>
