@@ -866,7 +866,7 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 
 `get https://api.kluster.ai/v1/batches/{batch_id}`
 
-To monitor your Batch job's progress, make periodic requests to the `batches` endpoint using your `batch_id` to check its status. The job is complete when the `status` field is `"completed"`. You can also monitor jobs in the [Batch tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
+To monitor your Batch job's progress, make periodic requests to the `batches` endpoint using your `batch_id` to check its status. The job is complete when the `status` field is `"Completed"`. You can also monitor jobs in the [Batch tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
 
 <div class="grid" markdown>
 <div markdown>
@@ -920,7 +920,7 @@ The Batch object matching the specified `id`.
   "errors": null,
   "input_file_id": "myfile-123",
   "completion_window": "24h",
-  "status": "completed",
+  "status": "Completed",
   "output_file_id": "myfile-123-output",
   "error_file_id": null,
   "created_at": "1730821906",
@@ -1300,14 +1300,14 @@ The status of a Batch object can be one of the following:
 
 | Status        | Description                                                             |
 |---------------|-------------------------------------------------------------------------|
-| `validating`  | The input file is being validated.                                      |
-| `failed`      | The input file failed the validation process.                           |
-| `in_progress` | The input file was successfully validated and the Batch is in progress. |
-| `finalizing`  | The Batch job has completed and the results are being finalized.        |
-| `completed`   | The Batch has completed and the results are ready.                      |
-| `expired`     | The Batch was not completed within the 24-hour time window.             |
-| `cancelling`  | The Batch is being cancelled (may take up to 10 minutes).               |
-| `cancelled`   | The Batch was cancelled.                                                |
+| `Validating`  | The input file is being validated.                                      |
+| `Failed`      | The input file failed the validation process.                           |
+| `InProgress` | The input file was successfully validated and the Batch is in progress. |
+| `Finalizing`  | The Batch job has completed and the results are being finalized.        |
+| `Completed`   | The Batch has completed and the results are ready.                      |
+| `Expired`     | The Batch was not completed within the 24-hour time window.             |
+| `Cancelling`  | The Batch is being cancelled (may take up to 10 minutes).               |
+| `Cancelled`   | The Batch was cancelled.                                                |
 
 </div>
 
