@@ -1,4 +1,4 @@
 title: kluster.ai API
 hide: false
 nav:
- - Notebook: get-started-all-in-one-batch-api.ipynb
+ - 'Multiple Batch Predictions with kluster.ai': get-started-all-in-one-batch-api.ipynb
