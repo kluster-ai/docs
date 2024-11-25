@@ -1,0 +1,4 @@
+title: kluster.ai API
+hide: false
+nav:
+ - 'Multiple Batch Predictions': multiple-tasks-batch-api.ipynb
