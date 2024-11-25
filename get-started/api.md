@@ -1297,6 +1297,12 @@ A list of paginated Batch objects.
 
 The status of a Batch object can be one of the following:
 
+<style>
+table th:first-child {
+    width: 130px;
+}
+</style>
+
 | Status        | Description                                                             |
 |---------------|-------------------------------------------------------------------------|
 | `Validating`  | The input file is being validated.                                      |
