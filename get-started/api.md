@@ -454,19 +454,6 @@ The request body object (chat completion object).
                 ],
                 "max_tokens": 1000,
             },
-        },
-        {
-            "custom_id": "request-3",
-            "method": "POST",
-            "url": "/v1/chat/completions",
-            "body": {
-                "model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo",
-                "messages": [
-                    {"role": "system", "content": "You are an astronomer."},
-                    {"role": "user", "content": "What is the distance between the Earth and the Moon?"},
-                ],
-                "max_tokens": 1000,
-            },
         }
         # Additional tasks can be added here
     ]
