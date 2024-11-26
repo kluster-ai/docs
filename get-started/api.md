@@ -13,9 +13,13 @@ Choose your preferred way to interact with the API:
 - Make direct HTTP requests using curl
 - Use any HTTP client that supports REST APIs
 
-The OpenAI python library (version 1.0.0 or higher) is recommended, which can be installed with `pip install "openai>=1.0.0"`.
-
 This guide provides copy-and-paste examples for both Python and curl, along with detailed explanations to help you get started quickly.
+
+The OpenAI python library (version 1.0.0 or higher) is recommended, which can be installed with:
+
+```bash
+pip install "openai>=1.0.0"
+```
 
 ## Get Your API Key
 
@@ -580,7 +584,7 @@ The intended purpose of the file. Currently, only `batch` is supported.
 
 ## Submit your Batch job
 
-`post https://api.kluster.ai/v1/batches`
+`POST https://api.kluster.ai/v1/batches`
 
 Next, to submit a Batch job, you invoke the `batches` endpoint using the `input_file_id` from the previous step.
 
