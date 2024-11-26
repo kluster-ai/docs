@@ -423,6 +423,12 @@ The request body object (chat completion object).
 === "Python"
 
     ```python title="Example: collection of Batch requests"
+    from openai import OpenAI
+    client = OpenAI(
+        base_url="https://api.kluster.ai/v1",  
+        api_key=INSERT_API_KEY, # Replace with your actual API key
+    )
+
     tasks = [{
             "custom_id": "request-1",
             "method": "POST",
@@ -550,15 +556,6 @@ The intended purpose of the file. Currently, only `batch` is supported.
 === "Python"
 
     ```python title="Example request"
-    # Upload the file to kluster.ai
-    from openai import OpenAI
-
-    file_name="mybatchtest.jsonl" # Replace with your input jsonl file
-
-    client = OpenAI(
-        api_key="INSERT_API_KEY", # Replace with your API key
-        base_url="http://api.kluster.ai/v1"
-    )
 
     batch_input_file = client.files.create(
         file=open(file_name, "rb"),
@@ -594,11 +591,11 @@ The intended purpose of the file. Currently, only `batch` is supported.
 
 ---
 
-## Start your Batch job
+## Submit your Batch job
 
 `post https://api.kluster.ai/v1/batches`
 
-Next, to create a Batch job, you invoke the `batches` endpoint using the `input_file_id` from the previous step.
+Next, to submit a Batch job, you invoke the `batches` endpoint using the `input_file_id` from the previous step.
 
 <div class="grid" markdown>
 <div markdown>
@@ -792,15 +789,8 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 === "Python"
 
     ```python title="Example request"
-    # Upload the file to kluster.ai
-    from openai import OpenAI
-    
-    client = OpenAI(
-        api_key="INSERT_API_KEY", # Replace with your API key
-        base_url="http://api.kluster.ai/v1"
-    )
 
-    response = client.batches.create(
+    batch_request = client.batches.create(
         input_file_id=batch_input_file.id,
         endpoint="/v1/chat/completions",
         completion_window="24h",
@@ -885,7 +875,7 @@ The Batch object matching the specified `id`.
     ```python title="Example request"
     # Poll the batch status until it's complete
     while True:
-        batch_status = client.batches.retrieve(response.id)
+        batch_status = client.batches.retrieve(batch_request.id)
         print("Batch status: {}".format(batch_status.status))
         print(
             f"Completed tasks: {batch_status.request_counts.completed} / {batch_status.request_counts.total}"
@@ -1198,7 +1188,7 @@ For requests that failed with a non-HTTP error, this will contain more informati
         results = client.files.content(result_file_id).content
 
         # Save results to a file
-        result_file_name = "data/batch_results.jsonl"
+        result_file_name = "batch_results.jsonl"
         with open(result_file_name, "wb") as file:
             file.write(results)
         print(f"Results saved to {result_file_name}")
@@ -1276,7 +1266,7 @@ table th:first-child {
     # Configure OpenAI client
     client = OpenAI(
         base_url="https://api.kluster.ai/v1", 
-        api_key=INSERT_API_KEY,  # Replace with your actual API key
+        api_key="INSERT_API_KEY" # Replace with your actual API key
     )
 
     client.batches.list(limit=2)
@@ -1464,10 +1454,8 @@ The organization that owns the model.
     ```python title="Example request"
     from openai import OpenAI
 
-    kluster_api_key = "INSERT_API_KEY"
-
     client = OpenAI(
-        api_key=kluster_api_key,
+        api_key="INSERT_API_KEY",
         base_url="http://api.kluster.ai/v1"
     )
 
