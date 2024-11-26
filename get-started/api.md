@@ -13,7 +13,7 @@ Choose your preferred way to interact with the API:
 - Make direct HTTP requests using curl
 - Use any HTTP client that supports REST APIs
 
-The OpenAI python library is recommended, which can be installed with `pip install openai`.
+The OpenAI python library (version 1.0.0 or higher) is recommended, which can be installed with `pip install "openai>=1.0.0"`.
 
 This guide provides copy-and-paste examples for both Python and curl, along with detailed explanations to help you get started quickly.
 
