@@ -874,7 +874,7 @@ The Batch object matching the specified `id`.
             f"Completed tasks: {batch_status.request_counts.completed} / {batch_status.request_counts.total}"
         )
 
-        if batch_status.status.lower() in ["completed", "failed", "canceled"]:
+        if batch_status.status.lower() in ["completed", "failed", "cancelled"]:
             break
 
         time.sleep(10)  # Wait for 10 seconds before checking again
@@ -1246,8 +1246,8 @@ table th:first-child {
 | `finalising`  | The Batch job has completed and the results are being finalized.        |
 | `completed`   | The Batch has completed and the results are ready.                      |
 | `expired`     | The Batch was not completed within the 24-hour time window.             |
-| `canceling`  | The Batch is being cancelled (may take up to 10 minutes).               |
-| `canceled`   | The Batch was cancelled.                                                |
+| `cancelling`  | The Batch is being cancelled (may take up to 10 minutes).               |
+| `cancelled`   | The Batch was cancelled.                                                |
 
 </div>
 
@@ -1325,7 +1325,7 @@ table th:first-child {
 
 `post https://api.kluster.ai/v1/batches/{batch_id}/cancel`
 
-To cancel a Batch job that is currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, during which time the status will show as "canceling".
+To cancel a Batch job that is currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, during which time the status will show as `cancelling`.
 
 <div class="grid" markdown>
 <div markdown>
@@ -1374,7 +1374,7 @@ The Batch object matching the specified ID.
   "errors": null,
   "input_file_id": "myfile-123",
   "completion_window": "24h",
-  "status": "canceling",
+  "status": "cancelling",
   "output_file_id": "myfile-123-output",
   "error_file_id": null,
   "created_at": "1730821906",
