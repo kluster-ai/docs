@@ -1325,7 +1325,7 @@ table th:first-child {
 
 `post https://api.kluster.ai/v1/batches/{batch_id}/cancel`
 
-To cancel a Batch job that is currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, during which time the status will show as "Cancelling".
+To cancel a Batch job that is currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, during which time the status will show as "canceling".
 
 <div class="grid" markdown>
 <div markdown>
@@ -1374,7 +1374,7 @@ The Batch object matching the specified ID.
   "errors": null,
   "input_file_id": "myfile-123",
   "completion_window": "24h",
-  "status": "Cancelling",
+  "status": "canceling",
   "output_file_id": "myfile-123-output",
   "error_file_id": null,
   "created_at": "1730821906",
