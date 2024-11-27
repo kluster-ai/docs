@@ -28,7 +28,7 @@ jobs:
       - name: Move kluster-docs contents to mkdocs repository
         run: |
           mkdir kluster-mkdocs/kluster-docs
-          mv * kluster-mkdocs/kluster-docs &> /dev/null || echo "Error with mv expected due to recursively moving all contents into subfolder"
+          find . -mindepth 1 -maxdepth 1 ! -name 'kluster-mkdocs' -exec mv {} kluster-mkdocs/kluster-docs/ \;
 
       - name: Install pip requirements
         run: |
