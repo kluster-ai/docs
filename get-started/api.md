@@ -430,7 +430,7 @@ The request body object (chat completion object).
     from openai import OpenAI
     client = OpenAI(
         base_url="https://api.kluster.ai/v1",  
-        api_key=INSERT_API_KEY, # Replace with your actual API key
+        api_key="INSERT_API_KEY", # Replace with your actual API key
     )
 
     tasks = [{
@@ -553,7 +553,7 @@ The intended purpose of the file. Currently, only `batch` is supported.
         purpose="batch"
     )
 
-    print(f"Batch file uploaded. File id: {batch_input_file.id}")
+    batch_input_file.to_dict()
     ```
 
 === "curl"
@@ -569,10 +569,10 @@ The intended purpose of the file. Currently, only `batch` is supported.
 ```Json title="Response"
 {
   "id": "myfile-123",
-  "object": "file",
   "bytes": 2797,
   "created_at": "1698959748",
   "filename": "mybatchtest.jsonl",
+  "object": "file",
   "purpose": "batch"
 }
 ```
@@ -787,7 +787,7 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
         completion_window="24h",
     )
 
-    print(f"Batch request submitted. Batch ID: {batch_request.id}")
+    batch_request.to_dict()
     ```
 
 === "curl"
@@ -805,31 +805,31 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 
 ```Json title="Response"
 {
-    "id": "mybatch-123",
-    "object": "batch",
-    "endpoint": "/v1/chat/completions",
-    "errors": null,
-    "input_file_id": "myfile-123",
-    "completion_window": "24h",
-    "status": "Validating",
-    "output_file_id": null,
-    "error_file_id": null,
-    "created_at": 1730821906,
-    "in_progress_at": null,
-    "expires_at": 1730908306,
-    "finalizing_at": null,
-    "completed_at": null,
-    "failed_at": null,
-    "expired_at": null,
-    "cancelling_at": null,
-    "cancelled_at": null,
-    "request_counts": {
-        "total": 0,
-        "completed": 0,
-        "failed": 0
-    },
-    "metadata": {}
-    }
+	"id": "mybatch-123",
+	"completion_window": "24h",
+	"created_at": 1732714585,
+	"endpoint": "/v1/chat/completions",
+	"input_file_id": "myfile-123",
+	"object": "batch",
+	"status": "validating",
+	"cancelled_at": null,
+	"cancelling_at": null,
+	"completed_at": null,
+	"error_file_id": null,
+	"errors": null,
+	"expired_at": null,
+	"expires_at": 1732800985,
+	"failed_at": null,
+	"finalizing_at": null,
+	"in_progress_at": null,
+	"metadata": {},
+	"output_file_id": null,
+	"request_counts": {
+		"completed": 0,
+		"failed": 0,
+		"total": 0
+	}
+}
 ```
 
 </div>
@@ -841,7 +841,7 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 
 `get https://api.kluster.ai/v1/batches/{batch_id}`
 
-To monitor your Batch job's progress, make periodic requests to the `batches` endpoint using your `batch_id` to check its status. The job is complete when the `status` field is `"Completed"`. You can also monitor jobs in the [Batch tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
+To monitor your Batch job's progress, make periodic requests to the `batches` endpoint using your `batch_id` to check its status. The job is complete when the `status` field is `"completed"`. You can also monitor jobs in the [Batch tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
 
 <div class="grid" markdown>
 <div markdown>
@@ -864,6 +864,8 @@ The Batch object matching the specified `id`.
 === "Python"
 
     ```python title="Example request"
+    import time
+
     # Poll the batch status until it's complete
     while True:
         batch_status = client.batches.retrieve(batch_request.id)
@@ -876,6 +878,8 @@ The Batch object matching the specified `id`.
             break
 
         time.sleep(10)  # Wait for 10 seconds before checking again
+
+    batch_status.to_dict()
     ```
 
 === "curl"
@@ -894,7 +898,7 @@ The Batch object matching the specified `id`.
   "errors": null,
   "input_file_id": "myfile-123",
   "completion_window": "24h",
-  "status": "Completed",
+  "status": "completed",
   "output_file_id": "myfile-123-output",
   "error_file_id": null,
   "created_at": "1730821906",
@@ -1230,20 +1234,20 @@ The status of a Batch object can be one of the following:
 
 <style>
 table th:first-child {
-    width: 130px;
+    width: 120px;
 }
 </style>
 
 | Status        | Description                                                             |
 |---------------|-------------------------------------------------------------------------|
-| `Validating`  | The input file is being validated.                                      |
-| `Failed`      | The input file failed the validation process.                           |
-| `InProgress` | The input file was successfully validated and the Batch is in progress. |
-| `Finalizing`  | The Batch job has completed and the results are being finalized.        |
-| `Completed`   | The Batch has completed and the results are ready.                      |
-| `Expired`     | The Batch was not completed within the 24-hour time window.             |
-| `Cancelling`  | The Batch is being cancelled (may take up to 10 minutes).               |
-| `Cancelled`   | The Batch was cancelled.                                                |
+| `validating`  | The input file is being validated.                                      |
+| `failed`      | The input file failed the validation process.                           |
+| `in_progress` | The input file was successfully validated and the Batch is in progress. |
+| `finalising`  | The Batch job has completed and the results are being finalized.        |
+| `completed`   | The Batch has completed and the results are ready.                      |
+| `expired`     | The Batch was not completed within the 24-hour time window.             |
+| `canceling`  | The Batch is being cancelled (may take up to 10 minutes).               |
+| `canceled`   | The Batch was cancelled.                                                |
 
 </div>
 
@@ -1260,7 +1264,7 @@ table th:first-child {
         api_key="INSERT_API_KEY" # Replace with your actual API key
     )
 
-    client.batches.list(limit=2)
+    client.batches.list(limit=2).to_dict()
     ```
 
 === "curl"
@@ -1302,8 +1306,8 @@ table th:first-child {
     },
 { ... },
 ],
-"first_id": "92aa978c-9dd1-49af-baa8-485ae6fb8019",
-"last_id": "0d29e406-51b2-4e5b-a9f4-6cb460eaeb59",
+"first_id": "mybatch-123",
+"last_id": "mybatch-789",
 "has_more": false,
 "count": 1,
 "page": 1,
@@ -1345,9 +1349,10 @@ The Batch object matching the specified ID.
 
     ```python title="Example"
     from openai import OpenAI
+
     client = OpenAI(
         base_url="https://api.kluster.ai/v1",  
-        api_key=INSERT_API_KEY, # Replace with your actual API key
+        api_key="INSERT_API_KEY" # Replace with your actual API key
     )
     client.batches.cancel("mybatch-123") # Replace with your batch id
     ```
@@ -1363,7 +1368,7 @@ The Batch object matching the specified ID.
 
 ```Json title="Response"
 {
-  "id": "642853d4-e816-4be2-8453-6ce6f0f00b9c",
+  "id": "mybatch-123",
   "object": "batch",
   "endpoint": "/v1/chat/completions",
   "errors": null,
@@ -1446,11 +1451,11 @@ The organization that owns the model.
     from openai import OpenAI
 
     client = OpenAI(
-        api_key="INSERT_API_KEY",
-        base_url="http://api.kluster.ai/v1"
+        base_url="http://api.kluster.ai/v1",
+        api_key="INSERT_API_KEY" # Replace with your actual API key
     )
 
-    models=client.models.list()
+    client.models.list().to_dict()
     ```
 
 === "curl"
