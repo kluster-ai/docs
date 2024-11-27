@@ -1,6 +1,6 @@
 name: CheckMkDocsBuild
 on:
-  # Trigger the workflow on a new pull request on main
+  # Trigger the workflow on a pull request targeting the main branch
   pull_request_target:
     branches:
       - main
@@ -10,13 +10,14 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.10.12'
 
       - name: Allow to move dotfiles
         run: |
-          # move also dotfile with *
+          # move also dotfiles with *
           shopt -s dotglob
 
       - name: Clone Kluster MKDocs
@@ -24,7 +25,7 @@ jobs:
           # clone mkdocs repo locally
           git clone https://${{ secrets.KLUSTER_MKDOCS_READ }}@github.com/papermoonio/kluster-mkdocs.git
 
-       - name: Move kluster-docs contents to mkdocs repository
+      - name: Move kluster-docs contents to mkdocs repository
         run: |
           mkdir kluster-mkdocs/kluster-docs
           mv * kluster-mkdocs/kluster-docs &> /dev/null || echo "Error with mv expected due to recursively moving all contents into subfolder"
