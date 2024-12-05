@@ -863,7 +863,7 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 
 ## Monitor Job Progress
 
-`get https://api.kluster.ai/v1/batches/{batch_id}`
+`GET https://api.kluster.ai/v1/batches/{batch_id}`
 
 To monitor your Batch job's progress, make periodic requests to the `batches` endpoint using your `batch_id` to check its status. The job is complete when the `status` field is `"Completed"`. You can also monitor jobs in the [Batch tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
 
@@ -947,7 +947,7 @@ The Batch object matching the specified `id`.
 
 ## Retrieve Results
 
-`get https://api.kluster.ai/v1/files/{output_file_id}/content`
+`GET https://api.kluster.ai/v1/files/{output_file_id}/content`
 
 To retrieve the content of your Batch jobs output file, send a request to the `files` endpoint specifying the `output_file_id`. The output file will be a JSONL file, where each line contains the `custom_id` from your input file request, and the corresponding response.
 
@@ -1270,7 +1270,7 @@ For requests that failed with a non-HTTP error, this will contain more informati
 
 ## List all Batch Jobs
 
-`get https://api.kluster.ai/v1/batches`
+`GET https://api.kluster.ai/v1/batches`
 
 To list all of your Batch jobs, send a request to the `batches` endpoint without specifying a `batch_id`. To constrain the query response, you can also use a limit parameter.
 
@@ -1382,7 +1382,7 @@ The status of a Batch object can be one of the following:
 
 ## Cancelling a Batch Job
 
-`post https://api.kluster.ai/v1/batches/{batch_id}/cancel`
+`POST https://api.kluster.ai/v1/batches/{batch_id}/cancel`
 
 To cancel a Batch job that is currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, during which time the status will show as "Cancelling".
 
@@ -1472,7 +1472,7 @@ You can use this endpoint to retrieve a list of all available models for the klu
 
 **Request**
 
-`get https://api.kluster.ai/v1/models`
+`GET https://api.kluster.ai/v1/models`
 
 Lists the currently available models.
 
