@@ -1,5 +1,5 @@
 title: kluster.ai API
 hide: false
 nav:
- - 'Getting Started': getting-started.ipynb
- - 'Multiple Batch Predictions': multiple-tasks-batch-api.ipynb
+ - 'Getting started': getting-started.ipynb
+ - 'Multiple Batch predictions': multiple-tasks-batch-api.ipynb
