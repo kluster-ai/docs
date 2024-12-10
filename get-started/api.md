@@ -13,19 +13,16 @@ Choose your preferred way to interact with the API:
 - Make direct HTTP requests using curl
 - Use any HTTP client that supports REST APIs
 
+The OpenAI python library is recommended, which can be installed with `pip install openai`.
+
 This guide provides copy-and-paste examples for both Python and curl, along with detailed explanations to help you get started quickly.
 
-The OpenAI python library (version 1.0.0 or higher) is recommended, which can be installed with:
-
-```bash
-pip install "openai>=1.0.0"
-```
-
-## Get Your API Key
+## Get your API key
 
 Navigate to the [platform.kluster.ai](http://platform.kluster.ai){target=\_blank} web app and select **API Keys** from the left-hand menu. Create a new API key by specifying the API key name. You'll need this for all API requests.
 
 ## Creating Batch Jobs as JSON Files
+
 
 To create a Batch job, you'll need to:
 
@@ -39,6 +36,8 @@ To create a Batch job, you'll need to:
             - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
             - `klusterai/Meta-Llama-3.1-70B-Instruct-Turbo` 
             - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
+            - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
+
         - Required: `messages` array with chat messages (system, user, or assistant roles)
         - Optional: Additional chat completion parameters like temperature, max_tokens, etc.
 
@@ -424,15 +423,22 @@ The request body object (chat completion object).
 </div>
 <div markdown>
 
+=== "Bash"
+
+    ```json title="Example: collection of Batch requests"
+    cat << EOF > mybatchtest.jsonl
+    {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": "What is the capital of Argentina?"}],"max_tokens":1000}}
+    {"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-70B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_tokens":1000}}
+    {"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an astronomer."}, {"role": "user", "content": "What is the distance between the Earth and the Moon"}],"max_tokens":1000}}
+    {"custom_id": "request-4", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo", "messages":[{"role": "system", "content": "You are a multilingual, experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"}],"max_tokens":1000}}
+    EOF
+    ```
+
 === "Python"
 
     ```python title="Example: collection of Batch requests"
-    from openai import OpenAI
-    client = OpenAI(
-        base_url="https://api.kluster.ai/v1",  
-        api_key="INSERT_API_KEY", # Replace with your actual API key
-    )
-
+    import json
+    
     tasks = [{
             "custom_id": "request-1",
             "method": "POST",
@@ -458,6 +464,32 @@ The request body object (chat completion object).
                 ],
                 "max_tokens": 1000,
             },
+        },
+        {
+            "custom_id": "request-3",
+            "method": "POST",
+            "url": "/v1/chat/completions",
+            "body": {
+                "model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo",
+                "messages": [
+                    {"role": "system", "content": "You are an astronomer."},
+                    {"role": "user", "content": "What is the distance between the Earth and the Moon?"},
+                ],
+                "max_tokens": 1000,
+            },
+        },
+        {
+            "custom_id": "request-4",
+            "method": "POST",
+            "url": "/v1/chat/completions",
+            "body": {
+                "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+                "messages": [
+                    {"role": "system", "content": "You are a multilingual, experienced maths tutor."},
+                    {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"},
+                ],
+                "max_tokens": 1000,
+            },
         }
         # Additional tasks can be added here
     ]
@@ -467,16 +499,6 @@ The request body object (chat completion object).
     with open(file_name, "w") as file:
         for task in tasks:
             file.write(json.dumps(task) + "\n")
-    ```
-
-=== "curl"
-
-    ```bash title="Example: collection of Batch requests"
-    cat << EOF > mybatchtest.jsonl
-    {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": "What is the capital of Argentina?"}],"max_tokens":1000}}
-    {"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-70B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_tokens":1000}}
-    {"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an astronomer."}, {"role": "user", "content": "What is the distance between the Earth and the Moon"}],"max_tokens":1000}}
-    EOF
     ```
 
 </div>
@@ -544,18 +566,6 @@ The intended purpose of the file. Currently, only `batch` is supported.
 </div>
 <div markdown>
 
-=== "Python"
-
-    ```python title="Example request"
-
-    batch_input_file = client.files.create(
-        file=open(file_name, "rb"),
-        purpose="batch"
-    )
-
-    batch_input_file.to_dict()
-    ```
-
 === "curl"
 
     ```bash title="Example request"
@@ -566,13 +576,36 @@ The intended purpose of the file. Currently, only `batch` is supported.
         -F "purpose=batch"
     ```
 
+=== "Python"
+
+    ```python title="Example request"
+    # Upload the file to kluster.ai
+    from openai import OpenAI
+    import time
+
+    file_name="mybatchtest.jsonl" # Replace with your input jsonl file
+
+    client = OpenAI(
+        api_key="INSERT_API_KEY", # Replace with your API key
+        base_url="http://api.kluster.ai/v1"
+    )
+
+    batch_input_file = client.files.create(
+        file=open(file_name, "rb"),
+        purpose="batch"
+    )
+
+    print(f"Batch file uploaded. File id: {batch_input_file.id}")
+
+    ```
+
 ```Json title="Response"
 {
   "id": "myfile-123",
-  "bytes": 2797,
-  "created_at": "1698959748",
-  "filename": "mybatchtest.jsonl",
   "object": "file",
+  "bytes": 2797,
+  "created_at": "1733832768",
+  "filename": "mybatchtest.jsonl",
   "purpose": "batch"
 }
 ```
@@ -582,11 +615,11 @@ The intended purpose of the file. Currently, only `batch` is supported.
 
 ---
 
-## Submit your Batch job
+## Start your Batch job
 
-`POST https://api.kluster.ai/v1/batches`
+`post https://api.kluster.ai/v1/batches`
 
-Next, to submit a Batch job, you invoke the `batches` endpoint using the `input_file_id` from the previous step.
+Next, to create a Batch job, you invoke the `batches` endpoint using the `input_file_id` from the previous step.
 
 <div class="grid" markdown>
 <div markdown>
@@ -777,19 +810,6 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 </div>
 <div markdown>
 
-=== "Python"
-
-    ```python title="Example request"
-
-    batch_request = client.batches.create(
-        input_file_id=batch_input_file.id,
-        endpoint="/v1/chat/completions",
-        completion_window="24h",
-    )
-
-    batch_request.to_dict()
-    ```
-
 === "curl"
 
     ```bash title="Example request"
@@ -803,33 +823,56 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
         }'
     ```
 
+=== "Python"
+
+    ```python title="Example request"
+
+    # Upload the file to kluster.ai
+
+    from openai import OpenAI
+    
+    client = OpenAI(
+        api_key="INSERT_API_KEY", # Replace with your API key
+        base_url="http://api.kluster.ai/v1"
+    )
+
+    response = client.batches.create(
+        input_file_id=batch_input_file.id,
+        endpoint="/v1/chat/completions",
+        completion_window="24h",
+    )
+
+    print(f"Batch request submitted. Batch ID: {response.id}")
+
+    ```
+
 ```Json title="Response"
 {
-	"id": "mybatch-123",
-	"completion_window": "24h",
-	"created_at": 1732714585,
-	"endpoint": "/v1/chat/completions",
-	"input_file_id": "myfile-123",
-	"object": "batch",
-	"status": "validating",
-	"cancelled_at": null,
-	"cancelling_at": null,
-	"completed_at": null,
-	"error_file_id": null,
-	"errors": null,
-	"expired_at": null,
-	"expires_at": 1732800985,
-	"failed_at": null,
-	"finalizing_at": null,
-	"in_progress_at": null,
-	"metadata": {},
-	"output_file_id": null,
-	"request_counts": {
-		"completed": 0,
-		"failed": 0,
-		"total": 0
-	}
-}
+    "id": "mybatch-123",
+    "object": "batch",
+    "endpoint": "/v1/chat/completions",
+    "errors": null,
+    "input_file_id": "myfile-123",
+    "completion_window": "24h",
+    "status": "Validating",
+    "output_file_id": null,
+    "error_file_id": null,
+    "created_at": 1733832777,
+    "in_progress_at": null,
+    "expires_at": 1733919177,
+    "finalizing_at": null,
+    "completed_at": null,
+    "failed_at": null,
+    "expired_at": null,
+    "cancelling_at": null,
+    "cancelled_at": null,
+    "request_counts": {
+        "total": 0,
+        "completed": 0,
+        "failed": 0
+    },
+    "metadata": {}
+    }
 ```
 
 </div>
@@ -839,9 +882,9 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 
 ## Monitor Job Progress
 
-`GET https://api.kluster.ai/v1/batches/{batch_id}`
+`get https://api.kluster.ai/v1/batches/{batch_id}`
 
-To monitor your Batch job's progress, make periodic requests to the `batches` endpoint using your `batch_id` to check its status. The job is complete when the `status` field is `"completed"`. You can also monitor jobs in the [Batch tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
+To monitor your Batch job's progress, make periodic requests to the `batches` endpoint using your `batch_id` to check its status. The job is complete when the `status` field is `"Completed"`. You can also monitor jobs in the [Batch tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
 
 <div class="grid" markdown>
 <div markdown>
@@ -861,33 +904,30 @@ The Batch object matching the specified `id`.
 </div>
 <div markdown>
 
-=== "Python"
-
-    ```python title="Example request"
-    import time
-
-    # Poll the batch status until it's complete
-    while True:
-        batch_status = client.batches.retrieve(batch_request.id)
-        print("Batch status: {}".format(batch_status.status))
-        print(
-            f"Completed tasks: {batch_status.request_counts.completed} / {batch_status.request_counts.total}"
-        )
-
-        if batch_status.status.lower() in ["completed", "failed", "cancelled"]:
-            break
-
-        time.sleep(10)  # Wait for 10 seconds before checking again
-
-    batch_status.to_dict()
-    ```
-
 === "curl"
 
     ```bash title="Example request"
     curl -s https://api.kluster.ai/v1/batches/mybatch-123 \
         -H "Authorization: Bearer $API_KEY" \
         -H "Content-Type: application/json"
+    ```
+
+=== "Python"
+
+    ```python title="Example request"
+
+    # Poll the batch status until it's complete
+    while True:
+        batch_status = client.batches.retrieve(response.id)
+        print("Batch status: {}".format(batch_status.status))
+        print(
+            f"Completed tasks: {batch_status.request_counts.completed} / {batch_status.request_counts.total}"
+        )
+
+        if batch_status.status.lower() in ["completed", "failed", "canceled"]:
+            break
+
+        time.sleep(10)  # Wait for 10 seconds before checking again
     ```
 
 ```Json title="Response"
@@ -898,21 +938,21 @@ The Batch object matching the specified `id`.
   "errors": null,
   "input_file_id": "myfile-123",
   "completion_window": "24h",
-  "status": "completed",
+  "status": "Completed",
   "output_file_id": "myfile-123-output",
   "error_file_id": null,
-  "created_at": "1730821906",
-  "in_progress_at": null,
-  "expires_at": "1730821906",
-  "finalizing_at": null,
-  "completed_at": null,
+  "created_at": "1733832777",
+  "in_progress_at": "1733832777",
+  "expires_at": "1733919177",
+  "finalizing_at": "1733832781",
+  "completed_at": "1733832781",
   "failed_at": null,
   "expired_at": null,
   "cancelling_at": null,
   "cancelled_at": null,
   "request_counts": {
-    "total": 3,
-    "completed": 3,
+    "total": 4,
+    "completed": 4,
     "failed": 0
   },
   "metadata": {}
@@ -926,7 +966,7 @@ The Batch object matching the specified `id`.
 
 ## Retrieve Results
 
-`GET https://api.kluster.ai/v1/files/{output_file_id}/content`
+`get https://api.kluster.ai/v1/files/{output_file_id}/content`
 
 To retrieve the content of your Batch jobs output file, send a request to the `files` endpoint specifying the `output_file_id`. The output file will be a JSONL file, where each line contains the `custom_id` from your input file request, and the corresponding response.
 
@@ -1173,9 +1213,17 @@ For requests that failed with a non-HTTP error, this will contain more informati
 </div>
 <div markdown>
 
+=== "curl"
+
+    ```bash title="Example request"
+    curl -s https://api.kluster.ai/v1/files/kluster-output-file-123/content \
+        -H "Authorization: Bearer $API_KEY" > batch_output.jsonl
+    ```
+
 === "Python"
 
     ```python title="Example request"
+
     # Check if the batch completed successfully
     if batch_status.status.lower() == "completed":
         # Retrieve the results
@@ -1183,20 +1231,56 @@ For requests that failed with a non-HTTP error, this will contain more informati
         results = client.files.content(result_file_id).content
 
         # Save results to a file
-        result_file_name = "batch_results.jsonl"
+        result_file_name = "data/batch_results.jsonl"
         with open(result_file_name, "wb") as file:
             file.write(results)
         print(f"Results saved to {result_file_name}")
     else:
         print(f"Batch failed with status: {batch_status.status}")
+
     ```
 
-=== "curl"
-
-    ```bash title="Example request"
-    curl -s https://api.kluster.ai/v1/files/kluster-output-file-123/content \
-        -H "Authorization: Bearer $API_KEY" > batch_output.jsonl
-    ```
+```json title="Response"
+{
+"id": "mybatch-123",
+"custom_id": "request-1",
+"response": {
+    "body": {
+    "choices": [
+        {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+            "audio": null,
+            "content": "The capital of Argentina is Buenos Aires.",
+            "function_call": null,
+            "name": null,
+            "refusal": null,
+            "role": "assistant",
+            "tool_calls": null
+        }
+        }
+    ],
+    "created": 1731059413,
+    "id": "mychatcompletion-123",
+    "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
+    "object": "chat.completion",
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+        "completion_tokens": 9,
+        "completion_tokens_details": null,
+        "prompt_tokens": 48,
+        "total_tokens": 57
+    }
+    },
+    "request_id": "response-123",
+    "status_code": 200
+},
+"error": null
+}
+```
 
 </div>
 </div>
@@ -1205,7 +1289,7 @@ For requests that failed with a non-HTTP error, this will contain more informati
 
 ## List all Batch Jobs
 
-`GET https://api.kluster.ai/v1/batches`
+`get https://api.kluster.ai/v1/batches`
 
 To list all of your Batch jobs, send a request to the `batches` endpoint without specifying a `batch_id`. To constrain the query response, you can also use a limit parameter.
 
@@ -1232,26 +1316,27 @@ A list of paginated Batch objects.
 
 The status of a Batch object can be one of the following:
 
-<style>
-table th:first-child {
-    width: 120px;
-}
-</style>
-
 | Status        | Description                                                             |
 |---------------|-------------------------------------------------------------------------|
-| `validating`  | The input file is being validated.                                      |
-| `failed`      | The input file failed the validation process.                           |
-| `in_progress` | The input file was successfully validated and the Batch is in progress. |
-| `finalising`  | The Batch job has completed and the results are being finalized.        |
-| `completed`   | The Batch has completed and the results are ready.                      |
-| `expired`     | The Batch was not completed within the 24-hour time window.             |
-| `cancelling`  | The Batch is being cancelled (may take up to 10 minutes).               |
-| `cancelled`   | The Batch was cancelled.                                                |
+| `Validating`  | The input file is being validated.                                      |
+| `Failed`      | The input file failed the validation process.                           |
+| `InProgress` | The input file was successfully validated and the Batch is in progress. |
+| `Finalizing`  | The Batch job has completed and the results are being finalized.        |
+| `Completed`   | The Batch has completed and the results are ready.                      |
+| `Expired`     | The Batch was not completed within the 24-hour time window.             |
+| `Cancelling`  | The Batch is being cancelled (may take up to 10 minutes).               |
+| `Cancelled`   | The Batch was cancelled.                                                |
 
 </div>
 
 <div markdown>
+
+=== "curl"
+
+    ```bash title="Example request" 
+    curl -s https://api.kluster.ai/v1/batches \
+        -H "Authorization: Bearer $API_KEY"
+    ```
 
 === "Python"
 
@@ -1261,17 +1346,10 @@ table th:first-child {
     # Configure OpenAI client
     client = OpenAI(
         base_url="https://api.kluster.ai/v1", 
-        api_key="INSERT_API_KEY" # Replace with your actual API key
+        api_key=INSERT_API_KEY,  # Replace with your actual API key
     )
 
-    client.batches.list(limit=2).to_dict()
-    ```
-
-=== "curl"
-
-    ```bash title="Example request" 
-    curl -s https://api.kluster.ai/v1/batches \
-        -H "Authorization: Bearer $API_KEY"
+    client.batches.list(limit=2)
     ```
 
 ```Json title="Response"
@@ -1306,8 +1384,8 @@ table th:first-child {
     },
 { ... },
 ],
-"first_id": "mybatch-123",
-"last_id": "mybatch-789",
+"first_id": "92aa978c-9dd1-49af-baa8-485ae6fb8019",
+"last_id": "0d29e406-51b2-4e5b-a9f4-6cb460eaeb59",
 "has_more": false,
 "count": 1,
 "page": 1,
@@ -1323,9 +1401,9 @@ table th:first-child {
 
 ## Cancelling a Batch Job
 
-`POST https://api.kluster.ai/v1/batches/{batch_id}/cancel`
+`post https://api.kluster.ai/v1/batches/{batch_id}/cancel`
 
-To cancel a Batch job that is currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, during which time the status will show as `cancelling`.
+To cancel a Batch job that is currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, during which time the status will show as "Cancelling".
 
 <div class="grid" markdown>
 <div markdown>
@@ -1345,18 +1423,6 @@ The Batch object matching the specified ID.
 </div>
 <div markdown>
 
-=== "Python"
-
-    ```python title="Example"
-    from openai import OpenAI
-
-    client = OpenAI(
-        base_url="https://api.kluster.ai/v1",  
-        api_key="INSERT_API_KEY" # Replace with your actual API key
-    )
-    client.batches.cancel("mybatch-123") # Replace with your batch id
-    ```
-
 === "curl"
 
     ```bash title="Example"
@@ -1366,15 +1432,26 @@ The Batch object matching the specified ID.
         -X POST
     ```
 
+=== "Python"
+
+    ```python title="Example"
+    from openai import OpenAI
+    client = OpenAI(
+        base_url="https://api.kluster.ai/v1",  
+        api_key=INSERT_API_KEY, # Replace with your actual API key
+    )
+    client.batches.cancel("mybatch-123") # Replace with your batch id
+    ```
+
 ```Json title="Response"
 {
-  "id": "mybatch-123",
+  "id": "642853d4-e816-4be2-8453-6ce6f0f00b9c",
   "object": "batch",
   "endpoint": "/v1/chat/completions",
   "errors": null,
   "input_file_id": "myfile-123",
   "completion_window": "24h",
-  "status": "cancelling",
+  "status": "Cancelling",
   "output_file_id": "myfile-123-output",
   "error_file_id": null,
   "created_at": "1730821906",
@@ -1401,20 +1478,21 @@ The Batch object matching the specified ID.
 ---
 
 
-## List Supported Models
+## List supported models
 
 You can use this endpoint to retrieve a list of all available models for the kluster.ai API. Currently supported models:
 
 - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-70B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
+- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
 
 <div class="grid" markdown>
 <div markdown>
 
 **Request**
 
-`GET https://api.kluster.ai/v1/models`
+`get https://api.kluster.ai/v1/models`
 
 Lists the currently available models.
 
@@ -1445,19 +1523,6 @@ The organization that owns the model.
 </div>
 <div markdown>
 
-=== "Python"
-
-    ```python title="Example request"
-    from openai import OpenAI
-
-    client = OpenAI(
-        base_url="http://api.kluster.ai/v1",
-        api_key="INSERT_API_KEY" # Replace with your actual API key
-    )
-
-    client.models.list().to_dict()
-    ```
-
 === "curl"
 
     ```bash title="Example request"
@@ -1465,7 +1530,22 @@ The organization that owns the model.
         -H "Authorization: Bearer $API_KEY" 
     ```
 
-```Json title="Response"
+=== "Python"
+
+    ```python title="Example request"
+    from openai import OpenAI
+
+    kluster_api_key = "INSERT_API_KEY"
+
+    client = OpenAI(
+        api_key=kluster_api_key,
+        base_url="http://api.kluster.ai/v1"
+    )
+
+    models=client.models.list()
+    ```
+
+```json title="Response"
 {
   "object": "list",
   "data": [
@@ -1485,6 +1565,12 @@ The organization that owns the model.
       "id": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
       "object": "model",
       "created": 1731336610,
+      "owned_by": "klusterai"
+    },
+    {
+      "id": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+      "object": "model",
+      "created": 1733777629,
       "owned_by": "klusterai"
     }
   ]
