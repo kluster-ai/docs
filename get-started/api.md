@@ -39,6 +39,7 @@ To create a Batch job, you'll need to:
             - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
             - `klusterai/Meta-Llama-3.1-70B-Instruct-Turbo` 
             - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
+            - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
         - Required: `messages` array with chat messages (system, user, or assistant roles)
         - Optional: Additional chat completion parameters like temperature, max_tokens, etc.
 
@@ -458,6 +459,19 @@ The request body object (chat completion object).
                 ],
                 "max_tokens": 1000,
             },
+        },
+        {
+            "custom_id": "request-4",
+            "method": "POST",
+            "url": "/v1/chat/completions",
+            "body": {
+                "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+                "messages": [
+                    {"role": "system", "content": "You are a multilingual, experienced maths tutor."},
+                    {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"},
+                ],
+                "max_tokens": 1000,
+            },
         }
         # Additional tasks can be added here
     ]
@@ -476,6 +490,7 @@ The request body object (chat completion object).
     {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": "What is the capital of Argentina?"}],"max_tokens":1000}}
     {"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-70B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_tokens":1000}}
     {"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an astronomer."}, {"role": "user", "content": "What is the distance between the Earth and the Moon"}],"max_tokens":1000}}
+    {"custom_id": "request-4", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo", "messages":[{"role": "system", "content": "You are a multilingual, experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"}],"max_tokens":1000}}
     EOF
     ```
 
@@ -570,7 +585,7 @@ The intended purpose of the file. Currently, only `batch` is supported.
 {
   "id": "myfile-123",
   "bytes": 2797,
-  "created_at": "1698959748",
+  "created_at": "1733832768",
   "filename": "mybatchtest.jsonl",
   "object": "file",
   "purpose": "batch"
@@ -807,7 +822,7 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 {
 	"id": "mybatch-123",
 	"completion_window": "24h",
-	"created_at": 1732714585,
+	"created_at": 1733832777,
 	"endpoint": "/v1/chat/completions",
 	"input_file_id": "myfile-123",
 	"object": "batch",
@@ -818,7 +833,7 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 	"error_file_id": null,
 	"errors": null,
 	"expired_at": null,
-	"expires_at": 1732800985,
+	"expires_at": 1733919177,
 	"failed_at": null,
 	"finalizing_at": null,
 	"in_progress_at": null,
@@ -901,18 +916,18 @@ The Batch object matching the specified `id`.
   "status": "completed",
   "output_file_id": "myfile-123-output",
   "error_file_id": null,
-  "created_at": "1730821906",
-  "in_progress_at": null,
-  "expires_at": "1730821906",
-  "finalizing_at": null,
-  "completed_at": null,
+  "created_at": "1733832777",
+  "in_progress_at": "1733832777",
+  "expires_at": "1733919177",
+  "finalizing_at": "1733832781",
+  "completed_at": "1733832781",
   "failed_at": null,
   "expired_at": null,
   "cancelling_at": null,
   "cancelled_at": null,
   "request_counts": {
-    "total": 3,
-    "completed": 3,
+    "total": 4,
+    "completed": 4,
     "failed": 0
   },
   "metadata": {}
@@ -1288,18 +1303,18 @@ table th:first-child {
     "status": "completed",
     "output_file_id": "myfile-123-output",
     "error_file_id": null,
-    "created_at": "1730821906",
-    "in_progress_at": null,
-    "expires_at": "1730821906",
-    "finalizing_at": null,
-    "completed_at": null,
+    "created_at": "1733832777",
+    "in_progress_at": "1733832777",
+    "expires_at": "1733919177",
+    "finalizing_at": "1733832781",
+    "completed_at": "1733832781",
     "failed_at": null,
     "expired_at": null,
     "cancelling_at": null,
     "cancelled_at": null,
     "request_counts": {
-        "total": 2,
-        "completed": 2,
+        "total": 4,
+        "completed": 4,
         "failed": 0
     },
     "metadata": {}
@@ -1408,6 +1423,7 @@ You can use this endpoint to retrieve a list of all available models for the klu
 - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-70B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
+- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
 
 <div class="grid" markdown>
 <div markdown>
@@ -1485,6 +1501,12 @@ The organization that owns the model.
       "id": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
       "object": "model",
       "created": 1731336610,
+      "owned_by": "klusterai"
+    },
+        {
+      "id": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+      "object": "model",
+      "created": 1733777629,
       "owned_by": "klusterai"
     }
   ]
