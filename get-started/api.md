@@ -3,7 +3,7 @@ title: kluster.ai API
 description: The kluster.ai API getting started guide provides examples and instructions for submitting and managing Batch jobs using kluster.ai's OpenAI-compatible API.
 ---
 
-# Start Using the kluster.ai API
+# Start using the kluster.ai API
 
 The kluster.ai API provides a straightforward way to work with Large Language Models (LLMs) at scale. It is compatible with OpenAI Python library and Batch API, making it easy to integrate into your existing workflows with minimal code changes.
 
@@ -21,11 +21,11 @@ The OpenAI python library (version 1.0.0 or higher) is recommended, which can be
 pip install "openai>=1.0.0"
 ```
 
-## Get Your API Key
+## Get your API key
 
 Navigate to the [platform.kluster.ai](http://platform.kluster.ai){target=\_blank} web app and select **API Keys** from the left-hand menu. Create a new API key by specifying the API key name. You'll need this for all API requests.
 
-## Creating Batch Jobs as JSON Files
+## Creating Batch jobs as JSON files
 
 To create a Batch job, you'll need to:
 
@@ -837,7 +837,7 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 
 ---
 
-## Monitor Job Progress
+## Monitor job progress
 
 `GET https://api.kluster.ai/v1/batches/{batch_id}`
 
@@ -924,7 +924,7 @@ The Batch object matching the specified `id`.
 
 ---
 
-## Retrieve Results
+## Retrieve results
 
 `GET https://api.kluster.ai/v1/files/{output_file_id}/content`
 
@@ -1203,7 +1203,7 @@ For requests that failed with a non-HTTP error, this will contain more informati
 
 ---
 
-## List all Batch Jobs
+## List all Batch jobs
 
 `GET https://api.kluster.ai/v1/batches`
 
@@ -1321,7 +1321,7 @@ table th:first-child {
 
 ---
 
-## Cancelling a Batch Job
+## Cancelling a Batch job
 
 `POST https://api.kluster.ai/v1/batches/{batch_id}/cancel`
 
@@ -1401,7 +1401,7 @@ The Batch object matching the specified ID.
 ---
 
 
-## List Supported Models
+## List supported models
 
 You can use this endpoint to retrieve a list of all available models for the kluster.ai API. Currently supported models:
 
