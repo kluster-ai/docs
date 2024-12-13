@@ -624,7 +624,7 @@ The endpoint to be used for all requests in the Batch. Currently, only `/v1/chat
 
 `completion_window` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-The time frame within which the Batch should be processed. Currently, we support 1, 3, 6, 12, and 24 hour completion windows to suit a range of use cases and budget requirements. In the code samples, we use **24h**. For more information on pricing, refer to the pricing page on the kluster.ai [website](https://www.kluster.ai).
+The time frame within which the Batch should be processed. Currently, we support 1, 3, 6, 12, and 24 hour completion windows to suit a range of use cases and budget requirements. In the code samples, we use **24h**. For more information on pricing, refer to the pricing section on the kluster.ai [website](https://www.kluster.ai).
 
 ---
 
