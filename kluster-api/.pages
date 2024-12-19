@@ -1,0 +1,6 @@
+title: kluster API
+hide: false
+nav:
+ - 'How to get an API key': api-key.md
+ - 'Try the API': 'get-started.md'
+ - 'API Reference': api.md

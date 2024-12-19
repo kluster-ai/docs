@@ -1,7 +1,7 @@
 title: kluster.ai API
 hide: false
 nav:
- - 'Getting started': getting-started.ipynb
+#  - 'Getting started': getting-started.ipynb
  - 'Text classification': text-classification-api.ipynb
  - 'Sentiment analysis': sentiment-analysis-api.ipynb
  - 'Keyword extraction': keyword-extraction-api.ipynb
