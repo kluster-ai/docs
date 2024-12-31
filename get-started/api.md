@@ -23,7 +23,7 @@ pip install "openai>=1.0.0"
 
 ## Get your API key
 
-Navigate to the [platform.kluster.ai](http://platform.kluster.ai){target=\_blank} web app and select **API Keys** from the left-hand menu. Create a new API key by specifying the API key name. You'll need this for all API requests.
+All API requests require an API key for authentication. If you need to create an API key, please follow the steps in our [Get an API key](../get-api-key) guide.
 
 ## Creating Batch jobs as JSON files
 
