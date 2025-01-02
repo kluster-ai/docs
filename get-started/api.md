@@ -602,7 +602,7 @@ Next, to submit a Batch job, you invoke the `batches` endpoint using the `input_
 
 The ID of an uploaded file that contains requests for the new Batch.
 
-Your input file must be formatted as a [JSONL file](https://jsonlines.org/){target=\_blank}, and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests and currently a maximum of 6GB per file.
+Your input file must be formatted as a [JSONL file](https://jsonlines.org/){target=\_blank}, and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests and currently a maximum of 200MB per file.
 
 ---
 
