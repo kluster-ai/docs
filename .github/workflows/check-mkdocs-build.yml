@@ -35,6 +35,7 @@ jobs:
           cd kluster-mkdocs
           # upgrade pip
           pip3 install --upgrade pip setuptools==65.7.0
+          pip3 install mistune==3.0.2 # temporary pin until https://github.com/lepture/mistune/issues/403 is resolved.
           # install dependencies quietly
           pip3 install -r requirements.txt &> /dev/null && echo "Dependencies installed" || echo "Error while installing dependencies"
 
