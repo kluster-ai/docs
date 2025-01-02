@@ -37,7 +37,6 @@ To create a Batch job, you'll need to:
     - A request body containing:
         - Required: `model` - one of:
             - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
-            - `klusterai/Meta-Llama-3.1-70B-Instruct-Turbo` 
             - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
             - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
         - Required: `messages` array with chat messages (system, user, or assistant roles)
@@ -442,7 +441,7 @@ The request body object (chat completion object).
             "method": "POST",
             "url": "/v1/chat/completions",
             "body": {
-                "model": "klusterai/Meta-Llama-3.1-70B-Instruct-Turbo",
+                "model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo",
                 "messages": [
                     {"role": "system", "content": "You are a maths tutor."},
                     {"role": "user", "content": "Explain the Pythagorean theorem."},
@@ -451,13 +450,13 @@ The request body object (chat completion object).
             },
         },
         {
-            "custom_id": "request-4",
+            "custom_id": "request-3",
             "method": "POST",
             "url": "/v1/chat/completions",
             "body": {
                 "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
                 "messages": [
-                    {"role": "system", "content": "You are a multilingual, experienced maths tutor."},
+                    {"role": "system", "content": "You are a multilingual maths tutor."},
                     {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"},
                 ],
                 "max_tokens": 1000,
@@ -478,9 +477,8 @@ The request body object (chat completion object).
     ```bash title="Example: collection of Batch requests"
     cat << EOF > mybatchtest.jsonl
     {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": "What is the capital of Argentina?"}],"max_tokens":1000}}
-    {"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-70B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_tokens":1000}}
-    {"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an astronomer."}, {"role": "user", "content": "What is the distance between the Earth and the Moon"}],"max_tokens":1000}}
-    {"custom_id": "request-4", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo", "messages":[{"role": "system", "content": "You are a multilingual, experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"}],"max_tokens":1000}}
+    {"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are a maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_tokens":1000}}
+    {"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo", "messages":[{"role": "system", "content": "You are a multilingual maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"}],"max_tokens":1000}}
     EOF
     ```
 
@@ -918,8 +916,8 @@ The Batch object matching the specified `id`.
   "cancelling_at": null,
   "cancelled_at": null,
   "request_counts": {
-    "total": 4,
-    "completed": 4,
+    "total": 3,
+    "completed": 3,
     "failed": 0
   },
   "metadata": {}
@@ -1305,8 +1303,8 @@ table th:first-child {
     "cancelling_at": null,
     "cancelled_at": null,
     "request_counts": {
-        "total": 4,
-        "completed": 4,
+        "total": 3,
+        "completed": 3,
         "failed": 0
     },
     "metadata": {}
@@ -1415,7 +1413,6 @@ The Batch object matching the specified ID.
 You can use this endpoint to retrieve a list of all available models for the kluster.ai API. Currently supported models:
 
 - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.1-70B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
 
@@ -1477,12 +1474,6 @@ The organization that owns the model.
       "id": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo",
       "object": "model",
       "created": 1731336418,
-      "owned_by": "klusterai"
-    },
-    {
-      "id": "klusterai/Meta-Llama-3.1-70B-Instruct-Turbo",
-      "object": "model",
-      "created": 1731336610,
       "owned_by": "klusterai"
     },
     {
