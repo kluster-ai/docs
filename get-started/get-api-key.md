@@ -24,12 +24,12 @@ If you haven't already created an account with kluster.ai:
 ![Signup Page](/images/get-started/key-gen/sign-up.png){width=400px}
 
 ## Step 2 - generate a new API key
-1. Log in to the platform through the [kluster.ai login page](https://platform.kluster.ai/login){target=\_blank} and select **API Keys** on the left-hand side menu
-2. In the [API Keys](https://platform.kluster.ai/apikeys){target=\_blank} section, click the **Issue New API Key** button.
 
-    ![Issue New API Key](/images/get-started/key-gen/api-key-management.png)
+After you've signed up or logged into the platform through the [kluster.ai login page](https://platform.kluster.ai/login){target=\_blank}, select **API Keys** on the left-hand side menu. Next, in the [API Keys](https://platform.kluster.ai/apikeys){target=\_blank} section, click the **Issue New API Key** button.
 
-3. Enter a descriptive name for your API key in the popup, then click **Create Key** to generate it.
+![Issue New API Key](/images/get-started/key-gen/api-key-management.png)
+
+Lastly, enter a descriptive name for your API key in the popup, then click **Create Key**:
 
 ![Generate API Key](/images/get-started/key-gen/create-new-api-key.png){ width=400px }
 
