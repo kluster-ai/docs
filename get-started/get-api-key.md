@@ -14,13 +14,12 @@ This guide helps you obtain an API key, the first step to leveraging kluster.ai'
 
 If you haven't already created an account with kluster.ai:
 
-- Visit the [kluster.ai registration page](https://platform.kluster.ai/signup){target=\_blank}
-- Fill in Your Details:
+1. Visit the [kluster.ai registration page](https://platform.kluster.ai/signup){target=\_blank}
+2. Fill in Your Details:
     - `Full name` - enter your full name
     - `Email` - provide a valid email address
     - `Password` - create a secure password
-- Complete Registration:
-   - Click the **Sign up** button
+3. Click the **Sign up** button
 
 ![Signup Page](/images/get-started/key-gen/sign-up.png){width=400px}
 
