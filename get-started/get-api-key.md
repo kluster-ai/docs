@@ -9,7 +9,6 @@ description: The API key Setup Guide provides step-by-step instructions for gene
 
 This guide helps you obtain an API key, the first step to leveraging kluster.ai's powerful and cost-effective AI capabilities.
 
-Follow the steps below to obtain your API key and start leveraging our powerful, cost-effective AI capabilities.
 
 ## Step 1 - create an account
 
