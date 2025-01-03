@@ -40,6 +40,8 @@ After you've signed up or logged into the platform through the [kluster.ai login
 1. Once generated, your API key will be displayed
 2. Copy the key and store it in a secure location, such as a password manager
 
+![Copy API key](/images/get-started/key-gen/image-4.webp)
+
 !!! warning "Warning"
     For security reasons, you won't be able to view the key again. If lost, you will need to generate a new one.
 
@@ -53,14 +55,15 @@ After you've signed up or logged into the platform through the [kluster.ai login
 
 ## Managing your API Keys
 
-The API Keys Management section allows you to efficiently manage your kluster.ai API keys. You can create, view, and delete API keys by taking the following steps:
+The API Keys Management section allows you to efficiently manage your kluster.ai API keys. You can create, view, and delete API keys by navigating to the [API Keys](https://platform.kluster.ai/apikeys){target=\_blank} section. Your API keys will be listed in the **API Keys Management** section.
 
-- **Navigate to API keys** - go to the [API Keys](https://platform.kluster.ai/apikeys){target=\_blank} section
-- **View your keys** - all your API keys will be listed in the **API Keys Management** section
-- **Delete an API key:**
-    - Locate the API key you wish to delete in the list
-    - Click the trash bin icon ( :octicons-trash-24: ) in the **Actions** column
-    - Confirm the deletion when prompted
+To delete an API key, take the following steps:
+
+1. Locate the API key you wish to delete in the list
+2. Click the trash bin icon ( :octicons-trash-24: ) in the **Actions** column
+3. Confirm the deletion when prompted
+
+![Delete API key](/images/get-started/key-gen/image-5.webp)
 
 !!! warning "Warning"
     Once deleted, the API key cannot be used again and you must generate a new one if needed
