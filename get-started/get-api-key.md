@@ -5,7 +5,9 @@ description: The API key Setup Guide provides step-by-step instructions for gene
 
 # Generate your kluster.ai API key
 
-Unlock scalable Large Language Models with the kluster.ai API. Our Adaptive Inference service dynamically scales resources for high-volume, asynchronous processing, delivering lower costs than traditional batch solutions. Let [kluster.ai](https://www.kluster.ai/){target=\_blank} manage the infrastructure and optimization, so you can focus on building your AI applications. 
+[Kluster.ai](https://www.kluster.ai/){target=\_blank}  provides a unique API service with an Adaptive Inference service that dynamically scales resources for high-volume, asynchronous processing, delivering lower costs than traditional batch solutions.
+
+This guide helps you obtain an API key, the first step to leveraging kluster.ai's powerful and cost-effective AI capabilities.
 
 Follow the steps below to obtain your API key and start leveraging our powerful, cost-effective AI capabilities.
 
