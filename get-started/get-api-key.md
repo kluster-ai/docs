@@ -35,7 +35,7 @@ Lastly, enter a descriptive name for your API key in the popup, then click **Cre
 
 ## Step 3 - copy and secure your API key
 
-1. Once generated, your API key will be displayed.
+1. Once generated, your API key will be displayed
 2. **Copy** the key and store it in a secure location.
 
 !!! warning "Warning"
