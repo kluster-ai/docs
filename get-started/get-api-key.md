@@ -47,7 +47,7 @@ After you've signed up or logged into the platform through the [kluster.ai login
 
 !!! abstract "Security tips"
     - **Keep it secret** - do not share your API key publicly or commit it to version control systems
-    - **Use environment variables** - store your API key in environment variables instead of hardcoding them.
+    - **Use environment variables** - store your API key in environment variables instead of hardcoding them
     - **Regenerate if compromised** - if you suspect your API key has been exposed, regenerate it immediately from the **API Keys** section.
 
 !!! tip "Troubleshooting"
