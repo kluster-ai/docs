@@ -53,7 +53,7 @@ After you've signed up or logged into the platform through the [kluster.ai login
 !!! tip "Troubleshooting"
     - **Need further assistance?** Contact our [Support Team](https://calendly.com/klusterai-jacob/support-call){target=\_blank}.
 
-## Managing your API Keys
+## Managing your API keys
 
 The API Keys Management section allows you to efficiently manage your kluster.ai API keys. You can create, view, and delete API keys by navigating to the [API Keys](https://platform.kluster.ai/apikeys){target=\_blank} section. Your API keys will be listed in the **API Keys Management** section.
 
