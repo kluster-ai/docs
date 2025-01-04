@@ -35,7 +35,7 @@ After you've signed up or logged into the platform through the [kluster.ai login
 
     ![Generate API Key](/images/get-started/key-gen/image-3.webp)
 
-## Step 3 - Copy and Secure your API key
+## Step 3 - Copy and secure your API key
 
 1. Once generated, your API key will be displayed
 2. Copy the key and store it in a secure location, such as a password manager
