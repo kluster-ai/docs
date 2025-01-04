@@ -68,6 +68,6 @@ To delete an API key, take the following steps:
 !!! warning "Warning"
     Once deleted, the API key cannot be used again and you must generate a new one if needed
 
-## Next Steps
+## Next steps
 
 Now that you have your API key, you can start integrating kluster.ai's LLMs into your applications. Refer to our [Getting Started](/tutorials/klusterai-api/getting-started/){target=\_blank} for detailed instructions on using the API.
