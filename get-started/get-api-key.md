@@ -25,7 +25,6 @@ If you haven't already created an account with kluster.ai, visit the [kluster.ai
 After you've signed up or logged into the platform through the [kluster.ai login page](https://platform.kluster.ai/login){target=\_blank}, take the following steps:
 
 1. Select **API Keys** on the left-hand side menu
-
 2. In the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section, click the **Issue New API Key** button
 
     ![Issue New API Key](/images/get-started/get-api-key/get-api-key-2.webp)

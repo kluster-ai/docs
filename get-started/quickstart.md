@@ -9,13 +9,13 @@ The kluster.ai API provides a straightforward way to work with Large Language Mo
 
 Choose your preferred way to interact with the API:
 
-- Use the OpenAI Python library (recommended)
+- Use the [OpenAI Python library](https://github.com/openai/openai-python){target=\_blank} (recommended)
 - Make direct HTTP requests using curl
 - Use any HTTP client that supports REST APIs
 
 This guide provides copy-and-paste examples for both Python and curl, along with detailed explanations to help you get started quickly.
 
-The OpenAI python library (version 1.0.0 or higher) is recommended, which can be installed with:
+The OpenAI Python library (version 1.0.0 or higher) is recommended, which can be installed with:
 
 ```bash
 pip install "openai>=1.0.0"
@@ -23,66 +23,45 @@ pip install "openai>=1.0.0"
 
 ## Get your API key
 
-All API requests require an API key for authentication. If you need to create an API key, please follow the steps in the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
+Navigate to the [platform.kluster.ai](http://platform.kluster.ai){target=\_blank} web app and select **API Keys** from the left-hand menu. Create a new API key by specifying the API key name. You'll need this for all API requests.
 
-## Creating Batch jobs as JSON files
+For step-by-step instructions, refer to the [Generate your kluster.ai API key](/get-started/api-key/){target=\_blank} guide.
+
+## Create Batch jobs as JSON files
 
 To create a Batch job, you'll need to:
 
 1. Create a [JSON Lines](https://jsonlines.org/) file (`.jsonl`)
 2. Add one or more batch requests to the file
 3. Ensure each request includes:
-    - A unique `custom_id`
-    - The endpoint `/v1/chat/completions`
-    - A request body containing:
-        - **Required** - name of the `model` to use, can be one of:
+    - `custom_id` ++"string"++ - a unique request ID that will be used to match outputs to inputs
+    - `method` ++"string"++ - the HTTP method to be used for the request. Currently, only `POST` is supported
+    - `url` ++"string"++ -  the endpoint `/v1/chat/completions`
+    - `body` ++"object"++ - a request body containing:
+        - `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of the `model` to use, can be one of:
             - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
-            - `klusterai/Meta-Llama-3.1-70B-Instruct-Turbo` 
+            - `klusterai/Meta-Llama-3.1-70B-Instruct-Turbo`
             - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
             - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
-        - **Required** - a `messages` array with chat messages (`system`, `user`, or `assistant` roles)
-        - **Optional** - additional [chat completion parameters](/api-reference/chat/#chat-completion-object) like `temperature`, `max_tokens`, etc.
 
-You can see the full list of available models programmatically using the [list supported models](#list-supported-models) endpoint.
+            !!! tip
+                You can see the full list of available models programmatically using the [list supported models](#list-supported-models) endpoint.
 
-To summarize, each request should have the following:
-
-**Batch request input object**
-
-`custom_id` ++"string"++
-
-A developer-provided per-request ID that will be used to match outputs to inputs.
-
----
-
-`method` ++"string"++
-
-The HTTP method to be used for the request. Currently, only `POST` is supported.
-
----
-
-`url` ++"string"++
-
-The `/v1/chat/completions` API relative URL.
-
----
-
-`body` ++"object"++ <span class="required" markdown>++"required"++</span>
-
-The request body object ([chat completion object](/api-reference/chat/#chat-completion-object){target=\_blank}).
-
----
+        - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles)
+        - Any optional [chat completion parameters](/api-reference/chat/#create-chat-completion){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
 
 === "Python"
 
     ```python
     from openai import OpenAI
+
     client = OpenAI(
-        base_url="https://api.kluster.ai/v1",  
-        api_key="INSERT_API_KEY", # Replace with your actual API key
+        base_url="https://api.kluster.ai/v1",
+        api_key="INSERT_API_KEY",  # Replace with your actual API key
     )
 
-    requests = [{
+    requests = [
+        {
             "custom_id": "request-1",
             "method": "POST",
             "url": "/v1/chat/completions",
@@ -92,7 +71,7 @@ The request body object ([chat completion object](/api-reference/chat/#chat-comp
                     {"role": "system", "content": "You are a helpful assistant."},
                     {"role": "user", "content": "What is the capital of Argentina?"},
                 ],
-                "max_tokens": 1000,
+                "max_completion_tokens": 1000,
             },
         },
         {
@@ -105,7 +84,7 @@ The request body object ([chat completion object](/api-reference/chat/#chat-comp
                     {"role": "system", "content": "You are a maths tutor."},
                     {"role": "user", "content": "Explain the Pythagorean theorem."},
                 ],
-                "max_tokens": 1000,
+                "max_completion_tokens": 1000,
             },
         },
         {
@@ -115,12 +94,18 @@ The request body object ([chat completion object](/api-reference/chat/#chat-comp
             "body": {
                 "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
                 "messages": [
-                    {"role": "system", "content": "You are a multilingual, experienced maths tutor."},
-                    {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"},
+                    {
+                        "role": "system",
+                        "content": "You are a multilingual, experienced maths tutor.",
+                    },
+                    {
+                        "role": "user",
+                        "content": "Explain the Pythagorean theorem in Spanish",
+                    },
                 ],
-                "max_tokens": 1000,
+                "max_completion_tokens": 1000,
             },
-        }
+        },
         # Additional tasks can be added here
     ]
 
@@ -128,23 +113,23 @@ The request body object ([chat completion object](/api-reference/chat/#chat-comp
     file_name = "mybatchtest.jsonl"
     with open(file_name, "w") as file:
         for request in requests:
-            file.write(json.dumps(task) + "\n")
+            file.write(json.dumps(request) + "\n")
     ```
 
 === "curl"
 
     ```bash
     cat << EOF > mybatchtest.jsonl
-    {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": "What is the capital of Argentina?"}],"max_tokens":1000}}
-    {"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-70B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_tokens":1000}}
-    {"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an astronomer."}, {"role": "user", "content": "What is the distance between the Earth and the Moon"}],"max_tokens":1000}}
-    {"custom_id": "request-4", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo", "messages":[{"role": "system", "content": "You are a multilingual, experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"}],"max_tokens":1000}}
+    {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": "What is the capital of Argentina?"}],"max_completion_tokens":1000}}
+    {"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-70B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
+    {"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an astronomer."}, {"role": "user", "content": "What is the distance between the Earth and the Moon"}],"max_completion_tokens":1000}}
+    {"custom_id": "request-4", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo", "messages":[{"role": "system", "content": "You are a multilingual, experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"}],"max_completion_tokens":1000}}
     EOF
     ```
 
-## Uploading Batch job files
+## Upload Batch job files
 
-Upload your [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `files` endpoint. The response will contain a `id` field - save this value as you'll need it in the next step where it's referred to as `input_file_id`. You can also view all your uploaded files in the [Files tab](https://platform.kluster.ai/files) of the kluster.ai platform.
+Upload your [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `files` endpoint. The response will contain a `id` field-save this value as you'll need it in the next step where it's referred to as `input_file_id`. You can also view all your uploaded files in the [Files tab](https://platform.kluster.ai/files){target=\_blank} of the kluster.ai platform.
 
 === "Python"
 
@@ -170,12 +155,12 @@ Upload your [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `fi
 
 ```Json title="Response"
 {
-  "id": "myfile-123",
-  "bytes": 2797,
-  "created_at": "1733832768",
-  "filename": "mybatchtest.jsonl",
-  "object": "file",
-  "purpose": "batch"
+    "id": "myfile-123",
+    "bytes": 2797,
+    "created_at": "1733832768",
+    "filename": "mybatchtest.jsonl",
+    "object": "file",
+    "purpose": "batch"
 }
 ```
 
@@ -211,30 +196,30 @@ Next, to submit a Batch job, you invoke the `batches` endpoint using the `input_
 
 ```Json title="Response"
 {
-	"id": "mybatch-123",
-	"completion_window": "24h",
-	"created_at": 1733832777,
-	"endpoint": "/v1/chat/completions",
-	"input_file_id": "myfile-123",
-	"object": "batch",
-	"status": "validating",
-	"cancelled_at": null,
-	"cancelling_at": null,
-	"completed_at": null,
-	"error_file_id": null,
-	"errors": null,
-	"expired_at": null,
-	"expires_at": 1733919177,
-	"failed_at": null,
-	"finalizing_at": null,
-	"in_progress_at": null,
-	"metadata": {},
-	"output_file_id": null,
-	"request_counts": {
-		"completed": 0,
-		"failed": 0,
-		"total": 0
-	}
+    "id": "mybatch-123",
+    "completion_window": "24h",
+    "created_at": 1733832777,
+    "endpoint": "/v1/chat/completions",
+    "input_file_id": "myfile-123",
+    "object": "batch",
+    "status": "validating",
+    "cancelled_at": null,
+    "cancelling_at": null,
+    "completed_at": null,
+    "error_file_id": null,
+    "errors": null,
+    "expired_at": null,
+    "expires_at": 1733919177,
+    "failed_at": null,
+    "finalizing_at": null,
+    "in_progress_at": null,
+    "metadata": {},
+    "output_file_id": null,
+    "request_counts": {
+        "completed": 0,
+        "failed": 0,
+        "total": 0
+    }
 }
 ```
 
@@ -273,30 +258,30 @@ To monitor your Batch job's progress, make periodic requests to the `batches` en
 
 ```Json title="Response"
 {
-  "id": "mybatch-123",
-  "object": "batch",
-  "endpoint": "/v1/chat/completions",
-  "errors": null,
-  "input_file_id": "myfile-123",
-  "completion_window": "24h",
-  "status": "completed",
-  "output_file_id": "myfile-123-output",
-  "error_file_id": null,
-  "created_at": "1733832777",
-  "in_progress_at": "1733832777",
-  "expires_at": "1733919177",
-  "finalizing_at": "1733832781",
-  "completed_at": "1733832781",
-  "failed_at": null,
-  "expired_at": null,
-  "cancelling_at": null,
-  "cancelled_at": null,
-  "request_counts": {
-    "total": 4,
-    "completed": 4,
-    "failed": 0
-  },
-  "metadata": {}
+    "id": "mybatch-123",
+    "object": "batch",
+    "endpoint": "/v1/chat/completions",
+    "errors": null,
+    "input_file_id": "myfile-123",
+    "completion_window": "24h",
+    "status": "completed",
+    "output_file_id": "myfile-123-output",
+    "error_file_id": null,
+    "created_at": "1733832777",
+    "in_progress_at": "1733832777",
+    "expires_at": "1733919177",
+    "finalizing_at": "1733832781",
+    "completed_at": "1733832781",
+    "failed_at": null,
+    "expired_at": null,
+    "cancelling_at": null,
+    "cancelled_at": null,
+    "request_counts": {
+        "total": 4,
+        "completed": 4,
+        "failed": 0
+    },
+    "metadata": {}
 }
 ```
 
@@ -396,7 +381,7 @@ To list all of your Batch jobs, send a request to the `batches` endpoint without
 }
 ```
 
-## Cancelling a Batch job
+## Cancel a Batch job
 
 To cancel a Batch job that is currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, during which time the status will show as `cancelling`.
 
@@ -423,30 +408,30 @@ To cancel a Batch job that is currently in progress, send a request to the `canc
 
 ```Json title="Response"
 {
-  "id": "mybatch-123",
-  "object": "batch",
-  "endpoint": "/v1/chat/completions",
-  "errors": null,
-  "input_file_id": "myfile-123",
-  "completion_window": "24h",
-  "status": "cancelling",
-  "output_file_id": "myfile-123-output",
-  "error_file_id": null,
-  "created_at": "1730821906",
-  "in_progress_at": "1730821911",
-  "expires_at": "1730821906",
-  "finalizing_at": null,
-  "completed_at": null,
-  "failed_at": null,
-  "expired_at": null,
-  "cancelling_at": "1730821906",
-  "cancelled_at": null,
-  "request_counts": {
-    "total": 3,
-    "completed": 3,
-    "failed": 0
-  },
-  "metadata": {}
+    "id": "mybatch-123",
+    "object": "batch",
+    "endpoint": "/v1/chat/completions",
+    "errors": null,
+    "input_file_id": "myfile-123",
+    "completion_window": "24h",
+    "status": "cancelling",
+    "output_file_id": "myfile-123-output",
+    "error_file_id": null,
+    "created_at": "1730821906",
+    "in_progress_at": "1730821911",
+    "expires_at": "1730821906",
+    "finalizing_at": null,
+    "completed_at": null,
+    "failed_at": null,
+    "expired_at": null,
+    "cancelling_at": "1730821906",
+    "cancelled_at": null,
+    "request_counts": {
+        "total": 3,
+        "completed": 3,
+        "failed": 0
+    },
+    "metadata": {}
 }
 ```
 
