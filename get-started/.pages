@@ -1,5 +1,5 @@
 title: Get started
 hide: false
 nav:
- - api-key.md
- - api.md
+ - 'Quickstart': quickstart.md
+ - 'Get an API key': api-key.md
