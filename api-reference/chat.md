@@ -3,10 +3,16 @@ title: Chat
 description: TODO
 ---
 
-## Chat completion object
+## Create chat completion
+
+`POST https://api.kluster.ai/v1/chat/completions`
+
+To create a chat completion, send a request to the `chat/completions` endpoint.
 
 <div class="grid" markdown>
 <div markdown>
+
+**Request**
 
 `model` ++"string"++ <span class="required" markdown>++"required"++</span>
 
@@ -138,7 +144,7 @@ Whether or not to store the output of this chat completion request for use in ou
   
 ---
 
-`metadata` ++"object or null"++
+<!-- `metadata` ++"object or null"++ -->
 <!--
 Developer-defined tags and values used for filtering completions in the dashboard.
 -->
@@ -165,7 +171,7 @@ Whether to return log probabilities of the output tokens or not. If true, return
 
 ---
 
-`top_logprobs` ++"integer or null"++ 
+`top_logprobs` ++"integer or null"++
 
 An integer between 0 and 20 specifying the number of most likely tokens to return at each token position, each with an associated log probability. `logprobs` must be set to `true` if this parameter is used.
 
@@ -232,7 +238,7 @@ Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured 
 
 Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.
 
-**Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
+**Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_completion_tokens` or the conversation exceeded the max context length.
 -->
 
 ---
@@ -321,9 +327,9 @@ Controls which (if any) tool is called by the model.
 Whether to enable [**parallel function calling**](https://platform.openai.com/docs/guides/function-calling/parallel-function-calling){target=\_blank} during tool use. Defaults to `true`.
 -->
 
----
+<!-- ---
 
-`user` ++"string"++
+`user` ++"string"++ -->
 
 <!--
 A unique identifier representing your end-user. It is recommended not to supply identifying information, hashing usernames, or email addresses instead.
@@ -354,22 +360,269 @@ This value is now deprecated in favor of `tools`.
 A list of functions the model may generate JSON inputs for.
 -->
 
+---
+
+**Returns**
+
+The created [Chat completion](#batch-object) object.
+
+</div>
+<div markdown>
+
+=== "Python"
+
+    ```python title="Example request"
+    from openai import OpenAI
+
+    client = OpenAI(
+        base_url="https://api.kluster.ai/v1",
+        api_key="INSERT_API_KEY",  # Replace with your actual API key
+    )
+
+    chat_completion = client.chat.completions.create(
+        model="klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": "What is the capital of Argentina?"},
+        ],
+    )
+
+    chat_completion.to_dict()
+    ```
+
+=== "curl"
+
+    ```bash title="Example request"
+    curl -s https://api.kluster.ai/v1/chat/completions \
+        -H "Authorization: Bearer 4532c187-d275-4a6b-940c-5d92f9b20ea6" \
+        -H "Content-Type: application/json" \
+        -d '{
+            "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "You are a helpful assistant."
+                },
+                {
+                    "role": "user",
+                    "content": "What is the capital of Argentina?"
+                }
+            ]
+        }'
+    ```
+
+```Json title="Response"
+{
+    "id": "chat-d187c103e189483485b3bcd3eb899c62",
+    "object": "chat.completion",
+    "created": 1736136422,
+    "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "The capital of Argentina is Buenos Aires.",
+                "tool_calls": []
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": null
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 48,
+        "total_tokens": 57,
+        "completion_tokens": 9
+    },
+    "prompt_logprobs": null
+}
+```
+
+</div>
+</div>
+
+---
+
+## Chat completion object
+
+<div class="grid" markdown>
+<div markdown>
+
+`id` ++"string"++
+
+Unique identifier for the chat completion.
+
+---
+
+`object` ++"string"++
+
+The object type, which is always `chat.completion`.
+
+---
+
+`created` ++"integer"++
+
+The Unix timestamp (in seconds) of when the chat completion was created.
+
+---
+
+`model` ++"string"++
+
+The model used for the chat completion. You can use the `models` endpoint to retrieve the [list of supported models](/api-reference/models/#list-supported-models){target=\_blank}.
+
+---
+
+`choices` ++"array"++
+
+A list of chat completion choices.
+
+??? child "Show properties"
+
+    `index` ++"integer"++
+
+    The index of the choice in the list of returned choices.
+
+    ---
+
+    `message` ++"object"++
+
+    A chat completion message generated by the model.
+
+    ??? child "Show properties"
+
+        `content` ++"string or array"++
+
+        The contents of the message.  
+
+        ---
+
+        `refusal` ++"string or null"++ <span class="future" markdown>++"future enhancement"++</span>
+        
+        <!--
+        The refusal message by the assistant.
+        -->
+        
+        ---
+
+        `role` ++"string or null"++ <span class="required" markdown>++"required"++</span>
+
+        The role of the messages author, in this case, `assistant`.
+
+        ---
+
+        `name` ++"string"++ <span class="future" markdown>++"future enhancement"++</span>
+        
+        <!--
+        An optional name for the participant. Provides the model information to differentiate between participants of the same role.
+        -->
+        
+        ---
+
+        `audio` ++"object or null"++ <span class="future" markdown>++"future enhancement"++</span>
+        
+        <!--
+        Data about a previous audio response from the model.
+        -->
+        
+        ---
+
+        `tool_calls` ++"array"++ <span class="future" markdown>++"future enhancement"++</span>
+        
+        <!--
+        The tool calls generated by the model, such as function calls.
+        -->
+        
+        ---
+
+        `function_call` ++"object or null"++ *deprecated*
+
+        Deprecated and replaced by `tool_calls`. 
+    
+    ---
+
+    `logprobs` ++"boolean or null"++
+
+    Whether to return log probabilities of the output tokens or not. If true, returns the log probabilities of each output token returned in the `content` of `message`. Defaults to `false`.
+
+    ---
+
+    `finish_reason` ++"string"++
+
+    The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence, `length` if the maximum number of tokens specified in the request was reached, `content_filter` if content was omitted due to a flag from our content filters, `tool_calls` if the model called a tool, or `function_call` (_deprecated_) if the model called a function.
+
+    ---
+    <!--
+    TODO: Double check this 
+
+    `stop_reason` ++"string or null"++
+
+    When the model detects a predefined stop sequence, it will stop generating text and this value will indicate that sequence as the reason for stopping.
+    -->
+
+---
+
+`usage` ++"object"++
+
+Usage statistics for the completion request.
+
+??? child "Show properties"
+
+    `completion_tokens` ++"integer"++
+
+    Number of tokens in the generated completion.
+
+    ---
+
+    `prompt_tokens` ++"integer"++
+
+    Number of tokens in the prompt.
+
+    ---
+
+    `total_tokens` ++"integer"++
+
+    Total number of tokens used in the request (prompt + completion).
+
+    <!-- TODO: add `completion_tokens_details` and `prompt_tokens_details`? -->
+
+<!-- 
+---
+
+`prompt_logprobs` ++"TODO: null"++
+
+The `logprobs` value used in the prompt.
+
+TODO: No matter what I passed in for the `logprobs` and `top_logprobs` this value always returned null. What does it do? -->
+
 </div>
 <div markdown>
 
 ```Json title="Chat completion object"
 {
+    "id": "chat-d187c103e189483485b3bcd3eb899c62",
+    "object": "chat.completion",
+    "created": 1736136422,
     "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
-    "messages": [
+    "choices": [
         {
-            "role": "system",
-            "content": "You are a helpful assistant."
-        },
-        {
-            "role": "user",
-            "content": "What is the capital of Argentina?"
-        },
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "The capital of Argentina is Buenos Aires.",
+                "tool_calls": []
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": null
+        }
     ],
+    "usage": {
+        "prompt_tokens": 48,
+        "total_tokens": 57,
+        "completion_tokens": 9
+    },
+    "prompt_logprobs": null
 }
 ```
 
