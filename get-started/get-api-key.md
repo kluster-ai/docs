@@ -1,16 +1,15 @@
 ---
-title: Get an API key
-description: The API key Setup Guide provides step-by-step instructions for generating and managing your personal API key, enabling secure access to our services and ensuring seamless integration with your applications.
+title: Get an API key to the kluster.ai platform
+description: Follow step-by-step instructions to generate and manage API keys, enabling secure access to kluster's services and seamless integration with your applications.
 ---
 
 # Generate your kluster.ai API key
 
-[Kluster.ai](https://www.kluster.ai/){target=\_blank}  provides a unique API service with an Adaptive Inference service that dynamically scales resources for high-volume, asynchronous processing, delivering lower costs than traditional batch solutions.
+[Kluster.ai](https://www.kluster.ai/){target=\_blank} provides a unique API service with an Adaptive Inference service that dynamically scales resources for high-volume, asynchronous processing, delivering lower costs than traditional batch solutions.
 
 This guide helps you obtain an API key, the first step to leveraging kluster.ai's powerful and cost-effective AI capabilities.
 
-
-## Step 1 - Create an account
+## Create an account
 
 If you haven't already created an account with kluster.ai, visit the [kluster.ai registration page](https://platform.kluster.ai/signup){target=\_blank} and take the following steps: 
 
@@ -21,41 +20,39 @@ If you haven't already created an account with kluster.ai, visit the [kluster.ai
 
 ![Signup Page](/images/get-started/key-gen/image-1.webp)
 
-## Step 2 - Generate a new API key
+## Generate a new API key
 
 After you've signed up or logged into the platform through the [kluster.ai login page](https://platform.kluster.ai/login){target=\_blank}, take the following steps:
 
-1. Select **API Keys** on the left-hand side menu.
+1. Select **API Keys** on the left-hand side menu
 
-2. Next, in the [API Keys](https://platform.kluster.ai/apikeys){target=\_blank} section, click the **Issue New API Key** button.
+2. In the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section, click the **Issue New API Key** button
 
     ![Issue New API Key](/images/get-started/key-gen/image-2.webp)
 
-3. Lastly, enter a descriptive name for your API key in the popup, then click **Create Key**:
+3. Enter a descriptive name for your API key in the popup, then click **Create Key**
 
     ![Generate API Key](/images/get-started/key-gen/image-3.webp)
 
-## Step 3 - Copy and secure your API key
+## Copy and secure your API key
 
 1. Once generated, your API key will be displayed
 2. Copy the key and store it in a secure location, such as a password manager
 
-![Copy API key](/images/get-started/key-gen/image-4.webp)
+    !!! warning "Warning"
+        For security reasons, you won't be able to view the key again. If lost, you will need to generate a new one.
 
-!!! warning "Warning"
-    For security reasons, you won't be able to view the key again. If lost, you will need to generate a new one.
+![Copy API key](/images/get-started/key-gen/image-4.webp)
 
 !!! abstract "Security tips"
     - **Keep it secret** - do not share your API key publicly or commit it to version control systems
     - **Use environment variables** - store your API key in environment variables instead of hardcoding them
     - **Regenerate if compromised** - if you suspect your API key has been exposed, regenerate it immediately from the **API Keys** section
 
-!!! tip "Troubleshooting"
-    - **Need further assistance?** Contact our [Support Team](https://calendly.com/klusterai-jacob/support-call){target=\_blank}.
 
 ## Managing your API keys
 
-The API Keys Management section allows you to efficiently manage your kluster.ai API keys. You can create, view, and delete API keys by navigating to the [API Keys](https://platform.kluster.ai/apikeys){target=\_blank} section. Your API keys will be listed in the **API Keys Management** section.
+The **API Key Management** section allows you to efficiently manage your kluster.ai API keys. You can create, view, and delete API keys by navigating to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section. Your API keys will be listed in the **API Key Management** section.
 
 To delete an API key, take the following steps:
 
@@ -66,8 +63,8 @@ To delete an API key, take the following steps:
 ![Delete API key](/images/get-started/key-gen/image-5.webp)
 
 !!! warning "Warning"
-    Once deleted, the API key cannot be used again and you must generate a new one if needed
+    Once deleted, the API key cannot be used again and you must generate a new one if needed.
 
 ## Next steps
 
-Now that you have your API key, you can start integrating kluster.ai's LLMs into your applications. Refer to our [Getting Started](/tutorials/klusterai-api/getting-started/){target=\_blank} for detailed instructions on using the API.
+Now that you have your API key, you can start integrating kluster.ai's LLMs into your applications. Refer to our [Getting Started](/tutorials/klusterai-api/getting-started/){target=\_blank} guide for detailed instructions on using the API.

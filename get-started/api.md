@@ -23,7 +23,7 @@ pip install "openai>=1.0.0"
 
 ## Get your API key
 
-All API requests require an API key for authentication. If you need to create an API key, please follow the steps in our [Get an API key](../get-api-key) guide.
+All API requests require an API key for authentication. If you need to create an API key, please follow the steps in the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 
 ## Creating Batch jobs as JSON files
 
