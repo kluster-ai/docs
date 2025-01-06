@@ -23,7 +23,7 @@ pip install "openai>=1.0.0"
 
 ## Get your API key
 
-Navigate to the [platform.kluster.ai](http://platform.kluster.ai){target=\_blank} web app and select **API Keys** from the left-hand menu. Create a new API key by specifying the API key name. You'll need this for all API requests.
+All API requests require an API key for authentication. If you need to create an API key, please follow the steps in the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 
 For step-by-step instructions, refer to the [Generate your kluster.ai API key](/get-started/api-key/){target=\_blank} guide.
 
