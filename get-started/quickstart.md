@@ -25,8 +25,6 @@ pip install "openai>=1.0.0"
 
 All API requests require an API key for authentication. If you need to create an API key, please follow the steps in the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 
-For step-by-step instructions, refer to the [Generate your kluster.ai API key](/get-started/api-key/){target=\_blank} guide.
-
 ## Creating Batch jobs as JSON files
 
 To create a Batch job, you'll need to:
