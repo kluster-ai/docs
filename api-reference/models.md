@@ -10,7 +10,6 @@ description: TODO
 You can use this endpoint to retrieve a list of all available models for the kluster.ai API. Currently supported models:
 
 - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.1-70B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
 
@@ -78,12 +77,6 @@ The organization that owns the model.
       "id": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo",
       "object": "model",
       "created": 1731336418,
-      "owned_by": "klusterai"
-    },
-    {
-      "id": "klusterai/Meta-Llama-3.1-70B-Instruct-Turbo",
-      "object": "model",
-      "created": 1731336610,
       "owned_by": "klusterai"
     },
     {
