@@ -30,7 +30,9 @@ The endpoint to be used for all requests in the Batch. Currently, only `/v1/chat
 
 `completion_window` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-The supported completion windows are of 1, 3, 6, 12, and 24 hours, to accommodate a range of use cases and budget requirements. The code samples provided utilize the 24-hour completion window. Additional information on pricing can be found in the pricing section of the [kluster.ai website](https://www.kluster.ai){target=\_blank}.
+The supported completion windows are 1, 3, 6, 12, and 24 hours to accommodate a range of use cases and budget requirements. The code samples provided utilize the 24-hour completion window. 
+
+Learn more about how completion window selection affects cost by visiting the pricing section of the [kluster.ai website](https://www.kluster.ai){target=\_blank}.
 
 ---
 
