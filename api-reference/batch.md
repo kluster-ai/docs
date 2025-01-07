@@ -402,7 +402,7 @@ table th:first-child {
 
 `id` ++"string"++
 
-The ID of the batch.
+The ID of the Batch.
 
 ---
 
@@ -457,13 +457,13 @@ The Kluster.ai API endpoint used by the Batch.
 
 `input_file_id` ++"string"++
 
-The ID of the input file for the batch.
+The ID of the input file for the Batch.
 
 ---
 
 `completion_window` ++"string"++
 
-The time frame within which the batch should be processed.
+The time frame within which the Batch should be processed.
 
 ---
 

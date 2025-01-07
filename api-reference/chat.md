@@ -147,10 +147,9 @@ Whether or not to store the output of this chat completion request for use in ou
 <!-- `metadata` ++"object or null"++ -->
 <!--
 Developer-defined tags and values used for filtering completions in the dashboard.
--->
 
 ---
-
+-->
 `frequency_penalty` ++"number or null"++
 
 Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood of repeating the same line verbatim. Defaults to `0`.
