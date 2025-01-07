@@ -1,6 +1,6 @@
 ---
-title: Batches
-description: TODO
+title: Batches API Reference
+description: The batches endpoint enables you to process multiple requests in a single API call, improving efficiency and reducing latency for bulk operations.
 ---
 
 ## Submit a Batch job

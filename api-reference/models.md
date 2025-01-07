@@ -1,6 +1,6 @@
 ---
-title: Models
-description: TODO
+title: Models API Reference
+description: The Models endpoint lets you list, retrieve details, and manage access to AI models, helping you select the best model for your use case.
 ---
 
 # Models

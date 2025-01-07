@@ -1,6 +1,6 @@
 ---
-title: Files
-description: TODO
+title: Files API Reference
+description: The Files endpoint simplifies file management, allowing you to upload, retrieve, delete, and list files for workflows like storing datasets or configs.
 ---
 
 ## Upload files

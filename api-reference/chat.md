@@ -1,6 +1,6 @@
 ---
-title: Chat
-description: TODO
+title: Chat API Reference
+description: The Chat Completion endpoint generates dynamic, context-aware responses that can be integrated with the Batch API for large-scale processing.
 ---
 
 ## Create chat completion
