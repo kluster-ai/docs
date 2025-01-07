@@ -414,7 +414,7 @@ The object type, which is always `batch`.
 
 `endpoint` ++"string"++
 
-The Kluster.ai API endpoint used by the batch.
+The Kluster.ai API endpoint used by the Batch.
 
 ---
 
