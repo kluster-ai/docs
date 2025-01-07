@@ -467,7 +467,7 @@ The time frame within which the batch should be processed.
 
 `status` ++"string"++
 
-The current status of the batch.
+The current status of the Batch.
 
 ---
 
