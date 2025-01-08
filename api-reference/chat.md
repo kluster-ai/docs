@@ -373,9 +373,10 @@ The created [Chat completion](#batch-object) object.
     ```python title="Example request"
     from openai import OpenAI
 
+    # Configure OpenAI client
     client = OpenAI(
-        base_url="https://api.kluster.ai/v1",
-        api_key="INSERT_API_KEY",  # Replace with your actual API key
+        base_url="https://api.kluster.ai/v1", 
+        api_key="INSERT_API_KEY" # Replace with your actual API key
     )
 
     chat_completion = client.chat.completions.create(
@@ -386,7 +387,7 @@ The created [Chat completion](#batch-object) object.
         ],
     )
 
-    chat_completion.to_dict()
+    print(chat_completion.to_dict())
     ```
 
 === "curl"
@@ -627,5 +628,3 @@ TODO: No matter what I passed in for the `logprobs` and `top_logprobs` this valu
 
 </div>
 </div>
-
----

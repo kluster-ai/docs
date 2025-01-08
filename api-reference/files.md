@@ -36,13 +36,20 @@ The uploaded [File](#file-object) object.
 === "Python"
 
     ```python title="Example request"
+    from openai import OpenAI
+
+    # Configure OpenAI client
+    client = OpenAI(
+        base_url="https://api.kluster.ai/v1", 
+        api_key="INSERT_API_KEY" # Replace with your actual API key
+    )
 
     batch_input_file = client.files.create(
         file=open(file_name, "rb"),
         purpose="batch"
     )
 
-    batch_input_file.to_dict()
+    print(batch_input_file.to_dict())
     ```
 
 === "curl"
@@ -322,7 +329,18 @@ For requests that failed with a non-HTTP error, this will contain more informati
 === "Python"
 
     ```python title="Example request"
-    # Check if the batch completed successfully
+    from openai import OpenAI
+
+    # Configure OpenAI client
+    client = OpenAI(
+        base_url="https://api.kluster.ai/v1", 
+        api_key="INSERT_API_KEY" # Replace with your actual API key
+    )
+
+    # Get the status of the Batch, which returns the output_file_id
+    batch_status = client.batches.retrieve(batch_request.id)
+
+    # Check if the Batch completed successfully
     if batch_status.status.lower() == "completed":
         # Retrieve the results
         result_file_id = batch_status.output_file_id

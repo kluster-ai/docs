@@ -7,7 +7,11 @@ description: The Models endpoint lets you list, retrieve details, and manage acc
 
 ## List supported models
 
-You can use this endpoint to retrieve a list of all available models for the kluster.ai API. Currently supported models:
+`GET https://api.kluster.ai/v1/models`
+
+Lists the currently available models.
+
+You can use this endpoint to retrieve a list of all available models for the kluster.ai API. Currently supported models include:
 
 - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
@@ -15,12 +19,6 @@ You can use this endpoint to retrieve a list of all available models for the klu
 
 <div class="grid" markdown>
 <div markdown>
-
-**Request**
-
-`GET https://api.kluster.ai/v1/models`
-
-Lists the currently available models.
 
 **Returns**
 
@@ -54,12 +52,13 @@ The organization that owns the model.
     ```python title="Example request"
     from openai import OpenAI
 
+    # Configure OpenAI client
     client = OpenAI(
         base_url="http://api.kluster.ai/v1",
         api_key="INSERT_API_KEY" # Replace with your actual API key
     )
 
-    client.models.list().to_dict()
+    print(client.models.list().to_dict())
     ```
 
 === "curl"
@@ -97,5 +96,3 @@ The organization that owns the model.
 
 </div>
 </div>
-
----

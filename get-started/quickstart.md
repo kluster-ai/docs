@@ -27,32 +27,46 @@ Navigate to the [platform.kluster.ai](http://platform.kluster.ai){target=\_blank
 
 For step-by-step instructions, refer to the [Generate your kluster.ai API key](/get-started/get-api-key){target=\_blank} guide.
 
+## Batch job workflow overview
+
+Working with Batch jobs in the kluster.ai API involves the following steps:
+
+1. **Create Batch job files** - structure your Batch requests as JSON files with the required details
+2. **Upload Batch files** - send your JSON files to the API and receive a file ID for reference
+3. **Submit the Batch job** - use the file ID to start a new Batch job
+4. **Monitor Job progress** - track the status of your Batch job to ensure it is completed successfully
+5. **Retrieve results** - after the job finishes, access and process the results as needed
+
+This streamlined process enables efficient handling of large-scale requests.
+
 ## Create Batch jobs as JSON files
 
-To create a Batch job, you'll need to:
+To take the first step in the Batch job workflow, you'll need to assemble your Batch requests and add them to a [JSON Lines](https://jsonlines.org/) file (`.jsonl`).
 
-1. Create a [JSON Lines](https://jsonlines.org/) file (`.jsonl`)
-2. Add one or more batch requests to the file
-3. Ensure each request includes:
-    - `custom_id` ++"string"++ - a unique request ID that will be used to match outputs to inputs
-    - `method` ++"string"++ - the HTTP method to be used for the request. Currently, only `POST` is supported
-    - `url` ++"string"++ -  the endpoint `/v1/chat/completions`
-    - `body` ++"object"++ - a request body containing:
-        - `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of the `model` to use, can be one of:
-            - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
-            - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
-            - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
+Each request needs to include the following arguments:
 
-            !!! tip
-                You can see the full list of available models programmatically using the [list supported models](#list-supported-models) endpoint.
+- `custom_id` ++"string"++ - a unique request ID that will be used to match outputs to inputs
+- `method` ++"string"++ - the HTTP method to be used for the request. Currently, only `POST` is supported
+- `url` ++"string"++ -  the `/v1/chat/completions` endpoint
+- `body` ++"object"++ - a request body containing:
+    - `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of the `model` to use, can be one of:
+        - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
+        - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
+        - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
 
-        - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles)
-        - Any optional [chat completion parameters](/api-reference/chat/#create-chat-completion){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
+        !!! tip
+            You can see the full list of available models programmatically using the [list supported models](#list-supported-models) endpoint.
+
+    - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles)
+    - Any optional [chat completion parameters](/api-reference/chat/#create-chat-completion){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
+
+The following examples generate requests and save them in a JSONL file, ready for upload and processing.
 
 === "Python"
 
     ```python
     from openai import OpenAI
+    import json
 
     client = OpenAI(
         base_url="https://api.kluster.ai/v1",
@@ -128,7 +142,12 @@ To create a Batch job, you'll need to:
 
 ## Upload Batch job files
 
-Upload your [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `files` endpoint. The response will contain a `id` field-save this value as you'll need it in the next step where it's referred to as `input_file_id`. You can also view all your uploaded files in the [Files tab](https://platform.kluster.ai/files){target=\_blank} of the kluster.ai platform.
+Upload your [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `files` endpoint along with the intended purpose of the upload. For Batch jobs, set the `purpose` value to `"batch"`.
+
+The response will contain an `id` field; save this value as you'll need it in the next step, where it's referred to as `input_file_id`.
+
+!!! note
+    You can also view all your uploaded files in the [**Files** tab](https://platform.kluster.ai/files){target=\_blank} of the kluster.ai platform.
 
 === "Python"
 
@@ -138,8 +157,6 @@ Upload your [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `fi
         file=open(file_name, "rb"),
         purpose="batch"
     )
-
-    batch_input_file.to_dict()
     ```
 
 === "curl"
@@ -165,7 +182,9 @@ Upload your [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `fi
 
 ## Submit a Batch job
 
-Next, to submit a Batch job, you invoke the `batches` endpoint using the `input_file_id` from the previous step.
+Next, submit a Batch job by calling the `batches` endpoint and providing the `id` of the uploaded Batch job file (from the previous section) as the [`input_file_id`, and additional parameters](/api-reference/batch/#submit-a-batch-job){target=\_blank} to specify the job's configuration.
+
+The response includes an `id` that can be used to monitor the job's progress, as demonstrated in the next section.
 
 === "Python"
 
@@ -176,8 +195,6 @@ Next, to submit a Batch job, you invoke the `batches` endpoint using the `input_
         endpoint="/v1/chat/completions",
         completion_window="24h",
     )
-
-    batch_request.to_dict()
     ```
 
 === "curl"
@@ -224,14 +241,19 @@ Next, to submit a Batch job, you invoke the `batches` endpoint using the `input_
 
 ## Monitor job progress
 
-To monitor your Batch job's progress, make periodic requests to the `batches` endpoint using your `batch_id` to check its status. The job is complete when the `status` field is `"completed"`. You can also monitor jobs in the [Batch tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
+To monitor your Batch job's progress, make periodic requests to the `batches` endpoint using the `id` of the Batch request (from the previous section) as the [`batch_id`](/api-reference/batch/#retrieve-a-batch){target=\_blank} to check its status. The job is complete when the `status` field returns `"completed"`.
+
+To see a complete list of the supported statuses, refer to the [Retrieve a batch](/api-reference/batch/#retrieve-a-batch){target=\_blank} API reference page.
+
+!!! note
+    You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
 
 === "Python"
 
     ```python title="Example request"
     import time
 
-    # Poll the batch status until it's complete
+    # Poll the Batch status until it's complete
     while True:
         batch_status = client.batches.retrieve(batch_request.id)
         print("Batch status: {}".format(batch_status.status))
@@ -243,8 +265,6 @@ To monitor your Batch job's progress, make periodic requests to the `batches` en
             break
 
         time.sleep(10)  # Wait for 10 seconds before checking again
-
-    batch_status.to_dict()
     ```
 
 === "curl"
@@ -286,12 +306,14 @@ To monitor your Batch job's progress, make periodic requests to the `batches` en
 
 ## Retrieve results
 
-To retrieve the content of your Batch jobs output file, send a request to the `files` endpoint specifying the `output_file_id`. The output file will be a JSONL file, where each line contains the `custom_id` from your input file request, and the corresponding response.
+To retrieve the content of your Batch jobs output file, send a request to the `files` endpoint specifying the `output_file_id`, which is returned from querying the Batch's status (from the previous section).
+
+The output file will be a JSONL file, where each line contains the `custom_id` from your input file request and the corresponding response.
 
 === "Python"
 
     ```python title="Example request"
-    # Check if the batch completed successfully
+    # Check if the Batch completed successfully
     if batch_status.status.lower() == "completed":
         # Retrieve the results
         result_file_id = batch_status.output_file_id
@@ -315,7 +337,7 @@ To retrieve the content of your Batch jobs output file, send a request to the `f
 
 ## List all Batch jobs
 
-To list all of your Batch jobs, send a request to the `batches` endpoint without specifying a `batch_id`. To constrain the query response, you can also use a limit parameter.
+To list all of your Batch jobs, send a request to the `batches` endpoint without specifying a `batch_id`. To constrain the query response, you can also use a `limit` parameter.
 
 === "Python"
 
@@ -328,7 +350,7 @@ To list all of your Batch jobs, send a request to the `batches` endpoint without
         api_key="INSERT_API_KEY" # Replace with your actual API key
     )
 
-    client.batches.list(limit=2).to_dict()
+    print(client.batches.list(limit=2).to_dict())
     ```
 
 === "curl"
@@ -382,7 +404,7 @@ To list all of your Batch jobs, send a request to the `batches` endpoint without
 
 ## Cancel a Batch job
 
-To cancel a Batch job that is currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, during which time the status will show as `cancelling`.
+To cancel a Batch job currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, during which time the status will show as `cancelling`. Once complete, the status will show as `cancelled`.
 
 === "Python"
 
@@ -393,7 +415,7 @@ To cancel a Batch job that is currently in progress, send a request to the `canc
         base_url="https://api.kluster.ai/v1",  
         api_key="INSERT_API_KEY" # Replace with your actual API key
     )
-    client.batches.cancel("mybatch-123") # Replace with your batch id
+    client.batches.cancel("mybatch-123") # Replace with your Batch id
     ```
 
 === "curl"

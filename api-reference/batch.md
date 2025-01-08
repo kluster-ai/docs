@@ -52,6 +52,13 @@ The created [Batch](#batch-object) object.
 === "Python"
 
     ```python title="Example request"
+    from openai import OpenAI
+
+    # Configure OpenAI client
+    client = OpenAI(
+        base_url="https://api.kluster.ai/v1",
+        api_key="INSERT_API_KEY",  # Replace with your actual API key
+    )
 
     batch_request = client.batches.create(
         input_file_id=batch_input_file.id,
@@ -59,7 +66,7 @@ The created [Batch](#batch-object) object.
         completion_window="24h",
     )
 
-    batch_request.to_dict()
+    print(batch_request.to_dict())
     ```
 
 === "curl"
@@ -138,9 +145,16 @@ The [Batch](#batch-object) object matching the specified `batch_id`.
 === "Python"
 
     ```python title="Example request"
+    from openai import OpenAI
     import time
 
-    # Poll the batch status until it's complete
+    # Configure OpenAI client
+    client = OpenAI(
+        base_url="https://api.kluster.ai/v1",
+        api_key="INSERT_API_KEY",  # Replace with your actual API key
+    )
+
+    # Poll the Batch status until it's complete
     while True:
         batch_status = client.batches.retrieve(batch_request.id)
         print("Batch status: {}".format(batch_status.status))
@@ -153,7 +167,7 @@ The [Batch](#batch-object) object matching the specified `batch_id`.
 
         time.sleep(10)  # Wait for 10 seconds before checking again
 
-    batch_status.to_dict()
+    print(batch_status.to_dict())
     ```
 
 === "curl"
@@ -227,10 +241,12 @@ The [Batch](#batch-object) object matching the specified ID.
     ```python title="Example"
     from openai import OpenAI
 
+    # Configure OpenAI client
     client = OpenAI(
         base_url="https://api.kluster.ai/v1",  
         api_key="INSERT_API_KEY" # Replace with your actual API key
     )
+
     client.batches.cancel("mybatch-123") # Replace with your batch id
     ```
 
@@ -338,7 +354,7 @@ table th:first-child {
         api_key="INSERT_API_KEY" # Replace with your actual API key
     )
 
-    client.batches.list(limit=2).to_dict()
+    print(client.batches.list(limit=2).to_dict())
     ```
 
 === "curl"
@@ -543,11 +559,11 @@ The Unix timestamp (in seconds) for when the Batch was cancelled.
 
 The request counts for different statuses within the Batch.
 
+<!--
 ---
 
 `metadata` ++"Object or null"++
 
-<!--
 Set of 16 key-value pairs that can be attached to an object. This is useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long, and values can be a maximum of 512 characters long.
 -->
 
@@ -583,4 +599,5 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 }
 ```
 
+</div>
 </div>
