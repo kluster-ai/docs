@@ -32,13 +32,13 @@ A list of messages comprising the conversation so far. The `messages` object can
 
         `content` ++"string or array"++
 
-        The contents of the assistant message.  
+        The contents of the system message.  
 
         ---
        
         `role` ++"string or null"++ <span class="required" markdown>++"required"++</span>
 
-        The role of the messages author, in this case, `assistant`.
+        The role of the messages author, in this case, `system`.
 
         ---
 
@@ -56,13 +56,13 @@ A list of messages comprising the conversation so far. The `messages` object can
 
         `content` ++"string or array"++
 
-        The contents of the assistant message.  
+        The contents of the user message.  
 
         ---
        
         `role` ++"string or null"++ <span class="required" markdown>++"required"++</span>
 
-        The role of the messages author, in this case, `assistant`.
+        The role of the messages author, in this case, `user`.
 
         ---
 
@@ -505,7 +505,7 @@ A list of chat completion choices.
         
         ---
 
-        `role` ++"string or null"++ <span class="required" markdown>++"required"++</span>
+        `role` ++"string or null"++
 
         The role of the messages author, in this case, `assistant`.
 
@@ -551,15 +551,6 @@ A list of chat completion choices.
 
     The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence, `length` if the maximum number of tokens specified in the request was reached, `content_filter` if content was omitted due to a flag from our content filters, `tool_calls` if the model called a tool, or `function_call` (_deprecated_) if the model called a function.
 
-    ---
-    <!--
-    TODO: Double check this 
-
-    `stop_reason` ++"string or null"++
-
-    When the model detects a predefined stop sequence, it will stop generating text and this value will indicate that sequence as the reason for stopping.
-    -->
-
 ---
 
 `usage` ++"object"++
@@ -583,17 +574,6 @@ Usage statistics for the completion request.
     `total_tokens` ++"integer"++
 
     Total number of tokens used in the request (prompt + completion).
-
-    <!-- TODO: add `completion_tokens_details` and `prompt_tokens_details`? -->
-
-<!-- 
----
-
-`prompt_logprobs` ++"TODO: null"++
-
-The `logprobs` value used in the prompt.
-
-TODO: No matter what I passed in for the `logprobs` and `top_logprobs` this value always returned null. What does it do? -->
 
 </div>
 <div markdown>
