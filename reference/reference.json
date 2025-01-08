@@ -1,0 +1,319 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "kluster.ai API",
+      "description": "The kluster.ai API provides tools for managing Batch jobs using a RESTful interface, compatible with OpenAI APIs.",
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "https://api.kluster.ai/v1",
+        "description": "Production server"
+      }
+    ],
+    "paths": {
+      "/files": {
+        "post": {
+          "summary": "Upload Batch job files",
+          "description": "Uploads a JSON Lines (.jsonl) file to be processed as a Batch job.",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "multipart/form-data": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "file": {
+                      "type": "string",
+                      "format": "binary",
+                      "description": "The file to upload."
+                    },
+                    "purpose": {
+                      "type": "string",
+                      "enum": ["batch"],
+                      "description": "The purpose of the uploaded file."
+                    }
+                  },
+                  "required": ["file", "purpose"]
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "File uploaded successfully.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/FileResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/batches": {
+        "post": {
+          "summary": "Submit a Batch job",
+          "description": "Creates and submits a Batch job for processing.",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "input_file_id": {
+                      "type": "string",
+                      "description": "The ID of the uploaded file containing requests."
+                    },
+                    "endpoint": {
+                      "type": "string",
+                      "enum": ["/v1/chat/completions"],
+                      "description": "The API endpoint for the requests."
+                    },
+                    "completion_window": {
+                      "type": "string",
+                      "enum": ["1h", "3h", "6h", "12h", "24h"],
+                      "description": "Time window for completing the Batch job."
+                    }
+                  },
+                  "required": ["input_file_id", "endpoint", "completion_window"]
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Batch job submitted successfully.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/BatchResponse"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "get": {
+          "summary": "List all Batch jobs",
+          "description": "Retrieves a list of submitted Batch jobs.",
+          "parameters": [
+            {
+              "name": "limit",
+              "in": "query",
+              "required": false,
+              "schema": {
+                "type": "integer",
+                "default": 20,
+                "minimum": 1,
+                "maximum": 100
+              },
+              "description": "The maximum number of Batch jobs to return."
+            },
+            {
+              "name": "after",
+              "in": "query",
+              "required": false,
+              "schema": {
+                "type": "string"
+              },
+              "description": "Cursor for pagination."
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "List of Batch jobs retrieved successfully.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/BatchListResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/batches/{batch_id}": {
+        "get": {
+          "summary": "Monitor Batch job progress",
+          "description": "Retrieves the status and details of a specific Batch job.",
+          "parameters": [
+            {
+              "name": "batch_id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              },
+              "description": "The ID of the Batch job."
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Batch job details retrieved successfully.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/BatchResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/batches/{batch_id}/cancel": {
+        "post": {
+          "summary": "Cancel a Batch job",
+          "description": "Cancels a Batch job that is currently in progress.",
+          "parameters": [
+            {
+              "name": "batch_id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              },
+              "description": "The ID of the Batch job."
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Batch job cancellation initiated successfully.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/BatchResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/models": {
+        "get": {
+          "summary": "List supported models",
+          "description": "Retrieves a list of models supported by the kluster.ai API.",
+          "responses": {
+            "200": {
+              "description": "List of supported models retrieved successfully.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ModelListResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "FileResponse": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Unique identifier for the uploaded file."
+            },
+            "bytes": {
+              "type": "integer",
+              "description": "Size of the uploaded file in bytes."
+            },
+            "filename": {
+              "type": "string",
+              "description": "Name of the uploaded file."
+            },
+            "purpose": {
+              "type": "string",
+              "description": "The purpose of the uploaded file."
+            },
+            "created_at": {
+              "type": "integer",
+              "description": "Unix timestamp for when the file was created."
+            }
+          }
+        },
+        "BatchResponse": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Unique identifier for the Batch job."
+            },
+            "status": {
+              "type": "string",
+              "description": "The current status of the Batch job."
+            },
+            "input_file_id": {
+              "type": "string",
+              "description": "The ID of the input file for the Batch job."
+            },
+            "output_file_id": {
+              "type": "string",
+              "description": "The ID of the output file containing results."
+            },
+            "error_file_id": {
+              "type": "string",
+              "description": "The ID of the file containing errors."
+            },
+            "created_at": {
+              "type": "integer",
+              "description": "Unix timestamp for when the Batch job was created."
+            },
+            "completed_at": {
+              "type": "integer",
+              "description": "Unix timestamp for when the Batch job was completed."
+            }
+          }
+        },
+        "BatchListResponse": {
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/BatchResponse"
+              }
+            }
+          }
+        },
+        "ModelListResponse": {
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ModelResponse"
+              }
+            }
+          }
+        },
+        "ModelResponse": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Unique identifier for the model."
+            },
+            "created": {
+              "type": "integer",
+              "description": "Unix timestamp for when the model was created."
+            },
+            "owned_by": {
+              "type": "string",
+              "description": "Organization that owns the model."
+            }
+          }
+        }
+      }
+    }
+  }
+  
