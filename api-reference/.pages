@@ -1,0 +1,7 @@
+title: API reference
+hide: false
+nav:
+ - 'Chat': chat.md
+ - 'Batch': batch.md
+ - 'Files': files.md
+ - 'Models': models.md
