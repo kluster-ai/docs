@@ -1,5 +1,5 @@
 ---
-title: kluster.ai API Quickstart Guide
+title: Start building with the kluster.ai API
 description: The kluster.ai API getting started guide provides examples and instructions for submitting and managing Batch jobs using kluster.ai's OpenAI-compatible API.
 ---
 
