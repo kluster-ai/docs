@@ -1,5 +1,5 @@
 ---
-title: kluster.ai compatibility with OpenAI client libraries
+title: Compatibility with OpenAI client libraries
 description: Learn how kluster.ai is fully compatible with OpenAI client libraries, enabling seamless integration with your existing applications.
 ---
 
