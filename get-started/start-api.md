@@ -58,7 +58,7 @@ Each request needs to include the following arguments:
             You can see the full list of available models programmatically using the [list supported models](#list-supported-models) endpoint.
 
     - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles)
-    - Any optional [chat completion parameters](/api-reference/chat/#create-chat-completion){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
+    - Any optional [chat completion parameters](/api-reference/reference/#create-chat-completion){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
 
 The following examples generate requests and save them in a JSONL file, ready for upload and processing.
 
@@ -182,7 +182,7 @@ The response will contain an `id` field; save this value as you'll need it in th
 
 ## Submit a Batch job
 
-Next, submit a Batch job by calling the `batches` endpoint and providing the `id` of the uploaded Batch job file (from the previous section) as the [`input_file_id`, and additional parameters](/api-reference/batch/#submit-a-batch-job){target=\_blank} to specify the job's configuration.
+Next, submit a Batch job by calling the `batches` endpoint and providing the `id` of the uploaded Batch job file (from the previous section) as the [`input_file_id`, and additional parameters](/api-reference/reference/#submit-a-batch-job){target=\_blank} to specify the job's configuration.
 
 The response includes an `id` that can be used to monitor the job's progress, as demonstrated in the next section.
 
@@ -241,9 +241,9 @@ The response includes an `id` that can be used to monitor the job's progress, as
 
 ## Monitor job progress
 
-To monitor your Batch job's progress, make periodic requests to the `batches` endpoint using the `id` of the Batch request (from the previous section) as the [`batch_id`](/api-reference/batch/#retrieve-a-batch){target=\_blank} to check its status. The job is complete when the `status` field returns `"completed"`.
+To monitor your Batch job's progress, make periodic requests to the `batches` endpoint using the `id` of the Batch request (from the previous section) as the [`batch_id`](/api-reference/reference/#retrieve-a-batch){target=\_blank} to check its status. The job is complete when the `status` field returns `"completed"`.
 
-To see a complete list of the supported statuses, refer to the [Retrieve a batch](/api-reference/batch/#retrieve-a-batch){target=\_blank} API reference page.
+To see a complete list of the supported statuses, refer to the [Retrieve a batch](/api-reference/reference/#retrieve-a-batch){target=\_blank} API reference page.
 
 !!! note
     You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.

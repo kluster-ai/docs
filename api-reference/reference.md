@@ -20,7 +20,7 @@ To create a chat completion, send a request to the `chat/completions` endpoint.
 
 `model` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-ID of the model to use. You can use the `models` endpoint to retrieve the [list of supported models](/api-reference/models/#list-supported-models){target=\_blank}.
+ID of the model to use. You can use the `models` endpoint to retrieve the [list of supported models](#list-supported-models){target=\_blank}.
 
 ---
 
@@ -473,7 +473,7 @@ The Unix timestamp (in seconds) of when the chat completion was created.
 
 `model` ++"string"++
 
-The model used for the chat completion. You can use the `models` endpoint to retrieve the [list of supported models](/api-reference/models/#list-supported-models){target=\_blank}.
+The model used for the chat completion. You can use the `models` endpoint to retrieve the [list of supported models](#list-supported-models){target=\_blank}.
 
 ---
 
@@ -634,7 +634,7 @@ To submit a Batch job, send a request to the `batches` endpoint.
 
 `input_file_id` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-The ID of an [uploaded file](/api-reference/files/#upload-files){target=\_blank} that contains requests for the new Batch.
+The ID of an [uploaded file](#upload-files){target=\_blank} that contains requests for the new Batch.
 
 Your input file must be formatted as a [JSONL file](https://jsonlines.org/){target=\_blank}, and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests and currently a maximum of 6GB per file.
 
