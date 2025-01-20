@@ -246,7 +246,7 @@ To monitor your Batch job's progress, make periodic requests to the `batches` en
 To see a complete list of the supported statuses, refer to the [Retrieve a batch](/api-reference/reference/#retrieve-a-batch){target=\_blank} API reference page.
 
 !!! note
-    You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
+    You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch) of the **kluster.ai** platform UI.
 
 === "Python"
 
