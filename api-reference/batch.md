@@ -549,7 +549,7 @@ The request counts for different statuses within the Batch.
 
     `total` ++"integer"++
 
-    Total number of requests in the batch.
+    Total number of requests in the Batch.
 
     ---
 
@@ -613,7 +613,7 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 <div class="grid" markdown>
 <div markdown>
 
-The per-line object of the batch input file.
+The per-line object of the Batch input file.
 
 `custom_id` ++"string"++
 
@@ -623,13 +623,13 @@ A developer-provided per-request ID.
 
 `method` ++"string"++ 
 
-The HTTP method to be used for the request. Currently, only POST is supported
+The HTTP method to be used for the request. Currently, only POST is supported.
 
 ---
 
 `url` ++"string"++ 
 
-The /v1/chat/completions endpoint
+The `/v1/chat/completions` endpoint.
 
 ---
 
@@ -641,19 +641,26 @@ The JSON body of the input file.
 <div markdown>
 
 ```Json title="Request input object"
-[{
+[
+    {
         "custom_id": "request-1",
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
             "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
             "messages": [
-                {"role": "system", "content": "You are a helpful assistant."},
-                {"role": "user", "content": "What is the capital of Argentina?"},
+                {
+                    "role": "system",
+                    "content": "You are a helpful assistant."
+                },
+                {
+                    "role": "user",
+                    "content": "What is the capital of Argentina?"
+                }
             ],
-            "max_tokens": 1000,
-        },
-    },
+            "max_tokens": 1000
+        }
+    }
 ]
 ```
 
@@ -667,7 +674,7 @@ The JSON body of the input file.
 <div class="grid" markdown>
 <div markdown>
 
-The per-line object of the batch output files.
+The per-line object of the Batch output files.
 
 `id` ++"string"++
 
@@ -693,7 +700,7 @@ A developer-provided per-request ID that will be used to match outputs to inputs
 
     `request_id` ++"string"++
 
-    A unique identifier for the request. Please include this request ID when contacting support.
+    A unique identifier for the request. You can reference this request ID if you need to contact support for assistance.
 
     ---
 
