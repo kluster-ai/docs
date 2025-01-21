@@ -61,7 +61,7 @@ The created [Batch](#batch-object) object.
     )
 
     batch_request = client.batches.create(
-        input_file_id=batch_input_file.id,
+        input_file_id="myfile-123",
         endpoint="/v1/chat/completions",
         completion_window="24h",
     )
@@ -146,7 +146,6 @@ The [Batch](#batch-object) object matching the specified `batch_id`.
 
     ```python title="Example request"
     from openai import OpenAI
-    import time
 
     # Configure OpenAI client
     client = OpenAI(
@@ -154,20 +153,7 @@ The [Batch](#batch-object) object matching the specified `batch_id`.
         api_key="INSERT_API_KEY",  # Replace with your actual API key
     )
 
-    # Poll the Batch status until it's complete
-    while True:
-        batch_status = client.batches.retrieve(batch_request.id)
-        print("Batch status: {}".format(batch_status.status))
-        print(
-            f"Completed tasks: {batch_status.request_counts.completed} / {batch_status.request_counts.total}"
-        )
-
-        if batch_status.status.lower() in ["completed", "failed", "cancelled"]:
-            break
-
-        time.sleep(10)  # Wait for 10 seconds before checking again
-
-    print(batch_status.to_dict())
+    client.batches.retrieve("mybatch-123")
     ```
 
 === "curl"
@@ -333,7 +319,7 @@ table th:first-child {
 | `validating`  | The input file is being validated.                                      |
 | `failed`      | The input file failed the validation process.                           |
 | `in_progress` | The input file was successfully validated and the Batch is in progress. |
-| `finalising`  | The Batch job has completed and the results are being finalized.        |
+| `finalizing`  | The Batch job has completed and the results are being finalized.        |
 | `completed`   | The Batch has completed and the results are ready.                      |
 | `expired`     | The Batch was not completed within the 24-hour time window.             |
 | `cancelling`  | The Batch is being cancelled (may take up to 10 minutes).               |
@@ -559,6 +545,24 @@ The Unix timestamp (in seconds) for when the Batch was cancelled.
 
 The request counts for different statuses within the Batch.
 
+??? child "Show properties"
+
+    `total` ++"integer"++
+
+    Total number of requests in the batch.
+
+    ---
+
+    `completed` ++"integer"++
+
+    Number of requests that have been completed successfully.
+
+    ---
+
+    `failed` ++"integer"++
+
+    Number of requests that have failed.   
+
 <!--
 ---
 
@@ -596,6 +600,162 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 		"failed": 0,
 		"total": 0
 	}
+}
+```
+
+</div>
+</div>
+
+---
+
+## The request input object
+
+<div class="grid" markdown>
+<div markdown>
+
+The per-line object of the batch input file.
+
+`custom_id` ++"string"++
+
+A developer-provided per-request ID.
+
+---
+
+`method` ++"string"++ 
+
+The HTTP method to be used for the request. Currently, only POST is supported
+
+---
+
+`url` ++"string"++ 
+
+The /v1/chat/completions endpoint
+
+---
+
+`body` ++"map"++
+
+The JSON body of the input file.
+
+</div>
+<div markdown>
+
+```Json title="Request input object"
+[{
+        "custom_id": "request-1",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
+            "messages": [
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": "What is the capital of Argentina?"},
+            ],
+            "max_tokens": 1000,
+        },
+    },
+]
+```
+
+</div>
+</div>
+
+---
+
+## The request output object
+
+<div class="grid" markdown>
+<div markdown>
+
+The per-line object of the batch output files.
+
+`id` ++"string"++
+
+A unique identifier for the batch request.
+
+---
+
+`custom_id` ++"string"++
+
+A developer-provided per-request ID that will be used to match outputs to inputs.
+
+---
+
+`response` ++"object or null"++
+
+??? child "Show properties"
+
+    `status_code` ++"integer"++
+
+    The HTTP status code of the response.
+
+    ---
+
+    `request_id` ++"string"++
+
+    A unique identifier for the request. Please include this request ID when contacting support.
+
+    ---
+
+    `body` ++"map"++
+
+    The JSON body of the response.
+
+---
+
+`error` ++"object or null"++
+
+For requests that failed with a non-HTTP error, this will contain more information on the cause of the failure.
+
+??? child "Show properties"
+
+    `code` ++"string"++ 
+   
+    A machine-readable error code.
+   
+    ---
+
+    `message` ++"string"++
+   
+    A human-readable error message. 
+
+</div>
+<div markdown>
+
+```Json title="Request output object"
+{
+    "id": "batch-req-123",
+    "custom_id": "request-1",
+    "response": {
+        "status_code": 200,
+        "request_id": "req-123",
+        "body": {
+            "id": "chatcmpl-5a5ba6c6-2f95-4136-815b-23275c4f1efb",
+            "object": "chat.completion",
+            "created": 1737472126,
+            "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
+            "choices": [
+                {
+                    "index": 0,
+                    "message": {
+                        "role": "assistant",
+                        "content": "The capital of Argentina is Buenos Aires.",
+                        "tool_calls": []
+                    },
+                    "logprobs": null,
+                    "finish_reason": "stop",
+                    "stop_reason": null
+                }
+            ],
+            "usage": {
+                "prompt_tokens": 48,
+                "total_tokens": 57,
+                "completion_tokens": 9,
+                "prompt_tokens_details": null
+            },
+            "prompt_logprobs": null
+        }
+    }
 }
 ```
 
