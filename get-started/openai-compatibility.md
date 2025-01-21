@@ -30,7 +30,7 @@ To start using **kluster.ai** with OpenAI's client libraries, set your API key a
 
 ## Currently unsupported OpenAI features
 
-While kluster.ai's API is largely compatible with OpenAI's, certain features of the [Chat completion](/api-reference/chat){target=\_blank} endpoint are currently not supported:
+While **kluster.ai's** API is largely compatible with OpenAI's, certain features of the [Chat completion](/api-reference/chat){target=\_blank} endpoint are currently not supported:
 
 ### Create Chat Completion:
 - `name` attribute in `system`, `user`, and `assistant` messages
