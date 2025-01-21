@@ -648,7 +648,7 @@ The endpoint to be used for all requests in the Batch. Currently, only `/v1/chat
 
 `completion_window` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-The supported completion windows are 1, 3, 6, 12, and 24 hours to accommodate a range of use cases and budget requirements. The code samples provided utilize the 24-hour completion window. 
+The supported completion windows are 1, 3, 6, 12, and 24 hours to accommodate a range of use cases and budget requirements. The code samples provided utilize the 24-hour completion window.
 
 Learn more about how completion window selection affects cost by visiting the pricing section of the [kluster.ai website](https://www.kluster.ai){target=\_blank}.
 
@@ -1222,14 +1222,13 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 
 ## Files
 
-
 ### Upload files
 
 `POST https://api.kluster.ai/v1/files/`
 
 Upload a [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `files` endpoint.
 
-You can also view all your uploaded files in the [**Files** tab](https://platform.kluster.ai/files) of the **kluster.ai** platform.
+You can also view all your uploaded files in the [**Files** tab](https://platform.kluster.ai/files){target=\_blank} of the **kluster.ai** platform.
 
 <div class="grid" markdown>
 <div markdown>

@@ -25,16 +25,16 @@ pip install "openai>=1.0.0"
 
 Navigate to the [platform.kluster.ai](http://platform.kluster.ai){target=\_blank} web app and select **API Keys** from the left-hand menu. Create a new API key by specifying the API key name. You'll need this for all API requests.
 
-For step-by-step instructions, refer to the [Generate your kluster.ai API key](/get-started/get-api-key){target=\_blank} guide.
+For step-by-step instructions, refer to the [Generate your **kluster.ai** API key](/get-started/get-api-key){target=\_blank} guide.
 
 ## Batch job workflow overview
 
-Working with Batch jobs in the kluster.ai API involves the following steps:
+Working with Batch jobs in the **kluster.ai** API involves the following steps:
 
 1. **Create Batch job files** - structure your Batch requests as JSON files with the required details
 2. **Upload Batch files** - send your JSON files to the API and receive a file ID for reference
 3. **Submit the Batch job** - use the file ID to start a new Batch job
-4. **Monitor Job progress** - track the status of your Batch job to ensure it is completed successfully
+4. **Monitor job progress** - track the status of your Batch job to ensure it is completed successfully
 5. **Retrieve results** - after the job finishes, access and process the results as needed
 
 This streamlined process enables efficient handling of large-scale requests.
@@ -147,7 +147,7 @@ Upload your [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `fi
 The response will contain an `id` field; save this value as you'll need it in the next step, where it's referred to as `input_file_id`.
 
 !!! note
-    You can also view all your uploaded files in the [**Files** tab](https://platform.kluster.ai/files){target=\_blank} of the kluster.ai platform.
+    You can also view all your uploaded files in the [**Files** tab](https://platform.kluster.ai/files){target=\_blank} of the **kluster.ai** platform.
 
 === "Python"
 
@@ -458,7 +458,7 @@ To cancel a Batch job currently in progress, send a request to the `cancel` endp
 
 ## Summary
 
-Congratulations! You now have all the tools needed to work with the kluster.ai Batch API. In this guide, you've learned how to:
+Congratulations! You now have all the tools needed to work with the **kluster.ai** Batch API. In this guide, you've learned how to:
 
 - Prepare and submit Batch jobs with structured request inputs
 - Track your jobs' progress in real-time
@@ -467,4 +467,4 @@ Congratulations! You now have all the tools needed to work with the kluster.ai B
 - Cancel jobs when needed
 - View supported models
 
-The kluster.ai Batch API is designed to efficiently and reliably handle your large-scale LLM workloads. Do you have questions or suggestions? The [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
+The **kluster.ai** Batch API is designed to efficiently and reliably handle your large-scale LLM workloads. Do you have questions or suggestions? The [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
