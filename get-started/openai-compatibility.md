@@ -11,7 +11,7 @@ If you already have an application running with the OpenAI client library, you c
 
 ## Configuring OpenAI to use kluster.ai's API
 
-To start using kluster.ai with OpenAI's client libraries, set your API key and change the base URL to `https://api.kluster.ai/v1`:
+To start using **kluster.ai** with OpenAI's client libraries, set your API key and change the base URL to `https://api.kluster.ai/v1`:
 
 === "Python"
 
