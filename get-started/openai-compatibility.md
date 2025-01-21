@@ -7,7 +7,7 @@ description: Learn how kluster.ai is fully compatible with OpenAI client librari
 
 The [kluster.ai](https://www.kluster.ai/){target=\_blank} API is highly compatible with [OpenAI](https://platform.openai.com/docs/api-reference/introduction){target=\_blank}'s client libraries, allowing seamless integration into your existing applications.
 
-If you already have an application running with the OpenAI client library, you can easily switch to kluster.ai's API with minimal changes. This ensures a smooth transition without the need for significant refactoring or rework.
+If you already have an application running with the OpenAI client library, you can easily switch to **kluster.ai's** API with minimal changes. This ensures a smooth transition without the need for significant refactoring or rework.
 
 ## Configuring OpenAI to use kluster.ai's API
 
