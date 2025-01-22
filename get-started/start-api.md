@@ -59,7 +59,7 @@ Each request needs to include the following arguments:
             You can see the full list of available models programmatically using the [list supported models](#list-supported-models) endpoint.
 
     - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles)
-    - Any optional [chat completion parameters](/api-reference/chat/#create-chat-completion){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
+    - Any optional [chat completion parameters](/api-reference/reference/#create-chat-completion){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
 
 The following examples generate requests and save them in a JSONL file, ready for upload and processing.
 
@@ -148,7 +148,7 @@ Upload your [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `fi
 The response will contain an `id` field; save this value as you'll need it in the next step, where it's referred to as `input_file_id`.
 
 !!! note
-    You can also view all your uploaded files in the [**Files** tab](https://platform.kluster.ai/files){target=\_blank} of the kluster.ai platform.
+    You can also view all your uploaded files in the [**Files** tab](https://platform.kluster.ai/files){target=\_blank} of the **kluster.ai** platform.
 
 === "Python"
 
@@ -183,7 +183,7 @@ The response will contain an `id` field; save this value as you'll need it in th
 
 ## Submit a Batch job
 
-Next, submit a Batch job by calling the `batches` endpoint and providing the `id` of the uploaded Batch job file (from the previous section) as the [`input_file_id`, and additional parameters](/api-reference/batch/#submit-a-batch-job){target=\_blank} to specify the job's configuration.
+Next, submit a Batch job by calling the `batches` endpoint and providing the `id` of the uploaded Batch job file (from the previous section) as the [`input_file_id`, and additional parameters](/api-reference/reference/#submit-a-batch-job){target=\_blank} to specify the job's configuration.
 
 The response includes an `id` that can be used to monitor the job's progress, as demonstrated in the next section.
 
@@ -242,12 +242,12 @@ The response includes an `id` that can be used to monitor the job's progress, as
 
 ## Monitor job progress
 
-To monitor your Batch job's progress, make periodic requests to the `batches` endpoint using the `id` of the Batch request (from the previous section) as the [`batch_id`](/api-reference/batch/#retrieve-a-batch){target=\_blank} to check its status. The job is complete when the `status` field returns `"completed"`.
+To monitor your Batch job's progress, make periodic requests to the `batches` endpoint using the `id` of the Batch request (from the previous section) as the [`batch_id`](/api-reference/reference/#retrieve-a-batch){target=\_blank} to check its status. The job is complete when the `status` field returns `"completed"`.
 
-To see a complete list of the supported statuses, refer to the [Retrieve a batch](/api-reference/batch/#retrieve-a-batch){target=\_blank} API reference page.
+To see a complete list of the supported statuses, refer to the [Retrieve a batch](/api-reference/reference/#retrieve-a-batch){target=\_blank} API reference page.
 
 !!! note
-    You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
+    You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch) of the **kluster.ai** platform UI.
 
 === "Python"
 
@@ -459,7 +459,7 @@ To cancel a Batch job currently in progress, send a request to the `cancel` endp
 
 ## Summary
 
-Congratulations! You now have all the tools needed to work with the kluster.ai Batch API. In this guide, you've learned how to:
+Congratulations! You now have all the tools needed to work with the **kluster.ai** Batch API. In this guide, you've learned how to:
 
 - Prepare and submit Batch jobs with structured request inputs
 - Track your jobs' progress in real-time
@@ -468,4 +468,4 @@ Congratulations! You now have all the tools needed to work with the kluster.ai B
 - Cancel jobs when needed
 - View supported models
 
-The kluster.ai Batch API is designed to efficiently and reliably handle your large-scale LLM workloads. Do you have questions or suggestions? The [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
+The **kluster.ai** Batch API is designed to efficiently and reliably handle your large-scale LLM workloads. Do you have questions or suggestions? The [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
