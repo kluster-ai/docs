@@ -5,13 +5,13 @@ description: Follow step-by-step instructions to generate and manage API keys, e
 
 # Generate your kluster.ai API key
 
-The API key is a unique identifier that authenticates requests associated with your account. You must have at least one API key to access **kluster.ai**'s services.
+The API key is a unique identifier that authenticates requests associated with your account. You must have at least one API key to access [kluster.ai](https://www.kluster.ai/){target=\_blank}'s services.
 
-This guide will help you obtain an API key, the first step to leveraging **kluster.ai**'s powerful and cost-effective AI capabilities.
+This guide will help you obtain an API key, the first step to leveraging kluster.ai's powerful and cost-effective AI capabilities.
 
 ## Create an account
 
-If you haven't already created an account with **kluster.ai**, visit the [registration page](https://platform.kluster.ai/signup){target=\_blank} and take the following steps:
+If you haven't already created an account with kluster.ai, visit the [registration page](https://platform.kluster.ai/signup){target=\_blank} and take the following steps:
 
 1. Enter your full name
 2. Provide a valid email address
@@ -50,7 +50,7 @@ After you've signed up or logged into the platform through the [login page](http
 
 ## Managing your API keys
 
-The **API Key Management** section allows you to efficiently manage your **kluster.ai** API keys. You can create, view, and delete API keys by navigating to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section. Your API keys will be listed in the **API Key Management** section.
+The **API Key Management** section allows you to efficiently manage your kluster.ai API keys. You can create, view, and delete API keys by navigating to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section. Your API keys will be listed in the **API Key Management** section.
 
 To delete an API key, take the following steps:
 
@@ -65,4 +65,4 @@ To delete an API key, take the following steps:
 
 ## Next steps
 
-Now that you have your API key, you can start integrating **kluster.ai**'s LLMs into your applications. Refer to our [Getting Started](/get-started/start-api/){target=\_blank} guide for detailed instructions on using the API.
+Now that you have your API key, you can start integrating kluster.ai's LLMs into your applications. Refer to our [Getting Started](/get-started/start-api/){target=\_blank} guide for detailed instructions on using the API.

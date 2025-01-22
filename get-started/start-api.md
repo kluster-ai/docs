@@ -5,7 +5,7 @@ description: The kluster.ai API getting started guide provides examples and inst
 
 # Start using the kluster.ai API
 
-The **kluster.ai** API provides a straightforward way to work with Large Language Models (LLMs) at scale. It is compatible with OpenAI's API and SDKs, making it easy to integrate into your existing workflows with minimal code changes.
+The [kluster.ai](https://www.kluster.ai/){target=\_blank} API provides a straightforward way to work with Large Language Models (LLMs) at scale. It is compatible with OpenAI's API and SDKs, making it easy to integrate into your existing workflows with minimal code changes.
 
 This guide provides copy-and-paste examples for both Python and curl (although all OpenAI's SDKs are supported) and detailed explanations to help you get started quickly.
 
@@ -19,16 +19,16 @@ pip install "openai>=1.0.0"
 
 ## Get your API key
 
-Navigate to the **kluster.ai** developer console [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key from there. You'll need this for all API requests.
+Navigate to the kluster.ai developer console [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key from there. You'll need this for all API requests.
 
 For step-by-step instructions, refer to the [Get an API key](/get-started/get-api-key){target=\_blank} guide.
 
 ## Batch job workflow overview
 
-Working with Batch jobs in the **kluster.ai** API involves the following steps:
+Working with Batch jobs in the kluster.ai API involves the following steps:
 
 1. **Create Batch job file** - prepare a JSON Lines file containing one or more chat completion requests to be executed in the batch
-2. **Upload Batch job file** - upload the file to **kluster.ai** to receive a unique file ID
+2. **Upload Batch job file** - upload the file to kluster.ai to receive a unique file ID
 3. **Start the Batch job** - initiate a new Batch job using the file ID
 4. **Monitor job progress** - track the status of your Batch job to ensure successful completion
 5. **Retrieve results** - once the job finishes, access and process the results as needed
@@ -54,6 +54,7 @@ Each request needs to include the following arguments:
         - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
         - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
         - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
+        - `deepseek-ai/DeepSeek-R1`
 
         !!! tip
             You can see the full list of available models programmatically using the [list supported models](#list-supported-models) endpoint.
@@ -148,7 +149,7 @@ Upload your [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `fi
 The response will contain an `id` field; save this value as you'll need it in the next step, where it's referred to as `input_file_id`.
 
 !!! note
-    You can also view all your uploaded files in the [**Files** tab](https://platform.kluster.ai/files){target=\_blank} of the **kluster.ai** platform.
+    You can also view all your uploaded files in the [**Files** tab](https://platform.kluster.ai/files){target=\_blank} of the kluster.ai platform.
 
 === "Python"
 
@@ -247,7 +248,7 @@ To monitor your Batch job's progress, make periodic requests to the `batches` en
 To see a complete list of the supported statuses, refer to the [Retrieve a batch](/api-reference/reference/#retrieve-a-batch){target=\_blank} API reference page.
 
 !!! note
-    You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch) of the **kluster.ai** platform UI.
+    You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
 
 === "Python"
 
@@ -459,7 +460,7 @@ To cancel a Batch job currently in progress, send a request to the `cancel` endp
 
 ## Summary
 
-Congratulations! You now have all the tools needed to work with the **kluster.ai** Batch API. In this guide, you've learned how to:
+Congratulations! You now have all the tools needed to work with the kluster.ai Batch API. In this guide, you've learned how to:
 
 - Prepare and submit Batch jobs with structured request inputs
 - Track your jobs' progress in real-time
@@ -468,4 +469,4 @@ Congratulations! You now have all the tools needed to work with the **kluster.ai
 - Cancel jobs when needed
 - View supported models
 
-The **kluster.ai** Batch API is designed to efficiently and reliably handle your large-scale LLM workloads. Do you have questions or suggestions? The [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
+The kluster.ai Batch API is designed to efficiently and reliably handle your large-scale LLM workloads. Do you have questions or suggestions? The [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
