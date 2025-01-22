@@ -27,17 +27,17 @@ Navigate to the [platform.kluster.ai](http://platform.kluster.ai){target=\_blank
 
 For step-by-step instructions, refer to the [Generate your kluster.ai API key](/get-started/get-api-key){target=\_blank} guide.
 
-## Batch job workflow overview
+## What you'll learn in this guide
 
-Working with Batch jobs in the kluster.ai API involves the following steps:
+In this guide, you'll gain hands-on experience with the **kluster.ai** API for managing Batch jobs. You'll learn how to:
 
-1. **Create Batch job files** - structure your Batch requests as JSON files with the required details
-2. **Upload Batch files** - send your JSON files to the API and receive a file ID for reference
-3. **Submit the Batch job** - use the file ID to start a new Batch job
-4. **Monitor Job progress** - track the status of your Batch job to ensure it is completed successfully
-5. **Retrieve results** - after the job finishes, access and process the results as needed
-
-This streamlined process enables efficient handling of large-scale requests.
+- **Create a Batch job file** - prepare a JSON Lines file containing one or more chat completion requests to be executed in the Batch
+- **Upload the Batch job file** - upload the file to **kluster.ai** to receive a unique file ID
+- **Start the Batch job** - initiate a new Batch job using the file ID
+- **Monitor job progress** - track the status of your Batch job to ensure successful completion
+- **Retrieve results** - once the job finishes, access and process the results as needed
+- **Cancel a Batch job** - cancel an ongoing Batch job if necessary before it completes
+- **List all Batch jobs** - review all of your Batch jobs
 
 ## Create Batch jobs as JSON files
 
