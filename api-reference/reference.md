@@ -1050,7 +1050,7 @@ The object type, which is always `batch`.
 
 `endpoint` ++"string"++
 
-The **kluster.ai** API endpoint used by the Batch.
+The kluster.ai API endpoint used by the Batch.
 
 ---
 
@@ -1230,7 +1230,7 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 
 Upload a [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `files` endpoint.
 
-You can also view all your uploaded files in the [**Files** tab](https://platform.kluster.ai/files){target=\_blank} of the **kluster.ai** platform.
+You can also view all your uploaded files in the [**Files** tab](https://platform.kluster.ai/files){target=\_blank} of the kluster.ai platform.
 
 <div class="grid" markdown>
 <div markdown>
@@ -1651,7 +1651,7 @@ The intended purpose of the file. Currently, only `batch` is supported.
 
 Lists the currently available models.
 
-You can use this endpoint to retrieve a list of all available models for the **kluster.ai** API. Currently supported models include:
+You can use this endpoint to retrieve a list of all available models for the kluster.ai API. Currently supported models include:
 
 - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
