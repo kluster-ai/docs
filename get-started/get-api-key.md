@@ -5,13 +5,13 @@ description: Follow step-by-step instructions to generate and manage API keys, e
 
 # Generate your kluster.ai API key
 
-[kluster.ai](https://www.kluster.ai/){target=\_blank} provides a unique API service with an Adaptive Inference service that dynamically scales resources for high-volume, asynchronous processing, delivering lower costs than traditional batch solutions.
+The API key is a unique identifier that authenticates requests associated with your account. You must have at least one API key to access **kluster.ai**'s services.
 
-This guide helps you obtain an API key, the first step to leveraging **kluster.ai**'s powerful and cost-effective AI capabilities.
+This guide will help you obtain an API key, the first step to leveraging **kluster.ai**'s powerful and cost-effective AI capabilities.
 
 ## Create an account
 
-If you haven't already created an account with **kluster.ai**, visit the [platform registration page](https://platform.kluster.ai/signup){target=\_blank} and take the following steps:
+If you haven't already created an account with **kluster.ai**, visit the [registration page](https://platform.kluster.ai/signup){target=\_blank} and take the following steps:
 
 1. Enter your full name
 2. Provide a valid email address
