@@ -1656,6 +1656,7 @@ You can use this endpoint to retrieve a list of all available models for the **k
 - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
+- `deepseek-ai/DeepSeek-R1`
 
 <div class="grid" markdown>
 <div markdown>

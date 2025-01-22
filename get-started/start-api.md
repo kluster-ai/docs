@@ -54,6 +54,7 @@ Each request needs to include the following arguments:
         - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
         - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
         - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
+        - `deepseek-ai/DeepSeek-R1`
 
         !!! tip
             You can see the full list of available models programmatically using the [list supported models](#list-supported-models) endpoint.
