@@ -5,15 +5,11 @@ description: The kluster.ai API getting started guide provides examples and inst
 
 # Start using the kluster.ai API
 
-The kluster.ai API provides a straightforward way to work with Large Language Models (LLMs) at scale. It is compatible with OpenAI Python library and Batch API, making it easy to integrate into your existing workflows with minimal code changes.
+The **kluster.ai** API provides a straightforward way to work with Large Language Models (LLMs) at scale. It is compatible with OpenAI's API and SDKs, making it easy to integrate into your existing workflows with minimal code changes.
 
-Choose your preferred way to interact with the API:
+This guide provides copy-and-paste examples for both Python and curl (although all OpenAI's SDKs are supported) and detailed explanations to help you get started quickly.
 
-- Use the [OpenAI Python library](https://github.com/openai/openai-python){target=\_blank} (recommended)
-- Make direct HTTP requests using curl
-- Use any HTTP client that supports REST APIs
-
-This guide provides copy-and-paste examples for both Python and curl, along with detailed explanations to help you get started quickly.
+## Install prerequisites
 
 The OpenAI Python library (version 1.0.0 or higher) is recommended, which can be installed with:
 
@@ -23,21 +19,26 @@ pip install "openai>=1.0.0"
 
 ## Get your API key
 
-Navigate to the [platform.kluster.ai](http://platform.kluster.ai){target=\_blank} web app and select **API Keys** from the left-hand menu. Create a new API key by specifying the API key name. You'll need this for all API requests.
+Navigate to the **kluster.ai** developer console [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key from there. You'll need this for all API requests.
 
-For step-by-step instructions, refer to the [Generate your kluster.ai API key](/get-started/get-api-key){target=\_blank} guide.
+For step-by-step instructions, refer to the [Get an API key](/get-started/get-api-key){target=\_blank} guide.
 
 ## Batch job workflow overview
 
-Working with Batch jobs in the kluster.ai API involves the following steps:
+Working with Batch jobs in the **kluster.ai** API involves the following steps:
 
-1. **Create Batch job files** - structure your Batch requests as JSON files with the required details
-2. **Upload Batch files** - send your JSON files to the API and receive a file ID for reference
-3. **Submit the Batch job** - use the file ID to start a new Batch job
-4. **Monitor Job progress** - track the status of your Batch job to ensure it is completed successfully
-5. **Retrieve results** - after the job finishes, access and process the results as needed
+1. **Create Batch job file** - prepare a JSON Lines file containing one or more chat completion requests to be executed in the batch
+2. **Upload Batch job file** - upload the file to **kluster.ai** to receive a unique file ID
+3. **Start the Batch job** - initiate a new Batch job using the file ID
+4. **Monitor job progress** - track the status of your Batch job to ensure successful completion
+5. **Retrieve results** - once the job finishes, access and process the results as needed
 
 This streamlined process enables efficient handling of large-scale requests.
+
+In addition to these core steps, this guide will give you hands-on experience with:
+
+- **Cancel a Batch job** - cancel an ongoing Batch job if necessary before it completes
+- **List all Batch jobs** - review all of your Batch jobs
 
 ## Create Batch jobs as JSON files
 
@@ -58,7 +59,7 @@ Each request needs to include the following arguments:
             You can see the full list of available models programmatically using the [list supported models](#list-supported-models) endpoint.
 
     - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles)
-    - Any optional [chat completion parameters](/api-reference/chat/#create-chat-completion){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
+    - Any optional [chat completion parameters](/api-reference/reference/#create-chat-completion){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
 
 The following examples generate requests and save them in a JSONL file, ready for upload and processing.
 
@@ -147,7 +148,7 @@ Upload your [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `fi
 The response will contain an `id` field; save this value as you'll need it in the next step, where it's referred to as `input_file_id`.
 
 !!! note
-    You can also view all your uploaded files in the [**Files** tab](https://platform.kluster.ai/files){target=\_blank} of the kluster.ai platform.
+    You can also view all your uploaded files in the [**Files** tab](https://platform.kluster.ai/files){target=\_blank} of the **kluster.ai** platform.
 
 === "Python"
 
@@ -182,7 +183,7 @@ The response will contain an `id` field; save this value as you'll need it in th
 
 ## Submit a Batch job
 
-Next, submit a Batch job by calling the `batches` endpoint and providing the `id` of the uploaded Batch job file (from the previous section) as the [`input_file_id`, and additional parameters](/api-reference/batch/#submit-a-batch-job){target=\_blank} to specify the job's configuration.
+Next, submit a Batch job by calling the `batches` endpoint and providing the `id` of the uploaded Batch job file (from the previous section) as the [`input_file_id`, and additional parameters](/api-reference/reference/#submit-a-batch-job){target=\_blank} to specify the job's configuration.
 
 The response includes an `id` that can be used to monitor the job's progress, as demonstrated in the next section.
 
@@ -241,12 +242,12 @@ The response includes an `id` that can be used to monitor the job's progress, as
 
 ## Monitor job progress
 
-To monitor your Batch job's progress, make periodic requests to the `batches` endpoint using the `id` of the Batch request (from the previous section) as the [`batch_id`](/api-reference/batch/#retrieve-a-batch){target=\_blank} to check its status. The job is complete when the `status` field returns `"completed"`.
+To monitor your Batch job's progress, make periodic requests to the `batches` endpoint using the `id` of the Batch request (from the previous section) as the [`batch_id`](/api-reference/reference/#retrieve-a-batch){target=\_blank} to check its status. The job is complete when the `status` field returns `"completed"`.
 
-To see a complete list of the supported statuses, refer to the [Retrieve a batch](/api-reference/batch/#retrieve-a-batch){target=\_blank} API reference page.
+To see a complete list of the supported statuses, refer to the [Retrieve a batch](/api-reference/reference/#retrieve-a-batch){target=\_blank} API reference page.
 
 !!! note
-    You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
+    You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch) of the **kluster.ai** platform UI.
 
 === "Python"
 
@@ -458,7 +459,7 @@ To cancel a Batch job currently in progress, send a request to the `cancel` endp
 
 ## Summary
 
-Congratulations! You now have all the tools needed to work with the kluster.ai Batch API. In this guide, you've learned how to:
+Congratulations! You now have all the tools needed to work with the **kluster.ai** Batch API. In this guide, you've learned how to:
 
 - Prepare and submit Batch jobs with structured request inputs
 - Track your jobs' progress in real-time
@@ -467,4 +468,4 @@ Congratulations! You now have all the tools needed to work with the kluster.ai B
 - Cancel jobs when needed
 - View supported models
 
-The kluster.ai Batch API is designed to efficiently and reliably handle your large-scale LLM workloads. Do you have questions or suggestions? The [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
+The **kluster.ai** Batch API is designed to efficiently and reliably handle your large-scale LLM workloads. Do you have questions or suggestions? The [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.

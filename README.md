@@ -4,7 +4,7 @@ This repository contains documentation for [kluster.ai](https://kluster.ai), the
 
 ## About This Site
 
-The content in this repository is displayed on the kluster.ai documentation site generated using [mkdocs](https://www.mkdocs.org). The theme used is [Material for MkDocs](https://squidfunk.github.io/mkdocs-material).
+The content in this repository is displayed on the **kluster.ai** documentation site generated using [MkDocs](https://www.mkdocs.org). The theme used is [Material for MkDocs](https://squidfunk.github.io/mkdocs-material).
 
 ## Contributing
 
