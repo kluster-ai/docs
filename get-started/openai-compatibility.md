@@ -7,11 +7,11 @@ description: Learn how kluster.ai is fully compatible with OpenAI client librari
 
 The [kluster.ai](https://www.kluster.ai/){target=\_blank} API is highly compatible with [OpenAI](https://platform.openai.com/docs/api-reference/introduction){target=\_blank}'s client libraries, allowing seamless integration into your existing applications.
 
-If you already have an application running with the OpenAI client library, you can easily switch to **kluster.ai's** API with minimal changes. This ensures a smooth transition without the need for significant refactoring or rework.
+If you already have an application running with the OpenAI client library, you can easily switch to kluster.ai's API with minimal changes. This ensures a smooth transition without the need for significant refactoring or rework.
 
 ## Configuring OpenAI to use kluster.ai's API
 
-To start using **kluster.ai** with OpenAI's client libraries, set your [API key](/get-started/get-api-key/){target=\_blank} and change the base URL to `https://api.kluster.ai/v1`:
+To start using kluster.ai with OpenAI's client libraries, set your [API key](/get-started/get-api-key/){target=\_blank} and change the base URL to `https://api.kluster.ai/v1`:
 
 === "Python"
 
@@ -27,7 +27,7 @@ To start using **kluster.ai** with OpenAI's client libraries, set your [API key]
 
 ## Unsupported OpenAI features
 
-While **kluster.ai**'s API is largely compatible with OpenAI's, the following sections outline the specific features and fields that are currently unsupported.
+While kluster.ai's API is largely compatible with OpenAI's, the following sections outline the specific features and fields that are currently unsupported.
 
 ### Chat completions endpoint
 

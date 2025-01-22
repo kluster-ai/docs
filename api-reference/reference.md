@@ -489,7 +489,7 @@ The created [Batch](#batch-object) object.
 
 To retrieve a Batch job, send a request to the `batches` endpoint with your `batch_id`.
 
-You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch){target=\_blank} of the **kluster.ai** platform UI.
+You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch){target=\_blank} of the kluster.ai platform UI.
 
 <div class="grid" markdown>
 <div markdown>
