@@ -5,15 +5,11 @@ description: The kluster.ai API getting started guide provides examples and inst
 
 # Start using the kluster.ai API
 
-The kluster.ai API provides a straightforward way to work with Large Language Models (LLMs) at scale. It is compatible with OpenAI Python library and Batch API, making it easy to integrate into your existing workflows with minimal code changes.
+The **kluster.ai** API provides a straightforward way to work with Large Language Models (LLMs) at scale. It is compatible with OpenAI's API and SDKs, making it easy to integrate into your existing workflows with minimal code changes.
 
-Choose your preferred way to interact with the API:
+This guide provides copy-and-paste examples for both Python and curl (although all OpenAI's SDKs are supported), along with detailed explanations to help you get started quickly.
 
-- Use the [OpenAI Python library](https://github.com/openai/openai-python){target=\_blank} (recommended)
-- Make direct HTTP requests using curl
-- Use any HTTP client that supports REST APIs
-
-This guide provides copy-and-paste examples for both Python and curl, along with detailed explanations to help you get started quickly.
+## Install prerequisites
 
 The OpenAI Python library (version 1.0.0 or higher) is recommended, which can be installed with:
 
@@ -23,9 +19,9 @@ pip install "openai>=1.0.0"
 
 ## Get your API key
 
-Navigate to the [platform.kluster.ai](http://platform.kluster.ai){target=\_blank} web app and select **API Keys** from the left-hand menu. Create a new API key by specifying the API key name. You'll need this for all API requests.
+Navigate to the **kluster.ai** developer console [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key from there. You'll need this for all API requests.
 
-For step-by-step instructions, refer to the [Generate your kluster.ai API key](/get-started/get-api-key){target=\_blank} guide.
+For step-by-step instructions, refer to the [Get an API key](/get-started/get-api-key){target=\_blank} guide.
 
 ## What you'll learn in this guide
 
