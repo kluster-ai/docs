@@ -7,7 +7,7 @@ description: The kluster.ai API getting started guide provides examples and inst
 
 The **kluster.ai** API provides a straightforward way to work with Large Language Models (LLMs) at scale. It is compatible with OpenAI's API and SDKs, making it easy to integrate into your existing workflows with minimal code changes.
 
-This guide provides copy-and-paste examples for both Python and curl (although all OpenAI's SDKs are supported), along with detailed explanations to help you get started quickly.
+This guide provides copy-and-paste examples for both Python and curl (although all OpenAI's SDKs are supported) and detailed explanations to help you get started quickly.
 
 ## Install prerequisites
 
@@ -25,7 +25,7 @@ For step-by-step instructions, refer to the [Get an API key](/get-started/get-ap
 
 ## What you'll learn in this guide
 
-In this guide, you'll gain hands-on experience with the **kluster.ai** API for managing Batch jobs. You'll learn how to:
+This guide will give you hands-on experience with the **kluster.ai** API for managing Batch jobs. You'll learn how to:
 
 - **Create a Batch job file** - prepare a JSON Lines file containing one or more chat completion requests to be executed in the Batch
 - **Upload the Batch job file** - upload the file to **kluster.ai** to receive a unique file ID
