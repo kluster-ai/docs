@@ -1413,23 +1413,29 @@ The organization that owns the model.
   "data": [
     {
       "id": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo",
-      "object": "model",
       "created": 1731336418,
+      "object": "model",
       "owned_by": "klusterai"
     },
     {
       "id": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
-      "object": "model",
       "created": 1731336610,
+      "object": "model",
       "owned_by": "klusterai"
     },
-        {
+    {
       "id": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
-      "object": "model",
       "created": 1733777629,
+      "object": "model",
+      "owned_by": "klusterai"
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-R1",
+      "created": 1737385699,
+      "object": "model",
       "owned_by": "klusterai"
     }
-  ]
+  ],
 }
 ```
 
