@@ -3,6 +3,7 @@ title: API Reference
 description: Explore the kluster.ai API reference to get a comprehensive overview on the available endpoints, request and response formats, and integration examples.
 hide:
  - navigation
+template: api.html
 ---
 
 # API reference
