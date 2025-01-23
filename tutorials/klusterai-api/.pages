@@ -1,4 +1,4 @@
-title: kluster.ai API
+title: Use cases
 hide: false
 nav:
  - 'Text classification': text-classification-api.ipynb
