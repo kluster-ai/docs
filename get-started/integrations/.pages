@@ -1,0 +1,4 @@
+title: Integrations
+hide: false
+nav:
+ - 'SillyTavern guide': sillytavern-guide.md
