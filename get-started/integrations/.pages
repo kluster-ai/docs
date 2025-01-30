@@ -1,4 +1,4 @@
 title: Integrations
 hide: false
 nav:
- - 'SillyTavern guide': sillytavern-guide.md
+ - 'LangChain with kluster.ai': langchain-basics.md
