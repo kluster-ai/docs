@@ -12,14 +12,13 @@ pip install langchain
 
 ## Integrate with LangChain
 
-Utilize LangChain’s `ChatOpenAI` model to interact with the kluster.ai API. 
+It is very simple to integrate kluster.ai with LangChain—just point your `ChatOpenAI` to the correct base URL and configure a few settings.
 
-Before using the API, you need to set your API key. If you don't have one, follow the steps in the [Get an API key guide](https://docs.kluster.ai/get-started/get-api-key/).
+**Key configuration points:**
 
-- The base_url is set to "https://api.kluster.ai/v1", directing requests to the kluster.ai API.
-	•	You need to replace "INSERT_API_KEY" with your personal API key to authenticate your requests.
-	•	The model parameter must be set to one of kluster.ai’s available models.
-	•	Check our models to find the best option for your use case.
+  - **Base URL:** Use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint.
+  - **API Key:** Replace `INSERT_API_KEY` in the code below with your own kluster.ai API key. If you don’t have one yet, refer to the [Get an API key guide](https://docs.kluster.ai/get-started/get-api-key/).
+  - **Select Your Model:** Choose one of kluster.ai’s available models based on your use case. For more details, see [kluster.ai’s models](https://docs.kluster.ai/get-started/models/).
 
 ```python
 from langchain_openai import ChatOpenAI
