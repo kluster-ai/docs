@@ -2,6 +2,7 @@ title: Use cases
 hide: false
 nav:
  - 'Text classification': text-classification-api.ipynb
+ - 'Text classificiation with Curator': text-classification-curator.ipynb
  - 'Sentiment analysis': sentiment-analysis-api.ipynb
  - 'Keyword extraction': keyword-extraction-api.ipynb
  - 'Multiple Batch predictions': multiple-tasks-batch-api.ipynb
