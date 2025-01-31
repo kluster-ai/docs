@@ -4,3 +4,4 @@ nav:
  - 'Starting building with the API': start-api.md
  - 'Get an API key': get-api-key.md
  - 'OpenAI compatibility': openai-compatibility.md
+ - 'Integrations': integrations
