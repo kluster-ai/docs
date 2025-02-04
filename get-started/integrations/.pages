@@ -1,5 +1,5 @@
 title: Integrations
 hide: false
 nav:
- - 'LangChain': langchain-basics.md
+ - 'LangChain': langchain.md
  - 'SillyTavern': sillytavern.md
