@@ -2,3 +2,4 @@ title: Integrations
 hide: false
 nav:
  - 'SillyTavern': sillytavern.md
+ - 'LiteLLM': litellm.md
