@@ -11,7 +11,7 @@ This guide shows you how to integrate [LiteLLM](https://www.litellm.ai/){target=
 
 Before starting, ensure you have the following:
 
-- [**LiteLLM installed**](https://github.com/BerriAI/litellm){target=\_blank}, which you can do as follows:
+- [**LiteLLM installed**](https://github.com/BerriAI/litellm){target=\_blank} - to install the library, use the following command:
 
     ```bash
     pip install litellm
