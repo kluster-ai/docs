@@ -1,6 +1,6 @@
 ---
 title: Integrate LiteLLM with kluster.ai
-description: This guide walks you through integrating LiteLLM, an open-source library that simplifies access to 100+ LLMs with load balancing and spend tracking, into kluster.ai.
+description: This guide shows how to integrate LiteLLM, an open-source library that simplifies access to 100+ LLMs with load balancing and spend tracking, into kluster.ai.
 ---
 
 # Integrating LiteLLM with the kluster.ai API
