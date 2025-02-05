@@ -2,7 +2,11 @@ import os
 import re
 
 # Tanssi-specific input
-docs_repo = 'kluster-docs'
+if os.getenv('GITHUB_ACTIONS') == 'true':
+    docs_repo = 'docs'
+else:
+    docs_repo = 'kluster-docs'
+
 docs_url = 'https://docs.kluster.ai/'
 
 # Set the base directory to the root of docs
