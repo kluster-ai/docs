@@ -1,7 +1,7 @@
 import os
 import re
 
-# Tanssi-specific input
+# Kluster-specific input
 if os.getenv('GITHUB_ACTIONS') == 'true':
     docs_repo = 'docs'
 else:
