@@ -52,11 +52,6 @@ By default, `Dobby` uses the `openai` model, which we have properly configured t
     "name": "Dobby",
     "clients": [],
     "modelProvider": "openai",
-    "settings": {
-        "voice": {
-            "model": "en_GB-danny-low"
-        }
-    },
 ```
 
 To run the `Dobby` agent, run the following command from the project root directory:
