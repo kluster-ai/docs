@@ -1,5 +1,5 @@
 ---
-title: Using Eliza with the kluster.ai API
+title: Using eliza with the kluster.ai API
 description: Learn how to integrate kluster.ai with Eliza, a fast, lightweight, and flexible AI agent framework, to launch and configure your own AI agent chatbot. 
 ---
 
