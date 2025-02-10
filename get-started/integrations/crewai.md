@@ -26,7 +26,7 @@ During setup, the CLI will ask you to choose a provider and a model. Select `ope
 
 ## Build a simple AI Agent
 
-After you finish the CLI setup, a sample folder will appear with `crew.py` and `main.py`. We won't be using these sample files in this tutorial because they include extra features that won’t be covered. Instead, we'll create new files corresponding to a simple AI agent chatbot. Go ahead and create a `hello_crew.py` and a `hello_main.py` file. 
+After you finish the CLI setup, a sample folder will appear with `crew.py` and `main.py`. We won't use these sample files because they include extra features outside this tutorial's scope. Instead, we'll create new files corresponding to a simple AI agent chatbot. Create a `hello_crew.py` and a `hello_main.py` file. 
 
 Let's turn our attention to the `hello_crew` file. The first thing we'll do is handle our imports and define a custom LLM. This is the most important part of the kluster.ai integration. Here are the main parameters we'll need to define to complete the kluster.ai integration:
 
