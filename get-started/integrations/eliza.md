@@ -30,7 +30,7 @@ Then, set the following variables in the `.env` file:
   - **OPENAI_API_URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
   - **OPENAI_DEFAULT_MODEL** - choose one of kluster.ai's available models based on your use case. Ensure that the model's full name starting with `klusterai/` is listed. For more details, see [kluster.ai’s models](/api-reference/reference/#list-supported-models){target=\_blank}
 
-The OpenAI configuration section of your `.env` file should resemble the below:
+The OpenAI configuration section of your `.env` file should resemble the following:
 
 ```bash
 # OpenAI Configuration
