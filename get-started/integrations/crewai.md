@@ -1,6 +1,6 @@
 ---
 title: Using CrewAI with the kluster.ai API
-description: Learn how to integrate kluster.ai with CrewAI, a new framework for orchestrating autonomous AI agents, to launch and configure your own AI agent Chatbot.
+description: Learn how to integrate kluster.ai with CrewAI, a new framework for orchestrating autonomous AI agents, to launch and configure your AI agent Chatbot.
 ---
 
 # Using CrewAI with the kluster.ai API
