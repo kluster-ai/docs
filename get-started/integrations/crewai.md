@@ -61,7 +61,7 @@ class HelloWorldCrew:
 
 As you can see above, we also override `agents_config` and `tasks_config` with empty dictionaries. This tells CrewAI to ignore all YAML files and rely solely on your code to make this example tutorial as streamlined as possible. 
 
-Next, we'll define our agent. This code sets the agent’s role, goal, and backstory, then assigns the custom LLM (using kluster.ai API) we defined earlier for generating creative greetings.
+Next, we'll define our agent. This code sets the agent's role, goal, and backstory, then assigns the custom LLM (using kluster.ai API) we described earlier for generating creative greetings.
 
 ```python
     @agent
