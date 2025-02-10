@@ -43,7 +43,7 @@ OPENAI_DEFAULT_MODEL=klusterai/Meta-Llama-3.3-70B-Instruct-Turbo
 
 ## Run and interact with your first agent
 
-Now that you've configured your environment properly you're ready to run your first agent! Eliza comes with a number of characters that you can interact with by prompting or that can autonomously perform tasks like tweeting. This guide relies on the `Dobby` character for its minimal setup requirements. Other agents, particularly those that handle tweets, would necessitate additional steps, such as X login information, etc. 
+Now that you've configured your environment properly you're ready to run your first agent! Eliza comes with a number of characters that you can interact with by prompting or that can autonomously perform tasks like tweeting. This guide relies on the `Dobby` character for its minimal setup requirements. Other agents, particularly those that handle tweets, would necessitate additional steps, such as X login and similar information. 
 
 By default, `Dobby` uses the `openai` model, which we have properly configured to rely on the kluster.ai API, but it doesn't hurt to double-check the `dobby.character.json` file under the `characters` folder. You should see the configuration start with the following:
 
