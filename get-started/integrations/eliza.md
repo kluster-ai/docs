@@ -5,7 +5,7 @@ description: Learn how to integrate kluster.ai with Eliza, a fast, lightweight, 
 
 # Using Eliza with the kluster.ai API
 
-[Eliza](https://elizaos.github.io/eliza/){target=\_blank} is an open-source framework designed to create and manage AI agents that can handle a variety of tasks, from simple chat interactions to more complex automation. In this tutorial, we’ll show you how to integrate kluster.ai into Eliza so you can leverage its powerful models and quickly set up your AI-driven workflows.
+[Eliza](https://elizaos.github.io/eliza/){target=\_blank} is an open-source framework designed to create and manage AI agents that can handle a variety of tasks, from simple chat interactions to more complex automation. In this tutorial, we'll show you how to integrate kluster.ai into Eliza so you can leverage its powerful models and quickly set up your AI-driven workflows.
 
 ## Prerequisites
 
