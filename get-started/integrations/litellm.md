@@ -25,7 +25,7 @@ Before starting, ensure you have the following:
 It's straightforward to integrate kluster.ai with [LiteLLM](https://github.com/BerriAI/litellm){target=_blank}—just set the base URL and your kluster.ai API key via environment variables, then specify your chosen model.
 
   - **Base URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
-  - **API key** - replace `INSERT_API_KEY` in the code below with your own kluster.ai API key. If you don’t have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
+  - **API key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
   - **Select your model** - choose any of kluster.ai’s available models that best fits your needs. For more details, see [kluster.ai’s models](/api-reference/reference/#list-supported-models){target=\_blank}. Regardless of which model you choose, prepend its name with `openai/`. This ensures LiteLLM processes your requests using the OpenAI-style API
 
 ```python
