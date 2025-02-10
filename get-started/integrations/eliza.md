@@ -70,4 +70,4 @@ You can now interact with Dobby by clicking on the **Chat** button and starting 
 
 ![Chat with Dobby AI agent](/images/get-started/integrations/eliza/eliza-1.webp)
 
-That's it! You’ve successfully integrated Eliza with the kluster.ai API. You're now ready to harness the power of AI agents with the kluster.ai API! 
+That's it! You've successfully integrated Eliza with the kluster.ai API. You're now ready to harness the power of AI agents with the kluster.ai API! 
