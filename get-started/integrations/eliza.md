@@ -41,7 +41,7 @@ OPENAI_API_URL=https://api.kluster.ai/v1
 OPENAI_DEFAULT_MODEL=klusterai/Meta-Llama-3.3-70B-Instruct-Turbo
 ```
 
-## Run and Interact with your First Agent
+## Run and interact with your first agent
 
 Now that you've configured your environment properly you're ready to run your first agent! Eliza comes with a number of characters that you can interact with by prompting or that can autonomously perform tasks like tweeting. This guide relies on the `Dobby` character for its minimal setup requirements. Other agents, particularly those that handle tweets, would necessitate additional steps, such as X login information, etc. 
 
