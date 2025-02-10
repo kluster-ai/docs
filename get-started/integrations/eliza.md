@@ -14,7 +14,7 @@ Before starting, ensure you have the following kluster prerequisites:
 - **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
 - **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
 
-Next, you can clone and install the Eliza repository by following the Installation instructions on the [Eliza Quick Start guide](https://elizaos.github.io/eliza/docs/quickstart/){target=\_blank}. Pay careful attention to the Eliza prerequisites, including the minimum supported versions of Node.js and pnpm. You can pause at the **Configure Environment** section in the Quick Start guide, as we will proceed with those steps in this guide.
+Next, you can clone and install the Eliza repository by following the installation instructions on the [Eliza Quick Start guide](https://elizaos.github.io/eliza/docs/quickstart/){target=\_blank}. Pay careful attention to the Eliza prerequisites, including the minimum supported versions of Node.js and pnpm. You can pause at the **Configure Environment** section in the Quick Start guide, as we will proceed with those steps in this guide.
 
 ## Configure your Environment
 
