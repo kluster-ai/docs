@@ -16,7 +16,7 @@ Before starting, ensure you have the following kluster prerequisites:
 
 Next, you can clone and install the Eliza repository by following the installation instructions on the [Eliza Quick Start guide](https://elizaos.github.io/eliza/docs/quickstart/){target=\_blank}. Pay careful attention to the Eliza prerequisites, including the minimum supported versions of Node.js and pnpm. You can pause at the **Configure Environment** section in the Quick Start guide, as we will proceed with those steps in this guide.
 
-## Configure your Environment
+## Configure your environment
 
 After you have Eliza installed, it's simple to utilize kluster.ai with Eliza. Only three main changes to the `.env` file are required. You can run the following command to generate a `.env` file from the provided example. 
 
