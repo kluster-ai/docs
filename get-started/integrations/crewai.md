@@ -101,7 +101,7 @@ Next, we need to give the agent a task to do! This task prompts the agent for a 
         )
 ```
 
-Lastly, let's put together the `hello_main.py` file. This file serves as the entry point for running run the Hello World agent. It imports the `HelloWorldCrew` class, then calls `kickoff()` on the `hello_crew` to launch the task sequence with no extra inputs. 
+Lastly, let's put together the `hello_main.py` file. This file serves as the entry point for running the Hello World agent. It imports the `HelloWorldCrew` class, then calls `kickoff()` on the `hello_crew` to launch the task sequence with no extra inputs. 
 
 ```python
 #!/usr/bin/env python
