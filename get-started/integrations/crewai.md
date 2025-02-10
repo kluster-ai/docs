@@ -147,4 +147,4 @@ Example: "Hey there, how's your day going?"
 Hello, it's a beautiful day to shine, how's your sparkle today?
 ```
 
-And that's it! You've now successfully configured your own AI agent harnessing CrewAI and the power of the kluster.ai API! 
+And that's it! You've now successfully configured your AI agent harnessing CrewAI and the power of the kluster.ai API! 
