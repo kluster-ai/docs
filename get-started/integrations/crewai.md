@@ -22,7 +22,7 @@ Next, you can follow the [Installation Guide](https://docs.crewai.com/installati
 crewai create crew INSERT_PROJECT_NAME
 ```
 
-During setup, the CLI will ask you to choose a provider and a model. Feel free to select `openai` as the provider, and then choose any model; because we’ll configure kluster.ai as a custom model, your initial model choice won’t affect the final integration. 
+During setup, the CLI will ask you to choose a provider and a model. Select `openai` as the provider and then choose any available model. Because we'll configure kluster.ai as a custom model, your initial model choice won't affect the final integration.
 
 ## Build a simple AI Agent
 
