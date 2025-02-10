@@ -53,4 +53,4 @@ response = completion(
 print(response)
 ```
 
-That's it! You’ve successfully integrated LiteLLM with the kluster.ai API. You are now ready to harness the full power of kluster.ai with LiteLLM!
+That's it! You've successfully integrated LiteLLM with the kluster.ai API. You are now ready to harness the full power of kluster.ai with LiteLLM!
