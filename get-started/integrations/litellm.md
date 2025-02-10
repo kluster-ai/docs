@@ -5,7 +5,7 @@ description: This guide shows how to integrate LiteLLM, an open-source library t
 
 # Integrating LiteLLM with the kluster.ai API
 
-This guide shows you how to integrate [LiteLLM](https://www.litellm.ai/){target=_blank}—an open-source library providing unified access to 100+ large language models—with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API. By combining LiteLLM’s load balancing, fallback logic, and spend tracking with kluster.ai’s powerful models, you can seamlessly develop and deploy robust, AI-driven applications.
+This guide shows you how to integrate [LiteLLM](https://www.litellm.ai/){target=_blank}—an open-source library providing unified access to 100+ large language models—with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API. You can seamlessly develop and deploy robust, AI-driven applications by combining LiteLLM's load balancing, fallback logic, and spend tracking with kluster.ai's powerful models.
 
 ## Prerequisites
 
