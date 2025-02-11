@@ -78,7 +78,7 @@ Next, we'll define our agent. This code sets the agent's role, goal, and backsto
         )
 ```
 
-Next, we need to give the agent a task to do! This task prompts the agent for a unique, creative greeting each time, incorporating a random factor to prevent repeated responses. Passing this prompt to `hello_agent()`, ensures the final output is varied and fun. Note that CrewAI requires the task to have an `expected_output` field, which we have defined here as a short greeting.  
+Next, we need to give the agent a task to do. This task prompts the agent for a unique, creative greeting each time, incorporating a random factor to prevent repeated responses. Passing this prompt to `hello_agent()`, ensures the final output is varied and fun. Note that CrewAI requires the task to have an `expected_output` field, which we have defined here as a short greeting.  
 
 ```python
     @task
