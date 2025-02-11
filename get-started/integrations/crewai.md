@@ -134,17 +134,6 @@ python hello_main.py
 
 Upon running the script, you'll see output that looks like the following:
 
-```bash
-# Agent: HelloWorldAgent
-## Task:
-You are a friendly greeting bot.
-Please produce a short, creative greeting that changes each time.
-Random factor: 896380
-Example: "Hey there, how's your day going?"
-
-# Agent: HelloWorldAgent
-## Final Answer:
-Hello, it's a beautiful day to shine, how's your sparkle today?
-```
+--8<-- 'code/get-started/integrations/crewai/terminal/output.md'
 
 And that's it! You've now successfully configured your AI agent harnessing CrewAI and the power of the kluster.ai API! 
