@@ -49,7 +49,7 @@ Now that you've configured your environment properly you're ready to run your fi
 
 By default, `Dobby` uses the `openai` model, which we have properly configured to rely on the kluster.ai API, but it doesn't hurt to double-check the `dobby.character.json` file under the `characters` folder. You should see the configuration start with the following:
 
-```
+```json
 {
     "name": "Dobby",
     "clients": [],
