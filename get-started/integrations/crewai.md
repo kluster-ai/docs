@@ -28,12 +28,12 @@ During setup, the CLI will ask you to choose a provider and a model. Select `ope
 
 After you finish the CLI setup, a sample folder will appear with `crew.py` and `main.py`. This guide won't use these sample files because they include extra features outside this guide's scope. Instead, you'll create new files corresponding to a simple AI agent chatbot. Create a `hello_crew.py` and a `hello_main.py` file. 
 
-Turning our attention to the `hello_crew` file, you'll first handle our imports and define a custom LLM, the most essential part of the kluster.ai integration. Here are the main parameters you'll need to define to complete the kluster.ai integration:
+Turning our attention to the `hello_crew` file, you'll first handle our imports and define a custom LLM, the most essential part of the kluster.ai integration. Here are the four parameters you'll need to define to complete the kluster.ai integration:
 
-  - **provider** - you can specify `openai_compatible`
-  - **model** - choose one of kluster.ai's available models based on your use case. Regardless of which model you choose, prepend its name with `openai/`. This ensures CrewAI, which relies on LiteLLM, processes your requests correctly. For more details, see [kluster.ai's models](/api-reference/reference/#list-supported-models){target=\_blank}
-  - **base_url** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
-  - **api_key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
+  1. **provider** - you can specify `openai_compatible`
+  2. **model** - choose one of kluster.ai's available models based on your use case. Regardless of which model you choose, prepend its name with `openai/`. This ensures CrewAI, which relies on LiteLLM, processes your requests correctly. For more details, see [kluster.ai's models](/api-reference/reference/#list-supported-models){target=\_blank}
+  3. **base_url** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
+  4. **api_key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
   
 ```python
 --8<-- "code/get-started/integrations/crewai/hello_crew.py:0:23"
