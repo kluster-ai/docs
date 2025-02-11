@@ -9,7 +9,7 @@ description: Learn how to integrate kluster.ai with CrewAI, a new framework for 
 
 ## Prerequisites
 
-Before starting, ensure you have the following Kluster prerequisites:
+Before starting, ensure you have the following prerequisites:
 
 - **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
 - **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
@@ -78,7 +78,7 @@ Next, we'll define our agent. This code sets the agent's role, goal, and backsto
         )
 ```
 
-Next, we need to give the agent a task to do! This task prompts the agent for a unique, creative greeting each time, incorporating a random factor to prevent repeated responses. Passing this prompt to `hello_agent()`, ensures the final output is varied and fun. Note that CrewAI requires the task to have an `expected_output` field, which we have defined here as a short greeting.  
+Next, we need to give the agent a task to do. This task prompts the agent for a unique, creative greeting each time, incorporating a random factor to prevent repeated responses. Passing this prompt to `hello_agent()`, ensures the final output is varied and fun. Note that CrewAI requires the task to have an `expected_output` field, which we have defined here as a short greeting.  
 
 ```python
     @task
