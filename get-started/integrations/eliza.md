@@ -16,7 +16,7 @@ Before starting, ensure you have the following kluster prerequisites:
 - **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
 - **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
 
-Next, you can clone and install the eliza repository by following the installation instructions on the [eliza Quick Start guide](https://elizaos.github.io/eliza/docs/quickstart/){target=\_blank}. Pay careful attention to the eliza prerequisites, including the minimum supported versions of Node.js and pnpm. You can pause at the **Configure Environment** section in the Quick Start guide, as we will proceed with those steps in this guide.
+Next, you can clone and install the eliza repository by following the installation instructions on the [eliza Quick Start guide](https://elizaos.github.io/eliza/docs/quickstart/){target=\_blank}. Pay careful attention to the eliza prerequisites, including the minimum supported versions of Node.js and pnpm. You can pause at the **Configure Environment** section in the Quick Start guide, as those steps will be addressed in this guide.
 
 ## Configure your environment
 
@@ -47,7 +47,7 @@ OPENAI_DEFAULT_MODEL=klusterai/Meta-Llama-3.3-70B-Instruct-Turbo
 
 Now that you've configured your environment properly you're ready to run your first agent! eliza comes with a number of characters that you can interact with by prompting or that can autonomously perform tasks like tweeting. This guide relies on the `Dobby` character for its minimal setup requirements. Other agents, particularly those that handle tweets, would necessitate additional steps, such as X login and similar information. 
 
-By default, `Dobby` uses the `openai` model, which we have properly configured to rely on the kluster.ai API, but it doesn't hurt to double-check the `dobby.character.json` file under the `characters` folder. You should see the configuration start with the following:
+By default, `Dobby` uses the `openai` model, which has been properly configured to rely on the kluster.ai API, but it doesn't hurt to double-check the `dobby.character.json` file under the `characters` folder. You should see the configuration start with the following:
 
 ```json
 {
