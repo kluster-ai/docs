@@ -1,3 +1,4 @@
+
 import random
 
 from crewai import LLM, Agent, Crew, Process, Task
@@ -6,6 +7,7 @@ from crewai.project import CrewBase, agent, crew, task
 
 @CrewBase
 class HelloWorldCrew:
+    # Override any default YAML references
     agents_config = {}
     tasks_config = {}
 

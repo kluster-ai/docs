@@ -36,69 +36,22 @@ Turning our attention to the `hello_crew` file, you'll first handle our imports 
   - **api_key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
   
 ```python
-import random
-from crewai import LLM, Agent, Crew, Process, Task
-from crewai.project import CrewBase, agent, crew, task
-
-@CrewBase
-class HelloWorldCrew:
-
-	# Override any default YAML references
-    agents_config = {}
-    tasks_config = {}
-
-    def __init__(self):
-        """
-        When this crew is instantiated, create a custom LLM with your base_url.
-        """
-        self.custom_llm = LLM(
-            provider="openai_compatible", 
-            model="openai/klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
-            base_url="https://api.kluster.ai/v1",
-            api_key="INSERT_KLUSTER_API_KEY"
-        )
+--8<-- "code/get-started/integrations/crewai/hello_crew.py:0:23"
 ```
 
 As you can see above, you'll also override `agents_config` and `tasks_config` with empty dictionaries to tell CrewAI to ignore all YAML files and rely solely on your code to make this example guide as streamlined as possible. 
 
 Next, you'll define our agent. This code sets the agent's role, goal, and backstory, then assigns the custom LLM (using kluster.ai API) described earlier for generating creative greetings.
 
+
 ```python
-    @agent
-    def hello_agent(self) -> Agent:
-        """
-        A simple agent with a single purpose: greet the user in a friendly, varied way.
-        """
-        return Agent(
-            role="HelloWorldAgent",
-            goal="Greet the user in a fun and creative way.",
-            backstory="I'm a friendly agent who greets everyone in a slightly different manner!",
-            llm=self.custom_llm,
-            verbose=True
-        )
+--8<-- "code/get-started/integrations/crewai/hello_crew.py:24:36"
 ```
 
 Next, you need to give the agent a task to do. This task prompts the agent for a unique, creative greeting each time, incorporating a random factor to prevent repeated responses. Passing this prompt to `hello_agent()`, ensures the final output is varied and fun. Note that CrewAI requires the task to have an `expected_output` field, which you have defined here as a short greeting.  
 
 ```python
-    @task
-    def hello_task(self) -> Task:
-        """
-        A task that asks the agent to produce a dynamic greeting.
-        """
-        random_factor = random.randint(100000, 999999)
-        prompt = f"""
-        You are a friendly greeting bot. 
-        Please produce a short, creative greeting that changes each time. 
-        Random factor: {random_factor}
-        Example: "Hey there, how's your day going?"
-        """
-
-        return Task(
-            description=prompt,
-            expected_output="A short, creative greeting",
-            agent=self.hello_agent()
-        )
+--8<-- "code/get-started/integrations/crewai/hello_crew.py:38:55"
 ```
 
 Lastly, let's put together the `hello_main.py` file. This file serves as the entry point for running the Hello World agent. It imports the `HelloWorldCrew` class, then calls `kickoff()` on the `hello_crew` to launch the task sequence with no extra inputs. 
