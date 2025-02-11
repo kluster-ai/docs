@@ -77,7 +77,6 @@ In this final portion, user inputs are crafted and sent in multiple conversation
     --8<-- 'code/get-started/integrations/langchain/langchain.py'
     ```
 
-
 Finally, upon running it you should see output like the following:
 
 --8<-- 'code/get-started/integrations/langchain/terminal/output.md'
