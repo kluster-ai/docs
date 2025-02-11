@@ -22,13 +22,13 @@ Next, you can follow the [Installation Guide](https://docs.crewai.com/installati
 crewai create crew INSERT_PROJECT_NAME
 ```
 
-During setup, the CLI will ask you to choose a provider and a model. Select `openai` as the provider and then choose any available model. Because we'll configure kluster.ai as a custom model, your initial model choice won't affect the final integration.
+During setup, the CLI will ask you to choose a provider and a model. Select `openai` as the provider and then choose any available model. Because you'll configure kluster.ai as a custom model, your initial model choice won't affect the final integration.
 
 ## Build a simple AI Agent
 
-After you finish the CLI setup, a sample folder will appear with `crew.py` and `main.py`. We won't use these sample files because they include extra features outside this tutorial's scope. Instead, we'll create new files corresponding to a simple AI agent chatbot. Create a `hello_crew.py` and a `hello_main.py` file. 
+After you finish the CLI setup, a sample folder will appear with `crew.py` and `main.py`. This guide won't use these sample files because they include extra features outside this guide's scope. Instead, you'll create new files corresponding to a simple AI agent chatbot. Create a `hello_crew.py` and a `hello_main.py` file. 
 
-Let's turn our attention to the `hello_crew` file. We'll first handle our imports and define a custom LLM, the most essential part of the kluster.ai integration. Here are the main parameters we'll need to define to complete the kluster.ai integration:
+Turning our attention to the `hello_crew` file, you'll first handle our imports and define a custom LLM, the most essential part of the kluster.ai integration. Here are the main parameters you'll need to define to complete the kluster.ai integration:
 
   - **provider** - you can specify `openai_compatible`
   - **model** - choose one of kluster.ai's available models based on your use case. Regardless of which model you choose, prepend its name with `openai/`. This ensures CrewAI, which relies on LiteLLM, processes your requests correctly. For more details, see [kluster.ai's models](/api-reference/reference/#list-supported-models){target=\_blank}
@@ -59,9 +59,9 @@ class HelloWorldCrew:
         )
 ```
 
-As you can see above, we also override `agents_config` and `tasks_config` with empty dictionaries to tell CrewAI to ignore all YAML files and rely solely on your code to make this example tutorial as streamlined as possible. 
+As you can see above, you'll also override `agents_config` and `tasks_config` with empty dictionaries to tell CrewAI to ignore all YAML files and rely solely on your code to make this example guide as streamlined as possible. 
 
-Next, we'll define our agent. This code sets the agent's role, goal, and backstory, then assigns the custom LLM (using kluster.ai API) we described earlier for generating creative greetings.
+Next, you'll define our agent. This code sets the agent's role, goal, and backstory, then assigns the custom LLM (using kluster.ai API) described earlier for generating creative greetings.
 
 ```python
     @agent
@@ -78,7 +78,7 @@ Next, we'll define our agent. This code sets the agent's role, goal, and backsto
         )
 ```
 
-Next, we need to give the agent a task to do. This task prompts the agent for a unique, creative greeting each time, incorporating a random factor to prevent repeated responses. Passing this prompt to `hello_agent()`, ensures the final output is varied and fun. Note that CrewAI requires the task to have an `expected_output` field, which we have defined here as a short greeting.  
+Next, you need to give the agent a task to do. This task prompts the agent for a unique, creative greeting each time, incorporating a random factor to prevent repeated responses. Passing this prompt to `hello_agent()`, ensures the final output is varied and fun. Note that CrewAI requires the task to have an `expected_output` field, which you have defined here as a short greeting.  
 
 ```python
     @task
@@ -119,9 +119,7 @@ if __name__ == "__main__":
 
 ```
 
-The complete `hello_crew.py` should resemble this:
-
-??? code "hello_crew.py"
+??? code "Complete Script"
     ```python
     --8<-- 'code/get-started/integrations/crewai/hello_crew.py'
     ```
