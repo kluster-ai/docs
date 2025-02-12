@@ -1,6 +1,7 @@
 title: Integrations
 hide: false
 nav:
+ - 'eliza': eliza.md
  - 'LangChain': langchain.md
  - 'LiteLLM': litellm.md
  - 'SillyTavern': sillytavern.md
