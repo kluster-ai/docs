@@ -62,7 +62,7 @@ After you finish the CLI setup, a sample folder will appear with `crew.py` and `
     --8<-- "code/get-started/integrations/crewai/hello_crew.py:38:55"
     ```
 
-5. **Update `hello_main.py`** - this file serves as the entry point for running the Hello World agent. It imports the `HelloWorldCrew` class and calls `kickoff()` on the `hello_crew` to launch the task sequence with no extra inputs. 
+5. **Set up the entry point for the agent** - in `hello_main.py`, import and initialize the `HelloWorldCrew` class, call its `hello_crew()` method, and then `kickoff()` to launch the task sequence:
 
     ```python title="hello_main.py"
     #!/usr/bin/env python
