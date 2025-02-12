@@ -50,7 +50,7 @@ After you finish the CLI setup, a sample folder will appear with `crew.py` and `
 
     This example overrides `agents_config` and `tasks_config` with empty dictionaries to tell CrewAI to ignore all YAML files and rely solely on your code, keeping this guide as streamlined as possible. 
 
-3. **Define your agent** - this code sets the agent's role, goal, and backstory, then assigns the custom LLM (using kluster.ai API) described earlier for generating creative greetings. Update `hello_crew.py` to add the following code:
+3. **Define your agent** - set the agent's role, goal, and backstory, and assign the custom LLM (via the kluster.ai API) for generating creative greetings:
 
     ```python title="hello_crew.py"
     --8<-- "code/get-started/integrations/crewai/hello_crew.py:24:36"
