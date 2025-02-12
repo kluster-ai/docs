@@ -23,14 +23,10 @@ Follow these steps to install CrewAI and use the CLI to create a new project:
 1. **Installation** - the [Installation Guide](https://docs.crewai.com/installation){target=\_blank} on the CrewAI website will walk you through installing CrewAI, setting up a virtual Python environment, and creating a new project 
 
 2. **Create a project** - following the installation guide, create your first project with the following command:
-
-   ```bash
-    crewai create crew INSERT_PROJECT_NAME
-    ```
-
-3. **Select model and provider** - during setup, the CLI will ask you to choose a provider and a model. Select `openai` as the provider and then choose any available model. 
-
-    Because you'll configure kluster.ai as a custom model, your initial model choice won't affect the final integration.
+```bash
+crewai create crew INSERT_PROJECT_NAME
+```
+3. **Select model and provider** - during setup, the CLI will ask you to choose a provider and a model. Select `openai` as the provider and then choose any available model. Because you'll configure kluster.ai as a custom model, your initial model choice won't affect the final integration.
 
 ## Build a simple AI agent
 
