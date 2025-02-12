@@ -56,7 +56,7 @@ After you finish the CLI setup, a sample folder will appear with `crew.py` and `
     --8<-- "code/get-started/integrations/crewai/hello_crew.py:24:36"
     ```
 
-4. **Give the agent a task** - this example task prompts the agent for a unique, creative greeting each time, incorporating a random factor to prevent repeated responses. Passing this prompt to `hello_agent()` ensures the final output is varied and fun. Note that CrewAI requires the task to have an `expected_output` field, which you have defined here as a short greeting.  
+4. **Give the agent a task** - define a task that prompts the agent for a unique, creative greeting using randomness to avoid repetition. Passing this prompt to `hello_agent()` ensures varied responses. CrewAI requires an `expected_output` field, defined here as a short greeting:
 
     ```python title="hello_crew.py"
     --8<-- "code/get-started/integrations/crewai/hello_crew.py:38:55"
