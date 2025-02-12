@@ -38,7 +38,7 @@ After you finish the CLI setup, a sample folder will appear with `crew.py` and `
 
 1. **Create new files** - Create a `hello_crew.py` and a `hello_main.py` file to correspond to a simple AI agent chatbot
 
-2. **Import modules and select model** - open the `hello_crew` file to add import statements and define a custom LLM to integrate kluster.ai. You must define the following parameters to complete the kluster.ai integration:
+2. **Import modules and select model** - open `hello_crew.py` to add imports and define a custom LLM for kluster.ai by setting the following parameters:
     - **provider** - you can specify `openai_compatible`
     - **model** - choose one of kluster.ai's available models based on your use case. Regardless of which model you choose, prepend its name with `openai/` to ensure CrewAI, which relies on LiteLLM, processes your requests correctly. For more details, see [kluster.ai's models](/api-reference/reference/#list-supported-models){target=\_blank}
     - **base_url** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
