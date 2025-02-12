@@ -80,7 +80,7 @@ After you finish the CLI setup, a sample folder will appear with `crew.py` and `
 
     ```
 
-??? code "Complete Script"
+??? code "Complete script"
     ```python title="hello_crew.py"
     --8<-- 'code/get-started/integrations/crewai/hello_crew.py'
     ```
