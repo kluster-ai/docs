@@ -86,6 +86,7 @@ After you finish the CLI setup, a sample folder will appear with `crew.py` and `
     ```
 
 ## Run the agent
+
 To run your agent, use the following command:
 
 ```bash
