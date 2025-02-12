@@ -6,6 +6,7 @@ Documentation: https://docs.kluster.ai/
 # List of doc pages:
 Doc-Page: https://docs.kluster.ai/api-reference/reference
 Doc-Page: https://docs.kluster.ai/get-started/get-api-key
+Doc-Page: https://docs.kluster.ai/get-started/integrations/crewai
 Doc-Page: https://docs.kluster.ai/get-started/integrations/eliza
 Doc-Page: https://docs.kluster.ai/get-started/integrations/langchain
 Doc-Page: https://docs.kluster.ai/get-started/integrations/sillytavern
@@ -1532,6 +1533,230 @@ To delete an API key, take the following steps:
 ## Next steps
 
 Now that you have your API key, you can start integrating kluster.ai's LLMs into your applications. Refer to our [Getting Started](/get-started/start-api/){target=\_blank} guide for detailed instructions on using the API.
+--- END CONTENT ---
+
+Doc-Content: https://docs.kluster.ai/get-started/integrations/crewai
+--- BEGIN CONTENT ---
+---
+title: Using CrewAI with the kluster.ai API
+description: Learn how to integrate kluster.ai with CrewAI, a new framework for orchestrating autonomous AI agents, to launch and configure your AI agent chatbot.
+---
+
+# Using CrewAI with the kluster.ai API
+
+[CrewAI](https://www.crewai.com/){target=\_blank} is a multi-agent platform that organizes specialized AI agents—each with defined roles, tools, and goals—within a structured process to tackle complex tasks efficiently. CrewAI agents streamline workflows and deliver reliable, scalable solutions by coordinating tasks and ensuring smooth collaboration.
+
+This guide walks you through integrating [kluster.ai](https://www.kluster.ai/){target=\_blank} with CrewAI, from installation to creating and running a simple AI agent chatbot that leverages the kluster.ai API.
+
+## Prerequisites
+
+Before starting, ensure you have the following prerequisites:
+
+- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
+- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+
+## Installation and CLI
+
+Follow these steps to install CrewAI and use the CLI to create a new project:
+
+1. **Installation** - the [Installation Guide](https://docs.crewai.com/installation){target=\_blank} on the CrewAI website will walk you through installing CrewAI, setting up a virtual Python environment, and creating a new project 
+
+2. **Create a project** - following the installation guide, create your first project with the following command:
+```bash
+crewai create crew INSERT_PROJECT_NAME
+```
+3. **Select model and provider** - during setup, the CLI will ask you to choose a provider and a model. Select `openai` as the provider and then choose any available model. Because you'll configure kluster.ai as a custom model, your initial model choice won't affect the final integration.
+
+## Build a simple AI agent
+
+After you finish the CLI setup, a sample folder will appear with `crew.py` and `main.py`. This guide won't use these sample files because they include extra features outside the scope. Follow these steps to continue:
+
+1. **Create new files** - Create a `hello_crew.py` and a `hello_main.py` file to correspond to a simple AI agent chatbot
+
+2. **Import modules and select model** - open `hello_crew.py` to add imports and define a custom LLM for kluster.ai by setting the following parameters:
+    - **provider** - you can specify `openai_compatible`
+    - **model** - choose one of kluster.ai's available models based on your use case. Regardless of which model you choose, prepend its name with `openai/` to ensure CrewAI, which relies on LiteLLM, processes your requests correctly. For more details, see [kluster.ai's models](/api-reference/reference/#list-supported-models){target=\_blank}
+    - **base_url** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
+    - **api_key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
+  
+    ```python title="hello_crew.py"
+    import random
+
+from crewai import LLM, Agent, Crew, Process, Task
+from crewai.project import CrewBase, agent, crew, task
+
+
+@CrewBase
+class HelloWorldCrew:
+    # Override any default YAML references
+    agents_config = {}
+    tasks_config = {}
+
+    def __init__(self):
+        """
+        When this crew is instantiated, create a custom LLM with your base_url.
+        """
+        self.custom_llm = LLM(
+            provider="openai_compatible", 
+            model="openai/klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+            base_url="https://api.kluster.ai/v1",
+            api_key="INSERT_KLUSTER_API_KEY"
+        )
+    ```
+
+    This example overrides `agents_config` and `tasks_config` with empty dictionaries to tell CrewAI to ignore all YAML files and rely solely on your code, keeping this guide as streamlined as possible. 
+
+3. **Define your agent** - set the agent's role, goal, and backstory, and assign the custom LLM (via the kluster.ai API) for generating creative greetings:
+
+    ```python title="hello_crew.py"
+    @agent
+    def hello_agent(self) -> Agent:
+        """
+        A super simple agent with a single purpose: greet the user in a friendly, varied way.
+        """
+        return Agent(
+            role="HelloWorldAgent",
+            goal="Greet the user in a fun and creative way.",
+            backstory="I'm a friendly agent who greets everyone in a slightly different manner!",
+            llm=self.custom_llm,
+            verbose=True
+        )
+    ```
+
+4. **Give the agent a task** - define a task that prompts the agent for a unique, creative greeting using randomness to avoid repetition. Passing this prompt to `hello_agent()` ensures varied responses. CrewAI requires an `expected_output` field, defined here as a short greeting:
+
+    ```python title="hello_crew.py"
+    def hello_task(self) -> Task:
+        """
+        A task that asks the agent to produce a dynamic greeting.
+        """
+        random_factor = random.randint(100000, 999999)
+        prompt = f"""
+        You are a friendly greeting bot. 
+        Please produce a short, creative greeting that changes each time. 
+        Random factor: {random_factor}
+        Example: "Hey there, how's your day going?"
+        """
+
+        return Task(
+            description=prompt,
+            expected_output="A short, creative greeting",
+            agent=self.hello_agent()
+        )
+    ```
+
+5. **Set up the entry point for the agent** - in `hello_main.py`, import and initialize the `HelloWorldCrew` class, call its `hello_crew()` method, and then `kickoff()` to launch the task sequence:
+
+    ```python title="hello_main.py"
+    #!/usr/bin/env python
+    from hello_crew import HelloWorldCrew
+
+
+    def run():
+        """
+        Kick off the HelloWorld crew with no inputs.
+        """
+        HelloWorldCrew().hello_crew().kickoff(inputs={})
+
+    if __name__ == "__main__":
+        run()
+
+    ```
+
+??? code "Complete script"
+    ```python title="hello_crew.py"
+    import random
+
+from crewai import LLM, Agent, Crew, Process, Task
+from crewai.project import CrewBase, agent, crew, task
+
+
+@CrewBase
+class HelloWorldCrew:
+    # Override any default YAML references
+    agents_config = {}
+    tasks_config = {}
+
+    def __init__(self):
+        """
+        When this crew is instantiated, create a custom LLM with your base_url.
+        """
+        self.custom_llm = LLM(
+            provider="openai_compatible", 
+            model="openai/klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+            base_url="https://api.kluster.ai/v1",
+            api_key="INSERT_KLUSTER_API_KEY"
+        )
+
+    @agent
+    def hello_agent(self) -> Agent:
+        """
+        A super simple agent with a single purpose: greet the user in a friendly, varied way.
+        """
+        return Agent(
+            role="HelloWorldAgent",
+            goal="Greet the user in a fun and creative way.",
+            backstory="I'm a friendly agent who greets everyone in a slightly different manner!",
+            llm=self.custom_llm,
+            verbose=True
+        )
+
+    @task
+    def hello_task(self) -> Task:
+        """
+        A task that asks the agent to produce a dynamic greeting.
+        """
+        random_factor = random.randint(100000, 999999)
+        prompt = f"""
+        You are a friendly greeting bot. 
+        Please produce a short, creative greeting that changes each time. 
+        Random factor: {random_factor}
+        Example: "Hey there, how's your day going?"
+        """
+
+        return Task(
+            description=prompt,
+            expected_output="A short, creative greeting",
+            agent=self.hello_agent()
+        )
+
+    @crew
+    def hello_crew(self) -> Crew:
+        """
+        Our entire 'Hello World' crew—only 1 agent + 1 task in sequence.
+        """
+        return Crew(
+            agents=self.agents,  
+            tasks=self.tasks,    
+            process=Process.sequential,
+            verbose=True
+        )
+    ```
+
+## Run the agent
+
+To run your agent, use the following command:
+
+```bash
+python hello_main.py
+```
+
+Upon running the script, you'll see output that looks like the following:
+
+<div id="termynal" data-termynal>
+<span data-ty></span># Agent: HelloWorldAgent</span>
+<span data-ty>## Task:</span>
+<span data-ty>You are a friendly greeting bot.</span>
+<span data-ty>Please produce a short, creative greeting that changes each time.</span>
+<span data-ty>Random factor: 896380</span>
+<span data-ty>Example: "Hey there, how's your day going?"</span>
+<br>
+<span data-ty></span># Agent: HelloWorldAgent</span>
+<span data-ty>## Final Answer:</span>
+<span data-ty>Hello, it's a beautiful day to shine, how's your sparkle today?</span>
+</div>
+
+And that's it! You've now successfully configured your AI agent harnessing CrewAI and the power of the kluster.ai API!
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/get-started/integrations/eliza
