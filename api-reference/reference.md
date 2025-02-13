@@ -1468,7 +1468,7 @@ Initiates a fine-tuning job for one of the supported models. You must first uplo
 <div markdown>
 **Request**
 `training_file` ++"string"++ <span class="required" markdown>++"required"++</span>
-ID of an uploaded file{target=_blank} that will serve as training data. This file must have `purpose="fine-tune"`.
+ID of an [uploaded file](#files) that will serve as training data. This file must have `purpose="fine-tune"`.
 
 `model` ++"string"++ <span class="required" markdown>++"required"++</span>
 The base model ID to fine-tune. Must be a fine-tunable model, for example `meta-llama/Meta-Llama-3.1-8B-Instruct` or `meta-llama/Meta-Llama-3.3-70B-Instruct-Turbo`
@@ -1494,7 +1494,7 @@ A Fine-tuning Job object.
 <div markdown>
 
 === "Python"
-    ```python
+    ```python title="Example request"
     from openai import OpenAI
     
     # Configure OpenAI client
@@ -1516,7 +1516,7 @@ A Fine-tuning Job object.
     ```
 
 === "curl"
-    ```bash
+    ```bash title="Example request"
     curl -X POST https://api.kluster.ai/v1/fine_tuning/jobs \
         -H "Authorization: Bearer $API_KEY" \
         -H "Content-Type: application/json" \
@@ -1533,21 +1533,27 @@ A Fine-tuning Job object.
 
 ```json title="Response"
 {
-  "id": "ftjob-123",
   "object": "fine_tuning.job",
-  "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
-  "fine_tuned_model": null,
-  "status": "pending",
-  "created_at": 1738382911,
-  "training_file": "file-123abc",
-  "validation_file": null,
+  "id": "67ae81b59b08392687ea5f69",
+  "model": "meta-llama/Llama-3.1-8B-Instruct",
+  "created_at": 1739489717,
+  "result_files": [],
+  "status": "queued",
+  "training_file": "67ae81587772e8a89c8fd5cf",
   "hyperparameters": {
     "batch_size": 4,
     "learning_rate_multiplier": 1,
     "n_epochs": 3
   },
-  "metrics": {},
-  "error": null
+  "method": {
+    "type": "supervised",
+    "supervised": {
+      "batch_size": 4,
+      "learning_rate_multiplier": 1,
+      "n_epochs": 3
+    }
+  },
+  "integrations": []
 }
 ```
 </div> </div>
@@ -1643,13 +1649,15 @@ Fetch details of a single fine-tuning job by specifying its `fine_tuning_job_id`
 `fine_tuning_job_id` ++"string"++ <span class="required" markdown>++"required"++</span>
 The ID of the fine-tuning job to retrieve.
 
+---
+
 **Returns**
 A Fine-tuning Job object.
 </div> 
 <div markdown>
 
 === "Python"
-    ```python
+    ```python title="Example request"
     from openai import OpenAI
     client = OpenAI(
         base_url="https://api.kluster.ai/v1",
@@ -1659,33 +1667,34 @@ A Fine-tuning Job object.
     print(job_details.to_dict())
     ```
 === "curl"
-    ```bash
+    ```bash title="Example request"
     curl -s https://api.kluster.ai/v1/fine_tuning/jobs/ftjob-123 \
         -H "Authorization: Bearer $API_KEY"
     ```
 
 ```json title="Response"
 {
-  "id": "ftjob-123",
   "object": "fine_tuning.job",
-  "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
-  "fine_tuned_model": "ft:meta-llama-8b:my-project:a7e3e47e",
-  "status": "succeeded",
-  "created_at": 1738382911,
-  "training_file": "file-123abc",
-  "validation_file": null,
+  "id": "67ae81b59b08392687ea5f69",
+  "model": "meta-llama/Llama-3.1-8B-Instruct",
+  "created_at": 1739489717,
+  "result_files": [],
+  "status": "running",
+  "training_file": "67ae81587772e8a89c8fd5cf",
   "hyperparameters": {
     "batch_size": 4,
     "learning_rate_multiplier": 1,
     "n_epochs": 3
   },
-  "metrics": {
-    "train_loss": 1.89,
-    "valid_loss": 2.12,
-    "train_mean_token_accuracy": 0.78,
-    "valid_mean_token_accuracy": 0.72
+  "method": {
+    "type": "supervised",
+    "supervised": {
+      "batch_size": 4,
+      "learning_rate_multiplier": 1,
+      "n_epochs": 3
+    }
   },
-  "error": null
+  "integrations": []
 }
 ```
 </div> </div>
@@ -1708,6 +1717,8 @@ A cursor for use in pagination.
 `limit` ++"integer"++
 A limit on the number of objects returned (1 to 100). Default is 20.
 
+---
+
 **Returns**
 A paginated list of Fine-tuning Job objects.
 
@@ -1716,7 +1727,7 @@ A paginated list of Fine-tuning Job objects.
 
 === "Python"
 
-    ```python
+    ```python title="Example request"
     from openai import OpenAI
 
     client = OpenAI(
@@ -1730,7 +1741,7 @@ A paginated list of Fine-tuning Job objects.
 
 === "curl"
 
-    ```bash
+    ```bash title="Example request"
     curl -s https://api.kluster.ai/v1/fine_tuning/jobs \
         -H "Authorization: Bearer $API_KEY"
     ```
@@ -1741,33 +1752,55 @@ A paginated list of Fine-tuning Job objects.
   "data": [
     {
       "object": "fine_tuning.job",
-      "id": "67ad3877720af9f9ba12b442",
+      "id": "67ae81b59b08392687ea5f69",
       "model": "meta-llama/Llama-3.1-8B-Instruct",
-      "created_at": 1739405431,
-      "finished_at": 1739405521,
-      "fine_tuned_model": "ft:meta-llama:Llama-3.1-8B-Instruct:personal:804b2d12",
+      "created_at": 1739489717,
       "result_files": [],
-      "status": "succeeded",
-      "training_file": "67ad38760272045e7006171b",
+      "status": "running",
+      "training_file": "67ae81587772e8a89c8fd5cf",
       "hyperparameters": {
         "batch_size": 4,
         "learning_rate_multiplier": 1,
-        "n_epochs": 2
+        "n_epochs": 3
       },
       "method": {
         "type": "supervised",
         "supervised": {
           "batch_size": 4,
           "learning_rate_multiplier": 1,
-          "n_epochs": 2
+          "n_epochs": 3
         }
       },
-      "trained_tokens": 3065,
+      "integrations": []
+    },
+    {
+      "object": "fine_tuning.job",
+      "id": "67ae7f7d965c187d5cda039f",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "created_at": 1739489149,
+      "result_files": [],
+      "status": "cancelled",
+      "training_file": "67ae7f7c965c187d5cda0397",
+      "hyperparameters": {
+        "batch_size": 1,
+        "learning_rate_multiplier": 1,
+        "n_epochs": 10
+      },
+      "method": {
+        "type": "supervised",
+        "supervised": {
+          "batch_size": 1,
+          "learning_rate_multiplier": 1,
+          "n_epochs": 10
+        }
+      },
       "integrations": []
     }
-  ]
+  ],
+  "first_id": "67ae81b59b08392687ea5f69",
+  "last_id": "67abefddbee1f22fb0a742ef",
+  "has_more": true
 }
-
 ```
 
 </div> </div>
@@ -1787,31 +1820,33 @@ To cancel a job that is in progress, send a `POST` request to the `cancel` endpo
 
 The ID of the fine-tuning job to cancel.
 
+---
+
 **Returns**
 The Fine-tuning Job object with updated status.
 </div> 
 <div markdown>
 
 === "Python"
-    ```python
+    ```python title="Example request"
     from openai import OpenAI
     client = OpenAI(
         base_url="https://api.kluster.ai/v1",
         api_key="INSERT_API_KEY"
     )
-    cancelled_job = client.fine_tuning.jobs.cancel("ftjob-123")
+    cancelled_job = client.fine_tuning.jobs.cancel("67ae7f7d965c187d5cda039f")
     print(cancelled_job.to_dict())
     ```
 === "curl"
-    ```bash
-    curl -X POST https://api.kluster.ai/v1/fine_tuning/jobs/ftjob-123/cancel \
+    ```bash title="Example request"
+    curl -X POST https://api.kluster.ai/v1/fine_tuning/jobs/67ae7f7d965c187d5cda039f/cancel \
         -H "Authorization: Bearer $API_KEY" \
         -H "Content-Type: application/json"
     ```
 
 ```json title="Response"
 {
-  "id": "ftjob-123",
+  "id": "67ae7f7d965c187d5cda039f",
   "object": "fine_tuning.job",
   "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
   "fine_tuned_model": null,
