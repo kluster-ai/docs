@@ -2,7 +2,10 @@ import os
 import re
 
 # Kluster-specific input
-docs_repo = 'docs'  
+if os.getenv('GITHUB_ACTIONS') == 'true':
+    docs_repo = 'docs'
+else:
+    docs_repo = 'kluster-docs'
 
 docs_url = 'https://docs.kluster.ai/'
 
