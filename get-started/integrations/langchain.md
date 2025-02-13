@@ -54,13 +54,13 @@ That's all you need to get started with LangChain and the kluster.ai API! Next, 
 
 This section will explore what LangChain can do beyond a single prompt-and-response interaction. One standout feature of LangChain is its built-in memory, which tracks conversation context across multiple user queries. In the following steps, you'll set up a multi-turn conversational agent that takes advantage of this memory and seamlessly integrates with the kluster.ai API.
 
-First, import the necessary LangChain components for memory management, prompt handling, and kluster.ai integration. Next, create a memory instance to store and manage the conversation’s context, allowing the chatbot to remember previous user messages. Finally, we configure the `ChatOpenAI` model to point to kluster.ai’s endpoint (with your API key and chosen model). Remember, you can always change the selected model based on your needs. 
+First, import the necessary LangChain components for memory management, prompt handling, and kluster.ai integration. Next, create a memory instance to store and manage the conversation’s context, allowing the chatbot to remember previous user messages. Finally, you'll configure the `ChatOpenAI` model to point to kluster.ai’s endpoint (with your API key and chosen model). Remember, you can always change the selected model based on your needs. 
 
 ```python
 --8<-- "code/get-started/integrations/langchain/langchain.py:01:17"
 ```
 
-Next, define a prompt template that includes a system instruction for the assistant, a placeholder for the conversation history, and an input slot for the user’s query. We then create the `ConversationChain` by passing in the LLM, memory, and this prompt template—so every new user query is automatically enriched with the stored conversation context and guided by the assistant’s role.
+Next, define a prompt template that includes a system instruction for the assistant, a placeholder for the conversation history, and an input slot for the user’s query. You'll then create the `ConversationChain` by passing in the LLM, memory, and this prompt template—so every new user query is automatically enriched with the stored conversation context and guided by the assistant’s role.
 
 ```python
 --8<-- "code/get-started/integrations/langchain/langchain.py:19:30"
