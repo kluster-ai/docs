@@ -37,18 +37,10 @@ It's easy to integrate kluster.ai with LangChain—just point your `ChatOpenAI` 
   - **Select your model** - choose one of kluster.ai’s available models based on your use case. For more details, see [kluster.ai’s models](/api-reference/reference/#list-supported-models){target=\_blank}
 
 ```python
-from langchain_openai import ChatOpenAI
-
-llm = ChatOpenAI(
-    base_url="https://api.kluster.ai/v1",
-    api_key="INSERT_API_KEY", # Replace with your actual API key
-    model="klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
-)
-
-llm.invoke("What is the capital of Nepal?")
+--8<-- "code/get-started/integrations/langchain/langchain-quickstart.py"
 ```
 
-That's all you need to get started with LangChain and the kluster.ai API! Next, this guide will explore building a multi-turn conversational agent that showcases how memory and context can elevate your chatbot to a more interactive, intelligent experience.
+That's all you need to start with LangChain and the kluster.ai API! Next, this guide will explore building a multi-turn conversational agent that showcases how memory and context can elevate your chatbot to a more interactive, intelligent experience.
 
 ## Building a multi-turn conversational agent
 
@@ -70,11 +62,11 @@ This section will explore what LangChain can do beyond a single prompt-and-respo
 ```python
 --8<-- "code/get-started/integrations/langchain/langchain.py:26:31"
 ```
-5. Now it's time to prompt the model with the first question. You can prompt it with any question, the example chosen here is simply to demonstrate context awareness between questions
+5. Now, it's time to prompt the model with the first question. You can prompt it with any question; the example chosen here is designed to demonstrate context awareness between questions
 ```python
 --8<-- "code/get-started/integrations/langchain/langchain.py:33:37"
 ```
-6. Finally, Then, a follow-up question is posed without restating the city name—allowing LangChain’s memory to handle the context implicitly. By capturing and printing both the questions and the responses, you can see how multi-turn interactions work in practice, with each new query informed by the conversation
+6. Finally, a follow-up question is posed without restating the city name—allowing LangChain’s memory to handle the context implicitly. By capturing and printing both the questions and the responses, you can see how multi-turn interactions work in practice, with each new query informed by the conversation
 ```python
 --8<-- "code/get-started/integrations/langchain/langchain.py:39:43"
 ```
