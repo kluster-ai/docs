@@ -23,6 +23,12 @@ Navigate to the kluster.ai developer console [**API Keys**](https://platform.klu
 
 For step-by-step instructions, refer to the [Get an API key](/get-started/get-api-key){target=\_blank} guide.
 
+### API request limits
+
+Keep in mind that API request rate limits apply. Additional details are provided in the table below:
+
+--8<-- "rate-limit.md"
+
 ## Batch job workflow overview
 
 Working with Batch jobs in the kluster.ai API involves the following steps:
