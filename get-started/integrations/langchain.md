@@ -50,7 +50,7 @@ llm.invoke("What is the capital of Nepal?")
 
 That's all you need to get started with LangChain and the kluster.ai API! Next, this guide will explore building a multi-turn conversational agent that showcases how memory and context can elevate your chatbot to a more interactive, intelligent experience.
 
-## Building a Multi-Turn Conversational Agent
+## Building a multi-turn conversational agent
 
 This section will dive deeper into exploring what LangChain can do beyond a single prompt-and-response interaction. One standout feature of LangChain is its built-in memory, which tracks conversation context across multiple user queries. In the following steps, we’ll set up a multi-turn conversational agent that takes advantage of this memory and seamlessly integrates with the kluster.ai API.
 
