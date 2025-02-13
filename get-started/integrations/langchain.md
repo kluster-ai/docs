@@ -7,7 +7,7 @@ description: This guide walks you through integrating LangChain, a framework des
 
 [LangChain](https://www.langchain.com/){target=\_blank} offers a range of features—like memory modules for context tracking, retrieval augmentation to feed external data into prompts, and customizable multi-step “chains” to break down complex tasks. By leveraging these capabilities with the [kluster.ai API](https://www.kluster.ai/){target=\_blank}, you can build more robust and context-aware solutions that seamlessly handle everything from short-form answers to intricate conversations.
 
-This guide demonstrates how to integrate the `ChatOpenAI` class from the `langchain_openai` package with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API, then walks through building a multi-turn conversational agent that leverages LangChain’s memory for context-aware interactions.
+This guide demonstrates how to integrate the `ChatOpenAI` class from the `langchain_openai` package with the kluster.ai API, then walks through building a multi-turn conversational agent that leverages LangChain’s memory for context-aware interactions.
 
 ## Prerequisites
 
