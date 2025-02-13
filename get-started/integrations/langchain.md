@@ -52,24 +52,31 @@ That's all you need to get started with LangChain and the kluster.ai API! Next, 
 
 ## Building a multi-turn conversational agent
 
-This section will explore what LangChain can do beyond a single prompt-and-response interaction. One standout feature of LangChain is its built-in memory, which tracks conversation context across multiple user queries. In the following steps, you'll set up a multi-turn conversational agent that takes advantage of this memory and seamlessly integrates with the kluster.ai API.
+This section will explore what LangChain can do beyond a single prompt-and-response interaction. One standout feature of LangChain is its built-in memory, which tracks conversation context across multiple user queries. In the following steps, you'll set up a multi-turn conversational agent that takes advantage of this memory and seamlessly integrates with the kluster.ai API: 
 
-First, import the necessary LangChain components for memory management, prompt handling, and kluster.ai integration. Next, create a memory instance to store and manage the conversation’s context, allowing the chatbot to remember previous user messages. Finally, you'll configure the `ChatOpenAI` model to point to kluster.ai’s endpoint (with your API key and chosen model). Remember, you can always change the selected model based on your needs. 
-
+1. First, import the necessary LangChain components for memory management, prompt handling, and kluster.ai integration 
 ```python
---8<-- "code/get-started/integrations/langchain/langchain.py:01:17"
+--8<-- "code/get-started/integrations/langchain/langchain.py:01:06"
 ```
-
-Next, define a prompt template that includes a system instruction for the assistant, a placeholder for the conversation history, and an input slot for the user’s query. You'll then create the `ConversationChain` by passing in the LLM, memory, and this prompt template—so every new user query is automatically enriched with the stored conversation context and guided by the assistant’s role.
-
+2. Next, create a memory instance to store and manage the conversation’s context, allowing the chatbot to remember previous user messages. Finally, you'll configure the `ChatOpenAI` model to point to kluster.ai’s endpoint (with your API key and chosen model). Remember, you can always change the selected model based on your needs 
 ```python
---8<-- "code/get-started/integrations/langchain/langchain.py:19:30"
+--8<-- "code/get-started/integrations/langchain/langchain.py:08:10"
 ```
-
-In this final portion, user inputs are crafted and sent in multiple conversation turns. First, the chatbot is prompted for interesting facts about Kathmandu. Then, a follow-up question is posed without restating the city name—allowing LangChain’s memory to handle the context implicitly. By capturing and printing both the questions and the responses, you can see how multi-turn interactions work in practice, with each new query informed by the conversation.
-
+3. Next, define a prompt template that includes a system instruction for the assistant, a placeholder for the conversation history, and an input slot for the user’s query 
 ```python
---8<-- "code/get-started/integrations/langchain/langchain.py:33:43"
+--8<-- "code/get-started/integrations/langchain/langchain.py:19:24"
+```
+4. You'll then create the `ConversationChain` by passing in the LLM, memory, and this prompt template—so every new user query is automatically enriched with the stored conversation context and guided by the assistant’s role
+```python
+--8<-- "code/get-started/integrations/langchain/langchain.py:26:31"
+```
+5. Now it's time to prompt the model with the first question. You can prompt it with any question, the example chosen here is simply to demonstrate context awareness between questions
+```python
+--8<-- "code/get-started/integrations/langchain/langchain.py:33:37"
+```
+6. Finally, Then, a follow-up question is posed without restating the city name—allowing LangChain’s memory to handle the context implicitly. By capturing and printing both the questions and the responses, you can see how multi-turn interactions work in practice, with each new query informed by the conversation
+```python
+--8<-- "code/get-started/integrations/langchain/langchain.py:39:43"
 ```
 
 ??? code "Complete script"
@@ -77,7 +84,7 @@ In this final portion, user inputs are crafted and sent in multiple conversation
     --8<-- 'code/get-started/integrations/langchain/langchain.py'
     ```
 
-Finally, upon running it you should see output like the following:
+When running the complete script, you should see output that resembles the following:
 
 --8<-- 'code/get-started/integrations/langchain/terminal/output.md'
 
