@@ -1554,18 +1554,17 @@ Before starting, ensure you have the following prerequisites:
 
 - **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
 - **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+- **CrewAI installed** - the [Installation Guide](https://docs.crewai.com/installation){target=\_blank} on the CrewAI website will walk you through installing CrewAI, setting up a virtual Python environment, and creating a new project 
 
-## Installation and CLI
+## Create a project with the CrewAI CLI
 
 Follow these steps to install CrewAI and use the CLI to create a new project:
 
-1. **Installation** - the [Installation Guide](https://docs.crewai.com/installation){target=\_blank} on the CrewAI website will walk you through installing CrewAI, setting up a virtual Python environment, and creating a new project 
-
-2. **Create a project** - following the installation guide, create your first project with the following command:
+1. **Create a project** - following the installation guide, create your first project with the following command:
 ```bash
 crewai create crew INSERT_PROJECT_NAME
 ```
-3. **Select model and provider** - during setup, the CLI will ask you to choose a provider and a model. Select `openai` as the provider and then choose any available model. Because you'll configure kluster.ai as a custom model, your initial model choice won't affect the final integration.
+2. **Select model and provider** - during setup, the CLI will ask you to choose a provider and a model. Select `openai` as the provider and then choose any available model. Because you'll configure kluster.ai as a custom model, your initial model choice won't affect the final integration
 
 ## Build a simple AI agent
 
