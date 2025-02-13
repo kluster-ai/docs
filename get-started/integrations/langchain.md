@@ -81,4 +81,4 @@ Finally, upon running it you should see output like the following:
 
 --8<-- 'code/get-started/integrations/langchain/terminal/output.md'
 
-That’s it! You’ve successfully integrated LangChain with the kluster.ai API, and your configured multi-turn conversational agent is ready to leverage the power of LangChain and the kluster.ai API. For more information about the capabilities of LangChain, be sure to check out the [LangChain Docs](https://python.langchain.com/docs/introduction/){target=\_blank}.
+That’s it! You’ve successfully integrated LangChain with the kluster.ai API, and your configured multi-turn conversational agent is ready to leverage the power of LangChain and the kluster.ai API. For more information about the capabilities of LangChain, be sure to check out the [LangChain docs](https://python.langchain.com/docs/introduction/){target=\_blank}.
