@@ -72,7 +72,7 @@ In this final portion, user inputs are crafted and sent in multiple conversation
 --8<-- "code/get-started/integrations/langchain/langchain.py:33:43"
 ```
 
-??? code "Complete Script"
+??? code "Complete script"
     ```python title="langchain.py"
     --8<-- 'code/get-started/integrations/langchain/langchain.py'
     ```
