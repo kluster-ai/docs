@@ -29,7 +29,7 @@ crewai create crew INSERT_PROJECT_NAME
 
 ## Build a simple AI agent
 
-After you finish the CLI setup, a sample folder will appear with `crew.py` and `main.py`. This guide won't use these sample files because they include extra features outside the scope. Follow these steps to continue:
+After finishing the CLI setup, you will see a `src` directory with files `crew.py` and `main.py`. This guide won't use these sample files because they include extra features outside the scope. Follow these steps to continue:
 
 1. **Create your first file** - Create a `hello_crew.py` file in `src/YOUR_PROJECT_NAME` to correspond to a simple AI agent chatbot
 
