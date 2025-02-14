@@ -72,7 +72,7 @@ This section will explore what LangChain can do beyond a single prompt-and-respo
 ```
 
 ??? code "Complete script"
-    ```python title="langchain.py"
+    ```python title="hello_langchain.py"
     --8<-- 'code/get-started/integrations/langchain/langchain.py'
     ```
 
