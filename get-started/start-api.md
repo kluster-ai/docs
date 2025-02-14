@@ -27,7 +27,7 @@ For step-by-step instructions, refer to the [Get an API key](/get-started/get-ap
 
 Keep in mind that API request rate limits apply. Additional details are provided in the table below:
 
---8<-- "rate-limit.md"
+--8<-- "code/text/get-started/start-api/rate-limit.md"
 
 ## Batch job workflow overview
 

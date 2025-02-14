@@ -1826,7 +1826,7 @@ For step-by-step instructions, refer to the [Get an API key](/get-started/get-ap
 
 Keep in mind that API request rate limits apply. Additional details are provided in the table below:
 
-| Restriction                   | Free Tier |           Standard Tier            |
+| Restriction                   | Free tier |           Standard tier            |
 |-------------------------------|:---------:|:----------------------------------:|
 | **Context size**              |    32k    | 164k (deepseek-r1) / 131k (others) |
 | **Max output**                |    4k     | 164k (deepseek-r1) / 131k (others) |
