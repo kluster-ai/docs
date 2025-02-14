@@ -1,6 +1,7 @@
 title: Integrations
 hide: false
 nav:
+ - 'CrewAI': crewai.md
  - 'eliza': eliza.md
  - 'LangChain': langchain.md
  - 'SillyTavern': sillytavern.md
