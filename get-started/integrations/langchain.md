@@ -55,7 +55,7 @@ This section will explore what LangChain can do beyond a single prompt-and-respo
 --8<-- "code/get-started/integrations/langchain/langchain.py:08:10"
 ```
 3. Next, define a prompt template that includes a system instruction for the assistant, a placeholder for the conversation history, and an input slot for the user’s query 
-```python
+```python title="hello_langchain.py"
 --8<-- "code/get-started/integrations/langchain/langchain.py:19:24"
 ```
 4. You'll then create the `ConversationChain` by passing in the LLM, memory, and this prompt template—so every new user query is automatically enriched with the stored conversation context and guided by the assistant’s role
