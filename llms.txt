@@ -202,7 +202,7 @@ The created [Chat completion](#batch-object) object.
 
     ```bash title="Example request"
     curl -s https://api.kluster.ai/v1/chat/completions \
-        -H "Authorization: Bearer 4532c187-d275-4a6b-940c-5d92f9b20ea6" \
+        -H "Authorization: $API_KEY" \
         -H "Content-Type: application/json" \
         -d '{
             "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
@@ -1215,7 +1215,7 @@ The uploaded [File](#file-object) object.
 
     ```bash title="Example request"
     curl -s https://api.kluster.ai/v1/files \
-        -H "Authorization: Bearer $API_KEY" \
+        -H "Authorization: $API_KEY" \
         -H "Content-Type: multipart/form-data" \
         -F "file=@mybatchtest.jsonl" \
         -F "purpose=batch"
