@@ -25,7 +25,7 @@ For step-by-step instructions, refer to the [Get an API key](/get-started/get-ap
 
 ### API request limits
 
-Keep in mind that API request rate limits apply. Additional details are provided in the table below:
+The following limits apply to API requests based upon your plan tier:
 
 --8<-- "text/get-started/start-api/rate-limit.md"
 
