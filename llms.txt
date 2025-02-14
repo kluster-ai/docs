@@ -1630,6 +1630,7 @@ This guide demonstrates how to integrate the `ChatOpenAI` class from the `langch
 
 Before starting, ensure you have the following:
 
+- **[A python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}** - This is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial
 - **LangChain packages installed** - install the [`langchain` packages](https://github.com/langchain-ai/langchain){target=\_blank}:
 
     ```bash
@@ -1647,7 +1648,7 @@ Before starting, ensure you have the following:
 
 ## Integrate with LangChain - Quick Start
 
-It's easy to integrate kluster.ai with LangChain—just point your `ChatOpenAI` instance to the correct base URL and configure the following settings:
+It's easy to integrate kluster.ai with LangChain—when configuring the chat model, just point your `ChatOpenAI` instance to the correct base URL and configure the following settings:
 
   - **Base URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
   - **API key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don’t have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
@@ -1716,7 +1717,7 @@ print("Response 2:", response2)
 ```
 
 ??? code "Complete script"
-    ```python title="langchain.py"
+    ```python title="langchain-advanced.py"
     from langchain.chains import ConversationChain
 from langchain.chains.conversation.memory import ConversationBufferMemory
 from langchain_community.chat_message_histories import ChatMessageHistory
@@ -1760,7 +1761,6 @@ question2 = "What is the population of that city?"
 print("\nQuestion 2:", question2)
 response2 = conversation.predict(input=question2)
 print("Response 2:", response2)
-    ```
 
 When running the complete script, you should see output that resembles the following:
 
