@@ -59,7 +59,7 @@ This section will explore what LangChain can do beyond a single prompt-and-respo
 --8<-- "code/get-started/integrations/langchain/langchain.py:19:24"
 ```
 4. You'll then create the `ConversationChain` by passing in the LLM, memory, and this prompt template—so every new user query is automatically enriched with the stored conversation context and guided by the assistant’s role
-```python
+```python title="hello_langchain.py"
 --8<-- "code/get-started/integrations/langchain/langchain.py:26:31"
 ```
 5. Now, it's time to prompt the model with the first question. You can prompt it with any question; the example chosen here is designed to demonstrate context awareness between questions
