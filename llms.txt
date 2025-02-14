@@ -1761,6 +1761,7 @@ question2 = "What is the population of that city?"
 print("\nQuestion 2:", question2)
 response2 = conversation.predict(input=question2)
 print("Response 2:", response2)
+    ```
 
 When running the complete script, you should see output that resembles the following:
 

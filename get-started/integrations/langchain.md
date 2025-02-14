@@ -75,6 +75,7 @@ This section will explore what LangChain can do beyond a single prompt-and-respo
 ??? code "Complete script"
     ```python title="langchain-advanced.py"
     --8<-- 'code/get-started/integrations/langchain/langchain-advanced.py'
+    ```
 
 When running the complete script, you should see output that resembles the following:
 
