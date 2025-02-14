@@ -30,7 +30,7 @@ Before starting, ensure you have the following:
 
 ## Integrate with LangChain - Quick Start
 
-It's easy to integrate kluster.ai with LangChain—just point your `ChatOpenAI` instance to the correct base URL and configure the following settings:
+It's easy to integrate kluster.ai with LangChain—when configuring the chat model, just point your `ChatOpenAI` instance to the correct base URL and configure the following settings:
 
   - **Base URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
   - **API key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don’t have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
