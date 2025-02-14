@@ -57,7 +57,13 @@ After finishing the CLI setup, you will see a `src` directory with files `crew.p
     --8<-- "code/get-started/integrations/crewai/hello_crew.py:38:55"
     ```
 
-5. **Set up the entry point for the agent** - Create a new file named `hello_main.py`. In `hello_main.py`, import and initialize the `HelloWorldCrew` class, call its `hello_crew()` method, and then `kickoff()` to launch the task sequence:
+5. **Tie it all together with a `@crew` method** - Add the following method to return the assembled Crew object with a single agent and task. This method enables CrewAI to coordinate the agent and task you defined:
+
+    ```python title="hello_crew.py"
+    --8<-- "code/get-started/integrations/crewai/hello_crew.py:57:67"
+    ```
+
+6. **Set up the entry point for the agent** - Create a new file named `hello_main.py`. In `hello_main.py`, import and initialize the `HelloWorldCrew` class, call its `hello_crew()` method, and then `kickoff()` to launch the task sequence:
 
     ```python title="hello_main.py"
     #!/usr/bin/env python
