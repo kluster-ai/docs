@@ -13,6 +13,7 @@ This guide demonstrates how to integrate the `ChatOpenAI` class from the `langch
 
 Before starting, ensure you have the following:
 
+- **[A python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}** - This is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial
 - **LangChain packages installed** - install the [`langchain` packages](https://github.com/langchain-ai/langchain){target=\_blank}:
 
     ```bash
@@ -48,32 +49,32 @@ This section will explore what LangChain can do beyond a single prompt-and-respo
 
 1. First, import the necessary LangChain components for memory management, prompt handling, and kluster.ai integration 
 ```python
---8<-- "code/get-started/integrations/langchain/langchain.py:01:06"
+--8<-- "code/get-started/integrations/langchain/langchain-advanced.py:01:06"
 ```
 2. Next, create a memory instance to store and manage the conversation’s context, allowing the chatbot to remember previous user messages. Finally, you'll configure the `ChatOpenAI` model to point to kluster.ai’s endpoint (with your API key and chosen model). Remember, you can always change the selected model based on your needs 
 ```python
---8<-- "code/get-started/integrations/langchain/langchain.py:08:10"
+--8<-- "code/get-started/integrations/langchain/langchain-advanced.py:08:10"
 ```
 3. Next, define a prompt template that includes a system instruction for the assistant, a placeholder for the conversation history, and an input slot for the user’s query 
 ```python
---8<-- "code/get-started/integrations/langchain/langchain.py:19:24"
+--8<-- "code/get-started/integrations/langchain/langchain-advanced.py:19:24"
 ```
 4. You'll then create the `ConversationChain` by passing in the LLM, memory, and this prompt template—so every new user query is automatically enriched with the stored conversation context and guided by the assistant’s role
 ```python
---8<-- "code/get-started/integrations/langchain/langchain.py:26:31"
+--8<-- "code/get-started/integrations/langchain/langchain-advanced.py:26:31"
 ```
 5. Now, it's time to prompt the model with the first question. You can prompt it with any question; the example chosen here is designed to demonstrate context awareness between questions
 ```python
---8<-- "code/get-started/integrations/langchain/langchain.py:33:37"
+--8<-- "code/get-started/integrations/langchain/langchain-advanced.py:33:37"
 ```
 6. Finally, a follow-up question is posed without restating the city name—allowing LangChain’s memory to handle the context implicitly. By capturing and printing both the questions and the responses, you can see how multi-turn interactions work in practice, with each new query informed by the conversation
 ```python
---8<-- "code/get-started/integrations/langchain/langchain.py:39:43"
+--8<-- "code/get-started/integrations/langchain/langchain-advanced.py:39:43"
 ```
 
 ??? code "Complete script"
-    ```python title="langchain.py"
-    --8<-- 'code/get-started/integrations/langchain/langchain.py'
+    ```python title="langchain-advanced.py"
+    --8<-- 'code/get-started/integrations/langchain/langchain-advanced.py'
     ```
 
 When running the complete script, you should see output that resembles the following:
