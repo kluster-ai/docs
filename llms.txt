@@ -1467,7 +1467,7 @@ The organization that owns the model.
 
 ### Overview
 
-Fine-tuning is the process of taking a pre-trained model and refining it on specialized data. By adjusting the model’s parameters with new, domain-specific examples, it achieves better performance on targeted tasks while retaining the general knowledge learned in its original training.
+Fine-tuning is the process of refining a pre-trained model on specialized data. By adjusting the parameters with new, domain-specific examples, the model performs better on targeted tasks while retaining the general knowledge learned in its original training.
 
 ### Supported models
 
