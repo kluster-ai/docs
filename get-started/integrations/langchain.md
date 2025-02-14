@@ -13,7 +13,7 @@ This guide demonstrates how to integrate the `ChatOpenAI` class from the `langch
 
 Before starting, ensure you have the following:
 
-- **[A python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}** - This is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial
+- **[A python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}** - this is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial
 - **LangChain packages installed** - install the [`langchain` packages](https://github.com/langchain-ai/langchain){target=\_blank}:
 
     ```bash
