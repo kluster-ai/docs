@@ -82,7 +82,7 @@ After you finish the CLI setup, a sample folder will appear with `crew.py` and `
 
 ## Run the agent
 
-To run your agent, use the following command:
+To run your agent, ensure you are in the same directory as your `hello_main.py` file, then use the following command:
 
 ```bash
 python hello_main.py
