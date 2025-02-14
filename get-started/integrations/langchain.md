@@ -51,7 +51,7 @@ This section will explore what LangChain can do beyond a single prompt-and-respo
 --8<-- "code/get-started/integrations/langchain/langchain.py:01:06"
 ```
 2. Next, create a memory instance to store and manage the conversation’s context, allowing the chatbot to remember previous user messages. Finally, you'll configure the `ChatOpenAI` model to point to kluster.ai’s endpoint (with your API key and chosen model). Remember, you can always change the selected model based on your needs 
-```python
+```python title="hello_langchain.py"
 --8<-- "code/get-started/integrations/langchain/langchain.py:08:10"
 ```
 3. Next, define a prompt template that includes a system instruction for the assistant, a placeholder for the conversation history, and an input slot for the user’s query 
