@@ -1,4 +1,4 @@
-| Restriction                   | Free Tier |           Standard Tier            |
+| Restriction                   | Free tier |           Standard tier            |
 |-------------------------------|:---------:|:----------------------------------:|
 | **Context size**              |    32k    | 164k (deepseek-r1) / 131k (others) |
 | **Max output**                |    4k     | 164k (deepseek-r1) / 131k (others) |
