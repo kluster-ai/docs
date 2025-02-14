@@ -30,7 +30,7 @@ Then, set the following variables in the `.env` file:
 
   - **OPENAI_API_KEY** - replace `INSERT_API_KEY` in the code below with your own kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
   - **OPENAI_API_URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
-  - **OPENAI_DEFAULT_MODEL** - choose one of kluster.ai's available models based on your use case. Ensure that the model's full name starting with `klusterai/` is listed. For more details, see [kluster.ai’s models](/api-reference/reference/#list-supported-models){target=\_blank}
+  - **OPENAI_DEFAULT_MODEL** - choose one of kluster.ai's available models based on your use case. Ensure that the model's full name starting with `klusterai/` is listed. For more details, see [kluster.ai's models](/api-reference/reference/#list-supported-models){target=\_blank}. It's also recommended that you set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, `LARGE_OPENAI_MODEL` to the same value. This will allow you seamless experimentation with the different characters because different characters default to using different models
 
 The OpenAI configuration section of your `.env` file should resemble the following:
 
@@ -41,6 +41,9 @@ OPENAI_API_URL=https://api.kluster.ai/v1
 
 # Community Plugin for OpenAI Configuration
 OPENAI_DEFAULT_MODEL=klusterai/Meta-Llama-3.3-70B-Instruct-Turbo
+SMALL_OPENAI_MODEL=klusterai/Meta-Llama-3.3-70B-Instruct-Turbo
+MEDIUM_OPENAI_MODEL=klusterai/Meta-Llama-3.3-70B-Instruct-Turbo
+LARGE_OPENAI_MODEL=klusterai/Meta-Llama-3.3-70B-Instruct-Turbo
 ```
 
 ## Run and interact with your first agent
@@ -51,9 +54,10 @@ By default, `Dobby` uses the `openai` model, which has been properly configured 
 
 ```json
 {
-    "name": "Dobby",
-    "clients": [],
-    "modelProvider": "openai",
+  "name": "Dobby",
+  "clients": [],
+  "modelProvider": "openai" // json truncated for clarity
+}
 ```
 
 To run the `Dobby` agent, run the following command from the project root directory:
@@ -67,6 +71,10 @@ In another terminal window, run the following command to launch the web UI:
 ```bash
 pnpm start:client
 ```
+
+You'll be prompted to open your browser to [http://localhost:5173/](http://localhost:5173/){target=\_blank}. 
+
+--8<-- 'code/get-started/integrations/eliza/terminal/launch-client.md'
 
 You can now interact with Dobby by clicking on the **Chat** button and starting the conversation: 
 
