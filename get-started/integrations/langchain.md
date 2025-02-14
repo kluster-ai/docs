@@ -47,7 +47,7 @@ That's all you need to start with LangChain and the kluster.ai API! Next, this g
 This section will explore what LangChain can do beyond a single prompt-and-response interaction. One standout feature of LangChain is its built-in memory, which tracks conversation context across multiple user queries. In the following steps, you'll set up a multi-turn conversational agent that takes advantage of this memory and seamlessly integrates with the kluster.ai API: 
 
 1. First, import the necessary LangChain components for memory management, prompt handling, and kluster.ai integration 
-```python
+```python title="hello_langchain.py"
 --8<-- "code/get-started/integrations/langchain/langchain.py:01:06"
 ```
 2. Next, create a memory instance to store and manage the conversation’s context, allowing the chatbot to remember previous user messages. Finally, you'll configure the `ChatOpenAI` model to point to kluster.ai’s endpoint (with your API key and chosen model). Remember, you can always change the selected model based on your needs 
