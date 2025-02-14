@@ -1477,7 +1477,7 @@ The base model ID to fine-tune. Must be a fine-tunable model, for example `meta-
 Optionally specify a separate file to serve as your validation dataset.
 
 `hyperparameters` ++"object or null"++
-Object containing hyperparameters for fine-tuning:
+Optionally specify an object containing hyperparameters for fine-tuning:
 
 - `batch_size`: The number of training examples processed in one forward/backward pass. Larger batch sizes reduce the frequency of weight updates per epoch, leading to more stable gradients but slower updates. Gradient accumulation is used, so larger batches may increase the duration of the job.
 
@@ -1504,7 +1504,7 @@ A Fine-tuning Job object.
     )
     
     job = client.fine_tuning.jobs.create(
-        training_file="file-123abc",  # ID from uploaded training file
+        training_file="INSERT_TRAINING_FILE_ID",  # ID from uploaded training file
         model="meta-llama/Meta-Llama-3.1-8B-Instruct",
         hyperparameters={
             "batch_size": 4,
@@ -1518,10 +1518,10 @@ A Fine-tuning Job object.
 === "curl"
     ```bash title="Example request"
     curl -X POST https://api.kluster.ai/v1/fine_tuning/jobs \
-        -H "Authorization: Bearer $API_KEY" \
+        -H "Authorization: Bearer INSERT_API_KEY" \
         -H "Content-Type: application/json" \
         -d '{
-            "training_file": "file-123abc",
+            "training_file": "INSERT_TRAINING_FILE_ID",
             "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
             "hyperparameters": {
                 "batch_size": 4,
@@ -1663,13 +1663,13 @@ A Fine-tuning Job object.
         base_url="https://api.kluster.ai/v1",
         api_key="INSERT_API_KEY"
     )
-    job_details = client.fine_tuning.jobs.retrieve("ftjob-123")
+    job_details = client.fine_tuning.jobs.retrieve("INSERT_JOB_ID")
     print(job_details.to_dict())
     ```
 === "curl"
     ```bash title="Example request"
-    curl -s https://api.kluster.ai/v1/fine_tuning/jobs/ftjob-123 \
-        -H "Authorization: Bearer $API_KEY"
+    curl -s https://api.kluster.ai/v1/fine_tuning/jobs/INSERT_JOB_ID \
+        -H "Authorization: Bearer INSERT_API_KEY"
     ```
 
 ```json title="Response"
@@ -1840,7 +1840,7 @@ The Fine-tuning Job object with updated status.
 === "curl"
     ```bash title="Example request"
     curl -X POST https://api.kluster.ai/v1/fine_tuning/jobs/67ae7f7d965c187d5cda039f/cancel \
-        -H "Authorization: Bearer $API_KEY" \
+        -H "Authorization: Bearer INSERT_API_KEY" \
         -H "Content-Type: application/json"
     ```
 
