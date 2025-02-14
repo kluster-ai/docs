@@ -1822,6 +1822,19 @@ Navigate to the kluster.ai developer console [**API Keys**](https://platform.klu
 
 For step-by-step instructions, refer to the [Get an API key](/get-started/get-api-key){target=\_blank} guide.
 
+### API request limits
+
+The following limits apply to API requests based upon your plan tier:
+
+| Restriction                   | Free tier |           Standard tier            |
+|-------------------------------|:---------:|:----------------------------------:|
+| **Context size**              |    32k    | 164k (deepseek-r1) / 131k (others) |
+| **Max output**                |    4k     | 164k (deepseek-r1) / 131k (others) |
+| **Concurrent requests**       |     2     |                 10                 |
+| **Request limit**             |   1/min   |               60/min               |
+| **Realtime request priority** | Standard  |              Standard              |
+| **Batch request priority**    | Standard  |                High                |
+
 ## Batch job workflow overview
 
 Working with Batch jobs in the kluster.ai API involves the following steps:
