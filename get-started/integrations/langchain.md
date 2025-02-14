@@ -46,7 +46,7 @@ That's all you need to start with LangChain and the kluster.ai API! Next, this g
 
 This section will explore what LangChain can do beyond a single prompt-and-response interaction. One standout feature of LangChain is its built-in memory, which tracks conversation context across multiple user queries. In the following steps, you'll set up a multi-turn conversational agent that takes advantage of this memory and seamlessly integrates with the kluster.ai API: 
 
-1. First, import the necessary LangChain components for memory management, prompt handling, and kluster.ai integration 
+1. First, create a file named `hello_langchain.py` and import the necessary LangChain components for memory management, prompt handling, and kluster.ai integration 
 ```python title="hello_langchain.py"
 --8<-- "code/get-started/integrations/langchain/langchain.py:01:06"
 ```
