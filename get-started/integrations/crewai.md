@@ -25,7 +25,7 @@ Open your Python virtual environment, and then follow these steps to use the Cre
 ```bash
 crewai create crew INSERT_PROJECT_NAME
 ```
-2. **Select model and provider** - during setup, the CLI will ask you to choose a provider and a model. Select `openai` as the provider and then choose any available model. Because you'll configure kluster.ai as a custom model, your initial model choice won't affect the final integration
+2. **Select model and provider** - during setup, the CLI will ask you to choose a provider and a model. Select `openai` as the provider and then choose any available model. Because you'll configure kluster.ai as a custom model, your initial model choice won't affect the final integration. The CLI will prompt you for an OpenAI API key, but this isn’t required. Simply press enter to skip
 
 ## Build a simple AI agent
 
