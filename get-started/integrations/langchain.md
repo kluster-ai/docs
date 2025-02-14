@@ -67,7 +67,7 @@ This section will explore what LangChain can do beyond a single prompt-and-respo
 --8<-- "code/get-started/integrations/langchain/langchain.py:33:37"
 ```
 6. Finally, a follow-up question is posed without restating the city name—allowing LangChain’s memory to handle the context implicitly. By capturing and printing both the questions and the responses, you can see how multi-turn interactions work in practice, with each new query informed by the conversation
-```python
+```python title="hello_langchain.py"
 --8<-- "code/get-started/integrations/langchain/langchain.py:39:43"
 ```
 
