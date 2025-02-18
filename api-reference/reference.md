@@ -1564,7 +1564,6 @@ A Fine-tuning Job object.
 
 <div class="grid" markdown> 
 <div markdown>
-**Properties**
 
 `object` ++"string"++
 The object type, which is always `fine_tuning.job`.
