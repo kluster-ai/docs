@@ -1460,7 +1460,7 @@ Currently, two base models are supported for Fine-Tuning:
 
 `POST https://api.kluster.ai/v1/fine_tuning/jobs`
 
-To initiate a Fine-Tuning job for one of the supported models, first upload your dataset file (see [Files section](#files) for instructions).
+To initiate a Fine-Tuning job for one of the supported models, first upload the dataset file (see [Files section](#files) for instructions).
 
 <div class="grid" markdown> 
 <div markdown>
@@ -1469,6 +1469,8 @@ To initiate a Fine-Tuning job for one of the supported models, first upload your
 
 `training_file` ++"string"++ <span class="required" markdown>++"required"++</span>
 ID of an [uploaded file](#files) that will serve as training data. This file must have `purpose="fine-tune"`.
+
+---
 
 `model` ++"string"++ <span class="required" markdown>++"required"++</span>
 The base model ID to fine-tune. Must be a fine-tunable model, for example `meta-llama/Meta-Llama-3.1-8B-Instruct` or `meta-llama/Meta-Llama-3.3-70B-Instruct-Turbo`.
@@ -1498,7 +1500,7 @@ Optionally specify an object containing hyperparameters for Fine-Tuning:
 ---
 
 `nickname` ++"string or null"++
-Add a custom suffix that will be appended to the output model name. This can help you identify a fine tuned model.
+Add a custom suffix that will be appended to the output model name. This can help identify a fine tuned model.
 
 ---
 
