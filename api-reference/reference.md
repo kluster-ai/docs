@@ -1468,6 +1468,7 @@ To initiate a Fine-Tuning job for one of the supported models, first upload the 
 **Request**
 
 `training_file` ++"string"++ <span class="required" markdown>++"required"++</span>
+
 ID of an [uploaded file](#files) that will serve as training data. This file must have `purpose="fine-tune"`.
 
 ---
