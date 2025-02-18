@@ -1510,6 +1510,7 @@ A [Fine-Tuning Job object](#fine-tuning-job-object).
 <div markdown>
 
 === "Python"
+
     ```python title="Example request"
     from openai import OpenAI
     
