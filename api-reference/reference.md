@@ -1556,7 +1556,9 @@ A Fine-tuning Job object.
   "integrations": []
 }
 ```
-</div> </div>
+
+</div> 
+</div>
 
 #### Fine-tuning Job Object
 
@@ -1633,8 +1635,9 @@ Array of integrations associated with the fine-tuning job.
   "integrations": []
 }
 ```
-</div> </div>
 
+</div> 
+</div>
 
 ### Retrieve a Fine-Tuning Job
 
@@ -1697,8 +1700,9 @@ A Fine-tuning Job object.
   "integrations": []
 }
 ```
-</div> </div>
 
+</div> 
+</div>
 
 ### List all Fine-Tuning Jobs
 
@@ -1803,7 +1807,8 @@ A paginated list of Fine-tuning Job objects.
 }
 ```
 
-</div> </div>
+</div> 
+</div>
 
 ### Cancel a Fine-Tuning Job
 
@@ -1863,4 +1868,6 @@ The Fine-tuning Job object with updated status.
   "error": null
 }
 ```
-</div> </div>
+
+</div> 
+</div>
