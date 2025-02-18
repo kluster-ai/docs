@@ -1463,22 +1463,22 @@ The organization that owns the model.
 
 ---
 
-## Fine-Tuning
+## Fine-tuning
 
-Fine-Tuning is the process of refining a pre-trained model on specialized data. By adjusting the parameters with new, domain-specific examples, the model performs better on targeted tasks while retaining the general knowledge learned in its original training.
+Fine-tuning is the process of refining a pre-trained model on specialized data. By adjusting the parameters with new, domain-specific examples, the model performs better on targeted tasks while retaining the general knowledge learned in its original training.
 
 ### Supported models
 
-Currently, two base models are supported for Fine-Tuning:
+Currently, two base models are supported for Fine-tuning:
 
 - **`klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`** - has a `64,000` tokens max context window, best for long-context tasks, cost-sensitive scenarios
 - **`klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`** - has a `32,000` tokens max context window, best for complex reasoning, high-stakes accuracy
 
-### Create a Fine-Tuning job
+### Create a Fine-tuning job
 
 `POST https://api.kluster.ai/v1/fine_tuning/jobs`
 
-To initiate a Fine-Tuning job for one of the supported models, first upload the dataset file (see [Files section](#files) for instructions).
+To initiate a Fine-tuning job for one of the supported models, first upload the dataset file (see [Files section](#files) for instructions).
 
 <div class="grid" markdown> 
 <div markdown>
@@ -1505,7 +1505,7 @@ Optionally specify a separate file to serve as your validation dataset.
 
 `hyperparameters` ++"object or null"++
 
-Optionally specify an object containing hyperparameters for Fine-Tuning:
+Optionally specify an object containing hyperparameters for Fine-tuning:
 
 ??? child "Show properties"
 
@@ -1536,7 +1536,7 @@ Add a custom suffix that will be appended to the output model name. This can hel
 
 **Returns**
 
-A [Fine-Tuning job object](#fine-tuning-job-object).
+A [Fine-tuning job object](#Fine-tuning-job-object).
 
 </div> 
 <div markdown>
@@ -1610,25 +1610,26 @@ A [Fine-Tuning job object](#fine-tuning-job-object).
 </div> 
 </div>
 
-### Retrieve a Fine-Tuning job
+### Retrieve a Fine-tuning job
 
 `GET https://api.kluster.ai/v1/fine_tuning/jobs/{fine_tuning_job_id}`
 
-Fetch details of a single Fine-Tuning job by specifying its `fine_tuning_job_id`.
+Fetch details of a single Fine-tuning job by specifying its `fine_tuning_job_id`.
 
 <div class="grid" markdown> 
 <div markdown>
 
 **Path parameters**
+
 `fine_tuning_job_id` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-The ID of the Fine-Tuning job to retrieve.
+The ID of the Fine-tuning job to retrieve.
 
 ---
 
 **Returns**
 
-A [Fine-Tuning job object](#fine-tuning-job-object).
+A [Fine-tuning job object](#Fine-tuning-job-object).
 
 </div> 
 <div markdown>
@@ -1680,11 +1681,11 @@ A [Fine-Tuning job object](#fine-tuning-job-object).
 </div> 
 </div>
 
-### List all Fine-Tuning jobs
+### List all Fine-tuning jobs
 
 `GET https://api.kluster.ai/v1/fine_tuning/jobs`
 
-Retrieve a paginated list of all Fine-Tuning jobs.
+Retrieve a paginated list of all Fine-tuning jobs.
 
 <div class="grid" markdown> 
 <div markdown>
@@ -1705,7 +1706,7 @@ A limit on the number of objects returned (1 to 100). Default is 20.
 
 **Returns**
 
-A paginated list of [Fine-Tuning job objects](#fine-tuning-job-object).
+A paginated list of [Fine-tuning job objects](#Fine-tuning-job-object).
 
 </div> 
 <div markdown>
@@ -1791,7 +1792,7 @@ A paginated list of [Fine-Tuning job objects](#fine-tuning-job-object).
 </div> 
 </div>
 
-### Cancel a Fine-Tuning job
+### Cancel a Fine-tuning job
 
 `POST https://api.kluster.ai/v1/fine_tuning/jobs/{fine_tuning_job_id}/cancel`
 
@@ -1804,13 +1805,13 @@ To cancel a job that is in progress, send a `POST` request to the `cancel` endpo
 
 `fine_tuning_job_id` ++"string"++ <span class="required" markdown>++"required"++</span> 
 
-The ID of the Fine-Tuning job to cancel.
+The ID of the Fine-tuning job to cancel.
 
 ---
 
 **Returns**
 
-The [Fine-Tuning job object](#fine-tuning-job-object) with updated status.
+The [Fine-tuning job object](#Fine-tuning-job-object) with updated status.
 
 </div> 
 <div markdown>
@@ -1857,7 +1858,7 @@ The [Fine-Tuning job object](#fine-tuning-job-object) with updated status.
 </div> 
 </div>
 
-### Fine-Tuning job object 
+### Fine-tuning job object 
 
 <div class="grid" markdown> 
 <div markdown>
@@ -1870,7 +1871,7 @@ The object type, which is always `fine_tuning.job`.
 
 `id` ++"string"++
 
-Unique identifier for the Fine-Tuning job.
+Unique identifier for the Fine-tuning job.
 
 ---
 
@@ -1882,13 +1883,13 @@ ID of the base model being fine-tuned.
 
 `created_at` ++"integer"++
 
-Unix timestamp (in seconds) when the Fine-Tuning job was created.
+Unix timestamp (in seconds) when the Fine-tuning job was created.
 
 ---
 
 `finished_at` ++"integer"++
 
-Unix timestamp (in seconds) when the Fine-Tuning job was completed.
+Unix timestamp (in seconds) when the Fine-tuning job was completed.
 
 ---
 
@@ -1900,13 +1901,13 @@ The ID of the resulting fine-tuned model if the job succeeded; otherwise `null`.
 
 `result_files` ++"array"++
 
-Array of file IDs associated with the Fine-Tuning job results.
+Array of file IDs associated with the Fine-tuning job results.
 
 ---
 
 `status` ++"string"++
 
-The status of the Fine-Tuning job, e.g. `pending`, `running`, `succeeded`, `failed`, or `cancelled`.
+The status of the Fine-tuning job, e.g. `pending`, `running`, `succeeded`, `failed`, or `cancelled`.
 
 ---
 
@@ -1924,7 +1925,7 @@ Training hyperparameters used in the job (e.g., `batch_size`, `n_epochs`, `learn
 
 `method` ++"object"++
 
-Details about the Fine-Tuning method used, including type and specific parameters.
+Details about the Fine-tuning method used, including type and specific parameters.
 
 ---
 
@@ -1936,7 +1937,7 @@ The total number of tokens processed during training.
 
 `integrations` ++"array"++
 
-Array of integrations associated with the Fine-Tuning job.
+Array of integrations associated with the Fine-tuning job.
 
 ---
 
