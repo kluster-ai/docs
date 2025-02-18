@@ -1462,7 +1462,7 @@ Currently, two base models are supported for fine-tuning:
 
 `POST https://api.kluster.ai/v1/fine_tuning/jobs`
 
-Initiates a fine-tuning job for one of the supported models. You must first upload your dataset file (see [Files section](#files) for instructions).
+To initiate a fine-tuning job for one of the supported models, first upload your dataset file (see [Files section](#files) for instructions).
 
 <div class="grid" markdown> 
 <div markdown>
