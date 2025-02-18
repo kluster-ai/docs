@@ -1489,7 +1489,7 @@ Optionally specify an object containing hyperparameters for Fine-Tuning:
 Add a custom suffix that will be appended to the output model name. This can help you identify a fine tuned model.
 
 **Returns**
-A Fine-Tuning Job object.
+A [Fine-Tuning Job object](#fine-tuning-job-object).
 </div> 
 <div markdown>
 
@@ -1560,7 +1560,7 @@ A Fine-Tuning Job object.
 </div> 
 </div>
 
-#### Fine-Tuning Job Object
+#### Fine-Tuning Job Object 
 
 <div class="grid" markdown> 
 <div markdown>
@@ -1654,7 +1654,7 @@ The ID of the Fine-Tuning job to retrieve.
 ---
 
 **Returns**
-A Fine-Tuning Job object.
+A [Fine-Tuning Job object](#fine-tuning-job-object).
 </div> 
 <div markdown>
 
@@ -1723,7 +1723,7 @@ A limit on the number of objects returned (1 to 100). Default is 20.
 ---
 
 **Returns**
-A paginated list of Fine-Tuning Job objects.
+A paginated list of [Fine-Tuning Job objects](#fine-tuning-job-object).
 
 </div> 
 <div markdown>
@@ -1827,7 +1827,7 @@ The ID of the Fine-Tuning job to cancel.
 ---
 
 **Returns**
-The Fine-Tuning Job object with updated status.
+The [Fine-Tuning Job object](#fine-tuning-job-object) with updated status.
 </div> 
 <div markdown>
 
