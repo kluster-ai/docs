@@ -1602,6 +1602,7 @@ Fetch details of a single Fine-Tuning job by specifying its `fine_tuning_job_id`
 <div markdown>
 
 **Path parameters**
+
 `fine_tuning_job_id` ++"string"++ <span class="required" markdown>++"required"++</span>
 
 The ID of the Fine-Tuning job to retrieve.
