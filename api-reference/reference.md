@@ -1471,20 +1471,34 @@ ID of an [uploaded file](#files) that will serve as training data. This file mus
 `model` ++"string"++ <span class="required" markdown>++"required"++</span>
 The base model ID to fine-tune. Must be a fine-tunable model, for example `meta-llama/Meta-Llama-3.1-8B-Instruct` or `meta-llama/Meta-Llama-3.3-70B-Instruct-Turbo`.
 
+---
+
 `validation_file` ++"string or null"++
 Optionally specify a separate file to serve as your validation dataset.
+
+---
 
 `hyperparameters` ++"object or null"++
 Optionally specify an object containing hyperparameters for Fine-Tuning:
 
+---
+
 - `batch_size`: The number of training examples processed in one forward/backward pass. Larger batch sizes reduce the frequency of weight updates per epoch, leading to more stable gradients but slower updates. Gradient accumulation is used, so larger batches may increase the duration of the job.
+
+---
 
 - `learning_rate_multiplier`: A multiplier for the base step size used in model weight updates. Lower values slow training but improve precision (helping avoid overshooting optimal weights or overfitting). Higher values speed up convergence but risk instability. Adjust carefully to balance training efficiency and model performance.
 
+---
+
 - `n_epochs`: The number of times the entire training dataset is passed through the model. More epochs can improve learning but risk overfitting if the model memorizes training data. Monitor validation metrics to determine the optimal number.
+
+---
 
 `nickname` ++"string or null"++
 Add a custom suffix that will be appended to the output model name. This can help you identify a fine tuned model.
+
+---
 
 **Returns**
 A [Fine-Tuning Job object](#fine-tuning-job-object).
@@ -1636,6 +1650,8 @@ Retrieve a paginated list of all Fine-Tuning jobs.
 
 `after` ++"string"++
 A cursor for use in pagination.
+
+---
 
 `limit` ++"integer"++
 A limit on the number of objects returned (1 to 100). Default is 20.
@@ -1799,41 +1815,68 @@ The [Fine-Tuning Job object](#fine-tuning-job-object) with updated status.
 `object` ++"string"++
 The object type, which is always `fine_tuning.job`.
 
+---
+
 `id` ++"string"++
 Unique identifier for the Fine-Tuning job.
+
+---
 
 `model` ++"string"++
 ID of the base model being fine-tuned.
 
+---
+
 `created_at` ++"integer"++
 Unix timestamp (in seconds) when the Fine-Tuning job was created.
+
+---
 
 `finished_at` ++"integer"++
 Unix timestamp (in seconds) when the Fine-Tuning job was completed.
 
+---
+
 `fine_tuned_model` ++"string or null"++
 The ID of the resulting fine-tuned model if the job succeeded; otherwise `null`.
+
+---
 
 `result_files` ++"array"++
 Array of file IDs associated with the Fine-Tuning job results.
 
+---
+
 `status` ++"string"++
 The status of the Fine-Tuning job, e.g. `pending`, `running`, `succeeded`, `failed`, or `cancelled`.
+
+---
 
 `training_file` ++"string"++
 ID of the uploaded file used for training data.
 
+---
+
 `hyperparameters` ++"object"++
 Training hyperparameters used in the job (e.g., `batch_size`, `n_epochs`, `learning_rate_multiplier`).
+
+---
 
 `method` ++"object"++
 Details about the Fine-Tuning method used, including type and specific parameters.
 
+---
+
 `trained_tokens` ++"integer"++
 The total number of tokens processed during training.
 
+---
+
 `integrations` ++"array"++
 Array of integrations associated with the Fine-Tuning job.
+
+---
+
 </div> 
 <div markdown>
 
