@@ -1824,7 +1824,7 @@ The [Fine-Tuning Job object](#fine-tuning-job-object) with updated status.
 </div> 
 </div>
 
-## Fine-Tuning Job object 
+### Fine-Tuning job object 
 
 <div class="grid" markdown> 
 <div markdown>
