@@ -1558,84 +1558,6 @@ A [Fine-Tuning Job object](#fine-tuning-job-object).
 </div> 
 </div>
 
-#### Fine-Tuning Job object 
-
-<div class="grid" markdown> 
-<div markdown>
-
-`object` ++"string"++
-The object type, which is always `fine_tuning.job`.
-
-`id` ++"string"++
-Unique identifier for the Fine-Tuning job.
-
-`model` ++"string"++
-ID of the base model being fine-tuned.
-
-`created_at` ++"integer"++
-Unix timestamp (in seconds) when the Fine-Tuning job was created.
-
-`finished_at` ++"integer"++
-Unix timestamp (in seconds) when the Fine-Tuning job was completed.
-
-`fine_tuned_model` ++"string or null"++
-The ID of the resulting fine-tuned model if the job succeeded; otherwise `null`.
-
-`result_files` ++"array"++
-Array of file IDs associated with the Fine-Tuning job results.
-
-`status` ++"string"++
-The status of the Fine-Tuning job, e.g. `pending`, `running`, `succeeded`, `failed`, or `cancelled`.
-
-`training_file` ++"string"++
-ID of the uploaded file used for training data.
-
-`hyperparameters` ++"object"++
-Training hyperparameters used in the job (e.g., `batch_size`, `n_epochs`, `learning_rate_multiplier`).
-
-`method` ++"object"++
-Details about the Fine-Tuning method used, including type and specific parameters.
-
-`trained_tokens` ++"integer"++
-The total number of tokens processed during training.
-
-`integrations` ++"array"++
-Array of integrations associated with the Fine-Tuning job.
-</div> 
-<div markdown>
-
-```json title="Example"
-{
-  "object": "fine_tuning.job",
-  "id": "67ad3877720af9f9ba78b684",
-  "model": "meta-llama/Llama-3.1-8B-Instruct",
-  "created_at": 1739405431,
-  "finished_at": 1739405521,
-  "fine_tuned_model": "ft:meta-llama:Llama-3.1-8B-Instruct:personal:805b5d69",
-  "result_files": [],
-  "status": "succeeded",
-  "training_file": "67ad38760272045e7006171b",
-  "hyperparameters": {
-    "batch_size": 4,
-    "learning_rate_multiplier": 1,
-    "n_epochs": 2
-  },
-  "method": {
-    "type": "supervised",
-    "supervised": {
-      "batch_size": 4,
-      "learning_rate_multiplier": 1,
-      "n_epochs": 2
-    }
-  },
-  "trained_tokens": 3065,
-  "integrations": []
-}
-```
-
-</div> 
-</div>
-
 ### Retrieve a Fine-Tuning Job
 
 `GET https://api.kluster.ai/v1/fine_tuning/jobs/{fine_tuning_job_id}`
@@ -1863,6 +1785,84 @@ The [Fine-Tuning Job object](#fine-tuning-job-object) with updated status.
   },
   "metrics": {},
   "error": null
+}
+```
+
+</div> 
+</div>
+
+## Fine-Tuning Job object 
+
+<div class="grid" markdown> 
+<div markdown>
+
+`object` ++"string"++
+The object type, which is always `fine_tuning.job`.
+
+`id` ++"string"++
+Unique identifier for the Fine-Tuning job.
+
+`model` ++"string"++
+ID of the base model being fine-tuned.
+
+`created_at` ++"integer"++
+Unix timestamp (in seconds) when the Fine-Tuning job was created.
+
+`finished_at` ++"integer"++
+Unix timestamp (in seconds) when the Fine-Tuning job was completed.
+
+`fine_tuned_model` ++"string or null"++
+The ID of the resulting fine-tuned model if the job succeeded; otherwise `null`.
+
+`result_files` ++"array"++
+Array of file IDs associated with the Fine-Tuning job results.
+
+`status` ++"string"++
+The status of the Fine-Tuning job, e.g. `pending`, `running`, `succeeded`, `failed`, or `cancelled`.
+
+`training_file` ++"string"++
+ID of the uploaded file used for training data.
+
+`hyperparameters` ++"object"++
+Training hyperparameters used in the job (e.g., `batch_size`, `n_epochs`, `learning_rate_multiplier`).
+
+`method` ++"object"++
+Details about the Fine-Tuning method used, including type and specific parameters.
+
+`trained_tokens` ++"integer"++
+The total number of tokens processed during training.
+
+`integrations` ++"array"++
+Array of integrations associated with the Fine-Tuning job.
+</div> 
+<div markdown>
+
+```json title="Example"
+{
+  "object": "fine_tuning.job",
+  "id": "67ad3877720af9f9ba78b684",
+  "model": "meta-llama/Llama-3.1-8B-Instruct",
+  "created_at": 1739405431,
+  "finished_at": 1739405521,
+  "fine_tuned_model": "ft:meta-llama:Llama-3.1-8B-Instruct:personal:805b5d69",
+  "result_files": [],
+  "status": "succeeded",
+  "training_file": "67ad38760272045e7006171b",
+  "hyperparameters": {
+    "batch_size": 4,
+    "learning_rate_multiplier": 1,
+    "n_epochs": 2
+  },
+  "method": {
+    "type": "supervised",
+    "supervised": {
+      "batch_size": 4,
+      "learning_rate_multiplier": 1,
+      "n_epochs": 2
+    }
+  },
+  "trained_tokens": 3065,
+  "integrations": []
 }
 ```
 
