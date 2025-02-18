@@ -1485,17 +1485,24 @@ Optionally specify a separate file to serve as your validation dataset.
 `hyperparameters` ++"object or null"++
 Optionally specify an object containing hyperparameters for Fine-Tuning:
 
----
+??? child "Show properties"
 
-- `batch_size`: The number of training examples processed in one forward/backward pass. Larger batch sizes reduce the frequency of weight updates per epoch, leading to more stable gradients but slower updates. Gradient accumulation is used, so larger batches may increase the duration of the job.
+    `batch_size` ++"number"++
 
----
+    The number of training examples processed in one forward/backward pass. Larger batch sizes reduce the frequency of weight updates per epoch, leading to more stable gradients but slower updates. Gradient accumulation is used, so larger batches may increase the duration of the job.
 
-- `learning_rate_multiplier`: A multiplier for the base step size used in model weight updates. Lower values slow training but improve precision (helping avoid overshooting optimal weights or overfitting). Higher values speed up convergence but risk instability. Adjust carefully to balance training efficiency and model performance.
+    ---
 
----
+    `learning_rate_multiplier` ++"number"++
 
-- `n_epochs`: The number of times the entire training dataset is passed through the model. More epochs can improve learning but risk overfitting if the model memorizes training data. Monitor validation metrics to determine the optimal number.
+    A multiplier for the base step size used in model weight updates. Lower values slow training but improve precision (helping avoid overshooting optimal weights or overfitting). Higher values speed up convergence but risk instability. Adjust carefully to balance training efficiency and model performance.
+
+    ---
+
+    `n_epochs` ++"number"++
+
+    The number of times the entire training dataset is passed through the model. More epochs can improve learning but risk overfitting if the model memorizes training data. Monitor validation metrics to determine the optimal number.
+
 
 ---
 
