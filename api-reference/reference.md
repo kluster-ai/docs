@@ -1517,7 +1517,9 @@ Add a custom suffix that will be appended to the output model name. This can hel
 ---
 
 **Returns**
+
 A [Fine-Tuning job object](#fine-tuning-job-object).
+
 </div> 
 <div markdown>
 
@@ -1607,7 +1609,9 @@ The ID of the Fine-Tuning job to retrieve.
 ---
 
 **Returns**
+
 A [Fine-Tuning job object](#fine-tuning-job-object).
+
 </div> 
 <div markdown>
 
@@ -1682,6 +1686,7 @@ A limit on the number of objects returned (1 to 100). Default is 20.
 ---
 
 **Returns**
+
 A paginated list of [Fine-Tuning job objects](#fine-tuning-job-object).
 
 </div> 
@@ -1786,7 +1791,9 @@ The ID of the Fine-Tuning job to cancel.
 ---
 
 **Returns**
+
 The [Fine-Tuning job object](#fine-tuning-job-object) with updated status.
+
 </div> 
 <div markdown>
 
