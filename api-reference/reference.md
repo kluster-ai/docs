@@ -1471,7 +1471,7 @@ To initiate a fine-tuning job for one of the supported models, first upload your
 ID of an [uploaded file](#files) that will serve as training data. This file must have `purpose="fine-tune"`.
 
 `model` ++"string"++ <span class="required" markdown>++"required"++</span>
-The base model ID to fine-tune. Must be a fine-tunable model, for example `meta-llama/Meta-Llama-3.1-8B-Instruct` or `meta-llama/Meta-Llama-3.3-70B-Instruct-Turbo`
+The base model ID to fine-tune. Must be a fine-tunable model, for example `meta-llama/Meta-Llama-3.1-8B-Instruct` or `meta-llama/Meta-Llama-3.3-70B-Instruct-Turbo`.
 
 `validation_file` ++"string or null"++
 Optionally specify a separate file to serve as your validation dataset.
