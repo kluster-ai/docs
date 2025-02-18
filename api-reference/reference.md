@@ -1449,11 +1449,11 @@ The organization that owns the model.
 
 ### Overview
 
-Fine-tuning is the process of refining a pre-trained model on specialized data. By adjusting the parameters with new, domain-specific examples, the model performs better on targeted tasks while retaining the general knowledge learned in its original training.
+Fine-Tuning is the process of refining a pre-trained model on specialized data. By adjusting the parameters with new, domain-specific examples, the model performs better on targeted tasks while retaining the general knowledge learned in its original training.
 
 ### Supported models
 
-Currently, two base models are supported for fine-tuning:
+Currently, two base models are supported for Fine-Tuning:
 
 - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo` - Has a `64,000` tokens max context window, best for long-context tasks, cost-sensitive scenarios
 - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo` - Has a `32,000` tokens max context window, best for complex reasoning, high-stakes accuracy
@@ -1462,7 +1462,7 @@ Currently, two base models are supported for fine-tuning:
 
 `POST https://api.kluster.ai/v1/fine_tuning/jobs`
 
-To initiate a fine-tuning job for one of the supported models, first upload your dataset file (see [Files section](#files) for instructions).
+To initiate a Fine-Tuning job for one of the supported models, first upload your dataset file (see [Files section](#files) for instructions).
 
 <div class="grid" markdown> 
 <div markdown>
@@ -1477,7 +1477,7 @@ The base model ID to fine-tune. Must be a fine-tunable model, for example `meta-
 Optionally specify a separate file to serve as your validation dataset.
 
 `hyperparameters` ++"object or null"++
-Optionally specify an object containing hyperparameters for fine-tuning:
+Optionally specify an object containing hyperparameters for Fine-Tuning:
 
 - `batch_size`: The number of training examples processed in one forward/backward pass. Larger batch sizes reduce the frequency of weight updates per epoch, leading to more stable gradients but slower updates. Gradient accumulation is used, so larger batches may increase the duration of the job.
 
@@ -1489,7 +1489,7 @@ Optionally specify an object containing hyperparameters for fine-tuning:
 Add a custom suffix that will be appended to the output model name. This can help you identify a fine tuned model.
 
 **Returns**
-A Fine-tuning Job object.
+A Fine-Tuning Job object.
 </div> 
 <div markdown>
 
@@ -1560,7 +1560,7 @@ A Fine-tuning Job object.
 </div> 
 </div>
 
-#### Fine-tuning Job Object
+#### Fine-Tuning Job Object
 
 <div class="grid" markdown> 
 <div markdown>
@@ -1569,25 +1569,25 @@ A Fine-tuning Job object.
 The object type, which is always `fine_tuning.job`.
 
 `id` ++"string"++
-Unique identifier for the fine-tuning job.
+Unique identifier for the Fine-Tuning job.
 
 `model` ++"string"++
 ID of the base model being fine-tuned.
 
 `created_at` ++"integer"++
-Unix timestamp (in seconds) when the fine-tuning job was created.
+Unix timestamp (in seconds) when the Fine-Tuning job was created.
 
 `finished_at` ++"integer"++
-Unix timestamp (in seconds) when the fine-tuning job was completed.
+Unix timestamp (in seconds) when the Fine-Tuning job was completed.
 
 `fine_tuned_model` ++"string or null"++
 The ID of the resulting fine-tuned model if the job succeeded; otherwise `null`.
 
 `result_files` ++"array"++
-Array of file IDs associated with the fine-tuning job results.
+Array of file IDs associated with the Fine-Tuning job results.
 
 `status` ++"string"++
-The status of the fine-tuning job, e.g. `pending`, `running`, `succeeded`, `failed`, or `cancelled`.
+The status of the Fine-Tuning job, e.g. `pending`, `running`, `succeeded`, `failed`, or `cancelled`.
 
 `training_file` ++"string"++
 ID of the uploaded file used for training data.
@@ -1596,13 +1596,13 @@ ID of the uploaded file used for training data.
 Training hyperparameters used in the job (e.g., `batch_size`, `n_epochs`, `learning_rate_multiplier`).
 
 `method` ++"object"++
-Details about the fine-tuning method used, including type and specific parameters.
+Details about the Fine-Tuning method used, including type and specific parameters.
 
 `trained_tokens` ++"integer"++
 The total number of tokens processed during training.
 
 `integrations` ++"array"++
-Array of integrations associated with the fine-tuning job.
+Array of integrations associated with the Fine-Tuning job.
 </div> 
 <div markdown>
 
@@ -1642,19 +1642,19 @@ Array of integrations associated with the fine-tuning job.
 
 `GET https://api.kluster.ai/v1/fine_tuning/jobs/{fine_tuning_job_id}`
 
-Fetch details of a single fine-tuning job by specifying its `fine_tuning_job_id`.
+Fetch details of a single Fine-Tuning job by specifying its `fine_tuning_job_id`.
 
 <div class="grid" markdown> 
 <div markdown>
 
 **Path parameters**
 `fine_tuning_job_id` ++"string"++ <span class="required" markdown>++"required"++</span>
-The ID of the fine-tuning job to retrieve.
+The ID of the Fine-Tuning job to retrieve.
 
 ---
 
 **Returns**
-A Fine-tuning Job object.
+A Fine-Tuning Job object.
 </div> 
 <div markdown>
 
@@ -1707,7 +1707,7 @@ A Fine-tuning Job object.
 
 `GET https://api.kluster.ai/v1/fine_tuning/jobs`
 
-Retrieve a paginated list of all fine-tuning jobs.
+Retrieve a paginated list of all Fine-Tuning jobs.
 
 <div class="grid" markdown> 
 <div markdown>
@@ -1723,7 +1723,7 @@ A limit on the number of objects returned (1 to 100). Default is 20.
 ---
 
 **Returns**
-A paginated list of Fine-tuning Job objects.
+A paginated list of Fine-Tuning Job objects.
 
 </div> 
 <div markdown>
@@ -1822,12 +1822,12 @@ To cancel a job that is in progress, send a `POST` request to the `cancel` endpo
 
 `fine_tuning_job_id` ++"string"++ <span class="required" markdown>++"required"++</span> 
 
-The ID of the fine-tuning job to cancel.
+The ID of the Fine-Tuning job to cancel.
 
 ---
 
 **Returns**
-The Fine-tuning Job object with updated status.
+The Fine-Tuning Job object with updated status.
 </div> 
 <div markdown>
 
