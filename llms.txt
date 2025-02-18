@@ -1463,55 +1463,79 @@ The organization that owns the model.
 
 ---
 
-## Fine Tuning
+## Fine-Tuning
 
-### Overview
-
-Fine-tuning is the process of refining a pre-trained model on specialized data. By adjusting the parameters with new, domain-specific examples, the model performs better on targeted tasks while retaining the general knowledge learned in its original training.
+Fine-Tuning is the process of refining a pre-trained model on specialized data. By adjusting the parameters with new, domain-specific examples, the model performs better on targeted tasks while retaining the general knowledge learned in its original training.
 
 ### Supported models
 
-Currently, two base models are supported for fine-tuning:
+Currently, two base models are supported for Fine-Tuning:
 
-- `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo` - Has a `64,000` tokens max context window, best for long-context tasks, cost-sensitive scenarios
-- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo` - Has a `32,000` tokens max context window, best for complex reasoning, high-stakes accuracy
+- **`klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`** - has a `64,000` tokens max context window, best for long-context tasks, cost-sensitive scenarios
+- **`klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`** - has a `32,000` tokens max context window, best for complex reasoning, high-stakes accuracy
 
 ### Create a Fine-Tuning Job
 
 `POST https://api.kluster.ai/v1/fine_tuning/jobs`
 
-Initiates a fine-tuning job for one of the supported models. You must first upload your dataset file (see [Files section](#files) for instructions).
+To initiate a Fine-Tuning job for one of the supported models, first upload the dataset file (see [Files section](#files) for instructions).
 
 <div class="grid" markdown> 
 <div markdown>
+
 **Request**
+
 `training_file` ++"string"++ <span class="required" markdown>++"required"++</span>
 ID of an [uploaded file](#files) that will serve as training data. This file must have `purpose="fine-tune"`.
 
+---
+
 `model` ++"string"++ <span class="required" markdown>++"required"++</span>
-The base model ID to fine-tune. Must be a fine-tunable model, for example `meta-llama/Meta-Llama-3.1-8B-Instruct` or `meta-llama/Meta-Llama-3.3-70B-Instruct-Turbo`
+The base model ID to fine-tune. Must be a fine-tunable model, for example `meta-llama/Meta-Llama-3.1-8B-Instruct` or `meta-llama/Meta-Llama-3.3-70B-Instruct-Turbo`.
+
+---
 
 `validation_file` ++"string or null"++
 Optionally specify a separate file to serve as your validation dataset.
 
+---
+
 `hyperparameters` ++"object or null"++
-Optionally specify an object containing hyperparameters for fine-tuning:
+Optionally specify an object containing hyperparameters for Fine-Tuning:
 
-- `batch_size`: The number of training examples processed in one forward/backward pass. Larger batch sizes reduce the frequency of weight updates per epoch, leading to more stable gradients but slower updates. Gradient accumulation is used, so larger batches may increase the duration of the job.
+??? child "Show properties"
 
-- `learning_rate_multiplier`: A multiplier for the base step size used in model weight updates. Lower values slow training but improve precision (helping avoid overshooting optimal weights or overfitting). Higher values speed up convergence but risk instability. Adjust carefully to balance training efficiency and model performance.
+    `batch_size` ++"number"++
 
-- `n_epochs`: The number of times the entire training dataset is passed through the model. More epochs can improve learning but risk overfitting if the model memorizes training data. Monitor validation metrics to determine the optimal number.
+    The number of training examples processed in one forward/backward pass. Larger batch sizes reduce the frequency of weight updates per epoch, leading to more stable gradients but slower updates. Gradient accumulation is used, so larger batches may increase the duration of the job.
+
+    ---
+
+    `learning_rate_multiplier` ++"number"++
+
+    A multiplier for the base step size used in model weight updates. Lower values slow training but improve precision (helping avoid overshooting optimal weights or overfitting). Higher values speed up convergence but risk instability. Adjust carefully to balance training efficiency and model performance.
+
+    ---
+
+    `n_epochs` ++"number"++
+
+    The number of times the entire training dataset is passed through the model. More epochs can improve learning but risk overfitting if the model memorizes training data. Monitor validation metrics to determine the optimal number.
+
+
+---
 
 `nickname` ++"string or null"++
-Add a custom suffix that will be appended to the output model name. This can help you identify a fine tuned model.
+Add a custom suffix that will be appended to the output model name. This can help identify a fine tuned model.
+
+---
 
 **Returns**
-A Fine-tuning Job object.
+A [Fine-Tuning Job object](#fine-tuning-job-object).
 </div> 
 <div markdown>
 
 === "Python"
+
     ```python title="Example request"
     from openai import OpenAI
     
@@ -1534,6 +1558,7 @@ A Fine-tuning Job object.
     ```
 
 === "curl"
+
     ```bash title="Example request"
     curl -X POST https://api.kluster.ai/v1/fine_tuning/jobs \
         -H "Authorization: Bearer INSERT_API_KEY" \
@@ -1574,107 +1599,32 @@ A Fine-tuning Job object.
   "integrations": []
 }
 ```
-</div> </div>
 
-#### Fine-tuning Job Object
-
-<div class="grid" markdown> 
-<div markdown>
-**Properties**
-
-`object` ++"string"++
-The object type, which is always `fine_tuning.job`.
-
-`id` ++"string"++
-Unique identifier for the fine-tuning job.
-
-`model` ++"string"++
-ID of the base model being fine-tuned.
-
-`created_at` ++"integer"++
-Unix timestamp (in seconds) when the fine-tuning job was created.
-
-`finished_at` ++"integer"++
-Unix timestamp (in seconds) when the fine-tuning job was completed.
-
-`fine_tuned_model` ++"string or null"++
-The ID of the resulting fine-tuned model if the job succeeded; otherwise `null`.
-
-`result_files` ++"array"++
-Array of file IDs associated with the fine-tuning job results.
-
-`status` ++"string"++
-The status of the fine-tuning job, e.g. `pending`, `running`, `succeeded`, `failed`, or `cancelled`.
-
-`training_file` ++"string"++
-ID of the uploaded file used for training data.
-
-`hyperparameters` ++"object"++
-Training hyperparameters used in the job (e.g., `batch_size`, `n_epochs`, `learning_rate_multiplier`).
-
-`method` ++"object"++
-Details about the fine-tuning method used, including type and specific parameters.
-
-`trained_tokens` ++"integer"++
-The total number of tokens processed during training.
-
-`integrations` ++"array"++
-Array of integrations associated with the fine-tuning job.
 </div> 
-<div markdown>
-
-```json title="Example"
-{
-  "object": "fine_tuning.job",
-  "id": "67ad3877720af9f9ba78b684",
-  "model": "meta-llama/Llama-3.1-8B-Instruct",
-  "created_at": 1739405431,
-  "finished_at": 1739405521,
-  "fine_tuned_model": "ft:meta-llama:Llama-3.1-8B-Instruct:personal:805b5d69",
-  "result_files": [],
-  "status": "succeeded",
-  "training_file": "67ad38760272045e7006171b",
-  "hyperparameters": {
-    "batch_size": 4,
-    "learning_rate_multiplier": 1,
-    "n_epochs": 2
-  },
-  "method": {
-    "type": "supervised",
-    "supervised": {
-      "batch_size": 4,
-      "learning_rate_multiplier": 1,
-      "n_epochs": 2
-    }
-  },
-  "trained_tokens": 3065,
-  "integrations": []
-}
-```
-</div> </div>
-
+</div>
 
 ### Retrieve a Fine-Tuning Job
 
 `GET https://api.kluster.ai/v1/fine_tuning/jobs/{fine_tuning_job_id}`
 
-Fetch details of a single fine-tuning job by specifying its `fine_tuning_job_id`.
+Fetch details of a single Fine-Tuning job by specifying its `fine_tuning_job_id`.
 
 <div class="grid" markdown> 
 <div markdown>
 
 **Path parameters**
 `fine_tuning_job_id` ++"string"++ <span class="required" markdown>++"required"++</span>
-The ID of the fine-tuning job to retrieve.
+The ID of the Fine-Tuning job to retrieve.
 
 ---
 
 **Returns**
-A Fine-tuning Job object.
+A [Fine-Tuning Job object](#fine-tuning-job-object).
 </div> 
 <div markdown>
 
 === "Python"
+
     ```python title="Example request"
     from openai import OpenAI
     client = OpenAI(
@@ -1685,6 +1635,7 @@ A Fine-tuning Job object.
     print(job_details.to_dict())
     ```
 === "curl"
+
     ```bash title="Example request"
     curl -s https://api.kluster.ai/v1/fine_tuning/jobs/INSERT_JOB_ID \
         -H "Authorization: Bearer INSERT_API_KEY"
@@ -1715,14 +1666,15 @@ A Fine-tuning Job object.
   "integrations": []
 }
 ```
-</div> </div>
 
+</div> 
+</div>
 
 ### List all Fine-Tuning Jobs
 
 `GET https://api.kluster.ai/v1/fine_tuning/jobs`
 
-Retrieve a paginated list of all fine-tuning jobs.
+Retrieve a paginated list of all Fine-Tuning jobs.
 
 <div class="grid" markdown> 
 <div markdown>
@@ -1732,13 +1684,15 @@ Retrieve a paginated list of all fine-tuning jobs.
 `after` ++"string"++
 A cursor for use in pagination.
 
+---
+
 `limit` ++"integer"++
 A limit on the number of objects returned (1 to 100). Default is 20.
 
 ---
 
 **Returns**
-A paginated list of Fine-tuning Job objects.
+A paginated list of [Fine-Tuning Job objects](#fine-tuning-job-object).
 
 </div> 
 <div markdown>
@@ -1821,7 +1775,8 @@ A paginated list of Fine-tuning Job objects.
 }
 ```
 
-</div> </div>
+</div> 
+</div>
 
 ### Cancel a Fine-Tuning Job
 
@@ -1836,16 +1791,17 @@ To cancel a job that is in progress, send a `POST` request to the `cancel` endpo
 
 `fine_tuning_job_id` ++"string"++ <span class="required" markdown>++"required"++</span> 
 
-The ID of the fine-tuning job to cancel.
+The ID of the Fine-Tuning job to cancel.
 
 ---
 
 **Returns**
-The Fine-tuning Job object with updated status.
+The [Fine-Tuning Job object](#fine-tuning-job-object) with updated status.
 </div> 
 <div markdown>
 
 === "Python"
+
     ```python title="Example request"
     from openai import OpenAI
     client = OpenAI(
@@ -1856,6 +1812,7 @@ The Fine-tuning Job object with updated status.
     print(cancelled_job.to_dict())
     ```
 === "curl"
+
     ```bash title="Example request"
     curl -X POST https://api.kluster.ai/v1/fine_tuning/jobs/67ae7f7d965c187d5cda039f/cancel \
         -H "Authorization: Bearer INSERT_API_KEY" \
@@ -1881,7 +1838,114 @@ The Fine-tuning Job object with updated status.
   "error": null
 }
 ```
-</div> </div>
+
+</div> 
+</div>
+
+## Fine-Tuning Job object 
+
+<div class="grid" markdown> 
+<div markdown>
+
+`object` ++"string"++
+The object type, which is always `fine_tuning.job`.
+
+---
+
+`id` ++"string"++
+Unique identifier for the Fine-Tuning job.
+
+---
+
+`model` ++"string"++
+ID of the base model being fine-tuned.
+
+---
+
+`created_at` ++"integer"++
+Unix timestamp (in seconds) when the Fine-Tuning job was created.
+
+---
+
+`finished_at` ++"integer"++
+Unix timestamp (in seconds) when the Fine-Tuning job was completed.
+
+---
+
+`fine_tuned_model` ++"string or null"++
+The ID of the resulting fine-tuned model if the job succeeded; otherwise `null`.
+
+---
+
+`result_files` ++"array"++
+Array of file IDs associated with the Fine-Tuning job results.
+
+---
+
+`status` ++"string"++
+The status of the Fine-Tuning job, e.g. `pending`, `running`, `succeeded`, `failed`, or `cancelled`.
+
+---
+
+`training_file` ++"string"++
+ID of the uploaded file used for training data.
+
+---
+
+`hyperparameters` ++"object"++
+Training hyperparameters used in the job (e.g., `batch_size`, `n_epochs`, `learning_rate_multiplier`).
+
+---
+
+`method` ++"object"++
+Details about the Fine-Tuning method used, including type and specific parameters.
+
+---
+
+`trained_tokens` ++"integer"++
+The total number of tokens processed during training.
+
+---
+
+`integrations` ++"array"++
+Array of integrations associated with the Fine-Tuning job.
+
+---
+
+</div> 
+<div markdown>
+
+```json title="Example"
+{
+  "object": "fine_tuning.job",
+  "id": "67ad3877720af9f9ba78b684",
+  "model": "meta-llama/Llama-3.1-8B-Instruct",
+  "created_at": 1739405431,
+  "finished_at": 1739405521,
+  "fine_tuned_model": "ft:meta-llama:Llama-3.1-8B-Instruct:personal:805b5d69",
+  "result_files": [],
+  "status": "succeeded",
+  "training_file": "67ad38760272045e7006171b",
+  "hyperparameters": {
+    "batch_size": 4,
+    "learning_rate_multiplier": 1,
+    "n_epochs": 2
+  },
+  "method": {
+    "type": "supervised",
+    "supervised": {
+      "batch_size": 4,
+      "learning_rate_multiplier": 1,
+      "n_epochs": 2
+    }
+  },
+  "trained_tokens": 3065,
+  "integrations": []
+}
+```
+
+</div> 
+</div>
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/get-started/get-api-key
