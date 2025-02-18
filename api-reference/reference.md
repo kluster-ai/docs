@@ -1533,6 +1533,7 @@ A [Fine-Tuning Job object](#fine-tuning-job-object).
     ```
 
 === "curl"
+
     ```bash title="Example request"
     curl -X POST https://api.kluster.ai/v1/fine_tuning/jobs \
         -H "Authorization: Bearer INSERT_API_KEY" \
@@ -1598,6 +1599,7 @@ A [Fine-Tuning Job object](#fine-tuning-job-object).
 <div markdown>
 
 === "Python"
+
     ```python title="Example request"
     from openai import OpenAI
     client = OpenAI(
@@ -1608,6 +1610,7 @@ A [Fine-Tuning Job object](#fine-tuning-job-object).
     print(job_details.to_dict())
     ```
 === "curl"
+
     ```bash title="Example request"
     curl -s https://api.kluster.ai/v1/fine_tuning/jobs/INSERT_JOB_ID \
         -H "Authorization: Bearer INSERT_API_KEY"
@@ -1773,6 +1776,7 @@ The [Fine-Tuning Job object](#fine-tuning-job-object) with updated status.
 <div markdown>
 
 === "Python"
+
     ```python title="Example request"
     from openai import OpenAI
     client = OpenAI(
@@ -1783,6 +1787,7 @@ The [Fine-Tuning Job object](#fine-tuning-job-object) with updated status.
     print(cancelled_job.to_dict())
     ```
 === "curl"
+
     ```bash title="Example request"
     curl -X POST https://api.kluster.ai/v1/fine_tuning/jobs/67ae7f7d965c187d5cda039f/cancel \
         -H "Authorization: Bearer INSERT_API_KEY" \
