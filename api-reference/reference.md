@@ -1558,7 +1558,7 @@ A [Fine-Tuning Job object](#fine-tuning-job-object).
 </div> 
 </div>
 
-#### Fine-Tuning Job Object 
+#### Fine-Tuning Job object 
 
 <div class="grid" markdown> 
 <div markdown>
