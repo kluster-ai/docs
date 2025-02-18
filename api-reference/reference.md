@@ -1455,8 +1455,8 @@ Fine-Tuning is the process of refining a pre-trained model on specialized data. 
 
 Currently, two base models are supported for Fine-Tuning:
 
-- `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo` - Has a `64,000` tokens max context window, best for long-context tasks, cost-sensitive scenarios
-- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo` - Has a `32,000` tokens max context window, best for complex reasoning, high-stakes accuracy
+- **`klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`** - has a `64,000` tokens max context window, best for long-context tasks, cost-sensitive scenarios
+- **`klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`** - has a `32,000` tokens max context window, best for complex reasoning, high-stakes accuracy
 
 ### Create a Fine-Tuning Job
 
