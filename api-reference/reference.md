@@ -1456,7 +1456,7 @@ Currently, two base models are supported for Fine-Tuning:
 - **`klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`** - has a `64,000` tokens max context window, best for long-context tasks, cost-sensitive scenarios
 - **`klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`** - has a `32,000` tokens max context window, best for complex reasoning, high-stakes accuracy
 
-### Create a Fine-Tuning Job
+### Create a Fine-Tuning job
 
 `POST https://api.kluster.ai/v1/fine_tuning/jobs`
 
@@ -1517,7 +1517,7 @@ Add a custom suffix that will be appended to the output model name. This can hel
 ---
 
 **Returns**
-A [Fine-Tuning Job object](#fine-tuning-job-object).
+A [Fine-Tuning job object](#fine-tuning-job-object).
 </div> 
 <div markdown>
 
@@ -1590,7 +1590,7 @@ A [Fine-Tuning Job object](#fine-tuning-job-object).
 </div> 
 </div>
 
-### Retrieve a Fine-Tuning Job
+### Retrieve a Fine-Tuning job
 
 `GET https://api.kluster.ai/v1/fine_tuning/jobs/{fine_tuning_job_id}`
 
@@ -1607,7 +1607,7 @@ The ID of the Fine-Tuning job to retrieve.
 ---
 
 **Returns**
-A [Fine-Tuning Job object](#fine-tuning-job-object).
+A [Fine-Tuning job object](#fine-tuning-job-object).
 </div> 
 <div markdown>
 
@@ -1658,7 +1658,7 @@ A [Fine-Tuning Job object](#fine-tuning-job-object).
 </div> 
 </div>
 
-### List all Fine-Tuning Jobs
+### List all Fine-Tuning jobs
 
 `GET https://api.kluster.ai/v1/fine_tuning/jobs`
 
@@ -1682,7 +1682,7 @@ A limit on the number of objects returned (1 to 100). Default is 20.
 ---
 
 **Returns**
-A paginated list of [Fine-Tuning Job objects](#fine-tuning-job-object).
+A paginated list of [Fine-Tuning job objects](#fine-tuning-job-object).
 
 </div> 
 <div markdown>
@@ -1768,7 +1768,7 @@ A paginated list of [Fine-Tuning Job objects](#fine-tuning-job-object).
 </div> 
 </div>
 
-### Cancel a Fine-Tuning Job
+### Cancel a Fine-Tuning job
 
 `POST https://api.kluster.ai/v1/fine_tuning/jobs/{fine_tuning_job_id}/cancel`
 
@@ -1786,7 +1786,7 @@ The ID of the Fine-Tuning job to cancel.
 ---
 
 **Returns**
-The [Fine-Tuning Job object](#fine-tuning-job-object) with updated status.
+The [Fine-Tuning job object](#fine-tuning-job-object) with updated status.
 </div> 
 <div markdown>
 
