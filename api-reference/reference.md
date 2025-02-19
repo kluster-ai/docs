@@ -1518,7 +1518,7 @@ Add a custom suffix that will be appended to the output model name. This can hel
 
 **Returns**
 
-A [Fine-tuning job object](#Fine-tuning-job-object).
+A [Fine-tuning job object](#fine-tuning-job-object).
 
 </div> 
 <div markdown>
