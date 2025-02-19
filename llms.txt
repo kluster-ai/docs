@@ -1536,7 +1536,7 @@ Add a custom suffix that will be appended to the output model name. This can hel
 
 **Returns**
 
-A [Fine-tuning job object](#Fine-tuning-job-object).
+A [Fine-tuning job object](#fine-tuning-job-object).
 
 </div> 
 <div markdown>
@@ -1629,7 +1629,7 @@ The ID of the Fine-tuning job to retrieve.
 
 **Returns**
 
-A [Fine-tuning job object](#Fine-tuning-job-object).
+A [Fine-tuning job object](#fine-tuning-job-object).
 
 </div> 
 <div markdown>
@@ -1706,7 +1706,7 @@ A limit on the number of objects returned (1 to 100). Default is 20.
 
 **Returns**
 
-A paginated list of [Fine-tuning job objects](#Fine-tuning-job-object).
+A paginated list of [Fine-tuning job objects](#fine-tuning-job-object).
 
 </div> 
 <div markdown>
@@ -1811,7 +1811,7 @@ The ID of the Fine-tuning job to cancel.
 
 **Returns**
 
-The [Fine-tuning job object](#Fine-tuning-job-object) with updated status.
+The [Fine-tuning job object](#fine-tuning-job-object) with updated status.
 
 </div> 
 <div markdown>
@@ -1938,8 +1938,6 @@ The total number of tokens processed during training.
 `integrations` ++"array"++
 
 Array of integrations associated with the Fine-tuning job.
-
----
 
 </div> 
 <div markdown>
