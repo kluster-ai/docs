@@ -2104,7 +2104,7 @@ messages = [
     {"role": "user",   "content": "What is the capital of California?"}
 ]
 ```
-4. **Select your kluster.ai model** - Choose one of the kluster.ai [models](api-reference/reference/#list-supported-models){target=_blank} that best fits your use case. Prepend the model name with `openai/` so LiteLLM recognizes it as an OpenAI-like model request.
+4. **Select your kluster.ai model** - Choose one of the kluster.ai [models](/api-reference/reference/#list-supported-models){target=_blank} that best fits your use case. Prepend the model name with `openai/` so LiteLLM recognizes it as an OpenAI-like model request.
 ```python
 model = "openai/klusterai/Meta-Llama-3.3-70B-Instruct-Turbo"
 ```
