@@ -1688,7 +1688,7 @@ A limit on the number of objects returned (1 to 100). Default is 20.
 
 **Returns**
 
-A paginated list of [Fine-tuning job objects](#Fine-tuning-job-object).
+A paginated list of [Fine-tuning job objects](#fine-tuning-job-object).
 
 </div> 
 <div markdown>
