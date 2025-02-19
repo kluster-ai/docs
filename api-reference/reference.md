@@ -1793,7 +1793,7 @@ The ID of the Fine-tuning job to cancel.
 
 **Returns**
 
-The [Fine-tuning job object](#Fine-tuning-job-object) with updated status.
+The [Fine-tuning job object](#fine-tuning-job-object) with updated status.
 
 </div> 
 <div markdown>
