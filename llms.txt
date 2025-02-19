@@ -4,19 +4,19 @@
 Documentation: https://docs.kluster.ai/
 
 # List of doc pages:
-Doc-Page: https://docs.kluster.ai/api-reference/reference
-Doc-Page: https://docs.kluster.ai/get-started/get-api-key
-Doc-Page: https://docs.kluster.ai/get-started/integrations/crewai
-Doc-Page: https://docs.kluster.ai/get-started/integrations/eliza
-Doc-Page: https://docs.kluster.ai/get-started/integrations/langchain
-Doc-Page: https://docs.kluster.ai/get-started/integrations/litellm
-Doc-Page: https://docs.kluster.ai/get-started/integrations/sillytavern
-Doc-Page: https://docs.kluster.ai/get-started/openai-compatibility
-Doc-Page: https://docs.kluster.ai/get-started/start-api
+Doc-Page: https://docs.kluster.ai/api-reference/reference/
+Doc-Page: https://docs.kluster.ai/get-started/get-api-key/
+Doc-Page: https://docs.kluster.ai/get-started/integrations/crewai/
+Doc-Page: https://docs.kluster.ai/get-started/integrations/eliza/
+Doc-Page: https://docs.kluster.ai/get-started/integrations/langchain/
+Doc-Page: https://docs.kluster.ai/get-started/integrations/litellm/
+Doc-Page: https://docs.kluster.ai/get-started/integrations/sillytavern/
+Doc-Page: https://docs.kluster.ai/get-started/openai-compatibility/
+Doc-Page: https://docs.kluster.ai/get-started/start-api/
 
 # Full content for each doc page
 
-Doc-Content: https://docs.kluster.ai/api-reference/reference
+Doc-Content: https://docs.kluster.ai/api-reference/reference/
 --- BEGIN CONTENT ---
 ---
 title: API Reference
@@ -1464,7 +1464,7 @@ The organization that owns the model.
 </div>
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/get-started/get-api-key
+Doc-Content: https://docs.kluster.ai/get-started/get-api-key/
 --- BEGIN CONTENT ---
 ---
 title: Get a kluster.ai API key
@@ -1536,7 +1536,7 @@ To delete an API key, take the following steps:
 Now that you have your API key, you can start integrating kluster.ai's LLMs into your applications. Refer to our [Getting Started](/get-started/start-api/){target=\_blank} guide for detailed instructions on using the API.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/get-started/integrations/crewai
+Doc-Content: https://docs.kluster.ai/get-started/integrations/crewai/
 --- BEGIN CONTENT ---
 ---
 title: Using CrewAI with the kluster.ai API
@@ -1774,7 +1774,7 @@ Upon running the script, you'll see output that looks like the following:
 And that's it! You've now successfully configured your AI agent harnessing CrewAI and the power of the kluster.ai API!
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/get-started/integrations/eliza
+Doc-Content: https://docs.kluster.ai/get-started/integrations/eliza/
 --- BEGIN CONTENT ---
 ---
 title: Using eliza with the kluster.ai API
@@ -1867,7 +1867,7 @@ You can now interact with Dobby by clicking on the **Chat** button and starting 
 That's it! You've successfully integrated eliza with the kluster.ai API. You're now ready to harness the power of AI agents with the kluster.ai API!
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/get-started/integrations/langchain
+Doc-Content: https://docs.kluster.ai/get-started/integrations/langchain/
 --- BEGIN CONTENT ---
 ---
 title: Integrate LangChain with kluster.ai
@@ -2036,7 +2036,7 @@ When running the complete script, you should see output that resembles the follo
 That’s it! You’ve successfully integrated LangChain with the kluster.ai API, and your configured multi-turn conversational agent is ready to leverage the power of LangChain and the kluster.ai API. For more information about the capabilities of LangChain, be sure to check out the [LangChain docs](https://python.langchain.com/docs/introduction/){target=\_blank}.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/get-started/integrations/litellm
+Doc-Content: https://docs.kluster.ai/get-started/integrations/litellm/
 --- BEGIN CONTENT ---
 ---
 title: Integrate LiteLLM with kluster.ai
@@ -2463,7 +2463,7 @@ Upon running it you'll see output like the following:
 Both responses appear to trail off abruptly, but that's because we limited the output to `300` tokens each. Feel free to tweak the parameters and rerun the script at your leisure!
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/get-started/integrations/sillytavern
+Doc-Content: https://docs.kluster.ai/get-started/integrations/sillytavern/
 --- BEGIN CONTENT ---
 ---
 title: Integrate SillyTavern with kluster.ai
@@ -2527,7 +2527,7 @@ Follow these steps to get started:
     If you encounter errors, revisit the [configuration instructions](#configure-sillytavern-to-use-klusterai) and double-check your API key and base URL and that you've received a **Valid** response after connecting the API (see step 8).
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/get-started/openai-compatibility
+Doc-Content: https://docs.kluster.ai/get-started/openai-compatibility/
 --- BEGIN CONTENT ---
 ---
 title: Compatibility with OpenAI client libraries
@@ -2598,7 +2598,7 @@ The following fields of the [chat completion object](/api-reference/reference/#c
 For more information on these parameters, refer to [OpenAI's API documentation on the chat completion object](https://platform.openai.com/docs/api-reference/chat/object){target=_blank}.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/get-started/start-api
+Doc-Content: https://docs.kluster.ai/get-started/start-api/
 --- BEGIN CONTENT ---
 ---
 title: Start building with the kluster.ai API
