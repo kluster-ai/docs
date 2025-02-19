@@ -1921,8 +1921,6 @@ The total number of tokens processed during training.
 
 Array of integrations associated with the Fine-tuning job.
 
----
-
 </div> 
 <div markdown>
 
