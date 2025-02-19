@@ -1611,7 +1611,7 @@ The ID of the Fine-tuning job to retrieve.
 
 **Returns**
 
-A [Fine-tuning job object](#Fine-tuning-job-object).
+A [Fine-tuning job object](#fine-tuning-job-object).
 
 </div> 
 <div markdown>
