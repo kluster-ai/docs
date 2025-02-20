@@ -5,5 +5,5 @@ nav:
  - 'eliza': eliza.md
  - 'LangChain': langchain.md
  - 'LiteLLM': litellm.md
- - 'Pydantic': pydantic.md
+ - 'PydanticAI': pydantic.md
  - 'SillyTavern': sillytavern.md

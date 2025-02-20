@@ -5,11 +5,11 @@ description: Learn how to build a typed, production-grade AI agent with Pydantic
 
 # Using PydanticAI with the kluster.ai API
 
-PydanticAI is a typed Python agent framework designed to make it less painful to build production grade applications with Generative AI. Pydantic AI leverages [Pydantic's](https://docs.pydantic.dev/latest/){target=_blank} robust data validation to ensure your AI interactions are consistent, reliable, and easy to debug. By defining tools (Python functions) with strict type hints and schema validation, you can guide your AI model to call them correctly—reducing confusion or malformed requests.
+PydanticAI is a typed Python agent framework designed to make building production-grade applications with Generative AI less painful. Pydantic AI leverages [Pydantic's](https://docs.pydantic.dev/latest/){target=_blank} robust data validation to ensure your AI interactions are consistent, reliable, and easy to debug. By defining tools (Python functions) with strict type hints and schema validation, you can guide your AI model to call them correctly—reducing confusion or malformed requests.
 
-In this guide, we’ll walk through how to integrate the [kluster.ai](https://www.kluster.ai/){target=\_blank} API with PydanticAI to build a Weather Agent. You’ll see how to set up the environment, configure a custom model endpoint for kluster.ai, and create a tool-based chatbot that can fetch geographic coordinates and retrieve current weather—while still enforcing schemas and type safety.
+This guide will walk through how to integrate the [kluster.ai](https://www.kluster.ai/){target=\_blank} API with PydanticAI to build a weather agent. You’ll see how to set up the environment, configure a custom model endpoint for kluster.ai, and create a tool-based chatbot that can fetch geographic coordinates and retrieve current weather while enforcing schemas and type safety.
 
-This approach empowers you to harness the flexibility of large language models without sacrificing strictness: invalid data is caught early, typos in function calls trigger retries or corrections, and every tool action is typed and validated. By the end of this tutorial, you’ll have a working, self-contained Weather Agent that demonstrates how to keep your AI workflows clean, efficient, and robust when integrating with kluster.ai.
+This approach empowers you to harness the flexibility of large language models without sacrificing strictness: invalid data is caught early, typos in function calls trigger retries or corrections, and every tool action is typed and validated. By the end of this tutorial, you’ll have a working, self-contained weather agent that demonstrates how to keep your AI workflows clean, efficient, and robust when integrating with kluster.ai.
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ Before starting, ensure you have the following:
     pip install pydantic-ai 
     ```
 
-- **Supporting libraries installed** - there are a few additional supporting libraries needed for the weather agent tutorial. To install them, use the following command:
+- **Supporting libraries installed** - a few additional supporting libraries are needed for the weather agent tutorial. To install them, use the following command:
     ```bash
     pip install httpx devtools logfire
     ```
@@ -69,17 +69,17 @@ That's it! You've successfully integrated PydanticAI with the kluster.ai API. Co
 
 ## Building a Weather Agent with PydanticAI
 
-In the following section, you'll build a Weather Agent that interprets natural language queries like “What’s the weather in San Francisco?” and uses PydanticAI to call both a geo API for latitude/longitude and a weather API for real-time conditions. By defining two tools—one for location lookup and another for weather retrieval—our agent can chain these steps automatically and return a concise, validated response. This approach keeps your AI workflow clean, type-safe, and easy to debug.
+In the following section, you'll build a weather agent that interprets natural language queries like “What’s the weather in San Francisco?” and uses PydanticAI to call both a geo API for latitude/longitude and a weather API for real-time conditions. By defining two tools—one for location lookup and another for weather retrieval—our agent can chain these steps automatically and return a concise, validated response. This approach keeps your AI workflow clean, type-safe, and easy to debug.
 
-1. **Import dependencies and handle initial setup** - Create a new file (e.g., `weather-agent.py`) and start by importing the necessary packages. Then, define a `Deps` dataclass to store API keys for geocoding and weather. We’ll later use these dependencies to request latitude/longitude data and fetch real-time weather information.
+1. **Import dependencies and handle initial setup** - Create a new file (e.g., `weather-agent.py`) and start by importing the necessary packages. Then, define a `Deps` data class to store API keys for geocoding and weather. We’ll later use these dependencies to request latitude/longitude data and fetch real-time weather information
 ```python
 --8<-- "code/get-started/integrations/pydantic/weather-agent.py::21"
 ```
-2. **Define a custom model to use the kluster.ai API** - Replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For model name, choose one of the kluster.ai [models](/api-reference/reference/#list-supported-models){target=_blank} that best fits your use case.
+2. **Define a custom model to use the kluster.ai API** - Replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For model name, choose one of the kluster.ai [models](/api-reference/reference/#list-supported-models){target=_blank} that best fits your use case
 ```python
 --8<-- "code/get-started/integrations/pydantic/weather-agent.py:23:28"
 ```
-3. **Define the system prompt** - define a system prompt that instructs the Weather Agent on exactly how and when to call the geocoding and weather tools. The agent uses these rules and examples to ensure it obtains valid lat/long data first, then fetches the weather and returns a concise final response
+3. **Define the system prompt** - define a system prompt that instructs the weather agent on exactly how and when to call the geocoding and weather tools. The agent uses these rules and examples to ensure it obtains valid lat/long data first, then fetches the weather and returns a concise final response
 ```python
 --8<-- "code/get-started/integrations/pydantic/weather-agent.py:30:74"
 ```
@@ -91,7 +91,7 @@ In the following section, you'll build a Weather Agent that interprets natural l
 ```python
 --8<-- "code/get-started/integrations/pydantic/weather-agent.py:104:160"
 ```
-6. **Create a CLI chat** - finally, create a simple CLI chat loop that prompts the user for a location, sends it off to our Weather Agent, and prints the final response
+6. **Create a CLI chat** - finally, create a simple CLI chat loop that prompts the user for a location, sends it off to our weather agent, and prints the final response
 ```python
 --8<-- "code/get-started/integrations/pydantic/weather-agent.py:162:194"
 ```
@@ -109,4 +109,4 @@ python weather-agent.py
 
 --8<-- 'code/get-started/integrations/pydantic/terminal/weather-agent.md'
 
-That's it! You've built a fully functional Weather Agent using PydanticAI and kluster.ai, showcasing how to integrate type-safe tools and LLMs for real-world data retrieval. Vist the [PydanticAI docs site](https://ai.pydantic.dev/){target=\_blank} to continue exploring PydanticAI’s flexible tool and system prompt features to expand your agent’s capabilities and handle more complex use cases with ease.
+That's it! You've built a fully functional weather agent using PydanticAI and kluster.ai, showcasing how to integrate type-safe tools and LLMs for real-world data retrieval. Visit the [PydanticAI docs site](https://ai.pydantic.dev/){target=\_blank} to continue exploring PydanticAI’s flexible tool and system prompt features to expand your agent’s capabilities and handle more complex use cases with ease.
