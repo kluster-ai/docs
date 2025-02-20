@@ -87,7 +87,7 @@ In the following section, you'll build a weather agent that interprets natural l
 ```python
 --8<-- "code/get-started/integrations/pydantic/weather-agent.py:76:102"
 ```
-5. **Define the weather fetching tool** - define a tool that uses tomorrow.io to fetch real-time weather for a given lat/lng, automatically converting the temperature into both Celsius and Fahrenheit. If there’s no valid API key, the script returns a simple fake forecast instead, ensuring the agent can still respond gracefully
+5. **Define the weather fetching tool** - define a tool that uses [tomorrow.io](https://www.tomorrow.io/weather-api/){target=_blank} to fetch real-time weather for a given lat/lng, automatically converting the temperature into both Celsius and Fahrenheit. If there’s no valid API key, the script returns a simple fake forecast instead, ensuring the agent can still respond gracefully
 ```python
 --8<-- "code/get-started/integrations/pydantic/weather-agent.py:104:160"
 ```
