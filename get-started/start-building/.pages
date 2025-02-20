@@ -2,5 +2,5 @@ title: Start Building
 hide: false
 nav:
  - 'Initial Setup': setup.md
- - 'Batch Inferences': batch.md
  - 'Real-Time Inferences': real-time.md
+ - 'Batch Inferences': batch.md
