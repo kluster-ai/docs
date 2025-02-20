@@ -27,7 +27,7 @@ The example below demonstrates a pre-configured interface to get you started:
     completion = client.chat.completions.create(
     model = "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo", # Configure which model uoi want to use
     messages = [
-        { "role": "user", "content": "What are some fun things to do?" } 
+        { "role": "user", "content": "What is the most famous street in Paris?" } 
     ]
     )
     ```
