@@ -5,9 +5,9 @@ description: Learn how to build a typed, production-grade AI agent with Pydantic
 
 # Using PydanticAI with the kluster.ai API
 
-PydanticAI is a typed Python agent framework designed to make it less painful to build production grade applications with Generative AI. Pydantic AI leverages [Pydantic's](https://docs.pydantic.dev/latest/){target=_blank}’s robust data validation to ensure your AI interactions are consistent, reliable, and easy to debug. By defining tools (Python functions) with strict type hints and schema validation, you can guide your AI model to call them correctly—reducing confusion or malformed requests.
+PydanticAI is a typed Python agent framework designed to make it less painful to build production grade applications with Generative AI. Pydantic AI leverages [Pydantic's](https://docs.pydantic.dev/latest/){target=_blank} robust data validation to ensure your AI interactions are consistent, reliable, and easy to debug. By defining tools (Python functions) with strict type hints and schema validation, you can guide your AI model to call them correctly—reducing confusion or malformed requests.
 
-In this guide, we’ll walk through how to integrate the [kluster.ai](https://www.kluster.ai/){target=\_blank} with Pydantic AI to build a Weather Agent. You’ll see how to set up the environment, configure a custom model endpoint for kluster.ai, and create a tool-based chatbot that can fetch geographic coordinates and retrieve current weather—while still enforcing schemas and type safety.
+In this guide, we’ll walk through how to integrate the [kluster.ai](https://www.kluster.ai/){target=\_blank} API with PydanticAI to build a Weather Agent. You’ll see how to set up the environment, configure a custom model endpoint for kluster.ai, and create a tool-based chatbot that can fetch geographic coordinates and retrieve current weather—while still enforcing schemas and type safety.
 
 This approach empowers you to harness the flexibility of large language models without sacrificing strictness: invalid data is caught early, typos in function calls trigger retries or corrections, and every tool action is typed and validated. By the end of this tutorial, you’ll have a working, self-contained Weather Agent that demonstrates how to keep your AI workflows clean, efficient, and robust when integrating with kluster.ai.
 
@@ -37,7 +37,7 @@ Before starting, ensure you have the following:
 
 ## Quick Start - Use kluster.ai with PydanticAI
 
-In this section, you'll learn how to integrate kluster.ai with Pydantic. You’ll configure your API key, set your base URL, specify a kluster.ai model, and make a simple request to verify functionality.
+In this section, you'll learn how to integrate kluster.ai with PydanticAI. You’ll configure your API key, set your base URL, specify a kluster.ai model, and make a simple request to verify functionality.
 
 1. **Import required libraries** - Create a new file (e.g., `quick-start.py`) and start by importing the necessary Python modules:
 ```python
@@ -109,3 +109,4 @@ python weather-agent.py
 
 --8<-- 'code/get-started/integrations/pydantic/terminal/weather-agent.md'
 
+That's it! You've built a fully functional Weather Agent using PydanticAI and kluster.ai, showcasing how to integrate type-safe tools and LLMs for real-world data retrieval. Vist the [PydanticAI docs site](https://ai.pydantic.dev/){target=\_blank} to continue exploring PydanticAI’s flexible tool and system prompt features to expand your agent’s capabilities and handle more complex use cases with ease.
