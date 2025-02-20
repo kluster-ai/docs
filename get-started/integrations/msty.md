@@ -1,6 +1,6 @@
 ---
 title: Using Msty with the kluster.ai API
-description: Learn how to integrate kluster.ai with CrewAI, a new framework for orchestrating autonomous AI agents, to launch and configure your AI agent chatbot.
+description: Learn how to configure Msty, a user-friendly desktop AI toolkit that allows attachments and easy conversation management, to use the kluster.ai API.
 ---
 
 # Using Msty with the kluster.ai API
