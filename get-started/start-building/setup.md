@@ -24,29 +24,29 @@ For step-by-step instructions, refer to the [Get an API key](/get-started/get-ap
 
 ## API request limits
 
-The following limits apply to API requests based upon your plan tier:
+The following limits apply to API requests based on your plan tier:
 
 --8<-- "text/get-started/start-api/rate-limit.md"
 
 ## Where to go next?
 
 <div class="subsection-wrapper">
-  <div class="card">
-    <a href="/get-started/start-building/real-time/">
-      <h2 class="title">Real-time inference</h2>
-      <p class="description">Build AI-powered applications that deliver instant, real-time responses.</p>
-    </a>
-  </div>
-  <div class="card">
-    <a href="/get-started/start-building/batch/">
-      <h2 class="title">Batch inference</h2>
-      <p class="description">Process large-scale data efficiently with AI-powered batch inference.</p>
-    </a>
-  </div>
-  <div class="card">
-    <a href="/api-reference/reference.md">
-      <h2 class="title">API Reference</h2>
-      <p class="description">Explore the complete kluster.ai API documentation and usage details.</p>
-    </a>
-  </div>
+  <div class="card">
+    <a href="/get-started/start-building/real-time/">
+      <h2 class="title">Real-time inference</h2>
+      <p class="description">Build AI-powered applications that deliver instant, real-time responses.</p>
+    </a>
+  </div>
+  <div class="card">
+    <a href="/get-started/start-building/batch/">
+      <h2 class="title">Batch inference</h2>
+      <p class="description">Process large-scale data efficiently with AI-powered batch inference.</p>
+    </a>
+  </div>
+  <div class="card">
+    <a href="/api-reference/reference.md">
+      <h2 class="title">API Reference</h2>
+      <p class="description">Explore the complete kluster.ai API documentation and usage details.</p>
+    </a>
+  </div>
 </div>
