@@ -1,6 +1,6 @@
 ---
 
-title: Start Performing Real-Time Inferences
+title: Start performing real-time inferences
 description: This page provides examples and instructions for submitting and managing real time jobs using kluster.ai's OpenAI-compatible API.
 ---
 
@@ -8,7 +8,15 @@ This page gives a quick overview of how to use real-time inferences with the klu
 
 This type of inference is best suited for situations where you need **instant**, **synchronous** responses—perfect for user-facing features like chat interactions, live recommendations, or real-time decision-making.
 
-## Submitting a Request
+## Supported models
+
+Real-time inferences through kluster.ai supports the following models:
+
+--8<-- 'text/real-time-models.md'
+
+In addition, you can see the full list of available models programmatically using the [list supported models](/api-reference/reference/#list-supported-models){target=\_blank} endpoint.
+
+## Submitting a request
 
 The **kluster.ai** platform offers a simple, [OpenAI-compatible](/get-started/openai-compatibility/){target=\_blank} interface, making it easy to integrate kluster.ai services seamlessly into your existing system.
 
@@ -48,14 +56,9 @@ The example below demonstrates a pre-configured interface to get you started:
 
 There are several configurable parameters when using real-time inferences:
 
--  `model` – This can be set based on your specific needs. **kluster.ai** supports multiple models, allowing you to choose the best fit for your use case. Simply replace the model parameter with one of the options below:
+- `model` – Name of one of the [supported models](#supported-models)
 
-    - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
-    - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
-    - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
-    - `deepseek-ai/DeepSeek-R1`
-
-- `messages` – In the `content` parameter, you should provide the query you want to process. You can pass any input here. In our case, we are querying what is the most famous street in Paris.
+- `messages` – In the `content` parameter, you should provide the query you want to process. You can pass any input here. This example is queyring what is the most famous street in Paris
 
 After configuring these parameters, you can go ahead and run your script.
 
@@ -100,28 +103,25 @@ Here's an example of what the response should look like:
 }
 ```
 !!! note
-    For a detailed breakdown of the response, please refer to the [**Chat Completion API reference**](/api-reference/reference#chat-completion-object) section.
+    For a detailed breakdown of the response, please refer to the [**chat completion API reference**](/api-reference/reference#chat-completion-object) section.
 
-## Third party Integrations
+## Third party integrations
 
-You can also set up an third-party LLM interface using the kluster.ai API. For step-by-step instructions, check out the [**SillyTavern**](/get-started/integrations/sillytavern) guide in the **Integrations** section. 
+You can also set up an third-party LLM interface using the kluster.ai API. For step-by-step instructions, check out the guides for integrations such as [SillyTavern](/get-started/integrations/sillytavern){target=\_blank}, [LangChain](/get-started/integrations/langchain/){target=\_blank}, [eliza](/get-started/integrations/eliza/){target=\_blank} and more, in the **Integrations** section. 
 
 ## Summary
 
-Congradulations, you are all set up to work with kluster.ai Chat Completion API. In this guide you've learned:
+You are all set up to work with kluster.ai real-time inference, more specifically to this guide, the chat completion API. In this guide you've learned:
 
-**How to Submit a Real-Time Inference Request**
+- How to submit a real-rime inference request:
+    - The kluster.ai API is OpenAI-compatible, making it easy to integrate into your existing workflow.
+    - You’ve seen hands-on examples in Python and cURL, so you know exactly how to send requests.
 
-- The kluster.ai API is OpenAI-compatible, making it easy to integrate into your existing workflow.
-- You’ve seen hands-on examples in Python and cURL, so you know exactly how to send requests.
+- How to configure API parameters:
+    - Choosing the right `model`
+    - The `messages` parameter
 
-**How to Configure API Parameters**
+- How to interpret the API response:
+    - Now you know what a successful response looks like—including the generated output, metadata, and token usage details.
 
-- Choosing the right `model`
-- The `messages` parameter
-
-**How to Interpret the API Response**
-
-- Now you know what a successful response looks like—including the generated output, metadata, and token usage details.
-
-The kluster.ai Batch API is designed to efficiently and reliably handle your large-scale LLM workloads. Do you have questions or suggestions? The [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
+The kluster.ai batch API is designed to efficiently and reliably handle your large-scale LLM workloads. Do you have questions or suggestions? The [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
