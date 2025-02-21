@@ -8,7 +8,7 @@ description: This page provides examples and instructions for submitting and man
 
 ## Overview
 
-This guide provides guidance about how to use real-time inference with the [kluster.ai](https://platform.kluster.ai/){target=\_blank} API. This type of inference is best suited for use cases requiring instant, synchronous responses for user-facing features like chat interactions, live recommendations, or real-time decision-making.
+This guide provides guidance about how to use real-time inference with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API. This type of inference is best suited for use cases requiring instant, synchronous responses for user-facing features like chat interactions, live recommendations, or real-time decision-making.
 
 You will learn which models are supported for real-time inference jobs, how to submit a request and retrieve responses, and where to find integration guides for using kluster.ai's API with some of your favorite third-party LLM interfaces.
 
