@@ -4,7 +4,7 @@ description: The kluster.ai API getting started guide provides examples and inst
 
 # Start using the kluster.ai API
 
-The [kluster.ai](https://www.kluster.ai/){target=\_blank} API provides a straightforward way to work with Large Language Models (LLMs) at scale. It is compatible with OpenAI's API and SDKs, making it easy to integrate into your existing workflows with minimal code changes.
+The [kluster.ai](https://www.kluster.ai/){target=\_blank} API provides a straightforward way to work with Large Language Models (LLMs) at scale. It is [compatible with OpenAI's API and SDKs](/get-started/openai-compatibility/){target=\_blank}, making it easy to integrate into your existing workflows with minimal code changes.
 
 This guide provides copy-and-paste examples for both Python and curl (although all OpenAI's SDKs are supported) and detailed explanations to help you get started quickly.
 
