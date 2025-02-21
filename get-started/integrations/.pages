@@ -6,3 +6,4 @@ nav:
  - 'LangChain': langchain.md
  - 'LiteLLM': litellm.md
  - 'SillyTavern': sillytavern.md
+ - 'TypingMind': typingmind.md
