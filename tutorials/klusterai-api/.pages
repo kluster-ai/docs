@@ -5,7 +5,7 @@ nav:
  - 'Text classificiation with Curator': text-classification-curator.ipynb
  - 'Sentiment analysis': sentiment-analysis-api.ipynb
  - 'Keyword extraction': keyword-extraction-api.ipynb
- - 'Multiple Batch predictions': multiple-tasks-batch-api.ipynb
+ - 'Multiple batch predictions': multiple-tasks-batch-api.ipynb
  - 'Evaluating LLMs with labeled data': model-comparison.ipynb
  - 'LLM as a judge': llm-as-a-judge.ipynb
  - 'Fine-tuning': finetuning-sent-analysis.ipynb
