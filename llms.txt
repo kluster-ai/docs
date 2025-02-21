@@ -4320,7 +4320,7 @@ The following limits apply to API requests based on your plan tier:
 
     [:octicons-arrow-right-24: Visit the guide](/get-started/start-building/batch/)
 
--   <span class="badge reference">Reference</span> __API reference__
+-   <span class="badge guide">Reference</span> __API reference__
 
     ---
 
