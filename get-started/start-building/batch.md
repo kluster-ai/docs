@@ -8,15 +8,15 @@ description: This guide provides examples and instructions on how to create, sub
 
 ## Overview
 
-This guide provides examples and instructions on how to create, submit, retrieve, and manage batch inference jobs using the [kluster.ai](https://platform.kluster.ai/){target=\_blank} API. You will find guidance through the entire process from preparing your data, selecting a model, and submitting your batch job through retrieving your results.
+This guide provides examples and instructions on how to create, submit, retrieve, and manage batch inference jobs using the [kluster.ai](https://platform.kluster.ai/){target=\_blank} API. You will find guidance about preparing your data, selecting a model, submitting your batch job, and retrieving your results.
  
 ## Prerequisites
 
 This guide assumes familiarity with basic Python and Large Language Model (LLM) development. Before getting started, make sure you have:
 
-- **An active kluster API key** - if you don't already have one, see the [Get an API key]
-
-Before proceeding, ensure you're familiar with the **JSONL (JSON Lines)** format, the required input format for performing batch inferences with the kluster.ai API.
+- **An active kluster API key** - if you don't already have one, see the [Get an API key](/get-started/get-api-key/){target=\_blank} guide for instructions
+- **A basic understanding of** [**JSON Lines (JSONL)**](https://jsonlines.org/){target=\_blank} - JSONL is the required text input format for performing batch inferences with the kluster.ai API
+- **A virtual Python environment** - this optional but recommended step helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
 
 ## Supported models
 
@@ -30,7 +30,7 @@ In addition, you can see the complete list of available models programmatically 
 
 Working with batch jobs in the kluster.ai API involves the following steps:
 
-1. **Create batch job file** - prepare a JSON Lines file containing one or more chat completion requests to be executed in the batch
+1. **Create batch job file** - prepare a JSON Lines file containing one or more chat completion requests to execute in the batch
 2. **Upload batch job file** - upload the file to kluster.ai to receive a unique file ID
 3. **Start the batch job** - initiate a new batch job using the file ID
 4. **Monitor job progress** - track the status of your batch job to ensure successful completion
@@ -38,98 +38,37 @@ Working with batch jobs in the kluster.ai API involves the following steps:
 
 This streamlined process enables efficient handling of large-scale requests.
 
-In addition to these core steps, this guide will give you hands-on experience with:
+In addition to these core steps, this guide will give you hands-on experience to:
 
-- **Cancel a batch job** - cancel an ongoing batch job if necessary before it completes
+- **Cancel a batch job** - cancel an ongoing batch job before it completes
 - **List all batch jobs** - review all of your batch jobs
 
 ## Create batch jobs as JSON files
 
 To begin the batch job workflow, you'll need to assemble your batch requests and add them to a [JSON Lines](https://jsonlines.org/) file (`.jsonl`).
 
-Each request needs to include the following arguments:
+Each request must include the following arguments:
 
-- `custom_id` ++"string"++ - a unique request ID that will be used to match outputs to inputs
-- `method` ++"string"++ - the HTTP method to be used for the request. Currently, only `POST` is supported
+- `custom_id` ++"string"++ - a unique request ID to match outputs to inputs
+- `method` ++"string"++ - the HTTP method to use for the request. Currently, only `POST` is supported
 - `url` ++"string"++ -  the `/v1/chat/completions` endpoint
 - `body` ++"object"++ - a request body containing:
     - `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](#supported-models)
     - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles)
     - Any optional [chat completion parameters](/api-reference/reference/#create-chat-completion){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
 
-The following examples generate requests and save them in a JSONL file, which is ready for upload and processing.
+The following examples generate requests and save them in a JSONL file, which is ready to upload and process.
 
 === "Python"
 
- ```python
-    from openai import OpenAI
-    import json
-
- client = OpenAI(
-        base_url="https://api.kluster.ai/v1",
-        api_key="INSERT_API_KEY",  # Replace with your actual API key
- )
-
- requests = [
- {
-            "custom_id": "request-1",
-            "method": "POST",
-            "url": "/v1/chat/completions",
-            "body": {
-                "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
-                "messages": [
- {"role": "system", "content": "You are a helpful assistant."},
- {"role": "user", "content": "What is the capital of Argentina?"},
- ],
-                "max_completion_tokens": 1000,
- },
- },
- {
-            "custom_id": "request-2",
-            "method": "POST",
-            "url": "/v1/chat/completions",
-            "body": {
-                "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
-                "messages": [
- {"role": "system", "content": "You are a maths tutor."},
- {"role": "user", "content": "Explain the Pythagorean theorem."},
- ],
-                "max_completion_tokens": 1000,
- },
- },
- {
-            "custom_id": "request-4",
-            "method": "POST",
-            "url": "/v1/chat/completions",
-            "body": {
-                "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
-                "messages": [
- {
-                        "role": "system",
-                        "content": "You are a multilingual, experienced maths tutor.",
- },
- {
-                        "role": "user",
-                        "content": "Explain the Pythagorean theorem in Spanish",
- },
- ],
-                "max_completion_tokens": 1000,
- },
- },
-        # Additional tasks can be added here
- ]
-
-    # Save tasks to a JSONL file (newline-delimited JSON)
- file_name = "mybatchtest.jsonl"
-    with open(file_name, "w") as file:
-        for request in requests:
- file.write(json.dumps(request) + "\n")
- ```
+```python
+--8<-- 'code/get-started/integrations/start-building/batch/batch-jsonl-01.py'
+```
 
 === "curl"
 
  ```bash
-    cat << EOF > mybatchtest.jsonl
+ cat << EOF > mybatchtest.jsonl
  {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": "What is the capital of Argentina?"}],"max_completion_tokens":1000}}
  {"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
  {"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an astronomer."}, {"role": "user", "content": "What is the distance between the Earth and the Moon"}],"max_completion_tokens":1000}}
