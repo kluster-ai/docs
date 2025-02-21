@@ -1,20 +1,30 @@
 ---
 
-title: Start Performing batch Inferences
-description: This page provides examples and instructions for submitting and managing batch jobs using kluster.ai's OpenAI-compatible API.
+title: Perform batch inference jobs
+description: This guide provides examples and instructions on how to create, submit, retrieve, and manage batch inference jobs using kluster.ai's OpenAI-compatible API.
 ---
 
-This guide outlines how to perform batch inferences using the [kluster.ai](https://platform.kluster.ai/){target=\_blank} API. We'll provide a step-by-step walkthrough to help you integrate and utilize batch processing within the kluster.ai platform.
+# Perform batch inference jobs
+
+## Overview
+
+This guide provides examples and instructions on how to create, submit, retrieve, and manage batch inference jobs using the [kluster.ai](https://platform.kluster.ai/){target=\_blank} API. You will find guidance through the entire process from preparing your data, selecting a model, and submitting your batch job through retrieving your results.
+ 
+## Prerequisites
+
+This guide assumes familiarity with basic Python and Large Language Model (LLM) development. Before getting started, make sure you have:
+
+- **An active kluster API key** - if you don't already have one, see the [Get an API key]
 
 Before proceeding, ensure you're familiar with the **JSONL (JSON Lines)** format, the required input format for performing batch inferences with the kluster.ai API.
 
 ## Supported models
 
-Batch inferences through kluster.ai supports the following models:
+Batch inference using kluster.ai supports the following models:
 
 --8<-- 'text/batch-models.md'
 
-In addition, you can see the full list of available models programmatically using the [list supported models](/api-reference/reference/#list-supported-models){target=\_blank} endpoint.
+You can also use the [list supported models](/api-reference/reference/#list-supported-models){target=\_blank} endpoint to retrieve the current list of available models.
 
 ## Batch job workflow overview
 
