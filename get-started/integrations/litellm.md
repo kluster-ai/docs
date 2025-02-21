@@ -37,7 +37,7 @@ In this section, you'll learn how to integrate kluster.ai with LiteLLM. You’ll
 ```python
 --8<-- "code/get-started/integrations/litellm/hello-litellm.py:09:13"
 ```
-4. **Select your kluster.ai model** - Choose one of the kluster.ai [models](api-reference/reference/#list-supported-models){target=_blank} that best fits your use case. Prepend the model name with `openai/` so LiteLLM recognizes it as an OpenAI-like model request.
+4. **Select your kluster.ai model** - Choose one of the kluster.ai [models](/api-reference/reference/#list-supported-models){target=_blank} that best fits your use case. Prepend the model name with `openai/` so LiteLLM recognizes it as an OpenAI-like model request.
 ```python
 --8<-- "code/get-started/integrations/litellm/hello-litellm.py:15:16"
 ```
