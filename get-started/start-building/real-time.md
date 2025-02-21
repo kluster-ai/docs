@@ -10,7 +10,7 @@ This type of inference is best suited for situations where you need **instant**,
 
 ## Submitting a Request
 
-The **kluster.ai** platform offers a simple, OpenAI-compatible interface, making it easy to integrate kluster.ai services seamlessly into your existing system.
+The **kluster.ai** platform offers a simple, [OpenAI-compatible](/get-started/openai-compatibility/){target=\_blank} interface, making it easy to integrate kluster.ai services seamlessly into your existing system.
 
 The example below demonstrates a pre-configured interface to get you started:
 
@@ -46,7 +46,7 @@ The example below demonstrates a pre-configured interface to get you started:
     }'
     ```
 
-There are several configurable parimiters when using real-time inferences:
+There are several configurable parameters when using real-time inferences:
 
 -  `model` – This can be set based on your specific needs. **kluster.ai** supports multiple models, allowing you to choose the best fit for your use case. Simply replace the model parameter with one of the options below:
 
