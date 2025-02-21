@@ -3086,9 +3086,7 @@ Then, take the following steps to configure TypingMind to use the kluster.ai API
     Bearer INSERT_KLUSTER_API_KEY
     ``` 
 6. Press **Test** to ensure the connection is successful
-7. Press **Add Model** to confirm adding the kluster.ai as a custom provider.
-
-6. Press **Add** to finalize the addition of kluster.ai API as a provider
+7. Press **Add Model** to confirm adding the kluster.ai as a custom provider
 
 ![Configure kluster.ai API as a provider](/images/get-started/integrations/typingmind/typingmind-2.webp)
 
