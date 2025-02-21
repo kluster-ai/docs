@@ -28,25 +28,33 @@ The following limits apply to API requests based on your plan tier:
 
 --8<-- "text/get-started/start-api/rate-limit.md"
 
-## Where to go next?
+## Where to go next
 
-<div class="subsection-wrapper">
-  <div class="card">
-    <a href="/get-started/start-building/real-time/">
-      <h2 class="title">Real-time inference</h2>
-      <p class="description">Build AI-powered applications that deliver instant, real-time responses.</p>
-    </a>
-  </div>
-  <div class="card">
-    <a href="/get-started/start-building/batch/">
-      <h2 class="title">Batch inference</h2>
-      <p class="description">Process large-scale data efficiently with AI-powered batch inference.</p>
-    </a>
-  </div>
-  <div class="card">
-    <a href="/api-reference/reference.md">
-      <h2 class="title">API Reference</h2>
-      <p class="description">Explore the complete kluster.ai API documentation and usage details.</p>
-    </a>
-  </div>
+<div class="grid cards" markdown>
+
+-   <span class="badge guide">Guide</span> __Real-time inference__
+
+    ---
+
+    Build AI-powered applications that deliver instant, real-time responses.
+
+    [:octicons-arrow-right-24: Visit the guide](/get-started/start-building/real-time/)
+
+-   <span class="badge guide">Guide</span> __Batch inference__
+
+    ---
+
+    Process large-scale data efficiently with AI-powered batch inference.
+
+    [:octicons-arrow-right-24: Visit the guide](/get-started/start-building/batch/)
+
+-   <span class="badge reference">Reference</span> __API reference__
+
+    ---
+
+    Explore the complete kluster.ai API documentation and usage details.
+
+    [:octicons-arrow-right-24: Reference](/api-reference/reference/)
+
+
 </div>
