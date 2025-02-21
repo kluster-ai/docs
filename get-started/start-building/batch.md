@@ -4,7 +4,7 @@ title: Start Performing batch Inferences
 description: This page provides examples and instructions for submitting and managing batch jobs using kluster.ai's OpenAI-compatible API.
 ---
 
-This guide outlines how to perform batch inferences using the kluster.ai API. We'll provide a step-by-step walkthrough to help you integrate and utilize batch processing within the kluster.ai platform.
+This guide outlines how to perform batch inferences using the [kluster.ai](https://platform.kluster.ai/){target=\_blank} API. We'll provide a step-by-step walkthrough to help you integrate and utilize batch processing within the kluster.ai platform.
 
 Before proceeding, ensure you're familiar with the **JSONL (JSON Lines)** format, the required input format for performing batch inferences with the kluster.ai API.
 

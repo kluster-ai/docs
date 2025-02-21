@@ -4,7 +4,7 @@ title: Start performing real-time inferences
 description: This page provides examples and instructions for submitting and managing real time jobs using kluster.ai's OpenAI-compatible API.
 ---
 
-This page gives a quick overview of how to use real-time inferences with the kluster.ai API. 
+This page gives a quick overview of how to use real-time inferences with the [kluster.ai](https://platform.kluster.ai/){target=\_blank} API. 
 
 This type of inference is best suited for situations where you need **instant**, **synchronous** responses—perfect for user-facing features like chat interactions, live recommendations, or real-time decision-making.
 
@@ -26,18 +26,41 @@ The example below demonstrates a pre-configured interface to get you started:
 
     ```python
     from openai import OpenAI
+    import json
+    import os
+
 
     client = OpenAI(
-    api_key="INSERT_API_KEY", # Replace with your actual API key
-    base_url="https://api.kluster.ai/v1"
+        api_key="INSERT_API_KEY",
+        base_url="https://api.kluster.ai/v1"
     )
 
+    # Create chat completion request
     completion = client.chat.completions.create(
-    model = "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo", # Configure which model uoi want to use
-    messages = [
-        { "role": "user", "content": "What is the most famous street in Paris?" } 
-    ]
+        model="klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
+        messages=[
+            {"role": "user", "content": "What's the name of the most famous street in Paris?"}
+        ]
     )
+
+    def log_response_to_file(response, filename="response_log.json"):
+        """Logs the full AI response to a JSON file in the same directory as the script."""
+        
+        # Convert response to dictionary
+        response_data = response.dict()
+        
+        # Get the script directory
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        file_path = os.path.join(script_dir, filename)
+        
+        # Write to JSON file
+        with open(file_path, "w", encoding="utf-8") as json_file:
+            json.dump(response_data, json_file, ensure_ascii=False, indent=4)
+        
+        print(f"Response logged to {file_path}")
+
+    # Log response to file
+    log_response_to_file(completion)
     ```
 
 === "curl"
