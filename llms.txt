@@ -2384,8 +2384,8 @@ That's it! You've successfully integrated eliza with the kluster.ai API. You're 
 Doc-Content: https://docs.kluster.ai/get-started/integrations/immersive-translate/
 --- BEGIN CONTENT ---
 ---
-title: Integrate Immersive Translate with kluster.ai
-description: This guide walks you through integrating the Immersive Translate browser extension, with kluster.ai for seamless, real-time multilingual content handling in your workflows.
+title: Integrate Immersive Translate
+description: Learn how to integrate the Immersive Translate browser extension with kluster.ai in your workflows for seamless, real-time multilingual content handling.
 ---
 
 # Using Immersive Translate with the kluster.ai API
