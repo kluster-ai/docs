@@ -33,7 +33,7 @@ Before starting, ensure you have the following:
 
 - [**A Tomorrow.io Weather API key**](https://www.tomorrow.io/weather-api/){target=\_blank} - this free API key will allow your weather agent to source accurate real-time weather data
 
-- [**A maps.co geocoding api key**](https://geocode.maps.co/){target=\_blank} - this free API key will allow your weather agent to convert a human-readable address into a pair of latitude and longitude coordinates
+- [**A maps.co geocoding API key**](https://geocode.maps.co/){target=\_blank} - this free API key will allow your weather agent to convert a human-readable address into a pair of latitude and longitude coordinates
 
 ## Quick Start - Use kluster.ai with PydanticAI
 
