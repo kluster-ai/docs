@@ -5,7 +5,7 @@ description: Learn how to configure TypingMind, an intuitive frontend chat inter
 
 # Using TypingMind with the kluster.ai API
 
-[TypingMind](https://www.typingmind.com/){target=\_blank} is an intuitive frontend chat interface that enhances the UX of LLMs. It offers flexible organization for your conversations (folders, pins, bulk delete), a customizable prompt library, and the ability to build AI Agents using your training data. TypingMind also supports plugins for internet access, image generation, and more, seamlessly syncing across devices. TypingMind simplifies your AI workflow and delivers tailored, high-quality responses through one sleek platform.
+[TypingMind](https://www.typingmind.com/){target=\_blank} is an intuitive frontend chat interface that enhances the UX of LLMs. It offers flexible organization for your conversations (folders, pins, bulk delete), a customizable prompt library, and the ability to build AI agents using your training data. With plugin support for internet access, image generation, and more, TypingMind seamlessly syncs across devices, providing a simplified AI workflow with tailored, high-quality responses—all in one sleek platform.
 
 This guide will walk you through integrating [kluster.ai](https://www.kluster.ai/){target=\_blank} with TypingMind, from configuration to hands-on interactions that tap into the kluster.ai API—all in a single, streamlined environment.
 
