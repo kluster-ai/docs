@@ -63,7 +63,7 @@ weather_agent = Agent(
     system_prompt=system_instructions,
     deps_type=Deps,
     # Increase retries so if the model calls a tool incorrectly a few times,
-    # it will have a chance to correct itself.
+    # it will have a chance to correct itself
     retries=5,
     # Optionally tweak model settings:
     model_settings=ModelSettings(
