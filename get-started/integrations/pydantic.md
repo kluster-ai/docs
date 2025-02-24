@@ -41,19 +41,19 @@ In this section, you'll learn how to integrate kluster.ai with PydanticAI. Youâ€
 
 1. **Import required libraries** - Create a new file (e.g., `quick-start.py`) and start by importing the necessary Python modules:
 
-    ```python
+    ```python title="quick-start.py"
     --8<-- "code/get-started/integrations/pydantic/quick-start.py::04"
     ```
 
 2. **Define a custom model to use the kluster.ai API** - Replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For model name, choose one of the kluster.ai [models](/api-reference/reference/#list-supported-models){target=_blank} that best fits your use case.
 
-    ```python
+    ```python title="quick-start.py"
     --8<-- "code/get-started/integrations/pydantic/quick-start.py:07:13"
     ```
 
 3. **Create a PydanticAI agent** - instantiate a PydanticAI Agent using our custom model configuration defined in the prior set. We then send a simple prompt to confirm the agent can successfully communicate with the kluster.ai endpoint, and finally print the modelâ€™s response 
 
-    ```python
+    ```python title="quick-start.py"
     --8<-- "code/get-started/integrations/pydantic/quick-start.py:15:25"
     ```
 
@@ -94,7 +94,7 @@ In this section, you'll build a weather agent that interprets natural language q
     --8<-- "code/get-started/integrations/pydantic/weather-agent.py:30:74"
     ```
 
-4. **Define the geocoding tool** - create a tool the agent calls behind the scenes to transform city names to  lat/lng using the geocoding API. If the API key is missing or the location is invalid, it defaults to London or raises an error for self-correction
+4. **Define the geocoding tool** - create a tool the agent calls behind the scenes to transform city names to lat/lng using the geocoding API. If the API key is missing or the location is invalid, it defaults to London or raises an error for self-correction
 
     ```python
     --8<-- "code/get-started/integrations/pydantic/weather-agent.py:76:102"
