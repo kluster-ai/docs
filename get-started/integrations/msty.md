@@ -26,10 +26,9 @@ Upon launching the Msty app for the first time, you'll be prompted to configure 
 Then, take the following steps to configure Msty to use the kluster.ai API:
 
 1. For the **Provider** dropdown, select **Open AI Compatible**
-
 2. Provide a name, such as `kluster`
-
 3. Provide the kluster.ai API URL for the **API endpoint** field:
+
     ```text
     https://api.kluster.ai/v1
     ```
