@@ -71,30 +71,41 @@ That's it! You've successfully integrated PydanticAI with the kluster.ai API. Co
 
 In this section, you'll build a weather agent that interprets natural language queries like "What’s the weather in San Francisco?" and uses PydanticAI to call both a geo API for latitude/longitude and a weather API for real-time conditions. By defining two tools—one for location lookup and another for weather retrieval—your agent can chain these steps automatically and return a concise, validated response. This approach keeps your AI workflow clean, type-safe, and easy to debug.
 
-1. **Import dependencies and handle initial setup** - Create a new file (e.g., `weather-agent.py`) and start by importing the necessary packages. Then, define a `Deps` data class to store API keys for geocoding and weather. We’ll later use these dependencies to request latitude/longitude data and fetch real-time weather information
-```python
---8<-- "code/get-started/integrations/pydantic/weather-agent.py::21"
-```
-2. **Define a custom model to use the kluster.ai API** - Replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For model name, choose one of the kluster.ai [models](/api-reference/reference/#list-supported-models){target=_blank} that best fits your use case
-```python
---8<-- "code/get-started/integrations/pydantic/weather-agent.py:23:28"
-```
-3. **Define the system prompt** - define a system prompt that instructs the weather agent on exactly how and when to call the geocoding and weather tools. The agent uses these rules and examples to ensure it obtains valid lat/long data first, then fetches the weather and returns a concise final response
-```python
---8<-- "code/get-started/integrations/pydantic/weather-agent.py:30:74"
-```
-4. **Define the geocoding tool** - define a tool the agent calls behind the scenes to transform a city name into its latitude and longitude by hitting a geocoding API. If there’s no API key or the location is invalid, it either defaults to London or raises an error, giving the model a chance to correct itself
-```python
---8<-- "code/get-started/integrations/pydantic/weather-agent.py:76:102"
-```
-5. **Define the weather fetching tool** - define a tool that uses [tomorrow.io](https://www.tomorrow.io/weather-api/){target=_blank} to fetch real-time weather for a given lat/lng, automatically converting the temperature into both Celsius and Fahrenheit. If there’s no valid API key, the script returns a simple fake forecast instead, ensuring the agent can still respond gracefully
-```python
---8<-- "code/get-started/integrations/pydantic/weather-agent.py:104:160"
-```
-6. **Create a CLI chat** - finally, create a simple CLI chat loop that prompts the user for a location, sends it off to our weather agent, and prints the final response
-```python
---8<-- "code/get-started/integrations/pydantic/weather-agent.py:162:194"
-```
+1. **Set up dependencies** - create a new file (e.g., `weather-agent.py`), import required packages, and define a `Deps` data class to store API keys for geocoding and weather. You'll use these dependencies to request latitude/longitude data and real-time weather information
+
+    ```python
+    --8<-- "code/get-started/integrations/pydantic/weather-agent.py::21"
+    ```
+
+2. **Define a custom model to use the kluster.ai API** - replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For the model name, choose one of the kluster.ai [models](/api-reference/reference/#list-supported-models){target=_blank} that best fits your use case
+
+    ```python
+    --8<-- "code/get-started/integrations/pydantic/weather-agent.py:23:28"
+    ```
+
+3. **Define the system prompt** - instruct the weather agent on how and when to call the geocoding and weather tools. The agent follows these rules to get valid lat/lng data, fetch the weather, and return a concise response
+
+    ```python
+    --8<-- "code/get-started/integrations/pydantic/weather-agent.py:30:74"
+    ```
+
+4. **Define the geocoding tool** - create a tool the agent calls behind the scenes to transform city names to  lat/lng using the geocoding API. If the API key is missing or the location is invalid, it defaults to London or raises an error for self-correction
+
+    ```python
+    --8<-- "code/get-started/integrations/pydantic/weather-agent.py:76:102"
+    ```
+
+5. **Define the weather fetching tool** - create a tool that fetches weather from [Tomorrow.io](https://www.tomorrow.io/weather-api/){target=_blank} for a given lat/lng, converting temperatures to Celsius and Fahrenheit. Defaults to a mock response if the API key is missing
+
+    ```python
+    --8<-- "code/get-started/integrations/pydantic/weather-agent.py:104:160"
+    ```
+
+6. **Create a CLI chat** - prompt users for a location, send it to the weather agent, and print the final response
+
+    ```python
+    --8<-- "code/get-started/integrations/pydantic/weather-agent.py:162:194"
+    ```
 
 ??? code "View full code file"
     ```python
