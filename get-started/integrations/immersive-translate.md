@@ -40,7 +40,7 @@ Take the following steps to configure the kluster.ai API as a custom translation
 
 ![](/images/get-started/integrations/immersivetranslate/immersive-2.webp)
 
-You need to take one more step before you can use kluster.ai with Immersive Translate. Although kluster.ai has been added as a provider, it is disabled by default. To enable it, take the following steps:
+You must take one more step before using kluster.ai with Immersive Translate. Although kluster.ai has been added as a provider, it is disabled by default. To enable it, take the following steps:
 
 1. Click on the **Translation Services** section of settings
 2. Toggle the switch to enable kluster.ai as a provider
