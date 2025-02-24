@@ -1,6 +1,6 @@
 ---
-title: Integrate LangChain with kluster.ai
-description: This guide walks you through integrating LangChain, a framework designed to simplify the development of LLM powered-applications, with the kluster.ai API.
+title: Integrate Immersive Translate with kluster.ai
+description: This guide walks you through integrating the Immersive Translate browser extension, with kluster.ai for seamless, real-time multilingual content handling in your workflows.
 ---
 
 # Using Immersive Translate with the kluster.ai API
