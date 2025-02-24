@@ -5,7 +5,7 @@ description: Learn how to build a typed, production-grade AI agent with Pydantic
 
 # Using PydanticAI with the kluster.ai API
 
-PydanticAI is a typed Python agent framework designed to make building production-grade applications with Generative AI less painful. Pydantic AI leverages [Pydantic's](https://docs.pydantic.dev/latest/){target=_blank} robust data validation to ensure your AI interactions are consistent, reliable, and easy to debug. By defining tools (Python functions) with strict type hints and schema validation, you can guide your AI model to call them correctly—reducing confusion or malformed requests.
+[PydanticAI](https://ai.pydantic.dev/){target=\_blank} is a typed Python agent framework designed to make building production-grade applications with Generative AI less painful. Pydantic AI leverages [Pydantic's](https://docs.pydantic.dev/latest/){target=_blank} robust data validation to ensure your AI interactions are consistent, reliable, and easy to debug. By defining tools (Python functions) with strict type hints and schema validation, you can guide your AI model to call them correctly—reducing confusion or malformed requests.
 
 This guide will walk through how to integrate the [kluster.ai](https://www.kluster.ai/){target=\_blank} API with PydanticAI to build a weather agent. You’ll see how to set up the environment, configure a custom model endpoint for kluster.ai, and create a tool-based chatbot that can fetch geographic coordinates and retrieve current weather while enforcing schemas and type safety.
 
