@@ -19,7 +19,7 @@ Before starting, ensure you have the following:
 
 ## Configure Immersive Translate to use the kluster.ai API
 
-First, open the Immersive Translate extension and click on the **Settings** button in the lower left corner of the extension. By default, the **General** section will appear first, where you'll configure the necessary settings.
+First, open the Immersive Translate extension and click on the **Options** button in the lower left corner of the extension. By default, the **General** section will appear first, where you'll configure the necessary settings.
 
 ![](/images/get-started/integrations/immersivetranslate/immersive-1.webp)
 
