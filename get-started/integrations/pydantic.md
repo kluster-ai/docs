@@ -45,7 +45,7 @@ In this section, you'll learn how to integrate kluster.ai with PydanticAI. Youâ€
     --8<-- "code/get-started/integrations/pydantic/quick-start.py::04"
     ```
 
-2. **Define a custom model to use the kluster.ai API** - Replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For model name, choose one of the kluster.ai [models](/api-reference/reference/#list-supported-models){target=_blank} that best fits your use case.
+2. **Define a custom model to use the kluster.ai API** - Replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For model name, choose one of the kluster.ai [models](/api-reference/reference/#list-supported-models){target=_blank} that best fits your use case
 
     ```python title="quick-start.py"
     --8<-- "code/get-started/integrations/pydantic/quick-start.py:07:13"
