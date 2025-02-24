@@ -82,4 +82,4 @@ Your AI agent is now ready to answer relevant questions and relies on the kluste
 
 ![Install new agent](/images/get-started/integrations/typingmind/typingmind-8.webp)
 
-You can also clone and customize existing agents, or create entirely new ones. For more information on agents on TypingMind, be sure to check out the [TypingMind docs](https://docs.typingmind.com/ai-agents/ai-agents-overview){target=\_blank}.
+You can also clone and customize existing agents or create entirely new ones. For more information on agents on TypingMind, be sure to check out the [TypingMind docs](https://docs.typingmind.com/ai-agents/ai-agents-overview){target=\_blank}.
