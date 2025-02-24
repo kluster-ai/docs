@@ -1,6 +1,6 @@
 ---
 title: Integrate Immersive Translate
-description: This guide walks you through integrating the Immersive Translate browser extension, with kluster.ai for seamless, real-time multilingual content handling in your workflows.
+description: Learn how to integrate the Immersive Translate browser extension with kluster.ai in your workflows for seamless, real-time multilingual content handling.
 ---
 
 # Using Immersive Translate with the kluster.ai API
