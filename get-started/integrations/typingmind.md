@@ -1,11 +1,11 @@
 ---
 title: Using TypingMind with the kluster.ai API
-description: Learn how to configure TypingMind, an intuitive frontend chat interface, that offering organization, prompt libraries, and AI agent support to use the kluster.ai API.
+description: Learn how to configure TypingMind, an intuitive frontend chat interface that offers organization, prompt libraries, and AI agent support, with kluster.ai.
 ---
 
 # Using TypingMind with the kluster.ai API
 
-[TypingMind](https://www.typingmind.com/){target=\_blank} is an intuitive frontend chat interface that enhances the UX of LLMs. It offers flexible organization for your conversations (folders, pins, bulk delete), a customizable prompt library, and the ability to build AI Agents using your training data. TypingMind also supports plugins for internet access, image generation, and more, seamlessly syncing across devices. TypingMind simplifies your AI workflow and delivers tailored, high-quality responses through one sleek platform.
+[TypingMind](https://www.typingmind.com/){target=\_blank} is an intuitive frontend chat interface that enhances the UX of LLMs. It offers flexible organization for your conversations (folders, pins, bulk delete), a customizable prompt library, and the ability to build AI agents using your training data. With plugin support for internet access, image generation, and more, TypingMind seamlessly syncs across devices, providing a simplified AI workflow with tailored, high-quality responses—all in one sleek platform.
 
 This guide will walk you through integrating [kluster.ai](https://www.kluster.ai/){target=\_blank} with TypingMind, from configuration to hands-on interactions that tap into the kluster.ai API—all in a single, streamlined environment.
 
@@ -28,18 +28,20 @@ Navigate to [TypingMind](https://www.typingmind.com/){target=\_blank} and take t
 Then, take the following steps to configure TypingMind to use the kluster.ai API:
 
 1. Provide a name, such as `kluster`
-
 2. For the **API Type** dropdown, select **OpenAI Compatible API**
-
 3. Provide the following URL for the **Endpoint** field:
+
     ```text
     https://api.kluster.ai/v1/chat/completions
     ```
+
 4. Paste the name of the [supported kluster.ai model](/api-reference/reference/#list-supported-models){target=\_blank} you'd like to use. Note that you can specify multiple models
 5. Press **Add Custom Headers** and for the **Key** value, specify `Authorization`. In the value field on the right, enter `Bearer` followed by your kluster.ai API key as follows: 
+
     ```text
     Bearer INSERT_KLUSTER_API_KEY
     ``` 
+
 6. Press **Test** to ensure the connection is successful
 7. Press **Add Model** to confirm adding the kluster.ai as a custom provider
 
@@ -47,21 +49,21 @@ Then, take the following steps to configure TypingMind to use the kluster.ai API
 
 ## Set kluster.ai as the default provider
 
-You've configured the kluster.ai API as a provider, but it isn't yet selected as the default one. To change this, take the following steps: 
+You've configured the kluster.ai API as a provider, but it hasn't yet been selected as the default one. To change this, take the following steps: 
 
 1. Click on **Models** on the sidebar
-2. Select **kluster** (or, whatever you named your custom model)
+2. Select **kluster** (or whatever you named your custom model)
 3. Press **Set Default**
 
 ![Configure kluster.ai API as a provider](/images/get-started/integrations/typingmind/typingmind-3.webp)
 
-And that's it! You can now query the LLM successfully using Kluster.ai as the default provider. For more information on TypingMind's features, be sure to check out the [TypingMind docs](https://docs.typingmind.com/){target=\_blank}. The following section will look at one of TypingMind's features: prebuilt AI agents.
+And that's it! You can now query the LLM successfully using kluster.ai as the default provider. For more information on TypingMind's features, be sure to check out the [TypingMind docs](https://docs.typingmind.com/){target=\_blank}. The following section will examine one of TypingMind's features: prebuilt AI agents.
 
 ![Query TypingMind](/images/get-started/integrations/typingmind/typingmind-4.webp)
 
 ## Using TypingMind Agents
 
-TypingMind has a wide variety of prebuilt AI agents that you can either use as-is or clone and customize to suit your specific needs. These AI agents can use the kluster.ai API to perform tasks tailored to your use cases. To get started, take the following steps:
+TypingMind has a wide variety of prebuilt AI agents that you can use as-is or clone and customize to suit your needs. These AI agents can use the kluster.ai API to perform tasks tailored to your use cases. To get started, take the following steps:
 
 1. Click on **Agents** in the sidebar
 2. Click on **Browse Agents**
@@ -80,4 +82,4 @@ Your AI agent is now ready to answer relevant questions and relies on the kluste
 
 ![Install new agent](/images/get-started/integrations/typingmind/typingmind-8.webp)
 
-You can also clone and customize existing agents, or create entirely new ones. For more information on agents on TypingMind, be sure to check out the [TypingMind docs](https://docs.typingmind.com/ai-agents/ai-agents-overview){target=\_blank}.
+You can also clone and customize existing agents or create entirely new ones. For more information on agents on TypingMind, be sure to check out the [TypingMind docs](https://docs.typingmind.com/ai-agents/ai-agents-overview){target=\_blank}.
