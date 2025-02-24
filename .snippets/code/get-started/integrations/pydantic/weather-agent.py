@@ -11,7 +11,6 @@ from pydantic_ai import Agent, ModelRetry, RunContext
 from pydantic_ai.models.openai import OpenAIModel
 from pydantic_ai.settings import ModelSettings
 
-# 'if-token-present' means nothing will be sent to Logfire if no token is configured
 logfire.configure(send_to_logfire='if-token-present')
 
 @dataclass
