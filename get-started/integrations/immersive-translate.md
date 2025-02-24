@@ -27,13 +27,15 @@ Take the following steps to configure the kluster.ai API as a custom translation
 
 1. Enter a name
 2. For the custom API interface address, enter the following:
-```bash
-https://api.kluster.ai/v1/chat/completions
-```
+
+    ```text
+    https://api.kluster.ai/v1/chat/completions
+    ```
+
 3. Paste in your kluster.ai [API key](https://platform.kluster.ai/apikeys){target=\_blank}
 4. **Check** the box to enable custom models 
 5. Paste in the name of the kluster.ai [supported model](https://docs.kluster.ai/api-reference/reference/#list-supported-models){target=\_blank} you'd like to use
-6. Specify a max requests per second value of `1` to avoid rate limits. Paid kluster.ai API accounts may have higher rate limits
+6. Specify a value of `1` for max requests per second to avoid rate limits. Paid kluster.ai API accounts may have higher rate limits
 7. Press **Verify Service** in the upper right corner to validate the input values
 
 ![](/images/get-started/integrations/immersivetranslate/immersive-2.webp)
