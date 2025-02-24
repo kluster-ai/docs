@@ -69,7 +69,7 @@ That's it! You've successfully integrated PydanticAI with the kluster.ai API. Co
 
 ## Building a Weather Agent with PydanticAI
 
-In the following section, you'll build a weather agent that interprets natural language queries like “What’s the weather in San Francisco?” and uses PydanticAI to call both a geo API for latitude/longitude and a weather API for real-time conditions. By defining two tools—one for location lookup and another for weather retrieval—our agent can chain these steps automatically and return a concise, validated response. This approach keeps your AI workflow clean, type-safe, and easy to debug.
+In this section, you'll build a weather agent that interprets natural language queries like "What’s the weather in San Francisco?" and uses PydanticAI to call both a geo API for latitude/longitude and a weather API for real-time conditions. By defining two tools—one for location lookup and another for weather retrieval—your agent can chain these steps automatically and return a concise, validated response. This approach keeps your AI workflow clean, type-safe, and easy to debug.
 
 1. **Import dependencies and handle initial setup** - Create a new file (e.g., `weather-agent.py`) and start by importing the necessary packages. Then, define a `Deps` data class to store API keys for geocoding and weather. We’ll later use these dependencies to request latitude/longitude data and fetch real-time weather information
 ```python
