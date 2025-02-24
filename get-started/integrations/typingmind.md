@@ -49,7 +49,7 @@ Then, take the following steps to configure TypingMind to use the kluster.ai API
 
 ## Set kluster.ai as the default provider
 
-You've configured the kluster.ai API as a provider, but it isn't yet selected as the default one. To change this, take the following steps: 
+You've configured the kluster.ai API as a provider, but it hasn't yet been selected as the default one. To change this, take the following steps: 
 
 1. Click on **Models** on the sidebar
 2. Select **kluster** (or, whatever you named your custom model)
