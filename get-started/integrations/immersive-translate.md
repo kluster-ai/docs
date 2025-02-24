@@ -63,4 +63,4 @@ Then, the content translated by the Immersive Translate plugin will begin to app
 
 ![](/images/get-started/integrations/immersivetranslate/immersive-5.webp)
 
-And that's it! You've now set up Immersive Translate to use the kluster.ai API and learned how to translate content with it.
+And that's it! You've now set up Immersive Translate to use the kluster.ai API and learned how to translate content.
