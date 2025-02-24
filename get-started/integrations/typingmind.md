@@ -57,7 +57,7 @@ You've configured the kluster.ai API as a provider, but it hasn't yet been selec
 
 ![Configure kluster.ai API as a provider](/images/get-started/integrations/typingmind/typingmind-3.webp)
 
-And that's it! You can now query the LLM successfully using Kluster.ai as the default provider. For more information on TypingMind's features, be sure to check out the [TypingMind docs](https://docs.typingmind.com/){target=\_blank}. The following section will look at one of TypingMind's features: prebuilt AI agents.
+And that's it! You can now query the LLM successfully using kluster.ai as the default provider. For more information on TypingMind's features, be sure to check out the [TypingMind docs](https://docs.typingmind.com/){target=\_blank}. The following section will examine one of TypingMind's features: prebuilt AI agents.
 
 ![Query TypingMind](/images/get-started/integrations/typingmind/typingmind-4.webp)
 
