@@ -120,4 +120,4 @@ python weather-agent.py
 
 --8<-- 'code/get-started/integrations/pydantic/terminal/weather-agent.md'
 
-That's it! You've built a fully functional weather agent using PydanticAI and kluster.ai, showcasing how to integrate type-safe tools and LLMs for real-world data retrieval. Visit the [PydanticAI docs site](https://ai.pydantic.dev/){target=\_blank} to continue exploring PydanticAI’s flexible tool and system prompt features to expand your agent’s capabilities and handle more complex use cases with ease.
+That's it! You've built a fully functional weather agent using PydanticAI and kluster.ai, showcasing how to integrate type-safe tools and LLMs for real-world data retrieval. Visit the [PydanticAI docs site](https://ai.pydantic.dev/){target=\_blank} to continue exploring PydanticAI's flexible tool and system prompt features to expand your agent's capabilities and handle more complex use cases with ease.
