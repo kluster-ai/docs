@@ -63,7 +63,7 @@ And that's it! You can now query the LLM successfully using kluster.ai as the de
 
 ## Using TypingMind Agents
 
-TypingMind has a wide variety of prebuilt AI agents that you can either use as-is or clone and customize to suit your specific needs. These AI agents can use the kluster.ai API to perform tasks tailored to your use cases. To get started, take the following steps:
+TypingMind has a wide variety of prebuilt AI agents that you can use as-is or clone and customize to suit your needs. These AI agents can use the kluster.ai API to perform tasks tailored to your use cases. To get started, take the following steps:
 
 1. Click on **Agents** in the sidebar
 2. Click on **Browse Agents**
