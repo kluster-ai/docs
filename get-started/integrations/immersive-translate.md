@@ -49,7 +49,7 @@ That's it! The next section will demonstrate using Immersive Translate with the 
 
 ![](/images/get-started/integrations/immersivetranslate/immersive-3.webp)
 
-## Translating Content with Immersive Translate
+## Translate Content with Immersive Translate
 
 With Immersive Translate, you can easily translate content with just a few clicks. To do so, navigate to the page with the foreign language content. Open the Immersive Translate plugin and take the following steps:
 
