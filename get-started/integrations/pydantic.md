@@ -44,7 +44,7 @@ In this section, you'll learn how to integrate kluster.ai with PydanticAI. Youâ€
     ```python
     --8<-- "code/get-started/integrations/pydantic/quick-start.py::04"
 
-??? code "View full code file"
+??? code "Complete script"
     ```python
     --8<-- "code/get-started/integrations/pydantic/quick-start.py"
     ```
