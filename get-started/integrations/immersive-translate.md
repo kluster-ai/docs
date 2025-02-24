@@ -5,9 +5,9 @@ description: This guide walks you through integrating LangChain, a framework des
 
 # Using Immersive Translate with the kluster.ai API
 
-[Immersive Translate](https://immersivetranslate.com/){target=_blank} is an  AI-powered bilingual translation extension that automatically identifies the main text on any web page and provides parallel translations in real time. This context-driven approach streamlines reading and collaboration across languages with additional features like efficient document translation, hover translation, and support for 10+ translation services.
+[Immersive Translate](https://immersivetranslate.com/){target=_blank} is an  AI-powered bilingual translation extension that automatically identifies the main text on any web page and provides parallel translations in real-time. This context-driven approach streamlines reading and collaboration across languages with additional features like efficient document translation, hover translation, and support for 10+ translation services.
 
-In this guide, you'll learn how to integrate Immersive Translate with the [kluster.ai](https://www.kluster.ai/){target=_blank} API—from installation through configuration—so you can seamlessly handle multilingual content within your workflows. This integration guide will walk through the steps to enable Immersive Translate’s core capabilities in tandem with kluster.ai’s powerful models, helping you build more robust and accessible AI-driven applications.
+In this guide, you'll learn how to integrate Immersive Translate with the [kluster.ai](https://www.kluster.ai/){target=_blank} API—from installation through configuration—so you can seamlessly handle multilingual content within your workflows. You will enable Immersive Translate's core capabilities with kluster.ai's powerful models, helping you build more robust and accessible AI-driven applications.
 
 ## Prerequisites
 
