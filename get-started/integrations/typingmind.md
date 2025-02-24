@@ -1,6 +1,6 @@
 ---
 title: Using TypingMind with the kluster.ai API
-description: Learn how to configure TypingMind, an intuitive frontend chat interface, that offering organization, prompt libraries, and AI agent support to use the kluster.ai API.
+description: Learn how to configure TypingMind, an intuitive frontend chat interface that offers organization, prompt libraries, and AI agent support, with kluster.ai.
 ---
 
 # Using TypingMind with the kluster.ai API
