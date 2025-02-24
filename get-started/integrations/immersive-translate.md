@@ -51,7 +51,7 @@ That's it! The next section will demonstrate using Immersive Translate with the 
 
 ## Translating Content with Immersive Translate
 
-With Immersive Translate, you can easily translate content with just a few clicks. To do so, navigate to the page with the foreign language content. Open the Immersive Translate plugin, and take the following steps:
+With Immersive Translate, you can easily translate content with just a few clicks. To do so, navigate to the page with the foreign language content. Open the Immersive Translate plugin and take the following steps:
 
 1. The language of the existing content is auto-detected by the plugin, but it's a good idea to verify it
 2. Select the language to translate the content into. This is set by default to your native language 
