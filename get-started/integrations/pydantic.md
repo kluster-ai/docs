@@ -108,7 +108,7 @@ In this section, you'll build a weather agent that interprets natural language q
     ```
 
 ??? code "View full code file"
-    ```python
+    ```python title="weather-agent.py"
     --8<-- "code/get-started/integrations/pydantic/weather-agent.py"
     ```
 
