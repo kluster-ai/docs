@@ -61,7 +61,7 @@ And that's it! You can now query the LLM successfully using kluster.ai as the de
 
 ![Query TypingMind](/images/get-started/integrations/typingmind/typingmind-4.webp)
 
-## Use Typingmind agents to start a chat
+## Use TypingMind agents to start a chat
 
 TypingMind has a wide variety of prebuilt AI agents that you can use as-is or clone and customize to suit your needs. These AI agents can use the kluster.ai API to perform tasks tailored to your use cases. To get started, take the following steps:
 
