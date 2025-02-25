@@ -3016,11 +3016,11 @@ Before starting, ensure you have the following:
 
 - [**A maps.co geocoding API key**](https://geocode.maps.co/){target=\_blank} - this free API key will allow your weather agent to convert a human-readable address into a pair of latitude and longitude coordinates
 
-## Quick Start - Use kluster.ai with PydanticAI
+## Quick start - Use kluster.ai with PydanticAI
 
 In this section, you'll learn how to integrate kluster.ai with PydanticAI. You’ll configure your API key, set your base URL, specify a kluster.ai model, and make a simple request to verify functionality.
 
-1. **Import required libraries** - Create a new file (e.g., `quick-start.py`) and start by importing the necessary Python modules:
+1. **Import required libraries** - create a new file (e.g., `quick-start.py`) and import the necessary Python modules:
 
     ```python title="quick-start.py"
     import asyncio
@@ -3050,7 +3050,7 @@ if __name__ == '__main__':
     asyncio.run(main())
     ```
 
-2. **Define a custom model to use the kluster.ai API** - Replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For model name, choose one of the kluster.ai [models](/api-reference/reference/#list-supported-models){target=_blank} that best fits your use case
+2. **Define a custom model to use the kluster.ai API** - replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For the model name, choose one of the kluster.ai [models](/api-reference/reference/#list-supported-models){target=_blank} that best fits your use case
 
     ```python title="quick-start.py"
     # Configure pydantic-ai to use your custom base URL and model name
@@ -3061,7 +3061,7 @@ if __name__ == '__main__':
     )
     ```
 
-3. **Create a PydanticAI agent** - instantiate a PydanticAI Agent using our custom model configuration defined in the prior set. We then send a simple prompt to confirm the agent can successfully communicate with the kluster.ai endpoint, and finally print the model’s response 
+3. **Create a PydanticAI agent** - instantiate a PydanticAI agent using the custom model configuration. Then, send a simple prompt to confirm the agent can successfully communicate with the kluster.ai endpoint and print the model's response 
 
     ```python title="quick-start.py"
     agent = Agent(model)
@@ -3118,7 +3118,7 @@ python quick-start.py
 
 That's it! You've successfully integrated PydanticAI with the kluster.ai API. Continue on to learn how to experiment with more advanced features of PydanticAI.
 
-## Building a Weather Agent with PydanticAI
+## Build a weather agent with PydanticAI
 
 In this section, you'll build a weather agent that interprets natural language queries like "What’s the weather in San Francisco?" and uses PydanticAI to call both a geo API for latitude/longitude and a weather API for real-time conditions. By defining two tools—one for location lookup and another for weather retrieval—your agent can chain these steps automatically and return a concise, validated response. This approach keeps your AI workflow clean, type-safe, and easy to debug.
 
