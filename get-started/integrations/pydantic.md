@@ -39,7 +39,7 @@ Before starting, ensure you have the following:
 
 In this section, you'll learn how to integrate kluster.ai with PydanticAI. You’ll configure your API key, set your base URL, specify a kluster.ai model, and make a simple request to verify functionality.
 
-1. **Import required libraries** - Create a new file (e.g., `quick-start.py`) and start by importing the necessary Python modules:
+1. **Import required libraries** - create a new file (e.g., `quick-start.py`) and import the necessary Python modules:
 
     ```python title="quick-start.py"
     --8<-- "code/get-started/integrations/pydantic/quick-start.py::04"
