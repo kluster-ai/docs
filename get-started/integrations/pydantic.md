@@ -35,7 +35,7 @@ Before starting, ensure you have the following:
 
 - [**A maps.co geocoding API key**](https://geocode.maps.co/){target=\_blank} - this free API key will allow your weather agent to convert a human-readable address into a pair of latitude and longitude coordinates
 
-## Quick Start - Use kluster.ai with PydanticAI
+## Quick start - Use kluster.ai with PydanticAI
 
 In this section, you'll learn how to integrate kluster.ai with PydanticAI. You’ll configure your API key, set your base URL, specify a kluster.ai model, and make a simple request to verify functionality.
 
