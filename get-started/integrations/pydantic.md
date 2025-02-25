@@ -51,7 +51,7 @@ In this section, you'll learn how to integrate kluster.ai with PydanticAI. Youâ€
     --8<-- "code/get-started/integrations/pydantic/quick-start.py:07:13"
     ```
 
-3. **Create a PydanticAI agent** - instantiate a PydanticAI Agent using our custom model configuration defined in the prior set. We then send a simple prompt to confirm the agent can successfully communicate with the kluster.ai endpoint, and finally print the modelâ€™s response 
+3. **Create a PydanticAI agent** - instantiate a PydanticAI agent using the custom model configuration. Then, send a simple prompt to confirm the agent can successfully communicate with the kluster.ai endpoint and print the model's response 
 
     ```python title="quick-start.py"
     --8<-- "code/get-started/integrations/pydantic/quick-start.py:15:25"
