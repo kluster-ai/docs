@@ -86,7 +86,7 @@ After finishing the CLI setup, you will see a `src` directory with files `crew.p
 
     ```
 
-??? code "Complete script"
+??? code "View complete script"
     ```python title="hello_crew.py"
     --8<-- 'code/get-started/integrations/crewai/hello_crew.py'
     ```
