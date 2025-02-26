@@ -3,7 +3,7 @@ title: Integrate SillyTavern with kluster.ai
 description: This guide walks you through setting up SillyTavern, a customizable LLM interface, with the kluster.ai API to enable AI-powered conversations.
 ---
 
-# How to integrate SillyTavern with kluster.ai
+# Integrate SillyTavern with kluster.ai
 
 This guide will help you set up and configure [SillyTavern](https://sillytavernai.com/){target=\_blank}, a customizable LLM interface, with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API. Follow the steps below to integrate these tools seamlessly.
 

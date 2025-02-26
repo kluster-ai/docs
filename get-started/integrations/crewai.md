@@ -1,9 +1,9 @@
 ---
-title: Using CrewAI with the kluster.ai API
+title: Integrate CrewAI with kluster.ai API
 description: Learn how to integrate kluster.ai with CrewAI, a new framework for orchestrating autonomous AI agents, to launch and configure your AI agent chatbot.
 ---
 
-# Using CrewAI with the kluster.ai API
+# Integrate CrewAI with kluster.ai
 
 [CrewAI](https://www.crewai.com/){target=\_blank} is a multi-agent platform that organizes specialized AI agents—each with defined roles, tools, and goals—within a structured process to tackle complex tasks efficiently. CrewAI agents streamline workflows and deliver reliable, scalable solutions by coordinating tasks and ensuring smooth collaboration.
 
@@ -35,7 +35,12 @@ After finishing the CLI setup, you will see a `src` directory with files `crew.p
 
 2. **Import modules and select model** - open `hello_crew.py` to add imports and define a custom LLM for kluster.ai by setting the following parameters:
     - **provider** - you can specify `openai_compatible`
-    - **model** - choose one of kluster.ai's available models based on your use case. Regardless of which model you choose, prepend its name with `openai/` to ensure CrewAI, which relies on LiteLLM, processes your requests correctly. For more details, see [kluster.ai's models](/api-reference/reference/#list-supported-models){target=\_blank}
+    - **model** - choose one of kluster.ai's available models based on your use case:
+    
+        --8<-- 'text/real-time-models.md'
+
+        Regardless of which model you choose, prepend its name with `openai/` to ensure CrewAI, which relies on LiteLLM, processes your requests correctly. 
+
     - **base_url** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
     - **api_key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
   

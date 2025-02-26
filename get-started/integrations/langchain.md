@@ -3,7 +3,7 @@ title: Integrate LangChain with kluster.ai
 description: This guide walks you through integrating LangChain, a framework designed to simplify the development of LLM powered-applications, with the kluster.ai API.
 ---
 
-# Using LangChain with the kluster.ai API
+# Integrate LangChain with kluster.ai
 
 [LangChain](https://www.langchain.com/){target=\_blank} offers a range of features—like memory modules for context tracking, retrieval augmentation to feed external data into prompts, and customizable multi-step “chains” to break down complex tasks. By leveraging these capabilities with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API, you can build more robust and context-aware solutions that seamlessly handle everything from short-form answers to intricate conversations.
 
@@ -35,7 +35,9 @@ It's easy to integrate kluster.ai with LangChain—when configuring the chat mod
 
   - **Base URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
   - **API key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don’t have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
-  - **Select your model** - choose one of kluster.ai’s available models based on your use case. For more details, see [kluster.ai’s models](/api-reference/reference/#list-supported-models){target=\_blank}
+  - **Select your model** - choose one of kluster.ai’s available models based on your use case:
+
+      --8<-- 'text/real-time-models.md'
 
 ```python
 --8<-- "code/get-started/integrations/langchain/langchain-quickstart.py"
@@ -43,7 +45,7 @@ It's easy to integrate kluster.ai with LangChain—when configuring the chat mod
 
 That's all you need to start with LangChain and the kluster.ai API! Next, this guide will explore building a multi-turn conversational agent that showcases how memory and context can elevate your chatbot to a more interactive, intelligent experience.
 
-## Building a multi-turn conversational agent
+## Build a multi-turn conversational agent
 
 This section will explore what LangChain can do beyond a single prompt-and-response interaction. One standout feature of LangChain is its built-in memory, which tracks conversation context across multiple user queries. In the following steps, you'll set up a multi-turn conversational agent that takes advantage of this memory and seamlessly integrates with the kluster.ai API: 
 
@@ -72,7 +74,7 @@ This section will explore what LangChain can do beyond a single prompt-and-respo
 --8<-- "code/get-started/integrations/langchain/langchain-advanced.py:39:43"
 ```
 
-??? code "Complete script"
+??? code "View complete script"
     ```python title="langchain-advanced.py"
     --8<-- 'code/get-started/integrations/langchain/langchain-advanced.py'
     ```

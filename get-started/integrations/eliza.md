@@ -1,9 +1,9 @@
 ---
-title: Using eliza with the kluster.ai API
+title: Integrate eliza with kluster.ai
 description: Learn how to integrate kluster.ai with eliza, a fast, lightweight, and flexible AI agent framework, to launch and configure your own AI agent chatbot. 
 ---
 
-# Using eliza with the kluster.ai API
+# Integrate eliza with kluster.ai
 
 [eliza](https://elizaos.github.io/eliza/){target=\_blank} is an open-source framework designed to create and manage AI agents that can handle a variety of tasks, from simple chat interactions to more complex automation.
 
@@ -30,7 +30,13 @@ Then, set the following variables in the `.env` file:
 
   - **OPENAI_API_KEY** - replace `INSERT_API_KEY` in the code below with your own kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
   - **OPENAI_API_URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
-  - **OPENAI_DEFAULT_MODEL** - choose one of kluster.ai's available models based on your use case. Ensure that the model's full name starting with `klusterai/` is listed. For more details, see [kluster.ai's models](/api-reference/reference/#list-supported-models){target=\_blank}. It's also recommended that you set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, `LARGE_OPENAI_MODEL` to the same value. This will allow you seamless experimentation with the different characters because different characters default to using different models
+  - **OPENAI_DEFAULT_MODEL** - choose one of kluster.ai's available models based on your use case:
+
+      --8<-- 'text/real-time-models.md'
+  
+      Ensure that the model's full name starting with `klusterai/` is listed.
+      
+      It's also recommended that you set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, `LARGE_OPENAI_MODEL` to the same value. This will allow you seamless experimentation with the different characters because different characters default to using different models
 
 The OpenAI configuration section of your `.env` file should resemble the following:
 
