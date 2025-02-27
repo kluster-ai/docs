@@ -2063,11 +2063,11 @@ Now that you have your API key, you can start integrating kluster.ai's LLMs into
 Doc-Content: https://docs.kluster.ai/get-started/integrations/crewai/
 --- BEGIN CONTENT ---
 ---
-title: Using CrewAI with the kluster.ai API
+title: Integrate CrewAI with kluster.ai API
 description: Learn how to integrate kluster.ai with CrewAI, a new framework for orchestrating autonomous AI agents, to launch and configure your AI agent chatbot.
 ---
 
-# Using CrewAI with the kluster.ai API
+# Integrate CrewAI with kluster.ai
 
 [CrewAI](https://www.crewai.com/){target=\_blank} is a multi-agent platform that organizes specialized AI agents—each with defined roles, tools, and goals—within a structured process to tackle complex tasks efficiently. CrewAI agents streamline workflows and deliver reliable, scalable solutions by coordinating tasks and ensuring smooth collaboration.
 
@@ -2099,7 +2099,15 @@ After finishing the CLI setup, you will see a `src` directory with files `crew.p
 
 2. **Import modules and select model** - open `hello_crew.py` to add imports and define a custom LLM for kluster.ai by setting the following parameters:
     - **provider** - you can specify `openai_compatible`
-    - **model** - choose one of kluster.ai's available models based on your use case. Regardless of which model you choose, prepend its name with `openai/` to ensure CrewAI, which relies on LiteLLM, processes your requests correctly. For more details, see [kluster.ai's models](/api-reference/reference/#list-supported-models){target=\_blank}
+    - **model** - choose one of kluster.ai's available models based on your use case:
+    
+        - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
+- `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
+- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
+- `deepseek-ai/DeepSeek-R1`
+
+        Regardless of which model you choose, prepend its name with `openai/` to ensure CrewAI, which relies on LiteLLM, processes your requests correctly. 
+
     - **base_url** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
     - **api_key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
   
@@ -2202,7 +2210,7 @@ class HelloWorldCrew:
 
     ```
 
-??? code "Complete script"
+??? code "View complete script"
     ```python title="hello_crew.py"
     import random
 
@@ -2301,11 +2309,11 @@ And that's it! You've now successfully configured your AI agent harnessing CrewA
 Doc-Content: https://docs.kluster.ai/get-started/integrations/eliza/
 --- BEGIN CONTENT ---
 ---
-title: Using eliza with the kluster.ai API
+title: Integrate eliza with kluster.ai
 description: Learn how to integrate kluster.ai with eliza, a fast, lightweight, and flexible AI agent framework, to launch and configure your own AI agent chatbot. 
 ---
 
-# Using eliza with the kluster.ai API
+# Integrate eliza with kluster.ai
 
 [eliza](https://elizaos.github.io/eliza/){target=\_blank} is an open-source framework designed to create and manage AI agents that can handle a variety of tasks, from simple chat interactions to more complex automation.
 
@@ -2332,7 +2340,16 @@ Then, set the following variables in the `.env` file:
 
   - **OPENAI_API_KEY** - replace `INSERT_API_KEY` in the code below with your own kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
   - **OPENAI_API_URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
-  - **OPENAI_DEFAULT_MODEL** - choose one of kluster.ai's available models based on your use case. Ensure that the model's full name starting with `klusterai/` is listed. For more details, see [kluster.ai's models](/api-reference/reference/#list-supported-models){target=\_blank}. It's also recommended that you set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, `LARGE_OPENAI_MODEL` to the same value. This will allow you seamless experimentation with the different characters because different characters default to using different models
+  - **OPENAI_DEFAULT_MODEL** - choose one of kluster.ai's available models based on your use case:
+
+      - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
+- `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
+- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
+- `deepseek-ai/DeepSeek-R1`
+  
+      Ensure that the model's full name starting with `klusterai/` is listed.
+      
+      It's also recommended that you set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, `LARGE_OPENAI_MODEL` to the same value. This will allow you seamless experimentation with the different characters because different characters default to using different models
 
 The OpenAI configuration section of your `.env` file should resemble the following:
 
@@ -2398,7 +2415,7 @@ title: Integrate LangChain with kluster.ai
 description: This guide walks you through integrating LangChain, a framework designed to simplify the development of LLM powered-applications, with the kluster.ai API.
 ---
 
-# Using LangChain with the kluster.ai API
+# Integrate LangChain with kluster.ai
 
 [LangChain](https://www.langchain.com/){target=\_blank} offers a range of features—like memory modules for context tracking, retrieval augmentation to feed external data into prompts, and customizable multi-step “chains” to break down complex tasks. By leveraging these capabilities with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API, you can build more robust and context-aware solutions that seamlessly handle everything from short-form answers to intricate conversations.
 
@@ -2430,7 +2447,12 @@ It's easy to integrate kluster.ai with LangChain—when configuring the chat mod
 
   - **Base URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
   - **API key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don’t have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
-  - **Select your model** - choose one of kluster.ai’s available models based on your use case. For more details, see [kluster.ai’s models](/api-reference/reference/#list-supported-models){target=\_blank}
+  - **Select your model** - choose one of kluster.ai’s available models based on your use case:
+
+      - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
+- `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
+- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
+- `deepseek-ai/DeepSeek-R1`
 
 ```python
 from langchain_openai import ChatOpenAI
@@ -2446,7 +2468,7 @@ llm.invoke("What is the capital of Nepal?")
 
 That's all you need to start with LangChain and the kluster.ai API! Next, this guide will explore building a multi-turn conversational agent that showcases how memory and context can elevate your chatbot to a more interactive, intelligent experience.
 
-## Building a multi-turn conversational agent
+## Build a multi-turn conversational agent
 
 This section will explore what LangChain can do beyond a single prompt-and-response interaction. One standout feature of LangChain is its built-in memory, which tracks conversation context across multiple user queries. In the following steps, you'll set up a multi-turn conversational agent that takes advantage of this memory and seamlessly integrates with the kluster.ai API: 
 
@@ -2494,7 +2516,7 @@ response2 = conversation.predict(input=question2)
 print("Response 2:", response2)
 ```
 
-??? code "Complete script"
+??? code "View complete script"
     ```python title="langchain-advanced.py"
     from langchain.chains import ConversationChain
 from langchain.chains.conversation.memory import ConversationBufferMemory
@@ -2567,7 +2589,7 @@ title: Integrate LiteLLM with kluster.ai
 description: This guide shows how to integrate LiteLLM, an open-source library that simplifies access to 100+ LLMs with load balancing and spend tracking, into kluster.ai.
 ---
 
-# Integrating LiteLLM with the kluster.ai API
+# Integrate LiteLLM with kluster.ai
 
 This guide shows you how to integrate [LiteLLM](https://www.litellm.ai/){target=_blank}—an open-source library providing unified access to 100+ large language models—with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API. You can seamlessly develop and deploy robust, AI-driven applications by combining LiteLLM's load balancing, fallback logic, and spend tracking with kluster.ai's powerful models.
 
@@ -2628,7 +2650,14 @@ messages = [
     {"role": "user",   "content": "What is the capital of California?"}
 ]
 ```
-4. **Select your kluster.ai model** - Choose one of the kluster.ai [models](/api-reference/reference/#list-supported-models){target=_blank} that best fits your use case. Prepend the model name with `openai/` so LiteLLM recognizes it as an OpenAI-like model request.
+4. **Select your kluster.ai model** - Choose one of the kluster.ai models that best fits your use case:
+
+    - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
+- `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
+- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
+- `deepseek-ai/DeepSeek-R1`
+
+    Prepend the model name with `openai/` so LiteLLM recognizes it as an OpenAI-like model request.
 ```python
 model = "openai/klusterai/Meta-Llama-3.3-70B-Instruct-Turbo"
 ```
@@ -2642,8 +2671,8 @@ model=model,
 print(response)
 ```
 
-??? code "View full code file"
-    ```python
+??? code "View complete script"
+    ```python title="hello-litellm.py"
     import os
 
 from litellm import completion
@@ -2683,7 +2712,7 @@ python hello-litellm.py
 
 That's it! You've successfully integrated LiteLLM with the kluster.ai API. Continue on to learn how to experiment with more advanced features of LiteLLM.
 
-## Exploring LiteLLM Features
+## Explore LiteLLM Features
 
 In the previous section, you learned how to use LiteLLM with the kluster.ai API by properly configuring the model via an OpenAI-like call and configuring the API key and API base URL. This section will dive deeper into some of the interesting features offered by LiteLLM and how you can use them in conjunction with the kluster.ai API.
 
@@ -2787,7 +2816,7 @@ model = "openai/klusterai/Meta-Llama-3.3-70B-Instruct-Turbo"
     ]
 ```
 
-### Streaming Responses
+### Use Streaming Responses
 
 You can enable streaming by simply passing `stream=True` to the `completion()` function. This returns a generator instead of a static response, letting you iterate over partial output chunks as they arrive. In the code sample below, each chunk is accessed in a for chunk in response: loop, and you can extract just the textual content (e.g., `chunk.choices[0].delta.content)` rather than printing all metadata. 
 
@@ -2822,7 +2851,7 @@ for chunk in response_stream:
     print("\n")  # new line after streaming ends
 ```
 
-### Multi-Turn Conversation Handling
+### Handle Multi-Turn Conversation
 
 LiteLLM can facilitate multi-turn conversations by maintaining message history in a sequential chain, enabling the model to consider the context of previous messages. This section demonstrates multi-turn conversation handling by updating the messages list each time we receive a new response from the assistant. This pattern can be repeated for as many turns as you need, continuously appending messages to maintain the conversational flow.
 
@@ -2868,7 +2897,7 @@ second_answer_text = ""
     print(second_answer_text)
 ```
 
-### Putting it All Together
+## Put it All Together
 
 You can find the full code file below, demonstrating a comparison of a streamed response vs. a regular response alongside handling a multi-turn conversation. 
 
@@ -2994,7 +3023,7 @@ title: Integrate SillyTavern with kluster.ai
 description: This guide walks you through setting up SillyTavern, a customizable LLM interface, with the kluster.ai API to enable AI-powered conversations.
 ---
 
-# How to integrate SillyTavern with kluster.ai
+# Integrate SillyTavern with kluster.ai
 
 This guide will help you set up and configure [SillyTavern](https://sillytavernai.com/){target=\_blank}, a customizable LLM interface, with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API. Follow the steps below to integrate these tools seamlessly.
 
