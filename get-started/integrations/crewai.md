@@ -91,7 +91,7 @@ After finishing the CLI setup, you will see a `src` directory with files `crew.p
     --8<-- 'code/get-started/integrations/crewai/hello_crew.py'
     ```
 
-## Run the agent
+## Put it all together
 
 To run your agent, ensure you are in the same directory as your `hello_main.py` file, then use the following command:
 
