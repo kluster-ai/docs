@@ -65,7 +65,7 @@ python hello-litellm.py
 
 That's it! You've successfully integrated LiteLLM with the kluster.ai API. Continue on to learn how to experiment with more advanced features of LiteLLM.
 
-## Explore LiteLLM Features
+## Explore LiteLLM features
 
 In the previous section, you learned how to use LiteLLM with the kluster.ai API by properly configuring the model via an OpenAI-like call and configuring the API key and API base URL. This section will dive deeper into some of the interesting features offered by LiteLLM and how you can use them in conjunction with the kluster.ai API.
 
@@ -88,7 +88,7 @@ To set up the demo file, go ahead and create a new python file, then take the fo
 --8<-- "code/get-started/integrations/litellm/litellm-features.py:13:16"
 ```
 
-### Use Streaming Responses
+### Use streaming responses
 
 You can enable streaming by simply passing `stream=True` to the `completion()` function. This returns a generator instead of a static response, letting you iterate over partial output chunks as they arrive. In the code sample below, each chunk is accessed in a for chunk in response: loop, and you can extract just the textual content (e.g., `chunk.choices[0].delta.content)` rather than printing all metadata. 
 
@@ -103,7 +103,7 @@ To configure a streaming response, take the following steps:
 --8<-- "code/get-started/integrations/litellm/litellm-features.py:34:42"
 ```
 
-### Handle Multi-Turn Conversation
+### Handle multi-turn conversation
 
 LiteLLM can facilitate multi-turn conversations by maintaining message history in a sequential chain, enabling the model to consider the context of previous messages. This section demonstrates multi-turn conversation handling by updating the messages list each time we receive a new response from the assistant. This pattern can be repeated for as many turns as you need, continuously appending messages to maintain the conversational flow.
 
