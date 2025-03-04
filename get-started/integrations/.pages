@@ -1,9 +1,11 @@
 title: Integrations
 hide: false
 nav:
- - 'CrewAI': crewai.md
- - 'eliza': eliza.md
- - 'LangChain': langchain.md
- - 'LiteLLM': litellm.md
- - 'Msty': msty.md
- - 'SillyTavern': sillytavern.md
+  - 'CrewAI': crewai.md
+  - 'eliza': eliza.md
+  - 'LangChain': langchain.md
+  - 'LiteLLM': litellm.md
+  - 'Msty': msty.md
+  - 'PydanticAI': pydantic.md
+  - 'SillyTavern': sillytavern.md
+  - 'TypingMind': typingmind.md
