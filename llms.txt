@@ -2280,7 +2280,7 @@ class HelloWorldCrew:
         )
     ```
 
-## Run the agent
+## Put it all together
 
 To run your agent, ensure you are in the same directory as your `hello_main.py` file, then use the following command:
 
@@ -2317,7 +2317,7 @@ description: Learn how to integrate kluster.ai with eliza, a fast, lightweight, 
 
 [eliza](https://elizaos.github.io/eliza/){target=\_blank} is an open-source framework designed to create and manage AI agents that can handle a variety of tasks, from simple chat interactions to more complex automation.
 
-In this guide, you'll learn how to integrate [kluster.ai](https://www.kluster.ai/) into eliza so you can leverage its powerful models and quickly set up your AI-driven workflows.
+In this guide, you'll learn how to integrate [kluster.ai](https://www.kluster.ai/) into eliza to leverage its powerful models and quickly set up your AI-driven workflows.
 
 ## Prerequisites
 
@@ -2325,35 +2325,36 @@ Before starting, ensure you have the following kluster prerequisites:
 
 - **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
 - **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+- **Clone and install the eliza repository** - follow the installation instructions on the [eliza Quick Start guide](https://elizaos.github.io/eliza/docs/quickstart/){target=\_blank}. Pay careful attention to the eliza prerequisites, including the minimum supported versions of Node.js and pnpm
 
-Next, you can clone and install the eliza repository by following the installation instructions on the [eliza Quick Start guide](https://elizaos.github.io/eliza/docs/quickstart/){target=\_blank}. Pay careful attention to the eliza prerequisites, including the minimum supported versions of Node.js and pnpm. You can pause at the **Configure Environment** section in the Quick Start guide, as those steps will be addressed in this guide.
+You can stop at the **Configure Environment** section in the Quick Start guide, as this guide covers those steps.
 
 ## Configure your environment
 
-After you have eliza installed, it's simple to utilize kluster.ai with eliza. Only three main changes to the `.env` file are required. You can run the following command to generate a `.env` file from the provided example. 
+After installing eliza, it's simple to utilize kluster.ai with eliza. Only three main changes to the `.env` file are required. 
 
+1. **Create `.env` file** - run the following command to generate a `.env` file from the eliza repository example:
 ```bash
 cp .env.example .env
 ```
 
-Then, set the following variables in the `.env` file: 
+2. **Set variables** - update the following variables in the `.env` file:
+    - **OPENAI_API_KEY** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
+    - **OPENAI_API_URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
+    - **OPENAI_DEFAULT_MODEL** - choose one of kluster.ai's available models based on your use case:
 
-  - **OPENAI_API_KEY** - replace `INSERT_API_KEY` in the code below with your own kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
-  - **OPENAI_API_URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
-  - **OPENAI_DEFAULT_MODEL** - choose one of kluster.ai's available models based on your use case:
-
-      - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
+        - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
 - `deepseek-ai/DeepSeek-R1`
   
-      Ensure that the model's full name starting with `klusterai/` is listed.
+      Ensure the model's full name starting with `klusterai/` is listed.
       
-      It's also recommended that you set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, `LARGE_OPENAI_MODEL` to the same value. This will allow you seamless experimentation with the different characters because different characters default to using different models
+      You should also set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, and `LARGE_OPENAI_MODEL` to the same value to allow seamless experimentation as different characters use different default models.
 
 The OpenAI configuration section of your `.env` file should resemble the following:
 
-```bash
+```bash title=".env"
 # OpenAI Configuration
 OPENAI_API_KEY=INSERT_KLUSTER_API_KEY
 OPENAI_API_URL=https://api.kluster.ai/v1
@@ -2367,11 +2368,10 @@ LARGE_OPENAI_MODEL=klusterai/Meta-Llama-3.3-70B-Instruct-Turbo
 
 ## Run and interact with your first agent
 
-Now that you've configured your environment properly you're ready to run your first agent! eliza comes with a number of characters that you can interact with by prompting or that can autonomously perform tasks like tweeting. This guide relies on the `Dobby` character for its minimal setup requirements. Other agents, particularly those that handle tweets, would necessitate additional steps, such as X login and similar information. 
+Now that you've configured your environment, you're ready to run your first agent! eliza has several characters you can interact with by prompting or through autonomous tasks like tweeting. This guide relies on the `Dobby` character for its minimal setup requirements.
 
-By default, `Dobby` uses the `openai` model, which has been properly configured to rely on the kluster.ai API, but it doesn't hurt to double-check the `dobby.character.json` file under the `characters` folder. You should see the configuration start with the following:
-
-```json
+1. **Verify character configuration** - open the `dobby.character.json` file inside the `characters` folder. By default, `Dobby` uses the `openai` model, which you've already configured to use the kluster.ai API. The `Dobby` configuration should start with the following:
+```json title="dobby.character.json"
 {
   "name": "Dobby",
   "clients": [],
@@ -2379,27 +2379,27 @@ By default, `Dobby` uses the `openai` model, which has been properly configured 
 }
 ```
 
-To run the `Dobby` agent, run the following command from the project root directory:
-
+2. **Run the agent** - run the following command from the project root directory to run the `Dobby` agent:
 ```bash
 pnpm start --character="characters/dobby.character.json"
 ``` 
 
-In another terminal window, run the following command to launch the web UI: 
-
+3. **Launch the UI** - in another terminal window, run the following command to launch the web UI: 
 ```bash
 pnpm start:client
 ```
 
-You'll be prompted to open your browser to [http://localhost:5173/](http://localhost:5173/){target=\_blank}. 
+4. **Open your browser** - follow the prompts and open your browser to [http://localhost:5173/](http://localhost:5173/){target=\_blank}
 
-<div id="termynal" data-termynal>
+    <div id="termynal" data-termynal>
    <span data-ty="input"><span class="file-path">pnpm start:client</span>
    <span data-ty>VITE v6.0.11 ready in 824 ms</span>
    <span data-ty>➜  Local:   http://localhost:5173/</span>
    <span data-ty>➜  Network: use --host to expose</span>
    <span data-ty>➜  press h + enter to show help</span>
 </div>
+
+## Put it all together
 
 You can now interact with Dobby by clicking on the **Chat** button and starting the conversation: 
 
@@ -2412,14 +2412,14 @@ Doc-Content: https://docs.kluster.ai/get-started/integrations/langchain/
 --- BEGIN CONTENT ---
 ---
 title: Integrate LangChain with kluster.ai
-description: This guide walks you through integrating LangChain, a framework designed to simplify the development of LLM powered-applications, with the kluster.ai API.
+description: This guide walks you through integrating LangChain, a framework designed to simplify the development of LLM-powered applications with the kluster.ai API.
 ---
 
 # Integrate LangChain with kluster.ai
 
-[LangChain](https://www.langchain.com/){target=\_blank} offers a range of features—like memory modules for context tracking, retrieval augmentation to feed external data into prompts, and customizable multi-step “chains” to break down complex tasks. By leveraging these capabilities with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API, you can build more robust and context-aware solutions that seamlessly handle everything from short-form answers to intricate conversations.
+[LangChain](https://www.langchain.com/){target=\_blank} offers a range of features—like memory modules for context tracking, retrieval augmentation to feed external data into prompts, and customizable multi-step “chains" to break down complex tasks. By leveraging these capabilities with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API, you can build more robust and context-aware solutions that seamlessly handle everything from short-form answers to intricate conversations.
 
-This guide demonstrates how to integrate the `ChatOpenAI` class from the `langchain_openai` package with the kluster.ai API, then walks through building a multi-turn conversational agent that leverages LangChain’s memory for context-aware interactions.
+This guide demonstrates how to integrate the `ChatOpenAI` class from the `langchain_openai` package with the kluster.ai API, then walks through building a multi-turn conversational agent that leverages LangChain's memory for context-aware interactions.
 
 ## Prerequisites
 
@@ -2443,11 +2443,11 @@ Before starting, ensure you have the following:
 
 ## Integrate with LangChain - Quick Start
 
-It's easy to integrate kluster.ai with LangChain—when configuring the chat model, just point your `ChatOpenAI` instance to the correct base URL and configure the following settings:
+It's easy to integrate kluster.ai with LangChain—when configuring the chat model, point your `ChatOpenAI` instance to the correct base URL and configure the following settings:
 
   - **Base URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
-  - **API key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don’t have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
-  - **Select your model** - choose one of kluster.ai’s available models based on your use case:
+  - **API key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
+  - **Select your model** - choose one of kluster.ai's available models based on your use case:
 
       - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
@@ -2470,9 +2470,9 @@ That's all you need to start with LangChain and the kluster.ai API! Next, this g
 
 ## Build a multi-turn conversational agent
 
-This section will explore what LangChain can do beyond a single prompt-and-response interaction. One standout feature of LangChain is its built-in memory, which tracks conversation context across multiple user queries. In the following steps, you'll set up a multi-turn conversational agent that takes advantage of this memory and seamlessly integrates with the kluster.ai API: 
+This section will explore what LangChain can do beyond a single prompt-and-response interaction. One standout feature of LangChain is its built-in memory, which tracks conversation context across multiple user queries. In the following steps, you'll set up a multi-turn conversational agent that takes advantage of this memory and seamlessly integrates with the kluster.ai API.
 
-1. First, import the necessary LangChain components for memory management, prompt handling, and kluster.ai integration 
+1. **Import LangChain components** - import the following components for memory management, prompt handling, and kluster.ai integration:
 ```python
 from langchain.chains.conversation.memory import ConversationBufferMemory
 from langchain_community.chat_message_histories import ChatMessageHistory
@@ -2480,12 +2480,20 @@ from langchain_core.messages import HumanMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_openai import ChatOpenAI
 ```
-2. Next, create a memory instance to store and manage the conversation’s context, allowing the chatbot to remember previous user messages. Finally, you'll configure the `ChatOpenAI` model to point to kluster.ai’s endpoint (with your API key and chosen model). Remember, you can always change the selected model based on your needs 
+2. **Create a memory instance** - to store and manage the conversation's context, allowing the chatbot to remember previous user messages.
 ```python
 message_history = ChatMessageHistory()
 memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 ```
-3. Next, define a prompt template that includes a system instruction for the assistant, a placeholder for the conversation history, and an input slot for the user’s query 
+3. **Configure the `ChatOpenAI` model** - point to kluster.ai's endpoint with your API key and chosen model. Remember, you can always change the selected model based on your needs
+```python
+llm = ChatOpenAI(
+    base_url="https://api.kluster.ai/v1",
+    api_key="INSERT_API_KEY",
+    model="klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
+)
+```
+4. **Define a prompt template** - include a system instruction for the assistant, a placeholder for the conversation history, and an input slot for the user's query 
 ```python
 prompt = ChatPromptTemplate.from_messages([
     ("system", "You are a helpful assistant."),
@@ -2493,7 +2501,7 @@ prompt = ChatPromptTemplate.from_messages([
     ("human", "{input}")
 ])
 ```
-4. You'll then create the `ConversationChain` by passing in the LLM, memory, and this prompt template—so every new user query is automatically enriched with the stored conversation context and guided by the assistant’s role
+5. **Create the `ConversationChain`** - pass in the LLM, memory, and this prompt template so every new user query is automatically enriched with the stored conversation context and guided by the assistant's role
 ```python
 conversation = ConversationChain(
     llm=llm,
@@ -2501,20 +2509,22 @@ conversation = ConversationChain(
     prompt=prompt
 )
 ```
-5. Now, it's time to prompt the model with the first question. You can prompt it with any question; the example chosen here is designed to demonstrate context awareness between questions
+6. **Prompt the model with the first question** - you can prompt the model with any question. The example chosen here is designed to demonstrate context awareness between questions
 ```python
 question1 = "Hello! Can you tell me something interesting about the city of Kathmandu?"
 print("Question 1:", question1)
 response1 = conversation.predict(input=question1)
 print("Response 1:", response1)
 ```
-6. Finally, a follow-up question is posed without restating the city name—allowing LangChain’s memory to handle the context implicitly. By capturing and printing both the questions and the responses, you can see how multi-turn interactions work in practice, with each new query informed by the conversation
+7. **Pose a follow-up question** - ask another question without resupplying the city name and notice how LangChain's memory implicitly handles the context. Return and print the questions and responses to see how the conversation informs each new query to create multi-turn interactions
 ```python
 question2 = "What is the population of that city?"
 print("\nQuestion 2:", question2)
 response2 = conversation.predict(input=question2)
 print("Response 2:", response2)
 ```
+
+## Put it all together
 
 ??? code "View complete script"
     ```python title="langchain-advanced.py"
@@ -2579,7 +2589,7 @@ When running the complete script, you should see output that resembles the follo
 <span data-ty>It's worth noting that Nepal's population density is relatively high, with many people living in urban areas. The Kathmandu Valley, in particular, is one of the most densely populated regions in the country.</span>
 </div>
 
-That’s it! You’ve successfully integrated LangChain with the kluster.ai API, and your configured multi-turn conversational agent is ready to leverage the power of LangChain and the kluster.ai API. For more information about the capabilities of LangChain, be sure to check out the [LangChain docs](https://python.langchain.com/docs/introduction/){target=\_blank}.
+That's it! You've successfully integrated LangChain with the kluster.ai API, and your configured multi-turn conversational agent is ready to leverage the power of LangChain and the kluster.ai API. For more information about the capabilities of LangChain, be sure to check out the [LangChain docs](https://python.langchain.com/docs/introduction/){target=\_blank}.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/get-started/integrations/litellm/
@@ -2609,7 +2619,7 @@ Before starting, ensure you have the following:
 
 ## Integrate with LiteLLM
 
-In this section, you'll learn how to integrate kluster.ai with LiteLLM. You’ll configure your environment variables, specify a kluster.ai model, and make a simple request using LiteLLM’s OpenAI-like interface.
+In this section, you'll learn how to integrate kluster.ai with LiteLLM. You'll configure your environment variables, specify a kluster.ai model, and make a simple request using LiteLLM's OpenAI-like interface.
 
 1. **Import LiteLLM and its dependencies** - Create a new file (e.g., `hello-litellm.py`) and start by importing the necessary Python modules:
 ```python
@@ -2638,12 +2648,12 @@ response = completion(
 
 print(response)
 ```
-2. **Set your kluster.ai API key and Base URL** - Replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}
+2. **Set your kluster.ai API key and Base URL** - Replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
 ```python
 os.environ["OPENAI_API_KEY"] = "INSERT_KLUSTER_API_KEY"
 os.environ["OPENAI_API_BASE"] = "https://api.kluster.ai/v1"
 ```
-3. **Define your conversation (system + user messages)** - Set up your initial system prompt and user message. The system message defines your AI assistant’s role, while the user message is the actual question or prompt
+3. **Define your conversation (system + user messages)** - Set up your initial system prompt and user message. The system message defines your AI assistant's role, while the user message is the actual question or prompt
 ```python
 messages = [
     {"role": "system", "content": "You are a helpful assistant."},
@@ -2710,15 +2720,15 @@ python hello-litellm.py
     <span data-ty>ModelResponse(id='chatcmpl-9877dfe6-6f1d-483f-a392-d791b89c75d6', created=1739495162, model='klusterai/Meta-Llama-3.3-70B-Instruct-Turbo', object='chat.completion', system_fingerprint=None, choices=[Choices(finish_reason='stop', index=0, message=Message(content='The capital of California is Sacramento.', role='assistant', tool_calls=None, function_call=None, provider_specific_fields={'refusal': None}, refusal=None))], usage=Usage(completion_tokens=8, prompt_tokens=48, total_tokens=56, completion_tokens_details=None, prompt_tokens_details=None), service_tier=None, prompt_logprobs=None)</span>
 </div>
 
-That's it! You've successfully integrated LiteLLM with the kluster.ai API. Continue on to learn how to experiment with more advanced features of LiteLLM.
+That's it! You've successfully integrated LiteLLM with the kluster.ai API. Continue to learn how to experiment with more advanced features of LiteLLM.
 
-## Explore LiteLLM Features
+## Explore LiteLLM features
 
-In the previous section, you learned how to use LiteLLM with the kluster.ai API by properly configuring the model via an OpenAI-like call and configuring the API key and API base URL. This section will dive deeper into some of the interesting features offered by LiteLLM and how you can use them in conjunction with the kluster.ai API.
+In the previous section, you learned how to use LiteLLM with the kluster.ai API by properly configuring the model via an OpenAI-like call and configuring the API key and API base URL. This section will dive deeper into some of the interesting features offered by LiteLLM and how to use them with the kluster.ai API.
 
-To set up the demo file, go ahead and create a new python file, then take the following steps:
+Follow these steps to get started:
 
-1. Import LiteLLM and its dependencies:  
+1. **Import LiteLLM and its dependencies** - create a new file (e.g., `litellm-features.py`) and start by importing the necessary Python modules:
 ```python
 import os
 
@@ -2800,29 +2810,36 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-2. Set your kluster API key and base URL:
+2. **Set your kluster.ai API key and Base URL** - Replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}
 ```python
 os.environ["OPENAI_API_KEY"] = "INSERT_API_KEY"  # Replace with your key
 os.environ["OPENAI_API_BASE"] = "https://api.kluster.ai/v1"
 ```
-3. Set your desired kluster model:
+3. **Set your desired kluster model** - choose one of the kluster.ai models that best fits your use case:
+
+    - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
+- `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
+- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
+- `deepseek-ai/DeepSeek-R1`
+
+    Prepend the model name with `openai/` so LiteLLM recognizes it as an OpenAI-like model request.
 ```python
 model = "openai/klusterai/Meta-Llama-3.3-70B-Instruct-Turbo"
 ```
-4. Define the system prompt and your first user message:
+4. **Define the system prompt and your first user message** - set up system and user roles:
 ```python
 {"role": "system", "content": "You are a helpful AI assistant."},
         {"role": "user",   "content": "Explain the significance of the California Gold Rush."},
     ]
 ```
 
-### Use Streaming Responses
+### Use streaming responses
 
-You can enable streaming by simply passing `stream=True` to the `completion()` function. This returns a generator instead of a static response, letting you iterate over partial output chunks as they arrive. In the code sample below, each chunk is accessed in a for chunk in response: loop, and you can extract just the textual content (e.g., `chunk.choices[0].delta.content)` rather than printing all metadata. 
+You can enable streaming by simply passing `stream=True` to the `completion()` function. Streaming returns a generator instead of a static response, letting you iterate over partial output chunks as they arrive. In the code sample below, each chunk is accessed in a for chunk in response: loop, and you can extract just the textual content (e.g., `chunk.choices[0].delta.content)` rather than printing all metadata. 
 
 To configure a streaming response, take the following steps:
 
-1. Initiate a streaming request to the model by setting `stream=True` in the `completion()` function. This tells LiteLLM to return partial pieces (chunks) of the response as they become available, rather than waiting for the entire response to be ready.
+1. **Initiate a streaming request to the model** - set `stream=True` in the `completion()` function to tell LiteLLM to return partial pieces (chunks) of the response as they become available rather than waiting for the entire response to be ready
 ```python
 try:
         response_stream = completion(
@@ -2839,7 +2856,7 @@ try:
     print("\n--------- STREAMING RESPONSE (text only) ---------")
     streamed_text = []
 ```
-2. However, if we just return all of the streamed data, it's going to include a lot of excessive noise like token counts, etc. For readability, you probably prefer just the text content of the response. Isolate that from the rest of the streamed response with the following code:
+2. **Isolate the returned text content** - returning all of the streamed data will include a lot of excessive noise like token counts, etc. You can isolate the text content from the rest of the streamed response with the following code:
 ```python
 for chunk in response_stream:
         if hasattr(chunk, "choices") and chunk.choices:
@@ -2851,21 +2868,21 @@ for chunk in response_stream:
     print("\n")  # new line after streaming ends
 ```
 
-### Handle Multi-Turn Conversation
+### Handle multi-turn conversation
 
 LiteLLM can facilitate multi-turn conversations by maintaining message history in a sequential chain, enabling the model to consider the context of previous messages. This section demonstrates multi-turn conversation handling by updating the messages list each time we receive a new response from the assistant. This pattern can be repeated for as many turns as you need, continuously appending messages to maintain the conversational flow.
 
 Let's take a closer look at each step:
 
-1. First, we need to combine the streamed chunks of the first message. Since they were streamed, they need to be re-assembled into a single message. After collecting partial responses in `streamed_text`, join them into a single string called `complete_first_answer`.
+1. **Combine the streamed chunks of the first message** - since the message is streamed in chunks, you must re-assemble them into a single message. After collecting partial responses in `streamed_text`, join them into a single string called `complete_first_answer`.
 ```python
 complete_first_answer = "".join(streamed_text)
 ```
-2. Next, append the assistant’s reply to enhance the context of the conversation. Add this `complete_first_answer` back into messages under the "assistant" role as follows:
+2. **Append the assistant's reply** - to enhance the context of the conversation. Add this `complete_first_answer` back into messages under the "assistant" role as follows:
 ```python
 messages.append({"role": "assistant", "content": complete_first_answer})
 ```
-3. Then, craft the 2nd message to the assistant. Append a new message object to messages with the user’s next question as follows:
+3. **Craft the second message to the assistant** - append a new message object to messages with the user's next question as follows:
 ```python
 messages.append({
         "role": "user",
@@ -2875,7 +2892,7 @@ messages.append({
         ),
     })
 ```
-4. Now, ask the model for the response to the 2nd question, this time without the streaming feature enabled. Pass the updated messages to completion() with `stream=False`, prompting LiteLLM to generate a standard (single-shot) response as follows:
+4. **Ask the model to respond to the second question** - this time, don't enable the streaming feature. Pass the updated messages to `completion()` with `stream=False`, prompting LiteLLM to generate a standard (single-shot) response as follows:
 ```python
 response_2 = completion(
             model=model,
@@ -2888,7 +2905,7 @@ response_2 = completion(
         print(f"Error calling model: {err}")
         return
 ```
-5. Finally, parse and print the second answer. Extract `response_2.choices[0].message["content"]`, store it in `second_answer_text`, and print to the console for your final output: 
+5. **Parse and print the second answer** - extract `response_2.choices[0].message["content"]`, store it in `second_answer_text`, and print to the console for your final output: 
 ```python
 second_answer_text = ""
     if response_2.choices and hasattr(response_2.choices[0], "message"):
@@ -2897,9 +2914,9 @@ second_answer_text = ""
     print(second_answer_text)
 ```
 
-## Put it All Together
+## Put it all together
 
-You can find the full code file below, demonstrating a comparison of a streamed response vs. a regular response alongside handling a multi-turn conversation. 
+You can view the full script below. It demonstrates a streamed response versus a regular response and how to handle a multi-turn conversation.  
 
 ??? code "litellm-features.py"
     ```python
@@ -2984,7 +3001,7 @@ if __name__ == "__main__":
     main()
     ```
 
-Upon running it you'll see output like the following:
+Upon running it, you'll see output like the following:
 
 <div id="termynal" data-termynal>
     <span data-ty="input"><span class="file-path">python streaming-litellm.py</span></span>
