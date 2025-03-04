@@ -185,7 +185,7 @@ It is generally recommended to alter this or `temperature` but not both.
 
 **Returns**
 
-The created [Chat completion](#batch-object) object.
+The created [Chat completion](#chat-completion-object) object.
 
 </div>
 <div markdown>
