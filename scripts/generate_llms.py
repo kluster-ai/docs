@@ -45,7 +45,7 @@ def get_all_markdown_files(directory):
             continue
 
         for file in files:
-            if file.endswith(('.md', '.mdx')):
+            if file.endswith(('.md', '.mdx','.ipynb')):
                 results.append(os.path.join(root, file))
 
      # Sort the files to ensure consistent order
@@ -63,7 +63,7 @@ def build_index_section(files):
         if '.snippets' in relative_path.split(os.sep):
             continue
 
-        doc_url_path = re.sub(r'\.(md|mdx)$', '', relative_path)
+        doc_url_path = re.sub(r'\.(md|mdx|ipynb)$', '', relative_path)
         doc_url = f"{docs_url}{doc_url_path}"
 
         # Remove trailing /index from doc_url
