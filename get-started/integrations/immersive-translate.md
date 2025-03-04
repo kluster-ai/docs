@@ -45,7 +45,7 @@ Take the following steps to configure the kluster.ai API as a custom translation
 6. Specify a value of `1` for max requests per second to avoid rate limits. Paid kluster.ai API accounts may have higher rate limits
 7. Press **Verify Service** in the upper right corner to validate the input values
 
-![](/images/get-started/integrations/immersivetranslate/immersive-2.webp)
+![](/images/get-started/integrations/immersivetranslate/immersive-3.webp)
 
 You must take one more step before using kluster.ai with Immersive Translate. Although kluster.ai has been added as a provider, it is disabled by default. To enable it, take the following steps:
 
@@ -54,7 +54,7 @@ You must take one more step before using kluster.ai with Immersive Translate. Al
 
 That's it! The next section will demonstrate using Immersive Translate with the kluster.ai API to perform webpage translations.
 
-![](/images/get-started/integrations/immersivetranslate/immersive-3.webp)
+![](/images/get-started/integrations/immersivetranslate/immersive-4.webp)
 
 ## Translate content with Immersive Translate
 
@@ -64,10 +64,10 @@ With Immersive Translate, you can easily translate content with just a few click
 2. Select the language to translate the content into. This is set by default to your native language 
 3. Press **Translate**
 
-![](/images/get-started/integrations/immersivetranslate/immersive-4.webp)
+![](/images/get-started/integrations/immersivetranslate/immersive-5.webp)
 
 Then, the content translated by the Immersive Translate plugin will begin to appear on the page. 
 
-![](/images/get-started/integrations/immersivetranslate/immersive-5.webp)
+![](/images/get-started/integrations/immersivetranslate/immersive-6.webp)
 
 And that's it! You've now set up Immersive Translate to use the kluster.ai API and learned how to translate content.
