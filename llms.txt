@@ -4366,7 +4366,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-ana
     "\n",
     "Fine-tuning is the process of customizing an existing model using new data to improve performance on a specific task. Fine-tuning can offer valuable benefits: it can significantly improve performance for your specific use case and sometimes rival the results of more expensive, general-purpose models.\n",
     "\n",
-   "In this guide, you'll learn how to train a sentiment analysis model tailored to your data using <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a>. We'll walk through each step of the fine-tuning process—covering dataset setup, environment configuration, and batch inference. By following along, you'll discover how to leverage kluster.ai's powerful platform to create a custom model that boosts accuracy for financial text analysis and beyond."
+    "In this guide, you'll learn how to train a sentiment analysis model tailored to your data using <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a>. We'll walk through each step of the fine-tuning process—covering dataset setup, environment configuration, and batch inference. By following along, you'll discover how to leverage kluster.ai's powerful platform to create a custom model that boosts accuracy for financial text analysis and beyond."
    ]
   },
   {
@@ -4497,7 +4497,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-ana
     "id": "fb8c5014-5b0c-43c2-a238-073dbde2d90a"
    },
    "source": [
-    "## Fetch a real dataset for Batch inference\n",
+    "## Fetch a real dataset for batch inference\n",
     "\n",
     "This dataset contains a variety of financial news headlines, each labeled as positive, negative, or neutral. In this context, positive indicates a beneficial impact on the company’s stock, negative suggests a detrimental impact, and neutral implies no significant change is expected.\n",
     "\n",
@@ -4536,7 +4536,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-ana
     "id": "0a03d805-0d59-42ce-ac2a-4f9beacd639b"
    },
    "source": [
-    "### Split data into train/test for Fine-tuning"
+    "### Split data into train/test for fine-tuning"
    ]
   },
   {
@@ -4546,7 +4546,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-ana
     "id": "MzyehWgLQuAq"
    },
    "source": [
-     "Next, we need to split the data into training and testing datasets (to be used later)."
+    "Next, we need to split the data into training and testing datasets (to be used later)."
    ]
   },
   {
@@ -4885,7 +4885,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-ana
     "id": "85c41457-2f31-4e98-aa55-3a42a478b8e7"
    },
    "source": [
-    "## Test the Fine-tuned model with Batch inference"
+    "## Test the fine-tuned model with batch inference"
    ]
   },
   {
@@ -4925,7 +4925,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-ana
     "id": "c4f5a51c-fc39-4567-b85d-95a98d5f9c98"
    },
    "source": [
-    "Now that the prompt is defined, it's time to execute the code and run the classification task for each model. In this step, we loop through the list of models, creating the requests and Batch jobs, monitoring progress, and retrieving the results.\n"
+    "Now that the prompt is defined, it's time to execute the code and run the classification task for each model. In this step, we loop through the list of models, creating the requests and batch jobs, monitoring progress, and retrieving the results.\n"
    ]
   },
   {
@@ -5285,7 +5285,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
     "id": "OyGuHllZllct"
    },
    "source": [
-    "## Perform Batch inference"
+    "## Perform batch inference"
    ]
   },
   {
@@ -5295,11 +5295,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
     "id": "6-MZlfXAoiNv"
    },
    "source": [
-    "To run the inference job, we’ll follow three simple steps:\n",
+    "To run the inference job, we'll follow three simple steps:\n",
     "\n",
-    "1. **Create the Batch input file -** we’ll create a file containing the requests to be processed by the model\n",
-    "2. **Upload the Batch input file to kluster.ai -** once the file is ready, we’ll upload it to the kluster.ai platform using the API, where it will be queued for processing\n",
-    "3. **Start the job -** after the upload, we’ll trigger the job to process the data\n",
+    "1. **Create the batch input file** - we'll create a file containing the requests to be processed by the model\n",
+    "2. **Upload the batch input file to kluster.ai** - once the file is ready, we'll upload it to the kluster.ai platform using the API, where it will be queued for processing\n",
+    "3. **Start the job** - after the upload, we'll trigger the job to process the data\n",
     "\n",
     "Everything is preconfigured for you—just execute the cells below to see it all in action."
    ]
@@ -5311,7 +5311,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
     "id": "Ew-R24Ltp5EW"
    },
    "source": [
-    "### Create the Batch file"
+    "### Create the batch file"
    ]
   },
   {
@@ -5656,7 +5656,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
    "id": "7d195dd1-1293-4407-b6ad-cab7e77b14c0",
    "metadata": {},
    "source": [
-    "Congratulations! You’ve successfully completed the keyword extraction task using the kluster.ai Batch API. This demonstration highlights how you can effortlessly manage large datasets and extract meaningful insights. With the Batch API, you can scale your workflows smoothly, making it an essential tool for processing large-scale datasets."
+    "Congratulations! You’ve successfully completed the keyword extraction task using the kluster.ai batch API. This demonstration highlights how you can effortlessly manage large datasets and extract meaningful insights. With the batch API, you can scale your workflows smoothly, making it an essential tool for processing large-scale datasets."
    ]
   }
  ],
@@ -5811,7 +5811,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/llm-as-a-judge.ipyn
     "These functions will make our evaluation process more efficient and organized. Let's go through each one and understand its purpose.\n",
     "\n",
     "1. **`create_tasks()`** - formats our data for the API\n",
-    "2. **`save_tasks()`** - prepares Batch files for processing\n",
+    "2. **`save_tasks()`** - prepares batch files for processing\n",
     "3. **`monitor_job_status()`** - tracks evaluation progress\n",
     "4. **`get_results()`** - collects and processes model outputs"
    ]
@@ -5821,17 +5821,17 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/llm-as-a-judge.ipyn
    "id": "e0ae3e6f-2534-4541-812a-bcfc62a747bc",
    "metadata": {},
    "source": [
-    "### Create and manage Batch files\n",
+    "### Create and manage batch files\n",
     "\n",
-    "A Batch file in our context is a collection of requests that we'll send to our models for evaluation. Think of it as a organized list of tasks we want our models to complete.\n",
+    "A batch file in our context is a collection of requests that we'll send to our models for evaluation. Think of it as a organized list of tasks we want our models to complete.\n",
     "\n",
-    "We'll take the following steps to create Batch files:\n",
+    "We'll take the following steps to create batch files:\n",
     "\n",
     "1. **Creating tasks** - we'll convert each movie description into a format LLMs can process\n",
     "2. **Organizing data** -we'll add necessary metadata and instructions for each task\n",
     "3. **Saving files** - we'll store these tasks in a structured format (JSONL) for processing\n",
     "\n",
-    "Let's break down the key components of our Batch file creation:\n",
+    "Let's break down the key components of our batch file creation:\n",
     "- **`custom_id`** - helps us track individual requests\n",
     "- **`system_prompt`** - provides instructions to the model\n",
     "- **`content`** - the actual text we want to classify\n",
@@ -5880,7 +5880,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/llm-as-a-judge.ipyn
    "source": [
     "### Upload files to kluster.ai\n",
     "\n",
-    "Now that we've prepared our Batch files, we'll upload them to the <a href=\"https://platform.kluster.ai/\" target=\"_blank\">kluster.ai platform</a> for Batch inference. This step is crucial for:\n",
+    "Now that we've prepared our batch files, we'll upload them to the <a href=\"https://platform.kluster.ai/\" target=\"_blank\">kluster.ai platform</a> for batch inference. This step is crucial for:\n",
     "\n",
     "1. Getting our data to the models\n",
     "2. Setting up the processing queue\n",
@@ -5923,7 +5923,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/llm-as-a-judge.ipyn
    "source": [
     "### Check job progress\n",
     "\n",
-    "This function provides real-time monitoring of Batch job progress:\n",
+    "This function provides real-time monitoring of batch job progress:\n",
     "\n",
     "- Continuously checks job status via the kluster.ai API\n",
     "- Displays current completion count (completed/total requests)\n",
@@ -5989,7 +5989,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/llm-as-a-judge.ipyn
     "\n",
     "The `get_results()` function below does the following:\n",
     "\n",
-    "1. Retrieves the completed Batch job results\n",
+    "1. Retrieves the completed batch job results\n",
     "2. Extracts the model's response content from each result\n",
     "3. Returns a list of all model responses"
    ]
@@ -6030,7 +6030,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/llm-as-a-judge.ipyn
    "id": "abb279d1-ca98-4933-aaec-c41bc1a279f3",
    "metadata": {},
    "source": [
-    "Now that we have covered the core general functions and workflow used for Batch inference, in this guide, we’ll be using the IMDb Top 1000 dataset, which contains information about top-rated movies, including their descriptions and genres. Let's download it and see what it looks like."
+    "Now that we have covered the core general functions and workflow used for batch inference, in this guide, we’ll be using the IMDb Top 1000 dataset, which contains information about top-rated movies, including their descriptions and genres. Let's download it and see what it looks like."
    ]
   },
   {
@@ -6111,7 +6111,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/llm-as-a-judge.ipyn
    "id": "135f2093-5d10-45c7-a627-3850b55cc4ed",
    "metadata": {},
    "source": [
-    "## Performing Batch inference"
+    "## Performing batch inference"
    ]
   },
   {
@@ -6119,7 +6119,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/llm-as-a-judge.ipyn
    "id": "f6417258-c279-446c-8060-6f05f07a1572",
    "metadata": {},
    "source": [
-    "In this section, we will perform Batch inference using the previously defined helper functions and the IMDb dataset. The goal is to classify movie genres based on their descriptions using a Large Language Model (LLM).\n",
+    "In this section, we will perform batch inference using the previously defined helper functions and the IMDb dataset. The goal is to classify movie genres based on their descriptions using a Large Language Model (LLM).\n",
     "\n",
     "We define the input prompts for the LLM, which consist of a system prompt outlining the task and user content, which includes a list of movie descriptions from our dataset."
    ]
@@ -6146,7 +6146,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/llm-as-a-judge.ipyn
    "id": "f99550a3-006a-430d-8f0c-4b4a07b66f79",
    "metadata": {},
    "source": [
-    "Next, we'll create and save the tasks, submit the Batch inference job, and monitor its progress. Once the process is complete, the predictions will be integrated into the dataset."
+    "Next, we'll create and save the tasks, submit the batch inference job, and monitor its progress. Once the process is complete, the predictions will be integrated into the dataset."
    ]
   },
   {
@@ -6242,7 +6242,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/llm-as-a-judge.ipyn
    "id": "c5750125-8bf6-4a29-8850-60e86e2d767b",
    "metadata": {},
    "source": [
-    "Following the same set of steps as the previous inference, we will create and save the tasks, submit the Batch inference job, and monitor its progress. Once the process is complete, the predictions will also be integrated into the dataset."
+    "Following the same set of steps as the previous inference, we will create and save the tasks, submit the batch inference job, and monitor its progress. Once the process is complete, the predictions will also be integrated into the dataset."
    ]
   },
   {
@@ -6396,7 +6396,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
    "id": "1297a26a-fdb2-48b4-bc1e-d66ec0b40acc",
    "metadata": {},
    "source": [
-    "In this hands-on tutorial, you'll learn how to systematically evaluate Language Models (LLMs) using the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> Batch API. We'll walk through a practical example of comparing different models for a real-world task.\n",
+    "In this hands-on tutorial, you'll learn how to systematically evaluate Language Models (LLMs) using the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API. We'll walk through a practical example of comparing different models for a real-world task.\n",
     "\n",
     "Choosing the right LLM for your specific use case is crucial but can be challenging. While larger models might offer better performance, they often come with higher costs. kluster.ai provides high-performing models at competitive prices, making advanced AI more accessible.\n",
     "\n",
@@ -6542,7 +6542,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
     "These functions will make our evaluation process more efficient and organized. Let's go through each one and understand its purpose:\n",
     "\n",
     "1. **`create_tasks()`** - formats our data for the API\n",
-    "2. **`save_tasks()`** - prepares Batch files for processing\n",
+    "2. **`save_tasks()`** - prepares batch files for processing\n",
     "3. **`monitor_job_status()`** - tracks evaluation progress\n",
     "4. **`get_results()`** - collects and processes model outputs"
    ]
@@ -6552,17 +6552,17 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
    "id": "b386da2f-8f5a-430f-97e0-118928c3faac",
    "metadata": {},
    "source": [
-    "### Create and manage Batch files\n",
+    "### Create and manage batch files\n",
     "\n",
-    "A Batch file in our context is a collection of requests that we'll send to our models for evaluation. Think of it as a organized list of tasks we want our models to complete.\n",
+    "A batch file in our context is a collection of requests that we'll send to our models for evaluation. Think of it as a organized list of tasks we want our models to complete.\n",
     "\n",
-    "We'll take the following steps to create Batch files:\n",
+    "We'll take the following steps to create batch files:\n",
     "\n",
     "1. **Creating tasks** - we'll convert each movie description into a format LLMs can process\n",
     "2. **Organizing data** -we'll add necessary metadata and instructions for each task\n",
     "3. **Saving files** - we'll store these tasks in a structured format (JSONL) for processing\n",
     "\n",
-    "Let's break down the key components of our Batch file creation:\n",
+    "Let's break down the key components of our batch file creation:\n",
     "- **`custom_id`** - helps us track individual requests\n",
     "- **`system_prompt`** - provides instructions to the model\n",
     "- **`content`** - the actual text we want to classify\n",
@@ -6613,7 +6613,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
    "source": [
     "### Upload files to kluster.ai\n",
     "\n",
-    "Now that we've prepared our Batch files, we'll upload them to the <a href=\"https://platform.kluster.ai/\" target=\"_blank\">kluster.ai platform</a> for Batch inference. This step is crucial for:\n",
+    "Now that we've prepared our batch files, we'll upload them to the <a href=\"https://platform.kluster.ai/\" target=\"_blank\">kluster.ai platform</a> for batch inference. This step is crucial for:\n",
     "\n",
     "1. Getting our data to the models\n",
     "2. Setting up the processing queue\n",
@@ -6664,7 +6664,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
    "id": "b35d9a1d",
    "metadata": {},
    "source": [
-    "This function provides real-time monitoring of Batch job progress:\n",
+    "This function provides real-time monitoring of batch job progress:\n",
     "\n",
     "- Continuously checks job status via the kluster.ai API\n",
     "- Displays current completion count (completed/total requests)\n",
@@ -6730,7 +6730,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
     "\n",
     "The `get_results()` function below does the following:\n",
     "\n",
-    "1. Retrieves the completed Batch job results\n",
+    "1. Retrieves the completed batch job results\n",
     "2. Extracts the model's response content from each result\n",
     "3. Returns a list of all model responses\n",
     "\n"
@@ -6764,7 +6764,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
     "id": "udPtLfTaisSw"
    },
    "source": [
-    "## Prepare a real dataset for Batch inference"
+    "## Prepare a real dataset for batch inference"
    ]
   },
   {
@@ -6772,7 +6772,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
    "id": "e6b9ad42-cc58-4054-a510-af09a8592635",
    "metadata": {},
    "source": [
-    "Now that we have covered the core general functions and workflow used for Batch inference, in this guide, we'll use the IMDb Top 1000 dataset. This dataset contains information about top-rated movies, including their descriptions and genres. Let's download it and see what it looks like."
+    "Now that we have covered the core general functions and workflow used for batch inference, in this guide, we'll use the IMDb Top 1000 dataset. This dataset contains information about top-rated movies, including their descriptions and genres. Let's download it and see what it looks like."
    ]
   },
   {
@@ -6865,7 +6865,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
    "id": "4fe66a82-afc0-4fea-9b73-f33fe93f3e89",
    "metadata": {},
    "source": [
-    "## Perform Batch inference"
+    "## Perform batch inference"
    ]
   },
   {
@@ -7000,7 +7000,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
     "\n",
     "- **Model evaluation process** - how to systematically compare LLM performance, using accuracy as a key metric and implementing batch inference for efficient evaluation\n",
     "- **Cost-performance balance** - larger models aren’t always significantly better; the importance of considering cost-effectiveness and making data-driven model selections\n",
-    "- **Practical implementations** - using the kluster.ai Batch API effectively, processing large datasets efficiently, and making informed decisions based on results\n",
+    "- **Practical implementations** - using the kluster.ai batch API effectively, processing large datasets efficiently, and making informed decisions based on results\n",
     "\n",
     "With this knowledge, you are now equipped to:\n",
     "\n",
@@ -7051,7 +7051,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
     "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3"
    },
    "source": [
-    "This tutorial runs through a Colab Notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> Batch API to extract insights from large volumes of text data. By the end of this guide, you'll be able to summarize a dataset, generate keywords, translate text to another language (in this case, English to Spanish), classify the text, and extract the relevant keywords all without writing a single line of code. Whether you're familiar with LLMs or just getting started, this guide is designed to get you up and running in minutes.\n",
+    "This tutorial runs through a Colab Notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to extract insights from large volumes of text data. By the end of this guide, you'll be able to summarize a dataset, generate keywords, translate text to another language (in this case, English to Spanish), classify the text, and extract the relevant keywords all without writing a single line of code. Whether you're familiar with LLMs or just getting started, this guide is designed to get you up and running in minutes.\n",
     "\n",
     "In this guide, you'll follow just two simple steps:\n",
     "\n",
@@ -7408,7 +7408,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
     "id": "OyGuHllZllct"
    },
    "source": [
-    "## Perform Batch inference"
+    "## Perform batch inference"
    ]
   },
   {
@@ -7422,8 +7422,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
     "\n",
     "To execute the request, we'll follow three straightforward steps:\n",
     "\n",
-    "1. **Create the Batch input file** - we'll generate a file with the desired requests to be processed by the model\n",
-    "2. **Upload the Batch input file to kluster.ai** - once the file is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be queued for processing\n",
+    "1. **Create the batch input file** - we'll generate a file with the desired requests to be processed by the model\n",
+    "2. **Upload the batch input file to kluster.ai** - once the file is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be queued for processing\n",
     "3. **Start the job** - after the file is uploaded, we'll initiate the job to process the uploaded data\n",
     "\n",
     "Everything is set up for you – just run the cells below to watch it all come together."
@@ -7436,7 +7436,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
     "id": "Ew-R24Ltp5EW"
    },
    "source": [
-    "### Create the Batch input file"
+    "### Create the batch input file"
    ]
   },
   {
@@ -8049,7 +8049,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
    "id": "d42bcd40",
    "metadata": {},
    "source": [
-    "You've successfully completed the multiple tasks request using the kluster.ai Batch API! This guide demonstrated how to extract valuable insights from large text datasets, such as sentiment analysis, translation, summarization, topic classification, and keyword extraction."
+    "You've successfully completed the multiple tasks request using the kluster.ai batch API! This guide demonstrated how to extract valuable insights from large text datasets, such as sentiment analysis, translation, summarization, topic classification, and keyword extraction."
    ]
   }
  ],
@@ -8092,7 +8092,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
     "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3"
    },
    "source": [
-    "This tutorial runs through a Colab Notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> Batch API to perform sentiment analysis on text data. For illustration, we'll use a sample from the Amazon musical instrument reviews dataset to determine the sentiment of each review. You can easily customize this example to work with your own data and specific use cases. This technique allows for efficient processing of small or large datasets, with results neatly categorized using a cutting-edge language model."
+    "This tutorial runs through a Colab Notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to perform sentiment analysis on text data. For illustration, we'll use a sample from the Amazon musical instrument reviews dataset to determine the sentiment of each review. You can easily customize this example to work with your own data and specific use cases. This technique allows for efficient processing of small or large datasets, with results neatly categorized using a cutting-edge language model."
    ]
   },
   {
@@ -8244,7 +8244,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
     "id": "OyGuHllZllct"
    },
    "source": [
-    "## Perform Batch inference"
+    "## Perform batch inference"
    ]
   },
   {
@@ -8256,8 +8256,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
    "source": [
     "To run the inference job, we'll follow three simple steps:\n",
     "\n",
-    "1. **Create the Batch input file** - we'll create a file containing the requests to be processed by the model\n",
-    "2. **Upload the Batch input file to kluster.ai** - once the file is ready, we'll upload it to the kluster.ai platform using the API, where it will be queued for processing\n",
+    "1. **Create the batch input file** - we'll create a file containing the requests to be processed by the model\n",
+    "2. **Upload the batch input file to kluster.ai** - once the file is ready, we'll upload it to the kluster.ai platform using the API, where it will be queued for processing\n",
     "3. **Start the job** - after the upload, we'll trigger the job to process the data\n",
     "\n",
     "Everything has already been set up for you—simply run the cells below and watch it work."
@@ -8270,7 +8270,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
     "id": "Ew-R24Ltp5EW"
    },
    "source": [
-    "### Create the Batch input file"
+    "### Create the batch input file"
    ]
   },
   {
@@ -8615,7 +8615,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
    "id": "7d195dd1-1293-4407-b6ad-cab7e77b14c0",
    "metadata": {},
    "source": [
-    "Congratulations on successfully completing the sentiment analysis task with the kluster.ai Batch API! This example demonstrates how simple it is to work with large datasets and derive meaningful insights from them. The Batch API enables you to scale your workflows seamlessly, making it a vital tool for handling large-scale data processing."
+    "Congratulations on successfully completing the sentiment analysis task with the kluster.ai batch API! This example demonstrates how simple it is to work with large datasets and derive meaningful insights from them. The batch API enables you to scale your workflows seamlessly, making it a vital tool for handling large-scale data processing."
    ]
   }
  ],
@@ -8658,7 +8658,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
     "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3"
    },
    "source": [
-    "This tutorial runs through a Colab Notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> Batch API to classify a data set based on a predefined set of categories. In our example, we use an extract from the IMDB top 1000 movies dataset and categorize them into \"Action,\" \"Adventure,\" \"Comedy,\" \"Crime,\" \"Documentary,\" \"Drama,\" \"Fantasy,\" \"Horror,\" \"Romance,\" or \"Sci-Fi.\" We use a movie dataset, but you can adapt this example by using your data and categories relevant to your use case. With this approach, you can effortlessly process datasets of any scale, from small collections to extensive datasets, and obtain categorized results powered by a state-of-the-art language model."
+    "This tutorial runs through a Colab Notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to classify a data set based on a predefined set of categories. In our example, we use an extract from the IMDB top 1000 movies dataset and categorize them into \"Action,\" \"Adventure,\" \"Comedy,\" \"Crime,\" \"Documentary,\" \"Drama,\" \"Fantasy,\" \"Horror,\" \"Romance,\" or \"Sci-Fi.\" We use a movie dataset, but you can adapt this example by using your data and categories relevant to your use case. With this approach, you can effortlessly process datasets of any scale, from small collections to extensive datasets, and obtain categorized results powered by a state-of-the-art language model."
    ]
   },
   {
@@ -8800,7 +8800,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
     "id": "OyGuHllZllct"
    },
    "source": [
-    "## Perform Batch inference"
+    "## Perform batch inference"
    ]
   },
   {
@@ -8826,7 +8826,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
     "id": "Ew-R24Ltp5EW"
    },
    "source": [
-    "### Create the Batch file"
+    "### Create the batch file"
    ]
   },
   {
@@ -9205,7 +9205,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
    "id": "7d195dd1-1293-4407-b6ad-cab7e77b14c0",
    "metadata": {},
    "source": [
-    "You've successfully completed the classification request using the kluster.ai Batch API! This process showcases how you can efficiently handle and classify large amounts of data with ease. The Batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets."
+    "You've successfully completed the classification request using the kluster.ai batch API! This process showcases how you can efficiently handle and classify large amounts of data with ease. The batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets."
    ]
   }
  ],
@@ -9264,7 +9264,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
     "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3"
    },
    "source": [
-    "This notebook showcases how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> Batch API to classify a data set based on a predefined set of categories. In our example, we use an extract from the IMDB top 1000 movies dataset and categorize them into \"Action,\" \"Adventure,\" \"Comedy,\" \"Crime,\" \"Documentary,\" \"Drama,\" \"Fantasy,\" \"Horror,\" \"Romance,\" or \"Sci-Fi.\" We use a movie dataset, but you can adapt this example by using your data and categories relevant to your use case. With this approach, you can effortlessly process datasets of any scale, from small collections to extensive datasets, and obtain categorized results powered by a state-of-the-art language model.\n"
+    "This notebook showcases how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to classify a data set based on a predefined set of categories. In our example, we use an extract from the IMDB top 1000 movies dataset and categorize them into \"Action,\" \"Adventure,\" \"Comedy,\" \"Crime,\" \"Documentary,\" \"Drama,\" \"Fantasy,\" \"Horror,\" \"Romance,\" or \"Sci-Fi.\" We use a movie dataset, but you can adapt this example by using your data and categories relevant to your use case. With this approach, you can effortlessly process datasets of any scale, from small collections to extensive datasets, and obtain categorized results powered by a state-of-the-art language model.\n"
    ]
   },
   {
@@ -9405,7 +9405,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
     "id": "OyGuHllZllct"
    },
    "source": [
-    "## Perform Batch inference with Curator"
+    "## Perform batch inference with Curator"
    ]
   },
   {
@@ -9472,7 +9472,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
     "id": "7d195dd1-1293-4407-b6ad-cab7e77b14c0"
    },
    "source": [
-    "You've successfully completed the classification request using the kluster.ai Batch API! This process showcases how you can efficiently handle and classify large amounts of data with ease. The Batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets."
+    "You've successfully completed the classification request using the kluster.ai batch API! This process showcases how you can efficiently handle and classify large amounts of data with ease. The batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets."
    ]
   }
  ],
