@@ -7,3 +7,4 @@ nav:
  - 'LiteLLM': litellm.md
  - 'PydanticAI': pydantic.md
  - 'SillyTavern': sillytavern.md
+ - 'TypingMind': typingmind.md
