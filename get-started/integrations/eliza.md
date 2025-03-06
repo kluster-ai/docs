@@ -15,9 +15,9 @@ Before starting, ensure you have the following kluster prerequisites:
 
 - **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
 - **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
-- **Clone and install the eliza repository** - follow the installation instructions on the [eliza Quick Start guide](https://elizaos.github.io/eliza/docs/quickstart/){target=\_blank}. Pay careful attention to the eliza prerequisites, including the minimum supported versions of Node.js and pnpm
-
-You can stop at the **Configure Environment** section in the Quick Start guide, as this guide covers those steps.
+- **Clone and install the eliza repository** - follow the installation instructions on the [eliza Quick Start guide](https://elizaos.github.io/eliza/docs/quickstart/){target=\_blank}
+    - Pay careful attention to the eliza prerequisites, including the minimum supported versions of Node.js and pnpm
+    - Stop at the **Configure Environment** section in the Quick Start guide, as this guide covers those steps
 
 ## Configure your environment
 
@@ -34,8 +34,6 @@ cp .env.example .env
     - **OPENAI_DEFAULT_MODEL** - choose one of kluster.ai's available models based on your use case:
 
         --8<-- 'text/real-time-models.md'
-  
-      Ensure the model's full name starting with `klusterai/` is listed.
       
       You should also set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, and `LARGE_OPENAI_MODEL` to the same value to allow seamless experimentation as different characters use different default models.
 
@@ -75,10 +73,10 @@ pnpm start --character="characters/dobby.character.json"
 ```bash
 pnpm start:client
 ```
+  Your terminal output should resemble the following:
+  --8<-- 'code/get-started/integrations/eliza/terminal/launch-client.md'
 
 4. **Open your browser** - follow the prompts and open your browser to [http://localhost:5173/](http://localhost:5173/){target=\_blank}
-
-    --8<-- 'code/get-started/integrations/eliza/terminal/launch-client.md'
 
 ## Put it all together
 

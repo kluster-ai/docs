@@ -11,7 +11,7 @@ This guide shows you how to integrate [LiteLLM](https://www.litellm.ai/){target=
 
 Before starting, ensure you have the following:
 
-- **[A python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}** - This is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial
+- **[A python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}** - this is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial
 - [**LiteLLM installed**](https://github.com/BerriAI/litellm){target=\_blank} - to install the library, use the following command:
 
     ```bash
@@ -25,19 +25,19 @@ Before starting, ensure you have the following:
 
 In this section, you'll learn how to integrate kluster.ai with LiteLLM. You'll configure your environment variables, specify a kluster.ai model, and make a simple request using LiteLLM's OpenAI-like interface.
 
-1. **Import LiteLLM and its dependencies** - Create a new file (e.g., `hello-litellm.py`) and start by importing the necessary Python modules:
+1. **Import LiteLLM and its dependencies** - create a new file (e.g., `hello-litellm.py`) and start by importing the necessary Python modules:
 ```python
 --8<-- "code/get-started/integrations/litellm/hello-litellm.py::04"
 ```
-2. **Set your kluster.ai API key and Base URL** - Replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+2. **Set your kluster.ai API key and Base URL** - replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
 ```python
 --8<-- "code/get-started/integrations/litellm/hello-litellm.py:05:08"
 ```
-3. **Define your conversation (system + user messages)** - Set up your initial system prompt and user message. The system message defines your AI assistant's role, while the user message is the actual question or prompt
+3. **Define your conversation (system + user messages)** - set up your initial system prompt and user message. The system message defines your AI assistant's role, while the user message is the actual question or prompt
 ```python
 --8<-- "code/get-started/integrations/litellm/hello-litellm.py:09:13"
 ```
-4. **Select your kluster.ai model** - Choose one of the kluster.ai models that best fits your use case:
+4. **Select your kluster.ai model** - choose one of the kluster.ai models that best fits your use case:
 
     --8<-- 'text/real-time-models.md'
 
@@ -45,7 +45,7 @@ In this section, you'll learn how to integrate kluster.ai with LiteLLM. You'll c
 ```python
 --8<-- "code/get-started/integrations/litellm/hello-litellm.py:15:16"
 ```
-5. **Call the LiteLLM completion function** - Finally, invoke the completion function to send your request:
+5. **Call the LiteLLM completion function** - finally, invoke the completion function to send your request:
 ```python
 --8<-- "code/get-started/integrations/litellm/hello-litellm.py:18:24"
 ```
@@ -94,7 +94,7 @@ Follow these steps to get started:
 
 ### Use streaming responses
 
-You can enable streaming by simply passing `stream=True` to the `completion()` function. Streaming returns a generator instead of a static response, letting you iterate over partial output chunks as they arrive. In the code sample below, each chunk is accessed in a for chunk in response: loop, and you can extract just the textual content (e.g., `chunk.choices[0].delta.content)` rather than printing all metadata. 
+You can enable streaming by simply passing `stream=True` to the `completion()` function. Streaming returns a generator instead of a static response, letting you iterate over partial output chunks as they arrive. In the code sample below, each chunk is accessed in a for in loop, allowing you to extract the textual content (e.g., `chunk.choices[0].delta.content)` rather than printing all metadata.
 
 To configure a streaming response, take the following steps:
 
@@ -113,11 +113,11 @@ LiteLLM can facilitate multi-turn conversations by maintaining message history i
 
 Let's take a closer look at each step:
 
-1. **Combine the streamed chunks of the first message** - since the message is streamed in chunks, you must re-assemble them into a single message. After collecting partial responses in `streamed_text`, join them into a single string called `complete_first_answer`.
+1. **Combine the streamed chunks of the first message** - since the message is streamed in chunks, you must re-assemble them into a single message. After collecting partial responses in `streamed_text`, join them into a single string called `complete_first_answer`:
 ```python
 --8<-- "code/get-started/integrations/litellm/litellm-features.py:44:45"
 ```
-2. **Append the assistant's reply** - to enhance the context of the conversation. Add this `complete_first_answer` back into messages under the "assistant" role as follows:
+2. **Append the assistant's reply** - to enhance the context of the conversation. Add `complete_first_answer` back into messages under the "assistant" role as follows:
 ```python
 --8<-- "code/get-started/integrations/litellm/litellm-features.py:47:48"
 ```
@@ -134,8 +134,6 @@ Let's take a closer look at each step:
 --8<-- "code/get-started/integrations/litellm/litellm-features.py:71:76"
 ```
 
-## Put it all together
-
 You can view the full script below. It demonstrates a streamed response versus a regular response and how to handle a multi-turn conversation.  
 
 ??? code "litellm-features.py"
@@ -143,7 +141,14 @@ You can view the full script below. It demonstrates a streamed response versus a
     --8<-- "code/get-started/integrations/litellm/litellm-features.py"
     ```
 
-Upon running it, you'll see output like the following:
+## Put it all together
+
+1. Use the following command to run your script:
+```bash
+python litellm-features.py
+```
+
+2. You should see output that resembles the following:
 
 --8<-- 'code/get-started/integrations/litellm/terminal/output.md'
 

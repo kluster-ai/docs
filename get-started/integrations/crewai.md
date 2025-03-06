@@ -31,7 +31,7 @@ crewai create crew INSERT_PROJECT_NAME
 
 After finishing the CLI setup, you will see a `src` directory with files `crew.py` and `main.py`. This guide won't use these sample files because they include extra features outside the scope. Follow these steps to continue:
 
-1. **Create your first file** - Create a `hello_crew.py` file in `src/YOUR_PROJECT_NAME` to correspond to a simple AI agent chatbot
+1. **Create your first file** - create a `hello_crew.py` file in `src/YOUR_PROJECT_NAME` to correspond to a simple AI agent chatbot
 
 2. **Import modules and select model** - open `hello_crew.py` to add imports and define a custom LLM for kluster.ai by setting the following parameters:
     - **provider** - you can specify `openai_compatible`
@@ -62,13 +62,13 @@ After finishing the CLI setup, you will see a `src` directory with files `crew.p
     --8<-- "code/get-started/integrations/crewai/hello_crew.py:38:55"
     ```
 
-5. **Tie it all together with a `@crew` method** - Add the following method to return the assembled Crew object with a single agent and task. This method enables CrewAI to coordinate the agent and task you defined:
+5. **Tie it all together with a `@crew` method** - add the following method to return the assembled Crew object with a single agent and task. This method enables CrewAI to coordinate the agent and task you defined:
 
     ```python title="hello_crew.py"
     --8<-- "code/get-started/integrations/crewai/hello_crew.py:57:67"
     ```
 
-6. **Set up the entry point for the agent** - Create a new file named `hello_main.py`. In `hello_main.py`, import and initialize the `HelloWorldCrew` class, call its `hello_crew()` method, and then `kickoff()` to launch the task sequence:
+6. **Set up the entry point for the agent** - create a new file named `hello_main.py`. In `hello_main.py`, import and initialize the `HelloWorldCrew` class, call its `hello_crew()` method, and then `kickoff()` to launch the task sequence:
 
     ```python title="hello_main.py"
     #!/usr/bin/env python
