@@ -5,7 +5,9 @@ description: This guide walks you through setting up SillyTavern, a customizable
 
 # How to integrate SillyTavern with kluster.ai
 
-This guide will help you set up and configure [SillyTavern](https://sillytavernai.com/){target=\_blank}, a customizable LLM interface, with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API. Follow the steps below to integrate these tools seamlessly.
+[SillyTavern](https://sillytavernai.com/){target=\_blank} is a locally installed customizable LLM user interface that focuses on persona-driven LLM interactions—letting you create unique characters or group chats for tasks like code reviews and text editing. It provides custom prompt fields, bookmarks for revisiting specific points in a conversation, and a mobile-friendly design to easily manage your chat sessions.
+
+By integrating SillyTavern with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API, you can tap into kluster.ai’s high-performance language models as your primary or backup backend. This combination merges SillyTavern’s customizable UI and advanced prompt options with kluster.ai’s reliable inference, offering a scalable and tailored chat environment for both casual users and AI enthusiasts.
 
 ## Prerequisites
 
