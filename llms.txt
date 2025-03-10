@@ -2651,7 +2651,7 @@ description: This guide shows how to integrate LiteLLM, an open-source library t
 
 [LiteLLM](https://www.litellm.ai/){target=_blank} is an open-source Python library that streamlines access to a broad range of Large Language Model (LLM) providers through a standardized interface inspired by the OpenAI format. By providing features like fallback mechanisms, cost tracking, and streaming support, LiteLLM reduces the complexity of working with different models, ensuring a more reliable and cost-effective approach to AI-driven applications.
 
-Integrating LiteLLM with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API enables the use of kluster.ai’s powerful models alongside LiteLLM’s flexible orchestration. This combination makes it simple to switch between models on the fly, handle token usage limits with context window fallback, and monitor usage costs in real time—leading to robust, scalable, and adaptable AI workflows.
+Integrating LiteLLM with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API enables the use of kluster.ai's powerful models alongside LiteLLM's flexible orchestration. This combination makes it simple to switch between models on the fly, handle token usage limits with context window fallback, and monitor usage costs in real-time—leading to robust, scalable, and adaptable AI workflows.
 
 ## Prerequisites
 
@@ -3864,9 +3864,9 @@ description: This guide walks you through setting up SillyTavern, a customizable
 
 # How to integrate SillyTavern with kluster.ai
 
-[SillyTavern](https://sillytavernai.com/){target=\_blank} is a locally installed customizable LLM user interface that focuses on persona-driven LLM interactions—letting you create unique characters or group chats for tasks like code reviews and text editing. It provides custom prompt fields, bookmarks for revisiting specific points in a conversation, and a mobile-friendly design to easily manage your chat sessions.
+[SillyTavern](https://sillytavernai.com/){target=\_blank} is a locally installed customizable LLM user interface that focuses on persona-driven LLM interactions—letting you create unique characters or group chats for tasks like code reviews and text editing. It provides custom prompt fields, bookmarks for revisiting specific points in a conversation, and a mobile-friendly design to manage your chat sessions easily.
 
-By integrating SillyTavern with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API, you can tap into kluster.ai’s high-performance language models as your primary or backup backend. This combination merges SillyTavern’s customizable UI and advanced prompt options with kluster.ai’s reliable inference, offering a scalable and tailored chat environment for both casual users and AI enthusiasts.
+By integrating SillyTavern with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API, you can tap into kluster.ai's high-performance language models as your primary or backup backend. This combination merges SillyTavern's customizable UI and advanced prompt options with kluster.ai's reliable inference, offering a scalable and tailored chat environment for casual users and AI enthusiasts.
 
 ## Prerequisites
 
