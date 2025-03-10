@@ -2084,7 +2084,7 @@ Before starting, ensure you have the following prerequisites:
 - **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
 - **CrewAI installed** - the [Installation Guide](https://docs.crewai.com/installation){target=\_blank} on the CrewAI website will walk you through installing CrewAI, setting up a virtual Python environment, and creating a new project. Note that CrewAI requires a Python version >=`3.10` and <`3.13`
 
-## Create a project with the CrewAI CLI
+## Create a project
 
 Open your Python virtual environment, and then follow these steps to use the CrewAI CLI to create a new project:
 
@@ -2416,7 +2416,7 @@ title: Integrate Immersive Translate
 description: Learn how to integrate the Immersive Translate browser extension with kluster.ai in your workflows for seamless, real-time multilingual content handling.
 ---
 
-# Using Immersive Translate with the kluster.ai API
+# Integrate Immersive Translate with kluster.ai
 
 [Immersive Translate](https://immersivetranslate.com/){target=_blank} is an  AI-powered bilingual translation extension that automatically identifies the main text on any web page and provides parallel translations in real-time. This context-driven approach streamlines reading and collaboration across languages with additional features like efficient document translation, hover translation, and support for 10+ translation services.
 
@@ -2430,7 +2430,7 @@ Before starting, ensure you have the following:
 - **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
 - **Installed the Immersive Translate plugin** - you can download the Immersive Translate plugin for your respective browser on the [Immersive Translate homepage](https://immersivetranslate.com/){target=\_blank}
 
-## Configure Immersive Translate to use the kluster.ai API
+## Configure Immersive Translate
 
 First, open the Immersive Translate extension and click on the **Options** button in the lower left corner of the extension.
 
@@ -2469,7 +2469,7 @@ That's it! The next section will demonstrate using Immersive Translate with the 
 
 ![](/images/get-started/integrations/immersivetranslate/immersive-4.webp)
 
-## Translate content with Immersive Translate
+## Translate content
 
 With Immersive Translate, you can easily translate content with just a few clicks. To do so, navigate to the page with the foreign language content. Open the Immersive Translate plugin and take the following steps:
 
@@ -2519,7 +2519,7 @@ Before starting, ensure you have the following:
 - **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
 - **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
 
-## Integrate with LangChain - Quick Start
+## Quick Start
 
 It's easy to integrate kluster.ai with LangChain—when configuring the chat model, point your `ChatOpenAI` instance to the correct base URL and configure the following settings:
 
@@ -2653,6 +2653,7 @@ print("\nQuestion 2:", question2)
 response2 = conversation.predict(input=question2)
 print("Response 2:", response2)
     ```
+    
 ## Put it all together
 
 1. Use the following command to run your script:
@@ -2703,7 +2704,7 @@ Before starting, ensure you have the following:
 - **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
 - **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
 
-## Integrate with LiteLLM
+## Configure LiteLLM
 
 In this section, you'll learn how to integrate kluster.ai with LiteLLM. You'll configure your environment variables, specify a kluster.ai model, and make a simple request using LiteLLM's OpenAI-like interface.
 
@@ -3002,8 +3003,8 @@ second_answer_text = ""
 
 You can view the full script below. It demonstrates a streamed response versus a regular response and how to handle a multi-turn conversation.  
 
-??? code "litellm-features.py"
-    ```python
+??? code "View complete script"
+    ```python title="litellm-features.py"
     import os
 
 import litellm.exceptions
@@ -3087,12 +3088,12 @@ if __name__ == "__main__":
 
 ## Put it all together
 
-1. Use the following command to run your script:
+Use the following command to run your script:
 ```bash
 python litellm-features.py
 ```
 
-2. You should see output that resembles the following:
+You should see output that resembles the following:
 
 <div id="termynal" data-termynal>
     <span data-ty="input"><span class="file-path">python streaming-litellm.py</span></span>
@@ -3127,11 +3128,11 @@ Both responses appear to trail off abruptly, but that's because we limited the o
 Doc-Content: https://docs.kluster.ai/get-started/integrations/msty/
 --- BEGIN CONTENT ---
 ---
-title: Using Msty with the kluster.ai API
+title: Integrate Msty with the kluster.ai API
 description: Learn how to configure Msty, a user-friendly desktop AI toolkit that allows attachments and easy conversation management, to use the kluster.ai API.
 ---
 
-# Using Msty with the kluster.ai API
+# Integrate Msty with kluster.ai
 
 [Msty](https://msty.app/){target=_blank} is a user-friendly local AI toolkit that also supports popular online model providers— all within a sleek, powerful interface. By eliminating tedious setup steps (no Docker or terminal required) and helping you manage attachments, Msty makes large language models more accessible than ever while making every conversation fully informed and flexible.
 
@@ -3162,7 +3163,13 @@ Then, take the following steps to configure Msty to use the kluster.ai API:
     ```
 
 4. Paste your API key and ensure **Save key securely in keychain** is selected
-5. Paste the name of the [supported kluster.ai model](/api-reference/reference/#list-supported-models){target=\_blank} you'd like to use. Note that you can specify multiple models
+5. Paste the name of the supported kluster.ai model you'd like to use. Note that you can specify multiple models
+
+    - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
+- `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
+- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
+- `deepseek-ai/DeepSeek-R1`
+
 6. Press **Add** to finalize the addition of kluster.ai API as a provider
 
 ![Configure remote model screen](/images/get-started/integrations/msty/msty-2.webp)
@@ -3175,11 +3182,11 @@ Great job! You’re now ready to use Msty to query LLMs through the kluster.ai A
 Doc-Content: https://docs.kluster.ai/get-started/integrations/pydantic/
 --- BEGIN CONTENT ---
 ---
-title: Using PydanticAI with the kluster.ai
+title: Integrate PydanticAI with the kluster.ai
 description: Learn how to build a typed, production-grade AI agent with PydanticAI using kluster.ai's API, ensuring robust validation and streamlined usage.
 ---
 
-# Using PydanticAI with the kluster.ai API
+# Integrate PydanticAI with kluster.ai
 
 [PydanticAI](https://ai.pydantic.dev/){target=\_blank} is a typed Python agent framework designed to make building production-grade applications with Generative AI less painful. Pydantic AI leverages [Pydantic's](https://docs.pydantic.dev/latest/){target=_blank} robust data validation to ensure your AI interactions are consistent, reliable, and easy to debug. By defining tools (Python functions) with strict type hints and schema validation, you can guide your AI model to call them correctly—reducing confusion or malformed requests.
 
@@ -3211,7 +3218,7 @@ Before starting, ensure you have the following:
 
 - [**A maps.co geocoding API key**](https://geocode.maps.co/){target=\_blank} - this free API key will allow your weather agent to convert a human-readable address into a pair of latitude and longitude coordinates
 
-## Quick start - Use kluster.ai with PydanticAI
+## Quick start
 
 In this section, you'll learn how to integrate kluster.ai with PydanticAI. You’ll configure your API key, set your base URL, specify a kluster.ai model, and make a simple request to verify functionality.
 
@@ -3245,7 +3252,7 @@ if __name__ == '__main__':
     asyncio.run(main())
     ```
 
-2. **Define a custom model to use the kluster.ai API** - replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For the model name, choose one of the kluster.ai [models](/api-reference/reference/#list-supported-models){target=_blank} that best fits your use case
+2. **Define a custom model to use the kluster.ai API** - replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For the model name, choose one of the kluster.ai [models](/get-started/start-building/real-time/#supported-models){target=_blank} that best fits your use case
 
     ```python title="quick-start.py"
     # Configure pydantic-ai to use your custom base URL and model name
@@ -3271,7 +3278,7 @@ if __name__ == '__main__':
     asyncio.run(main())
     ```
 
-??? code "Complete script"
+??? code "View complete script"
     ```python title="quick-start.py"
     import asyncio
 
@@ -3514,7 +3521,7 @@ if __name__ == "__main__":
     asyncio.run(main())
     ```
 
-2. **Define a custom model to use the kluster.ai API** - replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For the model name, choose one of the kluster.ai [models](/api-reference/reference/#list-supported-models){target=_blank} that best fits your use case
+2. **Define a custom model to use the kluster.ai API** - replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For the model name, choose one of the kluster.ai [models](/get-started/start-building/real-time/#supported-models){target=_blank} that best fits your use case
 
     ```python
     model_name='klusterai/Meta-Llama-3.3-70B-Instruct-Turbo',
@@ -3696,7 +3703,7 @@ if __name__ == "__main__":
     asyncio.run(main())
     ```
 
-??? code "View full code file"
+??? code "View complete script"
     ```python title="weather-agent.py"
     # 1. Import dependencies and handle initial setup 
 import asyncio
@@ -3891,12 +3898,15 @@ async def main():
 if __name__ == "__main__":
     asyncio.run(main())
     ```
+## Put it all together
 
 Use the following command to run your script:
 
 ```python
 python weather-agent.py
 ```
+
+You should see terminal output similar to the following:
 
 <div id="termynal" data-termynal>
     <span data-ty="input"><span class="file-path"></span>python weather-agent.py</span>
@@ -3929,7 +3939,7 @@ Before starting, ensure you have the following:
 - **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
 - **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
 
-## Configure SillyTavern to use kluster.ai
+## Configure SillyTavern
 
 1. Launch SillyTavern and open it in your browser at `http://127.0.0.1:8000/` (default port)
 2. Click on the **API Connections** icon (plug) in the top navigation menu
@@ -3977,11 +3987,11 @@ Follow these steps to get started:
 Doc-Content: https://docs.kluster.ai/get-started/integrations/typingmind/
 --- BEGIN CONTENT ---
 ---
-title: Using TypingMind with the kluster.ai API
+title: Integrate TypingMind with the kluster.ai API
 description: Learn how to configure TypingMind, an intuitive frontend chat interface that offers organization, prompt libraries, and AI agent support, with kluster.ai.
 ---
 
-# Using TypingMind with the kluster.ai API
+# Integrate TypingMind with kluster.ai
 
 [TypingMind](https://www.typingmind.com/){target=\_blank} is an intuitive frontend chat interface that enhances the UX of LLMs. It offers flexible organization for your conversations (folders, pins, bulk delete), a customizable prompt library, and the ability to build AI agents using your training data. With plugin support for internet access, image generation, and more, TypingMind seamlessly syncs across devices, providing a simplified AI workflow with tailored, high-quality responses—all in one sleek platform.
 
@@ -4025,7 +4035,7 @@ Then, take the following steps to configure TypingMind to use the kluster.ai API
 
 ![Configure kluster.ai API as a provider](/images/get-started/integrations/typingmind/typingmind-2.webp)
 
-## Set kluster.ai as the default provider
+## Set default provider
 
 You've configured the kluster.ai API as a provider, but it hasn't yet been selected as the default one. To change this, take the following steps: 
 
@@ -4039,7 +4049,7 @@ And that's it! You can now query the LLM successfully using kluster.ai as the de
 
 ![Query TypingMind](/images/get-started/integrations/typingmind/typingmind-4.webp)
 
-## Use TypingMind agents to start a chat
+## Start a chat
 
 TypingMind has a wide variety of prebuilt AI agents that you can use as-is or clone and customize to suit your needs. These AI agents can use the kluster.ai API to perform tasks tailored to your use cases. To get started, take the following steps:
 
