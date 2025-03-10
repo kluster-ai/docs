@@ -15,7 +15,7 @@ Before starting, ensure you have the following:
 - **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
 - **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
 
-## Configure SillyTavern to use kluster.ai
+## Configure SillyTavern
 
 1. Launch SillyTavern and open it in your browser at `http://127.0.0.1:8000/` (default port)
 2. Click on the **API Connections** icon (plug) in the top navigation menu

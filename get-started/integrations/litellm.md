@@ -21,7 +21,7 @@ Before starting, ensure you have the following:
 - **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
 - **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
 
-## Integrate with LiteLLM
+## Configure LiteLLM
 
 In this section, you'll learn how to integrate kluster.ai with LiteLLM. You'll configure your environment variables, specify a kluster.ai model, and make a simple request using LiteLLM's OpenAI-like interface.
 
@@ -136,19 +136,19 @@ Let's take a closer look at each step:
 
 You can view the full script below. It demonstrates a streamed response versus a regular response and how to handle a multi-turn conversation.  
 
-??? code "litellm-features.py"
-    ```python
+??? code "View complete script"
+    ```python title="litellm-features.py"
     --8<-- "code/get-started/integrations/litellm/litellm-features.py"
     ```
 
 ## Put it all together
 
-1. Use the following command to run your script:
+Use the following command to run your script:
 ```bash
 python litellm-features.py
 ```
 
-2. You should see output that resembles the following:
+You should see output that resembles the following:
 
 --8<-- 'code/get-started/integrations/litellm/terminal/output.md'
 

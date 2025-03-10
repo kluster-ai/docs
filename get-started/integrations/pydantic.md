@@ -1,9 +1,9 @@
 ---
-title: Using PydanticAI with the kluster.ai
+title: Integrate PydanticAI with the kluster.ai
 description: Learn how to build a typed, production-grade AI agent with PydanticAI using kluster.ai's API, ensuring robust validation and streamlined usage.
 ---
 
-# Using PydanticAI with the kluster.ai API
+# Integrate PydanticAI with kluster.ai
 
 [PydanticAI](https://ai.pydantic.dev/){target=\_blank} is a typed Python agent framework designed to make building production-grade applications with Generative AI less painful. Pydantic AI leverages [Pydantic's](https://docs.pydantic.dev/latest/){target=_blank} robust data validation to ensure your AI interactions are consistent, reliable, and easy to debug. By defining tools (Python functions) with strict type hints and schema validation, you can guide your AI model to call them correctlyâ€”reducing confusion or malformed requests.
 
@@ -35,7 +35,7 @@ Before starting, ensure you have the following:
 
 - [**A maps.co geocoding API key**](https://geocode.maps.co/){target=\_blank} - this free API key will allow your weather agent to convert a human-readable address into a pair of latitude and longitude coordinates
 
-## Quick start - Use kluster.ai with PydanticAI
+## Quick start
 
 In this section, you'll learn how to integrate kluster.ai with PydanticAI. Youâ€™ll configure your API key, set your base URL, specify a kluster.ai model, and make a simple request to verify functionality.
 
@@ -45,7 +45,7 @@ In this section, you'll learn how to integrate kluster.ai with PydanticAI. Youâ€
     --8<-- "code/get-started/integrations/pydantic/quick-start.py::04"
     ```
 
-2. **Define a custom model to use the kluster.ai API** - replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For the model name, choose one of the kluster.ai [models](/api-reference/reference/#list-supported-models){target=_blank} that best fits your use case
+2. **Define a custom model to use the kluster.ai API** - replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For the model name, choose one of the kluster.ai [models](/get-started/start-building/real-time/#supported-models){target=_blank} that best fits your use case
 
     ```python title="quick-start.py"
     --8<-- "code/get-started/integrations/pydantic/quick-start.py:07:13"
@@ -57,7 +57,7 @@ In this section, you'll learn how to integrate kluster.ai with PydanticAI. Youâ€
     --8<-- "code/get-started/integrations/pydantic/quick-start.py:15:25"
     ```
 
-??? code "Complete script"
+??? code "View complete script"
     ```python title="quick-start.py"
     --8<-- "code/get-started/integrations/pydantic/quick-start.py"
     ```
@@ -82,7 +82,7 @@ In this section, you'll build a weather agent that interprets natural language q
     --8<-- "code/get-started/integrations/pydantic/weather-agent.py::21"
     ```
 
-2. **Define a custom model to use the kluster.ai API** - replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For the model name, choose one of the kluster.ai [models](/api-reference/reference/#list-supported-models){target=_blank} that best fits your use case
+2. **Define a custom model to use the kluster.ai API** - replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For the model name, choose one of the kluster.ai [models](/get-started/start-building/real-time/#supported-models){target=_blank} that best fits your use case
 
     ```python
     --8<-- "code/get-started/integrations/pydantic/weather-agent.py:23:28"
@@ -112,16 +112,19 @@ In this section, you'll build a weather agent that interprets natural language q
     --8<-- "code/get-started/integrations/pydantic/weather-agent.py:162:194"
     ```
 
-??? code "View full code file"
+??? code "View complete script"
     ```python title="weather-agent.py"
     --8<-- "code/get-started/integrations/pydantic/weather-agent.py"
     ```
+## Put it all together
 
 Use the following command to run your script:
 
 ```python
 python weather-agent.py
 ```
+
+You should see terminal output similar to the following:
 
 --8<-- 'code/get-started/integrations/pydantic/terminal/weather-agent.md'
 

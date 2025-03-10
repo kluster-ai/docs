@@ -1,9 +1,9 @@
 ---
-title: Using Msty with the kluster.ai API
+title: Integrate Msty with the kluster.ai API
 description: Learn how to configure Msty, a user-friendly desktop AI toolkit that allows attachments and easy conversation management, to use the kluster.ai API.
 ---
 
-# Using Msty with the kluster.ai API
+# Integrate Msty with kluster.ai
 
 [Msty](https://msty.app/){target=_blank} is a user-friendly local AI toolkit that also supports popular online model providers— all within a sleek, powerful interface. By eliminating tedious setup steps (no Docker or terminal required) and helping you manage attachments, Msty makes large language models more accessible than ever while making every conversation fully informed and flexible.
 
@@ -34,7 +34,10 @@ Then, take the following steps to configure Msty to use the kluster.ai API:
     ```
 
 4. Paste your API key and ensure **Save key securely in keychain** is selected
-5. Paste the name of the [supported kluster.ai model](/api-reference/reference/#list-supported-models){target=\_blank} you'd like to use. Note that you can specify multiple models
+5. Paste the name of the supported kluster.ai model you'd like to use. Note that you can specify multiple models
+
+    --8<-- 'text/real-time-models.md'
+
 6. Press **Add** to finalize the addition of kluster.ai API as a provider
 
 ![Configure remote model screen](/images/get-started/integrations/msty/msty-2.webp)
