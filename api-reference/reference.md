@@ -94,7 +94,7 @@ Accepts a JSON object that maps tokens (specified by their token ID in the token
 ---
 
 `logprobs` ++"boolean or null"++
-   
+
 Whether to return log probabilities of the output tokens or not. If true, returns the log probabilities of each output token returned in the `content` of `message`. Defaults to `false`.
 
 ---
@@ -153,7 +153,7 @@ It is generally recommended to alter this or `temperature` but not both.
 
 **Returns**
 
-The created [Chat completion](#batch-object) object.
+The created [Chat completion object](#chat-completion-object).
 
 </div>
 <div markdown>
@@ -371,11 +371,11 @@ Usage statistics for the completion request.
 
 ## Batch
 
-### Submit a Batch job
+### Submit a batch job
 
 `POST https://api.kluster.ai/v1/batches`
 
-To submit a Batch job, send a request to the `batches` endpoint.
+To submit a batch job, send a request to the `batches` endpoint.
 
 <div class="grid" markdown>
 <div markdown>
@@ -384,7 +384,7 @@ To submit a Batch job, send a request to the `batches` endpoint.
 
 `input_file_id` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-The ID of an [uploaded file](#upload-files){target=\_blank} that contains requests for the new Batch.
+The ID of an [uploaded file](#upload-files){target=\_blank} that contains requests for the new batch.
 
 Your input file must be formatted as a [JSONL file](https://jsonlines.org/){target=\_blank}, and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests and currently a maximum of 6GB per file.
 
@@ -392,7 +392,7 @@ Your input file must be formatted as a [JSONL file](https://jsonlines.org/){targ
 
 `endpoint` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-The endpoint to be used for all requests in the Batch. Currently, only `/v1/chat/completions` is supported.
+The endpoint to be used for all requests in the batch. Currently, only `/v1/chat/completions` is supported.
 
 ---
 
@@ -406,13 +406,13 @@ Learn more about how completion window selection affects cost by visiting the pr
 
 `metadata` ++"Object or null"++
 
-Custom metadata for the Batch.
+Custom metadata for the batch.
 
 ---
 
 **Returns**
 
-The created [Batch](#batch-object) object.
+The created [Batch object](#batch-object).
 
 </div>
 <div markdown>
@@ -484,11 +484,11 @@ The created [Batch](#batch-object) object.
 
 ---
 
-### Retrieve a Batch
+### Retrieve a batch
 
 `GET https://api.kluster.ai/v1/batches/{batch_id}`
 
-To retrieve a Batch job, send a request to the `batches` endpoint with your `batch_id`.
+To retrieve a batch job, send a request to the `batches` endpoint with your `batch_id`.
 
 You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch){target=\_blank} of the kluster.ai platform UI.
 
@@ -499,13 +499,13 @@ You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/bat
 
 `batch_id` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-The ID of the Batch to retrieve.
+The ID of the batch to retrieve.
 
 ---
 
 **Returns**
 
-The [Batch](#batch-object) object matching the specified `batch_id`.
+The [Batch object](#batch-object) matching the specified `batch_id`.
 
 </div>
 <div markdown>
@@ -566,11 +566,11 @@ The [Batch](#batch-object) object matching the specified `batch_id`.
 
 ---
 
-### Cancel a Batch
+### Cancel a batch
 
 `POST https://api.kluster.ai/v1/batches/{batch_id}/cancel`
 
-To cancel a Batch job that is currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, during which time the status will show as `cancelling`.
+To cancel a batch job that is currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, during which time the status will show as `cancelling`.
 
 <div class="grid" markdown>
 <div markdown>
@@ -579,13 +579,13 @@ To cancel a Batch job that is currently in progress, send a request to the `canc
 
 `batch_id` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-The ID of the Batch to cancel.
+The ID of the batch to cancel.
 
 ---
 
 **Returns**
 
-The [Batch](#batch-object) object matching the specified ID.
+The [Batch object](#batch-object) matching the specified ID.
 
 </div>
 <div markdown>
@@ -647,11 +647,11 @@ The [Batch](#batch-object) object matching the specified ID.
 
 ---
 
-### List all Batch jobs
+### List all batch jobs
 
 `GET https://api.kluster.ai/v1/batches`
 
-To list all Batch jobs, send a request to the `batches` endpoint without specifying a `batch_id`. To constrain the query response, you can also use a `limit` parameter.
+To list all batch jobs, send a request to the `batches` endpoint without specifying a `batch_id`. To constrain the query response, you can also use a `limit` parameter.
 
 <div class="grid" markdown>
 <div markdown>
@@ -672,9 +672,9 @@ A limit on the number of objects to be returned. Limit can range between 1 and 1
 
 **Returns**
 
-A list of paginated [Batch](#batch-object) objects.
+A list of paginated [Batch objects](#batch-object).
 
-The status of a Batch object can be one of the following:
+The status of a batch object can be one of the following:
 
 <style>
 table th:first-child {
@@ -686,12 +686,12 @@ table th:first-child {
 |---------------|-------------------------------------------------------------------------|
 | `validating`  | The input file is being validated.                                      |
 | `failed`      | The input file failed the validation process.                           |
-| `in_progress` | The input file was successfully validated and the Batch is in progress. |
-| `finalizing`  | The Batch job has completed and the results are being finalized.        |
-| `completed`   | The Batch has completed and the results are ready.                      |
-| `expired`     | The Batch was not completed within the 24-hour time window.             |
-| `cancelling`  | The Batch is being cancelled (may take up to 10 minutes).               |
-| `cancelled`   | The Batch was cancelled.                                                |
+| `in_progress` | The input file was successfully validated and the batch is in progress. |
+| `finalizing`  | The batch job has completed and the results are being finalized.        |
+| `completed`   | The batch has completed and the results are ready.                      |
+| `expired`     | The batch was not completed within the 24-hour time window.             |
+| `cancelling`  | The batch is being cancelled (may take up to 10 minutes).               |
+| `cancelled`   | The batch was cancelled.                                                |
 
 </div>
 
@@ -772,7 +772,7 @@ table th:first-child {
 
 `id` ++"string"++
 
-The ID of the Batch.
+The ID of the batch.
 
 ---
 
@@ -784,14 +784,14 @@ The object type, which is always `batch`.
 
 `endpoint` ++"string"++
 
-The kluster.ai API endpoint used by the Batch.
+The kluster.ai API endpoint used by the batch.
 
 ---
 
 `errors` ++"object"++
 
 ??? child "Show properties"
-    
+
     `object` ++"string"++
 
     The object type, which is always `list`.
@@ -827,19 +827,19 @@ The kluster.ai API endpoint used by the Batch.
 
 `input_file_id` ++"string"++
 
-The ID of the input file for the Batch.
+The ID of the input file for the batch.
 
 ---
 
 `completion_window` ++"string"++
 
-The time frame within which the Batch should be processed.
+The time frame within which the batch should be processed.
 
 ---
 
 `status` ++"string"++
 
-The current status of the Batch.
+The current status of the batch.
 
 ---
 
@@ -857,67 +857,67 @@ The ID of the file containing the outputs of requests with errors.
 
 `created_at` ++"integer"++
 
-The Unix timestamp (in seconds) for when the Batch was created.
+The Unix timestamp (in seconds) for when the batch was created.
 
 ---
 
 `in_progress_at` ++"integer"++
 
-The Unix timestamp (in seconds) for when the Batch started processing.
+The Unix timestamp (in seconds) for when the batch started processing.
 
 ---
 
 `expires_at` ++"integer"++
 
-The Unix timestamp (in seconds) for when the Batch will expire.
+The Unix timestamp (in seconds) for when the batch will expire.
 
 ---
 
 `finalizing_at` ++"integer"++
 
-The Unix timestamp (in seconds) for when the Batch started finalizing.
+The Unix timestamp (in seconds) for when the batch started finalizing.
 
 ---
 
 `completed_at` ++"integer"++
 
-The Unix timestamp (in seconds) for when the Batch was completed.
+The Unix timestamp (in seconds) for when the batch was completed.
 
 ---
 
 `failed_at` ++"integer"++
 
-The Unix timestamp (in seconds) for when the Batch failed.
+The Unix timestamp (in seconds) for when the batch failed.
 
 ---
 
 `expired_at` ++"integer"++
 
-The Unix timestamp (in seconds) for when the Batch expired.
+The Unix timestamp (in seconds) for when the batch expired.
 
 ---
 
 `cancelling_at` ++"integer"++
 
-The Unix timestamp (in seconds) for when the Batch started cancelling.
+The Unix timestamp (in seconds) for when the batch started cancelling.
 
 ---
 
 `cancelled_at` ++"integer"++
 
-The Unix timestamp (in seconds) for when the Batch was cancelled.
+The Unix timestamp (in seconds) for when the batch was cancelled.
 
 ---
 
 `request_counts` ++"object"++
 
-The request counts for different statuses within the Batch.
+The request counts for different statuses within the batch.
 
 ??? child "Show properties"
 
     `total` ++"integer"++
 
-    Total number of requests in the Batch.
+    Total number of requests in the batch.
 
     ---
 
@@ -982,7 +982,7 @@ Set of 16 key-value pairs that can be attached to an object. This is useful for 
 <div class="grid" markdown>
 <div markdown>
 
-The per-line object of the Batch input file.
+The per-line object of the batch input file.
 
 `custom_id` ++"string"++
 
@@ -1043,7 +1043,7 @@ The JSON body of the input file.
 <div class="grid" markdown>
 <div markdown>
 
-The per-line object of the Batch output files.
+The per-line object of the batch output files.
 
 `id` ++"string"++
 
@@ -1157,19 +1157,19 @@ You can also view all your uploaded files in the [**Files** tab](https://platfor
 
 `file` ++"file"++ <span class="required" markdown>++"required"++</span>
 
-The File object (not file name) to be uploaded.
+The file object (not file name) to be uploaded.
 
 ---
 
 `purpose` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-The intended purpose of the uploaded file. Use `batch` for the Batch API.
+The intended purpose of the uploaded file. Use `batch` for the batch API.
 
 ---
 
 **Returns**
 
-The uploaded [File](#file-object) object.
+The uploaded [File object](#file-object).
 
 </div>
 <div markdown>
@@ -1223,7 +1223,7 @@ The uploaded [File](#file-object) object.
 
 `GET https://api.kluster.ai/v1/files/{output_file_id}/content`
 
-To retrieve the content of your Batch jobs output file, send a request to the `files` endpoint specifying the `output_file_id`. The output file will be a JSONL file, where each line contains the `custom_id` from your input file request, and the corresponding response.
+To retrieve the content of your batch jobs output file, send a request to the `files` endpoint specifying the `output_file_id`. The output file will be a JSONL file, where each line contains the `custom_id` from your input file request, and the corresponding response.
 
 <div class="grid" markdown>
 <div markdown>
@@ -1254,10 +1254,10 @@ The file content. Refer to the [input](/api-reference/reference/#the-request-inp
         api_key="INSERT_API_KEY" # Replace with your actual API key
     )
 
-    # Get the status of the Batch, which returns the output_file_id
+    # Get the status of the batch, which returns the output_file_id
     batch_status = client.batches.retrieve(batch_request.id)
 
-    # Check if the Batch completed successfully
+    # Check if the batch completed successfully
     if batch_status.status.lower() == "completed":
         # Retrieve the results
         result_file_id = batch_status.output_file_id
@@ -1451,18 +1451,18 @@ Fine-tuning is the process of refining a pre-trained model on specialized data. 
 
 ### Supported models
 
-Currently, two base models are supported for Fine-tuning:
+Currently, two base models are supported for fine-tuning:
 
 - **`klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`** - has a `64,000` tokens max context window, best for long-context tasks, cost-sensitive scenarios
 - **`klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`** - has a `32,000` tokens max context window, best for complex reasoning, high-stakes accuracy
 
-### Create a Fine-tuning job
+### Create a fine-tuning job
 
 `POST https://api.kluster.ai/v1/fine_tuning/jobs`
 
-To initiate a Fine-tuning job for one of the supported models, first upload the dataset file (see [Files section](#files) for instructions).
+To initiate a fine-tuning job for one of the supported models, first upload the dataset file (see [Files section](#files) for instructions).
 
-<div class="grid" markdown> 
+<div class="grid" markdown>
 <div markdown>
 
 **Request**
@@ -1487,7 +1487,7 @@ Optionally specify a separate file to serve as your validation dataset.
 
 `hyperparameters` ++"object or null"++
 
-Optionally specify an object containing hyperparameters for Fine-tuning:
+Optionally specify an object containing hyperparameters for fine-tuning:
 
 ??? child "Show properties"
 
@@ -1507,7 +1507,6 @@ Optionally specify an object containing hyperparameters for Fine-tuning:
 
     The number of times the entire training dataset is passed through the model. More epochs can improve learning but risk overfitting if the model memorizes training data. Monitor validation metrics to determine the optimal number.
 
-
 ---
 
 `nickname` ++"string or null"++
@@ -1520,7 +1519,7 @@ Add a custom suffix that will be appended to the output model name. This can hel
 
 A [Fine-tuning job object](#fine-tuning-job-object).
 
-</div> 
+</div>
 <div markdown>
 
 === "Python"
@@ -1589,23 +1588,23 @@ A [Fine-tuning job object](#fine-tuning-job-object).
 }
 ```
 
-</div> 
+</div>
 </div>
 
-### Retrieve a Fine-tuning job
+### Retrieve a fine-tuning job
 
 `GET https://api.kluster.ai/v1/fine_tuning/jobs/{fine_tuning_job_id}`
 
-Fetch details of a single Fine-tuning job by specifying its `fine_tuning_job_id`.
+Fetch details of a single fine-tuning job by specifying its `fine_tuning_job_id`.
 
-<div class="grid" markdown> 
+<div class="grid" markdown>
 <div markdown>
 
 **Path parameters**
 
 `fine_tuning_job_id` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-The ID of the Fine-tuning job to retrieve.
+The ID of the fine-tuning job to retrieve.
 
 ---
 
@@ -1613,7 +1612,7 @@ The ID of the Fine-tuning job to retrieve.
 
 A [Fine-tuning job object](#fine-tuning-job-object).
 
-</div> 
+</div>
 <div markdown>
 
 === "Python"
@@ -1660,16 +1659,16 @@ A [Fine-tuning job object](#fine-tuning-job-object).
 }
 ```
 
-</div> 
+</div>
 </div>
 
-### List all Fine-tuning jobs
+### List all fine-tuning jobs
 
 `GET https://api.kluster.ai/v1/fine_tuning/jobs`
 
-Retrieve a paginated list of all Fine-tuning jobs.
+Retrieve a paginated list of all fine-tuning jobs.
 
-<div class="grid" markdown> 
+<div class="grid" markdown>
 <div markdown>
 
 **Query parameters**
@@ -1690,7 +1689,7 @@ A limit on the number of objects returned (1 to 100). Default is 20.
 
 A paginated list of [Fine-tuning job objects](#fine-tuning-job-object).
 
-</div> 
+</div>
 <div markdown>
 
 === "Python"
@@ -1771,23 +1770,23 @@ A paginated list of [Fine-tuning job objects](#fine-tuning-job-object).
 }
 ```
 
-</div> 
+</div>
 </div>
 
-### Cancel a Fine-tuning job
+### Cancel a fine-tuning job
 
 `POST https://api.kluster.ai/v1/fine_tuning/jobs/{fine_tuning_job_id}/cancel`
 
 To cancel a job that is in progress, send a `POST` request to the `cancel` endpoint with the job ID.
 
-<div class="grid" markdown> 
+<div class="grid" markdown>
 <div markdown>
 
 **Path parameters**
 
-`fine_tuning_job_id` ++"string"++ <span class="required" markdown>++"required"++</span> 
+`fine_tuning_job_id` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-The ID of the Fine-tuning job to cancel.
+The ID of the fine-tuning job to cancel.
 
 ---
 
@@ -1795,7 +1794,7 @@ The ID of the Fine-tuning job to cancel.
 
 The [Fine-tuning job object](#fine-tuning-job-object) with updated status.
 
-</div> 
+</div>
 <div markdown>
 
 === "Python"
@@ -1837,12 +1836,12 @@ The [Fine-tuning job object](#fine-tuning-job-object) with updated status.
 }
 ```
 
-</div> 
+</div>
 </div>
 
-### Fine-tuning job object 
+### Fine-tuning job object
 
-<div class="grid" markdown> 
+<div class="grid" markdown>
 <div markdown>
 
 `object` ++"string"++
@@ -1853,7 +1852,7 @@ The object type, which is always `fine_tuning.job`.
 
 `id` ++"string"++
 
-Unique identifier for the Fine-tuning job.
+Unique identifier for the fine-tuning job.
 
 ---
 
@@ -1865,13 +1864,13 @@ ID of the base model being fine-tuned.
 
 `created_at` ++"integer"++
 
-Unix timestamp (in seconds) when the Fine-tuning job was created.
+Unix timestamp (in seconds) when the fine-tuning job was created.
 
 ---
 
 `finished_at` ++"integer"++
 
-Unix timestamp (in seconds) when the Fine-tuning job was completed.
+Unix timestamp (in seconds) when the fine-tuning job was completed.
 
 ---
 
@@ -1883,13 +1882,13 @@ The ID of the resulting fine-tuned model if the job succeeded; otherwise `null`.
 
 `result_files` ++"array"++
 
-Array of file IDs associated with the Fine-tuning job results.
+Array of file IDs associated with the fine-tuning job results.
 
 ---
 
 `status` ++"string"++
 
-The status of the Fine-tuning job, e.g. `pending`, `running`, `succeeded`, `failed`, or `cancelled`.
+The status of the fine-tuning job (e.g., `pending`, `running`, `succeeded`, `failed`, or `cancelled`).
 
 ---
 
@@ -1907,7 +1906,7 @@ Training hyperparameters used in the job (e.g., `batch_size`, `n_epochs`, `learn
 
 `method` ++"object"++
 
-Details about the Fine-tuning method used, including type and specific parameters.
+Details about the fine-tuning method used, including type and specific parameters.
 
 ---
 
@@ -1919,9 +1918,9 @@ The total number of tokens processed during training.
 
 `integrations` ++"array"++
 
-Array of integrations associated with the Fine-tuning job.
+Array of integrations associated with the fine-tuning job.
 
-</div> 
+</div>
 <div markdown>
 
 ```json title="Example"
@@ -1953,5 +1952,5 @@ Array of integrations associated with the Fine-tuning job.
 }
 ```
 
-</div> 
+</div>
 </div>

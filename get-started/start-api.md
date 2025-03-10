@@ -1,6 +1,6 @@
 ---
 title: Start building with the kluster.ai API
-description: The kluster.ai API getting started guide provides examples and instructions for submitting and managing Batch jobs using kluster.ai's OpenAI-compatible API.
+description: The kluster.ai API getting started guide provides examples and instructions for submitting and managing batch jobs using kluster.ai's OpenAI-compatible API.
 ---
 
 # Start using the kluster.ai API
@@ -31,24 +31,24 @@ The following limits apply to API requests based upon your plan tier:
 
 ## Batch job workflow overview
 
-Working with Batch jobs in the kluster.ai API involves the following steps:
+Working with batch jobs in the kluster.ai API involves the following steps:
 
-1. **Create Batch job file** - prepare a JSON Lines file containing one or more chat completion requests to be executed in the batch
-2. **Upload Batch job file** - upload the file to kluster.ai to receive a unique file ID
-3. **Start the Batch job** - initiate a new Batch job using the file ID
-4. **Monitor job progress** - track the status of your Batch job to ensure successful completion
+1. **Create batch job file** - prepare a JSON Lines file containing one or more chat completion requests to be executed in the batch
+2. **Upload batch job file** - upload the file to kluster.ai to receive a unique file ID
+3. **Start the batch job** - initiate a new batch job using the file ID
+4. **Monitor job progress** - track the status of your batch job to ensure successful completion
 5. **Retrieve results** - once the job finishes, access and process the results as needed
 
 This streamlined process enables efficient handling of large-scale requests.
 
 In addition to these core steps, this guide will give you hands-on experience with:
 
-- **Cancel a Batch job** - cancel an ongoing Batch job if necessary before it completes
-- **List all Batch jobs** - review all of your Batch jobs
+- **Cancel a batch job** - cancel an ongoing batch job if necessary before it completes
+- **List all batch jobs** - review all of your batch jobs
 
-## Create Batch jobs as JSON files
+## Create batch jobs as JSON files
 
-To take the first step in the Batch job workflow, you'll need to assemble your Batch requests and add them to a [JSON Lines](https://jsonlines.org/) file (`.jsonl`).
+To take the first step in the batch job workflow, you'll need to assemble your batch requests and add them to a [JSON Lines](https://jsonlines.org/) file (`.jsonl`).
 
 Each request needs to include the following arguments:
 
@@ -148,9 +148,9 @@ The following examples generate requests and save them in a JSONL file, ready fo
     EOF
     ```
 
-## Upload Batch job files
+## Upload batch job files
 
-Upload your [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `files` endpoint along with the intended purpose of the upload. For Batch jobs, set the `purpose` value to `"batch"`.
+Upload your [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `files` endpoint along with the intended purpose of the upload. For batch jobs, set the `purpose` value to `"batch"`.
 
 The response will contain an `id` field; save this value as you'll need it in the next step, where it's referred to as `input_file_id`.
 
@@ -188,9 +188,9 @@ The response will contain an `id` field; save this value as you'll need it in th
 }
 ```
 
-## Submit a Batch job
+## Submit a batch job
 
-Next, submit a Batch job by calling the `batches` endpoint and providing the `id` of the uploaded Batch job file (from the previous section) as the [`input_file_id`, and additional parameters](/api-reference/reference/#submit-a-batch-job){target=\_blank} to specify the job's configuration.
+Next, submit a batch job by calling the `batches` endpoint and providing the `id` of the uploaded batch job file (from the previous section) as the [`input_file_id`, and additional parameters](/api-reference/reference/#submit-a-batch-job){target=\_blank} to specify the job's configuration.
 
 The response includes an `id` that can be used to monitor the job's progress, as demonstrated in the next section.
 
@@ -249,7 +249,7 @@ The response includes an `id` that can be used to monitor the job's progress, as
 
 ## Monitor job progress
 
-To monitor your Batch job's progress, make periodic requests to the `batches` endpoint using the `id` of the Batch request (from the previous section) as the [`batch_id`](/api-reference/reference/#retrieve-a-batch){target=\_blank} to check its status. The job is complete when the `status` field returns `"completed"`.
+To monitor your batch job's progress, make periodic requests to the `batches` endpoint using the `id` of the batch request (from the previous section) as the [`batch_id`](/api-reference/reference/#retrieve-a-batch){target=\_blank} to check its status. The job is complete when the `status` field returns `"completed"`.
 
 To see a complete list of the supported statuses, refer to the [Retrieve a batch](/api-reference/reference/#retrieve-a-batch){target=\_blank} API reference page.
 
@@ -261,7 +261,7 @@ To see a complete list of the supported statuses, refer to the [Retrieve a batch
     ```python title="Example request"
     import time
 
-    # Poll the Batch status until it's complete
+    # Poll the batch status until it's complete
     while True:
         batch_status = client.batches.retrieve(batch_request.id)
         print("Batch status: {}".format(batch_status.status))
@@ -314,14 +314,14 @@ To see a complete list of the supported statuses, refer to the [Retrieve a batch
 
 ## Retrieve results
 
-To retrieve the content of your Batch jobs output file, send a request to the `files` endpoint specifying the `output_file_id`, which is returned from querying the Batch's status (from the previous section).
+To retrieve the content of your batch jobs output file, send a request to the `files` endpoint specifying the `output_file_id`, which is returned from querying the batch's status (from the previous section).
 
 The output file will be a JSONL file, where each line contains the `custom_id` from your input file request and the corresponding response.
 
 === "Python"
 
     ```python title="Example request"
-    # Check if the Batch completed successfully
+    # Check if the batch completed successfully
     if batch_status.status.lower() == "completed":
         # Retrieve the results
         result_file_id = batch_status.output_file_id
@@ -343,9 +343,9 @@ The output file will be a JSONL file, where each line contains the `custom_id` f
         -H "Authorization: Bearer $API_KEY" > batch_output.jsonl
     ```
 
-## List all Batch jobs
+## List all batch jobs
 
-To list all of your Batch jobs, send a request to the `batches` endpoint without specifying a `batch_id`. To constrain the query response, you can also use a `limit` parameter.
+To list all of your batch jobs, send a request to the `batches` endpoint without specifying a `batch_id`. To constrain the query response, you can also use a `limit` parameter.
 
 === "Python"
 
@@ -410,9 +410,9 @@ To list all of your Batch jobs, send a request to the `batches` endpoint without
 }
 ```
 
-## Cancel a Batch job
+## Cancel a batch job
 
-To cancel a Batch job currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, during which time the status will show as `cancelling`. Once complete, the status will show as `cancelled`.
+To cancel a batch job currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, during which time the status will show as `cancelling`. Once complete, the status will show as `cancelled`.
 
 === "Python"
 
@@ -423,7 +423,7 @@ To cancel a Batch job currently in progress, send a request to the `cancel` endp
         base_url="https://api.kluster.ai/v1",  
         api_key="INSERT_API_KEY" # Replace with your actual API key
     )
-    client.batches.cancel("mybatch-123") # Replace with your Batch id
+    client.batches.cancel("mybatch-123") # Replace with your batch id
     ```
 
 === "curl"
@@ -466,13 +466,13 @@ To cancel a Batch job currently in progress, send a request to the `cancel` endp
 
 ## Summary
 
-Congratulations! You now have all the tools needed to work with the kluster.ai Batch API. In this guide, you've learned how to:
+Congratulations! You now have all the tools needed to work with the kluster.ai batch API. In this guide, you've learned how to:
 
-- Prepare and submit Batch jobs with structured request inputs
+- Prepare and submit batch jobs with structured request inputs
 - Track your jobs' progress in real-time
 - Retrieve and handle job results
-- View and manage your Batch jobs
+- View and manage your batch jobs
 - Cancel jobs when needed
 - View supported models
 
-The kluster.ai Batch API is designed to efficiently and reliably handle your large-scale LLM workloads. Do you have questions or suggestions? The [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
+The kluster.ai batch API is designed to efficiently and reliably handle your large-scale LLM workloads. Do you have questions or suggestions? The [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
