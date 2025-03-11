@@ -11,9 +11,7 @@ This guide will help you set up and configure [SillyTavern](https://sillytaverna
 
 Before starting, ensure you have the following:
 
-- **SillyTavern installed** - for installation instructions, refer to the SillyTavern [Installation](https://docs.sillytavern.app/installation/){target=\_blank} guide
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+--8<-- 'text/kluster-api-onboarding.md'
 
 ## Configure SillyTavern
 
