@@ -11,8 +11,7 @@ This guide shows you how to integrate [LiteLLM](https://www.litellm.ai/){target=
 
 Before starting, ensure you have the following:
 
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+--8<-- 'text/kluster-api-onboarding.md'
 - **[A python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}** - this is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial
 - [**LiteLLM installed**](https://github.com/BerriAI/litellm){target=\_blank} - to install the library, use the following command:
 

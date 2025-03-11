@@ -13,8 +13,7 @@ In this guide, you'll learn how to integrate [kluster.ai](https://www.kluster.ai
 
 Before starting, ensure you have the following kluster prerequisites:
 
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+--8<-- 'text/kluster-api-onboarding.md'
 - **Clone and install the eliza repository** - follow the installation instructions on the [eliza Quick Start guide](https://elizaos.github.io/eliza/docs/quickstart/){target=\_blank}
     
 !!! warning
