@@ -16,8 +16,12 @@ Before starting, ensure you have the following kluster prerequisites:
 - **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
 - **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
 - **Clone and install the eliza repository** - follow the installation instructions on the [eliza Quick Start guide](https://elizaos.github.io/eliza/docs/quickstart/){target=\_blank}
-    - Pay careful attention to the eliza prerequisites, including the minimum supported versions of Node.js and pnpm
-    - Stop at the **Configure Environment** section in the Quick Start guide, as this guide covers those steps
+    
+!!! warning
+
+    Pay careful attention to the eliza prerequisites, including the minimum supported versions of Node.js and pnpm. You will not be able to successfully follow this guide using npm or yarn.
+
+- Stop at the **Configure Environment** section in the Quick Start guide, as this guide covers those steps. 
 
 ## Configure your environment
 
@@ -80,7 +84,7 @@ pnpm start:client
 
 ## Put it all together
 
-You can now interact with Dobby by clicking on the **Chat** button and starting the conversation: 
+You can now interact with Dobby by selecting on the **Send Message** button and starting the conversation: 
 
 ![Chat with Dobby AI agent](/images/get-started/integrations/eliza/eliza-1.webp)
 
