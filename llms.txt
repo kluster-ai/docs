@@ -2813,122 +2813,24 @@ That's it! You've successfully integrated LiteLLM with the kluster.ai API. Conti
 
 ## Explore LiteLLM features
 
-In the previous section, you learned how to use LiteLLM with the kluster.ai API by properly configuring the model via an OpenAI-like call and configuring the API key and API base URL. This section will dive deeper into some of the interesting features offered by LiteLLM and how to use them with the kluster.ai API.
+In the previous section, you learned how to use LiteLLM with the kluster.ai API by properly configuring the model via an OpenAI-like call and configuring the API key and API base URL. The following sections demonstrate using LiteLLM's streaming response and multi-turn conversation features with the kluster.ai API.
 
-Follow these steps to get started:
+The following guide assumes you just finished the configuration exercise in the preceding section. If you haven't already done so, please complete the configuration steps in the [Configure LiteLLM](#configure-litellm) section before you continue.
 
-1. **Import LiteLLM and its dependencies** - create a new file (e.g., `litellm-features.py`) and start by importing the necessary Python modules:
-```python
-import os
+### Use streaming responses
 
-import litellm.exceptions
-from litellm import completion
+You can enable streaming by simply passing `stream=True` to the `completion()` function. Streaming returns a generator instead of a static response, letting you iterate over partial output chunks as they arrive. In the code sample below, each chunk is accessed in a for-in loop, allowing you to extract the textual content (e.g., `chunk.choices[0].delta.content)` rather than printing all metadata.
 
-# Set environment variables for kluster.ai
-os.environ["OPENAI_API_KEY"] = "INSERT_API_KEY"  # Replace with your key
-os.environ["OPENAI_API_BASE"] = "https://api.kluster.ai/v1"
+To configure a streaming response, take the following steps:
 
-def main():
-    model = "openai/klusterai/Meta-Llama-3.3-70B-Instruct-Turbo"
-
-    messages = [
-        {"role": "system", "content": "You are a helpful AI assistant."},
-        {"role": "user",   "content": "Explain the significance of the California Gold Rush."},
-    ]
-
-    # --- 1) STREAMING CALL: Only print chunk text --------------------------------
-    try:
-        response_stream = completion(
-            model=model,
-            messages=messages,
-            max_tokens=300,
-            temperature=0.3,
-            stream=True,  # streaming enabled
-        )
-    except Exception as err:
-        print(f"Error calling model: {err}")
-        return
-
-    print("\n--------- STREAMING RESPONSE (text only) ---------")
-    streamed_text = []
-
-    # Iterate over each chunk from the streaming generator
-    for chunk in response_stream:
-        if hasattr(chunk, "choices") and chunk.choices:
-            # If the content is None, we replace it with "" (empty string)
-            partial_text = getattr(chunk.choices[0].delta, "content", "") or ""
-            streamed_text.append(partial_text)
-            print(partial_text, end="", flush=True)
-
-    print("\n")  # new line after streaming ends
-
-    # Combine the partial chunks into one string
-    complete_first_answer = "".join(streamed_text)
-
-    # Append the entire first answer to the conversation for multi-turn context
-    messages.append({"role": "assistant", "content": complete_first_answer})
-
-    # --- 2) SECOND CALL (non-streamed): Print just the text ---------------------
-    messages.append({
-        "role": "user",
-        "content": (
-            "Thanks for that. Can you propose a short, 3-minute presentation outline "
-            "about the Gold Rush, focusing on its broader implications?"
-        ),
-    })
-
-    try:
-        response_2 = completion(
-            model=model,
-            messages=messages,
-            max_tokens=300,
-            temperature=0.6,
-            stream=False  # non-streamed
-        )
-    except Exception as err:
-        print(f"Error calling model: {err}")
-        return
-
-    print("--------- RESPONSE 2 (non-streamed, text only) ---------")
-    second_answer_text = ""
-    if response_2.choices and hasattr(response_2.choices[0], "message"):
-        second_answer_text = response_2.choices[0].message.get("content", "") or ""
-
-    print(second_answer_text)
-
-if __name__ == "__main__":
-    main()
-```
-2. **Set your kluster.ai API key and Base URL** - Replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}
-```python
-os.environ["OPENAI_API_KEY"] = "INSERT_API_KEY"  # Replace with your key
-os.environ["OPENAI_API_BASE"] = "https://api.kluster.ai/v1"
-```
-3. **Set your desired kluster model** - choose one of the kluster.ai models that best fits your use case:
-
-    - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
-- `deepseek-ai/DeepSeek-R1`
-
-    Prepend the model name with `openai/` so LiteLLM recognizes it as an OpenAI-like model request.
-```python
-model = "openai/klusterai/Meta-Llama-3.3-70B-Instruct-Turbo"
-```
-4. **Define the system prompt and your first user message** - set up system and user roles:
+1. **Update the `messages` system prompt and first user message** - you can supply a user message or use the sample provided:
 ```python
 {"role": "system", "content": "You are a helpful AI assistant."},
         {"role": "user",   "content": "Explain the significance of the California Gold Rush."},
     ]
 ```
 
-### Use streaming responses
-
-You can enable streaming by simply passing `stream=True` to the `completion()` function. Streaming returns a generator instead of a static response, letting you iterate over partial output chunks as they arrive. In the code sample below, each chunk is accessed in a for in loop, allowing you to extract the textual content (e.g., `chunk.choices[0].delta.content)` rather than printing all metadata.
-
-To configure a streaming response, take the following steps:
-
-1. **Initiate a streaming request to the model** - set `stream=True` in the `completion()` function to tell LiteLLM to return partial pieces (chunks) of the response as they become available rather than waiting for the entire response to be ready
+2. **Initiate a streaming request to the model** - set `stream=True` in the `completion()` function to tell LiteLLM to return partial pieces (chunks) of the response as they become available rather than waiting for the entire response to be ready
 ```python
 try:
         response_stream = completion(
@@ -2945,7 +2847,7 @@ try:
     print("\n--------- STREAMING RESPONSE (text only) ---------")
     streamed_text = []
 ```
-2. **Isolate the returned text content** - returning all of the streamed data will include a lot of excessive noise like token counts, etc. You can isolate the text content from the rest of the streamed response with the following code:
+3. **Isolate the returned text content** - returning all of the streamed data will include a lot of excessive noise like token counts, etc. You can isolate the text content from the rest of the streamed response with the following code:
 ```python
 for chunk in response_stream:
         if hasattr(chunk, "choices") and chunk.choices:
@@ -3006,7 +2908,7 @@ second_answer_text = ""
 You can view the full script below. It demonstrates a streamed response versus a regular response and how to handle a multi-turn conversation.  
 
 ??? code "View complete script"
-    ```python title="litellm-features.py"
+    ```python title="hello-litellm.py"
     import os
 
 import litellm.exceptions
@@ -3092,7 +2994,7 @@ if __name__ == "__main__":
 
 Use the following command to run your script:
 ```bash
-python litellm-features.py
+python hello-litellm.py
 ```
 
 You should see output that resembles the following:

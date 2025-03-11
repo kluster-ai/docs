@@ -66,42 +66,26 @@ That's it! You've successfully integrated LiteLLM with the kluster.ai API. Conti
 
 ## Explore LiteLLM features
 
-In the previous section, you learned how to use LiteLLM with the kluster.ai API by properly configuring the model via an OpenAI-like call and configuring the API key and API base URL. This section will dive deeper into some of the interesting features offered by LiteLLM and how to use them with the kluster.ai API.
+In the previous section, you learned how to use LiteLLM with the kluster.ai API by properly configuring the model via an OpenAI-like call and configuring the API key and API base URL. The following sections demonstrate using LiteLLM's streaming response and multi-turn conversation features with the kluster.ai API.
 
-Follow these steps to get started:
+The following guide assumes you just finished the configuration exercise in the preceding section. If you haven't already done so, please complete the configuration steps in the [Configure LiteLLM](#configure-litellm) section before you continue.
 
-1. **Import LiteLLM and its dependencies** - create a new file (e.g., `litellm-features.py`) and start by importing the necessary Python modules:
-```python
---8<-- "code/get-started/integrations/litellm/litellm-features.py::04"
-```
-2. **Set your kluster.ai API key and Base URL** - Replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}
-```python
---8<-- "code/get-started/integrations/litellm/litellm-features.py:06:09"
-```
-3. **Set your desired kluster model** - choose one of the kluster.ai models that best fits your use case:
+### Use streaming responses
 
-    --8<-- 'text/real-time-models.md'
+You can enable streaming by simply passing `stream=True` to the `completion()` function. Streaming returns a generator instead of a static response, letting you iterate over partial output chunks as they arrive. In the code sample below, each chunk is accessed in a for-in loop, allowing you to extract the textual content (e.g., `chunk.choices[0].delta.content)` rather than printing all metadata.
 
-    Prepend the model name with `openai/` so LiteLLM recognizes it as an OpenAI-like model request.
-```python
---8<-- "code/get-started/integrations/litellm/litellm-features.py:10:11"
-```
-4. **Define the system prompt and your first user message** - set up system and user roles:
+To configure a streaming response, take the following steps:
+
+1. **Update the `messages` system prompt and first user message** - you can supply a user message or use the sample provided:
 ```python
 --8<-- "code/get-started/integrations/litellm/litellm-features.py:13:16"
 ```
 
-### Use streaming responses
-
-You can enable streaming by simply passing `stream=True` to the `completion()` function. Streaming returns a generator instead of a static response, letting you iterate over partial output chunks as they arrive. In the code sample below, each chunk is accessed in a for in loop, allowing you to extract the textual content (e.g., `chunk.choices[0].delta.content)` rather than printing all metadata.
-
-To configure a streaming response, take the following steps:
-
-1. **Initiate a streaming request to the model** - set `stream=True` in the `completion()` function to tell LiteLLM to return partial pieces (chunks) of the response as they become available rather than waiting for the entire response to be ready
+2. **Initiate a streaming request to the model** - set `stream=True` in the `completion()` function to tell LiteLLM to return partial pieces (chunks) of the response as they become available rather than waiting for the entire response to be ready
 ```python
 --8<-- "code/get-started/integrations/litellm/litellm-features.py:18:32"
 ```
-2. **Isolate the returned text content** - returning all of the streamed data will include a lot of excessive noise like token counts, etc. You can isolate the text content from the rest of the streamed response with the following code:
+3. **Isolate the returned text content** - returning all of the streamed data will include a lot of excessive noise like token counts, etc. You can isolate the text content from the rest of the streamed response with the following code:
 ```python
 --8<-- "code/get-started/integrations/litellm/litellm-features.py:34:42"
 ```
@@ -136,7 +120,7 @@ Let's take a closer look at each step:
 You can view the full script below. It demonstrates a streamed response versus a regular response and how to handle a multi-turn conversation.  
 
 ??? code "View complete script"
-    ```python title="litellm-features.py"
+    ```python title="hello-litellm.py"
     --8<-- "code/get-started/integrations/litellm/litellm-features.py"
     ```
 
@@ -144,7 +128,7 @@ You can view the full script below. It demonstrates a streamed response versus a
 
 Use the following command to run your script:
 ```bash
-python litellm-features.py
+python hello-litellm.py
 ```
 
 You should see output that resembles the following:
