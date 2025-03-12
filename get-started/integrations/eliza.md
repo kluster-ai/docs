@@ -1,40 +1,48 @@
 ---
-title: Using eliza with the kluster.ai API
+title: Integrate eliza with kluster.ai
 description: Learn how to integrate kluster.ai with eliza, a fast, lightweight, and flexible AI agent framework, to launch and configure your own AI agent chatbot. 
 ---
 
-# Using eliza with the kluster.ai API
+# Integrate eliza with kluster.ai
 
 [eliza](https://elizaos.github.io/eliza/){target=\_blank} is an open-source framework designed to create and manage AI agents that can handle a variety of tasks, from simple chat interactions to more complex automation.
 
-In this guide, you'll learn how to integrate [kluster.ai](https://www.kluster.ai/) into eliza so you can leverage its powerful models and quickly set up your AI-driven workflows.
+In this guide, you'll learn how to integrate [kluster.ai](https://www.kluster.ai/) into eliza to leverage its powerful models and quickly set up your AI-driven workflows.
 
 ## Prerequisites
 
 Before starting, ensure you have the following kluster prerequisites:
 
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+--8<-- 'text/kluster-api-onboarding.md'
+- **Clone and install the eliza repository** - follow the installation instructions on the [eliza Quick Start guide](https://elizaos.github.io/eliza/docs/quickstart/){target=\_blank}
+    
+!!! warning
 
-Next, you can clone and install the eliza repository by following the installation instructions on the [eliza Quick Start guide](https://elizaos.github.io/eliza/docs/quickstart/){target=\_blank}. Pay careful attention to the eliza prerequisites, including the minimum supported versions of Node.js and pnpm. You can pause at the **Configure Environment** section in the Quick Start guide, as those steps will be addressed in this guide.
+    Pay careful attention to the eliza prerequisites, including the minimum supported versions of Node.js and pnpm. You will not be able to successfully follow this guide using npm or yarn.
+
+- Stop at the **Configure Environment** section in the Quick Start guide, as this guide covers those steps
 
 ## Configure your environment
 
-After you have eliza installed, it's simple to utilize kluster.ai with eliza. Only three main changes to the `.env` file are required. You can run the following command to generate a `.env` file from the provided example. 
+After installing eliza, it's simple to utilize kluster.ai with eliza. Only three main changes to the `.env` file are required. 
 
+1. **Create `.env` file** - run the following command to generate a `.env` file from the eliza repository example:
 ```bash
 cp .env.example .env
 ```
 
-Then, set the following variables in the `.env` file: 
+2. **Set variables** - update the following variables in the `.env` file:
+    - **OPENAI_API_KEY** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
+    - **OPENAI_API_URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
+    - **OPENAI_DEFAULT_MODEL** - choose one of kluster.ai's available models based on your use case:
 
-  - **OPENAI_API_KEY** - replace `INSERT_API_KEY` in the code below with your own kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
-  - **OPENAI_API_URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
-  - **OPENAI_DEFAULT_MODEL** - choose one of kluster.ai's available models based on your use case. Ensure that the model's full name starting with `klusterai/` is listed. For more details, see [kluster.ai's models](/api-reference/reference/#list-supported-models){target=\_blank}. It's also recommended that you set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, `LARGE_OPENAI_MODEL` to the same value. This will allow you seamless experimentation with the different characters because different characters default to using different models
+        --8<-- 'text/real-time-models.md'
+      
+      You should also set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, and `LARGE_OPENAI_MODEL` to the same value to allow seamless experimentation as different characters use different default models.
 
 The OpenAI configuration section of your `.env` file should resemble the following:
 
-```bash
+```bash title=".env"
 # OpenAI Configuration
 OPENAI_API_KEY=INSERT_KLUSTER_API_KEY
 OPENAI_API_URL=https://api.kluster.ai/v1
@@ -48,11 +56,10 @@ LARGE_OPENAI_MODEL=klusterai/Meta-Llama-3.3-70B-Instruct-Turbo
 
 ## Run and interact with your first agent
 
-Now that you've configured your environment properly you're ready to run your first agent! eliza comes with a number of characters that you can interact with by prompting or that can autonomously perform tasks like tweeting. This guide relies on the `Dobby` character for its minimal setup requirements. Other agents, particularly those that handle tweets, would necessitate additional steps, such as X login and similar information. 
+Now that you've configured your environment, you're ready to run your first agent! eliza has several characters you can interact with by prompting or through autonomous tasks like tweeting. This guide relies on the `Dobby` character for its minimal setup requirements.
 
-By default, `Dobby` uses the `openai` model, which has been properly configured to rely on the kluster.ai API, but it doesn't hurt to double-check the `dobby.character.json` file under the `characters` folder. You should see the configuration start with the following:
-
-```json
+1. **Verify character configuration** - open the `dobby.character.json` file inside the `characters` folder. By default, `Dobby` uses the `openai` model, which you've already configured to use the kluster.ai API. The `Dobby` configuration should start with the following:
+```json title="dobby.character.json"
 {
   "name": "Dobby",
   "clients": [],
@@ -60,24 +67,24 @@ By default, `Dobby` uses the `openai` model, which has been properly configured 
 }
 ```
 
-To run the `Dobby` agent, run the following command from the project root directory:
-
+2. **Run the agent** - run the following command from the project root directory to run the `Dobby` agent:
 ```bash
 pnpm start --character="characters/dobby.character.json"
 ``` 
 
-In another terminal window, run the following command to launch the web UI: 
-
+3. **Launch the UI** - in another terminal window, run the following command to launch the web UI: 
 ```bash
 pnpm start:client
 ```
+  Your terminal output should resemble the following:
+  --8<-- 'code/get-started/integrations/eliza/terminal/launch-client.md'
 
-You'll be prompted to open your browser to [http://localhost:5173/](http://localhost:5173/){target=\_blank}. 
+4. **Open your browser** - follow the prompts and open your browser to [http://localhost:5173/](http://localhost:5173/){target=\_blank}
 
---8<-- 'code/get-started/integrations/eliza/terminal/launch-client.md'
+## Put it all together
 
-You can now interact with Dobby by clicking on the **Chat** button and starting the conversation: 
+You can now interact with Dobby by selecting on the **Send Message** button and starting the conversation: 
 
 ![Chat with Dobby AI agent](/images/get-started/integrations/eliza/eliza-1.webp)
 
-That's it! You've successfully integrated eliza with the kluster.ai API. You're now ready to harness the power of AI agents with the kluster.ai API! 
+That's it! You've successfully integrated eliza with the kluster.ai API. You're now ready to harness the power of AI agents with the kluster.ai API!

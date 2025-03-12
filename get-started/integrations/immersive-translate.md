@@ -3,7 +3,7 @@ title: Integrate Immersive Translate
 description: Learn how to integrate the Immersive Translate browser extension with kluster.ai in your workflows for seamless, real-time multilingual content handling.
 ---
 
-# Using Immersive Translate with the kluster.ai API
+# Integrate Immersive Translate with kluster.ai
 
 [Immersive Translate](https://immersivetranslate.com/){target=_blank} is an  AI-powered bilingual translation extension that automatically identifies the main text on any web page and provides parallel translations in real-time. This context-driven approach streamlines reading and collaboration across languages with additional features like efficient document translation, hover translation, and support for 10+ translation services.
 
@@ -13,11 +13,10 @@ In this guide, you'll learn how to integrate Immersive Translate with the [klust
 
 Before starting, ensure you have the following:
 
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+--8<-- 'text/kluster-api-onboarding.md'
 - **Installed the Immersive Translate plugin** - you can download the Immersive Translate plugin for your respective browser on the [Immersive Translate homepage](https://immersivetranslate.com/){target=\_blank}
 
-## Configure Immersive Translate to use the kluster.ai API
+## Configure Immersive Translate
 
 First, open the Immersive Translate extension and click on the **Options** button in the lower left corner of the extension.
 
@@ -56,7 +55,7 @@ That's it! The next section will demonstrate using Immersive Translate with the 
 
 ![](/images/get-started/integrations/immersivetranslate/immersive-4.webp)
 
-## Translate content with Immersive Translate
+## Translate content
 
 With Immersive Translate, you can easily translate content with just a few clicks. To do so, navigate to the page with the foreign language content. Open the Immersive Translate plugin and take the following steps:
 

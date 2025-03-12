@@ -1,9 +1,9 @@
 ---
-title: Using Msty with the kluster.ai API
+title: Integrate Msty with the kluster.ai API
 description: Learn how to configure Msty, a user-friendly desktop AI toolkit that allows attachments and easy conversation management, to use the kluster.ai API.
 ---
 
-# Using Msty with the kluster.ai API
+# Integrate Msty with kluster.ai
 
 [Msty](https://msty.app/){target=_blank} is a user-friendly local AI toolkit that also supports popular online model providers— all within a sleek, powerful interface. By eliminating tedious setup steps (no Docker or terminal required) and helping you manage attachments, Msty makes large language models more accessible than ever while making every conversation fully informed and flexible.
 
@@ -13,8 +13,7 @@ This guide will walk you through integrating [kluster.ai](https://www.kluster.ai
 
 Before starting, ensure you have the following prerequisites:
 
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+--8<-- 'text/kluster-api-onboarding.md'
 - **Msty app installed** - The [Msty app](https://msty.app/){target=_blank} can be downloaded with one click. You can also find an [Installation Guide](https://docs.msty.app/getting-started/download){target=\_blank} on the Msty docs site
 
 ## Quick start
@@ -34,7 +33,10 @@ Then, take the following steps to configure Msty to use the kluster.ai API:
     ```
 
 4. Paste your API key and ensure **Save key securely in keychain** is selected
-5. Paste the name of the [supported kluster.ai model](/api-reference/reference/#list-supported-models){target=\_blank} you'd like to use. Note that you can specify multiple models
+5. Paste the name of the supported kluster.ai model you'd like to use. Note that you can specify multiple models
+
+    --8<-- 'text/real-time-models.md'
+
 6. Press **Add** to finalize the addition of kluster.ai API as a provider
 
 ![Configure remote model screen](/images/get-started/integrations/msty/msty-2.webp)
