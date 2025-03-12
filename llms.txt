@@ -2334,7 +2334,7 @@ Before starting, ensure you have the following kluster prerequisites:
 
     Pay careful attention to the eliza prerequisites, including the minimum supported versions of Node.js and pnpm. You will not be able to successfully follow this guide using npm or yarn.
 
-- Stop at the **Configure Environment** section in the Quick Start guide, as this guide covers those steps. 
+- Stop at the **Configure Environment** section in the Quick Start guide, as this guide covers those steps
 
 ## Configure your environment
 
