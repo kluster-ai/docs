@@ -14,10 +14,10 @@ You will learn which models are supported for real-time inference jobs, how to s
 
 ## Prerequisites
 
-This guide assumes familiarity with basic Python and Large Language Model (LLM) development. Before getting started, make sure you have:
+This guide assumes familiarity with Large Language Model (LLM) development and OpenAI libraries. Before getting started, make sure you have:
 
-- **An active kluster API key** - if you don't already have one, see the [Get an API key](/get-started/get-api-key/){target=\_blank} guide for instructions
-- **A virtual Python environment** - this optional but recommended step helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
+--8<-- 'text/kluster-api-onboarding.md'
+- **A virtual Python environment** - (optional) recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
 
 ## Supported models
 
@@ -27,48 +27,93 @@ Real-time inferences through kluster.ai support the following models:
 
 In addition, you can see the complete list of available models programmatically using the [list supported models](/api-reference/reference/#list-supported-models){target=\_blank} endpoint.
 
-## Submitting a request
+## Quickstart snippets
+
+The following  code snippets provide a full end-to-end real-time inference example for different models supported by kluster.ai. You can simply copy the snippet and paste it into your local environment. 
+
+### Python
+
+The only variable you'll need to provide is the API key.
+
+??? code "LLama 3.1 8B"
+
+    ```python
+    --8<-- 'code/get-started/start-building/real-time/real-time-llama3.1-8.py'
+    ```
+
+??? code "LLama 3.1 405B"
+
+    ```python
+    --8<-- 'code/get-started/start-building/real-time/real-time-llama3.1-405.py'
+    ```
+
+??? code "LLama 3.3 70B"
+
+    ```python
+    --8<-- 'code/get-started/start-building/real-time/real-time-llama3.3-70.py'
+    ```
+
+??? code "DeepSeek R1"
+
+    ```python
+    --8<-- 'code/get-started/start-building/real-time/real-time-deepseekR1.py'
+    ```
+
+### CLI
+
+Similarly, the following curl commands showcase how to easily send a chat completion request to kluster.ai for the different supported models. You will only need to replace `YOUR_API_KEY`.
+
+??? code "LLama 3.1 8B"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-llama3.1-8.md'
+    ```
+
+??? code "LLama 3.1 405B"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-llama3.1-405.md'
+    ```
+
+??? code "LLama 3.3 70B"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-llama3.3-70.md'
+    ```
+
+??? code "DeepSeek R1"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-deepseekR1.md'
+    ```
+
+## Real-time inference flow
+
+This section goes through the details a real-time inference process using kluster.ai API and the DeepSeek R1 model, but you can adapt it to any of the [supported models](#supported-models).
+
+### Submitting a request
 
 The kluster.ai platform offers a simple, [OpenAI-compatible](/get-started/openai-compatibility/){target=\_blank} interface, making it easy to integrate kluster.ai services seamlessly into your existing system.
 
-The following examples demonstrate a pre-configured interface to get you started. Options are included for Python and curl.
+The following code shows how to do a chat completions request using the OpenAI library.
 
 === "Python"
 
     ```python
-    --8<-- 'code/get-started/integrations/start-building/real-time/real-time-01.py'
+    --8<-- 'code/get-started/start-building/real-time/real-time-01.py:01:22'
     ```
 
-=== "curl"
-
-    ``` curl
-    curl https://api.kluster.ai/v1/chat/completions \
-        -H "Authorization: Bearer YOUR_API_KEY" \ # Replace with your actual API key
-        -H "Content-Type: application/json" \
-        -d '{
-                "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo", 
-                "messages": [
-                    { 
-                        "role": "user", 
-                        "content": "What is the most famous street in Paris?" 
-                    }
-                ]
-            }'
-    ```
-
-There are several configurable parameters when using real-time inferences:
+If successful, the `completion` variable contains full response, which you'll need to analyze to extract the answer you are looking for. In terms of configuration for real-time inferences, there several parameters that you need to tweak:
 
 - `model` – name of one of the [supported models](#supported-models)
 
-- `messages` – in the `content` parameter, you should provide the query you want to process. You can pass any input here. In this example, the query is "What is the most famous street in Paris?"
+- `messages` – in the `content` parameter, you should provide the query you want to process. You can pass any input here. In this example, the query is "What is the ultimate breakfast sandwich?"
 
 Once these parameters are configured, run your script to send the request.
 
-## Response
+### Fetching the response
 
-If the request is successful, the response should follow the structure demonstrated below and contain relevant data such as the generated output, metadata, and token usage details. 
-
-The following is an example of what a real-time response might look like:
+If the request is successful, the response is contained in the `completion` variable from the example above, and it should follow the structure demonstrated below and contain relevant data such as the generated output, metadata, and token usage details. 
 
 ```Json title="Response"
 {
@@ -79,7 +124,7 @@ The following is an example of what a real-time response might look like:
             "index": 0,
             "logprobs": null,
             "message": {
-                "content": "The most famous street in Paris is the Champs-Élysées.",
+                "content": "The ultimate breakfast sandwich: toasted brioche, crispy bacon, melty cheddar, fried egg, avocado, and a dash of sriracha. Balance of crispy, creamy, savory, and spicy.",
                 "refusal": null,
                 "role": "assistant",
                 "audio": null,
@@ -105,11 +150,28 @@ The following is an example of what a real-time response might look like:
 }
 ```
 
+The following snippet demonstrate how you can extract the data, log it to the console, and save it to a JSON file.
+
+=== "Python"
+
+    ```python
+    --8<-- 'code/get-started/start-building/real-time/real-time-01.py:23:47'
+    ```
+
+
 For a detailed breakdown of the chat completion object, see the [**chat completion API reference**](/api-reference/reference#chat-completion-object){target=\_blank} section.
+
+??? code "View the complete script"
+
+    === "Python"
+
+        ```python
+        --8<-- 'code/get-started/start-building/real-time/real-time-01.py'
+        ```
 
 ## Third-party integrations
 
-You can also set up a third-party LLM interface using the kluster.ai API. For step-by-step instructions, check out the following integration guides:
+You can also set up a [third-party LLM integrations](/get-started/integrations/){target=\_blank} using the kluster.ai API. For step-by-step instructions, check out the following integration guides:
 
 - [**SillyTavern**](/get-started/integrations/sillytavern){target=\_blank} - multi-LLM chat interface
 - [**LangChain**](/get-started/integrations/langchain/){target=\_blank} - multi-turn conversational agent

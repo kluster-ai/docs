@@ -6,21 +6,36 @@ description: The kluster.ai API getting started guide provides examples and inst
 
 The [kluster.ai](https://www.kluster.ai/){target=\_blank} API provides a straightforward way to work with Large Language Models (LLMs) at scale. It is [compatible with OpenAI's API and SDKs](/get-started/openai-compatibility/){target=\_blank}, making it easy to integrate into your existing workflows with minimal code changes.
 
-This guide provides copy-and-paste examples for both Python and curl (although all OpenAI's SDKs are supported) and detailed explanations to help you get started quickly.
-
-## Install prerequisites
-
-The OpenAI Python library (version {{ libraries.openai_api.min_version }} or higher) is recommended, which can be installed with:
-
-```bash
-pip install "openai>={{ libraries.openai_api.min_version }}"
-```
-
 ## Get your API key
 
 Navigate to the kluster.ai developer console [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key from there. You'll need this for all API requests.
 
 For step-by-step instructions, refer to the [Get an API key](/get-started/get-api-key){target=\_blank} guide.
+
+## Setting up OpenAI client library
+
+Developers can use the OpenAI libraries with kluster.ai with no changes. To start, you need to install the library to use:
+
+=== "Python"
+
+    ```python
+    pip install "openai>={{ libraries.openai_api.min_version }}"
+    ```
+
+Once the library is installed, you can instantiate an OpenAI client pointing to kluster.ai with the following code and replacing `INSERT_API_KEY`:
+
+=== "Python"
+
+    ```python
+    from openai import OpenAI
+        
+    client = OpenAI(
+        base_url="https://api.kluster.ai/v1",
+        api_key="INSERT_API_KEY",  # Replace with your actual API key
+    )
+    ```
+
+Check the [kluster.ai OpenAI compatibility page](/get-started/openai-compatibility/){target=\_blank} for detailed information about the integration.
 
 ## API request limits
 
