@@ -3992,7 +3992,7 @@ If you already have an application running with the OpenAI client library, you c
 
 ## Configuring OpenAI to use kluster.ai's API
 
-Developers can use the OpenAI libraries with kluster.ai with no changes. To start, you need to install the library to use:
+Developers can use the OpenAI libraries with kluster.ai with no changes. To start, you need to install the library:
 
 === "Python"
 
@@ -4081,7 +4081,7 @@ This guide assumes familiarity with Large Language Model (LLM) development and O
     - [**`getpass`**](https://pypi.org/project/getpass4/) - to handle API keys safely
 - **A basic understanding of** [**JSON Lines (JSONL)**](https://jsonlines.org/){target=\_blank} - JSONL is the required text input format for performing batch inferences with the kluster.ai API
 
-If you plan to use cURL via the CLI, you can export kluster.ai API key as a variable:
+If you plan to use cURL via the CLI, you can export your kluster.ai API key as a variable:
 
 ```bash
 export API_KEY=INSERT_API_KEY
@@ -4115,7 +4115,7 @@ In addition to these core steps, this guide will give you hands-on experience to
 
 ## Quickstart snippets
 
-The following  code snippets provide a full end-to-end batch inference example for different models supported by kluster.ai. You can simply copy the snippet and paste it into your local environment. 
+The following code snippets provide a full end-to-end batch inference example for different models supported by kluster.ai. You can simply copy and paste the snippet into your local environment.
 
 ### Python
 
@@ -4803,7 +4803,7 @@ echo "$OUTPUT_CONTENT"
 
 ## Batch inference flow
 
-This section goes through the details a batch inference process using kluster.ai API and the DeepSeek R1 model, but you can adapt it to any of the [supported models](#supported-models).
+This section details the batch inference process using the kluster.ai API and DeepSeek R1 model, but you can adapt it to any of the [supported models](#supported-models).
 
 ### Create batch jobs as JSON files
 
@@ -5243,7 +5243,7 @@ You can use the following snippets to list all of your batch jobs:
     )
 
     # Log all batch jobs
-    print(client.batches.list().to_dict())
+    print(client.batches.list(limit=3).to_dict())
     ```
 
 === "curl"
@@ -5297,7 +5297,7 @@ You can use the following snippets to list all of your batch jobs:
 
 ## Cancel a batch job
 
-To cancel a batch job currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, when the status will show as `cancelling`. Once complete, the status will show as `cancelled`.
+To cancel a batch job currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, and the status will show as `canceling.` Once complete, the status will show as `cancelled`.
 
 You can use the following snippets to cancel a batch job:
 
@@ -5418,7 +5418,7 @@ In addition, you can see the complete list of available models programmatically 
 
 ## Quickstart snippets
 
-The following  code snippets provide a full end-to-end real-time inference example for different models supported by kluster.ai. You can simply copy the snippet and paste it into your local environment. 
+The following code snippets provide a complete end-to-end real-time inference example for different models supported by kluster.ai. You can copy and paste the snippet into your local environment. 
 
 ### Python
 
@@ -5659,7 +5659,7 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 
 ## Real-time inference flow
 
-This section goes through the details a real-time inference process using kluster.ai API and the DeepSeek R1 model, but you can adapt it to any of the [supported models](#supported-models).
+This section details the real-time inference process using the kluster.ai API and DeepSeek R1 model, but you can adapt it to any of the [supported models](#supported-models).
 
 ### Submitting a request
 
@@ -5692,7 +5692,7 @@ completion = client.chat.completions.create(
 )
     ```
 
-If successful, the `completion` variable contains full response, which you'll need to analyze to extract the answer you are looking for. In terms of configuration for real-time inferences, there several parameters that you need to tweak:
+If successful, the `completion` variable contains a full response, which you'll need to analyze to extract the answer you are looking for. In terms of configuration for real-time inferences, there are several parameters that you need to tweak:
 
 - `model` – name of one of the [supported models](#supported-models)
 
@@ -5702,7 +5702,7 @@ Once these parameters are configured, run your script to send the request.
 
 ### Fetching the response
 
-If the request is successful, the response is contained in the `completion` variable from the example above, and it should follow the structure demonstrated below and contain relevant data such as the generated output, metadata, and token usage details. 
+If the request is successful, the response is contained in the `completion` variable from the example above. It should follow the structure below and include relevant data such as the generated output, metadata, and token usage details. 
 
 ```Json title="Response"
 {
@@ -5739,7 +5739,7 @@ If the request is successful, the response is contained in the `completion` vari
 }
 ```
 
-The following snippet demonstrate how you can extract the data, log it to the console, and save it to a JSON file.
+The following snippet demonstrates how to extract the data, log it to the console, and save it to a JSON file.
 
 === "Python"
 
@@ -5771,7 +5771,7 @@ log_response_to_file(completion)
     ```
 
 
-For a detailed breakdown of the chat completion object, see the [**chat completion API reference**](/api-reference/reference#chat-completion-object){target=\_blank} section.
+For a detailed breakdown of the chat completion object, see the [chat completion API reference](/api-reference/reference#chat-completion-object){target=\_blank} section.
 
 ??? code "View the complete script"
 
@@ -5829,7 +5829,7 @@ log_response_to_file(completion)
 
 ## Third-party integrations
 
-You can also set up a [third-party LLM integrations](/get-started/integrations/){target=\_blank} using the kluster.ai API. For step-by-step instructions, check out the following integration guides:
+You can also set up [third-party LLM integrations](/get-started/integrations/){target=\_blank} using the kluster.ai API. For step-by-step instructions, check out the following integration guides:
 
 - [**SillyTavern**](/get-started/integrations/sillytavern){target=\_blank} - multi-LLM chat interface
 - [**LangChain**](/get-started/integrations/langchain/){target=\_blank} - multi-turn conversational agent
@@ -5842,7 +5842,7 @@ You can also set up a [third-party LLM integrations](/get-started/integrations/)
 You have now experienced the complete real-time inference job lifecycle using kluster.ai's chat completion API. In this guide, you've learned:
 
 - How to submit a real-rime inference request
-- How to configure real-time inference related API parameters
+- How to configure real-time inference-related API parameters
 - How to interpret the chat completion object API response
 
 The kluster.ai batch API is designed to efficiently and reliably handle your large-scale LLM workloads. If you have questions or suggestions, the [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
@@ -5860,13 +5860,13 @@ The [kluster.ai](https://www.kluster.ai/){target=\_blank} API provides a straigh
 
 ## Get your API key
 
-Navigate to the kluster.ai developer console [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key from there. You'll need this for all API requests.
+Navigate to the kluster.ai developer console [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. You'll need this for all API requests.
 
 For step-by-step instructions, refer to the [Get an API key](/get-started/get-api-key){target=\_blank} guide.
 
-## Setting up OpenAI client library
+## Set up the OpenAI client library
 
-Developers can use the OpenAI libraries with kluster.ai with no changes. To start, you need to install the library to use:
+Developers can use the OpenAI libraries with kluster.ai with no changes. To start, you need to install the library:
 
 === "Python"
 

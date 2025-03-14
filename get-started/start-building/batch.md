@@ -341,7 +341,7 @@ You can use the following snippets to list all of your batch jobs:
     )
 
     # Log all batch jobs
-    print(client.batches.list().to_dict())
+    print(client.batches.list(limit=3).to_dict())
     ```
 
 === "curl"
@@ -395,7 +395,7 @@ You can use the following snippets to list all of your batch jobs:
 
 ## Cancel a batch job
 
-To cancel a batch job currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, when the status will show as `cancelling`. Once complete, the status will show as `cancelled`.
+To cancel a batch job currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, and the status will show as `canceling.` Once complete, the status will show as `cancelled`.
 
 You can use the following snippets to cancel a batch job:
 

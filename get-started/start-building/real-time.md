@@ -38,7 +38,7 @@ In addition, you can see the complete list of available models programmatically 
 
 ## Quickstart snippets
 
-The following code snippets provide a full end-to-end real-time inference example for different models supported by kluster.ai. You can simply copy and paste the snippet into your local environment. 
+The following code snippets provide a complete end-to-end real-time inference example for different models supported by kluster.ai. You can copy and paste the snippet into your local environment. 
 
 ### Python
 
@@ -123,7 +123,7 @@ Once these parameters are configured, run your script to send the request.
 
 ### Fetching the response
 
-If the request is successful, the response is contained in the `completion` variable from the example above, and it should follow the structure demonstrated below and contain relevant data such as the generated output, metadata, and token usage details. 
+If the request is successful, the response is contained in the `completion` variable from the example above. It should follow the structure below and include relevant data such as the generated output, metadata, and token usage details. 
 
 ```Json title="Response"
 {
@@ -169,7 +169,7 @@ The following snippet demonstrates how to extract the data, log it to the consol
     ```
 
 
-For a detailed breakdown of the chat completion object, see the [**chat completion API reference**](/api-reference/reference#chat-completion-object){target=\_blank} section.
+For a detailed breakdown of the chat completion object, see the [chat completion API reference](/api-reference/reference#chat-completion-object){target=\_blank} section.
 
 ??? code "View the complete script"
 
@@ -194,7 +194,7 @@ You can also set up [third-party LLM integrations](/get-started/integrations/){t
 You have now experienced the complete real-time inference job lifecycle using kluster.ai's chat completion API. In this guide, you've learned:
 
 - How to submit a real-rime inference request
-- How to configure real-time inference related API parameters
+- How to configure real-time inference-related API parameters
 - How to interpret the chat completion object API response
 
 The kluster.ai batch API is designed to efficiently and reliably handle your large-scale LLM workloads. If you have questions or suggestions, the [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
