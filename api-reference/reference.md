@@ -1199,7 +1199,7 @@ The uploaded [File object](#file-object).
     curl -s https://api.kluster.ai/v1/files \
         -H "Authorization: $API_KEY" \
         -H "Content-Type: multipart/form-data" \
-        -F "file=@mybatchtest.jsonl" \
+        -F "file=@my_batch_request.jsonl" \
         -F "purpose=batch"
     ```
 
@@ -1208,7 +1208,7 @@ The uploaded [File object](#file-object).
   "id": "myfile-123",
   "bytes": 2797,
   "created_at": "1733832768",
-  "filename": "mybatchtest.jsonl",
+  "filename": "my_batch_request.jsonl",
   "object": "file",
   "purpose": "batch"
 }
@@ -1331,7 +1331,7 @@ The intended purpose of the file. Currently, only `batch` is supported.
   "id": "myfile-123",
   "bytes": 2797,
   "created_at": "1733832768",
-  "filename": "mybatchtest.jsonl",
+  "filename": "my_batch_request.jsonl",
   "object": "file",
   "purpose": "batch"
 }
