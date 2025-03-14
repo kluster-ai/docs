@@ -1233,7 +1233,7 @@ The uploaded [File object](#file-object).
     curl -s https://api.kluster.ai/v1/files \
         -H "Authorization: $API_KEY" \
         -H "Content-Type: multipart/form-data" \
-        -F "file=@mybatchtest.jsonl" \
+        -F "file=@my_batch_request.jsonl" \
         -F "purpose=batch"
     ```
 
@@ -1242,7 +1242,7 @@ The uploaded [File object](#file-object).
   "id": "myfile-123",
   "bytes": 2797,
   "created_at": "1733832768",
-  "filename": "mybatchtest.jsonl",
+  "filename": "my_batch_request.jsonl",
   "object": "file",
   "purpose": "batch"
 }
@@ -1365,7 +1365,7 @@ The intended purpose of the file. Currently, only `batch` is supported.
   "id": "myfile-123",
   "bytes": 2797,
   "created_at": "1733832768",
-  "filename": "mybatchtest.jsonl",
+  "filename": "my_batch_request.jsonl",
   "object": "file",
   "purpose": "batch"
 }
@@ -2103,10 +2103,11 @@ After finishing the CLI setup, you will see a `src` directory with files `crew.p
     - **provider** - you can specify `openai_compatible`
     - **model** - choose one of kluster.ai's available models based on your use case:
     
-        - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
+        - `deepseek-ai/DeepSeek-R1`
+- `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
-- `deepseek-ai/DeepSeek-R1`
+- `Qwen/Qwen2.5-VL-7B-Instruct`
 
         Regardless of which model you choose, prepend its name with `openai/` to ensure CrewAI, which relies on LiteLLM, processes your requests correctly. 
 
@@ -2349,10 +2350,11 @@ cp .env.example .env
     - **OPENAI_API_URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
     - **OPENAI_DEFAULT_MODEL** - choose one of kluster.ai's available models based on your use case:
 
-        - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
+        - `deepseek-ai/DeepSeek-R1`
+- `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
-- `deepseek-ai/DeepSeek-R1`
+- `Qwen/Qwen2.5-VL-7B-Instruct`
       
       You should also set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, and `LARGE_OPENAI_MODEL` to the same value to allow seamless experimentation as different characters use different default models.
 
@@ -2529,10 +2531,11 @@ It's easy to integrate kluster.ai with LangChain—when configuring the chat mod
   - **API key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
   - **Select your model** - choose one of kluster.ai's available models based on your use case:
 
-      - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
+      - `deepseek-ai/DeepSeek-R1`
+- `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
-- `deepseek-ai/DeepSeek-R1`
+- `Qwen/Qwen2.5-VL-7B-Instruct`
 
 ```python
 from langchain_openai import ChatOpenAI
@@ -2752,10 +2755,11 @@ messages = [
 ```
 4. **Select your kluster.ai model** - choose one of the kluster.ai models that best fits your use case:
 
-    - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
+    - `deepseek-ai/DeepSeek-R1`
+- `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
-- `deepseek-ai/DeepSeek-R1`
+- `Qwen/Qwen2.5-VL-7B-Instruct`
 
     Prepend the model name with `openai/` so LiteLLM recognizes it as an OpenAI-like model request.
 ```python
@@ -3070,10 +3074,11 @@ Then, take the following steps to configure Msty to use the kluster.ai API:
 4. Paste your API key and ensure **Save key securely in keychain** is selected
 5. Paste the name of the supported kluster.ai model you'd like to use. Note that you can specify multiple models
 
-    - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
+    - `deepseek-ai/DeepSeek-R1`
+- `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
-- `deepseek-ai/DeepSeek-R1`
+- `Qwen/Qwen2.5-VL-7B-Instruct`
 
 6. Press **Add** to finalize the addition of kluster.ai API as a provider
 
@@ -4091,10 +4096,11 @@ export API_KEY=INSERT_API_KEY
 
 Batch inference using kluster.ai supports the following models:
 
+- `deepseek-ai/DeepSeek-R1`
 - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
-- `deepseek-ai/DeepSeek-R1`
+- `Qwen/Qwen2.5-VL-7B-Instruct`
 
 In addition, you can see the complete list of available models programmatically using the [list supported models](/api-reference/reference/#list-supported-models){target=\_blank} endpoint.
 
@@ -4189,7 +4195,7 @@ requests = [
 ]
 
 # Save tasks to a JSONL file (newline-delimited JSON)
-file_name = "mybatchtest.jsonl"
+file_name = "my_batch_request.jsonl"
 with open(file_name, "w") as file:
     for request in requests:
         file.write(json.dumps(request) + "\n")
@@ -4301,7 +4307,7 @@ requests = [
 ]
 
 # Save tasks to a JSONL file (newline-delimited JSON)
-file_name = "mybatchtest.jsonl"
+file_name = "my_batch_request.jsonl"
 with open(file_name, "w") as file:
     for request in requests:
         file.write(json.dumps(request) + "\n")
@@ -4413,7 +4419,7 @@ requests = [
 ]
 
 # Save tasks to a JSONL file (newline-delimited JSON)
-file_name = "mybatchtest.jsonl"
+file_name = "my_batch_request.jsonl"
 with open(file_name, "w") as file:
     for request in requests:
         file.write(json.dumps(request) + "\n")
@@ -4525,7 +4531,119 @@ requests = [
 ]
 
 # Save tasks to a JSONL file (newline-delimited JSON)
-file_name = "mybatchtest.jsonl"
+file_name = "my_batch_request.jsonl"
+with open(file_name, "w") as file:
+    for request in requests:
+        file.write(json.dumps(request) + "\n")
+
+# Upload batch job file
+batch_input_file = client.files.create(
+        file=open(file_name, "rb"),
+        purpose="batch"
+)
+
+# Submit batch job
+batch_request = client.batches.create(
+    input_file_id=batch_input_file.id,
+    endpoint="/v1/chat/completions",
+    completion_window="24h",
+)
+
+# Poll the batch status until it's complete
+while True:
+    batch_status = client.batches.retrieve(batch_request.id)
+    print("Batch status: {}".format(batch_status.status))
+    print(
+        f"Completed tasks: {batch_status.request_counts.completed} / {batch_status.request_counts.total}"
+    )
+
+    if batch_status.status.lower() in ["completed", "failed", "cancelled"]:
+        break
+
+    time.sleep(10)  # Wait for 10 seconds before checking again
+
+# Check if the Batch completed successfully
+if batch_status.status.lower() == "completed":
+    # Retrieve the results and log
+    result_file_id = batch_status.output_file_id
+    results = client.files.content(result_file_id).content
+
+    # Print response to console
+    print(f"\n🔍 AI batch response:")
+    print(results)
+else:
+    print(f"Batch failed with status: {batch_status.status}")
+    ```
+
+??? example "Qwen 2.5 7B"
+
+    ```python
+    from openai import OpenAI
+from getpass import getpass
+import json
+import time
+
+# Get API key from user input
+api_key = getpass("Enter your kluster.ai API key: ")
+
+# Initialize OpenAI client pointing to kluster.ai API
+client = OpenAI(
+    base_url="https://api.kluster.ai/v1",
+    api_key=api_key,
+)
+
+# Create request with specified structure
+requests = [
+    {
+        "custom_id": "request-1",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+            "messages": [
+                {"role": "system", "content": "You are an experienced cook."},
+                {"role": "user", "content": "What is the ultimate breakfast sandwich?"},
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    {
+        "custom_id": "request-2",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+            "messages": [
+                {"role": "system", "content": "You are a maths tutor."},
+                {"role": "user", "content": "Explain the Pythagorean theorem."},
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    {
+        "custom_id": "request-4",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "You are a multilingual, experienced maths tutor.",
+                },
+                {
+                    "role": "user",
+                    "content": "Explain the Pythagorean theorem in Spanish",
+                },
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    # Additional tasks can be added here
+]
+
+# Save tasks to a JSONL file (newline-delimited JSON)
+file_name = "my_batch_request.jsonl"
 with open(file_name, "w") as file:
     for request in requests:
         file.write(json.dumps(request) + "\n")
@@ -4801,6 +4919,63 @@ echo -e "\n🔍 AI batch response:"
 echo "$OUTPUT_CONTENT"
     ```
 
+??? example "Qwen 2.5 7B"
+
+    ```python
+    #!/bin/bash
+
+# Create request with specified structure
+cat << EOF > my_batch_request.jsonl
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
+{"custom_id": "request-4", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages":[{"role": "system", "content": "You are a multilingual, experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"}],"max_completion_tokens":1000}}
+EOF
+
+# Upload batch job file
+FILE_ID=$(curl -s https://api.kluster.ai/v1/files \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: multipart/form-data" \
+    -F "file=@my_batch_request.jsonl" \
+    -F "purpose=batch" | jq -r '.id')
+echo "File uploaded, file ID: $FILE_ID"
+
+# Submit batch job
+BATCH_ID=$(curl -s https://api.kluster.ai/v1/batches \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" \
+    -d '{
+        "input_file_id": "'"$FILE_ID"'",
+        "endpoint": "/v1/chat/completions",
+        "completion_window": "24h"
+    }' | jq -r '.id')
+echo "Batch job submitted, job ID: $BATCH_ID"
+
+
+# Poll the batch status until it's completed
+STATUS="in_progress"
+while [[ "$STATUS" != "completed" ]]; do
+    echo "Waiting for batch job to complete... Status: $STATUS"
+    sleep 10 # Wait for 10 seconds before checking again
+
+    STATUS=$(curl -s https://api.kluster.ai/v1/batches/$BATCH_ID \
+        -H "Authorization: Bearer $API_KEY" \
+        -H "Content-Type: application/json" | jq -r '.status')
+done
+
+# Retrieve the batch output file
+KLUSTER_OUTPUT_FILE=$(curl -s https://api.kluster.ai/v1/batches/$BATCH_ID \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" | jq -r '.output_file_id')
+
+# Retrieve the results
+OUTPUT_CONTENT=$(curl -s https://api.kluster.ai/v1/files/$KLUSTER_OUTPUT_FILE/content \
+    -H "Authorization: Bearer $API_KEY")
+
+# Log results
+echo -e "\n🔍 AI batch response:"
+echo "$OUTPUT_CONTENT"
+    ```
+
 ## Batch inference flow
 
 This section details the batch inference process using the kluster.ai API and DeepSeek R1 model, but you can adapt it to any of the [supported models](#supported-models).
@@ -4891,7 +5066,7 @@ requests = [
 ]
 
 # Save tasks to a JSONL file (newline-delimited JSON)
-file_name = "mybatchtest.jsonl"
+file_name = "my_batch_request.jsonl"
 with open(file_name, "w") as file:
     for request in requests:
         file.write(json.dumps(request) + "\n")
@@ -5175,7 +5350,7 @@ requests = [
 ]
 
 # Save tasks to a JSONL file (newline-delimited JSON)
-file_name = "mybatchtest.jsonl"
+file_name = "my_batch_request.jsonl"
 with open(file_name, "w") as file:
     for request in requests:
         file.write(json.dumps(request) + "\n")
@@ -5409,10 +5584,11 @@ export API_KEY=INSERT_API_KEY
 
 Real-time inferences through kluster.ai support the following models:
 
+- `deepseek-ai/DeepSeek-R1`
 - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
-- `deepseek-ai/DeepSeek-R1`
+- `Qwen/Qwen2.5-VL-7B-Instruct`
 
 In addition, you can see the complete list of available models programmatically using the [list supported models](/api-reference/reference/#list-supported-models){target=\_blank} endpoint.
 
@@ -5584,6 +5760,12 @@ def log_response_to_file(response):
 log_response(completion)
     ```
 
+??? example "Qwen 2.5 7B"
+
+    ```python
+    code/get-started/start-building/real-time/real-time-qwen2.5-7.py
+    ```
+
 ### CLI
 
 Similarly, the following curl commands showcase how to easily send a chat completion request to kluster.ai for the different supported models. This example assumes you've exported your kluster.ai API key as the variable `API_KEY`.
@@ -5655,6 +5837,12 @@ Similarly, the following curl commands showcase how to easily send a chat comple
                 }
             ]
         }'
+    ```
+
+??? example "Qwen 2.5 7B"
+
+    ```python
+    code/get-started/start-building/real-time/real-time-qwen2.5-7.md
     ```
 
 ## Real-time inference flow

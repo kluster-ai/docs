@@ -82,6 +82,12 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.3-70.py'
     ```
 
+??? example "Qwen 2.5 7B"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-qwen2.5-7.py'
+    ```
+
 ### CLI
 
 Similarly, the following curl commands showcase how to easily send a chat completion request to kluster.ai for the different supported models. This example assumes you've exported your kluster.ai API key as the variable `API_KEY`.
@@ -108,6 +114,12 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 
     ```bash
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.3-70.md'
+    ```
+
+??? example "Qwen 2.5 7B"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-qwen2.5-7.md'
     ```
 
 ## Batch inference flow

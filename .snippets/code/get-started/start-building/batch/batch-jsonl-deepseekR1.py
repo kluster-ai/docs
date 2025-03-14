@@ -63,7 +63,7 @@ requests = [
 ]
 
 # Save tasks to a JSONL file (newline-delimited JSON)
-file_name = "mybatchtest.jsonl"
+file_name = "my_batch_request.jsonl"
 with open(file_name, "w") as file:
     for request in requests:
         file.write(json.dumps(request) + "\n")

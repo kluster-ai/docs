@@ -19,7 +19,7 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
+            "model": "Qwen/Qwen2.5-VL-7B-Instruct",
             "messages": [
                 {"role": "system", "content": "You are an experienced cook."},
                 {"role": "user", "content": "What is the ultimate breakfast sandwich?"},
@@ -32,7 +32,7 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
+            "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
             "messages": [
                 {"role": "system", "content": "You are a maths tutor."},
                 {"role": "user", "content": "Explain the Pythagorean theorem."},
@@ -45,7 +45,7 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
+            "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
             "messages": [
                 {
                     "role": "system",
