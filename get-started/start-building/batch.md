@@ -12,11 +12,20 @@ This guide provides examples and instructions on how to create, submit, retrieve
  
 ## Prerequisites
 
-This guide assumes familiarity with basic Python and Large Language Model (LLM) development. Before getting started, make sure you have:
+This guide assumes familiarity with Large Language Model (LLM) development and OpenAI libraries. Before getting started, make sure you have:
 
-- **An active kluster API key** - if you don't already have one, see the [Get an API key](/get-started/get-api-key/){target=\_blank} guide for instructions
+--8<-- 'text/kluster-api-onboarding.md'
+- **A virtual Python environment** - (optional) recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
+- **Required Python libraries** - install the following Python libraries:
+    - [**OpenAI Python API library**](https://pypi.org/project/openai/) - to access the `openai` module
+    - [**`getpass`**](https://pypi.org/project/getpass4/) - to handle API keys safely
 - **A basic understanding of** [**JSON Lines (JSONL)**](https://jsonlines.org/){target=\_blank} - JSONL is the required text input format for performing batch inferences with the kluster.ai API
-- **A virtual Python environment** - this optional but recommended step helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
+
+If you plan to use cURL via the CLI, you can export your kluster.ai API key as a variable:
+
+```bash
+export API_KEY=INSERT_API_KEY
+```
 
 ## Supported models
 
@@ -36,16 +45,90 @@ Working with batch jobs in the kluster.ai API involves the following steps:
 4. **Monitor job progress** - track the status of your batch job to ensure successful completion
 5. **Retrieve results** - once the job finishes, access and process the results as needed
 
-This streamlined process enables efficient handling of large-scale requests.
-
 In addition to these core steps, this guide will give you hands-on experience to:
 
 - **Cancel a batch job** - cancel an ongoing batch job before it completes
 - **List all batch jobs** - review all of your batch jobs
 
-## Create batch jobs as JSON files
+## Quickstart snippets
 
-To begin the batch job workflow, you'll need to assemble your batch requests and add them to a [JSON Lines](https://jsonlines.org/) file (`.jsonl`).
+The following code snippets provide a full end-to-end batch inference example for different models supported by kluster.ai. You can simply copy and paste the snippet into your local environment.
+
+### Python
+
+To use these snippets, run the Python script and enter your kluster.ai API key when prompted.
+
+??? example "DeepSeek R1"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-deepseekR1.py'
+    ```
+
+??? example "LLama 3.1 8B"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.1-8.py'
+    ```
+
+??? example "LLama 3.1 405B"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.1-405.py'
+    ```
+
+??? example "LLama 3.3 70B"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.3-70.py'
+    ```
+
+??? example "Qwen 2.5 7B"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-qwen2.5-7.py'
+    ```
+
+### CLI
+
+Similarly, the following curl commands showcase how to easily send a chat completion request to kluster.ai for the different supported models. This example assumes you've exported your kluster.ai API key as the variable `API_KEY`.
+
+??? example "DeepSeek R1"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-deepseekR1.md'
+    ```
+
+??? example "LLama 3.1 8B"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.1-8.md'
+    ```
+
+??? example "LLama 3.1 405B"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.1-405.md'
+    ```
+
+??? example "LLama 3.3 70B"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.3-70.md'
+    ```
+
+??? example "Qwen 2.5 7B"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-qwen2.5-7.md'
+    ```
+
+## Batch inference flow
+
+This section details the batch inference process using the kluster.ai API and DeepSeek R1 model, but you can adapt it to any of the [supported models](#supported-models).
+
+### Create batch jobs as JSON files
+
+To begin the batch job workflow, you'll need to assemble your batch requests and add them to a [JSON Lines](https://jsonlines.org/){target=\_blank} file (`.jsonl`).
 
 Each request must include the following arguments:
 
@@ -57,35 +140,35 @@ Each request must include the following arguments:
     - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles)
     - Any optional [chat completion parameters](/api-reference/reference/#create-chat-completion){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
 
-The following examples generate requests and save them in a JSONL file, which is ready for upload and processing. Options are included for Python and CLI commands. 
+!!! tip
+    You can use a different model for each request you submit.
+
+The following examples generate requests and save them in a JSONL file, which is ready to be uploaded for processing.
 
 === "Python"
 
     ```python
-    --8<-- 'code/get-started/integrations/start-building/batch/batch-jsonl-01.py'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:01:71'
     ```
 
 === "CLI"
 
     ```bash
-    --8<-- 'code/get-started/integrations/start-building/batch/batch-jsonl-02.txt'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-02.txt'
     ```
 
-## Upload batch job files
+### Upload batch job files
 
-Upload your [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `files` endpoint along with the intended purpose of the upload. Set the `purpose` value to `"batch"` for batch jobs.
+After you've created the JSON Lines file, you need to upload it using the `files` endpoint along with the intended purpose. Consequently, you need to set the `purpose` value to `"batch"` for batch jobs.
 
 The response will contain an `id` field; save this value as you'll need it in the next step, where it's referred to as `input_file_id`. You can view your uploaded files in the [**Files** tab](https://platform.kluster.ai/files){target=\_blank} of the kluster.ai platform.
 
-Use the following Python script or curl command examples to upload your batch job files:
+Use the following command examples to upload your batch job files:
 
 === "Python"
 
     ```python
-    batch_input_file = client.files.create(
-        file=open(file_name, "rb"),
-        purpose="batch"
-    )
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:72:77'
     ```
 
 === "curl"
@@ -94,7 +177,7 @@ Use the following Python script or curl command examples to upload your batch jo
     curl -s https://api.kluster.ai/v1/files \
         -H "Authorization: Bearer $API_KEY" \
         -H "Content-Type: multipart/form-data" \
-        -F "file=@mybatchtest.jsonl" \
+        -F "file=@my_batch_request.jsonl" \
         -F "purpose=batch"
     ```
 
@@ -104,34 +187,29 @@ Use the following Python script or curl command examples to upload your batch jo
     "id": "myfile-123",
     "bytes": 2797,
     "created_at": "1733832768",
-    "filename": "mybatchtest.jsonl",
+    "filename": "my_batch_request.jsonl",
     "object": "file",
     "purpose": "batch"
 }
 ```
 
-## Submit a batch job
+### Submit a batch job
 
 Next, submit a batch job by calling the `batches` endpoint and providing the `id` of the uploaded batch job file (from the previous section) as the [`input_file_id`, and additional parameters](/api-reference/reference/#submit-a-batch-job){target=\_blank} to specify the job's configuration.
 
 The response includes an `id` that can be used to monitor the job's progress, as demonstrated in the next section.
 
-Use the following Python script or curl command examples to submit your batch job:
+You can use the following snippets to submit your batch job:
 
 === "Python"
 
-    ```python title="Example request"
-
-    batch_request = client.batches.create(
-        input_file_id=batch_input_file.id,
-        endpoint="/v1/chat/completions",
-        completion_window="24h",
-    )
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:78:84'
     ```
 
 === "curl"
 
-    ```bash title="Example request"
+    ```bash
     curl -s https://api.kluster.ai/v1/batches \
         -H "Authorization: Bearer $API_KEY" \
         -H "Content-Type: application/json" \
@@ -171,18 +249,19 @@ Use the following Python script or curl command examples to submit your batch jo
 }
 ```
 
-## Monitor job progress
+### Monitor job progress
 
 You can make periodic requests to the `batches` endpoint to monitor your batch job's progress. Use the `id` of the batch request from the preceding section as the [`batch_id`](/api-reference/reference/#retrieve-a-batch){target=\_blank} to check its status. The job is complete when the `status` field returns `"completed"`. You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
 
 To see a complete list of the supported statuses, refer to the [Retrieve a batch](/api-reference/reference/#retrieve-a-batch){target=\_blank} API reference page.
 
-Use the following Python script or curl command examples to monitor the progress of your batch job:
+You can use the following snippets to monitor your batch job:
+
 
 === "Python"
 
     ```python
-    --8<-- 'code/get-started/integrations/start-building/batch/batch-jsonl-03.py'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:85:97'
     ```
 
 === "curl"
@@ -223,18 +302,18 @@ Use the following Python script or curl command examples to monitor the progress
 }
 ```
 
-## Retrieve results
+### Retrieve results
 
 To retrieve the content of your batch jobs output file, send a request to the `files` endpoint specifying the `output_file_id`, which is returned from querying the batch's status (from the previous section).
 
 The output file will be a JSONL file, where each line contains the `custom_id` from your input file request and the corresponding response.
 
-Use the following Python script or curl command examples to retrieve results from your batch job:
+You can use the following snippets to retrieve the results from your batch job:
 
 === "Python"
 
     ```python 
-    --8<-- 'code/get-started/integrations/start-building/batch/batch-jsonl-04.py'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:98:111'
     ```
 
 === "curl"
@@ -244,29 +323,42 @@ Use the following Python script or curl command examples to retrieve results fro
         -H "Authorization: Bearer $API_KEY" > batch_output.jsonl
     ```
 
+??? code "View the complete script"
+
+    === "Python"
+
+        ```python
+        --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py'
+        ```
+
 ## List all batch jobs
 
 To list all of your batch jobs, send a request to the `batches` endpoint without specifying a `batch_id`. To constrain the query response, you can also use a `limit` parameter.
 
-Use the following Python script or curl command examples to list all of your batch jobs:
+You can use the following snippets to list all of your batch jobs:
 
 === "Python"
 
     ```python
     from openai import OpenAI
-
-    # Configure OpenAI client
+    from getpass import getpass
+    
+    # Get API key from user input
+    api_key = getpass("Enter your kluster.ai API key: ")
+    
+    # Initialize OpenAI client pointing to kluster.ai API
     client = OpenAI(
-        base_url="https://api.kluster.ai/v1", 
-        api_key="INSERT_API_KEY" # Replace with your actual API key
+        base_url="https://api.kluster.ai/v1",
+        api_key=api_key,
     )
 
-    print(client.batches.list(limit=2).to_dict())
+    # Log all batch jobs
+    print(client.batches.list(limit=3).to_dict())
     ```
 
 === "curl"
 
-    ```bash title="Example request" 
+    ```bash
     curl -s https://api.kluster.ai/v1/batches \
         -H "Authorization: Bearer $API_KEY"
     ```
@@ -315,20 +407,27 @@ Use the following Python script or curl command examples to list all of your bat
 
 ## Cancel a batch job
 
-To cancel a batch job currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, when the status will show as `cancelling`. Once complete, the status will show as `cancelled`.
+To cancel a batch job currently in progress, send a request to the `cancel` endpoint with your `batch_id`. Note that cancellation may take up to 10 minutes to complete, and the status will show as `canceling.` Once complete, the status will show as `cancelled`.
 
-Use the following Python script or curl command examples to cancel a batch job:
+You can use the following snippets to cancel a batch job:
 
 === "Python"
 
     ```python title="Example"
     from openai import OpenAI
-
+    from getpass import getpass
+    
+    # Get API key from user input
+    api_key = getpass("Enter your kluster.ai API key: ")
+    
+    # Initialize OpenAI client pointing to kluster.ai API
     client = OpenAI(
-        base_url="https://api.kluster.ai/v1",  
-        api_key="INSERT_API_KEY" # Replace with your actual API key
+        base_url="https://api.kluster.ai/v1",
+        api_key=api_key,
     )
-    client.batches.cancel("mybatch-123") # Replace with your Batch id
+
+    # Cancel batch job with specified ID
+    client.batches.cancel("mybatch-123")
     ```
 
 === "curl"

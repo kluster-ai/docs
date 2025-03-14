@@ -1,0 +1,74 @@
+name: Check Documentation URL Changes
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  check-url-changes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: Identify deleted and renamed files
+        run: |
+          DELETED_FILES=$(git diff --name-status origin/main ${{ github.event.pull_request.head.sha }} | grep '^D.*\.md$' | cut -f2- || true)
+          echo "DELETED_FILES=$(echo "$DELETED_FILES" | tr '\n' ' ')" >> $GITHUB_ENV
+
+          RENAMED_FILES=$(git diff --name-status origin/main ${{ github.event.pull_request.head.sha }} | grep '^R.*\.md$' | awk '{print $2 " -> " $3}' || true)
+          echo "RENAMED_FILES=$(echo "$RENAMED_FILES" | tr '\n' ' ')" >> $GITHUB_ENV
+
+          if [ -n "$DELETED_FILES" ] || [ -n "$RENAMED_FILES" ]; then
+            echo "warning=true" >> $GITHUB_ENV
+          else
+            echo "warning=false" >> $GITHUB_ENV
+          fi
+
+          echo "Deleted files: $DELETED_FILES"
+          echo "Renamed/Moved files: $RENAMED_FILES"
+
+      - name: Debug Environment Variables
+        run: |
+          echo "warning=${{ env.warning }}"
+          echo "Deleted Files: ${{ env.DELETED_FILES }}"
+          echo "Renamed Files: ${{ env.RENAMED_FILES }}"
+
+      - name: Post PR warning
+        if: env.warning == 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue_number = context.payload.pull_request.number;
+            const repo = context.repo;
+            const deletedFiles = process.env.DELETED_FILES.trim();
+            const renamedFiles = process.env.RENAMED_FILES.trim();
+
+            let message = `🔍 **Documentation URL Checker**\n\nThis PR modifies documentation files in ways that could potentially create broken links.\n\n`;
+
+            if (deletedFiles) {
+              message += `**Deleted files:**\n\`\`\`\n${deletedFiles}\n\`\`\`\n\n`;
+            }
+
+            if (renamedFiles) {
+              message += `**Renamed/Moved files:**\n\`\`\`\n${renamedFiles}\n\`\`\`\n\n`;
+            }
+
+            message += `🚨 Please review these changes carefully 🚨\n\n If not handled properly, broken links (404 errors) could appear. To maintain a smooth user experience, consider:\n- Adding redirects in the \`redirects.json\` file from the old URLs to the new ones\n- Updating internal references to these files`;
+
+            github.rest.issues.createComment({
+              owner: repo.owner,
+              repo: repo.repo,
+              issue_number: issue_number,
+              body: message
+            });
