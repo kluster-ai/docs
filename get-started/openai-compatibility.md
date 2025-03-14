@@ -11,7 +11,7 @@ If you already have an application running with the OpenAI client library, you c
 
 ## Configuring OpenAI to use kluster.ai's API
 
-Developers can use the OpenAI libraries with kluster.ai with no changes. To start, you need to install the library to use:
+Developers can use the OpenAI libraries with kluster.ai with no changes. To start, you need to install the library:
 
 === "Python"
 

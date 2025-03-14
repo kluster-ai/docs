@@ -21,7 +21,7 @@ This guide assumes familiarity with Large Language Model (LLM) development and O
     - [**`getpass`**](https://pypi.org/project/getpass4/) - to handle API keys safely
 - **A basic understanding of** [**JSON Lines (JSONL)**](https://jsonlines.org/){target=\_blank} - JSONL is the required text input format for performing batch inferences with the kluster.ai API
 
-If you plan to use cURL via the CLI, you can export kluster.ai API key as a variable:
+If you plan to use cURL via the CLI, you can export your kluster.ai API key as a variable:
 
 ```bash
 export API_KEY=INSERT_API_KEY
@@ -52,7 +52,7 @@ In addition to these core steps, this guide will give you hands-on experience to
 
 ## Quickstart snippets
 
-The following  code snippets provide a full end-to-end batch inference example for different models supported by kluster.ai. You can simply copy the snippet and paste it into your local environment. 
+The following code snippets provide a full end-to-end batch inference example for different models supported by kluster.ai. You can simply copy and paste the snippet into your local environment.
 
 ### Python
 
@@ -112,7 +112,7 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 
 ## Batch inference flow
 
-This section goes through the details a batch inference process using kluster.ai API and the DeepSeek R1 model, but you can adapt it to any of the [supported models](#supported-models).
+This section details the batch inference process using the kluster.ai API and DeepSeek R1 model, but you can adapt it to any of the [supported models](#supported-models).
 
 ### Create batch jobs as JSON files
 

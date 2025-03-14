@@ -38,7 +38,7 @@ In addition, you can see the complete list of available models programmatically 
 
 ## Quickstart snippets
 
-The following  code snippets provide a full end-to-end real-time inference example for different models supported by kluster.ai. You can simply copy the snippet and paste it into your local environment. 
+The following code snippets provide a full end-to-end real-time inference example for different models supported by kluster.ai. You can simply copy and paste the snippet into your local environment. 
 
 ### Python
 
@@ -99,7 +99,7 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 
 ## Real-time inference flow
 
-This section goes through the details a real-time inference process using kluster.ai API and the DeepSeek R1 model, but you can adapt it to any of the [supported models](#supported-models).
+This section details the real-time inference process using the kluster.ai API and DeepSeek R1 model, but you can adapt it to any of the [supported models](#supported-models).
 
 ### Submitting a request
 
@@ -113,7 +113,7 @@ The following code shows how to do a chat completions request using the OpenAI l
     --8<-- 'code/get-started/start-building/real-time/real-time-01.py:01:22'
     ```
 
-If successful, the `completion` variable contains full response, which you'll need to analyze to extract the answer you are looking for. In terms of configuration for real-time inferences, there several parameters that you need to tweak:
+If successful, the `completion` variable contains a full response, which you'll need to analyze to extract the answer you are looking for. In terms of configuration for real-time inferences, there are several parameters that you need to tweak:
 
 - `model` – name of one of the [supported models](#supported-models)
 
@@ -160,7 +160,7 @@ If the request is successful, the response is contained in the `completion` vari
 }
 ```
 
-The following snippet demonstrate how you can extract the data, log it to the console, and save it to a JSON file.
+The following snippet demonstrates how to extract the data, log it to the console, and save it to a JSON file.
 
 === "Python"
 
@@ -181,7 +181,7 @@ For a detailed breakdown of the chat completion object, see the [**chat completi
 
 ## Third-party integrations
 
-You can also set up a [third-party LLM integrations](/get-started/integrations/){target=\_blank} using the kluster.ai API. For step-by-step instructions, check out the following integration guides:
+You can also set up [third-party LLM integrations](/get-started/integrations/){target=\_blank} using the kluster.ai API. For step-by-step instructions, check out the following integration guides:
 
 - [**SillyTavern**](/get-started/integrations/sillytavern){target=\_blank} - multi-LLM chat interface
 - [**LangChain**](/get-started/integrations/langchain/){target=\_blank} - multi-turn conversational agent

@@ -8,13 +8,13 @@ The [kluster.ai](https://www.kluster.ai/){target=\_blank} API provides a straigh
 
 ## Get your API key
 
-Navigate to the kluster.ai developer console [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key from there. You'll need this for all API requests.
+Navigate to the kluster.ai developer console [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. You'll need this for all API requests.
 
 For step-by-step instructions, refer to the [Get an API key](/get-started/get-api-key){target=\_blank} guide.
 
-## Setting up OpenAI client library
+## Set up the OpenAI client library
 
-Developers can use the OpenAI libraries with kluster.ai with no changes. To start, you need to install the library to use:
+Developers can use the OpenAI libraries with kluster.ai with no changes. To start, you need to install the library:
 
 === "Python"
 
