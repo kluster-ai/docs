@@ -16,6 +16,9 @@ This guide assumes familiarity with Large Language Model (LLM) development and O
 
 --8<-- 'text/kluster-api-onboarding.md'
 - **A virtual Python environment** - (optional) recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
+- **Installed needed Python libraries** - install the following Python libraries:
+    - [**OpenAI Python API library**](https://pypi.org/project/openai/) - to access the `openai` module
+    - [**`getpass`**](https://pypi.org/project/getpass4/) - to handle API keys safely
 - **A basic understanding of** [**JSON Lines (JSONL)**](https://jsonlines.org/){target=\_blank} - JSONL is the required text input format for performing batch inferences with the kluster.ai API
 
 If you plan to use cURL via the CLI, you can export kluster.ai API key as a variable:
@@ -53,27 +56,27 @@ The following  code snippets provide a full end-to-end batch inference example f
 
 ### Python
 
-The only variable you'll need to provide is the API key.
+To use these snippets, run the Python script and enter your kluster.ai API key when prompted.
 
-??? code "LLama 3.1 8B"
+??? example "LLama 3.1 8B"
 
     ```python
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.1-8.py'
     ```
 
-??? code "LLama 3.1 405B"
+??? example "LLama 3.1 405B"
 
     ```python
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.1-405.py'
     ```
 
-??? code "LLama 3.3 70B"
+??? example "LLama 3.3 70B"
 
     ```python
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.3-70.py'
     ```
 
-??? code "DeepSeek R1"
+??? example "DeepSeek R1"
 
     ```python
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-deepseekR1.py'
@@ -81,27 +84,27 @@ The only variable you'll need to provide is the API key.
 
 ### CLI
 
-Similarly, the following curl commands showcase how to easily send a chat completion request to kluster.ai for the different supported models. Make sure you've exported kluster.ai key as `API_KEY`.
+Similarly, the following curl commands showcase how to easily send a chat completion request to kluster.ai for the different supported models. This example assumes you've exported your kluster.ai API key as the variable `API_KEY`.
 
-??? code "LLama 3.1 8B"
+??? example "LLama 3.1 8B"
 
     ```bash
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.1-8.md'
     ```
 
-??? code "LLama 3.1 405B"
+??? example "LLama 3.1 405B"
 
     ```bash
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.1-405.md'
     ```
 
-??? code "LLama 3.3 70B"
+??? example "LLama 3.3 70B"
 
     ```bash
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.3-70.md'
     ```
 
-??? code "DeepSeek R1"
+??? example "DeepSeek R1"
 
     ```bash
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-deepseekR1.md'
