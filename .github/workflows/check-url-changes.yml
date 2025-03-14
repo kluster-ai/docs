@@ -6,8 +6,9 @@ on:
       - main
 
 permissions:
-  issues: write
+  contents: read
   pull-requests: write
+  issues: write
 
 jobs:
   check-url-changes:
