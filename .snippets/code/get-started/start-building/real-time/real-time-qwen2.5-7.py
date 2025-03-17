@@ -20,7 +20,7 @@ completion = client.chat.completions.create(
     ]
 )
 
-def log_response_to_file(response):
+def log_response(response):
     """Logs the full AI response to a JSON file in the same directory as the script."""
 
     # Extract model name and AI-generated text
