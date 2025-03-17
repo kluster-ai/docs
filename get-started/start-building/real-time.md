@@ -127,9 +127,8 @@ The following code shows how to do a chat completions request using the OpenAI l
 
 If successful, the `completion` variable contains a full response, which you'll need to analyze to extract the answer you are looking for. In terms of configuration for real-time inferences, there are several parameters that you need to tweak:
 
-- `model` – name of one of the [supported models](#supported-models)
-
-- `messages` – in the `content` parameter, you should provide the query you want to process. You can pass any input here. In this example, the query is "What is the ultimate breakfast sandwich?"
+- `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](#supported-models)
+- `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images). In this example, the query is "What is the ultimate breakfast sandwich?". 
 
 Once these parameters are configured, run your script to send the request.
 

@@ -1,7 +1,8 @@
-from openai import OpenAI
-from getpass import getpass
 import json
 import time
+from getpass import getpass
+
+from openai import OpenAI
 
 # Get API key from user input
 api_key = getpass("Enter your kluster.ai API key: ")
@@ -41,20 +42,24 @@ requests = [
         },
     },
     {
-        "custom_id": "request-4",
+        "custom_id": "request-3",
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+            "model": "Qwen/Qwen2.5-VL-7B-Instruct",
             "messages": [
                 {
-                    "role": "system",
-                    "content": "You are a multilingual, experienced maths tutor.",
-                },
-                {
                     "role": "user",
-                    "content": "Explain the Pythagorean theorem in Spanish",
-                },
+                    "content": [
+                        {"type": "text", "text": "Who can park in the area?"},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": "https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+                            },
+                        },
+                    ],
+                }
             ],
             "max_completion_tokens": 1000,
         },
@@ -69,10 +74,7 @@ with open(file_name, "w") as file:
         file.write(json.dumps(request) + "\n")
 
 # Upload batch job file
-batch_input_file = client.files.create(
-        file=open(file_name, "rb"),
-        purpose="batch"
-)
+batch_input_file = client.files.create(file=open(file_name, "rb"), purpose="batch")
 
 # Submit batch job
 batch_request = client.batches.create(
@@ -84,7 +86,7 @@ batch_request = client.batches.create(
 # Poll the batch status until it's complete
 while True:
     batch_status = client.batches.retrieve(batch_request.id)
-    print("Batch status: {}".format(batch_status.status))
+    print(f"Batch status: {batch_status.status}")
     print(
         f"Completed tasks: {batch_status.request_counts.completed} / {batch_status.request_counts.total}"
     )
