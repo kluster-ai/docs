@@ -4578,10 +4578,16 @@ else:
 ??? example "Qwen 2.5 7B"
 
     ```python
-    from openai import OpenAI
-from getpass import getpass
-import json
+    import json
 import time
+from getpass import getpass
+
+from openai import OpenAI
+
+image1_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/cat-image.jpg?raw=true"
+image2_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/emoji-image.jpg?raw=true"
+image3_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+
 
 # Get API key from user input
 api_key = getpass("Enter your kluster.ai API key: ")
@@ -4601,8 +4607,18 @@ requests = [
         "body": {
             "model": "Qwen/Qwen2.5-VL-7B-Instruct",
             "messages": [
-                {"role": "system", "content": "You are an experienced cook."},
-                {"role": "user", "content": "What is the ultimate breakfast sandwich?"},
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": "What is this?"},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": image1_url
+                            },
+                        },
+                    ],
+                }
             ],
             "max_completion_tokens": 1000,
         },
@@ -4612,34 +4628,47 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+            "model": "Qwen/Qwen2.5-VL-7B-Instruct",
             "messages": [
-                {"role": "system", "content": "You are a maths tutor."},
-                {"role": "user", "content": "Explain the Pythagorean theorem."},
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": "What is this?"},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": image2_url
+                            },
+                        },
+                    ],
+                }
             ],
             "max_completion_tokens": 1000,
         },
     },
     {
-        "custom_id": "request-4",
+        "custom_id": "request-3",
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+            "model": "Qwen/Qwen2.5-VL-7B-Instruct",
             "messages": [
                 {
-                    "role": "system",
-                    "content": "You are a multilingual, experienced maths tutor.",
-                },
-                {
                     "role": "user",
-                    "content": "Explain the Pythagorean theorem in Spanish",
-                },
+                    "content": [
+                        {"type": "text", "text": "Who can park in the area?"},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": image3_url
+                            },
+                        },
+                    ],
+                }
             ],
             "max_completion_tokens": 1000,
         },
     },
-    # Additional tasks can be added here
 ]
 
 # Save tasks to a JSONL file (newline-delimited JSON)
@@ -4649,10 +4678,7 @@ with open(file_name, "w") as file:
         file.write(json.dumps(request) + "\n")
 
 # Upload batch job file
-batch_input_file = client.files.create(
-        file=open(file_name, "rb"),
-        purpose="batch"
-)
+batch_input_file = client.files.create(file=open(file_name, "rb"), purpose="batch")
 
 # Submit batch job
 batch_request = client.batches.create(
@@ -4664,7 +4690,7 @@ batch_request = client.batches.create(
 # Poll the batch status until it's complete
 while True:
     batch_status = client.batches.retrieve(batch_request.id)
-    print("Batch status: {}".format(batch_status.status))
+    print(f"Batch status: {batch_status.status}")
     print(
         f"Completed tasks: {batch_status.request_counts.completed} / {batch_status.request_counts.total}"
     )
@@ -4673,6 +4699,10 @@ while True:
         break
 
     time.sleep(10)  # Wait for 10 seconds before checking again
+
+print(f"\nImage1 URL: {image1_url}")
+print(f"\nImage2 URL: {image2_url}")
+print(f"\nImage3 URL: {image3_url}")
 
 # Check if the Batch completed successfully
 if batch_status.status.lower() == "completed":
@@ -4685,6 +4715,7 @@ if batch_status.status.lower() == "completed":
     print(results)
 else:
     print(f"Batch failed with status: {batch_status.status}")
+    print(batch_status)
     ```
 
 ### CLI
@@ -4695,6 +4726,11 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 
     ```bash
     #!/bin/bash
+
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo "Error: API_KEY environment variable is not set." >&2
+fi
 
 # Create request with specified structure
 cat << EOF > my_batch_request.jsonl
@@ -4753,6 +4789,11 @@ echo "$OUTPUT_CONTENT"
     ```bash
     #!/bin/bash
 
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo "Error: API_KEY environment variable is not set." >&2
+fi
+
 # Create request with specified structure
 cat << EOF > my_batch_request.jsonl
 {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
@@ -4809,6 +4850,11 @@ echo "$OUTPUT_CONTENT"
 
     ```bash
     #!/bin/bash
+
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo "Error: API_KEY environment variable is not set." >&2
+fi
 
 # Create request with specified structure
 cat << EOF > my_batch_request.jsonl
@@ -4867,6 +4913,11 @@ echo "$OUTPUT_CONTENT"
     ```bash
     #!/bin/bash
 
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo "Error: API_KEY environment variable is not set." >&2
+fi
+
 # Create request with specified structure
 cat << EOF > my_batch_request.jsonl
 {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
@@ -4924,11 +4975,21 @@ echo "$OUTPUT_CONTENT"
     ```python
     #!/bin/bash
 
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo "Error: API_KEY environment variable is not set." >&2
+fi
+
+# Define image URLs
+image1_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/cat-image.jpg?raw=true"
+image2_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/emoji-image.jpg?raw=true"
+image3_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+
 # Create request with specified structure
 cat << EOF > my_batch_request.jsonl
-{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
-{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
-{"custom_id": "request-4", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages":[{"role": "system", "content": "You are a multilingual, experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"}],"max_completion_tokens":1000}}
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "What is this?"}, {"type": "image_url", "image_url": {"url": "$image1_url"}}]}],"max_completion_tokens": 1000}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "What is this?"}, {"type": "image_url", "image_url": {"url": "$image2_url"}}]}],"max_completion_tokens": 1000}}
+{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "$image3_url"}}]}],"max_completion_tokens": 1000}}
 EOF
 
 # Upload batch job file
@@ -4972,6 +5033,9 @@ OUTPUT_CONTENT=$(curl -s https://api.kluster.ai/v1/files/$KLUSTER_OUTPUT_FILE/co
     -H "Authorization: Bearer $API_KEY")
 
 # Log results
+echo -e "\nImage1 URL: $image1_url"
+echo -e "\nImage2 URL: $image2_url"
+echo -e "\nImage3 URL: $image3_url"
 echo -e "\n🔍 AI batch response:"
 echo "$OUTPUT_CONTENT"
     ```
@@ -4991,7 +5055,7 @@ Each request must include the following arguments:
 - `url` ++"string"++ -  the `/v1/chat/completions` endpoint
 - `body` ++"object"++ - a request body containing:
     - `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](#supported-models)
-    - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles)
+    - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images)
     - Any optional [chat completion parameters](/api-reference/reference/#create-chat-completion){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
 
 !!! tip
@@ -5002,9 +5066,10 @@ The following examples generate requests and save them in a JSONL file, which is
 === "Python"
 
     ```python
-    from getpass import getpass
-import json
-import time
+    import time
+from getpass import getpass
+
+from openai import OpenAI
 
 # Get API key from user input
 api_key = getpass("Enter your kluster.ai API key: ")
@@ -5044,20 +5109,24 @@ requests = [
         },
     },
     {
-        "custom_id": "request-4",
+        "custom_id": "request-3",
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+            "model": "Qwen/Qwen2.5-VL-7B-Instruct",
             "messages": [
                 {
-                    "role": "system",
-                    "content": "You are a multilingual, experienced maths tutor.",
-                },
-                {
                     "role": "user",
-                    "content": "Explain the Pythagorean theorem in Spanish",
-                },
+                    "content": [
+                        {"type": "text", "text": "Who can park in the area?"},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": "https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+                            },
+                        },
+                    ],
+                }
             ],
             "max_completion_tokens": 1000,
         },
@@ -5070,8 +5139,6 @@ file_name = "my_batch_request.jsonl"
 with open(file_name, "w") as file:
     for request in requests:
         file.write(json.dumps(request) + "\n")
-
-# Upload batch job file
     ```
 
 === "CLI"
@@ -5095,11 +5162,7 @@ Use the following command examples to upload your batch job files:
 === "Python"
 
     ```python
-    file=open(file_name, "rb"),
-        purpose="batch"
-)
-
-# Submit batch job
+    batch_input_file = client.files.create(file=open(file_name, "rb"), purpose="batch")
     ```
 
 === "curl"
@@ -5135,12 +5198,11 @@ You can use the following snippets to submit your batch job:
 === "Python"
 
     ```python
+    batch_request = client.batches.create(
     input_file_id=batch_input_file.id,
     endpoint="/v1/chat/completions",
     completion_window="24h",
 )
-
-# Poll the batch status until it's complete
     ```
 
 === "curl"
@@ -5197,8 +5259,9 @@ You can use the following snippets to monitor your batch job:
 === "Python"
 
     ```python
+    while True:
     batch_status = client.batches.retrieve(batch_request.id)
-    print("Batch status: {}".format(batch_status.status))
+    print(f"Batch status: {batch_status.status}")
     print(
         f"Completed tasks: {batch_status.request_counts.completed} / {batch_status.request_counts.total}"
     )
@@ -5207,8 +5270,6 @@ You can use the following snippets to monitor your batch job:
         break
 
     time.sleep(10)  # Wait for 10 seconds before checking again
-
-# Check if the Batch completed successfully
     ```
 
 === "curl"
@@ -5260,6 +5321,7 @@ You can use the following snippets to retrieve the results from your batch job:
 === "Python"
 
     ```python 
+    if batch_status.status.lower() == "completed":
     # Retrieve the results
     result_file_id = batch_status.output_file_id
     results = client.files.content(result_file_id).content
@@ -5285,10 +5347,11 @@ else:
     === "Python"
 
         ```python
-        from openai import OpenAI
-from getpass import getpass
-import json
+        import json
 import time
+from getpass import getpass
+
+from openai import OpenAI
 
 # Get API key from user input
 api_key = getpass("Enter your kluster.ai API key: ")
@@ -5328,20 +5391,24 @@ requests = [
         },
     },
     {
-        "custom_id": "request-4",
+        "custom_id": "request-3",
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+            "model": "Qwen/Qwen2.5-VL-7B-Instruct",
             "messages": [
                 {
-                    "role": "system",
-                    "content": "You are a multilingual, experienced maths tutor.",
-                },
-                {
                     "role": "user",
-                    "content": "Explain the Pythagorean theorem in Spanish",
-                },
+                    "content": [
+                        {"type": "text", "text": "Who can park in the area?"},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": "https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+                            },
+                        },
+                    ],
+                }
             ],
             "max_completion_tokens": 1000,
         },
@@ -5356,10 +5423,7 @@ with open(file_name, "w") as file:
         file.write(json.dumps(request) + "\n")
 
 # Upload batch job file
-batch_input_file = client.files.create(
-        file=open(file_name, "rb"),
-        purpose="batch"
-)
+batch_input_file = client.files.create(file=open(file_name, "rb"), purpose="batch")
 
 # Submit batch job
 batch_request = client.batches.create(
@@ -5371,7 +5435,7 @@ batch_request = client.batches.create(
 # Poll the batch status until it's complete
 while True:
     batch_status = client.batches.retrieve(batch_request.id)
-    print("Batch status: {}".format(batch_status.status))
+    print(f"Batch status: {batch_status.status}")
     print(
         f"Completed tasks: {batch_status.request_counts.completed} / {batch_status.request_counts.total}"
     )
@@ -5417,7 +5481,7 @@ You can use the following snippets to list all of your batch jobs:
         api_key=api_key,
     )
 
-    # Log all batch jobs
+    # Log all batch jobs (limit to 3)
     print(client.batches.list(limit=3).to_dict())
     ```
 
@@ -5625,19 +5689,15 @@ completion = client.chat.completions.create(
     ]
 )
 
-def log_response_to_file(response):
-    """Logs the full AI response to a JSON file in the same directory as the script."""
+"""Logs the full AI response to a JSON file in the same directory as the script."""
 
-    # Extract model name and AI-generated text
-    model_name = response.model  
-    text_response = response.choices[0].message.content  
+# Extract model name and AI-generated text
+model_name = completion.model  
+text_response = completion.choices[0].message.content  
 
-    # Print response to console
-    print(f"\n🔍 AI response (model: {model_name}):")
-    print(text_response)
-
-# Log response to file
-log_response(completion)
+# Print response to console
+print(f"\n🔍 AI response (model: {model_name}):")
+print(text_response)
     ```
 
 ??? example "LLama 3.1 8B"
@@ -5665,19 +5725,15 @@ completion = client.chat.completions.create(
     ]
 )
 
-def log_response_to_file(response):
-    """Logs the full AI response to a JSON file in the same directory as the script."""
+"""Logs the full AI response to a JSON file in the same directory as the script."""
 
-    # Extract model name and AI-generated text
-    model_name = response.model  
-    text_response = response.choices[0].message.content  
+# Extract model name and AI-generated text
+model_name = completion.model  
+text_response = completion.choices[0].message.content  
 
-    # Print response to console
-    print(f"\n🔍 AI response (model: {model_name}):")
-    print(text_response)
-
-# Log response to file
-log_response(completion)
+# Print response to console
+print(f"\n🔍 AI response (model: {model_name}):")
+print(text_response)
     ```
 
 ??? example "LLama 3.1 405B"
@@ -5705,19 +5761,15 @@ completion = client.chat.completions.create(
     ]
 )
 
-def log_response_to_file(response):
-    """Logs the full AI response to a JSON file in the same directory as the script."""
+"""Logs the full AI response to a JSON file in the same directory as the script."""
 
-    # Extract model name and AI-generated text
-    model_name = response.model  
-    text_response = response.choices[0].message.content  
+# Extract model name and AI-generated text
+model_name = completion.model  
+text_response = completion.choices[0].message.content  
 
-    # Print response to console
-    print(f"\n🔍 AI response (model: {model_name}):")
-    print(text_response)
-
-# Log response to file
-log_response(completion)
+# Print response to console
+print(f"\n🔍 AI response (model: {model_name}):")
+print(text_response)
     ```
 
 ??? example "LLama 3.3 70B"
@@ -5745,25 +5797,57 @@ completion = client.chat.completions.create(
     ]
 )
 
-def log_response_to_file(response):
-    """Logs the full AI response to a JSON file in the same directory as the script."""
+"""Logs the full AI response to a JSON file in the same directory as the script."""
 
-    # Extract model name and AI-generated text
-    model_name = response.model  
-    text_response = response.choices[0].message.content  
+# Extract model name and AI-generated text
+model_name = completion.model  
+text_response = completion.choices[0].message.content  
 
-    # Print response to console
-    print(f"\n🔍 AI response (model: {model_name}):")
-    print(text_response)
-
-# Log response to file
-log_response(completion)
+# Print response to console
+print(f"\n🔍 AI response (model: {model_name}):")
+print(text_response)
     ```
 
 ??? example "Qwen 2.5 7B"
 
     ```python
-    code/get-started/start-building/real-time/real-time-qwen2.5-7.py
+    import json
+import os
+from getpass import getpass
+
+from openai import OpenAI
+
+image_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+
+# Get API key from user input
+api_key = getpass("Enter your kluster.ai API key: ")
+
+# Initialize OpenAI client pointing to kluster.ai API
+client = OpenAI(api_key=api_key, base_url="https://api.kluster.ai/v1")
+
+# Create chat completion request
+completion = client.chat.completions.create(
+    model="Qwen/Qwen2.5-VL-7B-Instruct",
+    messages=[
+        {
+            "role": "user",
+            "content": [
+                {"type": "text", "text": "Who can park in the area?"},
+                {"type": "image_url", "image_url": {"url": image_url}},
+            ],
+        }
+    ],
+)
+
+print(f"\nImage URL: {image_url}")
+
+"""Logs the full AI response to a JSON file in the same directory as the script."""
+# Extract model name and AI-generated text
+model_name = completion.model
+text_response = completion.choices[0].message.content
+# Print response to console
+print(f"\n🔍 AI response (model: {model_name}):")
+print(text_response)
     ```
 
 ### CLI
@@ -5774,75 +5858,131 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 ??? example "DeepSeek R1"
 
     ```bash
-    curl https://api.kluster.ai/v1/chat/completions \
-    -H "Authorization: Bearer YOUR_API_KEY" \
+    #!/bin/bash
+
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo "Error: API_KEY environment variable is not set." >&2
+fi
+
+# Submit real-time request
+curl https://api.kluster.ai/v1/chat/completions \
+    -H "Authorization: Bearer $API_KEY" \
     -H "Content-Type: application/json" \
-    -d '{
-            "model": "deepseek-ai/DeepSeek-R1", 
-            "messages": [
+    -d "{
+            \"model\": \"deepseek-ai/DeepSeek-R1\", 
+            \"messages\": [
                 { 
-                    "role": "user", 
-                    "content": "What is the ultimate breakfast sandwich?" 
+                    \"role\": \"user\", 
+                    \"content\": \"What is the ultimate breakfast sandwich?\"
                 }
             ]
-        }'
+        }"
     ```
     
 ??? example "LLama 3.1 8B"
 
     ```bash
-    curl https://api.kluster.ai/v1/chat/completions \
-    -H "Authorization: Bearer YOUR_API_KEY" \
+    #!/bin/bash
+
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo "Error: API_KEY environment variable is not set." >&2
+fi
+
+# Submit real-time request
+curl https://api.kluster.ai/v1/chat/completions \
+    -H "Authorization: Bearer $API_KEY" \
     -H "Content-Type: application/json" \
-    -d '{
-            "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo", 
-            "messages": [
+    -d "{
+            \"model\": \"klusterai/Meta-Llama-3.1-8B-Instruct-Turbo\", 
+            \"messages\": [
                 { 
-                    "role": "user", 
-                    "content": "What is the ultimate breakfast sandwich?" 
+                    \"role\": \"user\", 
+                    \"content\": \"What is the ultimate breakfast sandwich?\"
                 }
             ]
-        }'
+        }"
     ```
 
 ??? example "LLama 3.1 405B"
 
     ```bash
-    curl https://api.kluster.ai/v1/chat/completions \
-    -H "Authorization: Bearer YOUR_API_KEY" \
+    #!/bin/bash
+
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo "Error: API_KEY environment variable is not set." >&2
+fi
+
+# Submit real-time request
+curl https://api.kluster.ai/v1/chat/completions \
+    -H "Authorization: Bearer $API_KEY" \
     -H "Content-Type: application/json" \
-    -d '{
-            "model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo", 
-            "messages": [
+    -d "{
+            \"model\": \"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\", 
+            \"messages\": [
                 { 
-                    "role": "user", 
-                    "content": "What is the ultimate breakfast sandwich?" 
+                    \"role\": \"user\", 
+                    \"content\": \"What is the ultimate breakfast sandwich?\"
                 }
-            ]
-        }'
+              ]
+        }"
     ```
 
 ??? example "LLama 3.3 70B"
 
     ```bash
-    curl https://api.kluster.ai/v1/chat/completions \
-    -H "Authorization: Bearer YOUR_API_KEY" \
+    #!/bin/bash
+
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo "Error: API_KEY environment variable is not set." >&2
+fi
+
+# Submit real-time request
+curl https://api.kluster.ai/v1/chat/completions \
+    -H "Authorization: Bearer $API_KEY" \
     -H "Content-Type: application/json" \
-    -d '{
-            "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo", 
-            "messages": [
+    -d "{
+            \"model\": \"klusterai/Meta-Llama-3.3-70B-Instruct-Turbo\", 
+            \"messages\": [
                 { 
-                    "role": "user", 
-                    "content": "What is the ultimate breakfast sandwich?" 
+                    \"role\": \"user\", 
+                    \"content\": \"What is the ultimate breakfast sandwich?\"
                 }
             ]
-        }'
+    }"
     ```
 
 ??? example "Qwen 2.5 7B"
 
     ```python
-    code/get-started/start-building/real-time/real-time-qwen2.5-7.md
+    #!/bin/bash
+
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo "Error: API_KEY environment variable is not set." >&2
+fi
+
+image_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+
+# Submit real-time request
+curl https://api.kluster.ai/v1/chat/completions \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" \
+    -d "{
+        \"model\": \"Qwen/Qwen2.5-VL-7B-Instruct\",
+        \"messages\": [
+            {
+                \"role\": \"user\",
+                \"content\": [
+                    {\"type\": \"text\", \"text\": \"Who can park in the area?\"},
+                    {\"type\": \"image_url\", \"image_url\": {\"url\": \"$image_url\"}}
+                ]
+            }
+        ]
+    }"
     ```
 
 ## Real-time inference flow
@@ -5882,9 +6022,8 @@ completion = client.chat.completions.create(
 
 If successful, the `completion` variable contains a full response, which you'll need to analyze to extract the answer you are looking for. In terms of configuration for real-time inferences, there are several parameters that you need to tweak:
 
-- `model` – name of one of the [supported models](#supported-models)
-
-- `messages` – in the `content` parameter, you should provide the query you want to process. You can pass any input here. In this example, the query is "What is the ultimate breakfast sandwich?"
+- `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](#supported-models)
+- `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images). In this example, the query is "What is the ultimate breakfast sandwich?". 
 
 Once these parameters are configured, run your script to send the request.
 
