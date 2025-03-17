@@ -320,7 +320,7 @@ You can use the following snippets to retrieve the results from your batch job:
 
     ```bash
     curl -s https://api.kluster.ai/v1/files/kluster-output-file-123/content \
-        -H "Authorization: Bearer $API_KEY" > batch_output.jsonl
+        -H "Authorization: Bearer $API_KEY" > batch_results.jsonl
     ```
 
 ??? code "View the complete script"
