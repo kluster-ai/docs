@@ -20,16 +20,12 @@ completion = client.chat.completions.create(
     ]
 )
 
-def log_response_to_file(response):
-    """Logs the full AI response to a JSON file in the same directory as the script."""
+"""Logs the full AI response to a JSON file in the same directory as the script."""
 
-    # Extract model name and AI-generated text
-    model_name = response.model  
-    text_response = response.choices[0].message.content  
+# Extract model name and AI-generated text
+model_name = completion.model  
+text_response = completion.choices[0].message.content  
 
-    # Print response to console
-    print(f"\n🔍 AI response (model: {model_name}):")
-    print(text_response)
-
-# Log response to file
-log_response(completion)
+# Print response to console
+print(f"\n🔍 AI response (model: {model_name}):")
+print(text_response)

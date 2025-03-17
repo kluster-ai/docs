@@ -137,7 +137,7 @@ Each request must include the following arguments:
 - `url` ++"string"++ -  the `/v1/chat/completions` endpoint
 - `body` ++"object"++ - a request body containing:
     - `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](#supported-models)
-    - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles)
+    - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images)
     - Any optional [chat completion parameters](/api-reference/reference/#create-chat-completion){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
 
 !!! tip
@@ -148,7 +148,7 @@ The following examples generate requests and save them in a JSONL file, which is
 === "Python"
 
     ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:01:71'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:01:75'
     ```
 
 === "CLI"
@@ -168,7 +168,7 @@ Use the following command examples to upload your batch job files:
 === "Python"
 
     ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:72:77'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:76:78'
     ```
 
 === "curl"
@@ -204,7 +204,7 @@ You can use the following snippets to submit your batch job:
 === "Python"
 
     ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:78:84'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:79:85'
     ```
 
 === "curl"
@@ -261,7 +261,7 @@ You can use the following snippets to monitor your batch job:
 === "Python"
 
     ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:85:97'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:86:98'
     ```
 
 === "curl"
@@ -313,7 +313,7 @@ You can use the following snippets to retrieve the results from your batch job:
 === "Python"
 
     ```python 
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:98:111'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:99:111'
     ```
 
 === "curl"
@@ -352,7 +352,7 @@ You can use the following snippets to list all of your batch jobs:
         api_key=api_key,
     )
 
-    # Log all batch jobs
+    # Log all batch jobs (limit to 3)
     print(client.batches.list(limit=3).to_dict())
     ```
 
