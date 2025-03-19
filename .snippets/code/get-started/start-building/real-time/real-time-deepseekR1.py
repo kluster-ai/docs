@@ -1,7 +1,5 @@
 from openai import OpenAI
 from getpass import getpass
-import json
-import os
 
 # Get API key from user input
 api_key = getpass("Enter your kluster.ai API key: ")
@@ -20,7 +18,7 @@ completion = client.chat.completions.create(
     ]
 )
 
-"""Logs the full AI response to a JSON file in the same directory as the script."""
+"""Logs the full AI response to terminal."""
 
 # Extract model name and AI-generated text
 model_name = completion.model  

@@ -1,4 +1,5 @@
 - `deepseek-ai/DeepSeek-R1`
+- `deepseek-ai/DeepSeek-V3`
 - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
