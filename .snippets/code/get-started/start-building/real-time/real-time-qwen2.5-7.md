@@ -2,7 +2,7 @@
 
 # Check if API_KEY is set and not empty
 if [[ -z "$API_KEY" ]]; then
-    echo "Error: API_KEY environment variable is not set." >&2
+    echo -e "\nError: API_KEY environment variable is not set.\n" >&2
 fi
 
 image_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"

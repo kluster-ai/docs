@@ -1,8 +1,5 @@
-import json
-import os
-from getpass import getpass
-
 from openai import OpenAI
+from getpass import getpass
 
 image_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
 
@@ -28,10 +25,12 @@ completion = client.chat.completions.create(
 
 print(f"\nImage URL: {image_url}")
 
-"""Logs the full AI response to a JSON file in the same directory as the script."""
+"""Logs the full AI response to terminal."""
+
 # Extract model name and AI-generated text
 model_name = completion.model
 text_response = completion.choices[0].message.content
+
 # Print response to console
 print(f"\n🔍 AI response (model: {model_name}):")
 print(text_response)

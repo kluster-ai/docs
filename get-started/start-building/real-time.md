@@ -50,6 +50,12 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     --8<-- 'code/get-started/start-building/real-time/real-time-deepseekR1.py'
     ```
 
+??? example "DeepSeek V3"
+
+    ```python
+    --8<-- 'code/get-started/start-building/real-time/real-time-deepseekV3.py'
+    ```
+
 ??? example "LLama 3.1 8B"
 
     ```python
@@ -83,6 +89,12 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 
     ```bash
     --8<-- 'code/get-started/start-building/real-time/real-time-deepseekR1.md'
+    ```
+
+??? example "DeepSeek V3"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-deepseekV3.md'
     ```
     
 ??? example "LLama 3.1 8B"
@@ -138,36 +150,35 @@ If the request is successful, the response is contained in the `completion` vari
 
 ```Json title="Response"
 {
-    "id": "chatcmpl-e9b942d1-06fb-4d1b-88c2-820c9ca7bb20",
-    "choices": [
- {
-            "finish_reason": "stop",
-            "index": 0,
-            "logprobs": null,
-            "message": {
-                "content": "The ultimate breakfast sandwich: toasted brioche, crispy bacon, melty cheddar, fried egg, avocado, and a dash of sriracha. Balance of crispy, creamy, savory, and spicy.",
-                "refusal": null,
-                "role": "assistant",
-                "audio": null,
-                "function_call": null,
-                "tool_calls": []
- },
-            "stop_reason": null
- }
- ],
-    "created": 1739960163,
-    "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
-    "object": "chat.completion",
-    "service_tier": null,
-    "system_fingerprint": null,
-    "usage": {
-        "completion_tokens": 16,
-        "prompt_tokens": 47,
-        "total_tokens": 63,
-        "completion_tokens_details": null,
-        "prompt_tokens_details": null
- },
-    "prompt_logprobs": null
+    "id": "a3af373493654dd195108b207e2faacf",
+    "choices": [
+        {
+            "finish_reason": "stop",
+            "index": 0,
+            "logprobs": null,
+            "message": {
+                "content": "The \"ultimate\" breakfast sandwich is subjective and can vary based on personal preferences, but here’s a classic, crowd-pleasing version that combines savory, sweet, and hearty elements for a satisfying morning meal:\n\n### **The Ultimate Breakfast Sandwich**\n**Ingredients:**\n- **Bread:** A toasted brioche bun, English muffin, or sourdough slice (your choice for texture and flavor).\n- **Protein:** Crispy bacon, sausage patty, or ham.\n- **Egg:** Fried, scrambled, or a fluffy omelet-style egg.\n- **Cheese:** Sharp cheddar, gooey American, or creamy Swiss.\n- **Sauce:** Spicy mayo, hollandaise, or a drizzle of maple syrup for sweetness.\n- **Extras:** Sliced avocado, caramelized onions, sautéed mushrooms, or fresh arugula for a gourmet touch.\n- **Seasoning:** Salt, pepper, and a pinch of red pepper flakes for heat.\n\n**Assembly:**\n1. Toast your bread or bun to golden perfection.\n2. Cook your protein to your desired crispiness or doneness.\n3. Prepare your egg—fried with a runny yolk is a classic choice.\n4. Layer the cheese on the warm egg or protein so it melts slightly.\n5. Add your extras (avocado, veggies, etc.) for freshness and flavor.\n6. Spread your sauce on the bread or drizzle it over the filling.\n7. Stack everything together, season with salt, pepper, or spices, and enjoy!\n\n**Optional Upgrades:**\n- Add a hash brown patty for extra crunch.\n- Swap regular bacon for thick-cut or maple-glazed bacon.\n- Use a croissant instead of bread for a buttery, flaky twist.\n\nThe ultimate breakfast sandwich is all about balance—crunchy, creamy, savory, and a hint of sweetness. Customize it to your taste and make it your own!",
+                "refusal": null,
+                "role": "assistant",
+                "audio": null,
+                "function_call": null,
+                "tool_calls": null
+            },
+            "matched_stop": 1
+        }
+    ],
+    "created": 1742378836,
+    "model": "deepseek-ai/DeepSeek-V3",
+    "object": "chat.completion",
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+        "completion_tokens": 398,
+        "prompt_tokens": 10,
+        "total_tokens": 408,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+    }
 }
 ```
 
