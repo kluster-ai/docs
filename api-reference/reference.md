@@ -14,7 +14,7 @@ template: api.html
 
 `POST https://api.kluster.ai/v1/chat/completions`
 
-To create a chat completion, send a request to the `chat/completions` endpoint.
+To create a chat completion, send a request to the `chat/completions` endpoint.  Please ensure your request is compliant with the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
 
 <div class="grid" markdown>
 <div markdown>
@@ -375,7 +375,7 @@ Usage statistics for the completion request.
 
 `POST https://api.kluster.ai/v1/batches`
 
-To submit a batch job, send a request to the `batches` endpoint.
+To submit a batch job, send a request to the `batches` endpoint. Please ensure your request is compliant with the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
 
 <div class="grid" markdown>
 <div markdown>
@@ -387,7 +387,7 @@ To submit a batch job, send a request to the `batches` endpoint.
 The ID of an [uploaded file](#upload-files){target=\_blank} that contains requests for the new batch.
 
 !!! warning
-    The input file must be formatted as a [JSONL file](https://jsonlines.org/){target=\_blank}, and must be uploaded with the purpose `batch`. Please ensure your batch job is compliant with the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.  
+    For the free tier, the maximum number of batch request (lines in the JSONL file) must be less than {{ batch.max_lines_free }}, and each file must not exceed {{ batch.max_size }}. For the standard tier, there is no limit to the number of batch requests, but the maximum batch file size is {{ batch.max_size }} per file.  
 
 ---
 
@@ -1147,7 +1147,7 @@ For requests that failed with a non-HTTP error, this will contain more informati
 
 `POST https://api.kluster.ai/v1/files/`
 
-Upload a [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `files` endpoint.
+Upload a [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `files` endpoint.  Please ensure your file is compliant with the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
 
 You can also view all your uploaded files in the [**Files** tab](https://platform.kluster.ai/files){target=\_blank} of the kluster.ai platform.
 
@@ -1161,7 +1161,7 @@ You can also view all your uploaded files in the [**Files** tab](https://platfor
 The file object (not file name) to be uploaded.
 
 !!! warning
-    The input file must be formatted as a [JSONL file](https://jsonlines.org/){target=\_blank}. Please ensure your file is compliant with the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
+    For the free tier, the maximum number of batch request (lines in the JSONL file) must be less than {{ batch.max_lines_free }}, and each file must not exceed {{ batch.max_size }}. For the standard tier, there is no limit to the number of batch requests, but the maximum batch file size is {{ batch.max_size }} per file.
 
 ---
 
