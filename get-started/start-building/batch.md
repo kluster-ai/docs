@@ -8,7 +8,7 @@ description: This guide provides examples and instructions on how to create, sub
 
 ## Overview
 
-This guide provides examples and instructions on how to create, submit, retrieve, and manage batch inference jobs using the [kluster.ai](https://www.kluster.ai/){target=\_blank} API. You will find guidance about preparing your data, selecting a model, submitting your batch job, and retrieving your results.
+This guide provides examples and instructions on how to create, submit, retrieve, and manage batch inference jobs using the [kluster.ai](https://www.kluster.ai/){target=\_blank} API. You will find guidance about preparing your data, selecting a model, submitting your batch job, and retrieving your results. Please make sure you check the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
  
 ## Prerequisites
 
@@ -49,6 +49,9 @@ In addition to these core steps, this guide will give you hands-on experience to
 
 - **Cancel a batch job** - cancel an ongoing batch job before it completes
 - **List all batch jobs** - review all of your batch jobs
+
+!!! warning
+    For the free tier, the maximum number of batch requests (lines in the JSONL file) must be less than {{ batch.max_lines_free }}, and each file must not exceed {{ batch.max_size }}. For the standard tier, there is no limit to the number of batch requests, but the maximum batch file size is {{ batch.max_size }} per file.
 
 ## Quickstart snippets
 
@@ -169,6 +172,9 @@ The following examples generate requests and save them in a JSONL file, which is
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-02.txt'
     ```
 
+!!! warning
+    For the free tier, the maximum number of batch requests (lines in the JSONL file) must be less than {{ batch.max_lines_free }}, and each file must not exceed {{ batch.max_size }}. For the standard tier, there is no limit to the number of batch requests, but the maximum batch file size is {{ batch.max_size }} per file. 
+
 ### Upload batch job files
 
 After you've created the JSON Lines file, you need to upload it using the `files` endpoint along with the intended purpose. Consequently, you need to set the `purpose` value to `"batch"` for batch jobs.
@@ -204,6 +210,9 @@ Use the following command examples to upload your batch job files:
     "purpose": "batch"
 }
 ```
+
+!!! warning
+    Remember that the maximum file size permitted is {{ batch.max_size }}.
 
 ### Submit a batch job
 
