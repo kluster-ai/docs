@@ -6,3 +6,6 @@
 libraries:
   openai_api:
     min_version: 1.0.0
+batch:
+  max_lines_free: 1000
+  max_size: '100 MB'

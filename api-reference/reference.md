@@ -386,7 +386,8 @@ To submit a batch job, send a request to the `batches` endpoint.
 
 The ID of an [uploaded file](#upload-files){target=\_blank} that contains requests for the new batch.
 
-Your input file must be formatted as a [JSONL file](https://jsonlines.org/){target=\_blank}, and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests and currently a maximum of 6GB per file.
+!!! warning
+    The input file must be formatted as a [JSONL file](https://jsonlines.org/){target=\_blank}, and must be uploaded with the purpose `batch`. Please ensure your batch job is compliant with the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.  
 
 ---
 
@@ -1158,6 +1159,9 @@ You can also view all your uploaded files in the [**Files** tab](https://platfor
 `file` ++"file"++ <span class="required" markdown>++"required"++</span>
 
 The file object (not file name) to be uploaded.
+
+!!! warning
+    The input file must be formatted as a [JSONL file](https://jsonlines.org/){target=\_blank}. Please ensure your file is compliant with the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
 
 ---
 
