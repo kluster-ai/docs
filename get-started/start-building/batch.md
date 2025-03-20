@@ -51,7 +51,7 @@ In addition to these core steps, this guide will give you hands-on experience to
 - **List all batch jobs** - review all of your batch jobs
 
 !!! warning
-    For the free tier, the maximum number of batch request (lines in the JSONL file) must be less than {{ batch.max_lines_free }}, and each file must not exceed {{ batch.max_size }}. For the standard tier, there is no limit to the number of batch requests, but the maximum batch file size is {{ batch.max_size }} per file.
+    For the free tier, the maximum number of batch requests (lines in the JSONL file) must be less than {{ batch.max_lines_free }}, and each file must not exceed {{ batch.max_size }}. For the standard tier, there is no limit to the number of batch requests, but the maximum batch file size is {{ batch.max_size }} per file.
 
 ## Quickstart snippets
 
@@ -173,7 +173,7 @@ The following examples generate requests and save them in a JSONL file, which is
     ```
 
 !!! warning
-    For the free tier, the maximum number of batch request (lines in the JSONL file) must be less than {{ batch.max_lines_free }}, and each file must not exceed {{ batch.max_size }}. For the standard tier, there is no limit to the number of batch requests, but the maximum batch file size is {{ batch.max_size }} per file. 
+    For the free tier, the maximum number of batch requests (lines in the JSONL file) must be less than {{ batch.max_lines_free }}, and each file must not exceed {{ batch.max_size }}. For the standard tier, there is no limit to the number of batch requests, but the maximum batch file size is {{ batch.max_size }} per file. 
 
 ### Upload batch job files
 
@@ -212,7 +212,7 @@ Use the following command examples to upload your batch job files:
 ```
 
 !!! warning
-    Remember that the maximum file size permited is {{ batch.max_size }}.
+    Remember that the maximum file size permitted is {{ batch.max_size }}.
 
 ### Submit a batch job
 
