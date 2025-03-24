@@ -1,0 +1,5 @@
+title: Text classification
+hide: false
+nav:
+  - 'Using OpenAI API': text-classification-openai-api.ipynb
+  - 'Using Curator': text-classification-curator.ipynb
