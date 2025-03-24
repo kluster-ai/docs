@@ -10252,9 +10252,9 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
         "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3"
       },
       "source": [
-        "Sentiment analysis is the process of reviewing text to determine if there positive, neutral or negative notation to the statement. LLMs can be extremely powerful to process a lot of data in a breeze, helping understand the overall sentiment of a large dataset.\n",
+        "Sentiment analysis is the process of reviewing text to determine whether there is positive, neutral, or negative notation to the statement. LLMs can be extremely powerful, processing a lot of data quickly, helping understand the overall sentiment of a large dataset.\n",
         "\n",
-        "This tutorial runs through a notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to run a sentiment analysis over a sample data.\n",
+        "This tutorial runs through a notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to run a sentiment analysis on sample data.\n",
         "\n",
         "The example uses an extract from the Amazon musical instrument reviews dataset to determine the sentiment of each review.\n",
         "\n",
@@ -10409,9 +10409,9 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
       "source": [
         "We've preloaded a sample dataset sourced from Amazon's reviews of musical instruments. This dataset contains customer feedback on various music-related products, ready for you to analyze. No further setup is required—just jump into the next steps to start working with the data.\n",
         "\n",
-        "Now that you've initialized an OpenAI-complatible client pointing to kluster.ai, we can talk about the data.\n",
+        "Now that you've initialized an OpenAI-compatible client pointing to kluster.ai, we can talk about the data.\n",
         "\n",
-        "This notebook includes a preloaded sample dataset sourced from Amazon's reviews of musical instruments. It contains customer feedback on various music-related products. No additional setup is needed. Simply proceed to the next steps to begin working with this data."
+        "This notebook includes a preloaded sample dataset sourced from Amazon's reviews of musical instruments. It contains customer feedback on various music-related products. No additional setup is needed. Proceed to the next steps to begin working with this data."
       ]
     },
     {
@@ -10452,12 +10452,12 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
         "To execute the batch inference job, we'll take the following steps:\n",
         "\n",
         "1. **Create the batch job file** - we'll generate a JSON lines file with the desired requests to be processed by the model\n",
-        "2. **Upload the batch job file** - once the file is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be queued for processing. We'll receive a unique ID associated with our file\n",
+        "2. **Upload the batch job file** - once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file\n",
         "3. **Start the batch job** - after the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before\n",
-        "4. **Monitor job progress** - (optional) track the status of the batch job to ensure it has successfully completed\n",
+        "4. **Monitor job progress** - (optional) track the status of the batch job to ensure it has been successfully completed\n",
         "5. **Retrieve results** - once the job has completed execution, we can access and process the resultant data\n",
         "\n",
-        "This notebook is prepared for you to follow along, just run the cells below to watch it all come together."
+        "This notebook is prepared for you to follow along. Run the cells below to watch it all come together."
       ]
     },
     {
@@ -10477,11 +10477,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
         "id": "qS4JXT52wGJ-"
       },
       "source": [
-        "This example selects the `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo` model. If you'd like to use a different model, feel free to change it by modifying the `model` field. In this notebook, you can also just comment Llama 3.3 70B, and uncomment whatever model you want to try out.\n",
+        "This example selects the `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo` model. If you'd like to use a different model, feel free to change it by modifying the `model` field. In this notebook, you can also comment Llama 3.3 70B, and uncomment whatever model you want to try out.\n",
         "\n",
         "Please refer to the <a href=\"/get-started/start-building/batch/#supported-models\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
         "\n",
-        "The following snippets prepares the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes (but we are only asking to respond with a single word, the genre)."
+        "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes (but we are only asking to respond with a single word, the genre)."
       ]
     },
     {
@@ -10598,7 +10598,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
       "id": "e48b2489-99bc-431b-8cb3-de816550d524",
       "metadata": {},
       "source": [
-        "Now that we’ve prepared our input file, it’s time to upload it to the kluster.ai platform. To do so, can us ethe `files.create` endpoint of the client, where the purpose is set to `batch`. This will return the file ID, which we need to log for the next steps."
+        "Now that we’ve prepared our input file, it’s time to upload it to the kluster.ai platform. To do so, you can use the `files.create` endpoint of the client, where the purpose is set to `batch`. This will return the file ID, which we need to log for the next steps."
       ]
     },
     {
@@ -10729,7 +10729,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
       "source": [
         "Now that your batch job has been created, you can track its progress.\n",
         "\n",
-        "To monitor the job's progress, we can use the `batches.retrieve` method and pass the batch job ID. The response contains an `status` field that tells us if it is completed or not, and the subsequent status of each job separately.\n",
+        "To monitor the job's progress, you can use the `batches.retrieve` method and pass the batch job ID. The response contains an `status` field that tells us if it is completed or not, and the subsequent status of each job separately.\n",
         "\n",
         "The following snippet checks the status every 10 seconds until the entire batch is completed:"
       ]
@@ -10792,8 +10792,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
       "id": "12c1f6ac-8d60-4158-9036-de79fa274983",
       "metadata": {},
       "source": [
-        "With the job completed, we'll retrieve the results and review the responses generated for each request. The results are parsed. To fetch the results from the platform, you need to retrieve the `output_file_id` from the batch job, and then use the `files.content` endpoint, providing that specific file ID. Note that the job status must be `completed` for you to retrieve the results!"
-      ]
+        "With the job completed, we'll retrieve the results and review the responses generated for each request. We then parse these results. To fetch them from the platform, retrieve the `output_file_id` from the batch job, then use the `files.content` endpoint with that file ID. Note that the job status must be `completed` before you can retrieve the results!"
+        ]
     },
     {
       "cell_type": "code",
@@ -10876,9 +10876,9 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
       "id": "7d195dd1-1293-4407-b6ad-cab7e77b14c0",
       "metadata": {},
       "source": [
-        "This tutorial used the chat completion endpoint to perform a simple sentiment analysis task with batch inference. This particular example clasified a series of reviews to understand if they had a positive, neutral or negative note.\n",
+        "This tutorial used the chat completion endpoint to perform a simple sentiment analysis task with batch inference. This particular example classified a series of reviews to understand if they had a positive, neutral or negative note.\n",
         "\n",
-        "To submit a batch job we've:\n",
+        "To submit a batch job, we've:\n",
         "\n",
         "1. Created the JSONL file, where each line of the file represented a separate request\n",
         "2. Submitted the file to the platform\n",
@@ -10954,7 +10954,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
         "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3"
       },
       "source": [
-        "This notebook goes through the same example as in our previous <a href=\"/tutorials/klusterai-api/text-classification-api/\" target=\"_blank\">Text clasification notebook</a>, but this time, we'll be using Bespoke Curator instead of the OpenAI Python library\n",
+        "This notebook goes through the same example as in our previous <a href=\"/tutorials/klusterai-api/text-classification-api/\" target=\"_blank\">Text classification notebook</a>, but this time, we'll be using Bespoke Curator instead of the OpenAI Python library\n",
         "\n",
         "To recap, the notebook uses <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to classify a data set based on a predefined set of categories.\n",
         "\n",
@@ -11127,9 +11127,9 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
       "source": [
         "With the Curator LLM object ready, let's define the data and prompt.\n",
         "\n",
-        "This notebook includes a preloaded sample dataset derived from the Top 1000 IMDb Movies dataset. It contains movie descriptions ready for classification. No additional setup is needed. Simply proceed to the next steps to begin working with this data.\n",
+        "This notebook includes a preloaded sample dataset derived from the Top 1000 IMDb Movies dataset. It contains movie descriptions ready for classification. No additional setup is needed. Proceed to the next steps to begin working with this data.\n",
         "\n",
-        "For this particular scenario, the prompt consists of the request to the model, plus the data (movie) to be classified. Because this is a batch job, each separate request must contain both things."
+        "For this particular scenario, the prompt consists of the request to the model and the data (movie) to be classified. Because this is a batch job, each separate request must contain both."
       ]
     },
     {
@@ -11646,7 +11646,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
       "source": [
         "This tutorial used the chat completion endpoint and Bespoke Curator to perform a simple text classification task with batch inference. This particular example clasified a series of movies based on their description.\n",
         "\n",
-        "By using Curator, submitting a batch job is extremely simple, as it handles all the steps of creating the file, uploading it, submitting the batch job, monitoring the job, and retrieving results. Moreso, kluster.ai is natively supported, making things even easier!\n",
+        "Using Curator, submitting a batch job is extremely simple. It handles all the steps of creating the file, uploading it, submitting the batch job, monitoring the job, and retrieving results. Moreover, kluster.ai is natively supported, making things even easier!\n",
         "\n",
         "\n",
         "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
@@ -11701,7 +11701,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
     "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3"
    },
    "source": [
-    "Text classification is the task of assigning a class/label to a given text, and it is a common go-to example to demonstrate how helpful an AI model can be.\n",
+    "Text classification is assigning a class/label to a given text, and it is a common go-to example to demonstrate how helpful an AI model can be.\n",
     "\n",
     "This tutorial runs through a notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to classify a dataset based on a predefined set of categories.\n",
     "\n",
@@ -11750,7 +11750,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
     "id": "4185a24a"
    },
    "source": [
-    "In this notebook, we'll use Python's `getpass` module to input the key safely. After execution, please provide your unique kluster.ai API key (ensure no spaces)."
+    "In this notebook, we'll use Python's `getpass` module to safely input the key. After execution, please provide your unique kluster.ai API key (ensure no spaces)."
    ]
   },
   {
@@ -11872,7 +11872,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
     "id": "QjCVfg65jKz6"
    },
    "source": [
-    "Now that you've initialized an OpenAI-complatible client pointing to kluster.ai, we can talk about the data.\n",
+    "Now that you've initialized an OpenAI-compatible client pointing to kluster.ai, we can talk about the data.\n",
     "\n",
     "This notebook includes a preloaded sample dataset derived from the Top 1000 IMDb Movies dataset. It contains movie descriptions ready for classification. No additional setup is needed. Simply proceed to the next steps to begin working with this data."
    ]
@@ -11917,12 +11917,12 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
     "To execute the batch inference job, we'll take the following steps:\n",
     "\n",
     "1. **Create the batch job file** - we'll generate a JSON lines file with the desired requests to be processed by the model\n",
-    "2. **Upload the batch job file** - once the file is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be queued for processing. We'll receive a unique ID associated with our file\n",
+    "2. **Upload the batch job file** - once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file\n",
     "3. **Start the batch job** - after the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before\n",
-    "4. **Monitor job progress** - (optional) track the status of the batch job to ensure it has successfully completed\n",
+    "4. **Monitor job progress** - (optional) track the status of the batch job to ensure it has been successfully completed\n",
     "5. **Retrieve results** - once the job has completed execution, we can access and process the resultant data\n",
     "\n",
-    "This notebook is prepared for you to follow along, just run the cells below to watch it all come together."
+    "This notebook is prepared for you to follow along. Run the cells below to watch it all come together."
    ]
   },
   {
@@ -11942,11 +11942,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
     "id": "qS4JXT52wGJ-"
    },
    "source": [
-    "This example selects the `deepseek-ai/DeepSeek-V3` model. If you'd like to use a different model, feel free to change it by modifying the `model` field. In this notebook, you can also just comment DeepSeek V3, and uncomment whatever model you want to try out.\n",
+    "This example selects the `deepseek-ai/DeepSeek-V3` model. If you'd like to use a different model, feel free to change it by modifying the `model` field. In this notebook, you can also comment DeepSeek V3, and uncomment whatever model you want to try out.\n",
     "\n",
     "Please refer to the <a href=\"/get-started/start-building/batch/#supported-models\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
     "\n",
-    "The following snippets prepares the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes (but we are only asking to respond with a single word, the genre)."
+    "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes (but we are only asking to respond with a single word, the genre)."
    ]
   },
   {
@@ -12080,7 +12080,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
     "id": "e48b2489-99bc-431b-8cb3-de816550d524"
    },
    "source": [
-    "Now that we’ve prepared our input file, it’s time to upload it to the kluster.ai platform. To do so, can us ethe `files.create` endpoint of the client, where the purpose is set to `batch`. This will return the file ID, which we need to log for the next steps."
+    "Now that we’ve prepared our input file, it’s time to upload it to the kluster.ai platform. To do so, you can use the `files.create` endpoint of the client, where the purpose is set to `batch`. This will return the file ID, which we need to log for the next steps."
    ]
   },
   {
