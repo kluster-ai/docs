@@ -7303,7 +7303,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
         "\n",
         "This tutorial runs through a notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to obtain keywords from a given dataset.\n",
         "\n",
-        "The example uses an extract from AG News dataset. You can adapt this example by using the data and categories that are relevant to your use case. With this approach, you can effortlessly process datasets of any scale, big or small, to obtain keywords. All powered by a state-of-the-art language model."
+        "The example uses an extract from the AG News dataset. You can adapt this example by using the data and categories relevant to your use case. With this approach, you can effortlessly process datasets of any scale, big or small, to obtain keywords, all powered by a state-of-the-art language model."
       ]
     },
     {
@@ -7334,7 +7334,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
       "id": "b8d580f8-67d5-45d6-915f-0f6b60d3b543",
       "metadata": {},
       "source": [
-        "In this notebook, we'll use Python's `getpass` module to safely input the key. After execution, please provide your unique kluster.ai API key (ensure no spaces)."
+        "In this notebook, we'll use Python's `getpass` module to input the key safely. After execution, please provide your unique kluster.ai API key (ensure no spaces)."
       ]
     },
     {
@@ -7446,7 +7446,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
         "id": "QjCVfg65jKz6"
       },
       "source": [
-        "Now that you've initialized an OpenAI-compatible client pointing to kluster.ai, we can talk about the data.\n",
+        "Now that you've initialized an OpenAI-compatible client pointing to kluster.ai, we can discuss the data.\n",
         "\n",
         "This notebook comes with a preloaded sample dataset based on the AG News dataset. It includes sections of news headlines and their leads, all set for processing. No additional setup is needed. Proceed to the next steps to begin working with this data."
       ]
@@ -7518,7 +7518,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
         "\n",
         "Please refer to the <a href=\"/get-started/start-building/batch/#supported-models\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
         "\n",
-        "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes (but we are only asking to respond with a single word, the genre)."
+        "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its model. Also, we are using a temperature of `0.5`, but feel free to change it and play around with the different outcomes (but we are only asking to respond with a single word, the genre)."
       ]
     },
     {
@@ -7821,7 +7821,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
       "id": "12c1f6ac-8d60-4158-9036-de79fa274983",
       "metadata": {},
       "source": [
-        "With the job completed, we'll retrieve the results and review the responses generated for each request. The results are parsed. To fetch the results from the platform, you need to retrieve the `output_file_id` from the batch job and then use the `files.content` endpoint, providing that specific file ID. Note that the job status must be `completed` to retrieve the results!"
+        "With the job completed, we'll retrieve the results and review the responses generated for each request. The results are parsed. To fetch the results from the platform, you must retrieve the `output_file_id` from the batch job and then use the `files.content` endpoint, providing that specific file ID. Note that the job status must be `completed` to retrieve the results!"
       ]
     },
     {
@@ -9311,7 +9311,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
     "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3"
    },
    "source": [
-    "In other notebooks, we used AI models to perform simple tasks like <a href=\"/tutorials/klusterai-api/text-classification/text-classification-openai-api/\" target=\"_blank\">text classification</a>, <a href=\"/klusterai-api/sentiment-analysis-api/\" target=\"_blank\">sentiment analysis</a> and <a href=\"/tutorials/klusterai-api/keyword-extraction-api/\" target=\"_blank\">keyword extraction</a>.\n",
+    "In other notebooks, we used AI models to perform simple tasks like <a href=\"/tutorials/klusterai-api/text-classification/text-classification-openai-api/\" target=\"_blank\">text classification</a>, <a href=\"/tutorials/klusterai-api/sentiment-analysis-api/\" target=\"_blank\">sentiment analysis</a> and <a href=\"/tutorials/klusterai-api/keyword-extraction-api/\" target=\"_blank\">keyword extraction</a>.\n",
     "\n",
     "This tutorial runs through a notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to combine different tasks into a single batch file. Note that each task in the JSONL file can have its own model, system prompt, and particular request.\n",
     "\n",
@@ -9468,11 +9468,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
     "id": "QjCVfg65jKz6"
    },
    "source": [
-    "Now that you've initialized an OpenAI-compatible client pointing to kluster.ai, we can talk about the data.\n",
+    "Now that you've initialized an OpenAI-compatible client pointing to kluster.ai, we can discuss the data.\n",
     "\n",
     "This notebook includes three sample datasets: Amazon musical instruments reviews, Top 1000 IMDb Movies, and AG News sample.\n",
     "\n",
-    "The following code fetches the data and last 5 data points of a single data sample. Feel free to change this or bring your own dataset."
+    "The following code fetches the data and the last 5 data points of a single data sample. Feel free to change this or bring your own dataset."
    ]
   },
   {
@@ -9628,7 +9628,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
     "\n",
     "- **Sentiment analysis** - reviewing text to determine whether there is positive, neutral, or negative notation to the statement\n",
     "- **Translation** - translate the text to any other language, in this example, Spanish\n",
-    "- **Summarization** - express the text in a short and concise form\n",
+    "- **Summarization** - express the text in a concise form\n",
     "- **Topic classification** - classify the text between a given set of categories\n",
     "- **Keyword extraction** - provide a number of keywords\n",
     "\n",
@@ -10343,7 +10343,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
    "id": "d42bcd40",
    "metadata": {},
    "source": [
-    "This tutorial used the chat completion endpoint to perform many different tasks via kluster.ai batch API. This particular example performed five different tasks for each element of the dataset: sentiment analysis, translation (to Spanish), summarization, topic classification and keyword extraction.\n",
+    "This tutorial used the chat completion endpoint to perform many tasks via kluster.ai batch API. This particular example performed five different tasks for each element of the dataset: sentiment analysis, translation (to Spanish), summarization, topic classification and keyword extraction.\n",
     "\n",
     "To submit a batch job we've:\n",
     "\n",
