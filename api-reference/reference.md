@@ -1354,12 +1354,16 @@ The intended purpose of the file. Currently, only `batch` is supported.
 
 Lists the currently available models.
 
-You can use this endpoint to retrieve a list of all available models for the kluster.ai API. Currently supported models include:
+You can use this endpoint to retrieve a list of all available models for the kluster.ai API. If you have created any fine-tuned models, they will also appear when you query this endpoint. Currently supported models include:
 
 - `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
 - `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
 - `deepseek-ai/DeepSeek-R1`
+- `deepseek-ai/DeepSeek-V3`
+- `Qwen/Qwen2.5-VL-7B-Instruct`
+- `deepseek-ai/DeepSeek-V3-0324`
+- `google/gemma-3-27b-it`
 
 <div class="grid" markdown>
 <div markdown>
