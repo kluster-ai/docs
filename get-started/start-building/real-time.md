@@ -56,6 +56,18 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     --8<-- 'code/get-started/start-building/real-time/real-time-deepseekV3.py'
     ```
 
+??? example "DeepSeek V3 0324"
+
+    ```python
+    --8<-- 'code/get-started/start-building/real-time/real-time-deepseekV3-0324.py'
+    ```
+
+??? example "Gemma 3 27B"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-gemma3-27.py'
+    ```
+
 ??? example "LLama 3.1 8B"
 
     ```python
@@ -95,6 +107,18 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 
     ```bash
     --8<-- 'code/get-started/start-building/real-time/real-time-deepseekV3.md'
+    ```
+
+??? example "DeepSeek V3 0324"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-deepseekV3-0324.md'
+    ```
+
+??? example "Gemma 3 27B"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-gemma3-27.md'
     ```
     
 ??? example "LLama 3.1 8B"
