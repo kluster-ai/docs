@@ -1354,12 +1354,9 @@ The intended purpose of the file. Currently, only `batch` is supported.
 
 Lists the currently available models.
 
-You can use this endpoint to retrieve a list of all available models for the kluster.ai API. Currently supported models include:
+You can use this endpoint to retrieve a list of all available models for the kluster.ai API. If you have created any fine-tuned models, they will also appear when you query this endpoint. Currently supported models include:
 
-- `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
-- `deepseek-ai/DeepSeek-R1`
+--8<-- 'text/batch-models.md'
 
 <div class="grid" markdown>
 <div markdown>
@@ -1418,29 +1415,53 @@ The organization that owns the model.
   "data": [
     {
       "id": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo",
-      "created": 1731336418,
       "object": "model",
+      "created": 1731336418,
       "owned_by": "klusterai"
     },
     {
       "id": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
-      "created": 1731336610,
       "object": "model",
+      "created": 1731336610,
       "owned_by": "klusterai"
     },
     {
       "id": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
-      "created": 1733777629,
       "object": "model",
+      "created": 1733777629,
       "owned_by": "klusterai"
     },
     {
       "id": "deepseek-ai/DeepSeek-R1",
-      "created": 1737385699,
       "object": "model",
+      "created": 1737385699,
       "owned_by": "klusterai"
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-V3",
+      "object": "model",
+      "created": 1742323334,
+      "owned_by": "klusterai"
+    },
+    {
+      "id": "Qwen/Qwen2.5-VL-7B-Instruct",
+      "object": "model",
+      "created": 1741303075,
+      "owned_by": "qwen"
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-V3-0324",
+      "object": "model",
+      "created": 1742848965,
+      "owned_by": "klusterai"
+    },
+    {
+      "id": "google/gemma-3-27b-it",
+      "object": "model",
+      "created": 1742913870,
+      "owned_by": "google"
     }
-  ],
+  ]
 }
 ```
 
