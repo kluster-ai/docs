@@ -1422,29 +1422,53 @@ The organization that owns the model.
   "data": [
     {
       "id": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo",
-      "created": 1731336418,
       "object": "model",
+      "created": 1731336418,
       "owned_by": "klusterai"
     },
     {
       "id": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
-      "created": 1731336610,
       "object": "model",
+      "created": 1731336610,
       "owned_by": "klusterai"
     },
     {
       "id": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
-      "created": 1733777629,
       "object": "model",
+      "created": 1733777629,
       "owned_by": "klusterai"
     },
     {
       "id": "deepseek-ai/DeepSeek-R1",
-      "created": 1737385699,
       "object": "model",
+      "created": 1737385699,
       "owned_by": "klusterai"
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-V3",
+      "object": "model",
+      "created": 1742323334,
+      "owned_by": "klusterai"
+    },
+    {
+      "id": "Qwen/Qwen2.5-VL-7B-Instruct",
+      "object": "model",
+      "created": 1741303075,
+      "owned_by": "qwen"
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-V3-0324",
+      "object": "model",
+      "created": 1742848965,
+      "owned_by": "klusterai"
+    },
+    {
+      "id": "google/gemma-3-27b-it",
+      "object": "model",
+      "created": 1742913870,
+      "owned_by": "google"
     }
-  ],
+  ]
 }
 ```
 
