@@ -2140,7 +2140,7 @@ After finishing the CLI setup, you will see a `src` directory with files `crew.p
 
 2. **Import modules and select model** - open `hello_crew.py` to add imports and define a custom LLM for kluster.ai by setting the following parameters:
     - **provider** - you can specify `openai_compatible`
-    - **model** - choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case. Regardless of which model you choose, prepend its name with `openai/` to ensure CrewAI, which relies on LiteLLM, processes your requests correctly. 
+    - **model** - choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case. Regardless of which model you choose, prepend its name with `openai/` to ensure CrewAI, which relies on LiteLLM, processes your requests correctly
 
     - **base_url** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
     - **api_key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
@@ -2379,7 +2379,7 @@ cp .env.example .env
 2. **Set variables** - update the following variables in the `.env` file:
     - **OPENAI_API_KEY** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
     - **OPENAI_API_URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
-    - **OPENAI_DEFAULT_MODEL** - choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case. You should also set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, and `LARGE_OPENAI_MODEL` to the same value to allow seamless experimentation as different characters use different default models.
+    - **OPENAI_DEFAULT_MODEL** - choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case. You should also set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, and `LARGE_OPENAI_MODEL` to the same value to allow seamless experimentation as different characters use different default models
 
 The OpenAI configuration section of your `.env` file should resemble the following:
 
@@ -2552,7 +2552,7 @@ It's easy to integrate kluster.ai with LangChain—when configuring the chat mod
 
   - **Base URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
   - **API key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
-  - **Select your model** - choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case.
+  - **Select your model** - choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case
 
 ```python
 from langchain_openai import ChatOpenAI
@@ -2770,7 +2770,7 @@ messages = [
     {"role": "user",   "content": "What is the capital of California?"}
 ]
 ```
-4. **Select your kluster.ai model** - choose one of the [kluster.ai's available models](/get-started/models/){target=\_blank} that best fits your use case. Prepend the model name with `openai/` so LiteLLM recognizes it as an OpenAI-like model request.
+4. **Select your kluster.ai model** - choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} that best fits your use case. Prepend the model name with `openai/` so LiteLLM recognizes it as an OpenAI-like model request
 ```python
 model = "openai/klusterai/Meta-Llama-3.3-70B-Instruct-Turbo"
 ```
@@ -3081,7 +3081,7 @@ Then, take the following steps to configure Msty to use the kluster.ai API:
     ```
 
 4. Paste your API key and ensure **Save key securely in keychain** is selected
-5. Paste the name of the [kluster.ai's available model](/get-started/models/){target=\_blank} you'd like to use. Note that you can specify multiple models
+5. Paste the name of the [kluster.ai model](/get-started/models/){target=\_blank} you'd like to use. Note that you can specify multiple models
 6. Press **Add** to finalize the addition of kluster.ai API as a provider
 
 ![Configure remote model screen](/images/get-started/integrations/msty/msty-2.webp)
@@ -3987,30 +3987,30 @@ You can also clone and customize existing agents or create entirely new ones. Fo
 Doc-Content: https://docs.kluster.ai/get-started/models/
 --- BEGIN CONTENT ---
 ---
-title: Models
-description: Learn what models are supported by kluster.ai API, main characteristics and API request limits for each model for both free and standard tiers.
+title: Supported AI Models
+description: Learn what models are supported by the kluster.ai API and the main characteristics and API request limits for each model for both free and standard tiers.
 ---
 
 # Models on kluster.ai
 
-[kluster.ai](https://kluster.ai){target=\_blank} offers a wide variety of open-source models for both real time and batch inferences, with more being constantly added. 
-
-This page covers all the different models that are supported by the API, with the API request limits for each.
+[kluster.ai](https://kluster.ai){target=\_blank} offers a wide variety of open-source models for both real-time and batch inferences, with more being constantly added.
+ 
+This page covers all the models the API supports, with the API request limits for each.
 
 ## Model names
 
-Each model supported by kluster.ai has a unique model that must be used when defining the `model` in the request.
+Each model supported by kluster.ai has a unique name that must be used when defining the `model` in the request.
 
 |        Model         |                 Model API name                 |
 |:--------------------:|:----------------------------------------------:|
-|   **DeepSeek R1**    |           ` deepseek-ai/DeepSeek-R1`           |
-|   **DeepSeek V3**    |           ` deepseek-ai/DeepSeek-V3`           |
-| **DeepSeek V3 0324** |        ` deepseek-ai/DeepSeek-V3-0324`         |
+|   **DeepSeek R1**    |           `deepseek-ai/DeepSeek-R1`            |
+|   **DeepSeek V3**    |           `deepseek-ai/DeepSeek-V3`            |
+| **DeepSeek V3 0324** |         `deepseek-ai/DeepSeek-V3-0324`         |
 |   **Gemma 3 27B**    |            `google/gemma-3-27b-it`             |
 |   **Llama 3.1 8B**   |  `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`  |
 |  **Llama 3.1 405B**  | `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo` |
 |  **Llama 3.3 70B**   | `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`  |
-|   **Qwen 2.5 7B**    |         `Qwen/Qwen2.5-VL-7B-Instruct `         |
+|   **Qwen 2.5 7B**    |         `Qwen/Qwen2.5-VL-7B-Instruct`          |
 
 ## Model comparison table
 

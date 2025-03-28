@@ -1,11 +1,12 @@
 ---
-title: Models
+title: Supported AI Models
 description: Learn what models are supported by the kluster.ai API and the main characteristics and API request limits for each model for both free and standard tiers.
 ---
 
 # Models on kluster.ai
 
-[kluster.ai](https://kluster.ai){target=\_blank} offers a wide variety of open-source models for both real-time and batch inferences, with more being constantly added. 
+[kluster.ai](https://kluster.ai){target=\_blank} offers a wide variety of open-source models for both real-time and batch inferences, with more being constantly added.
+ 
 This page covers all the models the API supports, with the API request limits for each.
 
 ## Model names
@@ -14,8 +15,8 @@ Each model supported by kluster.ai has a unique name that must be used when defi
 
 |        Model         |                 Model API name                 |
 |:--------------------:|:----------------------------------------------:|
-|   **DeepSeek R1**    |            `deepseek-ai/DeepSeek-R1`           |
-|   **DeepSeek V3**    |            `deepseek-ai/DeepSeek-V3`           |
+|   **DeepSeek R1**    |           `deepseek-ai/DeepSeek-R1`            |
+|   **DeepSeek V3**    |           `deepseek-ai/DeepSeek-V3`            |
 | **DeepSeek V3 0324** |         `deepseek-ai/DeepSeek-V3-0324`         |
 |   **Gemma 3 27B**    |            `google/gemma-3-27b-it`             |
 |   **Llama 3.1 8B**   |  `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`  |
