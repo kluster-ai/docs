@@ -26,16 +26,16 @@ Each model supported by kluster.ai has a unique model that must be used when def
 
 ## Model comparison table
 
-|        Model         |                                      Main<br>use case                                      | Real-time<br>inference support | Batch<br>inference support | Fine-tuning<br>support | Image<br>analysis  | Function<br>calling |
-|:--------------------:|:------------------------------------------------------------------------------------------:|:------------------------------:|:--------------------------:|:----------------------:|:------------------:|:-------------------:|
-|   **DeepSeek R1**    |          Mathematical problem-solving<br>code generation<br>complex data analysis          |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
-|   **DeepSeek V3**    |    Natural language generation<br>open-ended text creation<br>contextually rich writing    |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
-| **DeepSeek V3 0324** |    Natural language generation<br>open-ended text creation<br>contextually rich writing    |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
-|   **Gemma 3 27B**    | Multilingual applications<br>extended-context tasks<br>image analysis<br>complex reasoning |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
-|   **Llama 3.1 8B**   |                  Low-latency or simple tasks<br>cost-efficient inference                   |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
-|  **Llama 3.1 405B**  |               Cutting-edge research<br>detailed analysis<br>maximum accuracy               |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
-|  **Llama 3.3 70B**   |                      General-purpose AI<br>balanced cost-performance                       |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
-|   **Qwen 2.5 7B**    | Visual question answering<br>document analysis<br>image-based reasoning<br>multimodal chat |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
+|        Model         |                         Main<br>use case                         | Real-time<br>inference support | Batch<br>inference support | Fine-tuning<br>support | Image<br>analysis  | Function<br>calling |
+|:--------------------:|:----------------------------------------------------------------:|:------------------------------:|:--------------------------:|:----------------------:|:------------------:|:-------------------:|
+|   **DeepSeek R1**    |             Code generation<br>Complex data analysis             |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
+|   **DeepSeek V3**    |     Natural language generation<br>Contextually rich writing     |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
+| **DeepSeek V3 0324** |     Natural language generation<br>Contextually rich writing     |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
+|   **Gemma 3 27B**    | Multilingual applications<br>Image analysis<br>Complex reasoning |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
+|   **Llama 3.1 8B**   |     Low-latency or simple tasks<br>Cost-efficient inference      |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
+|  **Llama 3.1 405B**  |              Detailed analysis<br>Maximum accuracy               |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
+|  **Llama 3.3 70B**   |         General-purpose AI<br>Balanced cost-performance          |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
+|   **Qwen 2.5 7B**    |  Document analysis<br>Image-based reasoning<br>Multimodal chat   |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
 
 ## API request limits
 
