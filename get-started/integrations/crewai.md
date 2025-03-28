@@ -34,7 +34,7 @@ After finishing the CLI setup, you will see a `src` directory with files `crew.p
 
 2. **Import modules and select model** - open `hello_crew.py` to add imports and define a custom LLM for kluster.ai by setting the following parameters:
     - **provider** - you can specify `openai_compatible`
-    - **model** - choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case. Regardless of which model you choose, prepend its name with `openai/` to ensure CrewAI, which relies on LiteLLM, processes your requests correctly. 
+    - **model** - choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case. Regardless of which model you choose, prepend its name with `openai/` to ensure CrewAI, which relies on LiteLLM, processes your requests correctly
 
     - **base_url** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
     - **api_key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
