@@ -33,10 +33,7 @@ Then, take the following steps to configure Msty to use the kluster.ai API:
     ```
 
 4. Paste your API key and ensure **Save key securely in keychain** is selected
-5. Paste the name of the supported kluster.ai model you'd like to use. Note that you can specify multiple models
-
-
-
+5. Paste the name of the [kluster.ai's available model](/get-started/models/){target=\_blank} you'd like to use. Note that you can specify multiple models
 6. Press **Add** to finalize the addition of kluster.ai API as a provider
 
 ![Configure remote model screen](/images/get-started/integrations/msty/msty-2.webp)
