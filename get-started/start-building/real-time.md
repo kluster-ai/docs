@@ -10,7 +10,7 @@ description: This page provides examples and instructions for submitting and man
 
 This guide provides guidance about how to use real-time inference with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API. This type of inference is best suited for use cases requiring instant, synchronous responses for user-facing features like chat interactions, live recommendations, or real-time decision-making.
 
-You will learn which models are supported for real-time inference jobs, how to submit a request and retrieve responses, and where to find integration guides for using kluster.ai's API with some of your favorite third-party LLM interfaces. Please make sure you check the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
+You will learn how to submit a request and retrieve responses, and where to find integration guides for using kluster.ai's API with some of your favorite third-party LLM interfaces. Please make sure you check the [API request limits](/get-started/models/#api-request-limits){target=\_blank}.
 
 ## Prerequisites
 
@@ -30,9 +30,7 @@ export API_KEY=INSERT_API_KEY
 
 ## Supported models
 
-Real-time inferences through kluster.ai support the following models:
-
---8<-- 'text/real-time-models.md'
+Please visit the [Models](/get-started/models/){target=\_blank} page to learn more about all the models supported by the kluster.ai batch API.
 
 In addition, you can see the complete list of available models programmatically using the [list supported models](/api-reference/reference/#list-supported-models){target=\_blank} endpoint.
 
@@ -147,7 +145,7 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 
 ## Real-time inference flow
 
-This section details the real-time inference process using the kluster.ai API and DeepSeek R1 model, but you can adapt it to any of the [supported models](#supported-models).
+This section details the real-time inference process using the kluster.ai API and DeepSeek R1 model, but you can adapt it to any of the [supported models](/get-started/models/#model-comparison-table){target=\_blank}.
 
 ### Submitting a request
 
@@ -163,7 +161,7 @@ The following code shows how to do a chat completions request using the OpenAI l
 
 If successful, the `completion` variable contains a full response, which you'll need to analyze to extract the answer you are looking for. In terms of configuration for real-time inferences, there are several parameters that you need to tweak:
 
-- `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](#supported-models)
+- `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](/get-started/models/#model-comparison-table){target=\_blank}
 - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images). In this example, the query is "What is the ultimate breakfast sandwich?". 
 
 Once these parameters are configured, run your script to send the request.

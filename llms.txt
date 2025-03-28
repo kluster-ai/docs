@@ -48,7 +48,7 @@ template: api.html
 
 `POST https://api.kluster.ai/v1/chat/completions`
 
-To create a chat completion, send a request to the `chat/completions` endpoint.  Please ensure your request is compliant with the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
+To create a chat completion, send a request to the `chat/completions` endpoint.  Please ensure your request is compliant with the [API request limits](/get-started/models/#api-request-limits){target=\_blank}.
 
 <div class="grid" markdown>
 <div markdown>
@@ -409,7 +409,7 @@ Usage statistics for the completion request.
 
 `POST https://api.kluster.ai/v1/batches`
 
-To submit a batch job, send a request to the `batches` endpoint. Please ensure your request is compliant with the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
+To submit a batch job, send a request to the `batches` endpoint. Please ensure your request is compliant with the [API request limits](/get-started/models/#api-request-limits){target=\_blank}.
 
 <div class="grid" markdown>
 <div markdown>
@@ -1181,7 +1181,7 @@ For requests that failed with a non-HTTP error, this will contain more informati
 
 `POST https://api.kluster.ai/v1/files/`
 
-Upload a [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `files` endpoint.  Please ensure your file is compliant with the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
+Upload a [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `files` endpoint.  Please ensure your file is compliant with the [API request limits](/get-started/models/#api-request-limits){target=\_blank}.
 
 You can also view all your uploaded files in the [**Files** tab](https://platform.kluster.ai/files){target=\_blank} of the kluster.ai platform.
 
@@ -4119,7 +4119,7 @@ description: This guide provides examples and instructions on how to create, sub
 
 ## Overview
 
-This guide provides examples and instructions on how to create, submit, retrieve, and manage batch inference jobs using the [kluster.ai](https://www.kluster.ai/){target=\_blank} API. You will find guidance about preparing your data, selecting a model, submitting your batch job, and retrieving your results. Please make sure you check the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
+This guide provides examples and instructions on how to create, submit, retrieve, and manage batch inference jobs using the [kluster.ai](https://www.kluster.ai/){target=\_blank} API. You will find guidance about preparing your data, selecting a model, submitting your batch job, and retrieving your results. Please make sure you check the [API request limits](/get-started/models/#api-request-limits){target=\_blank}.
  
 ## Prerequisites
 
@@ -6243,7 +6243,7 @@ description: This page provides examples and instructions for submitting and man
 
 This guide provides guidance about how to use real-time inference with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API. This type of inference is best suited for use cases requiring instant, synchronous responses for user-facing features like chat interactions, live recommendations, or real-time decision-making.
 
-You will learn which models are supported for real-time inference jobs, how to submit a request and retrieve responses, and where to find integration guides for using kluster.ai's API with some of your favorite third-party LLM interfaces. Please make sure you check the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
+You will learn which models are supported for real-time inference jobs, how to submit a request and retrieve responses, and where to find integration guides for using kluster.ai's API with some of your favorite third-party LLM interfaces. Please make sure you check the [API request limits](/get-started/models/#api-request-limits){target=\_blank}.
 
 ## Prerequisites
 

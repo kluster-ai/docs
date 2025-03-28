@@ -8,13 +8,17 @@ template: api.html
 
 # API reference
 
+## API request limits
+
+--8<-- "text/get-started/rate-limit.md"
+
 ## Chat
 
 ### Create chat completion
 
 `POST https://api.kluster.ai/v1/chat/completions`
 
-To create a chat completion, send a request to the `chat/completions` endpoint.  Please ensure your request is compliant with the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
+To create a chat completion, send a request to the `chat/completions` endpoint.  Please ensure your request is compliant with the [API request limits](/get-started/models/#api-request-limits){target=\_blank}.
 
 <div class="grid" markdown>
 <div markdown>
@@ -375,7 +379,7 @@ Usage statistics for the completion request.
 
 `POST https://api.kluster.ai/v1/batches`
 
-To submit a batch job, send a request to the `batches` endpoint. Please ensure your request is compliant with the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
+To submit a batch job, send a request to the `batches` endpoint. Please ensure your request is compliant with the [API request limits](/get-started/models/#api-request-limits){target=\_blank}.
 
 <div class="grid" markdown>
 <div markdown>
@@ -1147,7 +1151,7 @@ For requests that failed with a non-HTTP error, this will contain more informati
 
 `POST https://api.kluster.ai/v1/files/`
 
-Upload a [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `files` endpoint.  Please ensure your file is compliant with the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
+Upload a [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `files` endpoint.  Please ensure your file is compliant with the [API request limits](/get-started/models/#api-request-limits){target=\_blank}.
 
 You can also view all your uploaded files in the [**Files** tab](https://platform.kluster.ai/files){target=\_blank} of the kluster.ai platform.
 

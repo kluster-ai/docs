@@ -8,8 +8,8 @@ description: This guide provides examples and instructions on how to create, sub
 
 ## Overview
 
-This guide provides examples and instructions on how to create, submit, retrieve, and manage batch inference jobs using the [kluster.ai](https://www.kluster.ai/){target=\_blank} API. You will find guidance about preparing your data, selecting a model, submitting your batch job, and retrieving your results. Please make sure you check the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
- 
+This guide provides examples and instructions on how to create, submit, retrieve, and manage batch inference jobs using the [kluster.ai](https://www.kluster.ai/){target=\_blank} API. You will find guidance about preparing your data, selecting a model, submitting your batch job, and retrieving your results. Please make sure you check the [API request limits](/get-started/models/#api-request-limits){target=\_blank}.
+
 ## Prerequisites
 
 This guide assumes familiarity with Large Language Model (LLM) development and OpenAI libraries. Before getting started, make sure you have:
@@ -29,9 +29,7 @@ export API_KEY=INSERT_API_KEY
 
 ## Supported models
 
-Batch inference using kluster.ai supports the following models:
-
---8<-- 'text/batch-models.md'
+Please visit the [Models](/get-started/models/){target=\_blank} page to learn more about all the models supported by the kluster.ai batch API.
 
 In addition, you can see the complete list of available models programmatically using the [list supported models](/api-reference/reference/#list-supported-models){target=\_blank} endpoint.
 
@@ -161,7 +159,7 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 
 ## Batch inference flow
 
-This section details the batch inference process using the kluster.ai API and DeepSeek R1 model, but you can adapt it to any of the [supported models](#supported-models).
+This section details the batch inference process using the kluster.ai API and DeepSeek R1 model, but you can adapt it to any of the [supported models](/get-started/models/#model-comparison-table){target=\_blank}.
 
 ### Create batch jobs as JSON files
 
@@ -173,7 +171,7 @@ Each request must include the following arguments:
 - `method` ++"string"++ - the HTTP method to use for the request. Currently, only `POST` is supported
 - `url` ++"string"++ -  the `/v1/chat/completions` endpoint
 - `body` ++"object"++ - a request body containing:
-    - `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](#supported-models)
+    - `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](/get-started/models/#model-comparison-table){target=\_blank}
     - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images)
     - Any optional [chat completion parameters](/api-reference/reference/#create-chat-completion){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
 
@@ -520,6 +518,5 @@ You have now experienced the complete batch inference job lifecycle using kluste
 - Retrieve and handle job results
 - View and manage your batch jobs
 - Cancel jobs when needed
-- View supported models
 
 The kluster.ai batch API is designed to efficiently and reliably handle your large-scale LLM workloads. If you have questions or suggestions, the [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
