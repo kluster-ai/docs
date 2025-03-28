@@ -1356,11 +1356,9 @@ The intended purpose of the file. Currently, only `batch` is supported.
 
 `GET https://api.kluster.ai/v1/models`
 
-Lists the currently available models.
+Lists the [currently available models](/get-started/models/){target=\_blank}.
 
-You can use this endpoint to retrieve a list of all available models for the kluster.ai API. If you have created any fine-tuned models, they will also appear when you query this endpoint. Currently supported models include:
-
---8<-- 'text/batch-models.md'
+You can use this endpoint to retrieve a list of all available models for the kluster.ai API. If you have created any fine-tuned models, they will also appear when you query this endpoint. 
 
 <div class="grid" markdown>
 <div markdown>

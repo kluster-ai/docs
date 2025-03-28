@@ -145,7 +145,7 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 
 ## Real-time inference flow
 
-This section details the real-time inference process using the kluster.ai API and DeepSeek R1 model, but you can adapt it to any of the [supported models](/get-started/models/#model-comparison-table){target=\_blank}.
+This section details the real-time inference process using the kluster.ai API and DeepSeek R1 model, but you can adapt it to any of the [supported models](/get-started/models/){target=\_blank}.
 
 ### Submitting a request
 
@@ -161,7 +161,7 @@ The following code shows how to do a chat completions request using the OpenAI l
 
 If successful, the `completion` variable contains a full response, which you'll need to analyze to extract the answer you are looking for. In terms of configuration for real-time inferences, there are several parameters that you need to tweak:
 
-- `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](/get-started/models/#model-comparison-table){target=\_blank}
+- `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](/get-started/models/){target=\_blank}
 - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images). In this example, the query is "What is the ultimate breakfast sandwich?". 
 
 Once these parameters are configured, run your script to send the request.

@@ -35,7 +35,7 @@ Then, take the following steps to configure Msty to use the kluster.ai API:
 4. Paste your API key and ensure **Save key securely in keychain** is selected
 5. Paste the name of the supported kluster.ai model you'd like to use. Note that you can specify multiple models
 
-    --8<-- 'text/real-time-models.md'
+
 
 6. Press **Add** to finalize the addition of kluster.ai API as a provider
 

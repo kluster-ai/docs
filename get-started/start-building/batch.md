@@ -159,7 +159,7 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 
 ## Batch inference flow
 
-This section details the batch inference process using the kluster.ai API and DeepSeek R1 model, but you can adapt it to any of the [supported models](/get-started/models/#model-comparison-table){target=\_blank}.
+This section details the batch inference process using the kluster.ai API and DeepSeek R1 model, but you can adapt it to any of the [supported models](/get-started/models/){target=\_blank}.
 
 ### Create batch jobs as JSON files
 
@@ -171,7 +171,7 @@ Each request must include the following arguments:
 - `method` ++"string"++ - the HTTP method to use for the request. Currently, only `POST` is supported
 - `url` ++"string"++ -  the `/v1/chat/completions` endpoint
 - `body` ++"object"++ - a request body containing:
-    - `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](/get-started/models/#model-comparison-table){target=\_blank}
+    - `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](/get-started/models/){target=\_blank}
     - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images)
     - Any optional [chat completion parameters](/api-reference/reference/#create-chat-completion){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
 
