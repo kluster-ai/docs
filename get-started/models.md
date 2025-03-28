@@ -33,7 +33,7 @@ Each model supported by kluster.ai has a unique name that must be used when defi
 | **DeepSeek V3 0324** |     Natural language generation<br>Contextually rich writing     |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
 |   **Gemma 3 27B**    | Multilingual applications<br>Image analysis<br>Complex reasoning |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
 |   **Llama 3.1 8B**   |     Low-latency or simple tasks<br>Cost-efficient inference      |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
-|  **Llama 3.1 405B**  |              Detailed analysis<br>Maximum accuracy               |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
+|  **Llama 3.1 405B**  |              Detailed analysis<br>Maximum accuracy               |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         | :white_check_mark:  |
 |  **Llama 3.3 70B**   |         General-purpose AI<br>Balanced cost-performance          |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
 |   **Qwen 2.5 7B**    |  Document analysis<br>Image-based reasoning<br>Multimodal chat   |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
 
