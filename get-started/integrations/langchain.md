@@ -33,9 +33,7 @@ It's easy to integrate kluster.ai with LangChain—when configuring the chat mod
 
   - **Base URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
   - **API key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
-  - **Select your model** - choose one of kluster.ai's available models based on your use case:
-
-      --8<-- 'text/real-time-models.md'
+  - **Select your model** - choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case
 
 ```python
 --8<-- "code/get-started/integrations/langchain/langchain-quickstart.py"

@@ -34,11 +34,7 @@ cp .env.example .env
 2. **Set variables** - update the following variables in the `.env` file:
     - **OPENAI_API_KEY** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
     - **OPENAI_API_URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
-    - **OPENAI_DEFAULT_MODEL** - choose one of kluster.ai's available models based on your use case:
-
-        --8<-- 'text/real-time-models.md'
-      
-      You should also set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, and `LARGE_OPENAI_MODEL` to the same value to allow seamless experimentation as different characters use different default models.
+    - **OPENAI_DEFAULT_MODEL** - choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case. You should also set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, and `LARGE_OPENAI_MODEL` to the same value to allow seamless experimentation as different characters use different default models
 
 The OpenAI configuration section of your `.env` file should resemble the following:
 
