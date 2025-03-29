@@ -371,6 +371,131 @@ Usage statistics for the completion request.
 </div>
 </div>
 
+## Async
+
+### Submit an async request
+
+Asynchronous inference is a cost-effective option when you don't need immediate results, such as for workloads that vary or have unpredictable timelines. Submitting an asynchronous inference request to the [chat completions endpoint](#create-chat-completion) works much like submitting a real-time request. The main difference is that you include a metadata object specifying the request as `async` and a `completion_window`, defining the time window in which you expect the response.
+
+<div class="grid" markdown>
+<div markdown>
+
+**Request**
+
+`model` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+ID of the model to use. You can use the `models` endpoint to retrieve the [list of supported models](#list-supported-models){target=\_blank}.
+
+---
+
+`messages` ++"array"++ <span class="required" markdown>++"required"++</span>
+
+A list of messages comprising the conversation so far. The `messages` object can be one of `system`, `user`, or `assistant`.
+
+---
+
+`endpoint` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+The endpoint to be used for all requests in the batch. Currently, only `/v1/chat/completions` is supported.
+
+---
+
+`metadata` ++"Object"++ <span class="required" markdown>++"Required"++</span>
+
+`async` ++"Object"++ <span class="required" markdown>++"Required"++</span> must be set to true to indicate an asynchronous request
+
+`completion_window` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+The supported completion windows are 1, 3, 6, 12, and 24 hours to accommodate a range of use cases and budget requirements. The code samples provided utilize the 24-hour completion window.
+
+Learn more about how completion window selection affects cost by visiting the pricing section of the [kluster.ai website](https://www.kluster.ai){target=\_blank}.
+
+---
+
+**Returns**
+
+The [Batch object](#batch-object) including the job ID. All async jobs are treated as batch jobs but submitted through the real time chat completions endpoint.
+
+</div>
+<div markdown>
+
+=== "Python"
+
+    ```python title="Example request"
+    from openai import OpenAI
+
+    # Configure OpenAI client
+    client = OpenAI(
+        base_url="https://api.kluster.ai/v1",
+        api_key="INSERT_API_KEY"  # Replace with your actual API key
+    )
+
+    # Create a chat completion request with async flag in metadata
+    chat_completion = client.chat.completions.create(
+        model="google/gemma-3-27b-it",
+        messages=[
+            {"role": "user", "content": "Please give me your honest opinion on the best stock as an investment."}
+        ],
+        metadata={
+            "@kluster.ai": {
+                "async": True,
+                "completion_window": "24h"
+            }
+        }
+    )
+
+    print(chat_completion.to_dict())
+
+    ```
+
+
+=== "curl"
+
+    ```bash title="Example request"
+        curl -s https://api.kluster.ai/v1/chat/completions \
+        -H "Authorization: Bearer INSERT_API_KEY" \
+        -H "Content-Type: application/json" \
+        -d '{
+      "model": "google/gemma-3-27b-it",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Please give me your honest opinion on the best stock as an investment."
+        }
+      ],
+      "metadata": {
+        "@kluster.ai": {
+          "async": true,
+          "completion_window": "24h"
+        }
+      }
+    }'
+    ```
+
+```Json title="Response"
+{
+    "id": "67783976bf636f79b49643ee_1743267849127",
+    "object": "chat.completion",
+    "created": 1743267849,
+    "model": "google/gemma-3-27b-it",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "Your request has been queued for adaptive inference. Check your batch jobs for results."
+            },
+            "finish_reason": "stop"
+        }
+    ]
+}
+```
+
+</div>
+</div>
+
+
+
 ---
 
 ## Batch
