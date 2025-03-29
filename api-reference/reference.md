@@ -375,7 +375,7 @@ Usage statistics for the completion request.
 
 ### Submit an async request
 
-Asynchronous inference is a cost-effective option when you don't need immediate results, such as for workloads that vary or have unpredictable timelines. Submitting an asynchronous inference request to the [chat completions endpoint](#create-chat-completion) works much like submitting a real-time request. The main difference is that you include a metadata object specifying the request as `async` and a `completion_window`, defining the time window in which you expect the response.
+Asynchronous inference is a cost-effective option when you don't need immediate results, such as for workloads that vary or have unpredictable timelines. Submitting an asynchronous inference request to the [chat completions endpoint](#create-chat-completion) works like submitting a real-time request. The main difference is that you include a metadata object specifying the request as `async` and a `completion_window`, defining the time window you expect the response.
 
 <div class="grid" markdown>
 <div markdown>
@@ -414,7 +414,7 @@ Learn more about how completion window selection affects cost by visiting the pr
 
 **Returns**
 
-The [Batch object](#batch-object) including the job ID. All async jobs are treated as batch jobs but submitted through the real time chat completions endpoint.
+The [Batch object](#batch-object) including the job ID. All async jobs are treated as batch jobs but submitted through the real-time chat completions endpoint.
 
 </div>
 <div markdown>
