@@ -12,6 +12,8 @@ template: api.html
 
 --8<-- "text/get-started/rate-limit.md"
 
+--- 
+
 ## Chat
 
 ### Create chat completion
@@ -82,6 +84,58 @@ A list of messages comprising the conversation so far. The `messages` object can
         `role` ++"string or null"++ <span class="required" markdown>++"required"++</span>
 
         The role of the messages author, in this case, `assistant`.
+
+---
+
+`store` ++"boolean or null"++
+
+Whether or not to store the output of this chat completion request. Defaults to `false`
+
+---
+
+`metadata` ++"object"++ <span class="required" markdown>++"Required"++</span>
+
+Set of key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format, and querying for objects via API.
+
+??? child "Show properties"
+
+    `@kluster.ai` ++"object"++
+
+    kluster.ai-specific options for the request.
+
+    ??? child "Show properties"
+
+        `callback_url` ++"string"++
+
+        A URL to which the system will send a callback when the request is complete.
+
+        ---
+
+        `async` ++"boolean"++
+
+        Indicates whether the request should be asynchronous. For more information, see the [Submit an async request](#submit-an-async-request) section.
+
+        ---
+
+        `strict_completion_window` ++"boolean"++
+
+        Indicates whether the request must be completed within the specified `completion_window`. If enabled and the request isn't completed within the window, it will be considered unsuccessful. 
+        
+        ---
+
+        `completion_window` ++"string"++
+
+        The time frame within which the batch should be processed. The supported completion windows are 1, 3, 6, 12, and 24 hours to accommodate a range of use cases and budget requirements.
+
+        Learn more about how completion window selection affects cost by visiting the pricing section of the [kluster.ai website](https://www.kluster.ai){target=\_blank}.
+
+    ---
+
+    `additionalProperties` ++"any"++
+
+    Allows any other properties to be included in the `metadata` object without enforcing a specific schema for them. These properties can have any key and any value type.
+
+---
 
 `frequency_penalty` ++"number or null"++
 
@@ -263,7 +317,7 @@ The Unix timestamp (in seconds) of when the chat completion was created.
 
 `model` ++"string"++
 
-The model used for the chat completion. You can use the `models` endpoint to retrieve the [list of supported models](#list-supported-models){target=\_blank}.
+The model used for the chat completion. You can use the `models` endpoint to retrieve the [list of supported models](#list-supported-models).
 
 ---
 
@@ -293,7 +347,7 @@ A list of chat completion choices.
 
         `role` ++"string or null"++
 
-        The role of the messages author. Can be one of `system`, `user`, or `assistant`
+        The role of the messages author. Can be one of `system`, `user`, or `assistant`.
     
     ---
 
@@ -370,6 +424,8 @@ Usage statistics for the completion request.
 
 </div>
 </div>
+
+---
 
 ## Async
 
