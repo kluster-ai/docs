@@ -400,15 +400,47 @@ The endpoint to be used for all requests in the batch. Currently, only `/v1/chat
 
 ---
 
-`metadata` ++"Object"++ <span class="required" markdown>++"Required"++</span>
+`metadata` ++"object"++ <span class="required" markdown>++"Required"++</span>
 
-`async` ++"Object"++ <span class="required" markdown>++"Required"++</span> must be set to true to indicate an asynchronous request
+Set of key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format, and querying for objects via API.
 
-`completion_window` ++"string"++ <span class="required" markdown>++"required"++</span>
+??? child "Show properties"
 
-The supported completion windows are 1, 3, 6, 12, and 24 hours to accommodate a range of use cases and budget requirements. The code samples provided utilize the 24-hour completion window.
+    `@kluster.ai` ++"object"++ <span class="required" markdown>++"Required"++</span>
 
-Learn more about how completion window selection affects cost by visiting the pricing section of the [kluster.ai website](https://www.kluster.ai){target=\_blank}.
+    kluster.ai-specific options for the request.
+
+    ??? child "Show properties"
+
+        `callback_url` ++"string"++
+
+        A URL to which the system will send a callback when the request is complete.
+
+        ---
+
+        `async` ++"boolean"++ <span class="required" markdown>++"Required"++</span>
+
+        Indicates whether the request should be asynchronous.
+
+        ---
+
+        `strict_completion_window` ++"boolean"++
+
+        Indicates whether the request must be completed within the specified `completion_window`. If enabled and the request isn't completed within the window, it will be considered unsuccessful. 
+        
+        ---
+
+        `completion_window` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+        The time frame within which the batch should be processed. The supported completion windows are 1, 3, 6, 12, and 24 hours to accommodate a range of use cases and budget requirements.
+
+        Learn more about how completion window selection affects cost by visiting the pricing section of the [kluster.ai website](https://www.kluster.ai){target=\_blank}.
+
+    ---
+
+    `additionalProperties` ++"any"++
+
+    Allows any other properties to be included in the `metadata` object without enforcing a specific schema for them. These properties can have any key and any value type.
 
 ---
 
