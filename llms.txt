@@ -8978,83 +8978,6 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipyn
 Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-api.ipynb/
 --- BEGIN CONTENT ---
 {
- "cells": [
-  {
-   "cell_type": "markdown",
-   "id": "be189fde-4e5b-4f80-bae1-ded86a5075a7",
-   "metadata": {
-    "id": "be189fde-4e5b-4f80-bae1-ded86a5075a7"
-   },
-   "source": [
-    "# Keyword extraction with kluster.ai API"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "b17a77d9",
-   "metadata": {},
-   "source": [
-    "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/examples/keyword-extraction-api.ipynb)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3",
-   "metadata": {
-    "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3"
-   },
-   "source": [
-    "One simple but powerful use case for AI models is keyword extraction, in which you feed the model a large dataset and ask it to provide a given number of keywords.\n",
-    "\n",
-    "This tutorial runs through a notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to obtain keywords from a given dataset.\n",
-    "\n",
-    "The example uses an extract from the AG News dataset. You can adapt this example by using the data and categories relevant to your use case. With this approach, you can effortlessly process datasets of any scale, big or small, to obtain keywords, all powered by a state-of-the-art language model."
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "112d41e9",
-   "metadata": {},
-   "source": [
-    "## Prerequisites\n",
-    "\n",
-    "Before getting started, ensure you have the following:\n",
-    "\n",
-    "- **A kluster.ai account** - sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one\n",
-    "- **A kluster.ai API key** - after signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "xU1WBQJ7Uh09",
-   "metadata": {
-    "id": "xU1WBQJ7Uh09"
-   },
-   "source": [
-    "## Setup"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "b8d580f8-67d5-45d6-915f-0f6b60d3b543",
-   "metadata": {},
-   "source": [
-    "In this notebook, we'll use Python's `getpass` module to input the key safely. After execution, please provide your unique kluster.ai API key (ensure no spaces)."
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 1,
-   "id": "4911e5eb-7463-4a6b-8a99-9313cecd9d4d",
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdin",
-     "output_type": "stream",
-     "text": [
-      "Enter your kluster.ai API key:  ········\n"
-     ]
-=======
   "cells": [
     {
       "cell_type": "markdown",
@@ -9152,17 +9075,9 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
       "execution_count": 2,
       "id": "bcc3d475-8f49-4fc4-9a5e-c6eb6866d2b5",
       "metadata": {},
-      "outputs": [
-        {
-          "name": "stdout",
-          "output_type": "stream",
-          "text": [
-            "Note: you may need to restart the kernel to use updated packages.\n"
-          ]
-        }
-      ],
+      "outputs": [],
       "source": [
-        "pip install -q openai"
+        "%pip install -q openai"
       ]
     },
     {
@@ -9324,7 +9239,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
         "#model=\"Qwen/Qwen2.5-VL-7B-Instruct\"\n",
         "\n",
         "# Ensure the directory exists\n",
-        "os.makedirs(\"keyword_extraction/data\", exist_ok=True)\n",
+        "os.makedirs(\"keyword_extraction/\", exist_ok=True)\n",
         "\n",
         "# Create the batch job file with the prompt and content\n",
         "def create_batch_file(df):\n",
@@ -9686,29 +9601,29 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
         "\n",
         "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As the next steps, feel free to create your dataset or expand on this example. Good luck!"
       ]
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
-   "language": "python",
-   "name": "python3"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3 (ipykernel)",
+      "language": "python",
+      "name": "python3"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "ipython",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.10.12"
+    }
   },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.10.12"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
+  "nbformat": 4,
+  "nbformat_minor": 5
 }
 --- END CONTENT ---
 
