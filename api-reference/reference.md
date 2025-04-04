@@ -8,13 +8,19 @@ template: api.html
 
 # API reference
 
+## API request limits
+
+--8<-- "text/get-started/rate-limit.md"
+
+--- 
+
 ## Chat
 
 ### Create chat completion
 
 `POST https://api.kluster.ai/v1/chat/completions`
 
-To create a chat completion, send a request to the `chat/completions` endpoint.  Please ensure your request is compliant with the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
+To create a chat completion, send a request to the `chat/completions` endpoint.  Please ensure your request is compliant with the [API request limits](/get-started/models/#api-request-limits){target=\_blank}.
 
 <div class="grid" markdown>
 <div markdown>
@@ -78,6 +84,58 @@ A list of messages comprising the conversation so far. The `messages` object can
         `role` ++"string or null"++ <span class="required" markdown>++"required"++</span>
 
         The role of the messages author, in this case, `assistant`.
+
+---
+
+`store` ++"boolean or null"++
+
+Whether or not to store the output of this chat completion request. Defaults to `false`.
+
+---
+
+`metadata` ++"object"++ <span class="required" markdown>++"Required"++</span>
+
+Set of key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format, and querying for objects via API.
+
+??? child "Show properties"
+
+    `@kluster.ai` ++"object"++
+
+    kluster.ai-specific options for the request.
+
+    ??? child "Show properties"
+
+        `callback_url` ++"string"++
+
+        A URL to which the system will send a callback when the request is complete.
+
+        ---
+
+        `async` ++"boolean"++
+
+        Indicates whether the request should be asynchronous. For more information, see the [Submit an async request](#submit-an-async-request) section.
+
+        ---
+
+        `strict_completion_window` ++"boolean"++
+
+        Indicates whether the request must be completed within the specified `completion_window`. If enabled and the request isn't completed within the window, it will be considered unsuccessful. 
+        
+        ---
+
+        `completion_window` ++"string"++
+
+        The time frame within which the batch should be processed. The supported completion windows are 1, 3, 6, 12, and 24 hours to accommodate a range of use cases and budget requirements.
+
+        Learn more about how completion window selection affects cost by visiting the pricing section of the [kluster.ai website](https://www.kluster.ai){target=\_blank}.
+
+    ---
+
+    `additionalProperties` ++"any"++
+
+    Allows any other properties to be included in the `metadata` object without enforcing a specific schema for them. These properties can have any key and any value type.
+
+---
 
 `frequency_penalty` ++"number or null"++
 
@@ -259,7 +317,7 @@ The Unix timestamp (in seconds) of when the chat completion was created.
 
 `model` ++"string"++
 
-The model used for the chat completion. You can use the `models` endpoint to retrieve the [list of supported models](#list-supported-models){target=\_blank}.
+The model used for the chat completion. You can use the `models` endpoint to retrieve the [list of supported models](#list-supported-models).
 
 ---
 
@@ -289,7 +347,7 @@ A list of chat completion choices.
 
         `role` ++"string or null"++
 
-        The role of the messages author. Can be one of `system`, `user`, or `assistant`
+        The role of the messages author. Can be one of `system`, `user`, or `assistant`.
     
     ---
 
@@ -369,13 +427,172 @@ Usage statistics for the completion request.
 
 ---
 
+## Async
+
+### Submit an async request
+
+Asynchronous inference is a cost-effective option when you don't need immediate results, such as for workloads that vary or have unpredictable timelines. Submitting an asynchronous inference request to the [chat completions endpoint](#create-chat-completion) works like submitting a real-time request. The main difference is that you include a metadata object specifying the request as `async` and a `completion_window`, defining the time window you expect the response.
+
+<div class="grid" markdown>
+<div markdown>
+
+**Request**
+
+`model` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+ID of the model to use. You can use the `models` endpoint to retrieve the [list of supported models](#list-supported-models){target=\_blank}.
+
+---
+
+`messages` ++"array"++ <span class="required" markdown>++"required"++</span>
+
+A list of messages comprising the conversation so far. The `messages` object can be one of `system`, `user`, or `assistant`.
+
+---
+
+`endpoint` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+The endpoint to be used for all requests in the batch. Currently, only `/v1/chat/completions` is supported.
+
+---
+
+`metadata` ++"object"++ <span class="required" markdown>++"Required"++</span>
+
+Set of key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format, and querying for objects via API.
+
+??? child "Show properties"
+
+    `@kluster.ai` ++"object"++ <span class="required" markdown>++"Required"++</span>
+
+    kluster.ai-specific options for the request.
+
+    ??? child "Show properties"
+
+        `callback_url` ++"string"++
+
+        A URL to which the system will send a callback when the request is complete.
+
+        ---
+
+        `async` ++"boolean"++ <span class="required" markdown>++"Required"++</span>
+
+        Indicates whether the request should be asynchronous.
+
+        ---
+
+        `strict_completion_window` ++"boolean"++
+
+        Indicates whether the request must be completed within the specified `completion_window`. If enabled and the request isn't completed within the window, it will be considered unsuccessful. 
+        
+        ---
+
+        `completion_window` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+        The time frame within which the batch should be processed. The supported completion windows are 1, 3, 6, 12, and 24 hours to accommodate a range of use cases and budget requirements.
+
+        Learn more about how completion window selection affects cost by visiting the pricing section of the [kluster.ai website](https://www.kluster.ai){target=\_blank}.
+
+    ---
+
+    `additionalProperties` ++"any"++
+
+    Allows any other properties to be included in the `metadata` object without enforcing a specific schema for them. These properties can have any key and any value type.
+
+---
+
+**Returns**
+
+The [Batch object](#batch-object) including the job ID. All async jobs are treated as batch jobs but submitted through the real-time chat completions endpoint.
+
+</div>
+<div markdown>
+
+=== "Python"
+
+    ```python title="Example request"
+    from openai import OpenAI
+
+    # Configure OpenAI client
+    client = OpenAI(
+        base_url="https://api.kluster.ai/v1",
+        api_key="INSERT_API_KEY"  # Replace with your actual API key
+    )
+
+    # Create a chat completion request with async flag in metadata
+    chat_completion = client.chat.completions.create(
+        model="google/gemma-3-27b-it",
+        messages=[
+            {"role": "user", "content": "Please give me your honest opinion on the best stock as an investment."}
+        ],
+        metadata={
+            "@kluster.ai": {
+                "async": True,
+                "completion_window": "24h"
+            }
+        }
+    )
+
+    print(chat_completion.to_dict())
+
+    ```
+
+
+=== "curl"
+
+    ```bash title="Example request"
+        curl -s https://api.kluster.ai/v1/chat/completions \
+        -H "Authorization: Bearer INSERT_API_KEY" \
+        -H "Content-Type: application/json" \
+        -d '{
+      "model": "google/gemma-3-27b-it",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Please give me your honest opinion on the best stock as an investment."
+        }
+      ],
+      "metadata": {
+        "@kluster.ai": {
+          "async": true,
+          "completion_window": "24h"
+        }
+      }
+    }'
+    ```
+
+```Json title="Response"
+{
+    "id": "67783976bf636f79b49643ee_1743267849127",
+    "object": "chat.completion",
+    "created": 1743267849,
+    "model": "google/gemma-3-27b-it",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "Your request has been queued for adaptive inference. Check your batch jobs for results."
+            },
+            "finish_reason": "stop"
+        }
+    ]
+}
+```
+
+</div>
+</div>
+
+
+
+---
+
 ## Batch
 
 ### Submit a batch job
 
 `POST https://api.kluster.ai/v1/batches`
 
-To submit a batch job, send a request to the `batches` endpoint. Please ensure your request is compliant with the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
+To submit a batch job, send a request to the `batches` endpoint. Please ensure your request is compliant with the [API request limits](/get-started/models/#api-request-limits){target=\_blank}.
 
 <div class="grid" markdown>
 <div markdown>
@@ -1147,7 +1364,7 @@ For requests that failed with a non-HTTP error, this will contain more informati
 
 `POST https://api.kluster.ai/v1/files/`
 
-Upload a [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `files` endpoint.  Please ensure your file is compliant with the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
+Upload a [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `files` endpoint.  Please ensure your file is compliant with the [API request limits](/get-started/models/#api-request-limits){target=\_blank}.
 
 You can also view all your uploaded files in the [**Files** tab](https://platform.kluster.ai/files){target=\_blank} of the kluster.ai platform.
 
@@ -1352,11 +1569,9 @@ The intended purpose of the file. Currently, only `batch` is supported.
 
 `GET https://api.kluster.ai/v1/models`
 
-Lists the currently available models.
+Lists the [currently available models](/get-started/models/){target=\_blank}.
 
-You can use this endpoint to retrieve a list of all available models for the kluster.ai API. If you have created any fine-tuned models, they will also appear when you query this endpoint. Currently supported models include:
-
---8<-- 'text/batch-models.md'
+You can use this endpoint to retrieve a list of all available models for the kluster.ai API. If you have created any fine-tuned models, they will also appear when you query this endpoint. 
 
 <div class="grid" markdown>
 <div markdown>

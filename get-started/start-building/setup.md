@@ -39,9 +39,7 @@ Check the [kluster.ai OpenAI compatibility page](/get-started/openai-compatibili
 
 ## API request limits
 
-The following limits apply to API requests based on your plan tier:
-
---8<-- "text/get-started/start-api/rate-limit.md"
+--8<-- "text/get-started/rate-limit.md"
 
 ## Where to go next
 
