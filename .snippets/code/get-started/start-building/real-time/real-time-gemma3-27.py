@@ -1,7 +1,7 @@
 from openai import OpenAI
 from getpass import getpass
 
-image_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+image_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Get API key from user input
 api_key = getpass("Enter your kluster.ai API key: ")

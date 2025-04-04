@@ -55,7 +55,7 @@ requests = [
                         {
                             "type": "image_url",
                             "image_url": {
-                                "url": "https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+                                "url": "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
                             },
                         },
                     ],
