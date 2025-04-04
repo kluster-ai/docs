@@ -20,6 +20,7 @@ Doc-Page: https://docs.kluster.ai/get-started/start-building/batch/
 Doc-Page: https://docs.kluster.ai/get-started/start-building/real-time/
 Doc-Page: https://docs.kluster.ai/get-started/start-building/setup/
 Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-analysis/
+Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis/
 Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-api/
 Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/llm-as-a-judge/
 Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison/
@@ -4524,10 +4525,12 @@ from getpass import getpass
 
 from openai import OpenAI
 
-image1_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/cat-image.jpg?raw=true"
-image2_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/emoji-image.jpg?raw=true"
-image3_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
-
+# Newtown's cradle
+image1_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true"
+# Text with typos
+image2_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true"
+# Parking sign
+image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Get API key from user input
 api_key = getpass("Enter your kluster.ai API key: ")
@@ -4573,7 +4576,7 @@ requests = [
                 {
                     "role": "user",
                     "content": [
-                        {"type": "text", "text": "What is this?"},
+                        {"type": "text", "text": "Extract the text, find typos if any."},
                         {
                             "type": "image_url",
                             "image_url": {
@@ -5003,9 +5006,12 @@ from getpass import getpass
 
 from openai import OpenAI
 
-image1_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/cat-image.jpg?raw=true"
-image2_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/emoji-image.jpg?raw=true"
-image3_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+# Newtown's cradle
+image1_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true"
+# Text with typos
+image2_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true"
+# Parking sign
+image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 
 # Get API key from user input
@@ -5052,7 +5058,7 @@ requests = [
                 {
                     "role": "user",
                     "content": [
-                        {"type": "text", "text": "What is this?"},
+                        {"type": "text", "text": "Extract the text, find typos if any."},
                         {
                             "type": "image_url",
                             "image_url": {
@@ -5337,14 +5343,17 @@ if [[ -z "$API_KEY" ]]; then
 fi
 
 # Define image URLs
-image1_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/cat-image.jpg?raw=true"
-image2_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/emoji-image.jpg?raw=true"
-image3_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+# Newtown's cradle
+image1_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true"
+# Text with typos
+image2_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true"
+# Parking sign
+image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Create request with specified structure
 cat << EOF > my_batch_request.jsonl
 {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "google/gemma-3-27b-it", "messages": [{"role": "user", "content": [{"type": "text", "text": "What is this?"}, {"type": "image_url", "image_url": {"url": "$image1_url"}}]}],"max_completion_tokens": 1000}}
-{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "google/gemma-3-27b-it", "messages": [{"role": "user", "content": [{"type": "text", "text": "What is this?"}, {"type": "image_url", "image_url": {"url": "$image2_url"}}]}],"max_completion_tokens": 1000}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "google/gemma-3-27b-it", "messages": [{"role": "user", "content": [{"type": "text", "text": "Extract the text, find typos if any."}, {"type": "image_url", "image_url": {"url": "$image2_url"}}]}],"max_completion_tokens": 1000}}
 {"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "google/gemma-3-27b-it", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "$image3_url"}}]}],"max_completion_tokens": 1000}}
 EOF
 
@@ -5593,14 +5602,17 @@ if [[ -z "$API_KEY" ]]; then
 fi
 
 # Define image URLs
-image1_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/cat-image.jpg?raw=true"
-image2_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/emoji-image.jpg?raw=true"
-image3_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+# Newtown's cradle
+image1_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true"
+# Text with typos
+image2_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true"
+# Parking sign
+image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Create request with specified structure
 cat << EOF > my_batch_request.jsonl
 {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "What is this?"}, {"type": "image_url", "image_url": {"url": "$image1_url"}}]}],"max_completion_tokens": 1000}}
-{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "What is this?"}, {"type": "image_url", "image_url": {"url": "$image2_url"}}]}],"max_completion_tokens": 1000}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "Extract the text, find typos if any."}, {"type": "image_url", "image_url": {"url": "$image2_url"}}]}],"max_completion_tokens": 1000}}
 {"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "$image3_url"}}]}],"max_completion_tokens": 1000}}
 EOF
 
@@ -5734,7 +5746,7 @@ requests = [
                         {
                             "type": "image_url",
                             "image_url": {
-                                "url": "https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+                                "url": "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
                             },
                         },
                     ],
@@ -5759,7 +5771,7 @@ with open(file_name, "w") as file:
     cat << EOF > my_batch_request.jsonl
     {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "deepseek-ai/DeepSeek-V3", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
     {"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are a maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
-    {"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"}}]}],"max_completion_tokens":1000}}
+    {"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"}}]}],"max_completion_tokens":1000}}
 EOF
     ```
 
@@ -6022,7 +6034,7 @@ requests = [
                         {
                             "type": "image_url",
                             "image_url": {
-                                "url": "https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+                                "url": "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
                             },
                         },
                     ],
@@ -6393,7 +6405,7 @@ print(text_response)
     from openai import OpenAI
 from getpass import getpass
 
-image_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+image_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Get API key from user input
 api_key = getpass("Enter your kluster.ai API key: ")
@@ -6536,7 +6548,7 @@ print(text_response)
     from openai import OpenAI
 from getpass import getpass
 
-image_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+image_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Get API key from user input
 api_key = getpass("Enter your kluster.ai API key: ")
@@ -6661,7 +6673,7 @@ if [[ -z "$API_KEY" ]]; then
     echo -e "\nError: API_KEY environment variable is not set.\n" >&2
 fi
 
-image_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+image_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Submit real-time request
 curl https://api.kluster.ai/v1/chat/completions \
@@ -6766,7 +6778,7 @@ if [[ -z "$API_KEY" ]]; then
     echo -e "\nError: API_KEY environment variable is not set.\n" >&2
 fi
 
-image_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+image_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Submit real-time request
 curl https://api.kluster.ai/v1/chat/completions \
@@ -7842,7 +7854,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-ana
 }
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-api.ipynb/
+Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipynb/
 --- BEGIN CONTENT ---
 {
   "cells": [
@@ -7853,7 +7865,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
         "id": "be189fde-4e5b-4f80-bae1-ded86a5075a7"
       },
       "source": [
-        "# Keyword extraction with kluster.ai API"
+        "# Image analysis with kluster.ai API"
       ]
     },
     {
@@ -7861,7 +7873,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
       "id": "b17a77d9",
       "metadata": {},
       "source": [
-        "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/examples/keyword-extraction-api.ipynb)"
+        "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/examples/sentiment-analysis-api.ipynb)"
       ]
     },
     {
@@ -7871,20 +7883,33 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
         "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3"
       },
       "source": [
-        "One simple but powerful use case for AI models is keyword extraction, in which you feed the model a large dataset and ask it to provide a given number of keywords.\n",
+        "AI models can be used to perform image analysis tasks, in which you feed the model an image and request it to extract meaningful information.\n",
         "\n",
-        "This tutorial runs through a notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to obtain keywords from a given dataset.\n",
+        "This tutorial runs through a notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to run image analysis on different images using both Gemma 3 27B and Qwen 2.5 7B.\n",
         "\n",
-        "The example uses an extract from the AG News dataset. You can adapt this example by using the data and categories relevant to your use case. With this approach, you can effortlessly process datasets of any scale, big or small, to obtain keywords, all powered by a state-of-the-art language model."
+        "The example uses three separate images. For each image, we will ask the models to fetch a specific feature and compare how they respond:\n",
+        "\n",
+        "1. A <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\" target=\"_blank\">Newtown's cradle</a>, we will ask what is the device's name and how many balls are in the image (5)\n",
+        "2. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/eggs-image.jpeg?raw=true\" target=\"_blank\">Eggs</a> of different colors, we will ask how many total eggs and per color (10 total, 8 brown and 2 white)\n",
+        "3. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true\" target=\"_blank\">Aliens only parking sign</a>, we will ask to interpret the sign (only aliens can park, funny reference)\n",
+        "4. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true\" target=\"_blank\">Hand written note with a typo</a>, we will ask what the text in the image is and to find a typo (\"I LOVE PROGRAMING\", \"I love programing\" missing an \"m\" in both instances)\n",
+        "\n",
+        "You can adapt this example by using your own images or request. With this approach, you can effortlessly process images of any scale, big or small, and obtain image analysis powered by a state-of-the-art language model."
       ]
     },
     {
       "cell_type": "markdown",
-      "id": "112d41e9",
+      "id": "41ea62a1",
       "metadata": {},
       "source": [
-        "## Prerequisites\n",
-        "\n",
+        "## Prerequisites"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "83111fd4",
+      "metadata": {},
+      "source": [
         "Before getting started, ensure you have the following:\n",
         "\n",
         "- **A kluster.ai account** - sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one\n",
@@ -7912,11 +7937,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
     {
       "cell_type": "code",
       "execution_count": 1,
-      "id": "4911e5eb-7463-4a6b-8a99-9313cecd9d4d",
+      "id": "bfabc7a8-a552-4569-8a5d-660fbf8df8fe",
       "metadata": {},
       "outputs": [
         {
-          "name": "stdin",
+          "name": "stdout",
           "output_type": "stream",
           "text": [
             "Enter your kluster.ai API key:  ········\n"
@@ -7931,7 +7956,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
     },
     {
       "cell_type": "markdown",
-      "id": "99ac2aed-d284-4fe4-9bb1-9995a0867991",
+      "id": "974f464e-d106-423a-a10d-88d7d9340e3c",
       "metadata": {},
       "source": [
         "Next, ensure you've installed OpenAI Python library:"
@@ -7952,12 +7977,12 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
         }
       ],
       "source": [
-        "pip install -q openai"
+        "%pip install -q openai"
       ]
     },
     {
       "cell_type": "markdown",
-      "id": "a4967896-b375-46b0-8e0f-c1b970e077c8",
+      "id": "0ac5381b-7f1e-46be-93e3-d5438dbc8bc3",
       "metadata": {},
       "source": [
         "With the OpenAI Python library installed, we import the necessary dependencies for the tutorial:"
@@ -7965,7 +7990,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
     },
     {
       "cell_type": "code",
-      "execution_count": 3,
+      "execution_count": null,
       "id": "b89a4feb-37a9-430d-a742-cd58495b4eaf",
       "metadata": {},
       "outputs": [],
@@ -7981,10 +8006,10 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
     },
     {
       "cell_type": "markdown",
-      "id": "5bcc1261-cdfd-41ee-964a-283249410e04",
+      "id": "e8324323-3273-4204-a1dd-9568ec14591a",
       "metadata": {},
       "source": [
-        "And then, initialize the `client` by pointing it to the kluster.ai endpoint, and passing your API key."
+        "Then, initialize the `client` by pointing it to the kluster.ai endpoint and passing your API key."
       ]
     },
     {
@@ -8018,27 +8043,71 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
         "id": "QjCVfg65jKz6"
       },
       "source": [
-        "Now that you've initialized an OpenAI-compatible client pointing to kluster.ai, we can discuss the data.\n",
+        "There are two main ways to proceed when working with images:\n",
         "\n",
-        "This notebook comes with a preloaded sample dataset based on the AG News dataset. It includes sections of news headlines and their leads, all set for processing. No additional setup is needed. Proceed to the next steps to begin working with this data."
+        "1. You can provide the raw image file as a URL from source, for example, GitHub\n",
+        "2. You can provide Base64 encoded. These are typically represented with a blob of text, which starts with `data:image/png;base64,ENCODING_DATA_HERE...`\n",
+        "\n",
+        "With both methodologies, image data needs to be provided as an object in the content array with the following format:\n",
+        "\n",
+        "```\n",
+        "...\n",
+        "{\"type\": \"image_url\", \"image_url\": {\"url\": IMAGE_DATA}}\n",
+        "...\n",
+        "```\n",
+        "\n",
+        "Just replace `IMAGE_DATA` with either the URL with the raw image file or the Base64 encoded image. This tutorial uses the URL of the images uploaded to GitHub:\n"
       ]
     },
     {
       "cell_type": "code",
-      "execution_count": 6,
+      "execution_count": 5,
       "id": "07018f92-9a01-47d5-916a-12cd03dfa3a0",
       "metadata": {},
-      "outputs": [],
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\n",
+            "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/eggs-image.jpeg?raw=true\n",
+            "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true\n",
+            "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true\n"
+          ]
+        }
+      ],
       "source": [
-        "df = pd.DataFrame({\n",
-        "    \"text\": [\n",
-        "        \"Chorus Frog Found Croaking in Virginia - The Southern chorus frog has been found in southeastern Virginia, far outside its previously known range. The animal had never before been reported north of Beaufort County, N.C., about 125 miles to the south.\",\n",
-        "        \"Expedition to Probe Gulf of Mexico - Scientists will use advanced technology never before deployed beneath the sea as they try to discover new creatures, behaviors and phenomena in a 10-day expedition to the Gulf of Mexico's deepest reaches.\",\n",
-        "        \"Feds Accused of Exaggerating Fire ImpactP - The Forest Service exaggerated the effect of wildfires on California spotted owls in justifying a planned increase in logging in the Sierra Nevada, according to a longtime agency expert who worked on the plan.\",\n",
-        "        \"New Method May Predict Quakes Weeks Ahead - Swedish geologists may have found a way to predict earthquakes weeks before they happen by monitoring the amount of metals like zinc and copper in subsoil water near earthquake sites, scientists said Wednesday.\",\n",
-        "        \"Marine Expedition Finds New Species - Norwegian scientists who explored the deep waters of the Atlantic Ocean said Thursday their findings #151; including what appear to be new species of fish and squid #151; could be used to protect marine ecosystems worldwide.\"\n",
-        "    ]\n",
-        "})"
+        "base_url = (\n",
+        "    \"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/IMAGE_NAME?raw=true\"\n",
+        ")\n",
+        "\n",
+        "# Newton's cradle image\n",
+        "# Expected answer: Newton's cradle, 5 balls\n",
+        "image1 = \"balls-image.jpeg\"\n",
+        "image1_url = base_url.replace(\"IMAGE_NAME\", image1)\n",
+        "print(image1_url)\n",
+        "\n",
+        "\n",
+        "# Eggs\n",
+        "# Expected answer: 10 eggs, 8 brown and 2 white\n",
+        "image2 = \"eggs-image.jpeg\"\n",
+        "image2_url = base_url.replace(\"IMAGE_NAME\", image2)\n",
+        "print(image2_url)\n",
+        "\n",
+        "# Parking sign\n",
+        "# Expected answer: Parking only allowed for Aliens (funny)\n",
+        "image3 = \"parking-image.jpeg\"\n",
+        "image3_url = base_url.replace(\"IMAGE_NAME\", image3)\n",
+        "print(image3_url)\n",
+        "\n",
+        "# Text\n",
+        "# Expected answer: I love programming in both all caps and regular\n",
+        "image4 = \"text-typo-image.jpeg\"\n",
+        "image4_url = base_url.replace(\"IMAGE_NAME\", image4)\n",
+        "print(image4_url)\n",
+        "\n",
+        "\n",
+        "images = [image1, image2, image3, image4]"
       ]
     },
     {
@@ -8076,7 +8145,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
         "id": "Ew-R24Ltp5EW"
       },
       "source": [
-        "### Create the batch file"
+        "### Create the batch input file"
       ]
     },
     {
@@ -8086,70 +8155,88 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
         "id": "qS4JXT52wGJ-"
       },
       "source": [
-        "This example selects the `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo` model. If you'd like to use a different model, feel free to change it by modifying the `model` field. In this notebook, you can also comment Llama 3.1 405B, and uncomment whatever model you want to try out.\n",
+        "This example uses two models more oriented to image vision/analysis: `google/gemma-3-27b-it` and `Qwen/Qwen2.5-VL-7B-Instruct`. Other models might not support providing images.\n",
         "\n",
-        "Please refer to the <a href=\"/get-started/start-building/batch/#supported-models\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
+        "In addition, please refer to the <a href=\"/get-started/start-building/batch/#supported-models\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
         "\n",
-        "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its model. Also, we are using a temperature of `0.5`, but feel free to change it and play around with the different outcomes (but we are only asking to respond with a single word, the genre)."
+        "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes.\n"
       ]
     },
     {
       "cell_type": "code",
-      "execution_count": 7,
+      "execution_count": 6,
       "id": "fVtwyqZ_nEq7",
       "metadata": {},
       "outputs": [],
       "source": [
-        "# Prompt\n",
-        "SYSTEM_PROMPT = '''\n",
-        "    Extract up to 5 relevant keywords from the given text. Provide only the keywords between double quotes and separated by commas.\n",
-        "    '''\n",
+        "# Prompt based on image\n",
+        "SYSTEM_PROMPTS = {\n",
+        "    \"balls-image.jpeg\": \"\"\"\n",
+        "    You are a helpful assistant that analyzes image content.\n",
+        "    Tell me the device depicted in the image, and how many balls it has.\n",
+        "    \"\"\",\n",
+        "    \"eggs-image.jpeg\": \"\"\"\n",
+        "    You are a helpful assistant that analyzes image content.\n",
+        "    Count how many eggs are in total, and how many brown and white eggs separately.\n",
+        "    \"\"\",\n",
+        "    \"parking-image.jpeg\": \"\"\"\n",
+        "    You are a helpful assistant that analyzes image content.\n",
+        "    Tell me what you see in the image, anything interesting?.\n",
+        "    \"\"\",\n",
+        "    \"text-typo-image.jpeg\": \"\"\"\n",
+        "    You are a helpful assistant that can extract text from images.\n",
+        "    Tell me the text written in the image, find any typos if any.\n",
+        "    \"\"\",\n",
+        "}\n",
         "\n",
         "# Models\n",
-        "#model=\"deepseek-ai/DeepSeek-R1\"\n",
-        "#model=\"deepseek-ai/DeepSeek-V3\"\n",
-        "#model=\"klusterai/Meta-Llama-3.1-8B-Instruct-Turbo\"\n",
-        "model=\"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\"\n",
-        "#model=\"klusterai/Meta-Llama-3.3-70B-Instruct-Turbo\"\n",
-        "#model=\"Qwen/Qwen2.5-VL-7B-Instruct\"\n",
+        "models = {\n",
+        "    \"Gemma3-27B\": \"google/gemma-3-27b-it\",\n",
+        "    \"Qwen2.5-7B\": \"Qwen/Qwen2.5-VL-7B-Instruct\"\n",
+        "}\n",
         "\n",
         "# Ensure the directory exists\n",
-        "os.makedirs(\"keyword_extraction/data\", exist_ok=True)\n",
+        "os.makedirs(\"image_analysis\", exist_ok=True)\n",
         "\n",
-        "# Create the batch job file with the prompt and content\n",
-        "def create_batch_file(df):\n",
-        "    batch_list = []\n",
-        "    for index, row in df.iterrows():\n",
-        "        content = row['text']\n",
+        "# Create the batch job file with the prompt and content for the model and the image\n",
+        "def create_batch_file(model, image):\n",
+        "    image_url = base_url.replace(\"IMAGE_NAME\", image)\n",
+        "    request = {\n",
+        "        \"custom_id\": f\"image-{image}-{model}-analysis\",\n",
+        "        \"method\": \"POST\",\n",
+        "        \"url\": \"/v1/chat/completions\",\n",
+        "        \"body\": {\n",
+        "            \"model\": models[model],\n",
+        "            \"temperature\": 0.5,\n",
+        "            \"messages\": [\n",
+        "                {\"role\": \"system\", \"content\": SYSTEM_PROMPTS[image]},\n",
+        "                {\n",
+        "                    \"role\": \"user\",\n",
+        "                    \"content\": [\n",
+        "                        {\n",
+        "                            \"type\": \"image_url\",\n",
+        "                            \"image_url\": {\"url\": image_url},\n",
+        "                        }\n",
+        "                    ],\n",
+        "                },\n",
+        "            ],\n",
+        "        },\n",
+        "    }\n",
         "\n",
-        "        request = {\n",
-        "            \"custom_id\": f\"keyword_extraction-{index}\",\n",
-        "            \"method\": \"POST\",\n",
-        "            \"url\": \"/v1/chat/completions\",\n",
-        "            \"body\": {\n",
-        "                \"model\": model,\n",
-        "                \"temperature\": 0.5,\n",
-        "                \"messages\": [\n",
-        "                    {\"role\": \"system\", \"content\": SYSTEM_PROMPT},\n",
-        "                    {\"role\": \"user\", \"content\": content}\n",
-        "                ],\n",
-        "            }\n",
-        "        }\n",
-        "        batch_list.append(request)\n",
-        "    return batch_list\n",
+        "    return request\n",
         "\n",
         "# Save file\n",
-        "def save_batch_file(batch_list):\n",
-        "    filename = f\"keyword_extraction/batch_job_request.jsonl\"\n",
-        "    with open(filename, 'w') as file:\n",
-        "        for request in batch_list:\n",
-        "            file.write(json.dumps(request) + '\\n')\n",
-        "    return filename"
+        "def save_batch_file(batch_requests, model):\n",
+        "    filename = f\"image_analysis/batch_job_{model}_request.jsonl\"\n",
+        "    with open(filename, \"w\") as file:\n",
+        "        for request in batch_requests:\n",
+        "            file.write(json.dumps(request) + \"\\n\")\n",
+        "    return filename\n"
       ]
     },
     {
       "cell_type": "markdown",
-      "id": "53476435-f5e9-4baa-8cf2-6c1fbd84c492",
+      "id": "98f31ae8-8608-43aa-a8d2-58c71aa50cf4",
       "metadata": {},
       "source": [
         "Let's run the functions we've defined before:"
@@ -8157,13 +8244,30 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
     },
     {
       "cell_type": "code",
-      "execution_count": 8,
+      "execution_count": 7,
       "id": "qNhmrmHdnp7g",
       "metadata": {},
-      "outputs": [],
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "image_analysis/batch_job_Gemma3-27B_request.jsonl\n",
+            "image_analysis/batch_job_Qwen2.5-7B_request.jsonl\n"
+          ]
+        }
+      ],
       "source": [
-        "batch_list = create_batch_file(df)\n",
-        "filename = save_batch_file(batch_list)"
+        "filenames = []\n",
+        "\n",
+        "for model in models:\n",
+        "    batch_requests = []\n",
+        "    for image in images:\n",
+        "        batch_request = create_batch_file(model, image)\n",
+        "        batch_requests.append(batch_request)\n",
+        "    filename = save_batch_file(batch_requests, model)\n",
+        "    filenames.append(filename)\n",
+        "    print(filename)"
       ]
     },
     {
@@ -8171,12 +8275,12 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
       "id": "ada26fe3-acb9-48dc-b368-b57fc380cdb8",
       "metadata": {},
       "source": [
-        "Next, we can preview what that batch job file looks like:"
+        "Next, we can preview what one of the batch job files looks like:"
       ]
     },
     {
       "cell_type": "code",
-      "execution_count": 9,
+      "execution_count": 8,
       "id": "d65f5099-5add-4749-9a85-3c04a9b342bb",
       "metadata": {},
       "outputs": [
@@ -8184,12 +8288,12 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
           "name": "stdout",
           "output_type": "stream",
           "text": [
-            "{\"custom_id\": \"keyword_extraction-0\", \"method\": \"POST\", \"url\": \"/v1/chat/completions\", \"body\": {\"model\": \"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\", \"temperature\": 0.5, \"messages\": [{\"role\": \"system\", \"content\": \"\\n    Extract up to 5 relevant keywords from the given text. Provide only the keywords between double quotes and separated by commas.\\n    \"}, {\"role\": \"user\", \"content\": \"Chorus Frog Found Croaking in Virginia - The Southern chorus frog has been found in southeastern Virginia, far outside its previously known range. The animal had never before been reported north of Beaufort County, N.C., about 125 miles to the south.\"}]}}\n"
+            "{\"custom_id\": \"image-balls-image.jpeg-Gemma3-27B-analysis\", \"method\": \"POST\", \"url\": \"/v1/chat/completions\", \"body\": {\"model\": \"google/gemma-3-27b-it\", \"temperature\": 0.5, \"messages\": [{\"role\": \"system\", \"content\": \"\\n    You are a helpful assistant that analyzes image content.\\n    Tell me the device depicted in the image and how many balls it has.\\n    \"}, {\"role\": \"user\", \"content\": [{\"type\": \"image_url\", \"image_url\": {\"url\": \"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\"}}]}]}}\n"
           ]
         }
       ],
       "source": [
-        "!head -n 1 keyword_extraction/batch_job_request.jsonl"
+        "!head -n 1 image_analysis/batch_job_Gemma3-27B_request.jsonl"
       ]
     },
     {
@@ -8207,36 +8311,67 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
       "id": "e48b2489-99bc-431b-8cb3-de816550d524",
       "metadata": {},
       "source": [
-        "Now that we’ve prepared our input file, it’s time to upload it to the kluster.ai platform. To do so, you can use the `files.create` endpoint of the client, where the purpose is set to `batch`. This will return the file ID, which we need to log for the next steps."
+        "Now that we've prepared our input files, it's time to upload them to the kluster.ai platform. To do so, you can use the `files.create` endpoint of the client, where the purpose is set to `batch`. This will return the file ID, which we need to log for the next steps. We will repeat the process for each batch file created."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 9,
+      "id": "l5eu5UyAnEtk",
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "def upload_batch_file(data_dir):\n",
+        "  print(f\"Creating request for {data_dir}\")\n",
+        "  \n",
+        "  with open(data_dir, 'rb') as file:\n",
+        "    upload_response = client.files.create(\n",
+        "    file=file,\n",
+        "    purpose=\"batch\"\n",
+        "  )\n",
+        "\n",
+        "  # Print job ID\n",
+        "  file_id = upload_response.id\n",
+        "  print(f\"File uploaded successfully. File ID: {file_id}\")\n",
+        "\n",
+        "  return upload_response"
       ]
     },
     {
       "cell_type": "code",
       "execution_count": 10,
-      "id": "l5eu5UyAnEtk",
+      "id": "cf65b30f-ae68-46d3-a4f3-edd4907c450b",
       "metadata": {},
       "outputs": [
         {
           "name": "stdout",
           "output_type": "stream",
           "text": [
-            "File uploaded successfully. File ID: 67e40f05331c771bde3bca69\n"
+            "Uploading file image_analysis/batch_job_Gemma3-27B_request.jsonl\n",
+            "Creating request for image_analysis/batch_job_Gemma3-27B_request.jsonl\n",
+            "File uploaded successfully. File ID: 67efa74d9bef3c7ec5741ae9\n",
+            "Uploading file image_analysis/batch_job_Qwen2.5-7B_request.jsonl\n",
+            "Creating request for image_analysis/batch_job_Qwen2.5-7B_request.jsonl\n",
+            "File uploaded successfully. File ID: 67efa74d5198252ec473b0f2\n"
           ]
         }
       ],
       "source": [
-        "data_dir = 'keyword_extraction/batch_job_request.jsonl'\n",
+        "batch_files = []\n",
         "\n",
-        "# Upload batch job request file\n",
-        "with open(data_dir, 'rb') as file:\n",
-        "    upload_response = client.files.create(\n",
-        "        file=file,\n",
-        "        purpose=\"batch\"\n",
-        "    )\n",
-        "\n",
-        "    # Print job ID\n",
-        "    file_id = upload_response.id\n",
-        "    print(f\"File uploaded successfully. File ID: {file_id}\")"
+        "# Loop through all .jsonl files in the data folder\n",
+        "for data_dir in filenames:\n",
+        "    print(f\"Uploading file {data_dir}\")\n",
+        "    job = upload_batch_file(data_dir)\n",
+        "    batch_files.append(job)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "bca62889-8a8f-4125-9e09-51402f704f64",
+      "metadata": {},
+      "source": [
+        "All files are now uploaded, and we can proceed with creating the batch jobs."
       ]
     },
     {
@@ -8246,7 +8381,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
         "id": "xArKu7-sqSiR"
       },
       "source": [
-        "### Start the batch job"
+        "### Start the job"
       ]
     },
     {
@@ -8254,7 +8389,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
       "id": "251a0b89-71a9-40d7-bf14-51be935afe10",
       "metadata": {},
       "source": [
-        "Once the file has been successfully uploaded, we're ready to start (create) the batch job by providing the file ID we got in the previous step. To do so, we use the `batches.create` method, for which we need to set the endpoint to `/v1/chat/completions`. This will return the batch job details with the ID."
+        "Once all the files have been successfully uploaded, we're ready to start (create) the batch jobs by providing the file ID of each file, which we got in the previous step. To start each job, we use the `batches.create` method, for which we need to set the endpoint to `/v1/chat/completions`. This will return each batch job details, with each ID."
       ]
     },
     {
@@ -8262,53 +8397,53 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
       "execution_count": 11,
       "id": "71a24704-7190-4e24-898f-c4eff062439a",
       "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Create batch job with completions endpoint\n",
+        "def create_batch_job(file_id):\n",
+        "  batch_job = client.batches.create(\n",
+        "    input_file_id=file_id,\n",
+        "    endpoint=\"/v1/chat/completions\",\n",
+        "    completion_window=\"24h\"\n",
+        "  )\n",
+        "\n",
+        "  print(f\"Batch job created with ID {batch_job.id}\")\n",
+        "  return batch_job"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 12,
+      "id": "1bb46ddf-1300-4092-9795-39c4bbbc32ae",
+      "metadata": {},
       "outputs": [
         {
           "name": "stdout",
           "output_type": "stream",
           "text": [
-            "\n",
-            "Batch job created:\n",
-            "{\n",
-            "  \"id\": \"67e40f070997f511a77bf70b\",\n",
-            "  \"completion_window\": \"24h\",\n",
-            "  \"created_at\": 1742999303,\n",
-            "  \"endpoint\": \"/v1/chat/completions\",\n",
-            "  \"input_file_id\": \"67e40f05331c771bde3bca69\",\n",
-            "  \"object\": \"batch\",\n",
-            "  \"status\": \"pre_schedule\",\n",
-            "  \"cancelled_at\": null,\n",
-            "  \"cancelling_at\": null,\n",
-            "  \"completed_at\": null,\n",
-            "  \"error_file_id\": null,\n",
-            "  \"errors\": [],\n",
-            "  \"expired_at\": null,\n",
-            "  \"expires_at\": 1743085703,\n",
-            "  \"failed_at\": null,\n",
-            "  \"finalizing_at\": null,\n",
-            "  \"in_progress_at\": null,\n",
-            "  \"metadata\": {},\n",
-            "  \"output_file_id\": null,\n",
-            "  \"request_counts\": {\n",
-            "    \"completed\": 0,\n",
-            "    \"failed\": 0,\n",
-            "    \"total\": 0\n",
-            "  }\n",
-            "}\n"
+            "Creating batch job for file ID 67efa74d9bef3c7ec5741ae9\n",
+            "Batch job created with ID 67efa74f9bef3c7ec5741afa\n",
+            "Creating batch job for file ID 67efa74d5198252ec473b0f2\n",
+            "Batch job created with ID 67efa75a29984eac27004ebc\n"
           ]
         }
       ],
       "source": [
-        "# Create batch job with completions endpoint\n",
-        "batch_job = client.batches.create(\n",
-        "    input_file_id=file_id,\n",
-        "    endpoint=\"/v1/chat/completions\",\n",
-        "    completion_window=\"24h\"\n",
-        ")\n",
+        "batch_jobs = []\n",
         "\n",
-        "print(\"\\nBatch job created:\")\n",
-        "batch_dict = batch_job.model_dump()\n",
-        "print(json.dumps(batch_dict, indent=2))"
+        "# Loop through all batch files ID and start each job\n",
+        "for batch_file in batch_files:\n",
+        "    print(f\"Creating batch job for file ID {batch_file.id}\")\n",
+        "    batch_job = create_batch_job(batch_file.id)\n",
+        "    batch_jobs.append(batch_job)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "406e7a44",
+      "metadata": {},
+      "source": [
+        "All requests are queued to be processed."
       ]
     },
     {
@@ -8328,23 +8463,78 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
         "id": "iFrDrriQqizC"
       },
       "source": [
-        "Now that your batch job has been created, you can track its progress.\n",
+        "Now that your batch jobs have been created, you can track their progress.\n",
         "\n",
-        "To monitor the job's progress, we can use the `batches.retrieve` method and pass the batch job ID. The response contains a `status` field that tells us if it is completed or not and the subsequent status of each job separately.\n",
+        "To monitor the job's progress, we can use the `batches.retrieve` method and pass the batch job ID. The response contains a `status` field that tells whether it is completed or not and the subsequent status of each job separately. We can repeat this process for every batch job ID we got in the previous step.\n",
         "\n",
-        "The following snippet checks the status every 10 seconds until the entire batch is completed:"
+        "The following snippet checks the status of all batch jobs every 10 seconds until the entire batch is completed."
       ]
     },
     {
       "cell_type": "code",
-      "execution_count": null,
+      "execution_count": 13,
       "id": "SuH0CfoqjP3d",
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "def monitor_batch_jobs(batch_jobs):\n",
+        "    all_completed = False\n",
+        "\n",
+        "    # Loop until all jobs are completed\n",
+        "    while not all_completed:\n",
+        "        all_completed = True\n",
+        "        output_lines = []\n",
+        "\n",
+        "        # Loop through all batch jobs\n",
+        "        for job in batch_jobs:\n",
+        "            updated_job = client.batches.retrieve(job.id)\n",
+        "            status = updated_job.status\n",
+        "\n",
+        "            # If job is completed\n",
+        "            if status == \"completed\":\n",
+        "                output_lines.append(\"Job completed!\")\n",
+        "            # If job failed, cancelled or expired\n",
+        "            elif status in [\"failed\", \"cancelled\", \"expired\"]:\n",
+        "                output_lines.append(f\"Job ended with status: {status}\")\n",
+        "                break\n",
+        "            # If job is ongoing\n",
+        "            else:\n",
+        "                all_completed = False\n",
+        "                completed = updated_job.request_counts.completed\n",
+        "                total = updated_job.request_counts.total\n",
+        "                output_lines.append(\n",
+        "                    f\"Job status: {status} - Progress: {completed}/{total}\"\n",
+        "                )\n",
+        "\n",
+        "        # Clear terminal\n",
+        "        clear_output(wait=True)\n",
+        "        for line in output_lines:\n",
+        "            display(line)\n",
+        "\n",
+        "        # Check every 10 seconds\n",
+        "        if not all_completed:\n",
+        "            time.sleep(10)\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 14,
+      "id": "83fbd7c7-92db-4954-a6ac-a98103260daf",
       "metadata": {},
       "outputs": [
         {
           "data": {
             "text/plain": [
-              "'Job status: in_progress - Progress: 1/5'"
+              "'Job completed!'"
+            ]
+          },
+          "metadata": {},
+          "output_type": "display_data"
+        },
+        {
+          "data": {
+            "text/plain": [
+              "'Job completed!'"
             ]
           },
           "metadata": {},
@@ -8352,30 +8542,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
         }
       ],
       "source": [
-        "all_completed = False\n",
-        "\n",
-        "# Loop to check status every 10 seconds\n",
-        "while not all_completed:\n",
-        "    all_completed = True\n",
-        "    output_lines = []\n",
-        "\n",
-        "    updated_job = client.batches.retrieve(batch_job.id)\n",
-        "\n",
-        "    if updated_job.status != \"completed\":\n",
-        "        all_completed = False\n",
-        "        completed = updated_job.request_counts.completed\n",
-        "        total = updated_job.request_counts.total\n",
-        "        output_lines.append(f\"Job status: {updated_job.status} - Progress: {completed}/{total}\")\n",
-        "    else:\n",
-        "        output_lines.append(f\"Job completed!\")\n",
-        "\n",
-        "    # Clear the output and display updated status\n",
-        "    clear_output(wait=True)\n",
-        "    for line in output_lines:\n",
-        "        display(line)\n",
-        "\n",
-        "    if not all_completed:\n",
-        "        time.sleep(10)"
+        "monitor_batch_jobs(batch_jobs)"
       ]
     },
     {
@@ -8393,49 +8560,139 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
       "id": "12c1f6ac-8d60-4158-9036-de79fa274983",
       "metadata": {},
       "source": [
-        "With the job completed, we'll retrieve the results and review the responses generated for each request. The results are parsed. To fetch the results from the platform, you must retrieve the `output_file_id` from the batch job and then use the `files.content` endpoint, providing that specific file ID. Note that the job status must be `completed` to retrieve the results!"
+        "With all jobs completed, we'll retrieve the results and review the responses generated for each request. The results are parsed. To fetch the results from the platform, you must retrieve the `output_file_id` from the batch job and then use the `files.content` endpoint, providing that specific file ID. We will repeat this for every single batch job id. Note that the job status must be `completed` to retrieve the results!"
       ]
     },
     {
       "cell_type": "code",
-      "execution_count": null,
+      "execution_count": 15,
       "id": "806a5eb1-f6d3-491d-b051-9d44bf046a7e",
       "metadata": {},
       "outputs": [],
       "source": [
         "#Parse results as a JSON object\n",
         "def parse_json_objects(data_string):\n",
-        "    if isinstance(data_string, bytes):\n",
-        "        data_string = data_string.decode('utf-8')\n",
+        "  if isinstance(data_string, bytes):\n",
+        "    data_string = data_string.decode('utf-8')\n",
         "\n",
-        "    json_strings = data_string.strip().split('\\n')\n",
-        "    json_objects = []\n",
+        "  json_strings = data_string.strip().split('\\n')\n",
+        "  json_objects = []\n",
         "\n",
-        "    for json_str in json_strings:\n",
-        "        try:\n",
-        "            json_obj = json.loads(json_str)\n",
-        "            json_objects.append(json_obj)\n",
-        "        except json.JSONDecodeError as e:\n",
-        "            print(f\"Error parsing JSON: {e}\")\n",
-        "\n",
-        "    return json_objects\n",
-        "\n",
-        "# Retrieve results with job ID\n",
-        "job = client.batches.retrieve(batch_job.id)\n",
-        "result_file_id = job.output_file_id\n",
-        "result = client.files.content(result_file_id).content\n",
-        "\n",
-        "# Parse JSON results\n",
-        "parsed_result = parse_json_objects(result)\n",
-        "\n",
-        "# Extract and print only the content of each response\n",
-        "print(\"\\nExtracted Responses:\")\n",
-        "for item in parsed_result:\n",
+        "  for json_str in json_strings:\n",
         "    try:\n",
-        "        content = item[\"response\"][\"body\"][\"choices\"][0][\"message\"][\"content\"]\n",
-        "        print(content)\n",
-        "    except KeyError as e:\n",
-        "        print(f\"Missing key in response: {e}\")"
+        "      json_obj = json.loads(json_str)\n",
+        "      json_objects.append(json_obj)\n",
+        "    except json.JSONDecodeError as e:\n",
+        "      print(f\"Error parsing JSON: {e}\")\n",
+        "\n",
+        "  return json_objects"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 16,
+      "id": "dfe37dba-828a-4ee8-8c18-384f2b83d118",
+      "metadata": {},
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "\n",
+            " -------------------------- \n",
+            "\n",
+            "image-balls-image.jpeg-Gemma3-27B-analysis\n",
+            "\n",
+            "RESULT: Certainly! \n",
+            "\n",
+            "The device depicted in the image is a **Newton's cradle**. \n",
+            "\n",
+            "It has **five** balls.\n",
+            "\n",
+            " -------------------------- \n",
+            "\n",
+            "image-eggs-image.jpeg-Gemma3-27B-analysis\n",
+            "\n",
+            "RESULT: Here's the breakdown of the eggs in the image:\n",
+            "\n",
+            "*   **Total eggs:** 10\n",
+            "*   **Brown eggs:** 8\n",
+            "*   **White eggs:** 2\n",
+            "\n",
+            " -------------------------- \n",
+            "\n",
+            "image-parking-image.jpeg-Gemma3-27B-analysis\n",
+            "\n",
+            "RESULT: Here's what I see in the image:\n",
+            "\n",
+            "The image shows a sign that reads \"PARKING FOR ALIENS ONLY\". The sign is white with bright green lettering and features a classic green alien head graphic at the bottom. \n",
+            "\n",
+            "**Interesting points:**\n",
+            "\n",
+            "*   **Humorous Sign:** The sign is clearly meant to be humorous and playful, suggesting a place where extraterrestrials might park their spacecraft.\n",
+            "*   **Alien Stereotype:** The alien head depicted is the stereotypical \"gray alien\" with large, black eyes.\n",
+            "*   **Outdoor Setting:** The background shows palm trees and a parking lot, suggesting the sign is located in a warm climate, possibly a tourist destination.\n",
+            "*   **Mount:** The sign is mounted on a black metal post.\n",
+            "\n",
+            "It's a fun and quirky sign that would likely catch someone's attention!\n",
+            "\n",
+            " -------------------------- \n",
+            "\n",
+            "image-text-typo-image.jpeg-Gemma3-27B-analysis\n",
+            "\n",
+            "RESULT: Here's the text from the image:\n",
+            "\n",
+            "I LOVE PROGRAMING\n",
+            "I love programing\n",
+            "\n",
+            "There is a typo in the first line. It should be \"PROGRAMMING\" not \"PROGRAMING\".\n",
+            "The second line also has a typo. It should be \"programming\" not \"programing\".\n",
+            "\n",
+            " -------------------------- \n",
+            "\n",
+            "image-balls-image.jpeg-Qwen2.5-7B-analysis\n",
+            "\n",
+            "RESULT: The device depicted in the image is a Newton's Cradle. It consists of five metallic balls suspended by strings from a frame. In this particular image, there are five balls visible.\n",
+            "\n",
+            " -------------------------- \n",
+            "\n",
+            "image-eggs-image.jpeg-Qwen2.5-7B-analysis\n",
+            "\n",
+            "RESULT: There are 12 eggs in total. Out of these, 10 are brown and 2 are white.\n",
+            "\n",
+            " -------------------------- \n",
+            "\n",
+            "image-parking-image.jpeg-Qwen2.5-7B-analysis\n",
+            "\n",
+            "RESULT: The image shows a parking sign with the text \"PARKING FOR ALIENS ONLY\" written in green letters on a white background. Below the text is a green alien face graphic. The sign appears to be placed outdoors, as there are palm trees and a clear sky visible in the background. This type of sign is often seen in areas associated with UFO or extraterrestrial themes, such as the area near Area 51 in Nevada.\n",
+            "\n",
+            " -------------------------- \n",
+            "\n",
+            "image-text-typo-image.jpeg-Qwen2.5-7B-analysis\n",
+            "\n",
+            "RESULT: The text in the image reads:\n",
+            "\n",
+            "\"I LOVE PROGAMING\"\n",
+            "\"I love progaming\"\n",
+            "\n",
+            "There is a typo in both instances. The correct spelling should be \"programming\" instead of \"progaming\".\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Go through all batch jobs, providing the output file ID\n",
+        "for batch_job in batch_jobs:\n",
+        "  job_status = client.batches.retrieve(batch_job.id)\n",
+        "  result_file_id = job_status.output_file_id\n",
+        "  result = client.files.content(result_file_id).content\n",
+        "  results = parse_json_objects(result)\n",
+        "\n",
+        "  # For each, print the result\n",
+        "  for res in results:\n",
+        "    inference_id = res['custom_id']\n",
+        "    result = res['response']['body']['choices'][0]['message']['content']\n",
+        "    print(f'\\n -------------------------- \\n')\n",
+        "    print(f\"{res['custom_id']}\\n\\nRESULT: {result}\")"
       ]
     },
     {
@@ -8463,18 +8720,28 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
       "id": "7d195dd1-1293-4407-b6ad-cab7e77b14c0",
       "metadata": {},
       "source": [
-        "This tutorial used the chat completion endpoint to perform a simple keyword extraction task with batch inference. This particular example extracted keywords from an AG News dataset.\n",
+        "This tutorial used the chat completion endpoint to image analysis on multiple images using kluster.ai batch API. This particular example uploaded three specific images:\n",
         "\n",
-        "To submit a batch job we've:\n",
+        "1. A <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\" target=\"_blank\">Newtown's cradle</a>, we asked what is the device's name and how many balls were in the image (5):\n",
+        "   - Both models responded correctly ✅\n",
+        "2. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/eggs-image.jpeg?raw=true\" target=\"_blank\">Eggs</a> of different colors, we asked how many total eggs and per color (10 total, 8 brown and 2 white):\n",
+        "   - Gemma 3 27B was able to identify all 10 eggs properly, counting 8 brown and 2 white ✅\n",
+        "   - Qwen 2.5 7B counted 12 eggs, identifying 10 white and 2 brown ❌\n",
+        "4. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true\" target=\"_blank\">Aliens only parking sign</a>, we asked to interpret the sign (only aliens can park, funny reference):\n",
+        "   - Both models identified the sign appropriately, only Gemma 3 27B specifically mentioning a funny reference ✅\n",
+        "6. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true\" target=\"_blank\">Hand written note with a typo</a>, we asked what the text in the image is and to find a typo if any (\"I LOVE PROGRAMING\", \"I love programing\" missing an \"m\" in both instances):\n",
+        "   - Both models responded correctly ✅\n",
         "\n",
-        "1. Created the JSONL file, where each line of the file represented a separate request\n",
+        "To submit a batch job, we've:\n",
+        "\n",
+        "1. Created the JSONL file, where each file line represented a separate request. We provided the images as URLs from GitHub\n",
         "2. Submitted the file to the platform\n",
         "3. Started the batch job, and monitored its progress\n",
         "4. Once completed, we fetched the results\n",
         "\n",
         "All of this using the OpenAI Python library and API, no changes needed!\n",
         "\n",
-        "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As the next steps, feel free to create your dataset or expand on this example. Good luck!"
+        "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As the next steps, feel free to create your own dataset or expand on top of this existing example. Good luck!"
       ]
     }
   ],
@@ -8499,6 +8766,687 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
   },
   "nbformat": 4,
   "nbformat_minor": 5
+}
+--- END CONTENT ---
+
+Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-api.ipynb/
+--- BEGIN CONTENT ---
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "be189fde-4e5b-4f80-bae1-ded86a5075a7",
+   "metadata": {
+    "id": "be189fde-4e5b-4f80-bae1-ded86a5075a7"
+   },
+   "source": [
+    "# Keyword extraction with kluster.ai API"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b17a77d9",
+   "metadata": {},
+   "source": [
+    "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/examples/keyword-extraction-api.ipynb)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3",
+   "metadata": {
+    "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3"
+   },
+   "source": [
+    "One simple but powerful use case for AI models is keyword extraction, in which you feed the model a large dataset and ask it to provide a given number of keywords.\n",
+    "\n",
+    "This tutorial runs through a notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to obtain keywords from a given dataset.\n",
+    "\n",
+    "The example uses an extract from the AG News dataset. You can adapt this example by using the data and categories relevant to your use case. With this approach, you can effortlessly process datasets of any scale, big or small, to obtain keywords, all powered by a state-of-the-art language model."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "112d41e9",
+   "metadata": {},
+   "source": [
+    "## Prerequisites\n",
+    "\n",
+    "Before getting started, ensure you have the following:\n",
+    "\n",
+    "- **A kluster.ai account** - sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one\n",
+    "- **A kluster.ai API key** - after signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "xU1WBQJ7Uh09",
+   "metadata": {
+    "id": "xU1WBQJ7Uh09"
+   },
+   "source": [
+    "## Setup"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b8d580f8-67d5-45d6-915f-0f6b60d3b543",
+   "metadata": {},
+   "source": [
+    "In this notebook, we'll use Python's `getpass` module to input the key safely. After execution, please provide your unique kluster.ai API key (ensure no spaces)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "4911e5eb-7463-4a6b-8a99-9313cecd9d4d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter your kluster.ai API key:  ········\n"
+     ]
+    }
+   ],
+   "source": [
+    "from getpass import getpass\n",
+    "\n",
+    "api_key = getpass(\"Enter your kluster.ai API key: \")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "99ac2aed-d284-4fe4-9bb1-9995a0867991",
+   "metadata": {},
+   "source": [
+    "Next, ensure you've installed OpenAI Python library:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "bcc3d475-8f49-4fc4-9a5e-c6eb6866d2b5",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Note: you may need to restart the kernel to use updated packages.\n"
+     ]
+    }
+   ],
+   "source": [
+    "pip install -q openai"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a4967896-b375-46b0-8e0f-c1b970e077c8",
+   "metadata": {},
+   "source": [
+    "With the OpenAI Python library installed, we import the necessary dependencies for the tutorial:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "b89a4feb-37a9-430d-a742-cd58495b4eaf",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from openai import OpenAI\n",
+    "\n",
+    "import pandas as pd\n",
+    "import time\n",
+    "import json\n",
+    "import os\n",
+    "from IPython.display import clear_output, display"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5bcc1261-cdfd-41ee-964a-283249410e04",
+   "metadata": {},
+   "source": [
+    "And then, initialize the `client` by pointing it to the kluster.ai endpoint, and passing your API key."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "zG9y_WO5rYaj",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Set up the client\n",
+    "client = OpenAI(\n",
+    "    base_url=\"https://api.kluster.ai/v1\",\n",
+    "    api_key=api_key,\n",
+    ")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "udPtLfTaisSw",
+   "metadata": {
+    "id": "udPtLfTaisSw"
+   },
+   "source": [
+    "## Get the data"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "QjCVfg65jKz6",
+   "metadata": {
+    "id": "QjCVfg65jKz6"
+   },
+   "source": [
+    "Now that you've initialized an OpenAI-compatible client pointing to kluster.ai, we can discuss the data.\n",
+    "\n",
+    "This notebook comes with a preloaded sample dataset based on the AG News dataset. It includes sections of news headlines and their leads, all set for processing. No additional setup is needed. Proceed to the next steps to begin working with this data."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "07018f92-9a01-47d5-916a-12cd03dfa3a0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df = pd.DataFrame({\n",
+    "    \"text\": [\n",
+    "        \"Chorus Frog Found Croaking in Virginia - The Southern chorus frog has been found in southeastern Virginia, far outside its previously known range. The animal had never before been reported north of Beaufort County, N.C., about 125 miles to the south.\",\n",
+    "        \"Expedition to Probe Gulf of Mexico - Scientists will use advanced technology never before deployed beneath the sea as they try to discover new creatures, behaviors and phenomena in a 10-day expedition to the Gulf of Mexico's deepest reaches.\",\n",
+    "        \"Feds Accused of Exaggerating Fire ImpactP - The Forest Service exaggerated the effect of wildfires on California spotted owls in justifying a planned increase in logging in the Sierra Nevada, according to a longtime agency expert who worked on the plan.\",\n",
+    "        \"New Method May Predict Quakes Weeks Ahead - Swedish geologists may have found a way to predict earthquakes weeks before they happen by monitoring the amount of metals like zinc and copper in subsoil water near earthquake sites, scientists said Wednesday.\",\n",
+    "        \"Marine Expedition Finds New Species - Norwegian scientists who explored the deep waters of the Atlantic Ocean said Thursday their findings #151; including what appear to be new species of fish and squid #151; could be used to protect marine ecosystems worldwide.\"\n",
+    "    ]\n",
+    "})"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "OyGuHllZllct",
+   "metadata": {
+    "id": "OyGuHllZllct"
+   },
+   "source": [
+    "## Perform batch inference"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "64c345aa-b6a7-4770-8368-b290e9e799dc",
+   "metadata": {
+    "id": "6-MZlfXAoiNv"
+   },
+   "source": [
+    "To execute the batch inference job, we'll take the following steps:\n",
+    "\n",
+    "1. **Create the batch job file** - we'll generate a JSON lines file with the desired requests to be processed by the model\n",
+    "2. **Upload the batch job file** - once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file\n",
+    "3. **Start the batch job** - after the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before\n",
+    "4. **Monitor job progress** - (optional) track the status of the batch job to ensure it has been successfully completed\n",
+    "5. **Retrieve results** - once the job has completed execution, we can access and process the resultant data\n",
+    "\n",
+    "This notebook is prepared for you to follow along. Run the cells below to watch it all come together."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "Ew-R24Ltp5EW",
+   "metadata": {
+    "id": "Ew-R24Ltp5EW"
+   },
+   "source": [
+    "### Create the batch file"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "qS4JXT52wGJ-",
+   "metadata": {
+    "id": "qS4JXT52wGJ-"
+   },
+   "source": [
+    "This example selects the `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo` model. If you'd like to use a different model, feel free to change it by modifying the `model` field. In this notebook, you can also comment Llama 3.1 405B, and uncomment whatever model you want to try out.\n",
+    "\n",
+    "Please refer to the <a href=\"/get-started/start-building/batch/#supported-models\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
+    "\n",
+    "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its model. Also, we are using a temperature of `0.5`, but feel free to change it and play around with the different outcomes (but we are only asking to respond with a single word, the genre)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "fVtwyqZ_nEq7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Prompt\n",
+    "SYSTEM_PROMPT = '''\n",
+    "    Extract up to 5 relevant keywords from the given text. Provide only the keywords between double quotes and separated by commas.\n",
+    "    '''\n",
+    "\n",
+    "# Models\n",
+    "#model=\"deepseek-ai/DeepSeek-R1\"\n",
+    "#model=\"deepseek-ai/DeepSeek-V3\"\n",
+    "#model=\"klusterai/Meta-Llama-3.1-8B-Instruct-Turbo\"\n",
+    "model=\"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\"\n",
+    "#model=\"klusterai/Meta-Llama-3.3-70B-Instruct-Turbo\"\n",
+    "#model=\"Qwen/Qwen2.5-VL-7B-Instruct\"\n",
+    "\n",
+    "# Ensure the directory exists\n",
+    "os.makedirs(\"keyword_extraction\", exist_ok=True)\n",
+    "\n",
+    "# Create the batch job file with the prompt and content\n",
+    "def create_batch_file(df):\n",
+    "    batch_list = []\n",
+    "    for index, row in df.iterrows():\n",
+    "        content = row['text']\n",
+    "\n",
+    "        request = {\n",
+    "            \"custom_id\": f\"keyword_extraction-{index}\",\n",
+    "            \"method\": \"POST\",\n",
+    "            \"url\": \"/v1/chat/completions\",\n",
+    "            \"body\": {\n",
+    "                \"model\": model,\n",
+    "                \"temperature\": 0.5,\n",
+    "                \"messages\": [\n",
+    "                    {\"role\": \"system\", \"content\": SYSTEM_PROMPT},\n",
+    "                    {\"role\": \"user\", \"content\": content}\n",
+    "                ],\n",
+    "            }\n",
+    "        }\n",
+    "        batch_list.append(request)\n",
+    "    return batch_list\n",
+    "\n",
+    "# Save file\n",
+    "def save_batch_file(batch_list):\n",
+    "    filename = f\"keyword_extraction/batch_job_request.jsonl\"\n",
+    "    with open(filename, 'w') as file:\n",
+    "        for request in batch_list:\n",
+    "            file.write(json.dumps(request) + '\\n')\n",
+    "    return filename"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "53476435-f5e9-4baa-8cf2-6c1fbd84c492",
+   "metadata": {},
+   "source": [
+    "Let's run the functions we've defined before:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "qNhmrmHdnp7g",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "keyword_extraction/batch_job_request.jsonl\n"
+     ]
+    }
+   ],
+   "source": [
+    "batch_list = create_batch_file(df)\n",
+    "data_dir = save_batch_file(batch_list)\n",
+    "print(data_dir)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ada26fe3-acb9-48dc-b368-b57fc380cdb8",
+   "metadata": {},
+   "source": [
+    "Next, we can preview what that batch job file looks like:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "d65f5099-5add-4749-9a85-3c04a9b342bb",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{\"custom_id\": \"keyword_extraction-0\", \"method\": \"POST\", \"url\": \"/v1/chat/completions\", \"body\": {\"model\": \"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\", \"temperature\": 0.5, \"messages\": [{\"role\": \"system\", \"content\": \"\\n    Extract up to 5 relevant keywords from the given text. Provide only the keywords between double quotes and separated by commas.\\n    \"}, {\"role\": \"user\", \"content\": \"Chorus Frog Found Croaking in Virginia - The Southern chorus frog has been found in southeastern Virginia, far outside its previously known range. The animal had never before been reported north of Beaufort County, N.C., about 125 miles to the south.\"}]}}\n"
+     ]
+    }
+   ],
+   "source": [
+    "!head -n 1 keyword_extraction/batch_job_request.jsonl"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "xArKu7-sqSiR",
+   "metadata": {
+    "id": "xArKu7-sqSiR"
+   },
+   "source": [
+    "### Upload inference file to kluster.ai"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e48b2489-99bc-431b-8cb3-de816550d524",
+   "metadata": {},
+   "source": [
+    "Now that we’ve prepared our input file, it’s time to upload it to the kluster.ai platform. To do so, you can use the `files.create` endpoint of the client, where the purpose is set to `batch`. This will return the file ID, which we need to log for the next steps."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "l5eu5UyAnEtk",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "File uploaded successfully. File ID: 67e57f491e8d51bcc12d02d2\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Upload batch job request file\n",
+    "with open(data_dir, 'rb') as file:\n",
+    "    upload_response = client.files.create(\n",
+    "        file=file,\n",
+    "        purpose=\"batch\"\n",
+    "    )\n",
+    "\n",
+    "    # Print job ID\n",
+    "    file_id = upload_response.id\n",
+    "    print(f\"File uploaded successfully. File ID: {file_id}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6438be35-1e73-4c34-9249-2dd16d102253",
+   "metadata": {
+    "id": "xArKu7-sqSiR"
+   },
+   "source": [
+    "### Start the batch job"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "251a0b89-71a9-40d7-bf14-51be935afe10",
+   "metadata": {},
+   "source": [
+    "Once the file has been successfully uploaded, we're ready to start (create) the batch job by providing the file ID we got in the previous step. To do so, we use the `batches.create` method, for which we need to set the endpoint to `/v1/chat/completions`. This will return the batch job details with the ID."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "71a24704-7190-4e24-898f-c4eff062439a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "Batch job created:\n",
+      "{\n",
+      "  \"id\": \"67e57f4c18f315f8185a4f44\",\n",
+      "  \"completion_window\": \"24h\",\n",
+      "  \"created_at\": 1743093580,\n",
+      "  \"endpoint\": \"/v1/chat/completions\",\n",
+      "  \"input_file_id\": \"67e57f491e8d51bcc12d02d2\",\n",
+      "  \"object\": \"batch\",\n",
+      "  \"status\": \"pre_schedule\",\n",
+      "  \"cancelled_at\": null,\n",
+      "  \"cancelling_at\": null,\n",
+      "  \"completed_at\": null,\n",
+      "  \"error_file_id\": null,\n",
+      "  \"errors\": [],\n",
+      "  \"expired_at\": null,\n",
+      "  \"expires_at\": 1743179980,\n",
+      "  \"failed_at\": null,\n",
+      "  \"finalizing_at\": null,\n",
+      "  \"in_progress_at\": null,\n",
+      "  \"metadata\": {},\n",
+      "  \"output_file_id\": null,\n",
+      "  \"request_counts\": {\n",
+      "    \"completed\": 0,\n",
+      "    \"failed\": 0,\n",
+      "    \"total\": 0\n",
+      "  }\n",
+      "}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Create batch job with completions endpoint\n",
+    "batch_job = client.batches.create(\n",
+    "    input_file_id=file_id,\n",
+    "    endpoint=\"/v1/chat/completions\",\n",
+    "    completion_window=\"24h\"\n",
+    ")\n",
+    "\n",
+    "print(\"\\nBatch job created:\")\n",
+    "batch_dict = batch_job.model_dump()\n",
+    "print(json.dumps(batch_dict, indent=2))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e-ujphILqepu",
+   "metadata": {
+    "id": "e-ujphILqepu"
+   },
+   "source": [
+    "### Check job progress"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "iFrDrriQqizC",
+   "metadata": {
+    "id": "iFrDrriQqizC"
+   },
+   "source": [
+    "Now that your batch job has been created, you can track its progress.\n",
+    "\n",
+    "To monitor the job's progress, we can use the `batches.retrieve` method and pass the batch job ID. The response contains a `status` field that tells us if it is completed or not and the subsequent status of each job separately.\n",
+    "\n",
+    "The following snippet checks the status every 10 seconds until the entire batch is completed:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "SuH0CfoqjP3d",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Job completed!'"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "all_completed = False\n",
+    "\n",
+    "# Loop to check status every 10 seconds\n",
+    "while not all_completed:\n",
+    "    all_completed = True\n",
+    "    output_lines = []\n",
+    "\n",
+    "    updated_job = client.batches.retrieve(batch_job.id)\n",
+    "\n",
+    "    if updated_job.status != \"completed\":\n",
+    "        all_completed = False\n",
+    "        completed = updated_job.request_counts.completed\n",
+    "        total = updated_job.request_counts.total\n",
+    "        output_lines.append(f\"Job status: {updated_job.status} - Progress: {completed}/{total}\")\n",
+    "    else:\n",
+    "        output_lines.append(f\"Job completed!\")\n",
+    "\n",
+    "    # Clear the output and display updated status\n",
+    "    clear_output(wait=True)\n",
+    "    for line in output_lines:\n",
+    "        display(line)\n",
+    "\n",
+    "    if not all_completed:\n",
+    "        time.sleep(10)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "TkkhIG9HU0D9",
+   "metadata": {
+    "id": "TkkhIG9HU0D9"
+   },
+   "source": [
+    "## Get the results"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "12c1f6ac-8d60-4158-9036-de79fa274983",
+   "metadata": {},
+   "source": [
+    "With the job completed, we'll retrieve the results and review the responses generated for each request. The results are parsed. To fetch the results from the platform, you must retrieve the `output_file_id` from the batch job and then use the `files.content` endpoint, providing that specific file ID. Note that the job status must be `completed` to retrieve the results!"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "806a5eb1-f6d3-491d-b051-9d44bf046a7e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "Extracted Responses:\n",
+      "\"Chorus Frog\", \"Virginia\", \"Beaufort County\", \"North Carolina\", \"Southern chorus frog\"\n",
+      "\"Expedition\", \"Gulf of Mexico\", \"Technology\", \"Scientists\", \"Discovery\"\n",
+      "\"Forest Service\", \"wildfires\", \"California spotted owls\", \"logging\", \"Sierra Nevada\"\n",
+      "\"Earthquakes\", \"Metals\", \"Subsoil water\", \"Prediction\", \"Geologists\"\n",
+      "\"Marine Expedition\", \"New Species\", \"Atlantic Ocean\", \"Marine Ecosystems\", \"Norwegian Scientists\"\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Parse results as a JSON object\n",
+    "def parse_json_objects(data_string):\n",
+    "    if isinstance(data_string, bytes):\n",
+    "        data_string = data_string.decode('utf-8')\n",
+    "\n",
+    "    json_strings = data_string.strip().split('\\n')\n",
+    "    json_objects = []\n",
+    "\n",
+    "    for json_str in json_strings:\n",
+    "        try:\n",
+    "            json_obj = json.loads(json_str)\n",
+    "            json_objects.append(json_obj)\n",
+    "        except json.JSONDecodeError as e:\n",
+    "            print(f\"Error parsing JSON: {e}\")\n",
+    "\n",
+    "    return json_objects\n",
+    "\n",
+    "# Retrieve results with job ID\n",
+    "job = client.batches.retrieve(batch_job.id)\n",
+    "result_file_id = job.output_file_id\n",
+    "result = client.files.content(result_file_id).content\n",
+    "\n",
+    "# Parse JSON results\n",
+    "parsed_result = parse_json_objects(result)\n",
+    "\n",
+    "# Extract and print only the content of each response\n",
+    "print(\"\\nExtracted Responses:\")\n",
+    "for item in parsed_result:\n",
+    "    try:\n",
+    "        content = item[\"response\"][\"body\"][\"choices\"][0][\"message\"][\"content\"]\n",
+    "        print(content)\n",
+    "    except KeyError as e:\n",
+    "        print(f\"Missing key in response: {e}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "70e0e816-6558-4ff2-bab2-f85cff00bfc8",
+   "metadata": {
+    "executionInfo": {
+     "elapsed": 5,
+     "status": "ok",
+     "timestamp": 1732042430093,
+     "user": {
+      "displayName": "Joaquin Rodríguez",
+      "userId": "09993043682054067997"
+     },
+     "user_tz": 180
+    },
+    "id": "tu2R8dGYimKc"
+   },
+   "source": [
+    "## Summary"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7d195dd1-1293-4407-b6ad-cab7e77b14c0",
+   "metadata": {},
+   "source": [
+    "This tutorial used the chat completion endpoint to perform a simple keyword extraction task with batch inference. This particular example extracted keywords from an AG News dataset.\n",
+    "\n",
+    "To submit a batch job we've:\n",
+    "\n",
+    "1. Created the JSONL file, where each line of the file represented a separate request\n",
+    "2. Submitted the file to the platform\n",
+    "3. Started the batch job, and monitored its progress\n",
+    "4. Once completed, we fetched the results\n",
+    "\n",
+    "All of this using the OpenAI Python library and API, no changes needed!\n",
+    "\n",
+    "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As the next steps, feel free to create your dataset or expand on this example. Good luck!"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.12"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
 }
 --- END CONTENT ---
 
@@ -9934,7 +10882,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
    "metadata": {},
    "outputs": [
     {
-     "name": "stdout",
+     "name": "stdin",
      "output_type": "stream",
      "text": [
       "Enter your kluster.ai API key:  ········\n"
@@ -10124,7 +11072,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
        "2  Marine Expedition Finds New Species (AP): AP - Norwegian scientists who explored the deep waters of the Atlantic Ocean said Thursday their findings  #151; including what appear to be new species of fish and squid  #151; could be used to protect marine ecosystems worldwide.: nan"
       ]
      },
-     "execution_count": 7,
+     "execution_count": 6,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -10211,7 +11159,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 7,
    "id": "c8838ccb-c29b-477d-b15f-a95741aa528f",
    "metadata": {},
    "outputs": [],
@@ -10275,7 +11223,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
     "id": "qS4JXT52wGJ-"
    },
    "source": [
-    "This example selects the `deepseek-ai/DeepSeek-V3` model. If you'd like to use a different model, feel free to change it by modifying the `model` field. In this notebook, you can also comment DeepSeek V3, and uncomment whatever model you want to try out.\n",
+    "This example uses the `deepseek-ai/DeepSeek-V3` model. If you'd like to use a different model, feel free to change it by modifying the `model` field. In this notebook, you can also comment DeepSeek V3, and uncomment whatever model you want to try out.\n",
     "\n",
     "Please refer to the <a href=\"/get-started/start-building/batch/#supported-models\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
     "\n",
@@ -10284,52 +11232,54 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 8,
    "id": "fVtwyqZ_nEq7",
    "metadata": {},
    "outputs": [],
    "source": [
     "# Models\n",
-    "#model=\"deepseek-ai/DeepSeek-R1\"\n",
-    "model=\"deepseek-ai/DeepSeek-V3\"\n",
-    "#model=\"klusterai/Meta-Llama-3.1-8B-Instruct-Turbo\"\n",
-    "#model=\"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\"\n",
-    "#model=\"klusterai/Meta-Llama-3.3-70B-Instruct-Turbo\"\n",
-    "#model=\"Qwen/Qwen2.5-VL-7B-Instruct\"\n",
+    "# model=\"deepseek-ai/DeepSeek-R1\"\n",
+    "model = \"deepseek-ai/DeepSeek-V3\"\n",
+    "# model=\"klusterai/Meta-Llama-3.1-8B-Instruct-Turbo\"\n",
+    "# model=\"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\"\n",
+    "# model=\"klusterai/Meta-Llama-3.3-70B-Instruct-Turbo\"\n",
+    "# model=\"Qwen/Qwen2.5-VL-7B-Instruct\"\n",
+    "\n",
     "\n",
     "def create_batch_file(df, inference_type, system_prompt):\n",
-    "  batch_list = []\n",
-    "  for index, row in df.iterrows():\n",
-    "    content = row[\"text\"]\n",
+    "    batch_list = []\n",
+    "    for index, row in df.iterrows():\n",
+    "        content = row[\"text\"]\n",
     "\n",
-    "    request = {\n",
-    "      \"custom_id\": f\"{inference_type}-{index}\",\n",
-    "      \"method\": \"POST\",\n",
-    "      \"url\": \"/v1/chat/completions\",\n",
-    "      \"body\": {\n",
-    "        \"model\": model,\n",
-    "        \"temperature\": 0.5,\n",
-    "        \"messages\": [\n",
-    "          {\"role\": \"system\", \"content\": system_prompt},\n",
-    "          {\"role\": \"user\", \"content\": content},\n",
-    "        ],\n",
-    "      },\n",
-    "    }\n",
-    "    batch_list.append(request)\n",
-    "  return batch_list\n",
+    "        # Build the request for a given model, prompt, and data\n",
+    "        request = {\n",
+    "            \"custom_id\": f\"{inference_type}-{index}\",\n",
+    "            \"method\": \"POST\",\n",
+    "            \"url\": \"/v1/chat/completions\",\n",
+    "            \"body\": {\n",
+    "                \"model\": model,\n",
+    "                \"temperature\": 0.5,\n",
+    "                \"messages\": [\n",
+    "                    {\"role\": \"system\", \"content\": system_prompt},\n",
+    "                    {\"role\": \"user\", \"content\": content},\n",
+    "                ],\n",
+    "            },\n",
+    "        }\n",
+    "        batch_list.append(request)\n",
+    "    return batch_list\n",
     "\n",
-    "\n",
+    "# Save file as JSON lines\n",
     "def save_batch_file(batch_list, inference_type):\n",
-    "  filename = f\"data/batch_request_{inference_type}.jsonl\"\n",
-    "  with open(filename, \"w\") as file:\n",
-    "    for request in batch_list:\n",
-    "      file.write(json.dumps(request) + \"\\n\")\n",
-    "  return filename\n"
+    "    filename = f\"data/batch_request_{inference_type}.jsonl\"\n",
+    "    with open(filename, \"w\") as file:\n",
+    "        for request in batch_list:\n",
+    "            file.write(json.dumps(request) + \"\\n\")\n",
+    "    return filename\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 9,
    "id": "qNhmrmHdnp7g",
    "metadata": {},
    "outputs": [
@@ -10337,23 +11287,25 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "File data/batch_request_sentiment.jsonl saved\n",
-      "File data/batch_request_translation.jsonl saved\n",
-      "File data/batch_request_summary.jsonl saved\n",
-      "File data/batch_request_topic_classification.jsonl saved\n",
-      "File data/batch_request_keyword_extraction.jsonl saved\n"
+      "data/batch_request_sentiment.jsonl\n",
+      "data/batch_request_translation.jsonl\n",
+      "data/batch_request_summary.jsonl\n",
+      "data/batch_request_topic_classification.jsonl\n",
+      "data/batch_request_keyword_extraction.jsonl\n"
      ]
     }
    ],
    "source": [
     "batch_requests = []\n",
+    "filenames = []\n",
     "\n",
     "# Loop through all the different prompts\n",
     "for inference_type, system_prompt in SYSTEM_PROMPTS.items():\n",
-    "  batch_list = create_batch_file(df, inference_type, system_prompt)\n",
-    "  filename = save_batch_file(batch_list, inference_type)\n",
-    "  batch_requests.append((inference_type, filename))\n",
-    "  print(f\"File {filename} saved\")"
+    "    batch_list = create_batch_file(df, inference_type, system_prompt)\n",
+    "    filename = save_batch_file(batch_list, inference_type)\n",
+    "    batch_requests.append((inference_type, filename))\n",
+    "    filenames.append(filename)\n",
+    "    print(filename)"
    ]
   },
   {
@@ -10366,7 +11318,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": 10,
    "id": "dacb59ff-9dbf-4f71-a2eb-29ccaa05e516",
    "metadata": {},
    "outputs": [
@@ -10404,7 +11356,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": 11,
    "id": "l5eu5UyAnEtk",
    "metadata": {},
    "outputs": [],
@@ -10427,7 +11379,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": 12,
    "id": "jwzlrHCTp2LO",
    "metadata": {},
    "outputs": [
@@ -10435,35 +11387,32 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Uploading file data/batch_request_topic_classification.jsonl\n",
-      "Creating request for data/batch_request_topic_classification.jsonl\n",
-      "File uploaded successfully. File ID: 67e40792a135957969fda091\n",
-      "Uploading file data/batch_request_keyword_extraction.jsonl\n",
-      "Creating request for data/batch_request_keyword_extraction.jsonl\n",
-      "File uploaded successfully. File ID: 67e40792c72788860894306f\n",
-      "Uploading file data/batch_request_translation.jsonl\n",
-      "Creating request for data/batch_request_translation.jsonl\n",
-      "File uploaded successfully. File ID: 67e40793a135957969fda097\n",
       "Uploading file data/batch_request_sentiment.jsonl\n",
       "Creating request for data/batch_request_sentiment.jsonl\n",
-      "File uploaded successfully. File ID: 67e407930fdb60564c2bb237\n",
+      "File uploaded successfully. File ID: 67e677a2c04383db4bd5141d\n",
+      "Uploading file data/batch_request_translation.jsonl\n",
+      "Creating request for data/batch_request_translation.jsonl\n",
+      "File uploaded successfully. File ID: 67e677a3711c9502a75a01ad\n",
       "Uploading file data/batch_request_summary.jsonl\n",
       "Creating request for data/batch_request_summary.jsonl\n",
-      "File uploaded successfully. File ID: 67e40794ce6b9bab9cadaf34\n"
+      "File uploaded successfully. File ID: 67e677a330398a707d4a884d\n",
+      "Uploading file data/batch_request_topic_classification.jsonl\n",
+      "Creating request for data/batch_request_topic_classification.jsonl\n",
+      "File uploaded successfully. File ID: 67e677a3711c9502a75a01b3\n",
+      "Uploading file data/batch_request_keyword_extraction.jsonl\n",
+      "Creating request for data/batch_request_keyword_extraction.jsonl\n",
+      "File uploaded successfully. File ID: 67e677a41f2fb6ea20485e37\n"
      ]
     }
    ],
    "source": [
     "batch_files = []\n",
-    "DATA_FOLDER = \"data\"\n",
     "\n",
     "# Loop through all .jsonl files in the data folder\n",
-    "for file in os.listdir(DATA_FOLDER):\n",
-    "  if file.endswith(\".jsonl\"):\n",
-    "    data_dir = os.path.join(DATA_FOLDER, file)\n",
+    "for data_dir in filenames:\n",
     "    print(f\"Uploading file {data_dir}\")\n",
     "    job = upload_batch_file(data_dir)\n",
-    "    batch_files.append((data_dir, job))"
+    "    batch_files.append(job)"
    ]
   },
   {
@@ -10492,7 +11441,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+   "execution_count": 13,
    "id": "07f43785-c5e5-4953-8b81-1bef003e060f",
    "metadata": {},
    "outputs": [],
@@ -10511,7 +11460,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": 14,
    "id": "3d4806fb-6984-4d41-8fd9-f405cdb432e3",
    "metadata": {},
    "outputs": [
@@ -10519,26 +11468,35 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Creating batch job for file ID 67e40792a135957969fda091\n",
-      "Batch job created with ID 67e40798ce6b9bab9cadaf56\n",
-      "Creating batch job for file ID 67e40792c72788860894306f\n",
-      "Batch job created with ID 67e407a2a135957969fda1b4\n",
-      "Creating batch job for file ID 67e40793a135957969fda097\n",
-      "Batch job created with ID 67e407adc7278886089431ea\n",
-      "Creating batch job for file ID 67e407930fdb60564c2bb237\n",
-      "Batch job created with ID 67e407b7c727888608943275\n",
-      "Creating batch job for file ID 67e40794ce6b9bab9cadaf34\n",
-      "Batch job created with ID 67e407c2a135957969fda38e\n"
+      "Creating batch job for file ID 67e677a2c04383db4bd5141d\n",
+      "Batch job created with ID 67e677a88d3b27ee9af94ce3\n",
+      "Creating batch job for file ID 67e677a3711c9502a75a01ad\n",
+      "Batch job created with ID 67e677b230398a707d4a893d\n",
+      "Creating batch job for file ID 67e677a330398a707d4a884d\n",
+      "Batch job created with ID 67e677bc1f2fb6ea20486001\n",
+      "Creating batch job for file ID 67e677a3711c9502a75a01b3\n",
+      "Batch job created with ID 67e677c730398a707d4a8a77\n",
+      "Creating batch job for file ID 67e677a41f2fb6ea20485e37\n",
+      "Batch job created with ID 67e677d2711c9502a75a042e\n"
      ]
     }
    ],
    "source": [
     "batch_jobs = []\n",
     "\n",
-    "for dir_path, batch_file in batch_files:\n",
+    "# Loop through all batch files ID and start each job\n",
+    "for batch_file in batch_files:\n",
     "    print(f\"Creating batch job for file ID {batch_file.id}\")\n",
     "    batch_job = create_batch_job(batch_file.id)\n",
     "    batch_jobs.append(batch_job)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6ea9e9d2-14e0-4464-a53a-90d74c768868",
+   "metadata": {},
+   "source": [
+    "All requests are currently being processed."
    ]
   },
   {
@@ -10567,47 +11525,60 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
+   "execution_count": 15,
    "id": "SuH0CfoqjP3d",
    "metadata": {},
    "outputs": [],
    "source": [
     "def monitor_batch_jobs(batch_jobs):\n",
-    "  all_completed = False\n",
+    "    all_completed = False\n",
     "\n",
-    "  while not all_completed:\n",
-    "    all_completed = True\n",
-    "    output_lines = []\n",
+    "    # Loop until all jobs are completed\n",
+    "    while not all_completed:\n",
+    "        all_completed = True\n",
+    "        output_lines = []\n",
     "\n",
-    "    for job in batch_jobs:\n",
-    "      updated_job = client.batches.retrieve(job.id)\n",
+    "        # Loop through all batch jobs\n",
+    "        for job in batch_jobs:\n",
+    "            updated_job = client.batches.retrieve(job.id)\n",
+    "            status = updated_job.status\n",
     "\n",
-    "      if updated_job.status != \"completed\":\n",
-    "        all_completed = False\n",
-    "        completed = updated_job.request_counts.completed\n",
-    "        total = updated_job.request_counts.total\n",
-    "        output_lines.append(f\"Job {job.id} status: {updated_job.status} - Progress: {completed}/{total}\")\n",
-    "      else:\n",
-    "        output_lines.append(f\"Job {job.id} completed!\")\n",
+    "            # If job is completed\n",
+    "            if status == \"completed\":\n",
+    "                output_lines.append(\"Job completed!\")\n",
+    "            # If job failed, cancelled or expired\n",
+    "            elif status in [\"failed\", \"cancelled\", \"expired\"]:\n",
+    "                output_lines.append(f\"Job ended with status: {status}\")\n",
+    "                break\n",
+    "            # If job is ongoing\n",
+    "            else:\n",
+    "                all_completed = False\n",
+    "                completed = updated_job.request_counts.completed\n",
+    "                total = updated_job.request_counts.total\n",
+    "                output_lines.append(\n",
+    "                    f\"Job status: {status} - Progress: {completed}/{total}\"\n",
+    "                )\n",
     "\n",
-    "    clear_output(wait=True)\n",
-    "    for line in output_lines:\n",
-    "      display(line)\n",
+    "        # Clear terminal\n",
+    "        clear_output(wait=True)\n",
+    "        for line in output_lines:\n",
+    "            display(line)\n",
     "\n",
-    "    if not all_completed:\n",
-    "      time.sleep(refresh_interval)\n"
+    "        # Check every 10 seconds\n",
+    "        if not all_completed:\n",
+    "            time.sleep(10)\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 17,
+   "execution_count": 16,
    "id": "6a283b51-1585-4f64-89fb-784952e65fe8",
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "'Job 67e40798ce6b9bab9cadaf56 completed!'"
+       "'Job completed!'"
       ]
      },
      "metadata": {},
@@ -10616,7 +11587,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
     {
      "data": {
       "text/plain": [
-       "'Job 67e407a2a135957969fda1b4 completed!'"
+       "'Job completed!'"
       ]
      },
      "metadata": {},
@@ -10625,7 +11596,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
     {
      "data": {
       "text/plain": [
-       "'Job 67e407adc7278886089431ea completed!'"
+       "'Job completed!'"
       ]
      },
      "metadata": {},
@@ -10634,7 +11605,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
     {
      "data": {
       "text/plain": [
-       "'Job 67e407b7c727888608943275 completed!'"
+       "'Job completed!'"
       ]
      },
      "metadata": {},
@@ -10643,7 +11614,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
     {
      "data": {
       "text/plain": [
-       "'Job 67e407c2a135957969fda38e completed!'"
+       "'Job completed!'"
       ]
      },
      "metadata": {},
@@ -10674,7 +11645,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
   },
   {
    "cell_type": "code",
-   "execution_count": 18,
+   "execution_count": 17,
    "id": "caA5djbLrJ4O",
    "metadata": {},
    "outputs": [],
@@ -10699,7 +11670,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
   },
   {
    "cell_type": "code",
-   "execution_count": 19,
+   "execution_count": 18,
    "id": "f86d9b6e-06f6-4a18-a56a-913ab58fc7a6",
    "metadata": {},
    "outputs": [
@@ -10707,113 +11678,6 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "\n",
-      " -------------------------- \n",
-      "\n",
-      "Inference ID: topic_classification-0. \n",
-      "\n",
-      "TEXT: Feds Accused of Exaggerating Fire Impact (AP): AP - The Forest Service exaggerated the effect of wildfires on California spotted owls in justifying a planned increase in logging in the Sierra Nevada, according to a longtime agency expert who worked on the plan.: nan\n",
-      "\n",
-      "RESULT: ```json\n",
-      "{\n",
-      "  \"category\": \"politics\",\n",
-      "  \"confidence\": 0.7\n",
-      "}\n",
-      "```\n",
-      "\n",
-      " -------------------------- \n",
-      "\n",
-      "Inference ID: topic_classification-1. \n",
-      "\n",
-      "TEXT: New Method May Predict Quakes Weeks Ahead (AP): AP - Swedish geologists may have found a way to predict earthquakes weeks before they happen by monitoring the amount of metals like zinc and copper in subsoil water near earthquake sites, scientists said Wednesday.: nan\n",
-      "\n",
-      "RESULT: {\n",
-      "    \"category\": \"science\",\n",
-      "    \"confidence\": 0.95\n",
-      "}\n",
-      "\n",
-      " -------------------------- \n",
-      "\n",
-      "Inference ID: topic_classification-2. \n",
-      "\n",
-      "TEXT: Marine Expedition Finds New Species (AP): AP - Norwegian scientists who explored the deep waters of the Atlantic Ocean said Thursday their findings  #151; including what appear to be new species of fish and squid  #151; could be used to protect marine ecosystems worldwide.: nan\n",
-      "\n",
-      "RESULT: ```json\n",
-      "{\n",
-      "  \"category\": \"science\",\n",
-      "  \"confidence\": 0.95\n",
-      "}\n",
-      "```\n",
-      "\n",
-      " -------------------------- \n",
-      "\n",
-      "Inference ID: keyword_extraction-0. \n",
-      "\n",
-      "TEXT: Feds Accused of Exaggerating Fire Impact (AP): AP - The Forest Service exaggerated the effect of wildfires on California spotted owls in justifying a planned increase in logging in the Sierra Nevada, according to a longtime agency expert who worked on the plan.: nan\n",
-      "\n",
-      "RESULT: ```json\n",
-      "{\n",
-      "  \"keywords\": [\"Forest Service\", \"wildfires\", \"California spotted owls\", \"logging\", \"Sierra Nevada\"],\n",
-      "  \"context\": \"The Forest Service is accused of overstating the impact of wildfires on California spotted owls to justify increased logging in the Sierra Nevada. 'Forest Service' is central as it is the agency involved. 'Wildfires' are the environmental event being discussed. 'California spotted owls' are the species allegedly affected. 'Logging' is the planned activity being justified. 'Sierra Nevada' is the geographic location where these events are taking place.\"\n",
-      "}\n",
-      "```\n",
-      "\n",
-      " -------------------------- \n",
-      "\n",
-      "Inference ID: keyword_extraction-1. \n",
-      "\n",
-      "TEXT: New Method May Predict Quakes Weeks Ahead (AP): AP - Swedish geologists may have found a way to predict earthquakes weeks before they happen by monitoring the amount of metals like zinc and copper in subsoil water near earthquake sites, scientists said Wednesday.: nan\n",
-      "\n",
-      "RESULT: {\n",
-      "  \"keywords\": [\"earthquake prediction\", \"geologists\", \"zinc\", \"copper\", \"subsoil water\"],\n",
-      "  \"context\": \"The text discusses a new method for earthquake prediction developed by Swedish geologists. 'Earthquake prediction' is the central focus, as the method aims to forecast quakes weeks in advance. 'Geologists' are the scientists involved in this research. 'Zinc' and 'copper' are metals monitored in subsoil water near earthquake sites, which are key indicators in this predictive method. 'Subsoil water' is the medium where these metals are measured, making it a critical component of the study.\"\n",
-      "}\n",
-      "\n",
-      " -------------------------- \n",
-      "\n",
-      "Inference ID: keyword_extraction-2. \n",
-      "\n",
-      "TEXT: Marine Expedition Finds New Species (AP): AP - Norwegian scientists who explored the deep waters of the Atlantic Ocean said Thursday their findings  #151; including what appear to be new species of fish and squid  #151; could be used to protect marine ecosystems worldwide.: nan\n",
-      "\n",
-      "RESULT: ```json\n",
-      "{\n",
-      "  \"keywords\": [\"Marine Expedition\", \"New Species\", \"Atlantic Ocean\", \"Norwegian Scientists\", \"Marine Ecosystems\"],\n",
-      "  \"context\": \"The keywords highlight the core aspects of the text. 'Marine Expedition' refers to the scientific exploration conducted in the deep waters. 'New Species' emphasizes the discovery of previously unknown fish and squid. 'Atlantic Ocean' specifies the location of the expedition. 'Norwegian Scientists' identifies the researchers involved in the study. 'Marine Ecosystems' underscores the broader goal of using these findings to protect oceanic environments globally.\"\n",
-      "}\n",
-      "```\n",
-      "\n",
-      " -------------------------- \n",
-      "\n",
-      "Inference ID: translation-0. \n",
-      "\n",
-      "TEXT: Feds Accused of Exaggerating Fire Impact (AP): AP - The Forest Service exaggerated the effect of wildfires on California spotted owls in justifying a planned increase in logging in the Sierra Nevada, according to a longtime agency expert who worked on the plan.: nan\n",
-      "\n",
-      "RESULT: {\n",
-      "  \"translation\": \"Acusan a las autoridades federales de exagerar el impacto de los incendios (AP): AP - El Servicio Forestal exageró el efecto de los incendios forestales en los búhos manchados de California para justificar un aumento planificado en la tala de árboles en Sierra Nevada, según un experto de larga trayectoria en la agencia que trabajó en el plan.\",\n",
-      "  \"notes\": \"The translation maintains the original structure and meaning of the text. The term 'Feds' was translated as 'autoridades federales' to convey the informal tone in a way that is natural in Spanish. 'California spotted owls' was translated directly as 'búhos manchados de California' since it is a specific species name. 'Logging' was translated as 'tala de árboles' to clearly convey the activity. No significant cultural adaptations were needed, as the topic is universally understood in Spanish-speaking contexts.\"\n",
-      "}\n",
-      "\n",
-      " -------------------------- \n",
-      "\n",
-      "Inference ID: translation-1. \n",
-      "\n",
-      "TEXT: New Method May Predict Quakes Weeks Ahead (AP): AP - Swedish geologists may have found a way to predict earthquakes weeks before they happen by monitoring the amount of metals like zinc and copper in subsoil water near earthquake sites, scientists said Wednesday.: nan\n",
-      "\n",
-      "RESULT: {\n",
-      "  \"translation\": \"Nuevo método podría predecir terremotos con semanas de anticipación (AP): AP - Geólogos suecos podrían haber encontrado una manera de predecir terremotos semanas antes de que ocurran, mediante el monitoreo de la cantidad de metales como zinc y cobre en el agua subterránea cerca de zonas sísmicas, dijeron científicos el miércoles.\",\n",
-      "  \"notes\": \"The translation maintains the original meaning and structure of the text. The phrase 'New Method May Predict Quakes Weeks Ahead' was translated as 'Nuevo método podría predecir terremotos con semanas de anticipación' to ensure clarity and accuracy. The term 'subsoil water' was translated as 'agua subterránea,' which is the common term used in Spanish for water found beneath the ground. The mention of 'Swedish geologists' and 'scientists' was kept as 'geólogos suecos' and 'científicos' respectively, as these terms are directly translatable and widely understood in Spanish. The date 'Wednesday' was translated as 'miércoles,' which is the standard translation for the day of the week in Spanish.\"\n",
-      "}\n",
-      "\n",
-      " -------------------------- \n",
-      "\n",
-      "Inference ID: translation-2. \n",
-      "\n",
-      "TEXT: Marine Expedition Finds New Species (AP): AP - Norwegian scientists who explored the deep waters of the Atlantic Ocean said Thursday their findings  #151; including what appear to be new species of fish and squid  #151; could be used to protect marine ecosystems worldwide.: nan\n",
-      "\n",
-      "RESULT: {\n",
-      "  \"translation\": \"Expedición Marina Descubre Nuevas Especies (AP): AP - Científicos noruegos que exploraron las aguas profundas del Océano Atlántico anunciaron el jueves que sus hallazgos —incluyendo lo que parecen ser nuevas especies de peces y calamares— podrían ser utilizados para proteger los ecosistemas marinos a nivel mundial.\",\n",
-      "  \"notes\": \"The translation maintains the original structure and intent of the text. The phrase 'could be used to protect marine ecosystems worldwide' was translated directly as 'podrían ser utilizados para proteger los ecosistemas marinos a nivel mundial,' which is both accurate and culturally appropriate. No significant cultural adaptations were necessary. The use of 'nivel mundial' (worldwide) is common in Spanish to convey global scope.\"\n",
-      "}\n",
       "\n",
       " -------------------------- \n",
       "\n",
@@ -10849,10 +11713,43 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
       "\n",
       "RESULT: ```json\n",
       "{\n",
-      "  \"sentiment\": \"positive\",\n",
-      "  \"confidence\": 0.9\n",
+      "    \"sentiment\": \"positive\",\n",
+      "    \"confidence\": 0.85\n",
       "}\n",
       "```\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "Inference ID: translation-0. \n",
+      "\n",
+      "TEXT: Feds Accused of Exaggerating Fire Impact (AP): AP - The Forest Service exaggerated the effect of wildfires on California spotted owls in justifying a planned increase in logging in the Sierra Nevada, according to a longtime agency expert who worked on the plan.: nan\n",
+      "\n",
+      "RESULT: {\n",
+      "  \"translation\": \"Acusan a las autoridades federales de exagerar el impacto de los incendios (AP): AP - El Servicio Forestal exageró el efecto de los incendios forestales en los búhos manchados de California para justificar un aumento planificado de la tala en la Sierra Nevada, según un experto de larga trayectoria en la agencia que trabajó en el plan.\",\n",
+      "  \"notes\": \"The translation maintains the original structure and meaning of the text. The term 'Feds' was translated as 'autoridades federales' to convey the same informal yet official tone. 'Fire impact' was translated as 'impacto de los incendios' to ensure clarity. The phrase 'California spotted owls' was translated as 'búhos manchados de California' to accurately reflect the species name. The term 'logging' was translated as 'tala,' which is the standard term used in Spanish for this context. The phrase 'longtime agency expert' was translated as 'experto de larga trayectoria en la agencia' to emphasize the person's extensive experience within the organization.\"\n",
+      "}\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "Inference ID: translation-1. \n",
+      "\n",
+      "TEXT: New Method May Predict Quakes Weeks Ahead (AP): AP - Swedish geologists may have found a way to predict earthquakes weeks before they happen by monitoring the amount of metals like zinc and copper in subsoil water near earthquake sites, scientists said Wednesday.: nan\n",
+      "\n",
+      "RESULT: {\n",
+      "  \"translation\": \"Nuevo Método Podría Predecir Terremotos con Semanas de Anticipación (AP): AP - Geólogos suecos podrían haber encontrado una manera de predecir terremotos semanas antes de que ocurran, mediante el monitoreo de la cantidad de metales como zinc y cobre en el agua subterránea cerca de los sitios de terremotos, dijeron científicos el miércoles.\",\n",
+      "  \"notes\": \"The translation maintains the original meaning and structure of the text. The phrase 'subsoil water' was translated as 'agua subterránea,' which is the most common term used in Spanish for this concept. The cultural context remains the same as the topic is scientific and universally understood. No significant cultural adaptations were necessary.\"\n",
+      "}\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "Inference ID: translation-2. \n",
+      "\n",
+      "TEXT: Marine Expedition Finds New Species (AP): AP - Norwegian scientists who explored the deep waters of the Atlantic Ocean said Thursday their findings  #151; including what appear to be new species of fish and squid  #151; could be used to protect marine ecosystems worldwide.: nan\n",
+      "\n",
+      "RESULT: {\n",
+      "  \"translation\": \"Expedición marina descubre nuevas especies (AP): AP - Científicos noruegos que exploraron las aguas profundas del Océano Atlántico anunciaron el jueves que sus hallazgos —incluyendo lo que parecen ser nuevas especies de peces y calamares— podrían ser utilizados para proteger los ecosistemas marinos a nivel mundial.\",\n",
+      "  \"notes\": \"The translation maintains the original structure and intent of the text. The use of em dashes (—) is preserved to indicate a break in thought, which is also common in Spanish. The phrase 'could be used to protect marine ecosystems worldwide' is translated directly, as the concept of protecting ecosystems is universally understood and relevant in Spanish-speaking contexts. No significant cultural adaptations were necessary, as the topic of scientific discovery and environmental protection is globally applicable.\"\n",
+      "}\n",
       "\n",
       " -------------------------- \n",
       "\n",
@@ -10861,7 +11758,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
       "TEXT: Feds Accused of Exaggerating Fire Impact (AP): AP - The Forest Service exaggerated the effect of wildfires on California spotted owls in justifying a planned increase in logging in the Sierra Nevada, according to a longtime agency expert who worked on the plan.: nan\n",
       "\n",
       "RESULT: {\n",
-      "  \"summary\": \"A Forest Service expert claims the agency overstated the impact of wildfires on California spotted owls to justify increased logging in the Sierra Nevada.\"\n",
+      "  \"summary\": \"A Forest Service expert claims the agency overstated wildfires' impact on California spotted owls to justify increased logging in the Sierra Nevada.\"\n",
       "}\n",
       "\n",
       " -------------------------- \n",
@@ -10871,7 +11768,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
       "TEXT: New Method May Predict Quakes Weeks Ahead (AP): AP - Swedish geologists may have found a way to predict earthquakes weeks before they happen by monitoring the amount of metals like zinc and copper in subsoil water near earthquake sites, scientists said Wednesday.: nan\n",
       "\n",
       "RESULT: {\n",
-      "  \"summary\": \"Swedish geologists have developed a potential method to predict earthquakes weeks in advance by monitoring levels of metals like zinc and copper in subsoil water near earthquake sites.\"\n",
+      "  \"summary\": \"Swedish geologists have potentially developed a method to predict earthquakes weeks in advance by monitoring zinc and copper levels in subsoil water near earthquake-prone areas.\"\n",
       "}\n",
       "\n",
       " -------------------------- \n",
@@ -10881,18 +11778,96 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
       "TEXT: Marine Expedition Finds New Species (AP): AP - Norwegian scientists who explored the deep waters of the Atlantic Ocean said Thursday their findings  #151; including what appear to be new species of fish and squid  #151; could be used to protect marine ecosystems worldwide.: nan\n",
       "\n",
       "RESULT: {\n",
-      "  \"summary\": \"Norwegian scientists exploring the Atlantic Ocean's deep waters discovered potential new species of fish and squid, which could aid in global marine ecosystem protection.\"\n",
+      "  \"summary\": \"Norwegian scientists discovered potential new species of fish and squid during a deep-sea expedition in the Atlantic Ocean. Their findings aim to aid in the protection of global marine ecosystems.\"\n",
+      "}\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "Inference ID: topic_classification-0. \n",
+      "\n",
+      "TEXT: Feds Accused of Exaggerating Fire Impact (AP): AP - The Forest Service exaggerated the effect of wildfires on California spotted owls in justifying a planned increase in logging in the Sierra Nevada, according to a longtime agency expert who worked on the plan.: nan\n",
+      "\n",
+      "RESULT: ```json\n",
+      "{\n",
+      "  \"category\": \"politics\",\n",
+      "  \"confidence\": 0.8\n",
+      "}\n",
+      "```\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "Inference ID: topic_classification-1. \n",
+      "\n",
+      "TEXT: New Method May Predict Quakes Weeks Ahead (AP): AP - Swedish geologists may have found a way to predict earthquakes weeks before they happen by monitoring the amount of metals like zinc and copper in subsoil water near earthquake sites, scientists said Wednesday.: nan\n",
+      "\n",
+      "RESULT: ```json\n",
+      "{\n",
+      "  \"category\": \"science\",\n",
+      "  \"confidence\": 0.95\n",
+      "}\n",
+      "```\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "Inference ID: topic_classification-2. \n",
+      "\n",
+      "TEXT: Marine Expedition Finds New Species (AP): AP - Norwegian scientists who explored the deep waters of the Atlantic Ocean said Thursday their findings  #151; including what appear to be new species of fish and squid  #151; could be used to protect marine ecosystems worldwide.: nan\n",
+      "\n",
+      "RESULT: ```json\n",
+      "{\n",
+      "  \"category\": \"science\",\n",
+      "  \"confidence\": 0.95\n",
+      "}\n",
+      "```\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "Inference ID: keyword_extraction-0. \n",
+      "\n",
+      "TEXT: Feds Accused of Exaggerating Fire Impact (AP): AP - The Forest Service exaggerated the effect of wildfires on California spotted owls in justifying a planned increase in logging in the Sierra Nevada, according to a longtime agency expert who worked on the plan.: nan\n",
+      "\n",
+      "RESULT: ```json\n",
+      "{\n",
+      "  \"keywords\": [\"Forest Service\", \"wildfires\", \"California spotted owls\", \"logging\", \"Sierra Nevada\"],\n",
+      "  \"context\": \"The keywords highlight the core elements of the text. 'Forest Service' refers to the agency accused of exaggerating wildfire impacts. 'Wildfires' are the natural disaster in question, impacting 'California spotted owls', a species affected by the fires. 'Logging' is the planned activity justified by the exaggerated claims, and 'Sierra Nevada' is the geographic region where these events are taking place.\"\n",
+      "}\n",
+      "```\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "Inference ID: keyword_extraction-1. \n",
+      "\n",
+      "TEXT: New Method May Predict Quakes Weeks Ahead (AP): AP - Swedish geologists may have found a way to predict earthquakes weeks before they happen by monitoring the amount of metals like zinc and copper in subsoil water near earthquake sites, scientists said Wednesday.: nan\n",
+      "\n",
+      "RESULT: ```json\n",
+      "{\n",
+      "  \"keywords\": [\"earthquake prediction\", \"geologists\", \"zinc\", \"copper\", \"subsoil water\"],\n",
+      "  \"context\": \"The text discusses a new method developed by Swedish geologists to predict earthquakes weeks in advance. The method involves monitoring the levels of metals such as zinc and copper in subsoil water near earthquake sites. 'Earthquake prediction' is the main focus, while 'geologists' refers to the scientists involved. 'Zinc' and 'copper' are the metals being monitored, and 'subsoil water' is the medium where these metals are measured.\"\n",
+      "}\n",
+      "```\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "Inference ID: keyword_extraction-2. \n",
+      "\n",
+      "TEXT: Marine Expedition Finds New Species (AP): AP - Norwegian scientists who explored the deep waters of the Atlantic Ocean said Thursday their findings  #151; including what appear to be new species of fish and squid  #151; could be used to protect marine ecosystems worldwide.: nan\n",
+      "\n",
+      "RESULT: {\n",
+      "  \"keywords\": [\"Marine Expedition\", \"New Species\", \"Atlantic Ocean\", \"Norwegian Scientists\", \"Marine Ecosystems\"],\n",
+      "  \"context\": \"The keywords highlight the core aspects of the text. 'Marine Expedition' refers to the scientific exploration conducted in the deep waters. 'New Species' emphasizes the discovery of previously unknown fish and squid. 'Atlantic Ocean' specifies the location of the expedition. 'Norwegian Scientists' identifies the group responsible for the research. 'Marine Ecosystems' underscores the broader goal of using the findings to protect ocean habitats globally.\"\n",
       "}\n"
      ]
     }
    ],
    "source": [
+    "# Go through all batch jobs, providing the output file ID\n",
     "for batch_job in batch_jobs:\n",
     "  job_status = client.batches.retrieve(batch_job.id)\n",
     "  result_file_id = job_status.output_file_id\n",
     "  result = client.files.content(result_file_id).content\n",
     "  results = parse_json_objects(result)\n",
     "\n",
+    "    # For each, print the result\n",
     "  for res in results:\n",
     "    inference_id = res['custom_id']\n",
     "    index = inference_id.split('-')[-1]\n",
@@ -11236,7 +12211,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
         "#model=\"Qwen/Qwen2.5-VL-7B-Instruct\"\n",
         "\n",
         "# Ensure the directory exists\n",
-        "os.makedirs(\"sentiment_analysis/data\", exist_ok=True)\n",
+        "os.makedirs(\"sentiment_analysis\", exist_ok=True)\n",
         "\n",
         "# Create the batch job file with the prompt and content\n",
         "def create_batch_file(df):\n",
@@ -11282,10 +12257,19 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
       "execution_count": 7,
       "id": "qNhmrmHdnp7g",
       "metadata": {},
-      "outputs": [],
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "sentiment_analysis/batch_job_request.jsonl\n"
+          ]
+        }
+      ],
       "source": [
         "batch_list = create_batch_file(df)\n",
-        "filename = save_batch_file(batch_list)"
+        "data_dir = save_batch_file(batch_list)\n",
+        "print(data_dir)"
       ]
     },
     {
@@ -11329,7 +12313,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
       "id": "e48b2489-99bc-431b-8cb3-de816550d524",
       "metadata": {},
       "source": [
-        "Now that we’ve prepared our input file, it’s time to upload it to the kluster.ai platform. To do so, you can use the `files.create` endpoint of the client, where the purpose is set to `batch`. This will return the file ID, which we need to log for the next steps."
+        "Now that we've prepared our input file, it's time to upload it to the kluster.ai platform. To do so, you can use the `files.create` endpoint of the client, where the purpose is set to `batch`. This will return the file ID, which we need to log for the next steps."
       ]
     },
     {
@@ -11342,13 +12326,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
           "name": "stdout",
           "output_type": "stream",
           "text": [
-            "File uploaded successfully. File ID: 67e1896b6afe1d706e77c3b9\n"
+            "File uploaded successfully. File ID: 67e57e7933090e20560503db\n"
           ]
         }
       ],
       "source": [
-        "data_dir = 'sentiment_analysis/batch_job_request.jsonl'\n",
-        "\n",
         "# Upload batch job request file\n",
         "with open(data_dir, 'rb') as file:\n",
         "    upload_response = client.files.create(\n",
@@ -11392,11 +12374,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
             "\n",
             "Batch job created:\n",
             "{\n",
-            "  \"id\": \"67e1896c6afe1d706e77c3c1\",\n",
+            "  \"id\": \"67e57e7d33090e20560504e2\",\n",
             "  \"completion_window\": \"24h\",\n",
-            "  \"created_at\": 1742834028,\n",
+            "  \"created_at\": 1743093373,\n",
             "  \"endpoint\": \"/v1/chat/completions\",\n",
-            "  \"input_file_id\": \"67e1896b6afe1d706e77c3b9\",\n",
+            "  \"input_file_id\": \"67e57e7933090e20560503db\",\n",
             "  \"object\": \"batch\",\n",
             "  \"status\": \"pre_schedule\",\n",
             "  \"cancelled_at\": null,\n",
@@ -11405,7 +12387,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
             "  \"error_file_id\": null,\n",
             "  \"errors\": [],\n",
             "  \"expired_at\": null,\n",
-            "  \"expires_at\": 1742920428,\n",
+            "  \"expires_at\": 1743179773,\n",
             "  \"failed_at\": null,\n",
             "  \"finalizing_at\": null,\n",
             "  \"in_progress_at\": null,\n",
@@ -11524,7 +12506,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
       "metadata": {},
       "source": [
         "With the job completed, we'll retrieve the results and review the responses generated for each request. We then parse these results. To fetch them from the platform, retrieve the `output_file_id` from the batch job, then use the `files.content` endpoint with that file ID. Note that the job status must be `completed` before you can retrieve the results!"
-        ]
+      ]
     },
     {
       "cell_type": "code",
@@ -11620,14 +12602,6 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
         "\n",
         "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
       ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": null,
-      "id": "9ddbde4d-72f4-4a63-832b-4eb51f8674d2",
-      "metadata": {},
-      "outputs": [],
-      "source": []
     }
   ],
   "metadata": {
@@ -12404,746 +13378,758 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
 Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification/text-classification-openai-api.ipynb/
 --- BEGIN CONTENT ---
 {
- "cells": [
-  {
-   "cell_type": "markdown",
-   "id": "be189fde-4e5b-4f80-bae1-ded86a5075a7",
-   "metadata": {
-    "id": "be189fde-4e5b-4f80-bae1-ded86a5075a7"
-   },
-   "source": [
-    "# Text classification with kluster.ai API"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "b17a77d9",
-   "metadata": {
-    "id": "b17a77d9"
-   },
-   "source": [
-    "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/examples/text-classification/text-classification-openai-api.ipynb)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3",
-   "metadata": {
-    "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3"
-   },
-   "source": [
-    "Text classification is assigning a class/label to a given text, and it is a common go-to example to demonstrate how helpful an AI model can be.\n",
-    "\n",
-    "This tutorial runs through a notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to classify a dataset based on a predefined set of categories.\n",
-    "\n",
-    "The example uses an extract from the IMDB top 1000 movies dataset and categorizes them into \"Action,\" \"Adventure,\" \"Comedy,\" \"Crime,\" \"Documentary,\" \"Drama,\" \"Fantasy,\" \"Horror,\" \"Romance,\" or \"Sci-Fi.\"\n",
-    "\n",
-    "You can adapt this example by using your data and categories relevant to your use case. With this approach, you can effortlessly process datasets of any scale, big or small, and obtain categorized results powered by a state-of-the-art language model."
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "766af796",
-   "metadata": {
-    "id": "766af796"
-   },
-   "source": [
-    "## Prerequisites"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "05ac421b",
-   "metadata": {
-    "id": "05ac421b"
-   },
-   "source": [
-    "Before getting started, ensure you have the following:\n",
-    "\n",
-    "- **A kluster.ai account** - sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one\n",
-    "- **A kluster.ai API key** - after signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "addf05c2",
-   "metadata": {
-    "id": "addf05c2"
-   },
-   "source": [
-    "## Setup"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "4185a24a",
-   "metadata": {
-    "id": "4185a24a"
-   },
-   "source": [
-    "In this notebook, we'll use Python's `getpass` module to safely input the key. After execution, please provide your unique kluster.ai API key (ensure no spaces)."
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 1,
-   "id": "4911e5eb-7463-4a6b-8a99-9313cecd9d4d",
-   "metadata": {
-    "colab": {
-     "base_uri": "https://localhost:8080/"
-    },
-    "id": "4911e5eb-7463-4a6b-8a99-9313cecd9d4d",
-    "outputId": "9a3b7b57-5b91-4f78-ec78-647cfbbf577e"
-   },
-   "outputs": [
+  "cells": [
     {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "Enter your kluster.ai API key: ··········\n"
-     ]
-    }
-   ],
-   "source": [
-    "from getpass import getpass\n",
-    "\n",
-    "api_key = getpass(\"Enter your kluster.ai API key: \")"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "f8df6b97",
-   "metadata": {
-    "id": "f8df6b97"
-   },
-   "source": [
-    "Next, ensure you've installed OpenAI Python library:"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 2,
-   "id": "bcc3d475-8f49-4fc4-9a5e-c6eb6866d2b5",
-   "metadata": {
-    "id": "bcc3d475-8f49-4fc4-9a5e-c6eb6866d2b5"
-   },
-   "outputs": [],
-   "source": [
-    "pip install -q openai"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "406c94a2",
-   "metadata": {
-    "id": "406c94a2"
-   },
-   "source": [
-    "With the OpenAI Python library installed, we import the necessary dependencies for the tutorial:"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 3,
-   "id": "b89a4feb-37a9-430d-a742-cd58495b4eaf",
-   "metadata": {
-    "id": "b89a4feb-37a9-430d-a742-cd58495b4eaf"
-   },
-   "outputs": [],
-   "source": [
-    "from openai import OpenAI\n",
-    "\n",
-    "import pandas as pd\n",
-    "import time\n",
-    "import json\n",
-    "import os\n",
-    "from IPython.display import clear_output, display"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "eabf941b",
-   "metadata": {
-    "id": "eabf941b"
-   },
-   "source": [
-    "And then, initialize the `client` by pointing it to the kluster.ai endpoint, and passing your API key."
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 4,
-   "id": "zG9y_WO5rYaj",
-   "metadata": {
-    "id": "zG9y_WO5rYaj"
-   },
-   "outputs": [],
-   "source": [
-    "# Set up the client\n",
-    "client = OpenAI(\n",
-    "    base_url=\"https://api.kluster.ai/v1\",\n",
-    "    api_key=api_key,\n",
-    ")"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "udPtLfTaisSw",
-   "metadata": {
-    "id": "udPtLfTaisSw"
-   },
-   "source": [
-    "## Get the data"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "QjCVfg65jKz6",
-   "metadata": {
-    "id": "QjCVfg65jKz6"
-   },
-   "source": [
-    "Now that you've initialized an OpenAI-compatible client pointing to kluster.ai, we can talk about the data.\n",
-    "\n",
-    "This notebook includes a preloaded sample dataset derived from the Top 1000 IMDb Movies dataset. It contains movie descriptions ready for classification. No additional setup is needed. Simply proceed to the next steps to begin working with this data."
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 5,
-   "id": "07018f92-9a01-47d5-916a-12cd03dfa3a0",
-   "metadata": {
-    "id": "07018f92-9a01-47d5-916a-12cd03dfa3a0"
-   },
-   "outputs": [],
-   "source": [
-    "df = pd.DataFrame({\n",
-    "    \"text\": [\n",
-    "        \"Breakfast at Tiffany's: A young New York socialite becomes interested in a young man who has moved into her apartment building, but her past threatens to get in the way.\",\n",
-    "        \"Giant: Sprawling epic covering the life of a Texas cattle rancher and his family and associates.\",\n",
-    "        \"From Here to Eternity: In Hawaii in 1941, a private is cruelly punished for not boxing on his unit's team, while his captain's wife and second-in-command are falling in love.\",\n",
-    "        \"Lifeboat: Several survivors of a torpedoed merchant ship in World War II find themselves in the same lifeboat with one of the crew members of the U-boat that sank their ship.\",\n",
-    "        \"The 39 Steps: A man in London tries to help a counter-espionage Agent. But when the Agent is killed, and the man stands accused, he must go on the run to save himself and stop a spy ring which is trying to steal top secret information.\"\n",
-    "    ]\n",
-    "})"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "OyGuHllZllct",
-   "metadata": {
-    "id": "OyGuHllZllct"
-   },
-   "source": [
-    "## Perform batch inference"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "64c345aa-b6a7-4770-8368-b290e9e799dc",
-   "metadata": {
-    "id": "64c345aa-b6a7-4770-8368-b290e9e799dc"
-   },
-   "source": [
-    "To execute the batch inference job, we'll take the following steps:\n",
-    "\n",
-    "1. **Create the batch job file** - we'll generate a JSON lines file with the desired requests to be processed by the model\n",
-    "2. **Upload the batch job file** - once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file\n",
-    "3. **Start the batch job** - after the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before\n",
-    "4. **Monitor job progress** - (optional) track the status of the batch job to ensure it has been successfully completed\n",
-    "5. **Retrieve results** - once the job has completed execution, we can access and process the resultant data\n",
-    "\n",
-    "This notebook is prepared for you to follow along. Run the cells below to watch it all come together."
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "Ew-R24Ltp5EW",
-   "metadata": {
-    "id": "Ew-R24Ltp5EW"
-   },
-   "source": [
-    "### Create the batch job file"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "qS4JXT52wGJ-",
-   "metadata": {
-    "id": "qS4JXT52wGJ-"
-   },
-   "source": [
-    "This example selects the `deepseek-ai/DeepSeek-V3` model. If you'd like to use a different model, feel free to change it by modifying the `model` field. In this notebook, you can also comment DeepSeek V3, and uncomment whatever model you want to try out.\n",
-    "\n",
-    "Please refer to the <a href=\"/get-started/start-building/batch/#supported-models\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
-    "\n",
-    "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes (but we are only asking to respond with a single word, the genre)."
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 6,
-   "id": "fVtwyqZ_nEq7",
-   "metadata": {
-    "id": "fVtwyqZ_nEq7"
-   },
-   "outputs": [],
-   "source": [
-    "# Prompt\n",
-    "SYSTEM_PROMPT = '''\n",
-    "    Classify the main genre of the given movie description based on the following genres (Respond with only the genre):\n",
-    "    “Action”, “Adventure”, “Comedy”, “Crime”, “Documentary”, “Drama”, “Fantasy”, “Horror”, “Romance”, “Sci-Fi”.\n",
-    "    '''\n",
-    "\n",
-    "# Models\n",
-    "#model=\"deepseek-ai/DeepSeek-R1\"\n",
-    "model=\"deepseek-ai/DeepSeek-V3\"\n",
-    "#model=\"klusterai/Meta-Llama-3.1-8B-Instruct-Turbo\"\n",
-    "#model=\"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\"\n",
-    "#model=\"klusterai/Meta-Llama-3.3-70B-Instruct-Turbo\"\n",
-    "#model=\"Qwen/Qwen2.5-VL-7B-Instruct\"\n",
-    "\n",
-    "# Ensure the directory exists\n",
-    "os.makedirs(\"text_clasification/data\", exist_ok=True)\n",
-    "\n",
-    "# Create the batch job file with the prompt and content\n",
-    "def create_batch_file(df):\n",
-    "    batch_list = []\n",
-    "    for index, row in df.iterrows():\n",
-    "        content = row['text']\n",
-    "\n",
-    "        request = {\n",
-    "            \"custom_id\": f\"movie_classification-{index}\",\n",
-    "            \"method\": \"POST\",\n",
-    "            \"url\": \"/v1/chat/completions\",\n",
-    "            \"body\": {\n",
-    "                \"model\": model,\n",
-    "                \"temperature\": 0.5,\n",
-    "                \"messages\": [\n",
-    "                    {\"role\": \"system\", \"content\": SYSTEM_PROMPT},\n",
-    "                    {\"role\": \"user\", \"content\": content}\n",
-    "                ],\n",
-    "            }\n",
-    "        }\n",
-    "        batch_list.append(request)\n",
-    "    return batch_list\n",
-    "\n",
-    "# Save file\n",
-    "def save_batch_file(batch_list):\n",
-    "    filename = f\"text_clasification/batch_job_request.jsonl\"\n",
-    "    with open(filename, 'w') as file:\n",
-    "        for request in batch_list:\n",
-    "            file.write(json.dumps(request) + '\\n')\n",
-    "    return filename"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "5f8bbb40",
-   "metadata": {
-    "id": "5f8bbb40"
-   },
-   "source": [
-    "Let's run the functions we've defined before:"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 7,
-   "id": "qNhmrmHdnp7g",
-   "metadata": {
-    "id": "qNhmrmHdnp7g"
-   },
-   "outputs": [],
-   "source": [
-    "batch_list = create_batch_file(df)\n",
-    "filename = save_batch_file(batch_list)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "ada26fe3-acb9-48dc-b368-b57fc380cdb8",
-   "metadata": {
-    "id": "ada26fe3-acb9-48dc-b368-b57fc380cdb8"
-   },
-   "source": [
-    "Next, we can preview what that batch job file looks like:"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 8,
-   "id": "d65f5099-5add-4749-9a85-3c04a9b342bb",
-   "metadata": {
-    "colab": {
-     "base_uri": "https://localhost:8080/"
-    },
-    "id": "d65f5099-5add-4749-9a85-3c04a9b342bb",
-    "outputId": "168c1f53-1f52-44ab-c4e5-3820d2614482"
-   },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "{\"custom_id\": \"movie_classification-0\", \"method\": \"POST\", \"url\": \"/v1/chat/completions\", \"body\": {\"model\": \"deepseek-ai/DeepSeek-V3\", \"temperature\": 0.5, \"messages\": [{\"role\": \"system\", \"content\": \"\\n    Classify the main genre of the given movie description based on the following genres (Respond with only the genre):\\n    \\u201cAction\\u201d, \\u201cAdventure\\u201d, \\u201cComedy\\u201d, \\u201cCrime\\u201d, \\u201cDocumentary\\u201d, \\u201cDrama\\u201d, \\u201cFantasy\\u201d, \\u201cHorror\\u201d, \\u201cRomance\\u201d, \\u201cSci-Fi\\u201d.\\n    \"}, {\"role\": \"user\", \"content\": \"Breakfast at Tiffany's: A young New York socialite becomes interested in a young man who has moved into her apartment building, but her past threatens to get in the way.\"}]}}\n"
-     ]
-    }
-   ],
-   "source": [
-    "!head -n 1 text_clasification/batch_job_request.jsonl"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "xArKu7-sqSiR",
-   "metadata": {
-    "id": "xArKu7-sqSiR"
-   },
-   "source": [
-    "### Upload batch job file to kluster.ai"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "e48b2489-99bc-431b-8cb3-de816550d524",
-   "metadata": {
-    "id": "e48b2489-99bc-431b-8cb3-de816550d524"
-   },
-   "source": [
-    "Now that we’ve prepared our input file, it’s time to upload it to the kluster.ai platform. To do so, you can use the `files.create` endpoint of the client, where the purpose is set to `batch`. This will return the file ID, which we need to log for the next steps."
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 16,
-   "id": "l5eu5UyAnEtk",
-   "metadata": {
-    "colab": {
-     "base_uri": "https://localhost:8080/"
-    },
-    "id": "l5eu5UyAnEtk",
-    "outputId": "bcd0915a-5e28-454e-f5c3-7ce1a6b875f8"
-   },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "File uploaded successfully. File ID: 67ddb3ef6afe1d706e51b7a6\n"
-     ]
-    }
-   ],
-   "source": [
-    "data_dir = 'text_clasification/batch_job_request.jsonl'\n",
-    "\n",
-    "# Upload batch job request file\n",
-    "with open(data_dir, 'rb') as file:\n",
-    "    upload_response = client.files.create(\n",
-    "        file=file,\n",
-    "        purpose=\"batch\"\n",
-    "    )\n",
-    "\n",
-    "    # Print job ID\n",
-    "    file_id = upload_response.id\n",
-    "    print(f\"File uploaded successfully. File ID: {file_id}\")\n"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "6438be35-1e73-4c34-9249-2dd16d102253",
-   "metadata": {
-    "id": "6438be35-1e73-4c34-9249-2dd16d102253"
-   },
-   "source": [
-    "### Start the batch job"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "251a0b89-71a9-40d7-bf14-51be935afe10",
-   "metadata": {
-    "id": "251a0b89-71a9-40d7-bf14-51be935afe10"
-   },
-   "source": [
-    "Once the file has been successfully uploaded, we're ready to start (create) the batch job by providing the file ID we got in the previous step. To do so, we use the `batches.create` method, for which we need to set the endpoint to `/v1/chat/completions`. This will return the batch job details, with the ID."
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 17,
-   "id": "71a24704-7190-4e24-898f-c4eff062439a",
-   "metadata": {
-    "colab": {
-     "base_uri": "https://localhost:8080/"
-    },
-    "id": "71a24704-7190-4e24-898f-c4eff062439a",
-    "outputId": "5ae036d1-c686-4a12-ab38-1ba6e34729b9"
-   },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "\n",
-      "Batch job created:\n",
-      "{\n",
-      "  \"id\": \"67ddb3f151ba53f099cdb3f9\",\n",
-      "  \"completion_window\": \"24h\",\n",
-      "  \"created_at\": 1742582769,\n",
-      "  \"endpoint\": \"/v1/chat/completions\",\n",
-      "  \"input_file_id\": \"67ddb3ef6afe1d706e51b7a6\",\n",
-      "  \"object\": \"batch\",\n",
-      "  \"status\": \"pre_schedule\",\n",
-      "  \"cancelled_at\": null,\n",
-      "  \"cancelling_at\": null,\n",
-      "  \"completed_at\": null,\n",
-      "  \"error_file_id\": null,\n",
-      "  \"errors\": [],\n",
-      "  \"expired_at\": null,\n",
-      "  \"expires_at\": 1742669169,\n",
-      "  \"failed_at\": null,\n",
-      "  \"finalizing_at\": null,\n",
-      "  \"in_progress_at\": null,\n",
-      "  \"metadata\": {},\n",
-      "  \"output_file_id\": null,\n",
-      "  \"request_counts\": {\n",
-      "    \"completed\": 0,\n",
-      "    \"failed\": 0,\n",
-      "    \"total\": 0\n",
-      "  }\n",
-      "}\n"
-     ]
-    }
-   ],
-   "source": [
-    "# Create batch job with completions endpoint\n",
-    "batch_job = client.batches.create(\n",
-    "    input_file_id=file_id,\n",
-    "    endpoint=\"/v1/chat/completions\",\n",
-    "    completion_window=\"24h\"\n",
-    ")\n",
-    "\n",
-    "print(\"\\nBatch job created:\")\n",
-    "batch_dict = batch_job.model_dump()\n",
-    "print(json.dumps(batch_dict, indent=2))"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "e-ujphILqepu",
-   "metadata": {
-    "id": "e-ujphILqepu"
-   },
-   "source": [
-    "### Check job progress"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "iFrDrriQqizC",
-   "metadata": {
-    "id": "iFrDrriQqizC"
-   },
-   "source": [
-    "Now that your batch job has been created, you can track its progress.\n",
-    "\n",
-    "To monitor the job's progress, we can use the `batches.retrieve` method and pass the batch job ID. The response contains an `status` field that tells us if it is completed or not, and the subsequent status of each job separately.\n",
-    "\n",
-    "The following snippet checks the status every 10 seconds until the entire batch is completed:"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 18,
-   "id": "SuH0CfoqjP3d",
-   "metadata": {
-    "colab": {
-     "base_uri": "https://localhost:8080/",
-     "height": 35
-    },
-    "id": "SuH0CfoqjP3d",
-    "outputId": "ff0fce21-23d1-46bb-97e1-330f0acee83c"
-   },
-   "outputs": [
-    {
-     "data": {
-      "application/vnd.google.colaboratory.intrinsic+json": {
-       "type": "string"
+      "cell_type": "markdown",
+      "id": "be189fde-4e5b-4f80-bae1-ded86a5075a7",
+      "metadata": {
+        "id": "be189fde-4e5b-4f80-bae1-ded86a5075a7"
       },
-      "text/plain": [
-       "'Job completed!'"
+      "source": [
+        "# Text classification with kluster.ai API"
       ]
-     },
-     "metadata": {},
-     "output_type": "display_data"
-    }
-   ],
-   "source": [
-    "all_completed = False\n",
-    "\n",
-    "# Loop to check status every 10 seconds\n",
-    "while not all_completed:\n",
-    "    all_completed = True\n",
-    "    output_lines = []\n",
-    "\n",
-    "    updated_job = client.batches.retrieve(batch_job.id)\n",
-    "\n",
-    "    if updated_job.status != \"completed\":\n",
-    "        all_completed = False\n",
-    "        completed = updated_job.request_counts.completed\n",
-    "        total = updated_job.request_counts.total\n",
-    "        output_lines.append(f\"Job status: {updated_job.status} - Progress: {completed}/{total}\")\n",
-    "    else:\n",
-    "        output_lines.append(f\"Job completed!\")\n",
-    "\n",
-    "    # Clear the output and display updated status\n",
-    "    clear_output(wait=True)\n",
-    "    for line in output_lines:\n",
-    "        display(line)\n",
-    "\n",
-    "    if not all_completed:\n",
-    "        time.sleep(10)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "TkkhIG9HU0D9",
-   "metadata": {
-    "id": "TkkhIG9HU0D9"
-   },
-   "source": [
-    "## Get the results"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "12c1f6ac-8d60-4158-9036-de79fa274983",
-   "metadata": {
-    "id": "12c1f6ac-8d60-4158-9036-de79fa274983"
-   },
-   "source": [
-    "With the job completed, we'll retrieve the results and review the responses generated for each request. The results are parsed. To fetch the results from the platform, you need to retrieve the `output_file_id` from the batch job, and then use the `files.content` endpoint, providing that specific file ID. Note that the job status must be `completed` for you to retrieve the results!"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 19,
-   "id": "806a5eb1-f6d3-491d-b051-9d44bf046a7e",
-   "metadata": {
-    "colab": {
-     "base_uri": "https://localhost:8080/"
     },
-    "id": "806a5eb1-f6d3-491d-b051-9d44bf046a7e",
-    "outputId": "c236bf79-433f-4929-ce52-0708ecd43a30"
-   },
-   "outputs": [
     {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "\n",
-      "Extracted Responses:\n",
-      "Romance\n",
-      "Drama\n",
-      "Drama\n",
-      "Drama\n",
-      "Action\n"
-     ]
+      "cell_type": "markdown",
+      "id": "b17a77d9",
+      "metadata": {
+        "id": "b17a77d9"
+      },
+      "source": [
+        "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/examples/text-classification/text-classification-openai-api.ipynb)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3",
+      "metadata": {
+        "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3"
+      },
+      "source": [
+        "Text classification is assigning a class/label to a given text, and it is a common go-to example to demonstrate how helpful an AI model can be.\n",
+        "\n",
+        "This tutorial runs through a notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to classify a dataset based on a predefined set of categories.\n",
+        "\n",
+        "The example uses an extract from the IMDB top 1000 movies dataset and categorizes them into \"Action,\" \"Adventure,\" \"Comedy,\" \"Crime,\" \"Documentary,\" \"Drama,\" \"Fantasy,\" \"Horror,\" \"Romance,\" or \"Sci-Fi.\"\n",
+        "\n",
+        "You can adapt this example by using your data and categories relevant to your use case. With this approach, you can effortlessly process datasets of any scale, big or small, and obtain categorized results powered by a state-of-the-art language model."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "766af796",
+      "metadata": {
+        "id": "766af796"
+      },
+      "source": [
+        "## Prerequisites"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "05ac421b",
+      "metadata": {
+        "id": "05ac421b"
+      },
+      "source": [
+        "Before getting started, ensure you have the following:\n",
+        "\n",
+        "- **A kluster.ai account** - sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one\n",
+        "- **A kluster.ai API key** - after signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "addf05c2",
+      "metadata": {
+        "id": "addf05c2"
+      },
+      "source": [
+        "## Setup"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "4185a24a",
+      "metadata": {
+        "id": "4185a24a"
+      },
+      "source": [
+        "In this notebook, we'll use Python's `getpass` module to safely input the key. After execution, please provide your unique kluster.ai API key (ensure no spaces)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "id": "4911e5eb-7463-4a6b-8a99-9313cecd9d4d",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4911e5eb-7463-4a6b-8a99-9313cecd9d4d",
+        "outputId": "9a3b7b57-5b91-4f78-ec78-647cfbbf577e"
+      },
+      "outputs": [
+        {
+          "name": "stdin",
+          "output_type": "stream",
+          "text": [
+            "Enter your kluster.ai API key:  ········\n"
+          ]
+        }
+      ],
+      "source": [
+        "from getpass import getpass\n",
+        "\n",
+        "api_key = getpass(\"Enter your kluster.ai API key: \")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "f8df6b97",
+      "metadata": {
+        "id": "f8df6b97"
+      },
+      "source": [
+        "Next, ensure you've installed OpenAI Python library:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "id": "bcc3d475-8f49-4fc4-9a5e-c6eb6866d2b5",
+      "metadata": {
+        "id": "bcc3d475-8f49-4fc4-9a5e-c6eb6866d2b5"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Note: you may need to restart the kernel to use updated packages.\n"
+          ]
+        }
+      ],
+      "source": [
+        "pip install -q openai"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "406c94a2",
+      "metadata": {
+        "id": "406c94a2"
+      },
+      "source": [
+        "With the OpenAI Python library installed, we import the necessary dependencies for the tutorial:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "id": "b89a4feb-37a9-430d-a742-cd58495b4eaf",
+      "metadata": {
+        "id": "b89a4feb-37a9-430d-a742-cd58495b4eaf"
+      },
+      "outputs": [],
+      "source": [
+        "from openai import OpenAI\n",
+        "\n",
+        "import pandas as pd\n",
+        "import time\n",
+        "import json\n",
+        "import os\n",
+        "from IPython.display import clear_output, display"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "eabf941b",
+      "metadata": {
+        "id": "eabf941b"
+      },
+      "source": [
+        "And then, initialize the `client` by pointing it to the kluster.ai endpoint, and passing your API key."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 4,
+      "id": "zG9y_WO5rYaj",
+      "metadata": {
+        "id": "zG9y_WO5rYaj"
+      },
+      "outputs": [],
+      "source": [
+        "# Set up the client\n",
+        "client = OpenAI(\n",
+        "    base_url=\"https://api.kluster.ai/v1\",\n",
+        "    api_key=api_key,\n",
+        ")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "udPtLfTaisSw",
+      "metadata": {
+        "id": "udPtLfTaisSw"
+      },
+      "source": [
+        "## Get the data"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "QjCVfg65jKz6",
+      "metadata": {
+        "id": "QjCVfg65jKz6"
+      },
+      "source": [
+        "Now that you've initialized an OpenAI-compatible client pointing to kluster.ai, we can talk about the data.\n",
+        "\n",
+        "This notebook includes a preloaded sample dataset derived from the Top 1000 IMDb Movies dataset. It contains movie descriptions ready for classification. No additional setup is needed. Simply proceed to the next steps to begin working with this data."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 5,
+      "id": "07018f92-9a01-47d5-916a-12cd03dfa3a0",
+      "metadata": {
+        "id": "07018f92-9a01-47d5-916a-12cd03dfa3a0"
+      },
+      "outputs": [],
+      "source": [
+        "df = pd.DataFrame({\n",
+        "    \"text\": [\n",
+        "        \"Breakfast at Tiffany's: A young New York socialite becomes interested in a young man who has moved into her apartment building, but her past threatens to get in the way.\",\n",
+        "        \"Giant: Sprawling epic covering the life of a Texas cattle rancher and his family and associates.\",\n",
+        "        \"From Here to Eternity: In Hawaii in 1941, a private is cruelly punished for not boxing on his unit's team, while his captain's wife and second-in-command are falling in love.\",\n",
+        "        \"Lifeboat: Several survivors of a torpedoed merchant ship in World War II find themselves in the same lifeboat with one of the crew members of the U-boat that sank their ship.\",\n",
+        "        \"The 39 Steps: A man in London tries to help a counter-espionage Agent. But when the Agent is killed, and the man stands accused, he must go on the run to save himself and stop a spy ring which is trying to steal top secret information.\"\n",
+        "    ]\n",
+        "})"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "OyGuHllZllct",
+      "metadata": {
+        "id": "OyGuHllZllct"
+      },
+      "source": [
+        "## Perform batch inference"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "64c345aa-b6a7-4770-8368-b290e9e799dc",
+      "metadata": {
+        "id": "64c345aa-b6a7-4770-8368-b290e9e799dc"
+      },
+      "source": [
+        "To execute the batch inference job, we'll take the following steps:\n",
+        "\n",
+        "1. **Create the batch job file** - we'll generate a JSON lines file with the desired requests to be processed by the model\n",
+        "2. **Upload the batch job file** - once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file\n",
+        "3. **Start the batch job** - after the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before\n",
+        "4. **Monitor job progress** - (optional) track the status of the batch job to ensure it has been successfully completed\n",
+        "5. **Retrieve results** - once the job has completed execution, we can access and process the resultant data\n",
+        "\n",
+        "This notebook is prepared for you to follow along. Run the cells below to watch it all come together."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "Ew-R24Ltp5EW",
+      "metadata": {
+        "id": "Ew-R24Ltp5EW"
+      },
+      "source": [
+        "### Create the batch job file"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "qS4JXT52wGJ-",
+      "metadata": {
+        "id": "qS4JXT52wGJ-"
+      },
+      "source": [
+        "This example selects the `deepseek-ai/DeepSeek-V3` model. If you'd like to use a different model, feel free to change it by modifying the `model` field. In this notebook, you can also comment DeepSeek V3, and uncomment whatever model you want to try out.\n",
+        "\n",
+        "Please refer to the <a href=\"/get-started/start-building/batch/#supported-models\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
+        "\n",
+        "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes (but we are only asking to respond with a single word, the genre)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 6,
+      "id": "fVtwyqZ_nEq7",
+      "metadata": {
+        "id": "fVtwyqZ_nEq7"
+      },
+      "outputs": [],
+      "source": [
+        "# Prompt\n",
+        "SYSTEM_PROMPT = '''\n",
+        "    Classify the main genre of the given movie description based on the following genres (Respond with only the genre):\n",
+        "    “Action”, “Adventure”, “Comedy”, “Crime”, “Documentary”, “Drama”, “Fantasy”, “Horror”, “Romance”, “Sci-Fi”.\n",
+        "    '''\n",
+        "\n",
+        "# Models\n",
+        "#model=\"deepseek-ai/DeepSeek-R1\"\n",
+        "model=\"deepseek-ai/DeepSeek-V3\"\n",
+        "#model=\"klusterai/Meta-Llama-3.1-8B-Instruct-Turbo\"\n",
+        "#model=\"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\"\n",
+        "#model=\"klusterai/Meta-Llama-3.3-70B-Instruct-Turbo\"\n",
+        "#model=\"Qwen/Qwen2.5-VL-7B-Instruct\"\n",
+        "\n",
+        "# Ensure the directory exists\n",
+        "os.makedirs(\"text_clasification\", exist_ok=True)\n",
+        "\n",
+        "# Create the batch job file with the prompt and content\n",
+        "def create_batch_file(df):\n",
+        "    batch_list = []\n",
+        "    for index, row in df.iterrows():\n",
+        "        content = row['text']\n",
+        "\n",
+        "        request = {\n",
+        "            \"custom_id\": f\"movie_classification-{index}\",\n",
+        "            \"method\": \"POST\",\n",
+        "            \"url\": \"/v1/chat/completions\",\n",
+        "            \"body\": {\n",
+        "                \"model\": model,\n",
+        "                \"temperature\": 0.5,\n",
+        "                \"messages\": [\n",
+        "                    {\"role\": \"system\", \"content\": SYSTEM_PROMPT},\n",
+        "                    {\"role\": \"user\", \"content\": content}\n",
+        "                ],\n",
+        "            }\n",
+        "        }\n",
+        "        batch_list.append(request)\n",
+        "    return batch_list\n",
+        "\n",
+        "# Save file\n",
+        "def save_batch_file(batch_list):\n",
+        "    filename = f\"text_clasification/batch_job_request.jsonl\"\n",
+        "    with open(filename, 'w') as file:\n",
+        "        for request in batch_list:\n",
+        "            file.write(json.dumps(request) + '\\n')\n",
+        "    return filename"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "5f8bbb40",
+      "metadata": {
+        "id": "5f8bbb40"
+      },
+      "source": [
+        "Let's run the functions we've defined before:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 7,
+      "id": "qNhmrmHdnp7g",
+      "metadata": {
+        "id": "qNhmrmHdnp7g"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "text_clasification/batch_job_request.jsonl\n"
+          ]
+        }
+      ],
+      "source": [
+        "batch_list = create_batch_file(df)\n",
+        "data_dir = save_batch_file(batch_list)\n",
+        "print(data_dir)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "ada26fe3-acb9-48dc-b368-b57fc380cdb8",
+      "metadata": {
+        "id": "ada26fe3-acb9-48dc-b368-b57fc380cdb8"
+      },
+      "source": [
+        "Next, we can preview what that batch job file looks like:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 8,
+      "id": "d65f5099-5add-4749-9a85-3c04a9b342bb",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "d65f5099-5add-4749-9a85-3c04a9b342bb",
+        "outputId": "168c1f53-1f52-44ab-c4e5-3820d2614482"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "{\"custom_id\": \"movie_classification-0\", \"method\": \"POST\", \"url\": \"/v1/chat/completions\", \"body\": {\"model\": \"deepseek-ai/DeepSeek-V3\", \"temperature\": 0.5, \"messages\": [{\"role\": \"system\", \"content\": \"\\n    Classify the main genre of the given movie description based on the following genres (Respond with only the genre):\\n    \\u201cAction\\u201d, \\u201cAdventure\\u201d, \\u201cComedy\\u201d, \\u201cCrime\\u201d, \\u201cDocumentary\\u201d, \\u201cDrama\\u201d, \\u201cFantasy\\u201d, \\u201cHorror\\u201d, \\u201cRomance\\u201d, \\u201cSci-Fi\\u201d.\\n    \"}, {\"role\": \"user\", \"content\": \"Breakfast at Tiffany's: A young New York socialite becomes interested in a young man who has moved into her apartment building, but her past threatens to get in the way.\"}]}}\n"
+          ]
+        }
+      ],
+      "source": [
+        "!head -n 1 text_clasification/batch_job_request.jsonl"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "xArKu7-sqSiR",
+      "metadata": {
+        "id": "xArKu7-sqSiR"
+      },
+      "source": [
+        "### Upload batch job file to kluster.ai"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "e48b2489-99bc-431b-8cb3-de816550d524",
+      "metadata": {
+        "id": "e48b2489-99bc-431b-8cb3-de816550d524"
+      },
+      "source": [
+        "Now that we’ve prepared our input file, it’s time to upload it to the kluster.ai platform. To do so, you can use the `files.create` endpoint of the client, where the purpose is set to `batch`. This will return the file ID, which we need to log for the next steps."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 9,
+      "id": "l5eu5UyAnEtk",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "l5eu5UyAnEtk",
+        "outputId": "bcd0915a-5e28-454e-f5c3-7ce1a6b875f8"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "File uploaded successfully. File ID: 67e57d8f8573d5180a551f9e\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Upload batch job request file\n",
+        "with open(data_dir, 'rb') as file:\n",
+        "    upload_response = client.files.create(\n",
+        "        file=file,\n",
+        "        purpose=\"batch\"\n",
+        "    )\n",
+        "\n",
+        "    # Print job ID\n",
+        "    file_id = upload_response.id\n",
+        "    print(f\"File uploaded successfully. File ID: {file_id}\")\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "6438be35-1e73-4c34-9249-2dd16d102253",
+      "metadata": {
+        "id": "6438be35-1e73-4c34-9249-2dd16d102253"
+      },
+      "source": [
+        "### Start the batch job"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "251a0b89-71a9-40d7-bf14-51be935afe10",
+      "metadata": {
+        "id": "251a0b89-71a9-40d7-bf14-51be935afe10"
+      },
+      "source": [
+        "Once the file has been successfully uploaded, we're ready to start (create) the batch job by providing the file ID we got in the previous step. To do so, we use the `batches.create` method, for which we need to set the endpoint to `/v1/chat/completions`. This will return the batch job details, with the ID."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 10,
+      "id": "71a24704-7190-4e24-898f-c4eff062439a",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "71a24704-7190-4e24-898f-c4eff062439a",
+        "outputId": "5ae036d1-c686-4a12-ab38-1ba6e34729b9"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "\n",
+            "Batch job created:\n",
+            "{\n",
+            "  \"id\": \"67e57d94562f33dce8762faf\",\n",
+            "  \"completion_window\": \"24h\",\n",
+            "  \"created_at\": 1743093140,\n",
+            "  \"endpoint\": \"/v1/chat/completions\",\n",
+            "  \"input_file_id\": \"67e57d8f8573d5180a551f9e\",\n",
+            "  \"object\": \"batch\",\n",
+            "  \"status\": \"pre_schedule\",\n",
+            "  \"cancelled_at\": null,\n",
+            "  \"cancelling_at\": null,\n",
+            "  \"completed_at\": null,\n",
+            "  \"error_file_id\": null,\n",
+            "  \"errors\": [],\n",
+            "  \"expired_at\": null,\n",
+            "  \"expires_at\": 1743179540,\n",
+            "  \"failed_at\": null,\n",
+            "  \"finalizing_at\": null,\n",
+            "  \"in_progress_at\": null,\n",
+            "  \"metadata\": {},\n",
+            "  \"output_file_id\": null,\n",
+            "  \"request_counts\": {\n",
+            "    \"completed\": 0,\n",
+            "    \"failed\": 0,\n",
+            "    \"total\": 0\n",
+            "  }\n",
+            "}\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Create batch job with completions endpoint\n",
+        "batch_job = client.batches.create(\n",
+        "    input_file_id=file_id,\n",
+        "    endpoint=\"/v1/chat/completions\",\n",
+        "    completion_window=\"24h\"\n",
+        ")\n",
+        "\n",
+        "print(\"\\nBatch job created:\")\n",
+        "batch_dict = batch_job.model_dump()\n",
+        "print(json.dumps(batch_dict, indent=2))"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "e-ujphILqepu",
+      "metadata": {
+        "id": "e-ujphILqepu"
+      },
+      "source": [
+        "### Check job progress"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "iFrDrriQqizC",
+      "metadata": {
+        "id": "iFrDrriQqizC"
+      },
+      "source": [
+        "Now that your batch job has been created, you can track its progress.\n",
+        "\n",
+        "To monitor the job's progress, we can use the `batches.retrieve` method and pass the batch job ID. The response contains an `status` field that tells us if it is completed or not, and the subsequent status of each job separately.\n",
+        "\n",
+        "The following snippet checks the status every 10 seconds until the entire batch is completed:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 11,
+      "id": "SuH0CfoqjP3d",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "id": "SuH0CfoqjP3d",
+        "outputId": "ff0fce21-23d1-46bb-97e1-330f0acee83c"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "'Job completed!'"
+            ]
+          },
+          "metadata": {},
+          "output_type": "display_data"
+        }
+      ],
+      "source": [
+        "all_completed = False\n",
+        "\n",
+        "# Loop to check status every 10 seconds\n",
+        "while not all_completed:\n",
+        "    all_completed = True\n",
+        "    output_lines = []\n",
+        "\n",
+        "    updated_job = client.batches.retrieve(batch_job.id)\n",
+        "\n",
+        "    if updated_job.status != \"completed\":\n",
+        "        all_completed = False\n",
+        "        completed = updated_job.request_counts.completed\n",
+        "        total = updated_job.request_counts.total\n",
+        "        output_lines.append(f\"Job status: {updated_job.status} - Progress: {completed}/{total}\")\n",
+        "    else:\n",
+        "        output_lines.append(f\"Job completed!\")\n",
+        "\n",
+        "    # Clear the output and display updated status\n",
+        "    clear_output(wait=True)\n",
+        "    for line in output_lines:\n",
+        "        display(line)\n",
+        "\n",
+        "    if not all_completed:\n",
+        "        time.sleep(10)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "TkkhIG9HU0D9",
+      "metadata": {
+        "id": "TkkhIG9HU0D9"
+      },
+      "source": [
+        "## Get the results"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "12c1f6ac-8d60-4158-9036-de79fa274983",
+      "metadata": {
+        "id": "12c1f6ac-8d60-4158-9036-de79fa274983"
+      },
+      "source": [
+        "With the job completed, we'll retrieve the results and review the responses generated for each request. The results are parsed. To fetch the results from the platform, you need to retrieve the `output_file_id` from the batch job, and then use the `files.content` endpoint, providing that specific file ID. Note that the job status must be `completed` for you to retrieve the results!"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 12,
+      "id": "806a5eb1-f6d3-491d-b051-9d44bf046a7e",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "806a5eb1-f6d3-491d-b051-9d44bf046a7e",
+        "outputId": "c236bf79-433f-4929-ce52-0708ecd43a30"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "\n",
+            "Extracted Responses:\n",
+            "Romance\n",
+            "Drama\n",
+            "Drama\n",
+            "Drama\n",
+            "Action\n"
+          ]
+        }
+      ],
+      "source": [
+        "#Parse results as a JSON object\n",
+        "def parse_json_objects(data_string):\n",
+        "    if isinstance(data_string, bytes):\n",
+        "        data_string = data_string.decode('utf-8')\n",
+        "\n",
+        "    json_strings = data_string.strip().split('\\n')\n",
+        "    json_objects = []\n",
+        "\n",
+        "    for json_str in json_strings:\n",
+        "        try:\n",
+        "            json_obj = json.loads(json_str)\n",
+        "            json_objects.append(json_obj)\n",
+        "        except json.JSONDecodeError as e:\n",
+        "            print(f\"Error parsing JSON: {e}\")\n",
+        "\n",
+        "    return json_objects\n",
+        "\n",
+        "# Retrieve results with job ID\n",
+        "job = client.batches.retrieve(batch_job.id)\n",
+        "result_file_id = job.output_file_id\n",
+        "result = client.files.content(result_file_id).content\n",
+        "\n",
+        "# Parse JSON results\n",
+        "parsed_result = parse_json_objects(result)\n",
+        "\n",
+        "# Extract and print only the content of each response\n",
+        "print(\"\\nExtracted Responses:\")\n",
+        "for item in parsed_result:\n",
+        "    try:\n",
+        "        content = item[\"response\"][\"body\"][\"choices\"][0][\"message\"][\"content\"]\n",
+        "        print(content)\n",
+        "    except KeyError as e:\n",
+        "        print(f\"Missing key in response: {e}\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "70e0e816-6558-4ff2-bab2-f85cff00bfc8",
+      "metadata": {
+        "id": "70e0e816-6558-4ff2-bab2-f85cff00bfc8"
+      },
+      "source": [
+        "## Summary"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "7d195dd1-1293-4407-b6ad-cab7e77b14c0",
+      "metadata": {
+        "id": "7d195dd1-1293-4407-b6ad-cab7e77b14c0"
+      },
+      "source": [
+        "This tutorial used the chat completion endpoint to perform a simple text classification task with batch inference. This particular example clasified a series of movies based on their description.\n",
+        "\n",
+        "To submit a batch job we've:\n",
+        "\n",
+        "1. Created the JSONL file, where each line of the file represented a separate request\n",
+        "2. Submitted the file to the platform\n",
+        "3. Started the batch job, and monitored its progress\n",
+        "4. Once completed, we fetched the results\n",
+        "\n",
+        "All of this using the OpenAI Python library and API, no changes needed!\n",
+        "\n",
+        "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
+      ]
     }
-   ],
-   "source": [
-    "#Parse results as a JSON object\n",
-    "def parse_json_objects(data_string):\n",
-    "    if isinstance(data_string, bytes):\n",
-    "        data_string = data_string.decode('utf-8')\n",
-    "\n",
-    "    json_strings = data_string.strip().split('\\n')\n",
-    "    json_objects = []\n",
-    "\n",
-    "    for json_str in json_strings:\n",
-    "        try:\n",
-    "            json_obj = json.loads(json_str)\n",
-    "            json_objects.append(json_obj)\n",
-    "        except json.JSONDecodeError as e:\n",
-    "            print(f\"Error parsing JSON: {e}\")\n",
-    "\n",
-    "    return json_objects\n",
-    "\n",
-    "# Retrieve results with job ID\n",
-    "job = client.batches.retrieve(batch_job.id)\n",
-    "result_file_id = job.output_file_id\n",
-    "result = client.files.content(result_file_id).content\n",
-    "\n",
-    "# Parse JSON results\n",
-    "parsed_result = parse_json_objects(result)\n",
-    "\n",
-    "# Extract and print only the content of each response\n",
-    "print(\"\\nExtracted Responses:\")\n",
-    "for item in parsed_result:\n",
-    "    try:\n",
-    "        content = item[\"response\"][\"body\"][\"choices\"][0][\"message\"][\"content\"]\n",
-    "        print(content)\n",
-    "    except KeyError as e:\n",
-    "        print(f\"Missing key in response: {e}\")"
-   ]
+  ],
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "display_name": "Python 3 (ipykernel)",
+      "language": "python",
+      "name": "python3"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "ipython",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.10.12"
+    }
   },
-  {
-   "cell_type": "markdown",
-   "id": "70e0e816-6558-4ff2-bab2-f85cff00bfc8",
-   "metadata": {
-    "id": "70e0e816-6558-4ff2-bab2-f85cff00bfc8"
-   },
-   "source": [
-    "## Summary"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "7d195dd1-1293-4407-b6ad-cab7e77b14c0",
-   "metadata": {
-    "id": "7d195dd1-1293-4407-b6ad-cab7e77b14c0"
-   },
-   "source": [
-    "This tutorial used the chat completion endpoint to perform a simple text classification task with batch inference. This particular example clasified a series of movies based on their description.\n",
-    "\n",
-    "To submit a batch job we've:\n",
-    "\n",
-    "1. Created the JSONL file, where each line of the file represented a separate request\n",
-    "2. Submitted the file to the platform\n",
-    "3. Started the batch job, and monitored its progress\n",
-    "4. Once completed, we fetched the results\n",
-    "\n",
-    "All of this using the OpenAI Python library and API, no changes needed!\n",
-    "\n",
-    "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
-   ]
-  }
- ],
- "metadata": {
-  "colab": {
-   "provenance": []
-  },
-  "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.10.12"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
+  "nbformat": 4,
+  "nbformat_minor": 5
 }
 --- END CONTENT ---
 
