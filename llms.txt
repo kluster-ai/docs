@@ -15,6 +15,7 @@ Doc-Page: https://docs.kluster.ai/get-started/integrations/msty/
 Doc-Page: https://docs.kluster.ai/get-started/integrations/pydantic/
 Doc-Page: https://docs.kluster.ai/get-started/integrations/sillytavern/
 Doc-Page: https://docs.kluster.ai/get-started/integrations/typingmind/
+Doc-Page: https://docs.kluster.ai/get-started/models/
 Doc-Page: https://docs.kluster.ai/get-started/openai-compatibility/
 Doc-Page: https://docs.kluster.ai/get-started/start-building/batch/
 Doc-Page: https://docs.kluster.ai/get-started/start-building/real-time/
@@ -43,13 +44,30 @@ template: api.html
 
 # API reference
 
+## API request limits
+
+The following limits apply to API requests based on your plan tier (notation is `free tier | standard tier`):
+
+|        Model         | Context<br>size | Max<br>output | Max batch<br>requests | Concurrent<br>requests | Requests<br>per minute |
+|:--------------------:|:---------------:|:-------------:|:---------------------:|:----------------------:|:----------------------:|
+|   **DeepSeek R1**    | 32k &#124 162k  | 4k &#124 162k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|   **DeepSeek V3**    | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+| **DeepSeek V3 0324** | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|   **Gemma 3 27B**    |  32k &#124 32k  |  4k &#124 8k  | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|   **Llama 3.1 8B**   | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|  **Llama 3.1 405B**  | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|  **Llama 3.3 70B**   | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|   **Qwen 2.5 7B**    |  32k &#124 32k  |  4k &#124 8k  | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+
+--- 
+
 ## Chat
 
 ### Create chat completion
 
 `POST https://api.kluster.ai/v1/chat/completions`
 
-To create a chat completion, send a request to the `chat/completions` endpoint.  Please ensure your request is compliant with the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
+To create a chat completion, send a request to the `chat/completions` endpoint.  Please ensure your request is compliant with the [API request limits](/get-started/models/#api-request-limits){target=\_blank}.
 
 <div class="grid" markdown>
 <div markdown>
@@ -113,6 +131,58 @@ A list of messages comprising the conversation so far. The `messages` object can
         `role` ++"string or null"++ <span class="required" markdown>++"required"++</span>
 
         The role of the messages author, in this case, `assistant`.
+
+---
+
+`store` ++"boolean or null"++
+
+Whether or not to store the output of this chat completion request. Defaults to `false`.
+
+---
+
+`metadata` ++"object"++ <span class="required" markdown>++"Required"++</span>
+
+Set of key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format, and querying for objects via API.
+
+??? child "Show properties"
+
+    `@kluster.ai` ++"object"++
+
+    kluster.ai-specific options for the request.
+
+    ??? child "Show properties"
+
+        `callback_url` ++"string"++
+
+        A URL to which the system will send a callback when the request is complete.
+
+        ---
+
+        `async` ++"boolean"++
+
+        Indicates whether the request should be asynchronous. For more information, see the [Submit an async request](#submit-an-async-request) section.
+
+        ---
+
+        `strict_completion_window` ++"boolean"++
+
+        Indicates whether the request must be completed within the specified `completion_window`. If enabled and the request isn't completed within the window, it will be considered unsuccessful. 
+        
+        ---
+
+        `completion_window` ++"string"++
+
+        The time frame within which the batch should be processed. The supported completion windows are 1, 3, 6, 12, and 24 hours to accommodate a range of use cases and budget requirements.
+
+        Learn more about how completion window selection affects cost by visiting the pricing section of the [kluster.ai website](https://www.kluster.ai){target=\_blank}.
+
+    ---
+
+    `additionalProperties` ++"any"++
+
+    Allows any other properties to be included in the `metadata` object without enforcing a specific schema for them. These properties can have any key and any value type.
+
+---
 
 `frequency_penalty` ++"number or null"++
 
@@ -294,7 +364,7 @@ The Unix timestamp (in seconds) of when the chat completion was created.
 
 `model` ++"string"++
 
-The model used for the chat completion. You can use the `models` endpoint to retrieve the [list of supported models](#list-supported-models){target=\_blank}.
+The model used for the chat completion. You can use the `models` endpoint to retrieve the [list of supported models](#list-supported-models).
 
 ---
 
@@ -324,7 +394,7 @@ A list of chat completion choices.
 
         `role` ++"string or null"++
 
-        The role of the messages author. Can be one of `system`, `user`, or `assistant`
+        The role of the messages author. Can be one of `system`, `user`, or `assistant`.
     
     ---
 
@@ -404,13 +474,172 @@ Usage statistics for the completion request.
 
 ---
 
+## Async
+
+### Submit an async request
+
+Asynchronous inference is a cost-effective option when you don't need immediate results, such as for workloads that vary or have unpredictable timelines. Submitting an asynchronous inference request to the [chat completions endpoint](#create-chat-completion) works like submitting a real-time request. The main difference is that you include a metadata object specifying the request as `async` and a `completion_window`, defining the time window you expect the response.
+
+<div class="grid" markdown>
+<div markdown>
+
+**Request**
+
+`model` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+ID of the model to use. You can use the `models` endpoint to retrieve the [list of supported models](#list-supported-models){target=\_blank}.
+
+---
+
+`messages` ++"array"++ <span class="required" markdown>++"required"++</span>
+
+A list of messages comprising the conversation so far. The `messages` object can be one of `system`, `user`, or `assistant`.
+
+---
+
+`endpoint` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+The endpoint to be used for all requests in the batch. Currently, only `/v1/chat/completions` is supported.
+
+---
+
+`metadata` ++"object"++ <span class="required" markdown>++"Required"++</span>
+
+Set of key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format, and querying for objects via API.
+
+??? child "Show properties"
+
+    `@kluster.ai` ++"object"++ <span class="required" markdown>++"Required"++</span>
+
+    kluster.ai-specific options for the request.
+
+    ??? child "Show properties"
+
+        `callback_url` ++"string"++
+
+        A URL to which the system will send a callback when the request is complete.
+
+        ---
+
+        `async` ++"boolean"++ <span class="required" markdown>++"Required"++</span>
+
+        Indicates whether the request should be asynchronous.
+
+        ---
+
+        `strict_completion_window` ++"boolean"++
+
+        Indicates whether the request must be completed within the specified `completion_window`. If enabled and the request isn't completed within the window, it will be considered unsuccessful. 
+        
+        ---
+
+        `completion_window` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+        The time frame within which the batch should be processed. The supported completion windows are 1, 3, 6, 12, and 24 hours to accommodate a range of use cases and budget requirements.
+
+        Learn more about how completion window selection affects cost by visiting the pricing section of the [kluster.ai website](https://www.kluster.ai){target=\_blank}.
+
+    ---
+
+    `additionalProperties` ++"any"++
+
+    Allows any other properties to be included in the `metadata` object without enforcing a specific schema for them. These properties can have any key and any value type.
+
+---
+
+**Returns**
+
+The [Batch object](#batch-object) including the job ID. All async jobs are treated as batch jobs but submitted through the real-time chat completions endpoint.
+
+</div>
+<div markdown>
+
+=== "Python"
+
+    ```python title="Example request"
+    from openai import OpenAI
+
+    # Configure OpenAI client
+    client = OpenAI(
+        base_url="https://api.kluster.ai/v1",
+        api_key="INSERT_API_KEY"  # Replace with your actual API key
+    )
+
+    # Create a chat completion request with async flag in metadata
+    chat_completion = client.chat.completions.create(
+        model="google/gemma-3-27b-it",
+        messages=[
+            {"role": "user", "content": "Please give me your honest opinion on the best stock as an investment."}
+        ],
+        metadata={
+            "@kluster.ai": {
+                "async": True,
+                "completion_window": "24h"
+            }
+        }
+    )
+
+    print(chat_completion.to_dict())
+
+    ```
+
+
+=== "curl"
+
+    ```bash title="Example request"
+        curl -s https://api.kluster.ai/v1/chat/completions \
+        -H "Authorization: Bearer INSERT_API_KEY" \
+        -H "Content-Type: application/json" \
+        -d '{
+      "model": "google/gemma-3-27b-it",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Please give me your honest opinion on the best stock as an investment."
+        }
+      ],
+      "metadata": {
+        "@kluster.ai": {
+          "async": true,
+          "completion_window": "24h"
+        }
+      }
+    }'
+    ```
+
+```Json title="Response"
+{
+    "id": "67783976bf636f79b49643ee_1743267849127",
+    "object": "chat.completion",
+    "created": 1743267849,
+    "model": "google/gemma-3-27b-it",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "Your request has been queued for adaptive inference. Check your batch jobs for results."
+            },
+            "finish_reason": "stop"
+        }
+    ]
+}
+```
+
+</div>
+</div>
+
+
+
+---
+
 ## Batch
 
 ### Submit a batch job
 
 `POST https://api.kluster.ai/v1/batches`
 
-To submit a batch job, send a request to the `batches` endpoint. Please ensure your request is compliant with the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
+To submit a batch job, send a request to the `batches` endpoint. Please ensure your request is compliant with the [API request limits](/get-started/models/#api-request-limits){target=\_blank}.
 
 <div class="grid" markdown>
 <div markdown>
@@ -1182,7 +1411,7 @@ For requests that failed with a non-HTTP error, this will contain more informati
 
 `POST https://api.kluster.ai/v1/files/`
 
-Upload a [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `files` endpoint.  Please ensure your file is compliant with the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
+Upload a [JSON Lines](https://jsonlines.org/){target=\_blank} file to the `files` endpoint.  Please ensure your file is compliant with the [API request limits](/get-started/models/#api-request-limits){target=\_blank}.
 
 You can also view all your uploaded files in the [**Files** tab](https://platform.kluster.ai/files){target=\_blank} of the kluster.ai platform.
 
@@ -1387,18 +1616,9 @@ The intended purpose of the file. Currently, only `batch` is supported.
 
 `GET https://api.kluster.ai/v1/models`
 
-Lists the currently available models.
+Lists the [currently available models](/get-started/models/){target=\_blank}.
 
-You can use this endpoint to retrieve a list of all available models for the kluster.ai API. If you have created any fine-tuned models, they will also appear when you query this endpoint. Currently supported models include:
-
-- `deepseek-ai/DeepSeek-R1`
-- `deepseek-ai/DeepSeek-V3`
-- `deepseek-ai/DeepSeek-V3-0324`
-- `google/gemma-3-27b-it`
-- `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
-- `Qwen/Qwen2.5-VL-7B-Instruct`
+You can use this endpoint to retrieve a list of all available models for the kluster.ai API. If you have created any fine-tuned models, they will also appear when you query this endpoint. 
 
 <div class="grid" markdown>
 <div markdown>
@@ -2134,18 +2354,7 @@ After finishing the CLI setup, you will see a `src` directory with files `crew.p
 
 2. **Import modules and select model** - open `hello_crew.py` to add imports and define a custom LLM for kluster.ai by setting the following parameters:
     - **provider** - you can specify `openai_compatible`
-    - **model** - choose one of kluster.ai's available models based on your use case:
-    
-        - `deepseek-ai/DeepSeek-R1`
-- `deepseek-ai/DeepSeek-V3`
-- `deepseek-ai/DeepSeek-V3-0324`
-- `google/gemma-3-27b-it`
-- `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
-- `Qwen/Qwen2.5-VL-7B-Instruct`
-
-        Regardless of which model you choose, prepend its name with `openai/` to ensure CrewAI, which relies on LiteLLM, processes your requests correctly. 
+    - **model** - choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case. Regardless of which model you choose, prepend its name with `openai/` to ensure CrewAI, which relies on LiteLLM, processes your requests correctly
 
     - **base_url** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
     - **api_key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
@@ -2384,18 +2593,7 @@ cp .env.example .env
 2. **Set variables** - update the following variables in the `.env` file:
     - **OPENAI_API_KEY** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
     - **OPENAI_API_URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
-    - **OPENAI_DEFAULT_MODEL** - choose one of kluster.ai's available models based on your use case:
-
-        - `deepseek-ai/DeepSeek-R1`
-- `deepseek-ai/DeepSeek-V3`
-- `deepseek-ai/DeepSeek-V3-0324`
-- `google/gemma-3-27b-it`
-- `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
-- `Qwen/Qwen2.5-VL-7B-Instruct`
-      
-      You should also set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, and `LARGE_OPENAI_MODEL` to the same value to allow seamless experimentation as different characters use different default models.
+    - **OPENAI_DEFAULT_MODEL** - choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case. You should also set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, and `LARGE_OPENAI_MODEL` to the same value to allow seamless experimentation as different characters use different default models
 
 The OpenAI configuration section of your `.env` file should resemble the following:
 
@@ -2568,16 +2766,7 @@ It's easy to integrate kluster.ai with LangChain—when configuring the chat mod
 
   - **Base URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
   - **API key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
-  - **Select your model** - choose one of kluster.ai's available models based on your use case:
-
-      - `deepseek-ai/DeepSeek-R1`
-- `deepseek-ai/DeepSeek-V3`
-- `deepseek-ai/DeepSeek-V3-0324`
-- `google/gemma-3-27b-it`
-- `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
-- `Qwen/Qwen2.5-VL-7B-Instruct`
+  - **Select your model** - choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case
 
 ```python
 from langchain_openai import ChatOpenAI
@@ -2795,18 +2984,7 @@ messages = [
     {"role": "user",   "content": "What is the capital of California?"}
 ]
 ```
-4. **Select your kluster.ai model** - choose one of the kluster.ai models that best fits your use case:
-
-    - `deepseek-ai/DeepSeek-R1`
-- `deepseek-ai/DeepSeek-V3`
-- `deepseek-ai/DeepSeek-V3-0324`
-- `google/gemma-3-27b-it`
-- `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
-- `Qwen/Qwen2.5-VL-7B-Instruct`
-
-    Prepend the model name with `openai/` so LiteLLM recognizes it as an OpenAI-like model request.
+4. **Select your kluster.ai model** - choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} that best fits your use case. Prepend the model name with `openai/` so LiteLLM recognizes it as an OpenAI-like model request
 ```python
 model = "openai/klusterai/Meta-Llama-3.3-70B-Instruct-Turbo"
 ```
@@ -3117,17 +3295,7 @@ Then, take the following steps to configure Msty to use the kluster.ai API:
     ```
 
 4. Paste your API key and ensure **Save key securely in keychain** is selected
-5. Paste the name of the supported kluster.ai model you'd like to use. Note that you can specify multiple models
-
-    - `deepseek-ai/DeepSeek-R1`
-- `deepseek-ai/DeepSeek-V3`
-- `deepseek-ai/DeepSeek-V3-0324`
-- `google/gemma-3-27b-it`
-- `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
-- `Qwen/Qwen2.5-VL-7B-Instruct`
-
+5. Paste the name of the [kluster.ai model](/get-started/models/){target=\_blank} you'd like to use. Note that you can specify multiple models
 6. Press **Add** to finalize the addition of kluster.ai API as a provider
 
 ![Configure remote model screen](/images/get-started/integrations/msty/msty-2.webp)
@@ -4030,6 +4198,63 @@ Your AI agent is now ready to answer relevant questions and relies on the kluste
 You can also clone and customize existing agents or create entirely new ones. For more information on agents on TypingMind, be sure to check out the [TypingMind docs](https://docs.typingmind.com/ai-agents/ai-agents-overview){target=\_blank}.
 --- END CONTENT ---
 
+Doc-Content: https://docs.kluster.ai/get-started/models/
+--- BEGIN CONTENT ---
+---
+title: Supported AI Models
+description: Learn what models are supported by the kluster.ai API and the main characteristics and API request limits for each model for both free and standard tiers.
+---
+
+# Models on kluster.ai
+
+[kluster.ai](https://kluster.ai){target=\_blank} offers a wide variety of open-source models for both real-time and batch inferences, with more being constantly added.
+ 
+This page covers all the models the API supports, with the API request limits for each.
+
+## Model names
+
+Each model supported by kluster.ai has a unique name that must be used when defining the `model` in the request.
+
+|        Model         |                 Model API name                 |
+|:--------------------:|:----------------------------------------------:|
+|   **DeepSeek R1**    |           `deepseek-ai/DeepSeek-R1`            |
+|   **DeepSeek V3**    |           `deepseek-ai/DeepSeek-V3`            |
+| **DeepSeek V3 0324** |         `deepseek-ai/DeepSeek-V3-0324`         |
+|   **Gemma 3 27B**    |            `google/gemma-3-27b-it`             |
+|   **Llama 3.1 8B**   |  `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`  |
+|  **Llama 3.1 405B**  | `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo` |
+|  **Llama 3.3 70B**   | `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`  |
+|   **Qwen 2.5 7B**    |         `Qwen/Qwen2.5-VL-7B-Instruct`          |
+
+## Model comparison table
+
+|        Model         |                         Main<br>use case                         | Real-time<br>inference support | Batch<br>inference support | Fine-tuning<br>support | Image<br>analysis  | Function<br>calling |
+|:--------------------:|:----------------------------------------------------------------:|:------------------------------:|:--------------------------:|:----------------------:|:------------------:|:-------------------:|
+|   **DeepSeek R1**    |             Code generation<br>Complex data analysis             |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
+|   **DeepSeek V3**    |     Natural language generation<br>Contextually rich writing     |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
+| **DeepSeek V3 0324** |     Natural language generation<br>Contextually rich writing     |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
+|   **Gemma 3 27B**    | Multilingual applications<br>Image analysis<br>Complex reasoning |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
+|   **Llama 3.1 8B**   |     Low-latency or simple tasks<br>Cost-efficient inference      |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
+|  **Llama 3.1 405B**  |              Detailed analysis<br>Maximum accuracy               |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         | :white_check_mark:  |
+|  **Llama 3.3 70B**   |         General-purpose AI<br>Balanced cost-performance          |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
+|   **Qwen 2.5 7B**    |  Document analysis<br>Image-based reasoning<br>Multimodal chat   |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
+
+## API request limits
+
+The following limits apply to API requests based on your plan tier (notation is `free tier | standard tier`):
+
+|        Model         | Context<br>size | Max<br>output | Max batch<br>requests | Concurrent<br>requests | Requests<br>per minute |
+|:--------------------:|:---------------:|:-------------:|:---------------------:|:----------------------:|:----------------------:|
+|   **DeepSeek R1**    | 32k &#124 162k  | 4k &#124 162k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|   **DeepSeek V3**    | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+| **DeepSeek V3 0324** | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|   **Gemma 3 27B**    |  32k &#124 32k  |  4k &#124 8k  | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|   **Llama 3.1 8B**   | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|  **Llama 3.1 405B**  | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|  **Llama 3.3 70B**   | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|   **Qwen 2.5 7B**    |  32k &#124 32k  |  4k &#124 8k  | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+--- END CONTENT ---
+
 Doc-Content: https://docs.kluster.ai/get-started/openai-compatibility/
 --- BEGIN CONTENT ---
 ---
@@ -4120,8 +4345,8 @@ description: This guide provides examples and instructions on how to create, sub
 
 ## Overview
 
-This guide provides examples and instructions on how to create, submit, retrieve, and manage batch inference jobs using the [kluster.ai](https://www.kluster.ai/){target=\_blank} API. You will find guidance about preparing your data, selecting a model, submitting your batch job, and retrieving your results. Please make sure you check the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
- 
+This guide provides examples and instructions on how to create, submit, retrieve, and manage batch inference jobs using the [kluster.ai](https://www.kluster.ai/){target=\_blank} API. You will find guidance about preparing your data, selecting a model, submitting your batch job, and retrieving your results. Please make sure you check the [API request limits](/get-started/models/#api-request-limits){target=\_blank}.
+
 ## Prerequisites
 
 This guide assumes familiarity with Large Language Model (LLM) development and OpenAI libraries. Before getting started, make sure you have:
@@ -4142,16 +4367,7 @@ export API_KEY=INSERT_API_KEY
 
 ## Supported models
 
-Batch inference using kluster.ai supports the following models:
-
-- `deepseek-ai/DeepSeek-R1`
-- `deepseek-ai/DeepSeek-V3`
-- `deepseek-ai/DeepSeek-V3-0324`
-- `google/gemma-3-27b-it`
-- `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
-- `Qwen/Qwen2.5-VL-7B-Instruct`
+Please visit the [Models](/get-started/models/){target=\_blank} page to learn more about all the models supported by the kluster.ai batch API.
 
 In addition, you can see the complete list of available models programmatically using the [list supported models](/api-reference/reference/#list-supported-models){target=\_blank} endpoint.
 
@@ -5666,7 +5882,7 @@ echo "$OUTPUT_CONTENT"
 
 ## Batch inference flow
 
-This section details the batch inference process using the kluster.ai API and DeepSeek R1 model, but you can adapt it to any of the [supported models](#supported-models).
+This section details the batch inference process using the kluster.ai API and DeepSeek R1 model, but you can adapt it to any of the [supported models](/get-started/models/){target=\_blank}.
 
 ### Create batch jobs as JSON files
 
@@ -5678,7 +5894,7 @@ Each request must include the following arguments:
 - `method` ++"string"++ - the HTTP method to use for the request. Currently, only `POST` is supported
 - `url` ++"string"++ -  the `/v1/chat/completions` endpoint
 - `body` ++"object"++ - a request body containing:
-    - `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](#supported-models)
+    - `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](/get-started/models/){target=\_blank}
     - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images)
     - Any optional [chat completion parameters](/api-reference/reference/#create-chat-completion){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
 
@@ -6236,7 +6452,6 @@ You have now experienced the complete batch inference job lifecycle using kluste
 - Retrieve and handle job results
 - View and manage your batch jobs
 - Cancel jobs when needed
-- View supported models
 
 The kluster.ai batch API is designed to efficiently and reliably handle your large-scale LLM workloads. If you have questions or suggestions, the [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
 --- END CONTENT ---
@@ -6255,7 +6470,7 @@ description: This page provides examples and instructions for submitting and man
 
 This guide provides guidance about how to use real-time inference with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API. This type of inference is best suited for use cases requiring instant, synchronous responses for user-facing features like chat interactions, live recommendations, or real-time decision-making.
 
-You will learn which models are supported for real-time inference jobs, how to submit a request and retrieve responses, and where to find integration guides for using kluster.ai's API with some of your favorite third-party LLM interfaces. Please make sure you check the [API request limits](/get-started/start-building/setup/#api-request-limits){target=\_blank}.
+You will learn how to submit a request and retrieve responses, and where to find integration guides for using kluster.ai's API with some of your favorite third-party LLM interfaces. Please make sure you check the [API request limits](/get-started/models/#api-request-limits){target=\_blank}.
 
 ## Prerequisites
 
@@ -6276,16 +6491,7 @@ export API_KEY=INSERT_API_KEY
 
 ## Supported models
 
-Real-time inferences through kluster.ai support the following models:
-
-- `deepseek-ai/DeepSeek-R1`
-- `deepseek-ai/DeepSeek-V3`
-- `deepseek-ai/DeepSeek-V3-0324`
-- `google/gemma-3-27b-it`
-- `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`
-- `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`
-- `Qwen/Qwen2.5-VL-7B-Instruct`
+Please visit the [Models](/get-started/models/){target=\_blank} page to learn more about all the models supported by the kluster.ai batch API.
 
 In addition, you can see the complete list of available models programmatically using the [list supported models](/api-reference/reference/#list-supported-models){target=\_blank} endpoint.
 
@@ -6800,7 +7006,7 @@ curl https://api.kluster.ai/v1/chat/completions \
 
 ## Real-time inference flow
 
-This section details the real-time inference process using the kluster.ai API and DeepSeek R1 model, but you can adapt it to any of the [supported models](#supported-models).
+This section details the real-time inference process using the kluster.ai API and DeepSeek R1 model, but you can adapt it to any of the [supported models](/get-started/models/){target=\_blank}.
 
 ### Submitting a request
 
@@ -6835,7 +7041,7 @@ completion = client.chat.completions.create(
 
 If successful, the `completion` variable contains a full response, which you'll need to analyze to extract the answer you are looking for. In terms of configuration for real-time inferences, there are several parameters that you need to tweak:
 
-- `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](#supported-models)
+- `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](/get-started/models/){target=\_blank}
 - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images). In this example, the query is "What is the ultimate breakfast sandwich?". 
 
 Once these parameters are configured, run your script to send the request.
@@ -7030,18 +7236,18 @@ Check the [kluster.ai OpenAI compatibility page](/get-started/openai-compatibili
 
 ## API request limits
 
-The following limits apply to API requests based on your plan tier:
+The following limits apply to API requests based on your plan tier (notation is `free tier | standard tier`):
 
-| Restriction                   | Free tier |                       Standard tier                        |
-|-------------------------------|:---------:|:----------------------------------------------------------:|
-| **Context size**              |    32k    | 161k (DeepSeek-R1) / 131k (Llama/DeepSeek V3) / 32k (Gwen) |
-| **Max output**                |    4k     | 161k (DeepSeek-R1) / 131k (Llama/DeepSeek V3) / 32k (Gwen) |
-| **Max batch requests**        |   <1000   |                          No limit                          |
-| **Max batch file size**       |  100 MB   |                           100 MB                           |
-| **Concurrent requests**       |     2     |                             10                             |
-| **Request limit**             |   1/min   |                           60/min                           |
-| **Realtime request priority** | Standard  |                            High                            |
-| **Batch request priority**    | Standard  |                            High                            |
+|        Model         | Context<br>size | Max<br>output | Max batch<br>requests | Concurrent<br>requests | Requests<br>per minute |
+|:--------------------:|:---------------:|:-------------:|:---------------------:|:----------------------:|:----------------------:|
+|   **DeepSeek R1**    | 32k &#124 162k  | 4k &#124 162k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|   **DeepSeek V3**    | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+| **DeepSeek V3 0324** | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|   **Gemma 3 27B**    |  32k &#124 32k  |  4k &#124 8k  | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|   **Llama 3.1 8B**   | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|  **Llama 3.1 405B**  | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|  **Llama 3.3 70B**   | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|   **Qwen 2.5 7B**    |  32k &#124 32k  |  4k &#124 8k  | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
 
 ## Where to go next
 
@@ -8848,582 +9054,638 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
      "text": [
       "Enter your kluster.ai API key:  ········\n"
      ]
-    }
-   ],
-   "source": [
-    "from getpass import getpass\n",
-    "\n",
-    "api_key = getpass(\"Enter your kluster.ai API key: \")"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "99ac2aed-d284-4fe4-9bb1-9995a0867991",
-   "metadata": {},
-   "source": [
-    "Next, ensure you've installed OpenAI Python library:"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 2,
-   "id": "bcc3d475-8f49-4fc4-9a5e-c6eb6866d2b5",
-   "metadata": {},
-   "outputs": [
+=======
+  "cells": [
     {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "Note: you may need to restart the kernel to use updated packages.\n"
-     ]
-    }
-   ],
-   "source": [
-    "pip install -q openai"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "a4967896-b375-46b0-8e0f-c1b970e077c8",
-   "metadata": {},
-   "source": [
-    "With the OpenAI Python library installed, we import the necessary dependencies for the tutorial:"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 3,
-   "id": "b89a4feb-37a9-430d-a742-cd58495b4eaf",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "from openai import OpenAI\n",
-    "\n",
-    "import pandas as pd\n",
-    "import time\n",
-    "import json\n",
-    "import os\n",
-    "from IPython.display import clear_output, display"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "5bcc1261-cdfd-41ee-964a-283249410e04",
-   "metadata": {},
-   "source": [
-    "And then, initialize the `client` by pointing it to the kluster.ai endpoint, and passing your API key."
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 4,
-   "id": "zG9y_WO5rYaj",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Set up the client\n",
-    "client = OpenAI(\n",
-    "    base_url=\"https://api.kluster.ai/v1\",\n",
-    "    api_key=api_key,\n",
-    ")"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "udPtLfTaisSw",
-   "metadata": {
-    "id": "udPtLfTaisSw"
-   },
-   "source": [
-    "## Get the data"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "QjCVfg65jKz6",
-   "metadata": {
-    "id": "QjCVfg65jKz6"
-   },
-   "source": [
-    "Now that you've initialized an OpenAI-compatible client pointing to kluster.ai, we can discuss the data.\n",
-    "\n",
-    "This notebook comes with a preloaded sample dataset based on the AG News dataset. It includes sections of news headlines and their leads, all set for processing. No additional setup is needed. Proceed to the next steps to begin working with this data."
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 5,
-   "id": "07018f92-9a01-47d5-916a-12cd03dfa3a0",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "df = pd.DataFrame({\n",
-    "    \"text\": [\n",
-    "        \"Chorus Frog Found Croaking in Virginia - The Southern chorus frog has been found in southeastern Virginia, far outside its previously known range. The animal had never before been reported north of Beaufort County, N.C., about 125 miles to the south.\",\n",
-    "        \"Expedition to Probe Gulf of Mexico - Scientists will use advanced technology never before deployed beneath the sea as they try to discover new creatures, behaviors and phenomena in a 10-day expedition to the Gulf of Mexico's deepest reaches.\",\n",
-    "        \"Feds Accused of Exaggerating Fire ImpactP - The Forest Service exaggerated the effect of wildfires on California spotted owls in justifying a planned increase in logging in the Sierra Nevada, according to a longtime agency expert who worked on the plan.\",\n",
-    "        \"New Method May Predict Quakes Weeks Ahead - Swedish geologists may have found a way to predict earthquakes weeks before they happen by monitoring the amount of metals like zinc and copper in subsoil water near earthquake sites, scientists said Wednesday.\",\n",
-    "        \"Marine Expedition Finds New Species - Norwegian scientists who explored the deep waters of the Atlantic Ocean said Thursday their findings #151; including what appear to be new species of fish and squid #151; could be used to protect marine ecosystems worldwide.\"\n",
-    "    ]\n",
-    "})"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "OyGuHllZllct",
-   "metadata": {
-    "id": "OyGuHllZllct"
-   },
-   "source": [
-    "## Perform batch inference"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "64c345aa-b6a7-4770-8368-b290e9e799dc",
-   "metadata": {
-    "id": "6-MZlfXAoiNv"
-   },
-   "source": [
-    "To execute the batch inference job, we'll take the following steps:\n",
-    "\n",
-    "1. **Create the batch job file** - we'll generate a JSON lines file with the desired requests to be processed by the model\n",
-    "2. **Upload the batch job file** - once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file\n",
-    "3. **Start the batch job** - after the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before\n",
-    "4. **Monitor job progress** - (optional) track the status of the batch job to ensure it has been successfully completed\n",
-    "5. **Retrieve results** - once the job has completed execution, we can access and process the resultant data\n",
-    "\n",
-    "This notebook is prepared for you to follow along. Run the cells below to watch it all come together."
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "Ew-R24Ltp5EW",
-   "metadata": {
-    "id": "Ew-R24Ltp5EW"
-   },
-   "source": [
-    "### Create the batch file"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "qS4JXT52wGJ-",
-   "metadata": {
-    "id": "qS4JXT52wGJ-"
-   },
-   "source": [
-    "This example selects the `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo` model. If you'd like to use a different model, feel free to change it by modifying the `model` field. In this notebook, you can also comment Llama 3.1 405B, and uncomment whatever model you want to try out.\n",
-    "\n",
-    "Please refer to the <a href=\"/get-started/start-building/batch/#supported-models\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
-    "\n",
-    "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its model. Also, we are using a temperature of `0.5`, but feel free to change it and play around with the different outcomes (but we are only asking to respond with a single word, the genre)."
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 6,
-   "id": "fVtwyqZ_nEq7",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Prompt\n",
-    "SYSTEM_PROMPT = '''\n",
-    "    Extract up to 5 relevant keywords from the given text. Provide only the keywords between double quotes and separated by commas.\n",
-    "    '''\n",
-    "\n",
-    "# Models\n",
-    "#model=\"deepseek-ai/DeepSeek-R1\"\n",
-    "#model=\"deepseek-ai/DeepSeek-V3\"\n",
-    "#model=\"klusterai/Meta-Llama-3.1-8B-Instruct-Turbo\"\n",
-    "model=\"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\"\n",
-    "#model=\"klusterai/Meta-Llama-3.3-70B-Instruct-Turbo\"\n",
-    "#model=\"Qwen/Qwen2.5-VL-7B-Instruct\"\n",
-    "\n",
-    "# Ensure the directory exists\n",
-    "os.makedirs(\"keyword_extraction\", exist_ok=True)\n",
-    "\n",
-    "# Create the batch job file with the prompt and content\n",
-    "def create_batch_file(df):\n",
-    "    batch_list = []\n",
-    "    for index, row in df.iterrows():\n",
-    "        content = row['text']\n",
-    "\n",
-    "        request = {\n",
-    "            \"custom_id\": f\"keyword_extraction-{index}\",\n",
-    "            \"method\": \"POST\",\n",
-    "            \"url\": \"/v1/chat/completions\",\n",
-    "            \"body\": {\n",
-    "                \"model\": model,\n",
-    "                \"temperature\": 0.5,\n",
-    "                \"messages\": [\n",
-    "                    {\"role\": \"system\", \"content\": SYSTEM_PROMPT},\n",
-    "                    {\"role\": \"user\", \"content\": content}\n",
-    "                ],\n",
-    "            }\n",
-    "        }\n",
-    "        batch_list.append(request)\n",
-    "    return batch_list\n",
-    "\n",
-    "# Save file\n",
-    "def save_batch_file(batch_list):\n",
-    "    filename = f\"keyword_extraction/batch_job_request.jsonl\"\n",
-    "    with open(filename, 'w') as file:\n",
-    "        for request in batch_list:\n",
-    "            file.write(json.dumps(request) + '\\n')\n",
-    "    return filename"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "53476435-f5e9-4baa-8cf2-6c1fbd84c492",
-   "metadata": {},
-   "source": [
-    "Let's run the functions we've defined before:"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 7,
-   "id": "qNhmrmHdnp7g",
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "keyword_extraction/batch_job_request.jsonl\n"
-     ]
-    }
-   ],
-   "source": [
-    "batch_list = create_batch_file(df)\n",
-    "data_dir = save_batch_file(batch_list)\n",
-    "print(data_dir)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "ada26fe3-acb9-48dc-b368-b57fc380cdb8",
-   "metadata": {},
-   "source": [
-    "Next, we can preview what that batch job file looks like:"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 8,
-   "id": "d65f5099-5add-4749-9a85-3c04a9b342bb",
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "{\"custom_id\": \"keyword_extraction-0\", \"method\": \"POST\", \"url\": \"/v1/chat/completions\", \"body\": {\"model\": \"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\", \"temperature\": 0.5, \"messages\": [{\"role\": \"system\", \"content\": \"\\n    Extract up to 5 relevant keywords from the given text. Provide only the keywords between double quotes and separated by commas.\\n    \"}, {\"role\": \"user\", \"content\": \"Chorus Frog Found Croaking in Virginia - The Southern chorus frog has been found in southeastern Virginia, far outside its previously known range. The animal had never before been reported north of Beaufort County, N.C., about 125 miles to the south.\"}]}}\n"
-     ]
-    }
-   ],
-   "source": [
-    "!head -n 1 keyword_extraction/batch_job_request.jsonl"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "xArKu7-sqSiR",
-   "metadata": {
-    "id": "xArKu7-sqSiR"
-   },
-   "source": [
-    "### Upload inference file to kluster.ai"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "e48b2489-99bc-431b-8cb3-de816550d524",
-   "metadata": {},
-   "source": [
-    "Now that we’ve prepared our input file, it’s time to upload it to the kluster.ai platform. To do so, you can use the `files.create` endpoint of the client, where the purpose is set to `batch`. This will return the file ID, which we need to log for the next steps."
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 9,
-   "id": "l5eu5UyAnEtk",
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "File uploaded successfully. File ID: 67e57f491e8d51bcc12d02d2\n"
-     ]
-    }
-   ],
-   "source": [
-    "# Upload batch job request file\n",
-    "with open(data_dir, 'rb') as file:\n",
-    "    upload_response = client.files.create(\n",
-    "        file=file,\n",
-    "        purpose=\"batch\"\n",
-    "    )\n",
-    "\n",
-    "    # Print job ID\n",
-    "    file_id = upload_response.id\n",
-    "    print(f\"File uploaded successfully. File ID: {file_id}\")"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "6438be35-1e73-4c34-9249-2dd16d102253",
-   "metadata": {
-    "id": "xArKu7-sqSiR"
-   },
-   "source": [
-    "### Start the batch job"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "251a0b89-71a9-40d7-bf14-51be935afe10",
-   "metadata": {},
-   "source": [
-    "Once the file has been successfully uploaded, we're ready to start (create) the batch job by providing the file ID we got in the previous step. To do so, we use the `batches.create` method, for which we need to set the endpoint to `/v1/chat/completions`. This will return the batch job details with the ID."
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 10,
-   "id": "71a24704-7190-4e24-898f-c4eff062439a",
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "\n",
-      "Batch job created:\n",
-      "{\n",
-      "  \"id\": \"67e57f4c18f315f8185a4f44\",\n",
-      "  \"completion_window\": \"24h\",\n",
-      "  \"created_at\": 1743093580,\n",
-      "  \"endpoint\": \"/v1/chat/completions\",\n",
-      "  \"input_file_id\": \"67e57f491e8d51bcc12d02d2\",\n",
-      "  \"object\": \"batch\",\n",
-      "  \"status\": \"pre_schedule\",\n",
-      "  \"cancelled_at\": null,\n",
-      "  \"cancelling_at\": null,\n",
-      "  \"completed_at\": null,\n",
-      "  \"error_file_id\": null,\n",
-      "  \"errors\": [],\n",
-      "  \"expired_at\": null,\n",
-      "  \"expires_at\": 1743179980,\n",
-      "  \"failed_at\": null,\n",
-      "  \"finalizing_at\": null,\n",
-      "  \"in_progress_at\": null,\n",
-      "  \"metadata\": {},\n",
-      "  \"output_file_id\": null,\n",
-      "  \"request_counts\": {\n",
-      "    \"completed\": 0,\n",
-      "    \"failed\": 0,\n",
-      "    \"total\": 0\n",
-      "  }\n",
-      "}\n"
-     ]
-    }
-   ],
-   "source": [
-    "# Create batch job with completions endpoint\n",
-    "batch_job = client.batches.create(\n",
-    "    input_file_id=file_id,\n",
-    "    endpoint=\"/v1/chat/completions\",\n",
-    "    completion_window=\"24h\"\n",
-    ")\n",
-    "\n",
-    "print(\"\\nBatch job created:\")\n",
-    "batch_dict = batch_job.model_dump()\n",
-    "print(json.dumps(batch_dict, indent=2))"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "e-ujphILqepu",
-   "metadata": {
-    "id": "e-ujphILqepu"
-   },
-   "source": [
-    "### Check job progress"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "iFrDrriQqizC",
-   "metadata": {
-    "id": "iFrDrriQqizC"
-   },
-   "source": [
-    "Now that your batch job has been created, you can track its progress.\n",
-    "\n",
-    "To monitor the job's progress, we can use the `batches.retrieve` method and pass the batch job ID. The response contains a `status` field that tells us if it is completed or not and the subsequent status of each job separately.\n",
-    "\n",
-    "The following snippet checks the status every 10 seconds until the entire batch is completed:"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 11,
-   "id": "SuH0CfoqjP3d",
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "'Job completed!'"
+      "cell_type": "markdown",
+      "id": "be189fde-4e5b-4f80-bae1-ded86a5075a7",
+      "metadata": {
+        "id": "be189fde-4e5b-4f80-bae1-ded86a5075a7"
+      },
+      "source": [
+        "# Keyword extraction with kluster.ai API"
       ]
-     },
-     "metadata": {},
-     "output_type": "display_data"
-    }
-   ],
-   "source": [
-    "all_completed = False\n",
-    "\n",
-    "# Loop to check status every 10 seconds\n",
-    "while not all_completed:\n",
-    "    all_completed = True\n",
-    "    output_lines = []\n",
-    "\n",
-    "    updated_job = client.batches.retrieve(batch_job.id)\n",
-    "\n",
-    "    if updated_job.status != \"completed\":\n",
-    "        all_completed = False\n",
-    "        completed = updated_job.request_counts.completed\n",
-    "        total = updated_job.request_counts.total\n",
-    "        output_lines.append(f\"Job status: {updated_job.status} - Progress: {completed}/{total}\")\n",
-    "    else:\n",
-    "        output_lines.append(f\"Job completed!\")\n",
-    "\n",
-    "    # Clear the output and display updated status\n",
-    "    clear_output(wait=True)\n",
-    "    for line in output_lines:\n",
-    "        display(line)\n",
-    "\n",
-    "    if not all_completed:\n",
-    "        time.sleep(10)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "TkkhIG9HU0D9",
-   "metadata": {
-    "id": "TkkhIG9HU0D9"
-   },
-   "source": [
-    "## Get the results"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "12c1f6ac-8d60-4158-9036-de79fa274983",
-   "metadata": {},
-   "source": [
-    "With the job completed, we'll retrieve the results and review the responses generated for each request. The results are parsed. To fetch the results from the platform, you must retrieve the `output_file_id` from the batch job and then use the `files.content` endpoint, providing that specific file ID. Note that the job status must be `completed` to retrieve the results!"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 12,
-   "id": "806a5eb1-f6d3-491d-b051-9d44bf046a7e",
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "\n",
-      "Extracted Responses:\n",
-      "\"Chorus Frog\", \"Virginia\", \"Beaufort County\", \"North Carolina\", \"Southern chorus frog\"\n",
-      "\"Expedition\", \"Gulf of Mexico\", \"Technology\", \"Scientists\", \"Discovery\"\n",
-      "\"Forest Service\", \"wildfires\", \"California spotted owls\", \"logging\", \"Sierra Nevada\"\n",
-      "\"Earthquakes\", \"Metals\", \"Subsoil water\", \"Prediction\", \"Geologists\"\n",
-      "\"Marine Expedition\", \"New Species\", \"Atlantic Ocean\", \"Marine Ecosystems\", \"Norwegian Scientists\"\n"
-     ]
-    }
-   ],
-   "source": [
-    "#Parse results as a JSON object\n",
-    "def parse_json_objects(data_string):\n",
-    "    if isinstance(data_string, bytes):\n",
-    "        data_string = data_string.decode('utf-8')\n",
-    "\n",
-    "    json_strings = data_string.strip().split('\\n')\n",
-    "    json_objects = []\n",
-    "\n",
-    "    for json_str in json_strings:\n",
-    "        try:\n",
-    "            json_obj = json.loads(json_str)\n",
-    "            json_objects.append(json_obj)\n",
-    "        except json.JSONDecodeError as e:\n",
-    "            print(f\"Error parsing JSON: {e}\")\n",
-    "\n",
-    "    return json_objects\n",
-    "\n",
-    "# Retrieve results with job ID\n",
-    "job = client.batches.retrieve(batch_job.id)\n",
-    "result_file_id = job.output_file_id\n",
-    "result = client.files.content(result_file_id).content\n",
-    "\n",
-    "# Parse JSON results\n",
-    "parsed_result = parse_json_objects(result)\n",
-    "\n",
-    "# Extract and print only the content of each response\n",
-    "print(\"\\nExtracted Responses:\")\n",
-    "for item in parsed_result:\n",
-    "    try:\n",
-    "        content = item[\"response\"][\"body\"][\"choices\"][0][\"message\"][\"content\"]\n",
-    "        print(content)\n",
-    "    except KeyError as e:\n",
-    "        print(f\"Missing key in response: {e}\")"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "70e0e816-6558-4ff2-bab2-f85cff00bfc8",
-   "metadata": {
-    "executionInfo": {
-     "elapsed": 5,
-     "status": "ok",
-     "timestamp": 1732042430093,
-     "user": {
-      "displayName": "Joaquin Rodríguez",
-      "userId": "09993043682054067997"
-     },
-     "user_tz": 180
     },
-    "id": "tu2R8dGYimKc"
-   },
-   "source": [
-    "## Summary"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "7d195dd1-1293-4407-b6ad-cab7e77b14c0",
-   "metadata": {},
-   "source": [
-    "This tutorial used the chat completion endpoint to perform a simple keyword extraction task with batch inference. This particular example extracted keywords from an AG News dataset.\n",
-    "\n",
-    "To submit a batch job we've:\n",
-    "\n",
-    "1. Created the JSONL file, where each line of the file represented a separate request\n",
-    "2. Submitted the file to the platform\n",
-    "3. Started the batch job, and monitored its progress\n",
-    "4. Once completed, we fetched the results\n",
-    "\n",
-    "All of this using the OpenAI Python library and API, no changes needed!\n",
-    "\n",
-    "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As the next steps, feel free to create your dataset or expand on this example. Good luck!"
-   ]
+    {
+      "cell_type": "markdown",
+      "id": "b17a77d9",
+      "metadata": {},
+      "source": [
+        "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/examples/keyword-extraction-api.ipynb)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3",
+      "metadata": {
+        "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3"
+      },
+      "source": [
+        "One simple but powerful use case for AI models is keyword extraction, in which you feed the model a large dataset and ask it to provide a given number of keywords.\n",
+        "\n",
+        "This tutorial runs through a notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to obtain keywords from a given dataset.\n",
+        "\n",
+        "The example uses an extract from the AG News dataset. You can adapt this example by using the data and categories relevant to your use case. With this approach, you can effortlessly process datasets of any scale, big or small, to obtain keywords, all powered by a state-of-the-art language model."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "112d41e9",
+      "metadata": {},
+      "source": [
+        "## Prerequisites\n",
+        "\n",
+        "Before getting started, ensure you have the following:\n",
+        "\n",
+        "- **A kluster.ai account** - sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one\n",
+        "- **A kluster.ai API key** - after signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "xU1WBQJ7Uh09",
+      "metadata": {
+        "id": "xU1WBQJ7Uh09"
+      },
+      "source": [
+        "## Setup"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "b8d580f8-67d5-45d6-915f-0f6b60d3b543",
+      "metadata": {},
+      "source": [
+        "In this notebook, we'll use Python's `getpass` module to input the key safely. After execution, please provide your unique kluster.ai API key (ensure no spaces)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "id": "4911e5eb-7463-4a6b-8a99-9313cecd9d4d",
+      "metadata": {},
+      "outputs": [
+        {
+          "name": "stdin",
+          "output_type": "stream",
+          "text": [
+            "Enter your kluster.ai API key:  ········\n"
+          ]
+        }
+      ],
+      "source": [
+        "from getpass import getpass\n",
+        "\n",
+        "api_key = getpass(\"Enter your kluster.ai API key: \")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "99ac2aed-d284-4fe4-9bb1-9995a0867991",
+      "metadata": {},
+      "source": [
+        "Next, ensure you've installed OpenAI Python library:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "id": "bcc3d475-8f49-4fc4-9a5e-c6eb6866d2b5",
+      "metadata": {},
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Note: you may need to restart the kernel to use updated packages.\n"
+          ]
+        }
+      ],
+      "source": [
+        "pip install -q openai"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "a4967896-b375-46b0-8e0f-c1b970e077c8",
+      "metadata": {},
+      "source": [
+        "With the OpenAI Python library installed, we import the necessary dependencies for the tutorial:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "id": "b89a4feb-37a9-430d-a742-cd58495b4eaf",
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "from openai import OpenAI\n",
+        "\n",
+        "import pandas as pd\n",
+        "import time\n",
+        "import json\n",
+        "import os\n",
+        "from IPython.display import clear_output, display"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "5bcc1261-cdfd-41ee-964a-283249410e04",
+      "metadata": {},
+      "source": [
+        "And then, initialize the `client` by pointing it to the kluster.ai endpoint, and passing your API key."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 4,
+      "id": "zG9y_WO5rYaj",
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Set up the client\n",
+        "client = OpenAI(\n",
+        "    base_url=\"https://api.kluster.ai/v1\",\n",
+        "    api_key=api_key,\n",
+        ")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "udPtLfTaisSw",
+      "metadata": {
+        "id": "udPtLfTaisSw"
+      },
+      "source": [
+        "## Get the data"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "QjCVfg65jKz6",
+      "metadata": {
+        "id": "QjCVfg65jKz6"
+      },
+      "source": [
+        "Now that you've initialized an OpenAI-compatible client pointing to kluster.ai, we can discuss the data.\n",
+        "\n",
+        "This notebook comes with a preloaded sample dataset based on the AG News dataset. It includes sections of news headlines and their leads, all set for processing. No additional setup is needed. Proceed to the next steps to begin working with this data."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 6,
+      "id": "07018f92-9a01-47d5-916a-12cd03dfa3a0",
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "df = pd.DataFrame({\n",
+        "    \"text\": [\n",
+        "        \"Chorus Frog Found Croaking in Virginia - The Southern chorus frog has been found in southeastern Virginia, far outside its previously known range. The animal had never before been reported north of Beaufort County, N.C., about 125 miles to the south.\",\n",
+        "        \"Expedition to Probe Gulf of Mexico - Scientists will use advanced technology never before deployed beneath the sea as they try to discover new creatures, behaviors and phenomena in a 10-day expedition to the Gulf of Mexico's deepest reaches.\",\n",
+        "        \"Feds Accused of Exaggerating Fire ImpactP - The Forest Service exaggerated the effect of wildfires on California spotted owls in justifying a planned increase in logging in the Sierra Nevada, according to a longtime agency expert who worked on the plan.\",\n",
+        "        \"New Method May Predict Quakes Weeks Ahead - Swedish geologists may have found a way to predict earthquakes weeks before they happen by monitoring the amount of metals like zinc and copper in subsoil water near earthquake sites, scientists said Wednesday.\",\n",
+        "        \"Marine Expedition Finds New Species - Norwegian scientists who explored the deep waters of the Atlantic Ocean said Thursday their findings #151; including what appear to be new species of fish and squid #151; could be used to protect marine ecosystems worldwide.\"\n",
+        "    ]\n",
+        "})"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "OyGuHllZllct",
+      "metadata": {
+        "id": "OyGuHllZllct"
+      },
+      "source": [
+        "## Perform batch inference"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "64c345aa-b6a7-4770-8368-b290e9e799dc",
+      "metadata": {
+        "id": "6-MZlfXAoiNv"
+      },
+      "source": [
+        "To execute the batch inference job, we'll take the following steps:\n",
+        "\n",
+        "1. **Create the batch job file** - we'll generate a JSON lines file with the desired requests to be processed by the model\n",
+        "2. **Upload the batch job file** - once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file\n",
+        "3. **Start the batch job** - after the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before\n",
+        "4. **Monitor job progress** - (optional) track the status of the batch job to ensure it has been successfully completed\n",
+        "5. **Retrieve results** - once the job has completed execution, we can access and process the resultant data\n",
+        "\n",
+        "This notebook is prepared for you to follow along. Run the cells below to watch it all come together."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "Ew-R24Ltp5EW",
+      "metadata": {
+        "id": "Ew-R24Ltp5EW"
+      },
+      "source": [
+        "### Create the batch file"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "qS4JXT52wGJ-",
+      "metadata": {
+        "id": "qS4JXT52wGJ-"
+      },
+      "source": [
+        "This example selects the `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo` model. If you'd like to use a different model, feel free to change it by modifying the `model` field. In this notebook, you can also comment Llama 3.1 405B, and uncomment whatever model you want to try out.\n",
+        "\n",
+        "Please refer to the <a href=\"/get-started/models/\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
+        "\n",
+        "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its model. Also, we are using a temperature of `0.5`, but feel free to change it and play around with the different outcomes (but we are only asking to respond with a single word, the genre)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 7,
+      "id": "fVtwyqZ_nEq7",
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Prompt\n",
+        "SYSTEM_PROMPT = '''\n",
+        "    Extract up to 5 relevant keywords from the given text. Provide only the keywords between double quotes and separated by commas.\n",
+        "    '''\n",
+        "\n",
+        "# Models\n",
+        "#model=\"deepseek-ai/DeepSeek-R1\"\n",
+        "#model=\"deepseek-ai/DeepSeek-V3\"\n",
+        "#model=\"klusterai/Meta-Llama-3.1-8B-Instruct-Turbo\"\n",
+        "model=\"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\"\n",
+        "#model=\"klusterai/Meta-Llama-3.3-70B-Instruct-Turbo\"\n",
+        "#model=\"Qwen/Qwen2.5-VL-7B-Instruct\"\n",
+        "\n",
+        "# Ensure the directory exists\n",
+        "os.makedirs(\"keyword_extraction/data\", exist_ok=True)\n",
+        "\n",
+        "# Create the batch job file with the prompt and content\n",
+        "def create_batch_file(df):\n",
+        "    batch_list = []\n",
+        "    for index, row in df.iterrows():\n",
+        "        content = row['text']\n",
+        "\n",
+        "        request = {\n",
+        "            \"custom_id\": f\"keyword_extraction-{index}\",\n",
+        "            \"method\": \"POST\",\n",
+        "            \"url\": \"/v1/chat/completions\",\n",
+        "            \"body\": {\n",
+        "                \"model\": model,\n",
+        "                \"temperature\": 0.5,\n",
+        "                \"messages\": [\n",
+        "                    {\"role\": \"system\", \"content\": SYSTEM_PROMPT},\n",
+        "                    {\"role\": \"user\", \"content\": content}\n",
+        "                ],\n",
+        "            }\n",
+        "        }\n",
+        "        batch_list.append(request)\n",
+        "    return batch_list\n",
+        "\n",
+        "# Save file\n",
+        "def save_batch_file(batch_list):\n",
+        "    filename = f\"keyword_extraction/batch_job_request.jsonl\"\n",
+        "    with open(filename, 'w') as file:\n",
+        "        for request in batch_list:\n",
+        "            file.write(json.dumps(request) + '\\n')\n",
+        "    return filename"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "53476435-f5e9-4baa-8cf2-6c1fbd84c492",
+      "metadata": {},
+      "source": [
+        "Let's run the functions we've defined before:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 8,
+      "id": "qNhmrmHdnp7g",
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "batch_list = create_batch_file(df)\n",
+        "filename = save_batch_file(batch_list)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "ada26fe3-acb9-48dc-b368-b57fc380cdb8",
+      "metadata": {},
+      "source": [
+        "Next, we can preview what that batch job file looks like:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 9,
+      "id": "d65f5099-5add-4749-9a85-3c04a9b342bb",
+      "metadata": {},
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "{\"custom_id\": \"keyword_extraction-0\", \"method\": \"POST\", \"url\": \"/v1/chat/completions\", \"body\": {\"model\": \"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\", \"temperature\": 0.5, \"messages\": [{\"role\": \"system\", \"content\": \"\\n    Extract up to 5 relevant keywords from the given text. Provide only the keywords between double quotes and separated by commas.\\n    \"}, {\"role\": \"user\", \"content\": \"Chorus Frog Found Croaking in Virginia - The Southern chorus frog has been found in southeastern Virginia, far outside its previously known range. The animal had never before been reported north of Beaufort County, N.C., about 125 miles to the south.\"}]}}\n"
+          ]
+        }
+      ],
+      "source": [
+        "!head -n 1 keyword_extraction/batch_job_request.jsonl"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "xArKu7-sqSiR",
+      "metadata": {
+        "id": "xArKu7-sqSiR"
+      },
+      "source": [
+        "### Upload inference file to kluster.ai"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "e48b2489-99bc-431b-8cb3-de816550d524",
+      "metadata": {},
+      "source": [
+        "Now that we’ve prepared our input file, it’s time to upload it to the kluster.ai platform. To do so, you can use the `files.create` endpoint of the client, where the purpose is set to `batch`. This will return the file ID, which we need to log for the next steps."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 10,
+      "id": "l5eu5UyAnEtk",
+      "metadata": {},
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "File uploaded successfully. File ID: 67e40f05331c771bde3bca69\n"
+          ]
+        }
+      ],
+      "source": [
+        "data_dir = 'keyword_extraction/batch_job_request.jsonl'\n",
+        "\n",
+        "# Upload batch job request file\n",
+        "with open(data_dir, 'rb') as file:\n",
+        "    upload_response = client.files.create(\n",
+        "        file=file,\n",
+        "        purpose=\"batch\"\n",
+        "    )\n",
+        "\n",
+        "    # Print job ID\n",
+        "    file_id = upload_response.id\n",
+        "    print(f\"File uploaded successfully. File ID: {file_id}\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "6438be35-1e73-4c34-9249-2dd16d102253",
+      "metadata": {
+        "id": "xArKu7-sqSiR"
+      },
+      "source": [
+        "### Start the batch job"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "251a0b89-71a9-40d7-bf14-51be935afe10",
+      "metadata": {},
+      "source": [
+        "Once the file has been successfully uploaded, we're ready to start (create) the batch job by providing the file ID we got in the previous step. To do so, we use the `batches.create` method, for which we need to set the endpoint to `/v1/chat/completions`. This will return the batch job details with the ID."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 11,
+      "id": "71a24704-7190-4e24-898f-c4eff062439a",
+      "metadata": {},
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "\n",
+            "Batch job created:\n",
+            "{\n",
+            "  \"id\": \"67e40f070997f511a77bf70b\",\n",
+            "  \"completion_window\": \"24h\",\n",
+            "  \"created_at\": 1742999303,\n",
+            "  \"endpoint\": \"/v1/chat/completions\",\n",
+            "  \"input_file_id\": \"67e40f05331c771bde3bca69\",\n",
+            "  \"object\": \"batch\",\n",
+            "  \"status\": \"pre_schedule\",\n",
+            "  \"cancelled_at\": null,\n",
+            "  \"cancelling_at\": null,\n",
+            "  \"completed_at\": null,\n",
+            "  \"error_file_id\": null,\n",
+            "  \"errors\": [],\n",
+            "  \"expired_at\": null,\n",
+            "  \"expires_at\": 1743085703,\n",
+            "  \"failed_at\": null,\n",
+            "  \"finalizing_at\": null,\n",
+            "  \"in_progress_at\": null,\n",
+            "  \"metadata\": {},\n",
+            "  \"output_file_id\": null,\n",
+            "  \"request_counts\": {\n",
+            "    \"completed\": 0,\n",
+            "    \"failed\": 0,\n",
+            "    \"total\": 0\n",
+            "  }\n",
+            "}\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Create batch job with completions endpoint\n",
+        "batch_job = client.batches.create(\n",
+        "    input_file_id=file_id,\n",
+        "    endpoint=\"/v1/chat/completions\",\n",
+        "    completion_window=\"24h\"\n",
+        ")\n",
+        "\n",
+        "print(\"\\nBatch job created:\")\n",
+        "batch_dict = batch_job.model_dump()\n",
+        "print(json.dumps(batch_dict, indent=2))"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "e-ujphILqepu",
+      "metadata": {
+        "id": "e-ujphILqepu"
+      },
+      "source": [
+        "### Check job progress"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "iFrDrriQqizC",
+      "metadata": {
+        "id": "iFrDrriQqizC"
+      },
+      "source": [
+        "Now that your batch job has been created, you can track its progress.\n",
+        "\n",
+        "To monitor the job's progress, we can use the `batches.retrieve` method and pass the batch job ID. The response contains a `status` field that tells us if it is completed or not and the subsequent status of each job separately.\n",
+        "\n",
+        "The following snippet checks the status every 10 seconds until the entire batch is completed:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "SuH0CfoqjP3d",
+      "metadata": {},
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "'Job status: in_progress - Progress: 1/5'"
+            ]
+          },
+          "metadata": {},
+          "output_type": "display_data"
+        }
+      ],
+      "source": [
+        "all_completed = False\n",
+        "\n",
+        "# Loop to check status every 10 seconds\n",
+        "while not all_completed:\n",
+        "    all_completed = True\n",
+        "    output_lines = []\n",
+        "\n",
+        "    updated_job = client.batches.retrieve(batch_job.id)\n",
+        "\n",
+        "    if updated_job.status != \"completed\":\n",
+        "        all_completed = False\n",
+        "        completed = updated_job.request_counts.completed\n",
+        "        total = updated_job.request_counts.total\n",
+        "        output_lines.append(f\"Job status: {updated_job.status} - Progress: {completed}/{total}\")\n",
+        "    else:\n",
+        "        output_lines.append(f\"Job completed!\")\n",
+        "\n",
+        "    # Clear the output and display updated status\n",
+        "    clear_output(wait=True)\n",
+        "    for line in output_lines:\n",
+        "        display(line)\n",
+        "\n",
+        "    if not all_completed:\n",
+        "        time.sleep(10)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "TkkhIG9HU0D9",
+      "metadata": {
+        "id": "TkkhIG9HU0D9"
+      },
+      "source": [
+        "## Get the results"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "12c1f6ac-8d60-4158-9036-de79fa274983",
+      "metadata": {},
+      "source": [
+        "With the job completed, we'll retrieve the results and review the responses generated for each request. The results are parsed. To fetch the results from the platform, you must retrieve the `output_file_id` from the batch job and then use the `files.content` endpoint, providing that specific file ID. Note that the job status must be `completed` to retrieve the results!"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "806a5eb1-f6d3-491d-b051-9d44bf046a7e",
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "#Parse results as a JSON object\n",
+        "def parse_json_objects(data_string):\n",
+        "    if isinstance(data_string, bytes):\n",
+        "        data_string = data_string.decode('utf-8')\n",
+        "\n",
+        "    json_strings = data_string.strip().split('\\n')\n",
+        "    json_objects = []\n",
+        "\n",
+        "    for json_str in json_strings:\n",
+        "        try:\n",
+        "            json_obj = json.loads(json_str)\n",
+        "            json_objects.append(json_obj)\n",
+        "        except json.JSONDecodeError as e:\n",
+        "            print(f\"Error parsing JSON: {e}\")\n",
+        "\n",
+        "    return json_objects\n",
+        "\n",
+        "# Retrieve results with job ID\n",
+        "job = client.batches.retrieve(batch_job.id)\n",
+        "result_file_id = job.output_file_id\n",
+        "result = client.files.content(result_file_id).content\n",
+        "\n",
+        "# Parse JSON results\n",
+        "parsed_result = parse_json_objects(result)\n",
+        "\n",
+        "# Extract and print only the content of each response\n",
+        "print(\"\\nExtracted Responses:\")\n",
+        "for item in parsed_result:\n",
+        "    try:\n",
+        "        content = item[\"response\"][\"body\"][\"choices\"][0][\"message\"][\"content\"]\n",
+        "        print(content)\n",
+        "    except KeyError as e:\n",
+        "        print(f\"Missing key in response: {e}\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "70e0e816-6558-4ff2-bab2-f85cff00bfc8",
+      "metadata": {
+        "executionInfo": {
+          "elapsed": 5,
+          "status": "ok",
+          "timestamp": 1732042430093,
+          "user": {
+            "displayName": "Joaquin Rodríguez",
+            "userId": "09993043682054067997"
+          },
+          "user_tz": 180
+        },
+        "id": "tu2R8dGYimKc"
+      },
+      "source": [
+        "## Summary"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "7d195dd1-1293-4407-b6ad-cab7e77b14c0",
+      "metadata": {},
+      "source": [
+        "This tutorial used the chat completion endpoint to perform a simple keyword extraction task with batch inference. This particular example extracted keywords from an AG News dataset.\n",
+        "\n",
+        "To submit a batch job we've:\n",
+        "\n",
+        "1. Created the JSONL file, where each line of the file represented a separate request\n",
+        "2. Submitted the file to the platform\n",
+        "3. Started the batch job, and monitored its progress\n",
+        "4. Once completed, we fetched the results\n",
+        "\n",
+        "All of this using the OpenAI Python library and API, no changes needed!\n",
+        "\n",
+        "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As the next steps, feel free to create your dataset or expand on this example. Good luck!"
+      ]
   }
  ],
  "metadata": {
@@ -12185,7 +12447,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
       "source": [
         "This example selects the `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo` model. If you'd like to use a different model, feel free to change it by modifying the `model` field. In this notebook, you can also comment Llama 3.3 70B, and uncomment whatever model you want to try out.\n",
         "\n",
-        "Please refer to the <a href=\"/get-started/start-building/batch/#supported-models\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
+        "Please refer to the <a href=\"/get-started/models/\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
         "\n",
         "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes (but we are only asking to respond with a single word, the genre)."
       ]
@@ -12772,7 +13034,9 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
       "source": [
         "Now that we've the library, we can initialize the LLM object for batch. Note that Curator supports kluster.ai natively, so you just need to provide the model to use, API key, and completion window.\n",
         "\n",
-        "This example uses `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`, but feel free to comment it and uncomment any other model you want to try out."
+        "This example uses `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`, but feel free to comment it and uncomment any other model you want to try out.",
+        "\n",
+        "Please refer to the <a href=\"/get-started/models/\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n"
       ]
     },
     {
