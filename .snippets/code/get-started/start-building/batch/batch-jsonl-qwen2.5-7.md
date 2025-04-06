@@ -6,7 +6,7 @@ if [[ -z "$API_KEY" ]]; then
 fi
 
 # Define image URLs
-# Newtown's cradle
+# Newton's cradle
 image1_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true"
 # Text with typos
 image2_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true"

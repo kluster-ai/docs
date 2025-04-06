@@ -4,7 +4,7 @@ from getpass import getpass
 
 from openai import OpenAI
 
-# Newtown's cradle
+# Newton's cradle
 image1_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true"
 # Text with typos
 image2_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true"
