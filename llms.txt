@@ -8093,9 +8093,9 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipyn
         "\n",
         "This tutorial runs through a notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to run image analysis on different images using both Gemma 3 27B and Qwen 2.5 7B.\n",
         "\n",
-        "The example uses three separate images. For each image, we will ask the models to fetch a specific feature and compare how they respond:\n",
+        "The example uses four separate images. For each image, we will ask the models to fetch a specific feature and compare how they respond:\n",
         "\n",
-        "1. A <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\" target=\"_blank\">Newtown's cradle</a>, we will ask what is the device's name and how many balls are in the image (5)\n",
+        "1. A <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\" target=\"_blank\">Newton's cradle</a>, we will ask what is the device's name and how many balls are in the image (5)\n",
         "2. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/eggs-image.jpeg?raw=true\" target=\"_blank\">Eggs</a> of different colors, we will ask how many total eggs and per color (10 total, 8 brown and 2 white)\n",
         "3. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true\" target=\"_blank\">Aliens only parking sign</a>, we will ask to interpret the sign (only aliens can park, funny reference)\n",
         "4. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true\" target=\"_blank\">Hand written note with a typo</a>, we will ask what the text in the image is and to find a typo (\"I LOVE PROGRAMING\", \"I love programing\" missing an \"m\" in both instances)\n",
@@ -8926,7 +8926,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipyn
       "id": "7d195dd1-1293-4407-b6ad-cab7e77b14c0",
       "metadata": {},
       "source": [
-        "This tutorial used the chat completion endpoint to image analysis on multiple images using kluster.ai batch API. This particular example uploaded three specific images:\n",
+        "This tutorial used the chat completion endpoint to image analysis on multiple images using kluster.ai batch API. This particular example uploaded four specific images:\n",
         "\n",
         "1. A <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\" target=\"_blank\">Newtown's cradle</a>, we asked what is the device's name and how many balls were in the image (5):\n",
         "   - Both models responded correctly ✅\n",
@@ -8947,7 +8947,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipyn
         "\n",
         "All of this using the OpenAI Python library and API, no changes needed!\n",
         "\n",
-        "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As the next steps, feel free to create your own dataset or expand on top of this existing example. Good luck!"
+        "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As the next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
       ]
     }
   ],
