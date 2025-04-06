@@ -4,9 +4,12 @@ from getpass import getpass
 
 from openai import OpenAI
 
-image1_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/cat-image.jpg?raw=true"
-image2_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/emoji-image.jpg?raw=true"
-image3_url="https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+# Newton's cradle
+image1_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true"
+# Text with typos
+image2_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true"
+# Parking sign
+image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 
 # Get API key from user input
@@ -53,7 +56,7 @@ requests = [
                 {
                     "role": "user",
                     "content": [
-                        {"type": "text", "text": "What is this?"},
+                        {"type": "text", "text": "Extract the text, find typos if any."},
                         {
                             "type": "image_url",
                             "image_url": {
