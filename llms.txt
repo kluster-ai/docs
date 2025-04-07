@@ -1724,6 +1724,18 @@ The organization that owns the model.
       "object": "model",
       "created": 1742913870,
       "owned_by": "google"
+    },
+    {
+      "id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "object": "model",
+      "created": 1743944115,
+      "owned_by": "meta"
+    },
+    {
+      "id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "object": "model",
+      "created": 1743944115,
+      "owned_by": "meta"
     }
   ]
 }
