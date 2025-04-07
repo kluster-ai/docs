@@ -8609,7 +8609,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipyn
     "3. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true\" target=\"_blank\">Aliens only parking sign</a>, we will ask to interpret the sign (only aliens can park, funny reference)\n",
     "4. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true\" target=\"_blank\">Hand written note with a typo</a>, we will ask what the text in the image is and to find a typo (\"I LOVE PROGRAMING\", \"I love programing\" missing an \"m\" in both instances)\n",
     "\n",
-    "You can adapt this example by using your own images or request. With this approach, you can effortlessly process images of any scale, big or small, and obtain image analysis powered by a state-of-the-art language model."
+    "You can adapt this example by using your own images or requests. With this approach, you can effortlessly process images of any scale, big or small, and obtain image analysis powered by a state-of-the-art language model."
    ]
   },
   {
@@ -9593,14 +9593,14 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipyn
    "source": [
     "This tutorial used the chat completion endpoint to image analysis on multiple images using kluster.ai batch API. This particular example uploaded four specific images:\n",
     "\n",
-    "1. A <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\" target=\"_blank\">Newtown's cradle</a>, we asked what is the device's name and how many balls were in the image (5):\n",
+    "1. A <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\" target=\"_blank\">Newton's cradle</a>, we asked what is the device's name and how many balls were in the image (5):\n",
     "   - All models responded correctly ✅\n",
     "2. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/eggs-image.jpeg?raw=true\" target=\"_blank\">Eggs</a> of different colors, we asked how many total eggs and per color (10 total, 8 brown and 2 white):\n",
     "   - Gemma 3 27B was able to identify all 10 eggs properly, counting 8 brown and 2 white ✅ (although sometimes it provided a 7/3 split between white and brown eggs))\n",
     "   - Qwen 2.5 7B counted 12 eggs, identifying 10 white and 2 brown ❌\n",
     "   - Both Llama 4 models were able to identify all 10 eggs properly, counting 8 brown and 2 white ✅\n",
     "3. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true\" target=\"_blank\">Aliens only parking sign</a>, we asked to interpret the sign (only aliens can park, funny reference):\n",
-    "   - All models identified the sign appropriately. Qwen 2.5 7B was the only model that did not a reference of the sign being humurous ✅\n",
+    "   - All models identified the sign appropriately. Qwen 2.5 7B was the only model that did not make a reference of the sign being humorous ✅\n",
     "4. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true\" target=\"_blank\">Hand written note with a typo</a>, we asked what the text in the image is and to find a typo if any (\"I LOVE PROGRAMING\", \"I love programing\" missing an \"m\" in both instances):\n",
     "   - All models responded correctly ✅\n",
     "  \n",
