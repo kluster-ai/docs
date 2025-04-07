@@ -48,16 +48,18 @@ template: api.html
 
 The following limits apply to API requests based on your plan tier (notation is `free tier | standard tier`):
 
-|        Model         | Context<br>size | Max<br>output | Max batch<br>requests | Concurrent<br>requests | Requests<br>per minute |
-|:--------------------:|:---------------:|:-------------:|:---------------------:|:----------------------:|:----------------------:|
-|   **DeepSeek R1**    | 32k &#124 162k  | 4k &#124 162k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-|   **DeepSeek V3**    | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-| **DeepSeek V3 0324** | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-|   **Gemma 3 27B**    |  32k &#124 32k  |  4k &#124 8k  | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-|   **Llama 3.1 8B**   | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-|  **Llama 3.1 405B**  | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-|  **Llama 3.3 70B**   | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-|   **Qwen 2.5 7B**    |  32k &#124 32k  |  4k &#124 8k  | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|             Model             | Context<br>size | Max<br>output | Max batch<br>requests | Concurrent<br>requests | Requests<br>per minute |
+|:-----------------------------:|:---------------:|:-------------:|:---------------------:|:----------------------:|:----------------------:|
+|        **DeepSeek R1**        | 32k &#124 162k  | 4k &#124 162k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|        **DeepSeek V3**        | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|     **DeepSeek V3 0324**      | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|        **Gemma 3 27B**        |  32k &#124 32k  |  4k &#124 8k  | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|       **Llama 3.1 8B**        | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|      **Llama 3.1 405B**       | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|       **Llama 3.3 70B**       | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+| **Llama 4 Maverick 17B 128E** | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|   **Llama 4 Scout 17B 16E**   | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|        **Qwen 2.5 7B**        |  32k &#124 32k  |  4k &#124 8k  | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
 
 --- 
 
@@ -4215,44 +4217,51 @@ This page covers all the models the API supports, with the API request limits fo
 
 Each model supported by kluster.ai has a unique name that must be used when defining the `model` in the request.
 
-|        Model         |                 Model API name                 |
-|:--------------------:|:----------------------------------------------:|
-|   **DeepSeek R1**    |           `deepseek-ai/DeepSeek-R1`            |
-|   **DeepSeek V3**    |           `deepseek-ai/DeepSeek-V3`            |
-| **DeepSeek V3 0324** |         `deepseek-ai/DeepSeek-V3-0324`         |
-|   **Gemma 3 27B**    |            `google/gemma-3-27b-it`             |
-|   **Llama 3.1 8B**   |  `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`  |
-|  **Llama 3.1 405B**  | `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo` |
-|  **Llama 3.3 70B**   | `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`  |
-|   **Qwen 2.5 7B**    |         `Qwen/Qwen2.5-VL-7B-Instruct`          |
+|             Model             |                   Model API name                    |
+|:-----------------------------:|:---------------------------------------------------:|
+|        **DeepSeek R1**        |              `deepseek-ai/DeepSeek-R1`              |
+|        **DeepSeek V3**        |              `deepseek-ai/DeepSeek-V3`              |
+|     **DeepSeek V3 0324**      |           `deepseek-ai/DeepSeek-V3-0324`            |
+|        **Gemma 3 27B**        |               `google/gemma-3-27b-it`               |
+|       **Llama 3.1 8B**        |    `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`     |
+|      **Llama 3.1 405B**       |   `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`    |
+|       **Llama 3.3 70B**       |    `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`    |
+| **Llama 4 Maverick 17B 128E** | `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8` |
+|   **Llama 4 Scout 17B 16E**   |     `meta-llama/Llama-4-Scout-17B-16E-Instruct`     |
+|       **Llama 3.3 70B**       |    `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`    |
+|        **Qwen 2.5 7B**        |            `Qwen/Qwen2.5-VL-7B-Instruct`            |
 
 ## Model comparison table
 
-|        Model         |                         Main<br>use case                         | Real-time<br>inference support | Batch<br>inference support | Fine-tuning<br>support | Image<br>analysis  | Function<br>calling |
-|:--------------------:|:----------------------------------------------------------------:|:------------------------------:|:--------------------------:|:----------------------:|:------------------:|:-------------------:|
-|   **DeepSeek R1**    |             Code generation<br>Complex data analysis             |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
-|   **DeepSeek V3**    |     Natural language generation<br>Contextually rich writing     |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
-| **DeepSeek V3 0324** |     Natural language generation<br>Contextually rich writing     |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
-|   **Gemma 3 27B**    | Multilingual applications<br>Image analysis<br>Complex reasoning |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
-|   **Llama 3.1 8B**   |     Low-latency or simple tasks<br>Cost-efficient inference      |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
-|  **Llama 3.1 405B**  |              Detailed analysis<br>Maximum accuracy               |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         | :white_check_mark:  |
-|  **Llama 3.3 70B**   |         General-purpose AI<br>Balanced cost-performance          |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
-|   **Qwen 2.5 7B**    |  Document analysis<br>Image-based reasoning<br>Multimodal chat   |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
+|             Model             |                          Main<br>use case                           | Real-time<br>inference support | Batch<br>inference support | Fine-tuning<br>support | Image<br>analysis  | Function<br>calling |
+|:-----------------------------:|:-------------------------------------------------------------------:|:------------------------------:|:--------------------------:|:----------------------:|:------------------:|:-------------------:|
+|        **DeepSeek R1**        |              Code generation<br>Complex data analysis               |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
+|        **DeepSeek V3**        |      Natural language generation<br>Contextually rich writing       |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
+|     **DeepSeek V3 0324**      |      Natural language generation<br>Contextually rich writing       |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
+|        **Gemma 3 27B**        |  Multilingual applications<br>Image analysis<br>Complex reasoning   |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
+|       **Llama 3.1 8B**        |       Low-latency or simple tasks<br>Cost-efficient inference       |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
+|      **Llama 3.1 405B**       |                Detailed analysis<br>Maximum accuracy                |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         | :white_check_mark:  |
+|       **Llama 3.3 70B**       |           General-purpose AI<br>Balanced cost-performance           |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
+| **Llama 4 Maverick 17B 128E** | Advanced multimodal reasoning<br>Long-context, high-accuracy tasks  |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
+|   **Llama 4 Scout 17B 16E**   | Efficient multimodal performance<br>Extended context, general tasks |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
+|        **Qwen 2.5 7B**        |    Document analysis<br>Image-based reasoning<br>Multimodal chat    |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
 
 ## API request limits
 
 The following limits apply to API requests based on your plan tier (notation is `free tier | standard tier`):
 
-|        Model         | Context<br>size | Max<br>output | Max batch<br>requests | Concurrent<br>requests | Requests<br>per minute |
-|:--------------------:|:---------------:|:-------------:|:---------------------:|:----------------------:|:----------------------:|
-|   **DeepSeek R1**    | 32k &#124 162k  | 4k &#124 162k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-|   **DeepSeek V3**    | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-| **DeepSeek V3 0324** | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-|   **Gemma 3 27B**    |  32k &#124 32k  |  4k &#124 8k  | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-|   **Llama 3.1 8B**   | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-|  **Llama 3.1 405B**  | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-|  **Llama 3.3 70B**   | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-|   **Qwen 2.5 7B**    |  32k &#124 32k  |  4k &#124 8k  | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|             Model             | Context<br>size | Max<br>output | Max batch<br>requests | Concurrent<br>requests | Requests<br>per minute |
+|:-----------------------------:|:---------------:|:-------------:|:---------------------:|:----------------------:|:----------------------:|
+|        **DeepSeek R1**        | 32k &#124 162k  | 4k &#124 162k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|        **DeepSeek V3**        | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|     **DeepSeek V3 0324**      | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|        **Gemma 3 27B**        |  32k &#124 32k  |  4k &#124 8k  | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|       **Llama 3.1 8B**        | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|      **Llama 3.1 405B**       | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|       **Llama 3.3 70B**       | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+| **Llama 4 Maverick 17B 128E** | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|   **Llama 4 Scout 17B 16E**   | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|        **Qwen 2.5 7B**        |  32k &#124 32k  |  4k &#124 8k  | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/get-started/openai-compatibility/
@@ -5213,6 +5222,244 @@ else:
     print(f"Batch failed with status: {batch_status.status}")
     ```
 
+??? example "Llama 4 Maverick 17B 128E"
+
+    ```bash
+    from openai import OpenAI
+from getpass import getpass
+import json
+import time
+
+# Parking sign
+image_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
+
+# Get API key from user input
+api_key = getpass("Enter your kluster.ai API key: ")
+
+# Initialize OpenAI client pointing to kluster.ai API
+client = OpenAI(
+    base_url="https://api.kluster.ai/v1",
+    api_key=api_key,
+)
+
+# Create request with specified structure
+requests = [
+    {
+        "custom_id": "request-1",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+            "messages": [
+                {"role": "system", "content": "You are an experienced cook."},
+                {"role": "user", "content": "What is the ultimate breakfast sandwich?"},
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    {
+        "custom_id": "request-2",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+            "messages": [
+                {"role": "system", "content": "You are a maths tutor."},
+                {"role": "user", "content": "Explain the Pythagorean theorem."},
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    {
+        "custom_id": "request-3",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+            "messages": [
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": "Who can park in the area?"},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": image_url
+                            },
+                        },
+                    ],
+                }
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    # Additional tasks can be added here
+]
+
+# Save tasks to a JSONL file (newline-delimited JSON)
+file_name = "my_batch_request.jsonl"
+with open(file_name, "w") as file:
+    for request in requests:
+        file.write(json.dumps(request) + "\n")
+
+# Upload batch job file
+batch_input_file = client.files.create(
+        file=open(file_name, "rb"),
+        purpose="batch"
+)
+
+# Submit batch job
+batch_request = client.batches.create(
+    input_file_id=batch_input_file.id,
+    endpoint="/v1/chat/completions",
+    completion_window="24h",
+)
+
+# Poll the batch status until it's complete
+while True:
+    batch_status = client.batches.retrieve(batch_request.id)
+    print("Batch status: {}".format(batch_status.status))
+    print(
+        f"Completed tasks: {batch_status.request_counts.completed} / {batch_status.request_counts.total}"
+    )
+
+    if batch_status.status.lower() in ["completed", "failed", "cancelled"]:
+        break
+
+    time.sleep(10)  # Wait for 10 seconds before checking again
+
+# Check if the Batch completed successfully
+if batch_status.status.lower() == "completed":
+    # Retrieve the results and log
+    result_file_id = batch_status.output_file_id
+    results = client.files.content(result_file_id).content
+
+    # Print response to console
+    print(f"\n🔍 AI batch response:")
+    print(results)
+else:
+    print(f"Batch failed with status: {batch_status.status}")
+    ```
+
+??? example "Llama 4 Scout 17B 16E"
+
+    ```bash
+    from openai import OpenAI
+from getpass import getpass
+import json
+import time
+
+# Parking sign
+image_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
+
+# Get API key from user input
+api_key = getpass("Enter your kluster.ai API key: ")
+
+# Initialize OpenAI client pointing to kluster.ai API
+client = OpenAI(
+    base_url="https://api.kluster.ai/v1",
+    api_key=api_key,
+)
+
+# Create request with specified structure
+requests = [
+    {
+        "custom_id": "request-1",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+            "messages": [
+                {"role": "system", "content": "You are an experienced cook."},
+                {"role": "user", "content": "What is the ultimate breakfast sandwich?"},
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    {
+        "custom_id": "request-2",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+            "messages": [
+                {"role": "system", "content": "You are a maths tutor."},
+                {"role": "user", "content": "Explain the Pythagorean theorem."},
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    {
+        "custom_id": "request-3",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+            "messages": [
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": "Who can park in the area?"},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": image_url
+                            },
+                        },
+                    ],
+                }
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    # Additional tasks can be added here
+]
+
+# Save tasks to a JSONL file (newline-delimited JSON)
+file_name = "my_batch_request.jsonl"
+with open(file_name, "w") as file:
+    for request in requests:
+        file.write(json.dumps(request) + "\n")
+
+# Upload batch job file
+batch_input_file = client.files.create(
+        file=open(file_name, "rb"),
+        purpose="batch"
+)
+
+# Submit batch job
+batch_request = client.batches.create(
+    input_file_id=batch_input_file.id,
+    endpoint="/v1/chat/completions",
+    completion_window="24h",
+)
+
+# Poll the batch status until it's complete
+while True:
+    batch_status = client.batches.retrieve(batch_request.id)
+    print("Batch status: {}".format(batch_status.status))
+    print(
+        f"Completed tasks: {batch_status.request_counts.completed} / {batch_status.request_counts.total}"
+    )
+
+    if batch_status.status.lower() in ["completed", "failed", "cancelled"]:
+        break
+
+    time.sleep(10)  # Wait for 10 seconds before checking again
+
+# Check if the Batch completed successfully
+if batch_status.status.lower() == "completed":
+    # Retrieve the results and log
+    result_file_id = batch_status.output_file_id
+    results = client.files.content(result_file_id).content
+
+    # Print response to console
+    print(f"\n🔍 AI batch response:")
+    print(results)
+else:
+    print(f"Batch failed with status: {batch_status.status}")
+    ```
+
 ??? example "Qwen 2.5 7B"
 
     ```python
@@ -5760,6 +6007,136 @@ cat << EOF > my_batch_request.jsonl
 {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
 {"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
 {"custom_id": "request-4", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo", "messages":[{"role": "system", "content": "You are a multilingual, experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"}],"max_completion_tokens":1000}}
+EOF
+
+# Upload batch job file
+FILE_ID=$(curl -s https://api.kluster.ai/v1/files \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: multipart/form-data" \
+    -F "file=@my_batch_request.jsonl" \
+    -F "purpose=batch" | jq -r '.id')
+echo "File uploaded, file ID: $FILE_ID"
+
+# Submit batch job
+BATCH_ID=$(curl -s https://api.kluster.ai/v1/batches \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" \
+    -d '{
+        "input_file_id": "'"$FILE_ID"'",
+        "endpoint": "/v1/chat/completions",
+        "completion_window": "24h"
+    }' | jq -r '.id')
+echo "Batch job submitted, job ID: $BATCH_ID"
+
+
+# Poll the batch status until it's completed
+STATUS="in_progress"
+while [[ "$STATUS" != "completed" ]]; do
+    echo "Waiting for batch job to complete... Status: $STATUS"
+    sleep 10 # Wait for 10 seconds before checking again
+
+    STATUS=$(curl -s https://api.kluster.ai/v1/batches/$BATCH_ID \
+        -H "Authorization: Bearer $API_KEY" \
+        -H "Content-Type: application/json" | jq -r '.status')
+done
+
+# Retrieve the batch output file
+KLUSTER_OUTPUT_FILE=$(curl -s https://api.kluster.ai/v1/batches/$BATCH_ID \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" | jq -r '.output_file_id')
+
+# Retrieve the results
+OUTPUT_CONTENT=$(curl -s https://api.kluster.ai/v1/files/$KLUSTER_OUTPUT_FILE/content \
+    -H "Authorization: Bearer $API_KEY")
+
+# Log results
+echo -e "\n🔍 AI batch response:"
+echo "$OUTPUT_CONTENT"
+    ```
+
+??? example "Llama 4 Maverick 17B 128E"
+
+    ```bash
+    #!/bin/bash
+
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo "Error: API_KEY environment variable is not set." >&2
+fi
+
+# Parking sign
+image_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
+
+# Create request with specified structure
+cat << EOF > my_batch_request.jsonl
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
+{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "$image_url"}}]}],"max_completion_tokens": 1000}}
+EOF
+
+# Upload batch job file
+FILE_ID=$(curl -s https://api.kluster.ai/v1/files \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: multipart/form-data" \
+    -F "file=@my_batch_request.jsonl" \
+    -F "purpose=batch" | jq -r '.id')
+echo "File uploaded, file ID: $FILE_ID"
+
+# Submit batch job
+BATCH_ID=$(curl -s https://api.kluster.ai/v1/batches \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" \
+    -d '{
+        "input_file_id": "'"$FILE_ID"'",
+        "endpoint": "/v1/chat/completions",
+        "completion_window": "24h"
+    }' | jq -r '.id')
+echo "Batch job submitted, job ID: $BATCH_ID"
+
+
+# Poll the batch status until it's completed
+STATUS="in_progress"
+while [[ "$STATUS" != "completed" ]]; do
+    echo "Waiting for batch job to complete... Status: $STATUS"
+    sleep 10 # Wait for 10 seconds before checking again
+
+    STATUS=$(curl -s https://api.kluster.ai/v1/batches/$BATCH_ID \
+        -H "Authorization: Bearer $API_KEY" \
+        -H "Content-Type: application/json" | jq -r '.status')
+done
+
+# Retrieve the batch output file
+KLUSTER_OUTPUT_FILE=$(curl -s https://api.kluster.ai/v1/batches/$BATCH_ID \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" | jq -r '.output_file_id')
+
+# Retrieve the results
+OUTPUT_CONTENT=$(curl -s https://api.kluster.ai/v1/files/$KLUSTER_OUTPUT_FILE/content \
+    -H "Authorization: Bearer $API_KEY")
+
+# Log results
+echo -e "\n🔍 AI batch response:"
+echo "$OUTPUT_CONTENT"
+    ```
+
+??? example "Llama 4 Scout 17B 16E"
+
+    ```bash
+    #!/bin/bash
+
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo "Error: API_KEY environment variable is not set." >&2
+fi
+
+# Parking sign
+image_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
+
+# Create request with specified structure
+cat << EOF > my_batch_request.jsonl
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Scout-17B-16E-Instruct", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Scout-17B-16E-Instruct", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
+{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Scout-17B-16E-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "$image_url"}}]}],"max_completion_tokens": 1000}}
 EOF
 
 # Upload batch job file
@@ -6748,6 +7125,74 @@ print(f"\n🔍 AI response (model: {model_name}):")
 print(text_response)
     ```
 
+??? example "Llama 4 Maverick 17B 128E"
+
+    ```python
+    from openai import OpenAI
+from getpass import getpass
+
+# Get API key from user input
+api_key = getpass("Enter your kluster.ai API key: ")
+
+# Initialize OpenAI client pointing to kluster.ai API
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
+
+# Create chat completion request
+completion = client.chat.completions.create(
+    model="meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+    messages=[
+        {"role": "user", "content": "What is the ultimate breakfast sandwich?"}
+    ]
+)
+
+"""Logs the full AI response to terminal."""
+
+# Extract model name and AI-generated text
+model_name = completion.model  
+text_response = completion.choices[0].message.content  
+
+# Print response to console
+print(f"\n🔍 AI response (model: {model_name}):")
+print(text_response)
+    ```
+
+??? example "Llama 4 Scout 17B 16E"
+
+    ```python
+    from openai import OpenAI
+from getpass import getpass
+
+# Get API key from user input
+api_key = getpass("Enter your kluster.ai API key: ")
+
+# Initialize OpenAI client pointing to kluster.ai API
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
+
+# Create chat completion request
+completion = client.chat.completions.create(
+    model="meta-llama/Llama-4-Scout-17B-16E-Instruct",
+    messages=[
+        {"role": "user", "content": "What is the ultimate breakfast sandwich?"}
+    ]
+)
+
+"""Logs the full AI response to terminal."""
+
+# Extract model name and AI-generated text
+model_name = completion.model  
+text_response = completion.choices[0].message.content  
+
+# Print response to console
+print(f"\n🔍 AI response (model: {model_name}):")
+print(text_response)
+    ```
+
 ??? example "Qwen 2.5 7B"
 
     ```python
@@ -6965,6 +7410,56 @@ curl https://api.kluster.ai/v1/chat/completions \
     -H "Content-Type: application/json" \
     -d "{
             \"model\": \"klusterai/Meta-Llama-3.3-70B-Instruct-Turbo\", 
+            \"messages\": [
+                { 
+                    \"role\": \"user\", 
+                    \"content\": \"What is the ultimate breakfast sandwich?\"
+                }
+            ]
+    }"
+    ```
+
+??? example "Llama 4 Maverick 17B 128E"
+
+    ```bash
+    #!/bin/bash
+
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo -e "\nError: API_KEY environment variable is not set.\n" >&2
+fi
+
+# Submit real-time request
+curl https://api.kluster.ai/v1/chat/completions \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" \
+    -d "{
+            \"model\": \"meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8\", 
+            \"messages\": [
+                { 
+                    \"role\": \"user\", 
+                    \"content\": \"What is the ultimate breakfast sandwich?\"
+                }
+            ]
+    }"
+    ```
+
+??? example "Llama 4 Scout 17B 16E"
+
+    ```bash
+    #!/bin/bash
+
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo -e "\nError: API_KEY environment variable is not set.\n" >&2
+fi
+
+# Submit real-time request
+curl https://api.kluster.ai/v1/chat/completions \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" \
+    -d "{
+            \"model\": \"meta-llama/Llama-4-Scout-17B-16E-Instruct\", 
             \"messages\": [
                 { 
                     \"role\": \"user\", 
@@ -7238,16 +7733,18 @@ Check the [kluster.ai OpenAI compatibility page](/get-started/openai-compatibili
 
 The following limits apply to API requests based on your plan tier (notation is `free tier | standard tier`):
 
-|        Model         | Context<br>size | Max<br>output | Max batch<br>requests | Concurrent<br>requests | Requests<br>per minute |
-|:--------------------:|:---------------:|:-------------:|:---------------------:|:----------------------:|:----------------------:|
-|   **DeepSeek R1**    | 32k &#124 162k  | 4k &#124 162k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-|   **DeepSeek V3**    | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-| **DeepSeek V3 0324** | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-|   **Gemma 3 27B**    |  32k &#124 32k  |  4k &#124 8k  | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-|   **Llama 3.1 8B**   | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-|  **Llama 3.1 405B**  | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-|  **Llama 3.3 70B**   | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
-|   **Qwen 2.5 7B**    |  32k &#124 32k  |  4k &#124 8k  | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|             Model             | Context<br>size | Max<br>output | Max batch<br>requests | Concurrent<br>requests | Requests<br>per minute |
+|:-----------------------------:|:---------------:|:-------------:|:---------------------:|:----------------------:|:----------------------:|
+|        **DeepSeek R1**        | 32k &#124 162k  | 4k &#124 162k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|        **DeepSeek V3**        | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|     **DeepSeek V3 0324**      | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|        **Gemma 3 27B**        |  32k &#124 32k  |  4k &#124 8k  | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|       **Llama 3.1 8B**        | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|      **Llama 3.1 405B**       | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|       **Llama 3.3 70B**       | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+| **Llama 4 Maverick 17B 128E** | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|   **Llama 4 Scout 17B 16E**   | 32k &#124 131k  | 4k &#124 131k | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
+|        **Qwen 2.5 7B**        |  32k &#124 32k  |  4k &#124 8k  | <1000 &#124 No limit  |       2 &#124 10       |       1 &#124 60       |
 
 ## Where to go next
 
@@ -8063,915 +8560,1074 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-ana
 Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipynb/
 --- BEGIN CONTENT ---
 {
-  "cells": [
-    {
-      "cell_type": "markdown",
-      "id": "be189fde-4e5b-4f80-bae1-ded86a5075a7",
-      "metadata": {
-        "id": "be189fde-4e5b-4f80-bae1-ded86a5075a7"
-      },
-      "source": [
-        "# Image analysis with kluster.ai API"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "b17a77d9",
-      "metadata": {},
-      "source": [
-        "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/examples/sentiment-analysis-api.ipynb)"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3",
-      "metadata": {
-        "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3"
-      },
-      "source": [
-        "AI models can be used to perform image analysis tasks, in which you feed the model an image and request it to extract meaningful information.\n",
-        "\n",
-        "This tutorial runs through a notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to run image analysis on different images using both Gemma 3 27B and Qwen 2.5 7B.\n",
-        "\n",
-        "The example uses four separate images. For each image, we will ask the models to fetch a specific feature and compare how they respond:\n",
-        "\n",
-        "1. A <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\" target=\"_blank\">Newton's cradle</a>, we will ask what is the device's name and how many balls are in the image (5)\n",
-        "2. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/eggs-image.jpeg?raw=true\" target=\"_blank\">Eggs</a> of different colors, we will ask how many total eggs and per color (10 total, 8 brown and 2 white)\n",
-        "3. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true\" target=\"_blank\">Aliens only parking sign</a>, we will ask to interpret the sign (only aliens can park, funny reference)\n",
-        "4. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true\" target=\"_blank\">Hand written note with a typo</a>, we will ask what the text in the image is and to find a typo (\"I LOVE PROGRAMING\", \"I love programing\" missing an \"m\" in both instances)\n",
-        "\n",
-        "You can adapt this example by using your own images or request. With this approach, you can effortlessly process images of any scale, big or small, and obtain image analysis powered by a state-of-the-art language model."
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "41ea62a1",
-      "metadata": {},
-      "source": [
-        "## Prerequisites"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "83111fd4",
-      "metadata": {},
-      "source": [
-        "Before getting started, ensure you have the following:\n",
-        "\n",
-        "- **A kluster.ai account** - sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one\n",
-        "- **A kluster.ai API key** - after signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "xU1WBQJ7Uh09",
-      "metadata": {
-        "id": "xU1WBQJ7Uh09"
-      },
-      "source": [
-        "## Setup"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "b8d580f8-67d5-45d6-915f-0f6b60d3b543",
-      "metadata": {},
-      "source": [
-        "In this notebook, we'll use Python's `getpass` module to input the key safely. After execution, please provide your unique kluster.ai API key (ensure no spaces)."
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 1,
-      "id": "bfabc7a8-a552-4569-8a5d-660fbf8df8fe",
-      "metadata": {},
-      "outputs": [
-        {
-          "name": "stdout",
-          "output_type": "stream",
-          "text": [
-            "Enter your kluster.ai API key:  ········\n"
-          ]
-        }
-      ],
-      "source": [
-        "from getpass import getpass\n",
-        "\n",
-        "api_key = getpass(\"Enter your kluster.ai API key: \")"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "974f464e-d106-423a-a10d-88d7d9340e3c",
-      "metadata": {},
-      "source": [
-        "Next, ensure you've installed OpenAI Python library:"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 2,
-      "id": "bcc3d475-8f49-4fc4-9a5e-c6eb6866d2b5",
-      "metadata": {},
-      "outputs": [
-        {
-          "name": "stdout",
-          "output_type": "stream",
-          "text": [
-            "Note: you may need to restart the kernel to use updated packages.\n"
-          ]
-        }
-      ],
-      "source": [
-        "%pip install -q openai"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "0ac5381b-7f1e-46be-93e3-d5438dbc8bc3",
-      "metadata": {},
-      "source": [
-        "With the OpenAI Python library installed, we import the necessary dependencies for the tutorial:"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": null,
-      "id": "b89a4feb-37a9-430d-a742-cd58495b4eaf",
-      "metadata": {},
-      "outputs": [],
-      "source": [
-        "from openai import OpenAI\n",
-        "\n",
-        "import pandas as pd\n",
-        "import time\n",
-        "import json\n",
-        "import os\n",
-        "from IPython.display import clear_output, display"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "e8324323-3273-4204-a1dd-9568ec14591a",
-      "metadata": {},
-      "source": [
-        "Then, initialize the `client` by pointing it to the kluster.ai endpoint and passing your API key."
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 4,
-      "id": "zG9y_WO5rYaj",
-      "metadata": {},
-      "outputs": [],
-      "source": [
-        "# Set up the client\n",
-        "client = OpenAI(\n",
-        "    base_url=\"https://api.kluster.ai/v1\",\n",
-        "    api_key=api_key,\n",
-        ")"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "udPtLfTaisSw",
-      "metadata": {
-        "id": "udPtLfTaisSw"
-      },
-      "source": [
-        "## Get the data"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "QjCVfg65jKz6",
-      "metadata": {
-        "id": "QjCVfg65jKz6"
-      },
-      "source": [
-        "There are two main ways to proceed when working with images:\n",
-        "\n",
-        "1. You can provide the raw image file as a URL from source, for example, GitHub\n",
-        "2. You can provide Base64 encoded. These are typically represented with a blob of text, which starts with `data:image/png;base64,ENCODING_DATA_HERE...`\n",
-        "\n",
-        "With both methodologies, image data needs to be provided as an object in the content array with the following format:\n",
-        "\n",
-        "```\n",
-        "...\n",
-        "{\"type\": \"image_url\", \"image_url\": {\"url\": IMAGE_DATA}}\n",
-        "...\n",
-        "```\n",
-        "\n",
-        "Just replace `IMAGE_DATA` with either the URL with the raw image file or the Base64 encoded image. This tutorial uses the URL of the images uploaded to GitHub:\n"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 5,
-      "id": "07018f92-9a01-47d5-916a-12cd03dfa3a0",
-      "metadata": {},
-      "outputs": [
-        {
-          "name": "stdout",
-          "output_type": "stream",
-          "text": [
-            "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\n",
-            "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/eggs-image.jpeg?raw=true\n",
-            "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true\n",
-            "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true\n"
-          ]
-        }
-      ],
-      "source": [
-        "base_url = (\n",
-        "    \"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/IMAGE_NAME?raw=true\"\n",
-        ")\n",
-        "\n",
-        "# Newton's cradle image\n",
-        "# Expected answer: Newton's cradle, 5 balls\n",
-        "image1 = \"balls-image.jpeg\"\n",
-        "image1_url = base_url.replace(\"IMAGE_NAME\", image1)\n",
-        "print(image1_url)\n",
-        "\n",
-        "\n",
-        "# Eggs\n",
-        "# Expected answer: 10 eggs, 8 brown and 2 white\n",
-        "image2 = \"eggs-image.jpeg\"\n",
-        "image2_url = base_url.replace(\"IMAGE_NAME\", image2)\n",
-        "print(image2_url)\n",
-        "\n",
-        "# Parking sign\n",
-        "# Expected answer: Parking only allowed for Aliens (funny)\n",
-        "image3 = \"parking-image.jpeg\"\n",
-        "image3_url = base_url.replace(\"IMAGE_NAME\", image3)\n",
-        "print(image3_url)\n",
-        "\n",
-        "# Text\n",
-        "# Expected answer: I love programming in both all caps and regular\n",
-        "image4 = \"text-typo-image.jpeg\"\n",
-        "image4_url = base_url.replace(\"IMAGE_NAME\", image4)\n",
-        "print(image4_url)\n",
-        "\n",
-        "\n",
-        "images = [image1, image2, image3, image4]"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "OyGuHllZllct",
-      "metadata": {
-        "id": "OyGuHllZllct"
-      },
-      "source": [
-        "## Perform batch inference"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "64c345aa-b6a7-4770-8368-b290e9e799dc",
-      "metadata": {
-        "id": "6-MZlfXAoiNv"
-      },
-      "source": [
-        "To execute the batch inference job, we'll take the following steps:\n",
-        "\n",
-        "1. **Create the batch job file** - we'll generate a JSON lines file with the desired requests to be processed by the model\n",
-        "2. **Upload the batch job file** - once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file\n",
-        "3. **Start the batch job** - after the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before\n",
-        "4. **Monitor job progress** - (optional) track the status of the batch job to ensure it has been successfully completed\n",
-        "5. **Retrieve results** - once the job has completed execution, we can access and process the resultant data\n",
-        "\n",
-        "This notebook is prepared for you to follow along. Run the cells below to watch it all come together."
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "Ew-R24Ltp5EW",
-      "metadata": {
-        "id": "Ew-R24Ltp5EW"
-      },
-      "source": [
-        "### Create the batch input file"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "qS4JXT52wGJ-",
-      "metadata": {
-        "id": "qS4JXT52wGJ-"
-      },
-      "source": [
-        "This example uses two models more oriented to image vision/analysis: `google/gemma-3-27b-it` and `Qwen/Qwen2.5-VL-7B-Instruct`. Other models might not support providing images.\n",
-        "\n",
-        "In addition, please refer to the <a href=\"/get-started/start-building/batch/#supported-models\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
-        "\n",
-        "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes.\n"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 6,
-      "id": "fVtwyqZ_nEq7",
-      "metadata": {},
-      "outputs": [],
-      "source": [
-        "# Prompt based on image\n",
-        "SYSTEM_PROMPTS = {\n",
-        "    \"balls-image.jpeg\": \"\"\"\n",
-        "    You are a helpful assistant that analyzes image content.\n",
-        "    Tell me the device depicted in the image, and how many balls it has.\n",
-        "    \"\"\",\n",
-        "    \"eggs-image.jpeg\": \"\"\"\n",
-        "    You are a helpful assistant that analyzes image content.\n",
-        "    Count how many eggs are in total, and how many brown and white eggs separately.\n",
-        "    \"\"\",\n",
-        "    \"parking-image.jpeg\": \"\"\"\n",
-        "    You are a helpful assistant that analyzes image content.\n",
-        "    Tell me what you see in the image, anything interesting?.\n",
-        "    \"\"\",\n",
-        "    \"text-typo-image.jpeg\": \"\"\"\n",
-        "    You are a helpful assistant that can extract text from images.\n",
-        "    Tell me the text written in the image, find any typos if any.\n",
-        "    \"\"\",\n",
-        "}\n",
-        "\n",
-        "# Models\n",
-        "models = {\n",
-        "    \"Gemma3-27B\": \"google/gemma-3-27b-it\",\n",
-        "    \"Qwen2.5-7B\": \"Qwen/Qwen2.5-VL-7B-Instruct\"\n",
-        "}\n",
-        "\n",
-        "# Ensure the directory exists\n",
-        "os.makedirs(\"image_analysis\", exist_ok=True)\n",
-        "\n",
-        "# Create the batch job file with the prompt and content for the model and the image\n",
-        "def create_batch_file(model, image):\n",
-        "    image_url = base_url.replace(\"IMAGE_NAME\", image)\n",
-        "    request = {\n",
-        "        \"custom_id\": f\"image-{image}-{model}-analysis\",\n",
-        "        \"method\": \"POST\",\n",
-        "        \"url\": \"/v1/chat/completions\",\n",
-        "        \"body\": {\n",
-        "            \"model\": models[model],\n",
-        "            \"temperature\": 0.5,\n",
-        "            \"messages\": [\n",
-        "                {\"role\": \"system\", \"content\": SYSTEM_PROMPTS[image]},\n",
-        "                {\n",
-        "                    \"role\": \"user\",\n",
-        "                    \"content\": [\n",
-        "                        {\n",
-        "                            \"type\": \"image_url\",\n",
-        "                            \"image_url\": {\"url\": image_url},\n",
-        "                        }\n",
-        "                    ],\n",
-        "                },\n",
-        "            ],\n",
-        "        },\n",
-        "    }\n",
-        "\n",
-        "    return request\n",
-        "\n",
-        "# Save file\n",
-        "def save_batch_file(batch_requests, model):\n",
-        "    filename = f\"image_analysis/batch_job_{model}_request.jsonl\"\n",
-        "    with open(filename, \"w\") as file:\n",
-        "        for request in batch_requests:\n",
-        "            file.write(json.dumps(request) + \"\\n\")\n",
-        "    return filename\n"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "98f31ae8-8608-43aa-a8d2-58c71aa50cf4",
-      "metadata": {},
-      "source": [
-        "Let's run the functions we've defined before:"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 7,
-      "id": "qNhmrmHdnp7g",
-      "metadata": {},
-      "outputs": [
-        {
-          "name": "stdout",
-          "output_type": "stream",
-          "text": [
-            "image_analysis/batch_job_Gemma3-27B_request.jsonl\n",
-            "image_analysis/batch_job_Qwen2.5-7B_request.jsonl\n"
-          ]
-        }
-      ],
-      "source": [
-        "filenames = []\n",
-        "\n",
-        "for model in models:\n",
-        "    batch_requests = []\n",
-        "    for image in images:\n",
-        "        batch_request = create_batch_file(model, image)\n",
-        "        batch_requests.append(batch_request)\n",
-        "    filename = save_batch_file(batch_requests, model)\n",
-        "    filenames.append(filename)\n",
-        "    print(filename)"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "ada26fe3-acb9-48dc-b368-b57fc380cdb8",
-      "metadata": {},
-      "source": [
-        "Next, we can preview what one of the batch job files looks like:"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 8,
-      "id": "d65f5099-5add-4749-9a85-3c04a9b342bb",
-      "metadata": {},
-      "outputs": [
-        {
-          "name": "stdout",
-          "output_type": "stream",
-          "text": [
-            "{\"custom_id\": \"image-balls-image.jpeg-Gemma3-27B-analysis\", \"method\": \"POST\", \"url\": \"/v1/chat/completions\", \"body\": {\"model\": \"google/gemma-3-27b-it\", \"temperature\": 0.5, \"messages\": [{\"role\": \"system\", \"content\": \"\\n    You are a helpful assistant that analyzes image content.\\n    Tell me the device depicted in the image and how many balls it has.\\n    \"}, {\"role\": \"user\", \"content\": [{\"type\": \"image_url\", \"image_url\": {\"url\": \"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\"}}]}]}}\n"
-          ]
-        }
-      ],
-      "source": [
-        "!head -n 1 image_analysis/batch_job_Gemma3-27B_request.jsonl"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "xArKu7-sqSiR",
-      "metadata": {
-        "id": "xArKu7-sqSiR"
-      },
-      "source": [
-        "### Upload inference file to kluster.ai"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "e48b2489-99bc-431b-8cb3-de816550d524",
-      "metadata": {},
-      "source": [
-        "Now that we've prepared our input files, it's time to upload them to the kluster.ai platform. To do so, you can use the `files.create` endpoint of the client, where the purpose is set to `batch`. This will return the file ID, which we need to log for the next steps. We will repeat the process for each batch file created."
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 9,
-      "id": "l5eu5UyAnEtk",
-      "metadata": {},
-      "outputs": [],
-      "source": [
-        "def upload_batch_file(data_dir):\n",
-        "  print(f\"Creating request for {data_dir}\")\n",
-        "  \n",
-        "  with open(data_dir, 'rb') as file:\n",
-        "    upload_response = client.files.create(\n",
-        "    file=file,\n",
-        "    purpose=\"batch\"\n",
-        "  )\n",
-        "\n",
-        "  # Print job ID\n",
-        "  file_id = upload_response.id\n",
-        "  print(f\"File uploaded successfully. File ID: {file_id}\")\n",
-        "\n",
-        "  return upload_response"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 10,
-      "id": "cf65b30f-ae68-46d3-a4f3-edd4907c450b",
-      "metadata": {},
-      "outputs": [
-        {
-          "name": "stdout",
-          "output_type": "stream",
-          "text": [
-            "Uploading file image_analysis/batch_job_Gemma3-27B_request.jsonl\n",
-            "Creating request for image_analysis/batch_job_Gemma3-27B_request.jsonl\n",
-            "File uploaded successfully. File ID: 67efa74d9bef3c7ec5741ae9\n",
-            "Uploading file image_analysis/batch_job_Qwen2.5-7B_request.jsonl\n",
-            "Creating request for image_analysis/batch_job_Qwen2.5-7B_request.jsonl\n",
-            "File uploaded successfully. File ID: 67efa74d5198252ec473b0f2\n"
-          ]
-        }
-      ],
-      "source": [
-        "batch_files = []\n",
-        "\n",
-        "# Loop through all .jsonl files in the data folder\n",
-        "for data_dir in filenames:\n",
-        "    print(f\"Uploading file {data_dir}\")\n",
-        "    job = upload_batch_file(data_dir)\n",
-        "    batch_files.append(job)"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "bca62889-8a8f-4125-9e09-51402f704f64",
-      "metadata": {},
-      "source": [
-        "All files are now uploaded, and we can proceed with creating the batch jobs."
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "6438be35-1e73-4c34-9249-2dd16d102253",
-      "metadata": {
-        "id": "xArKu7-sqSiR"
-      },
-      "source": [
-        "### Start the job"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "251a0b89-71a9-40d7-bf14-51be935afe10",
-      "metadata": {},
-      "source": [
-        "Once all the files have been successfully uploaded, we're ready to start (create) the batch jobs by providing the file ID of each file, which we got in the previous step. To start each job, we use the `batches.create` method, for which we need to set the endpoint to `/v1/chat/completions`. This will return each batch job details, with each ID."
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 11,
-      "id": "71a24704-7190-4e24-898f-c4eff062439a",
-      "metadata": {},
-      "outputs": [],
-      "source": [
-        "# Create batch job with completions endpoint\n",
-        "def create_batch_job(file_id):\n",
-        "  batch_job = client.batches.create(\n",
-        "    input_file_id=file_id,\n",
-        "    endpoint=\"/v1/chat/completions\",\n",
-        "    completion_window=\"24h\"\n",
-        "  )\n",
-        "\n",
-        "  print(f\"Batch job created with ID {batch_job.id}\")\n",
-        "  return batch_job"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 12,
-      "id": "1bb46ddf-1300-4092-9795-39c4bbbc32ae",
-      "metadata": {},
-      "outputs": [
-        {
-          "name": "stdout",
-          "output_type": "stream",
-          "text": [
-            "Creating batch job for file ID 67efa74d9bef3c7ec5741ae9\n",
-            "Batch job created with ID 67efa74f9bef3c7ec5741afa\n",
-            "Creating batch job for file ID 67efa74d5198252ec473b0f2\n",
-            "Batch job created with ID 67efa75a29984eac27004ebc\n"
-          ]
-        }
-      ],
-      "source": [
-        "batch_jobs = []\n",
-        "\n",
-        "# Loop through all batch files ID and start each job\n",
-        "for batch_file in batch_files:\n",
-        "    print(f\"Creating batch job for file ID {batch_file.id}\")\n",
-        "    batch_job = create_batch_job(batch_file.id)\n",
-        "    batch_jobs.append(batch_job)"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "406e7a44",
-      "metadata": {},
-      "source": [
-        "All requests are queued to be processed."
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "e-ujphILqepu",
-      "metadata": {
-        "id": "e-ujphILqepu"
-      },
-      "source": [
-        "### Check job progress"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "iFrDrriQqizC",
-      "metadata": {
-        "id": "iFrDrriQqizC"
-      },
-      "source": [
-        "Now that your batch jobs have been created, you can track their progress.\n",
-        "\n",
-        "To monitor the job's progress, we can use the `batches.retrieve` method and pass the batch job ID. The response contains a `status` field that tells whether it is completed or not and the subsequent status of each job separately. We can repeat this process for every batch job ID we got in the previous step.\n",
-        "\n",
-        "The following snippet checks the status of all batch jobs every 10 seconds until the entire batch is completed."
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 13,
-      "id": "SuH0CfoqjP3d",
-      "metadata": {},
-      "outputs": [],
-      "source": [
-        "def monitor_batch_jobs(batch_jobs):\n",
-        "    all_completed = False\n",
-        "\n",
-        "    # Loop until all jobs are completed\n",
-        "    while not all_completed:\n",
-        "        all_completed = True\n",
-        "        output_lines = []\n",
-        "\n",
-        "        # Loop through all batch jobs\n",
-        "        for job in batch_jobs:\n",
-        "            updated_job = client.batches.retrieve(job.id)\n",
-        "            status = updated_job.status\n",
-        "\n",
-        "            # If job is completed\n",
-        "            if status == \"completed\":\n",
-        "                output_lines.append(\"Job completed!\")\n",
-        "            # If job failed, cancelled or expired\n",
-        "            elif status in [\"failed\", \"cancelled\", \"expired\"]:\n",
-        "                output_lines.append(f\"Job ended with status: {status}\")\n",
-        "                break\n",
-        "            # If job is ongoing\n",
-        "            else:\n",
-        "                all_completed = False\n",
-        "                completed = updated_job.request_counts.completed\n",
-        "                total = updated_job.request_counts.total\n",
-        "                output_lines.append(\n",
-        "                    f\"Job status: {status} - Progress: {completed}/{total}\"\n",
-        "                )\n",
-        "\n",
-        "        # Clear terminal\n",
-        "        clear_output(wait=True)\n",
-        "        for line in output_lines:\n",
-        "            display(line)\n",
-        "\n",
-        "        # Check every 10 seconds\n",
-        "        if not all_completed:\n",
-        "            time.sleep(10)\n"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 14,
-      "id": "83fbd7c7-92db-4954-a6ac-a98103260daf",
-      "metadata": {},
-      "outputs": [
-        {
-          "data": {
-            "text/plain": [
-              "'Job completed!'"
-            ]
-          },
-          "metadata": {},
-          "output_type": "display_data"
-        },
-        {
-          "data": {
-            "text/plain": [
-              "'Job completed!'"
-            ]
-          },
-          "metadata": {},
-          "output_type": "display_data"
-        }
-      ],
-      "source": [
-        "monitor_batch_jobs(batch_jobs)"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "TkkhIG9HU0D9",
-      "metadata": {
-        "id": "TkkhIG9HU0D9"
-      },
-      "source": [
-        "## Get the results"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "12c1f6ac-8d60-4158-9036-de79fa274983",
-      "metadata": {},
-      "source": [
-        "With all jobs completed, we'll retrieve the results and review the responses generated for each request. The results are parsed. To fetch the results from the platform, you must retrieve the `output_file_id` from the batch job and then use the `files.content` endpoint, providing that specific file ID. We will repeat this for every single batch job id. Note that the job status must be `completed` to retrieve the results!"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 15,
-      "id": "806a5eb1-f6d3-491d-b051-9d44bf046a7e",
-      "metadata": {},
-      "outputs": [],
-      "source": [
-        "#Parse results as a JSON object\n",
-        "def parse_json_objects(data_string):\n",
-        "  if isinstance(data_string, bytes):\n",
-        "    data_string = data_string.decode('utf-8')\n",
-        "\n",
-        "  json_strings = data_string.strip().split('\\n')\n",
-        "  json_objects = []\n",
-        "\n",
-        "  for json_str in json_strings:\n",
-        "    try:\n",
-        "      json_obj = json.loads(json_str)\n",
-        "      json_objects.append(json_obj)\n",
-        "    except json.JSONDecodeError as e:\n",
-        "      print(f\"Error parsing JSON: {e}\")\n",
-        "\n",
-        "  return json_objects"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 16,
-      "id": "dfe37dba-828a-4ee8-8c18-384f2b83d118",
-      "metadata": {},
-      "outputs": [
-        {
-          "name": "stdout",
-          "output_type": "stream",
-          "text": [
-            "\n",
-            " -------------------------- \n",
-            "\n",
-            "image-balls-image.jpeg-Gemma3-27B-analysis\n",
-            "\n",
-            "RESULT: Certainly! \n",
-            "\n",
-            "The device depicted in the image is a **Newton's cradle**. \n",
-            "\n",
-            "It has **five** balls.\n",
-            "\n",
-            " -------------------------- \n",
-            "\n",
-            "image-eggs-image.jpeg-Gemma3-27B-analysis\n",
-            "\n",
-            "RESULT: Here's the breakdown of the eggs in the image:\n",
-            "\n",
-            "*   **Total eggs:** 10\n",
-            "*   **Brown eggs:** 8\n",
-            "*   **White eggs:** 2\n",
-            "\n",
-            " -------------------------- \n",
-            "\n",
-            "image-parking-image.jpeg-Gemma3-27B-analysis\n",
-            "\n",
-            "RESULT: Here's what I see in the image:\n",
-            "\n",
-            "The image shows a sign that reads \"PARKING FOR ALIENS ONLY\". The sign is white with bright green lettering and features a classic green alien head graphic at the bottom. \n",
-            "\n",
-            "**Interesting points:**\n",
-            "\n",
-            "*   **Humorous Sign:** The sign is clearly meant to be humorous and playful, suggesting a place where extraterrestrials might park their spacecraft.\n",
-            "*   **Alien Stereotype:** The alien head depicted is the stereotypical \"gray alien\" with large, black eyes.\n",
-            "*   **Outdoor Setting:** The background shows palm trees and a parking lot, suggesting the sign is located in a warm climate, possibly a tourist destination.\n",
-            "*   **Mount:** The sign is mounted on a black metal post.\n",
-            "\n",
-            "It's a fun and quirky sign that would likely catch someone's attention!\n",
-            "\n",
-            " -------------------------- \n",
-            "\n",
-            "image-text-typo-image.jpeg-Gemma3-27B-analysis\n",
-            "\n",
-            "RESULT: Here's the text from the image:\n",
-            "\n",
-            "I LOVE PROGRAMING\n",
-            "I love programing\n",
-            "\n",
-            "There is a typo in the first line. It should be \"PROGRAMMING\" not \"PROGRAMING\".\n",
-            "The second line also has a typo. It should be \"programming\" not \"programing\".\n",
-            "\n",
-            " -------------------------- \n",
-            "\n",
-            "image-balls-image.jpeg-Qwen2.5-7B-analysis\n",
-            "\n",
-            "RESULT: The device depicted in the image is a Newton's Cradle. It consists of five metallic balls suspended by strings from a frame. In this particular image, there are five balls visible.\n",
-            "\n",
-            " -------------------------- \n",
-            "\n",
-            "image-eggs-image.jpeg-Qwen2.5-7B-analysis\n",
-            "\n",
-            "RESULT: There are 12 eggs in total. Out of these, 10 are brown and 2 are white.\n",
-            "\n",
-            " -------------------------- \n",
-            "\n",
-            "image-parking-image.jpeg-Qwen2.5-7B-analysis\n",
-            "\n",
-            "RESULT: The image shows a parking sign with the text \"PARKING FOR ALIENS ONLY\" written in green letters on a white background. Below the text is a green alien face graphic. The sign appears to be placed outdoors, as there are palm trees and a clear sky visible in the background. This type of sign is often seen in areas associated with UFO or extraterrestrial themes, such as the area near Area 51 in Nevada.\n",
-            "\n",
-            " -------------------------- \n",
-            "\n",
-            "image-text-typo-image.jpeg-Qwen2.5-7B-analysis\n",
-            "\n",
-            "RESULT: The text in the image reads:\n",
-            "\n",
-            "\"I LOVE PROGAMING\"\n",
-            "\"I love progaming\"\n",
-            "\n",
-            "There is a typo in both instances. The correct spelling should be \"programming\" instead of \"progaming\".\n"
-          ]
-        }
-      ],
-      "source": [
-        "# Go through all batch jobs, providing the output file ID\n",
-        "for batch_job in batch_jobs:\n",
-        "  job_status = client.batches.retrieve(batch_job.id)\n",
-        "  result_file_id = job_status.output_file_id\n",
-        "  result = client.files.content(result_file_id).content\n",
-        "  results = parse_json_objects(result)\n",
-        "\n",
-        "  # For each, print the result\n",
-        "  for res in results:\n",
-        "    inference_id = res['custom_id']\n",
-        "    result = res['response']['body']['choices'][0]['message']['content']\n",
-        "    print(f'\\n -------------------------- \\n')\n",
-        "    print(f\"{res['custom_id']}\\n\\nRESULT: {result}\")"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "70e0e816-6558-4ff2-bab2-f85cff00bfc8",
-      "metadata": {
-        "executionInfo": {
-          "elapsed": 5,
-          "status": "ok",
-          "timestamp": 1732042430093,
-          "user": {
-            "displayName": "Joaquin Rodríguez",
-            "userId": "09993043682054067997"
-          },
-          "user_tz": 180
-        },
-        "id": "tu2R8dGYimKc"
-      },
-      "source": [
-        "## Summary"
-      ]
-    },
-    {
-      "cell_type": "markdown",
-      "id": "7d195dd1-1293-4407-b6ad-cab7e77b14c0",
-      "metadata": {},
-      "source": [
-        "This tutorial used the chat completion endpoint to image analysis on multiple images using kluster.ai batch API. This particular example uploaded four specific images:\n",
-        "\n",
-        "1. A <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\" target=\"_blank\">Newtown's cradle</a>, we asked what is the device's name and how many balls were in the image (5):\n",
-        "   - Both models responded correctly ✅\n",
-        "2. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/eggs-image.jpeg?raw=true\" target=\"_blank\">Eggs</a> of different colors, we asked how many total eggs and per color (10 total, 8 brown and 2 white):\n",
-        "   - Gemma 3 27B was able to identify all 10 eggs properly, counting 8 brown and 2 white ✅\n",
-        "   - Qwen 2.5 7B counted 12 eggs, identifying 10 white and 2 brown ❌\n",
-        "4. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true\" target=\"_blank\">Aliens only parking sign</a>, we asked to interpret the sign (only aliens can park, funny reference):\n",
-        "   - Both models identified the sign appropriately, only Gemma 3 27B specifically mentioning a funny reference ✅\n",
-        "6. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true\" target=\"_blank\">Hand written note with a typo</a>, we asked what the text in the image is and to find a typo if any (\"I LOVE PROGRAMING\", \"I love programing\" missing an \"m\" in both instances):\n",
-        "   - Both models responded correctly ✅\n",
-        "\n",
-        "To submit a batch job, we've:\n",
-        "\n",
-        "1. Created the JSONL file, where each file line represented a separate request. We provided the images as URLs from GitHub\n",
-        "2. Submitted the file to the platform\n",
-        "3. Started the batch job, and monitored its progress\n",
-        "4. Once completed, we fetched the results\n",
-        "\n",
-        "All of this using the OpenAI Python library and API, no changes needed!\n",
-        "\n",
-        "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As the next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
-      ]
-    }
-  ],
-  "metadata": {
-    "kernelspec": {
-      "display_name": "Python 3 (ipykernel)",
-      "language": "python",
-      "name": "python3"
-    },
-    "language_info": {
-      "codemirror_mode": {
-        "name": "ipython",
-        "version": 3
-      },
-      "file_extension": ".py",
-      "mimetype": "text/x-python",
-      "name": "python",
-      "nbconvert_exporter": "python",
-      "pygments_lexer": "ipython3",
-      "version": "3.10.12"
-    }
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "be189fde-4e5b-4f80-bae1-ded86a5075a7",
+   "metadata": {
+    "id": "be189fde-4e5b-4f80-bae1-ded86a5075a7"
+   },
+   "source": [
+    "# Image analysis with kluster.ai API"
+   ]
   },
-  "nbformat": 4,
-  "nbformat_minor": 5
+  {
+   "cell_type": "markdown",
+   "id": "b17a77d9",
+   "metadata": {},
+   "source": [
+    "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/examples/sentiment-analysis-api.ipynb)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3",
+   "metadata": {
+    "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3"
+   },
+   "source": [
+    "AI models can be used to perform image analysis tasks, in which you feed the model an image and request it to extract meaningful information.\n",
+    "\n",
+    "This tutorial runs through a notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to run image analysis on different images using Gemma 3 27B, Qwen 2.5 7B, Llama 4 Maverick 17B 128E and Llama 4 Scout 17B 16E.\n",
+    "\n",
+    "The example uses four separate images. For each image, we will ask the models to fetch a specific feature and compare how they respond:\n",
+    "\n",
+    "1. A <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\" target=\"_blank\">Newton's cradle</a>, we will ask what is the device's name and how many balls are in the image (5)\n",
+    "2. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/eggs-image.jpeg?raw=true\" target=\"_blank\">Eggs</a> of different colors, we will ask how many total eggs and per color (10 total, 8 brown and 2 white)\n",
+    "3. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true\" target=\"_blank\">Aliens only parking sign</a>, we will ask to interpret the sign (only aliens can park, funny reference)\n",
+    "4. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true\" target=\"_blank\">Hand written note with a typo</a>, we will ask what the text in the image is and to find a typo (\"I LOVE PROGRAMING\", \"I love programing\" missing an \"m\" in both instances)\n",
+    "\n",
+    "You can adapt this example by using your own images or request. With this approach, you can effortlessly process images of any scale, big or small, and obtain image analysis powered by a state-of-the-art language model."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "41ea62a1",
+   "metadata": {},
+   "source": [
+    "## Prerequisites"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "83111fd4",
+   "metadata": {},
+   "source": [
+    "Before getting started, ensure you have the following:\n",
+    "\n",
+    "- **A kluster.ai account** - sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one\n",
+    "- **A kluster.ai API key** - after signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "xU1WBQJ7Uh09",
+   "metadata": {
+    "id": "xU1WBQJ7Uh09"
+   },
+   "source": [
+    "## Setup"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b8d580f8-67d5-45d6-915f-0f6b60d3b543",
+   "metadata": {},
+   "source": [
+    "In this notebook, we'll use Python's `getpass` module to input the key safely. After execution, please provide your unique kluster.ai API key (ensure no spaces)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "bfabc7a8-a552-4569-8a5d-660fbf8df8fe",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter your kluster.ai API key:  ········\n"
+     ]
+    }
+   ],
+   "source": [
+    "from getpass import getpass\n",
+    "\n",
+    "api_key = getpass(\"Enter your kluster.ai API key: \")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "974f464e-d106-423a-a10d-88d7d9340e3c",
+   "metadata": {},
+   "source": [
+    "Next, ensure you've installed OpenAI Python library:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "bcc3d475-8f49-4fc4-9a5e-c6eb6866d2b5",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Note: you may need to restart the kernel to use updated packages.\n"
+     ]
+    }
+   ],
+   "source": [
+    "%pip install -q openai"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0ac5381b-7f1e-46be-93e3-d5438dbc8bc3",
+   "metadata": {},
+   "source": [
+    "With the OpenAI Python library installed, we import the necessary dependencies for the tutorial:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "b89a4feb-37a9-430d-a742-cd58495b4eaf",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from openai import OpenAI\n",
+    "\n",
+    "import pandas as pd\n",
+    "import time\n",
+    "import json\n",
+    "import os\n",
+    "from IPython.display import clear_output, display"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e8324323-3273-4204-a1dd-9568ec14591a",
+   "metadata": {},
+   "source": [
+    "Then, initialize the `client` by pointing it to the kluster.ai endpoint and passing your API key."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "zG9y_WO5rYaj",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Set up the client\n",
+    "client = OpenAI(\n",
+    "    base_url=\"https://api.kluster.ai/v1\",\n",
+    "    api_key=api_key,\n",
+    ")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "udPtLfTaisSw",
+   "metadata": {
+    "id": "udPtLfTaisSw"
+   },
+   "source": [
+    "## Get the data"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "QjCVfg65jKz6",
+   "metadata": {
+    "id": "QjCVfg65jKz6"
+   },
+   "source": [
+    "There are two main ways to proceed when working with images:\n",
+    "\n",
+    "1. You can provide the raw image file as a URL from source, for example, GitHub\n",
+    "2. You can provide Base64 encoded. These are typically represented with a blob of text, which starts with `data:image/png;base64,ENCODING_DATA_HERE...`\n",
+    "\n",
+    "With both methodologies, image data needs to be provided as an object in the content array with the following format:\n",
+    "\n",
+    "```\n",
+    "...\n",
+    "{\"type\": \"image_url\", \"image_url\": {\"url\": IMAGE_DATA}}\n",
+    "...\n",
+    "```\n",
+    "\n",
+    "Just replace `IMAGE_DATA` with either the URL with the raw image file or the Base64 encoded image. This tutorial uses the URL of the images uploaded to GitHub:\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "07018f92-9a01-47d5-916a-12cd03dfa3a0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\n",
+      "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/eggs-image.jpeg?raw=true\n",
+      "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true\n",
+      "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true\n"
+     ]
+    }
+   ],
+   "source": [
+    "base_url = (\n",
+    "    \"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/IMAGE_NAME?raw=true\"\n",
+    ")\n",
+    "\n",
+    "# Newton's cradle image\n",
+    "# Expected answer: Newton's cradle, 5 balls\n",
+    "image1 = \"balls-image.jpeg\"\n",
+    "image1_url = base_url.replace(\"IMAGE_NAME\", image1)\n",
+    "print(image1_url)\n",
+    "\n",
+    "\n",
+    "# Eggs\n",
+    "# Expected answer: 10 eggs, 8 brown and 2 white\n",
+    "image2 = \"eggs-image.jpeg\"\n",
+    "image2_url = base_url.replace(\"IMAGE_NAME\", image2)\n",
+    "print(image2_url)\n",
+    "\n",
+    "# Parking sign\n",
+    "# Expected answer: Parking only allowed for Aliens (funny)\n",
+    "image3 = \"parking-image.jpeg\"\n",
+    "image3_url = base_url.replace(\"IMAGE_NAME\", image3)\n",
+    "print(image3_url)\n",
+    "\n",
+    "# Text\n",
+    "# Expected answer: I love programming in both all caps and regular\n",
+    "image4 = \"text-typo-image.jpeg\"\n",
+    "image4_url = base_url.replace(\"IMAGE_NAME\", image4)\n",
+    "print(image4_url)\n",
+    "\n",
+    "\n",
+    "images = [image1, image2, image3, image4]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "OyGuHllZllct",
+   "metadata": {
+    "id": "OyGuHllZllct"
+   },
+   "source": [
+    "## Perform batch inference"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "64c345aa-b6a7-4770-8368-b290e9e799dc",
+   "metadata": {
+    "id": "6-MZlfXAoiNv"
+   },
+   "source": [
+    "To execute the batch inference job, we'll take the following steps:\n",
+    "\n",
+    "1. **Create the batch job file** - we'll generate a JSON lines file with the desired requests to be processed by the model\n",
+    "2. **Upload the batch job file** - once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file\n",
+    "3. **Start the batch job** - after the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before\n",
+    "4. **Monitor job progress** - (optional) track the status of the batch job to ensure it has been successfully completed\n",
+    "5. **Retrieve results** - once the job has completed execution, we can access and process the resultant data\n",
+    "\n",
+    "This notebook is prepared for you to follow along. Run the cells below to watch it all come together."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "Ew-R24Ltp5EW",
+   "metadata": {
+    "id": "Ew-R24Ltp5EW"
+   },
+   "source": [
+    "### Create the batch input file"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "qS4JXT52wGJ-",
+   "metadata": {
+    "id": "qS4JXT52wGJ-"
+   },
+   "source": [
+    "This example uses two models more oriented to image vision/analysis: `google/gemma-3-27b-it`, `Qwen/Qwen2.5-VL-7B-Instruct`, `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8` and `meta-llama/Llama-4-Scout-17B-16E-Instruct`. Other models might not support providing images.\n",
+    "\n",
+    "In addition, please refer to the <a href=\"/get-started/start-building/batch/#supported-models\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
+    "\n",
+    "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "fVtwyqZ_nEq7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Prompt based on image\n",
+    "SYSTEM_PROMPTS = {\n",
+    "    \"balls-image.jpeg\": \"\"\"\n",
+    "    You are a helpful assistant that analyzes image content.\n",
+    "    Tell me the device depicted in the image, and how many balls it has.\n",
+    "    \"\"\",\n",
+    "    \"eggs-image.jpeg\": \"\"\"\n",
+    "    You are a helpful assistant that analyzes image content.\n",
+    "    Count how many eggs are in total, and how many brown and white eggs separately.\n",
+    "    \"\"\",\n",
+    "    \"parking-image.jpeg\": \"\"\"\n",
+    "    You are a helpful assistant that analyzes image content.\n",
+    "    Tell me what you see in the image, anything interesting?.\n",
+    "    \"\"\",\n",
+    "    \"text-typo-image.jpeg\": \"\"\"\n",
+    "    You are a helpful assistant that can extract text from images.\n",
+    "    Tell me the text written in the image, find any typos if any.\n",
+    "    \"\"\",\n",
+    "}\n",
+    "\n",
+    "# Models\n",
+    "models = {\n",
+    "    \"Gemma3-27B\": \"google/gemma-3-27b-it\",\n",
+    "    \"Qwen2.5-7B\": \"Qwen/Qwen2.5-VL-7B-Instruct\",\n",
+    "    \"Llama4-Maverick-17B\": \"meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8\",\n",
+    "    \"Llama4-Scout-17B\": \"meta-llama/Llama-4-Scout-17B-16E-Instruct\"\n",
+    "}\n",
+    "\n",
+    "# Ensure the directory exists\n",
+    "os.makedirs(\"image_analysis\", exist_ok=True)\n",
+    "\n",
+    "# Create the batch job file with the prompt and content for the model and the image\n",
+    "def create_batch_file(model, image):\n",
+    "    image_url = base_url.replace(\"IMAGE_NAME\", image)\n",
+    "    request = {\n",
+    "        \"custom_id\": f\"image-{image}-{model}-analysis\",\n",
+    "        \"method\": \"POST\",\n",
+    "        \"url\": \"/v1/chat/completions\",\n",
+    "        \"body\": {\n",
+    "            \"model\": models[model],\n",
+    "            \"temperature\": 0.5,\n",
+    "            \"messages\": [\n",
+    "                {\"role\": \"system\", \"content\": SYSTEM_PROMPTS[image]},\n",
+    "                {\n",
+    "                    \"role\": \"user\",\n",
+    "                    \"content\": [\n",
+    "                        {\n",
+    "                            \"type\": \"image_url\",\n",
+    "                            \"image_url\": {\"url\": image_url},\n",
+    "                        }\n",
+    "                    ],\n",
+    "                },\n",
+    "            ],\n",
+    "        },\n",
+    "    }\n",
+    "\n",
+    "    return request\n",
+    "\n",
+    "# Save file\n",
+    "def save_batch_file(batch_requests, model):\n",
+    "    filename = f\"image_analysis/batch_job_{model}_request.jsonl\"\n",
+    "    with open(filename, \"w\") as file:\n",
+    "        for request in batch_requests:\n",
+    "            file.write(json.dumps(request) + \"\\n\")\n",
+    "    return filename\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "98f31ae8-8608-43aa-a8d2-58c71aa50cf4",
+   "metadata": {},
+   "source": [
+    "Let's run the functions we've defined before:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "qNhmrmHdnp7g",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "image_analysis/batch_job_Gemma3-27B_request.jsonl\n",
+      "image_analysis/batch_job_Qwen2.5-7B_request.jsonl\n",
+      "image_analysis/batch_job_Llama4-Maverick-17B_request.jsonl\n",
+      "image_analysis/batch_job_Llama4-Scout-17B_request.jsonl\n"
+     ]
+    }
+   ],
+   "source": [
+    "filenames = []\n",
+    "\n",
+    "for model in models:\n",
+    "    batch_requests = []\n",
+    "    for image in images:\n",
+    "        batch_request = create_batch_file(model, image)\n",
+    "        batch_requests.append(batch_request)\n",
+    "    filename = save_batch_file(batch_requests, model)\n",
+    "    filenames.append(filename)\n",
+    "    print(filename)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ada26fe3-acb9-48dc-b368-b57fc380cdb8",
+   "metadata": {},
+   "source": [
+    "Next, we can preview what one of the batch job files looks like:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "d65f5099-5add-4749-9a85-3c04a9b342bb",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{\"custom_id\": \"image-balls-image.jpeg-Gemma3-27B-analysis\", \"method\": \"POST\", \"url\": \"/v1/chat/completions\", \"body\": {\"model\": \"google/gemma-3-27b-it\", \"temperature\": 0.5, \"messages\": [{\"role\": \"system\", \"content\": \"\\n    You are a helpful assistant that analyzes image content.\\n    Tell me the device depicted in the image, and how many balls it has.\\n    \"}, {\"role\": \"user\", \"content\": [{\"type\": \"image_url\", \"image_url\": {\"url\": \"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\"}}]}]}}\n"
+     ]
+    }
+   ],
+   "source": [
+    "!head -n 1 image_analysis/batch_job_Gemma3-27B_request.jsonl"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "xArKu7-sqSiR",
+   "metadata": {
+    "id": "xArKu7-sqSiR"
+   },
+   "source": [
+    "### Upload inference file to kluster.ai"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e48b2489-99bc-431b-8cb3-de816550d524",
+   "metadata": {},
+   "source": [
+    "Now that we've prepared our input files, it's time to upload them to the kluster.ai platform. To do so, you can use the `files.create` endpoint of the client, where the purpose is set to `batch`. This will return the file ID, which we need to log for the next steps. We will repeat the process for each batch file created."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "l5eu5UyAnEtk",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def upload_batch_file(data_dir):\n",
+    "  print(f\"Creating request for {data_dir}\")\n",
+    "  \n",
+    "  with open(data_dir, 'rb') as file:\n",
+    "    upload_response = client.files.create(\n",
+    "    file=file,\n",
+    "    purpose=\"batch\"\n",
+    "  )\n",
+    "\n",
+    "  # Print job ID\n",
+    "  file_id = upload_response.id\n",
+    "  print(f\"File uploaded successfully. File ID: {file_id}\")\n",
+    "\n",
+    "  return upload_response"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "cf65b30f-ae68-46d3-a4f3-edd4907c450b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Uploading file image_analysis/batch_job_Gemma3-27B_request.jsonl\n",
+      "Creating request for image_analysis/batch_job_Gemma3-27B_request.jsonl\n",
+      "File uploaded successfully. File ID: 67f3fe1bfb011b30af6ab488\n",
+      "Uploading file image_analysis/batch_job_Qwen2.5-7B_request.jsonl\n",
+      "Creating request for image_analysis/batch_job_Qwen2.5-7B_request.jsonl\n",
+      "File uploaded successfully. File ID: 67f3fe1b5fb48dc72e980e3d\n",
+      "Uploading file image_analysis/batch_job_Llama4-Maverick-17B_request.jsonl\n",
+      "Creating request for image_analysis/batch_job_Llama4-Maverick-17B_request.jsonl\n",
+      "File uploaded successfully. File ID: 67f3fe1b30d7dd765b6622e8\n",
+      "Uploading file image_analysis/batch_job_Llama4-Scout-17B_request.jsonl\n",
+      "Creating request for image_analysis/batch_job_Llama4-Scout-17B_request.jsonl\n",
+      "File uploaded successfully. File ID: 67f3fe1c11b012a1428354fa\n"
+     ]
+    }
+   ],
+   "source": [
+    "batch_files = []\n",
+    "\n",
+    "# Loop through all .jsonl files in the data folder\n",
+    "for data_dir in filenames:\n",
+    "    print(f\"Uploading file {data_dir}\")\n",
+    "    job = upload_batch_file(data_dir)\n",
+    "    batch_files.append(job)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bca62889-8a8f-4125-9e09-51402f704f64",
+   "metadata": {},
+   "source": [
+    "All files are now uploaded, and we can proceed with creating the batch jobs."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6438be35-1e73-4c34-9249-2dd16d102253",
+   "metadata": {
+    "id": "xArKu7-sqSiR"
+   },
+   "source": [
+    "### Start the job"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "251a0b89-71a9-40d7-bf14-51be935afe10",
+   "metadata": {},
+   "source": [
+    "Once all the files have been successfully uploaded, we're ready to start (create) the batch jobs by providing the file ID of each file, which we got in the previous step. To start each job, we use the `batches.create` method, for which we need to set the endpoint to `/v1/chat/completions`. This will return each batch job details, with each ID."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "71a24704-7190-4e24-898f-c4eff062439a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Create batch job with completions endpoint\n",
+    "def create_batch_job(file_id):\n",
+    "  batch_job = client.batches.create(\n",
+    "    input_file_id=file_id,\n",
+    "    endpoint=\"/v1/chat/completions\",\n",
+    "    completion_window=\"24h\"\n",
+    "  )\n",
+    "\n",
+    "  print(f\"Batch job created with ID {batch_job.id}\")\n",
+    "  return batch_job"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "1bb46ddf-1300-4092-9795-39c4bbbc32ae",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Creating batch job for file ID 67f3fe1bfb011b30af6ab488\n",
+      "Batch job created with ID 67f3fe20fb011b30af6ab522\n",
+      "Creating batch job for file ID 67f3fe1b5fb48dc72e980e3d\n",
+      "Batch job created with ID 67f3fe205fb48dc72e980efb\n",
+      "Creating batch job for file ID 67f3fe1b30d7dd765b6622e8\n",
+      "Batch job created with ID 67f3fe20ec6ac1e148de7274\n",
+      "Creating batch job for file ID 67f3fe1c11b012a1428354fa\n",
+      "Batch job created with ID 67f3fe205fb48dc72e980f06\n"
+     ]
+    }
+   ],
+   "source": [
+    "batch_jobs = []\n",
+    "\n",
+    "# Loop through all batch files ID and start each job\n",
+    "for batch_file in batch_files:\n",
+    "    print(f\"Creating batch job for file ID {batch_file.id}\")\n",
+    "    batch_job = create_batch_job(batch_file.id)\n",
+    "    batch_jobs.append(batch_job)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "406e7a44",
+   "metadata": {},
+   "source": [
+    "All requests are queued to be processed."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e-ujphILqepu",
+   "metadata": {
+    "id": "e-ujphILqepu"
+   },
+   "source": [
+    "### Check job progress"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "iFrDrriQqizC",
+   "metadata": {
+    "id": "iFrDrriQqizC"
+   },
+   "source": [
+    "Now that your batch jobs have been created, you can track their progress.\n",
+    "\n",
+    "To monitor the job's progress, we can use the `batches.retrieve` method and pass the batch job ID. The response contains a `status` field that tells whether it is completed or not and the subsequent status of each job separately. We can repeat this process for every batch job ID we got in the previous step.\n",
+    "\n",
+    "The following snippet checks the status of all batch jobs every 10 seconds until the entire batch is completed."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "SuH0CfoqjP3d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def monitor_batch_jobs(batch_jobs):\n",
+    "    all_completed = False\n",
+    "\n",
+    "    # Loop until all jobs are completed\n",
+    "    while not all_completed:\n",
+    "        all_completed = True\n",
+    "        output_lines = []\n",
+    "\n",
+    "        # Loop through all batch jobs\n",
+    "        for job in batch_jobs:\n",
+    "            updated_job = client.batches.retrieve(job.id)\n",
+    "            status = updated_job.status\n",
+    "\n",
+    "            # If job is completed\n",
+    "            if status == \"completed\":\n",
+    "                output_lines.append(\"Job completed!\")\n",
+    "            # If job failed, cancelled or expired\n",
+    "            elif status in [\"failed\", \"cancelled\", \"expired\"]:\n",
+    "                output_lines.append(f\"Job ended with status: {status}\")\n",
+    "                break\n",
+    "            # If job is ongoing\n",
+    "            else:\n",
+    "                all_completed = False\n",
+    "                completed = updated_job.request_counts.completed\n",
+    "                total = updated_job.request_counts.total\n",
+    "                output_lines.append(\n",
+    "                    f\"Job status: {status} - Progress: {completed}/{total}\"\n",
+    "                )\n",
+    "\n",
+    "        # Clear terminal\n",
+    "        clear_output(wait=True)\n",
+    "        for line in output_lines:\n",
+    "            display(line)\n",
+    "\n",
+    "        # Check every 10 seconds\n",
+    "        if not all_completed:\n",
+    "            time.sleep(10)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "83fbd7c7-92db-4954-a6ac-a98103260daf",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Job completed!'"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/plain": [
+       "'Job completed!'"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/plain": [
+       "'Job completed!'"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/plain": [
+       "'Job completed!'"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "monitor_batch_jobs(batch_jobs)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "TkkhIG9HU0D9",
+   "metadata": {
+    "id": "TkkhIG9HU0D9"
+   },
+   "source": [
+    "## Get the results"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "12c1f6ac-8d60-4158-9036-de79fa274983",
+   "metadata": {},
+   "source": [
+    "With all jobs completed, we'll retrieve the results and review the responses generated for each request. The results are parsed. To fetch the results from the platform, you must retrieve the `output_file_id` from the batch job and then use the `files.content` endpoint, providing that specific file ID. We will repeat this for every single batch job id. Note that the job status must be `completed` to retrieve the results!"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "806a5eb1-f6d3-491d-b051-9d44bf046a7e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Parse results as a JSON object\n",
+    "def parse_json_objects(data_string):\n",
+    "  if isinstance(data_string, bytes):\n",
+    "    data_string = data_string.decode('utf-8')\n",
+    "\n",
+    "  json_strings = data_string.strip().split('\\n')\n",
+    "  json_objects = []\n",
+    "\n",
+    "  for json_str in json_strings:\n",
+    "    try:\n",
+    "      json_obj = json.loads(json_str)\n",
+    "      json_objects.append(json_obj)\n",
+    "    except json.JSONDecodeError as e:\n",
+    "      print(f\"Error parsing JSON: {e}\")\n",
+    "\n",
+    "  return json_objects"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "dfe37dba-828a-4ee8-8c18-384f2b83d118",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "image-balls-image.jpeg-Gemma3-27B-analysis\n",
+      "\n",
+      "RESULT: Certainly! \n",
+      "\n",
+      "The device depicted in the image is a **Newton's Cradle**. \n",
+      "\n",
+      "It has **5** balls.\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "image-eggs-image.jpeg-Gemma3-27B-analysis\n",
+      "\n",
+      "RESULT: Here's the breakdown of the eggs in the image:\n",
+      "\n",
+      "*   **Total eggs:** 10\n",
+      "*   **Brown eggs:** 8\n",
+      "*   **White eggs:** 2\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "image-parking-image.jpeg-Gemma3-27B-analysis\n",
+      "\n",
+      "RESULT: Here's what I see in the image:\n",
+      "\n",
+      "The image shows a sign that reads \"PARKING FOR ALIENS ONLY\". The sign is white with bright green lettering and features a classic depiction of an alien head – a green head with large, black, almond-shaped eyes. \n",
+      "\n",
+      "It's a playful and humorous sign, suggesting a location that caters to extraterrestrial visitors. The background shows a sunny outdoor scene with palm trees, hinting that this might be in a desert or warm climate area.\n",
+      "\n",
+      "It's interesting because it's a fun and quirky sign that plays on the popular culture fascination with aliens and UFOs. It's likely meant to be a novelty or a tourist attraction.\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "image-text-typo-image.jpeg-Gemma3-27B-analysis\n",
+      "\n",
+      "RESULT: Here's the text extracted from the image:\n",
+      "\n",
+      "I LOVE PROGRAMING\n",
+      "I love programing\n",
+      "\n",
+      "There's a typo in the first line: \"PROGRAMING\" should be \"PROGRAMMING\". \n",
+      "\n",
+      "The second line has a lowercase \"i\" which may or may not be intentional.\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "image-balls-image.jpeg-Qwen2.5-7B-analysis\n",
+      "\n",
+      "RESULT: The device depicted in the image is a Newton's Cradle. It consists of five metallic balls suspended by strings from a frame. In this particular image, there are five balls visible.\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "image-eggs-image.jpeg-Qwen2.5-7B-analysis\n",
+      "\n",
+      "RESULT: There are 12 eggs in total. Out of these, 10 are brown and 2 are white.\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "image-parking-image.jpeg-Qwen2.5-7B-analysis\n",
+      "\n",
+      "RESULT: The image shows a parking sign with the text \"PARKING FOR ALIENS ONLY\" written in green letters on a white background. Below the text is a green alien face graphic. The sign appears to be placed outdoors, as there are palm trees and a clear sky visible in the background. This type of sign is often seen in areas associated with UFO or extraterrestrial themes, such as the area near Area 51 in Nevada.\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "image-text-typo-image.jpeg-Qwen2.5-7B-analysis\n",
+      "\n",
+      "RESULT: The text in the image reads:\n",
+      "\n",
+      "\"I LOVE PROGAMING\"\n",
+      "\"I love progaming\"\n",
+      "\n",
+      "There is a typo in both instances. The correct spelling should be \"programming\" instead of \"progaming\".\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "image-balls-image.jpeg-Llama4-Maverick-17B-analysis\n",
+      "\n",
+      "RESULT: The device depicted in the image is a Newton's cradle, a classic physics demonstration tool. It consists of five metal balls suspended from a frame by strings, arranged in a row and touching each other.\n",
+      "\n",
+      "To determine the number of balls, we can simply count them:\n",
+      "\n",
+      "1. The first ball is on the left side.\n",
+      "2. The second ball is next to the first one.\n",
+      "3. The third ball is in the middle.\n",
+      "4. The fourth ball is next to the third one on the right.\n",
+      "5. The fifth ball is on the right side.\n",
+      "\n",
+      "There are 5 balls in total.\n",
+      "\n",
+      "Therefore, the device depicted in the image is a Newton's cradle, and it has **5** balls.\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "image-eggs-image.jpeg-Llama4-Maverick-17B-analysis\n",
+      "\n",
+      "RESULT: The image depicts a carton of eggs and a braid of greenery on a wooden surface.\n",
+      "\n",
+      "*   The carton is made of clear plastic and contains 10 eggs.\n",
+      "    *   The eggs are arranged in two rows, with five eggs in each row.\n",
+      "    *   The eggs are brown and white, with eight brown eggs and two white eggs.\n",
+      "    *   The eggs are all roughly the same size.\n",
+      "*   The braid is made up of long, thin stems that have been twisted together.\n",
+      "    *   The stems are green and appear to be some type of herb or plant.\n",
+      "    *   The braid is placed below the carton of eggs.\n",
+      "    *   The braid is not perfectly straight, but rather has a gentle curve to it.\n",
+      "*   The background of the image is a light-colored wooden surface.\n",
+      "    *   The wood grain is visible, giving the image a natural and rustic feel.\n",
+      "    *   The surface is flat and even, providing a clean and simple backdrop for the carton of eggs and the braid.\n",
+      "\n",
+      "Overall, the image presents a simple yet visually appealing composition that highlights the natural beauty of the eggs and the braid.\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "image-parking-image.jpeg-Llama4-Maverick-17B-analysis\n",
+      "\n",
+      "RESULT: The image depicts a sign that reads \"PARKING FOR ALIENS ONLY\" in large green letters on a white background, with a green alien head graphic below the text.\n",
+      "\n",
+      "* The sign is rectangular and has rounded corners.\n",
+      "\t+ It is attached to a black metal bracket at the bottom.\n",
+      "\t+ The sign is white with a thin green border around the edges.\n",
+      "\t+ The text is in large, bold, green letters.\n",
+      "\t+ The words \"PARKING FOR ALIENS ONLY\" are written in three lines.\n",
+      "\t+ Below the text is a green graphic of an alien head.\n",
+      "\t\t- The alien head is a simple, cartoonish representation.\n",
+      "\t\t- It has two white eyes that are shaped like teardrops.\n",
+      "\t\t- The eyes are pointed upwards and outwards.\n",
+      "* The background of the image shows a parking lot with palm trees and a clear blue sky.\n",
+      "\t+ The parking lot is made of asphalt and has white lines painted on it to mark the parking spaces.\n",
+      "\t+ There are several palm trees visible in the background, some of which are partially obscured by the sign.\n",
+      "\t+ The sky is a bright blue color with no clouds visible.\n",
+      "\n",
+      "The image appears to be a humorous take on the idea of aliens visiting Earth, and the sign is likely intended to be ironic or playful rather than serious.\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "image-text-typo-image.jpeg-Llama4-Maverick-17B-analysis\n",
+      "\n",
+      "RESULT: The image contains two handwritten phrases:\n",
+      "\n",
+      "1. \"I LOVE PROGAMING\" (uppercase)\n",
+      "2. \"I love progaming\" (mixed case)\n",
+      "\n",
+      "Both phrases appear to be expressing enthusiasm for a particular activity.\n",
+      "\n",
+      "Upon closer inspection, it becomes apparent that both instances contain a typo. The correct spelling should be \"PROGRAMMING\" instead of \"PROGAMING\" or \"progaming\". The error is likely due to a misspelling of the word \"programming\".\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "image-balls-image.jpeg-Llama4-Scout-17B-analysis\n",
+      "\n",
+      "RESULT: The device depicted in the image is a Newton's cradle, also known as a Newton's pendulum or Newton's rocker. \n",
+      "\n",
+      "There are 5 balls.\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "image-eggs-image.jpeg-Llama4-Scout-17B-analysis\n",
+      "\n",
+      "RESULT: To determine the total number of eggs and the number of brown and white eggs separately, let's analyze the image:\n",
+      "\n",
+      "1. **Total Number of Eggs**: There are 10 eggs in the carton.\n",
+      "\n",
+      "2. **Number of Brown Eggs**: Out of the 10 eggs, 8 are brown.\n",
+      "\n",
+      "3. **Number of White Eggs**: There are 2 white eggs.\n",
+      "\n",
+      "Therefore, the total number of eggs is 10, with 8 being brown and 2 being white.\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "image-parking-image.jpeg-Llama4-Scout-17B-analysis\n",
+      "\n",
+      "RESULT: The image shows a sign that reads \"PARKING FOR ALIENS ONLY\" in green text on a white background with a green border. The sign features a green alien head graphic at the bottom.\n",
+      "\n",
+      "**Key Features:**\n",
+      "\n",
+      "* **Sign Text:** The sign displays the message \"PARKING FOR ALIENS ONLY\" in large, bold green letters.\n",
+      "* **Alien Graphic:** A green alien head graphic is centered at the bottom of the sign.\n",
+      "* **Background:** The sign has a white background with a green border.\n",
+      "* **Mounting:** The sign appears to be mounted on a metal post or stand, which is not fully visible.\n",
+      "* **Surroundings:** In the background, there are palm trees and a clear blue sky, suggesting a warm and sunny location.\n",
+      "\n",
+      "**Overall Impression:**\n",
+      "The sign seems to be a humorous or fictional designation for parking, possibly in a location known for its association with science fiction or extraterrestrial themes.\n",
+      "\n",
+      " -------------------------- \n",
+      "\n",
+      "image-text-typo-image.jpeg-Llama4-Scout-17B-analysis\n",
+      "\n",
+      "RESULT: The text in the image is:\n",
+      "\n",
+      "* I LOVE PROGAMING\n",
+      "* I love progaming\n",
+      "\n",
+      "There is a typo in the text. The correct spelling should be \"programming\" instead of \"progaming\" and also \"love\" should be capitalized in the first sentence for consistency. \n",
+      "\n",
+      "The correct text should be:\n",
+      "\n",
+      "* I LOVE PROGRAMMING\n",
+      "* I love programming\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Go through all batch jobs, providing the output file ID\n",
+    "for batch_job in batch_jobs:\n",
+    "  job_status = client.batches.retrieve(batch_job.id)\n",
+    "  result_file_id = job_status.output_file_id\n",
+    "  result = client.files.content(result_file_id).content\n",
+    "  results = parse_json_objects(result)\n",
+    "\n",
+    "  # For each, print the result\n",
+    "  for res in results:\n",
+    "    inference_id = res['custom_id']\n",
+    "    result = res['response']['body']['choices'][0]['message']['content']\n",
+    "    print(f'\\n -------------------------- \\n')\n",
+    "    print(f\"{res['custom_id']}\\n\\nRESULT: {result}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "70e0e816-6558-4ff2-bab2-f85cff00bfc8",
+   "metadata": {
+    "executionInfo": {
+     "elapsed": 5,
+     "status": "ok",
+     "timestamp": 1732042430093,
+     "user": {
+      "displayName": "Joaquin Rodríguez",
+      "userId": "09993043682054067997"
+     },
+     "user_tz": 180
+    },
+    "id": "tu2R8dGYimKc"
+   },
+   "source": [
+    "## Summary"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7d195dd1-1293-4407-b6ad-cab7e77b14c0",
+   "metadata": {},
+   "source": [
+    "This tutorial used the chat completion endpoint to image analysis on multiple images using kluster.ai batch API. This particular example uploaded four specific images:\n",
+    "\n",
+    "1. A <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\" target=\"_blank\">Newtown's cradle</a>, we asked what is the device's name and how many balls were in the image (5):\n",
+    "   - All models responded correctly ✅\n",
+    "2. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/eggs-image.jpeg?raw=true\" target=\"_blank\">Eggs</a> of different colors, we asked how many total eggs and per color (10 total, 8 brown and 2 white):\n",
+    "   - Gemma 3 27B was able to identify all 10 eggs properly, counting 8 brown and 2 white ✅ (although sometimes it provided a 7/3 split between white and brown eggs))\n",
+    "   - Qwen 2.5 7B counted 12 eggs, identifying 10 white and 2 brown ❌\n",
+    "   - Both Llama 4 models were able to identify all 10 eggs properly, counting 8 brown and 2 white ✅\n",
+    "3. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true\" target=\"_blank\">Aliens only parking sign</a>, we asked to interpret the sign (only aliens can park, funny reference):\n",
+    "   - All models identified the sign appropriately. Qwen 2.5 7B was the only model that did not a reference of the sign being humurous ✅\n",
+    "4. <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true\" target=\"_blank\">Hand written note with a typo</a>, we asked what the text in the image is and to find a typo if any (\"I LOVE PROGRAMING\", \"I love programing\" missing an \"m\" in both instances):\n",
+    "   - All models responded correctly ✅\n",
+    "  \n",
+    "In other attempts, a music score was provided and the model was asked to identify the musical notes, but none of the models were able to identify the sequence of notes correctly.\n",
+    "\n",
+    "To submit a batch job, we've:\n",
+    "\n",
+    "1. Created the JSONL file, where each file line represented a separate request. We provided the images as URLs from GitHub\n",
+    "2. Submitted the file to the platform\n",
+    "3. Started the batch job, and monitored its progress\n",
+    "4. Once completed, we fetched the results\n",
+    "\n",
+    "All of this using the OpenAI Python library and API, no changes needed!\n",
+    "\n",
+    "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As the next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.12"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
 }
 --- END CONTENT ---
 
