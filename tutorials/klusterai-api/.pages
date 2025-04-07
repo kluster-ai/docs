@@ -8,3 +8,4 @@ nav:
   - 'Evaluating LLMs with labeled data': model-comparison.ipynb
   - 'LLM as a judge': llm-as-a-judge.ipynb
   - 'Fine-tuning': finetuning-sent-analysis.ipynb
+  - 'Image analysis': image-analysis.ipynb
