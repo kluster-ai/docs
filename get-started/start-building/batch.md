@@ -100,6 +100,18 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.3-70.py'
     ```
 
+??? example "Llama 4 Maverick 17B 128E"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama4-maverick.py'
+    ```
+
+??? example "Llama 4 Scout 17B 16E"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama4-scout.py'
+    ```
+
 ??? example "Qwen 2.5 7B"
 
     ```python
@@ -149,6 +161,18 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 
     ```bash
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.3-70.md'
+    ```
+
+??? example "Llama 4 Maverick 17B 128E"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama4-maverick.md'
+    ```
+
+??? example "Llama 4 Scout 17B 16E"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama4-scout.md'
     ```
 
 ??? example "Qwen 2.5 7B"
