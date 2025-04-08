@@ -46,7 +46,7 @@ template: api.html
 
 ## API request limits
 
-The following limits apply to API requests based on [your plan tier](https://platform.kluster.ai/plans){target=\_blank}:
+The following limits apply to API requests based on [your plan](https://platform.kluster.ai/plans){target=\_blank}:
 
 === "Trial"
 
@@ -4309,7 +4309,7 @@ Each model supported by kluster.ai has a unique name that must be used when defi
 
 ## API request limits
 
-The following limits apply to API requests based on [your plan tier](https://platform.kluster.ai/plans){target=\_blank}:
+The following limits apply to API requests based on [your plan](https://platform.kluster.ai/plans){target=\_blank}:
 
 === "Trial"
 
@@ -7841,7 +7841,7 @@ Check the [kluster.ai OpenAI compatibility page](/get-started/openai-compatibili
 
 ## API request limits
 
-The following limits apply to API requests based on [your plan tier](https://platform.kluster.ai/plans){target=\_blank}:
+The following limits apply to API requests based on [your plan](https://platform.kluster.ai/plans){target=\_blank}:
 
 === "Trial"
 

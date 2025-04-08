@@ -1,4 +1,4 @@
-The following limits apply to API requests based on [your plan tier](https://platform.kluster.ai/plans){target=\_blank}:
+The following limits apply to API requests based on [your plan](https://platform.kluster.ai/plans){target=\_blank}:
 
 === "Trial"
 
