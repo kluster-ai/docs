@@ -9621,7 +9621,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipyn
         "- A <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\" target=\"_blank\">Newton's cradle</a>, we asked what the device's name is and how many balls were in the image (5):\n",
         "   - All models responded correctly ✅\n",
         "- <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/eggs-image.jpeg?raw=true\" target=\"_blank\">Eggs</a> of different colors, we asked how many total eggs and per color (10 total, 8 brown and 2 white):\n",
-        "   - Gemma 3 27B was able to identify all 10 eggs correctly, counting 8 brown and 2 white ✅ (although sometimes it provided a 7/3 split between white and brown eggs))\n",
+        "   - Gemma 3 27B was able to identify all 10 eggs correctly, counting 8 brown and 2 white ✅ (although sometimes it provided a 7/3 split between white and brown eggs)\n",
         "   - Qwen 2.5 7B counted 12 eggs, identifying 9 white and 3 brown ❌\n",
         "   - Both Llama 4 models were able to identify all 10 eggs properly, counting 8 brown and 2 white ✅\n",
         "- <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true\" target=\"_blank\">Aliens only parking sign</a>, we asked to interpret the sign (only aliens can park, funny reference):\n",
