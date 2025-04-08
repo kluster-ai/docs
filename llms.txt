@@ -9629,7 +9629,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipyn
         "- <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true\" target=\"_blank\">Hand written note with a typo</a>, we asked what the text in the image is and to find a typo if any (\"I LOVE PROGRAMING\", \"I love programing\" missing an \"m\" in both instances):\n",
         "   - All models responded correctly ✅\n",
         "  \n",
-        "A music score was provided in other attempts, and the model was asked to identify the musical notes. Still, none of the models could locate the sequence of notes correctly.\n",
+        "\n",
+        "All models were also tested with a musical score by asking them to identify the sequence of notes. However, none of the models were able to correctly recognize the musical notes, so this test was not included in the final notebook.\n",
         "\n",
         "To submit a batch job, we've:\n",
         "\n",
@@ -9642,14 +9643,6 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipyn
         "\n",
         "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As the next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
       ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": null,
-      "id": "992f4555-150e-496e-90ab-fda39bbe3d1f",
-      "metadata": {},
-      "outputs": [],
-      "source": []
     }
   ],
   "metadata": {
@@ -12105,7 +12098,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
         "\n",
         "Please refer to the <a href=\"/get-started/models/#model-comparison-table\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
         "\n",
-        "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes (but we are only asking to respond with a single word, the genre)."
+        "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes."
       ]
     },
     {
@@ -13065,7 +13058,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
         "\n",
         "Please refer to the <a href=\"/get-started/models/\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
         "\n",
-        "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes (but we are only asking to respond with a single word, the genre)."
+        "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes."
       ]
     },
     {
@@ -13650,7 +13643,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
       "source": [
         "Now that we've the library, we can initialize the LLM object for batch. Note that Curator supports kluster.ai natively, so you just need to provide the model to use, API key, and completion window.\n",
         "\n",
-        "This example uses `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`, but feel free to comment it and uncomment any other model you want to try out.",
+        "This example uses `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`, but feel free to comment it and uncomment any other model you want to try out.\n",
         "\n",
         "Please refer to the <a href=\"/get-started/models/\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n"
       ]
@@ -13735,7 +13728,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
     },
     {
       "cell_type": "code",
-      "execution_count": 6,
+      "execution_count": null,
       "id": "r35Ztc4NsVuW",
       "metadata": {
         "colab": {
@@ -13749,21 +13742,21 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
           "name": "stdout",
           "output_type": "stream",
           "text": [
-            "Classify the main genre of the given movie description based on the following genres(Respond with only the genre): “Action”, “Adventure”, “Comedy”, “Crime”, “Documentary”, “Drama”, “Fantasy”, “Horror”, “Romance”, “Sci-Fi”.\n",
+            "Classify the main genre of the given movie description based on the following genres (Respond with only the genre): “Action”, “Adventure”, “Comedy”, “Crime”, “Documentary”, “Drama”, “Fantasy”, “Horror”, “Romance”, “Sci-Fi”.\n",
             "Breakfast at Tiffany's: A young New York socialite becomes interested in a young man who has moved into her apartment building, but her past threatens to get in the way.\n",
-            "Classify the main genre of the given movie description based on the following genres(Respond with only the genre): “Action”, “Adventure”, “Comedy”, “Crime”, “Documentary”, “Drama”, “Fantasy”, “Horror”, “Romance”, “Sci-Fi”.\n",
+            "Classify the main genre of the given movie description based on the following genres (Respond with only the genre): “Action”, “Adventure”, “Comedy”, “Crime”, “Documentary”, “Drama”, “Fantasy”, “Horror”, “Romance”, “Sci-Fi”.\n",
             "Giant: Sprawling epic covering the life of a Texas cattle rancher and his family and associates.\n",
-            "Classify the main genre of the given movie description based on the following genres(Respond with only the genre): “Action”, “Adventure”, “Comedy”, “Crime”, “Documentary”, “Drama”, “Fantasy”, “Horror”, “Romance”, “Sci-Fi”.\n",
+            "Classify the main genre of the given movie description based on the following genres (Respond with only the genre): “Action”, “Adventure”, “Comedy”, “Crime”, “Documentary”, “Drama”, “Fantasy”, “Horror”, “Romance”, “Sci-Fi”.\n",
             "From Here to Eternity: In Hawaii in 1941, a private is cruelly punished for not boxing on his unit's team, while his captain's wife and second-in-command are falling in love.\n",
-            "Classify the main genre of the given movie description based on the following genres(Respond with only the genre): “Action”, “Adventure”, “Comedy”, “Crime”, “Documentary”, “Drama”, “Fantasy”, “Horror”, “Romance”, “Sci-Fi”.\n",
+            "Classify the main genre of the given movie description based on the following genres (Respond with only the genre): “Action”, “Adventure”, “Comedy”, “Crime”, “Documentary”, “Drama”, “Fantasy”, “Horror”, “Romance”, “Sci-Fi”.\n",
             "Lifeboat: Several survivors of a torpedoed merchant ship in World War II find themselves in the same lifeboat with one of the crew members of the U-boat that sank their ship.\n",
-            "Classify the main genre of the given movie description based on the following genres(Respond with only the genre): “Action”, “Adventure”, “Comedy”, “Crime”, “Documentary”, “Drama”, “Fantasy”, “Horror”, “Romance”, “Sci-Fi”.\n",
+            "Classify the main genre of the given movie description based on the following genres (Respond with only the genre): “Action”, “Adventure”, “Comedy”, “Crime”, “Documentary”, “Drama”, “Fantasy”, “Horror”, “Romance”, “Sci-Fi”.\n",
             "The 39 Steps: A man in London tries to help a counter-espionage Agent. But when the Agent is killed, and the man stands accused, he must go on the run to save himself and stop a spy ring which is trying to steal top secret information.\n"
           ]
         }
       ],
       "source": [
-        "prompts = [f\"Classify the main genre of the given movie description based on the following genres(Respond with only the genre): “Action”, “Adventure”, “Comedy”, “Crime”, “Documentary”, “Drama”, “Fantasy”, “Horror”, “Romance”, “Sci-Fi”.\\n{movie}\" for movie in movies]\n",
+        "prompts = [f\"Classify the main genre of the given movie description based on the following genres (Respond with only the genre): “Action”, “Adventure”, “Comedy”, “Crime”, “Documentary”, “Drama”, “Fantasy”, “Horror”, “Romance”, “Sci-Fi”.\\n{movie}\" for movie in movies]\n",
         "\n",
         "# Log the prompt\n",
         "for prompt in prompts:\n",
