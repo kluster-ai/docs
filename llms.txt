@@ -20,6 +20,7 @@ Doc-Page: https://docs.kluster.ai/get-started/openai-compatibility/
 Doc-Page: https://docs.kluster.ai/get-started/start-building/batch/
 Doc-Page: https://docs.kluster.ai/get-started/start-building/real-time/
 Doc-Page: https://docs.kluster.ai/get-started/start-building/setup/
+Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-engineering/
 Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-analysis/
 Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis/
 Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-api/
@@ -7935,6 +7936,608 @@ The following limits apply to API requests based on [your plan](https://platform
 
 
 </div>
+--- END CONTENT ---
+
+Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-engineering.ipynb/
+--- BEGIN CONTENT ---
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "b26c7677",
+   "metadata": {},
+   "source": [
+    "# Effective Prompt Engineering with the kluster.ai API\n",
+    "\n",
+    "In this notebook, we'll showcase how **prompt engineering** can dramatically improve the quality of responses from LLMs. By comparing three prompts—**Bad**, **Better**, and **Best**—we'll see how adding clearer instructions, richer data, and specific business context delivers increasingly targeted and actionable results. In this notebook, we encourage you to experiment with different models, using any of the [supported models](https://docs.kluster.ai/api-reference/reference/#list-supported-models) available from the Kluster.ai API. \n",
+    "\n",
+    "**How We'll Proceed**\n",
+    "* **Prompt Comparisons:**\n",
+    "   1. Begin with a minimal \"Bad\" prompt and see the limitations.\n",
+    "   2. Refine it to a \"Better\" prompt with more detail.\n",
+    "   3. Present the \"Best\" prompt, which includes comprehensive data (pricing, profit margins), demographics, product details, and specific analysis requests.\n",
+    "* **Execution & Analysis:**\n",
+    "   * Each prompt is displayed, run, and its output analyzed, illustrating how incremental context upgrades yield significant improvements.\n",
+    "* **Takeaways:**\n",
+    "   * Side-by-side comparison shows how thoughtful prompt design is key to extracting the most value—regardless of which underlying LLM you choose within kluster.ai's offerings.\n",
+    "\n",
+    "Let's get started with the \"Bad\" prompt and proceed step by step toward \"Better\" and ultimately \"Best.\""
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "934b46ad",
+   "metadata": {},
+   "source": [
+    "## Prerequisites\n",
+    "\n",
+    "Before getting started, ensure you have:\n",
+    "\n",
+    "- **A kluster.ai account** - sign up at [kluster.ai](https://platform.kluster.ai/signup)\n",
+    "- **A kluster.ai API key** - get your key from the [API Keys](https://platform.kluster.ai/apikeys) page. For instructions, see the [API key guide](https://platform.kluster.ai/get-started/get-api-key/)."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e10a6552",
+   "metadata": {},
+   "source": [
+    "## Setup and API key"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "2f254b80",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter your kluster.ai API key:  ········\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Import required packages at the beginning of the notebook\n",
+    "from getpass import getpass\n",
+    "from openai import OpenAI\n",
+    "from IPython.display import Markdown\n",
+    "\n",
+    "api_key = getpass('Enter your kluster.ai API key: ')\n",
+    "# Feel free to swap out the model with any of Kluster's supported models\n",
+    "model = \"klusterai/Meta-Llama-3.3-70B-Instruct-Turbo\"\n",
+    "client = OpenAI(base_url=\"https://api.kluster.ai/v1\", api_key=api_key)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "84894eb8",
+   "metadata": {},
+   "source": [
+    "## 🟡 Bad Prompt\n",
+    "\n",
+    "Below is an example of a bad prompt that lacks context and specificity:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "e88b3960",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/markdown": [
+       "Here's some data:\n",
+       "\n",
+       "| Product | Sales |\n",
+       "|---------|-------|\n",
+       "| A       | 10    |\n",
+       "| B       | 20    |\n",
+       "| C       | 5     |\n",
+       "| D       | 15    |\n",
+       "\n",
+       "Tell me about it."
+      ],
+      "text/plain": [
+       "<IPython.core.display.Markdown object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The data appears to be a simple table showing the sales of four different products, labeled A, B, C, and D. \n",
+      "\n",
+      "Here are some observations based on the data:\n",
+      "\n",
+      "1. **Product B has the highest sales**: With 20 sales, Product B is the best-selling product in the dataset.\n",
+      "2. **Product C has the lowest sales**: With only 5 sales, Product C is the worst-selling product in the dataset.\n",
+      "3. **Product A and D have moderate sales**: Products A and D have sales of 10 and 15, respectively, which are lower than Product B but higher than Product C.\n",
+      "4. **Total sales**: If we add up the sales of all products, we get a total of 10 + 20 + 5 + 15 = 50 sales.\n",
+      "\n",
+      "Overall, the data suggests that Product B is the most popular, while Product C is the least popular. However, without more context or information about the products, market, or time period, it's difficult to draw more specific conclusions.\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Define the bad prompt\n",
+    "bad_prompt_text = \"\"\"Here's some data:\n",
+    "\n",
+    "| Product | Sales |\n",
+    "|---------|-------|\n",
+    "| A       | 10    |\n",
+    "| B       | 20    |\n",
+    "| C       | 5     |\n",
+    "| D       | 15    |\n",
+    "\n",
+    "Tell me about it.\"\"\"\n",
+    "\n",
+    "# Display the prompt for visual reference\n",
+    "display(Markdown(bad_prompt_text))\n",
+    "\n",
+    "# Use the variable in the API call\n",
+    "response_bad = client.chat.completions.create(\n",
+    "    model=model,\n",
+    "    messages=[{\"role\": \"user\", \"content\": bad_prompt_text}],\n",
+    "    temperature=0.5\n",
+    ").choices[0].message.content\n",
+    "print(response_bad)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b8c92069",
+   "metadata": {},
+   "source": [
+    "### Analysis\n",
+    "The **Bad** prompt offers only the most rudimentary information—products and their sales—and provides no clear instructions beyond \"tell me about it.\" This inevitably results in:\n",
+    "1. **Minimal Context**: Without pricing, profit margins, or a specific goal (e.g., analyzing profitability, recommending strategies), the LLM can only produce surface-level observations.\n",
+    "2. **No Actionable Guidance**: The prompt doesn't request particular insights or next steps, so the model responds with high-level statements rather than solutions.\n",
+    "3. **Limited Utility**: Because the data is purely quantitative (sales alone) and lacks details such as time frame, product characteristics, or marketing context, the response cannot go beyond pointing out which products sold more or less.\n",
+    "\n",
+    "Overall, this prompt's lack of **clear direction** and **supporting information** stifles the model's ability to provide meaningful analysis or recommendations."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "87dab731",
+   "metadata": {},
+   "source": [
+    "## 🔵 Better Prompt\n",
+    "\n",
+    "The below better prompt provides more context and clearer instructions, however, there is still room for improvement:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "d1c3d4c4",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/markdown": [
+       "Here's monthly sales data from our store (units sold) for four products during January 2025:\n",
+       "\n",
+       "| Product | Units Sold |\n",
+       "|---------|------------|\n",
+       "| A       | 10         |\n",
+       "| B       | 20         |\n",
+       "| C       | 5          |\n",
+       "| D       | 15         |\n",
+       "\n",
+       "We sell these products at the following prices:\n",
+       "\n",
+       "| Product | Price per Unit |\n",
+       "|---------|----------------|  \n",
+       "| A       | $5.00          |\n",
+       "| B       | $3.50          |\n",
+       "| C       | $8.00          |\n",
+       "| D       | $6.00          |\n",
+       "\n",
+       "I'd like you to do the following clearly and specifically:\n",
+       "\n",
+       "1. Calculate total monthly revenue for each product.\n",
+       "2. Identify the best and worst-performing products by revenue.\n",
+       "3. Suggest specific and actionable strategies to boost overall sales, particularly focusing on lower-performing products.\n",
+       "4. Provide recommendations on whether adjusting pricing or marketing might improve profitability based on current sales performance.\n",
+       "\n",
+       "Structure your response clearly with separate sections and explain briefly your reasoning behind each recommendation."
+      ],
+      "text/plain": [
+       "<IPython.core.display.Markdown object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "## Step 1: Calculate Total Monthly Revenue for Each Product\n",
+      "To calculate the total monthly revenue for each product, we multiply the units sold by the price per unit for each product.\n",
+      "\n",
+      "- Product A: 10 units * $5.00/unit = $50\n",
+      "- Product B: 20 units * $3.50/unit = $70\n",
+      "- Product C: 5 units * $8.00/unit = $40\n",
+      "- Product D: 15 units * $6.00/unit = $90\n",
+      "\n",
+      "## Step 2: Identify the Best and Worst-Performing Products by Revenue\n",
+      "Based on the calculations, the revenues are as follows:\n",
+      "- Product A: $50\n",
+      "- Product B: $70\n",
+      "- Product C: $40\n",
+      "- Product D: $90\n",
+      "\n",
+      "The best-performing product by revenue is Product D with $90, and the worst-performing product is Product C with $40.\n",
+      "\n",
+      "## Step 3: Suggest Strategies to Boost Overall Sales\n",
+      "To boost overall sales, particularly for lower-performing products like Product C, consider the following strategies:\n",
+      "\n",
+      "- **For Product C**: Since it has the highest price point but the lowest sales, it might be worth exploring why sales are low. This could involve gathering customer feedback, possibly adjusting the pricing to make it more competitive, or investing in targeted marketing campaigns to highlight the product's unique selling points.\n",
+      "- **For All Products**: Implementing a loyalty program or offering discounts for bulk purchases could encourage customers to buy more, thus increasing overall sales.\n",
+      "- **Marketing Focus**: Increase social media presence and utilize influencer marketing to reach a broader audience, especially for products like C, which might appeal to a niche market.\n",
+      "- **Product Bundling**: Offer bundles that include a combination of products at a discounted price. This can help increase the average sale per customer and make lower-performing products more appealing when paired with best-sellers.\n",
+      "\n",
+      "## Step 4: Recommendations on Pricing and Marketing Adjustments\n",
+      "Based on current sales performance:\n",
+      "- **Pricing Adjustments**: For Product C, considering a price adjustment to make it more competitive might be beneficial. However, it's crucial to weigh this against the potential impact on profit margins. Reducing the price could increase sales volume but might decrease profitability per unit.\n",
+      "- **Marketing Adjustments**: Investing more in marketing for Product C and possibly Product A could help increase their sales. This could involve targeted advertising, special promotions, or highlighting these products in-store displays and online platforms.\n",
+      "- **Profitability Analysis**: Before making any adjustments, conduct a thorough profitability analysis to understand the impact of price changes or increased marketing spend on the bottom line. This will help in making informed decisions that balance sales volume with profitability.\n",
+      "\n",
+      "By following these steps and considering these recommendations, it's possible to boost overall sales, improve the performance of lower-performing products, and enhance profitability.\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Define the better prompt\n",
+    "better_prompt_text = \"\"\"Here's monthly sales data from our store (units sold) for four products during January 2025:\n",
+    "\n",
+    "| Product | Units Sold |\n",
+    "|---------|------------|\n",
+    "| A       | 10         |\n",
+    "| B       | 20         |\n",
+    "| C       | 5          |\n",
+    "| D       | 15         |\n",
+    "\n",
+    "We sell these products at the following prices:\n",
+    "\n",
+    "| Product | Price per Unit |\n",
+    "|---------|----------------|  \n",
+    "| A       | $5.00          |\n",
+    "| B       | $3.50          |\n",
+    "| C       | $8.00          |\n",
+    "| D       | $6.00          |\n",
+    "\n",
+    "I'd like you to do the following clearly and specifically:\n",
+    "\n",
+    "1. Calculate total monthly revenue for each product.\n",
+    "2. Identify the best and worst-performing products by revenue.\n",
+    "3. Suggest specific and actionable strategies to boost overall sales, particularly focusing on lower-performing products.\n",
+    "4. Provide recommendations on whether adjusting pricing or marketing might improve profitability based on current sales performance.\n",
+    "\n",
+    "Structure your response clearly with separate sections and explain briefly your reasoning behind each recommendation.\"\"\"\n",
+    "\n",
+    "# Display the prompt for visual reference\n",
+    "display(Markdown(better_prompt_text))\n",
+    "\n",
+    "# Use the variable in the API call\n",
+    "response_better = client.chat.completions.create(\n",
+    "    model=model,\n",
+    "    messages=[{\"role\": \"user\", \"content\": better_prompt_text}],\n",
+    "    temperature=0.5\n",
+    ").choices[0].message.content\n",
+    "print(response_better)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6f3ca7a4",
+   "metadata": {},
+   "source": [
+    "### Analysis\n",
+    "This **Better** prompt elevates the request beyond the \"Bad\" version by incorporating **pricing details** and **clearer instructions**, which yield more focused calculations and recommendations. The prompt also **specifies a timeline** (January 2025) and **outlines key tasks** (calculating revenue, identifying product performance, suggesting sales-boosting strategies). As a result, the LLM response provides:\n",
+    "1. **Structured Revenue Calculations**: By explicitly asking for per-product revenue, it brings a quantitative foundation to the analysis.\n",
+    "2. **Actionable Recommendations**: Requests for pricing and marketing adjustments prompt specific suggestions, rather than broad, generic ideas.\n",
+    "3. **Organized Output**: Clearly defined sections ensure the response is easy to interpret and act upon.\n",
+    "\n",
+    "However, the prompt stops short of requesting **profit margins**, **customer demographics**, or **broader business context** (e.g., marketing channels or inventory challenges) seen in the **Best** prompt. Consequently, while the \"Better\" prompt moves toward more concrete, data-driven insights, it still lacks the richness and depth needed to produce **thorough, strategic recommendations**."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a8ceea92",
+   "metadata": {},
+   "source": [
+    "## 🟢 Best Prompt\n",
+    "\n",
+    "Finally, we describe arrive at our best prompt. This prompt has comprehensive context, detailed instructions, and clear formatting requirements:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "cb27726c",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/markdown": [
+       "Here's monthly sales data (units sold) from our small retail store for four products during January 2025:\n",
+       "\n",
+       "| Product | Units Sold |\n",
+       "|---------|------------|\n",
+       "| A       | 10         |\n",
+       "| B       | 20         |\n",
+       "| C       | 5          |\n",
+       "| D       | 15         |\n",
+       "\n",
+       "Prices and profit margins are as follows:\n",
+       "\n",
+       "| Product | Price per Unit | Profit Margin (%) |\n",
+       "|---------|----------------|-------------------|\n",
+       "| A       | $5.00          | 30%               |\n",
+       "| B       | $3.50          | 40%               |\n",
+       "| C       | $8.00          | 25%               |\n",
+       "| D       | $6.00          | 35%               |\n",
+       "\n",
+       "### Additional Business Context:\n",
+       "\n",
+       "- **Customer Demographics:**\n",
+       "  - Primary: Young adults (18-30 years old)\n",
+       "  - Secondary: Middle-aged professionals (35-50 years old)\n",
+       "  - Marketing channels: Instagram ads, email newsletters, weekend promotions\n",
+       "\n",
+       "- **Product Context:**\n",
+       "  - **Product A:** Everyday consumable, consistent demand\n",
+       "  - **Product B:** Lower-priced, frequent purchases, popular with young adults\n",
+       "  - **Product C:** Premium product, aimed at professionals, slow-moving, excess inventory\n",
+       "  - **Product D:** Mid-range product, recently gaining popularity\n",
+       "\n",
+       "- **Challenges:**\n",
+       "  - Overstock of Product C; immediate action required\n",
+       "  - Limited marketing budget; high ROI needed\n",
+       "  - Seeking quick profitability improvements through inventory and pricing strategies, avoiding new product lines\n",
+       "\n",
+       "### Clearly and specifically, please provide the following structured analysis:\n",
+       "\n",
+       "**1. Revenue and Profit Analysis:**\n",
+       "- Calculate total monthly revenue and total gross profit per product.\n",
+       "- Clearly identify best and worst-performing products based on profitability.\n",
+       "\n",
+       "**2. Profitability Optimization Recommendations (Think step-by-step):**\n",
+       "- Provide **specific, actionable steps** to quickly address excess inventory, particularly Product C.\n",
+       "- Suggest **explicit pricing adjustments or promotional strategies**, clearly aligned with primary and secondary demographics.\n",
+       "- Clearly explain your reasoning behind each recommendation.\n",
+       "\n",
+       "**3. Marketing Optimization Recommendations:**\n",
+       "- Provide targeted recommendations for utilizing existing marketing channels (Instagram, newsletters, weekend promotions) to maximize profitability.\n",
+       "- Clearly specify which products to prioritize in each channel and explain why.\n",
+       "\n",
+       "**Structure your response clearly:**\n",
+       "- Use separate headings for each of the above sections.\n",
+       "- Present recommendations clearly in bullet-point format.\n",
+       "- Briefly but explicitly explain your reasoning behind each suggestion.\n",
+       "\n",
+       "Please be concise, specific, and actionable."
+      ],
+      "text/plain": [
+       "<IPython.core.display.Markdown object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "## 1. Revenue and Profit Analysis\n",
+      "To calculate the total monthly revenue and total gross profit per product, we first need to calculate the revenue and profit per unit for each product, then multiply by the units sold.\n",
+      "\n",
+      "- **Product A:** Price per unit = $5.00, Profit Margin = 30%, Units Sold = 10\n",
+      "  - Revenue per unit = $5.00\n",
+      "  - Profit per unit = $5.00 * 30% = $1.50\n",
+      "  - Total Revenue = 10 units * $5.00 = $50.00\n",
+      "  - Total Gross Profit = 10 units * $1.50 = $15.00\n",
+      "\n",
+      "- **Product B:** Price per unit = $3.50, Profit Margin = 40%, Units Sold = 20\n",
+      "  - Revenue per unit = $3.50\n",
+      "  - Profit per unit = $3.50 * 40% = $1.40\n",
+      "  - Total Revenue = 20 units * $3.50 = $70.00\n",
+      "  - Total Gross Profit = 20 units * $1.40 = $28.00\n",
+      "\n",
+      "- **Product C:** Price per unit = $8.00, Profit Margin = 25%, Units Sold = 5\n",
+      "  - Revenue per unit = $8.00\n",
+      "  - Profit per unit = $8.00 * 25% = $2.00\n",
+      "  - Total Revenue = 5 units * $8.00 = $40.00\n",
+      "  - Total Gross Profit = 5 units * $2.00 = $10.00\n",
+      "\n",
+      "- **Product D:** Price per unit = $6.00, Profit Margin = 35%, Units Sold = 15\n",
+      "  - Revenue per unit = $6.00\n",
+      "  - Profit per unit = $6.00 * 35% = $2.10\n",
+      "  - Total Revenue = 15 units * $6.00 = $90.00\n",
+      "  - Total Gross Profit = 15 units * $2.10 = $31.50\n",
+      "\n",
+      "Based on the calculations:\n",
+      "- **Best-performing product** in terms of total gross profit is **Product D** with $31.50.\n",
+      "- **Worst-performing product** in terms of total gross profit is **Product C** with $10.00, which also aligns with the challenge of having excess inventory of this product.\n",
+      "\n",
+      "## 2. Profitability Optimization Recommendations\n",
+      "To address the challenges and optimize profitability:\n",
+      "* **Clear excess inventory of Product C:**\n",
+      "  - Offer a limited-time discount (10-15% off) on Product C to appeal to the secondary demographic (middle-aged professionals) who might be interested in premium products.\n",
+      "  - Bundle Product C with other products (like Product D) at a slightly discounted overall price to incentivize sales.\n",
+      "* **Pricing adjustments:**\n",
+      "  - Consider a slight price increase (5-10%) for Product D, given its popularity and mid-range position, to maximize profit without deterring sales.\n",
+      "  - Maintain or slightly adjust prices for Product A and B, as they have consistent demand and are popular among the primary demographic.\n",
+      "* **Promotional strategies:**\n",
+      "  - For Product B, which is popular among young adults, consider \"buy one get one free\" or similar promotions to increase sales volume.\n",
+      "  - For Product A, given its consistent demand, focus on loyalty programs or rewards for frequent buyers to maintain customer retention.\n",
+      "\n",
+      "## 3. Marketing Optimization Recommendations\n",
+      "To maximize profitability through existing marketing channels:\n",
+      "* **Instagram:**\n",
+      "  - Prioritize Product B and Product D, as they are more likely to appeal to the younger demographic that uses Instagram.\n",
+      "  - Use visually appealing ads and influencer partnerships to promote these products.\n",
+      "* **Newsletters:**\n",
+      "  - Focus on promoting Product A and bundled deals (including Product C) to the subscriber list, which likely includes loyal customers and middle-aged professionals interested in premium products.\n",
+      "  - Offer exclusive discounts to newsletter subscribers to encourage sales.\n",
+      "* **Weekend Promotions:**\n",
+      "  - Use in-store promotions and discounts on Products B and D during weekends to attract both primary and secondary demographics.\n",
+      "  - Consider showcasing Product C and its bundles during these promotions to clear inventory.\n",
+      "\n",
+      "The reasoning behind these recommendations is to leverage the strengths of each product and demographic, address the excess inventory issue of Product C, and maximize profitability through targeted marketing and pricing strategies.\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Define the best prompt\n",
+    "best_prompt_text = \"\"\"Here's monthly sales data (units sold) from our small retail store for four products during January 2025:\n",
+    "\n",
+    "| Product | Units Sold |\n",
+    "|---------|------------|\n",
+    "| A       | 10         |\n",
+    "| B       | 20         |\n",
+    "| C       | 5          |\n",
+    "| D       | 15         |\n",
+    "\n",
+    "Prices and profit margins are as follows:\n",
+    "\n",
+    "| Product | Price per Unit | Profit Margin (%) |\n",
+    "|---------|----------------|-------------------|\n",
+    "| A       | $5.00          | 30%               |\n",
+    "| B       | $3.50          | 40%               |\n",
+    "| C       | $8.00          | 25%               |\n",
+    "| D       | $6.00          | 35%               |\n",
+    "\n",
+    "### Additional Business Context:\n",
+    "\n",
+    "- **Customer Demographics:**\n",
+    "  - Primary: Young adults (18-30 years old)\n",
+    "  - Secondary: Middle-aged professionals (35-50 years old)\n",
+    "  - Marketing channels: Instagram ads, email newsletters, weekend promotions\n",
+    "\n",
+    "- **Product Context:**\n",
+    "  - **Product A:** Everyday consumable, consistent demand\n",
+    "  - **Product B:** Lower-priced, frequent purchases, popular with young adults\n",
+    "  - **Product C:** Premium product, aimed at professionals, slow-moving, excess inventory\n",
+    "  - **Product D:** Mid-range product, recently gaining popularity\n",
+    "\n",
+    "- **Challenges:**\n",
+    "  - Overstock of Product C; immediate action required\n",
+    "  - Limited marketing budget; high ROI needed\n",
+    "  - Seeking quick profitability improvements through inventory and pricing strategies, avoiding new product lines\n",
+    "\n",
+    "### Clearly and specifically, please provide the following structured analysis:\n",
+    "\n",
+    "**1. Revenue and Profit Analysis:**\n",
+    "- Calculate total monthly revenue and total gross profit per product.\n",
+    "- Clearly identify best and worst-performing products based on profitability.\n",
+    "\n",
+    "**2. Profitability Optimization Recommendations (Think step-by-step):**\n",
+    "- Provide **specific, actionable steps** to quickly address excess inventory, particularly Product C.\n",
+    "- Suggest **explicit pricing adjustments or promotional strategies**, clearly aligned with primary and secondary demographics.\n",
+    "- Clearly explain your reasoning behind each recommendation.\n",
+    "\n",
+    "**3. Marketing Optimization Recommendations:**\n",
+    "- Provide targeted recommendations for utilizing existing marketing channels (Instagram, newsletters, weekend promotions) to maximize profitability.\n",
+    "- Clearly specify which products to prioritize in each channel and explain why.\n",
+    "\n",
+    "**Structure your response clearly:**\n",
+    "- Use separate headings for each of the above sections.\n",
+    "- Present recommendations clearly in bullet-point format.\n",
+    "- Briefly but explicitly explain your reasoning behind each suggestion.\n",
+    "\n",
+    "Please be concise, specific, and actionable.\"\"\"\n",
+    "\n",
+    "# Display the prompt for visual reference\n",
+    "display(Markdown(best_prompt_text))\n",
+    "\n",
+    "# Use the variable in the API call\n",
+    "response_best = client.chat.completions.create(\n",
+    "    model=model,\n",
+    "    messages=[{\"role\": \"user\", \"content\": best_prompt_text}],\n",
+    "    temperature=0.5\n",
+    ").choices[0].message.content\n",
+    "print(response_best)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3455c366",
+   "metadata": {},
+   "source": [
+    "### Analysis\n",
+    "The **Best** prompt excels because it integrates **comprehensive data** (product sales, prices, and profit margins) with **detailed business context** (target demographics, product characteristics, marketing channels, and specific challenges). By explicitly specifying the **desired structure**—including step-by-step revenue and profit analysis, targeted profitability recommendations, and marketing optimizations—it guides the LLM toward **high-value, actionable insights**.\n",
+    "\n",
+    "Key strengths of this Best prompt:\n",
+    "1. **Complete Data & Metrics**\n",
+    "   * Monthly sales, pricing, and profit margins remove guesswork and allow precise revenue/profit calculations.\n",
+    "2. **Focused Business Context**\n",
+    "   * Target customer demographics, marketing channels, and product nuances (e.g., overstock of Product C) align the output with real business priorities.\n",
+    "3. **Clear Task Breakdown**\n",
+    "   * Dividing the request into distinct sections (Revenue/Profit Analysis, Profitability Recommendations, Marketing Strategies) ensures the response is both methodical and thorough.\n",
+    "4. **Actionability & Specificity**\n",
+    "   * The prompt requests concrete next steps—such as pricing tweaks and promotional ideas—tailored to each product's characteristics and customer segment.\n",
+    "5. **Logical Reasoning Instructions**\n",
+    "   * Guiding the LLM to \"think step-by-step\" fosters more thoughtful planning, especially around clearing excess inventory and leveraging different marketing channels.\n",
+    "\n",
+    "Overall, this approach maximizes the LLM's potential, yielding responses that are **precise, context-aware, and immediately useful** to decision-makers."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7a0583b5",
+   "metadata": {},
+   "source": [
+    "## Conclusion\n",
+    "\n",
+    "This side-by-side comparison demonstrates how the quality and specificity of a prompt directly influence the **depth, utility, and strategic value** of an LLM's output:\n",
+    "* **Bad Prompt:** Minimal data and vague instructions yield only superficial insights—no clear direction or actionable strategies.\n",
+    "* **Better Prompt:** Adding **pricing details** and **specific tasks** (like calculating revenue or ranking products) results in more concrete analysis and targeted recommendations.\n",
+    "* **Best Prompt:** Providing **comprehensive context**—including profit margins, demographics, inventory challenges, and explicit formatting instructions—empowers the model to deliver nuanced, highly actionable advice aligned with real business needs.\n",
+    "\n",
+    "Key Takeaways for Effective Prompt Engineering\n",
+    "* **Provide Relevant Context:** Include all essential data (pricing, margins, customer segments) to enable deeper analysis.\n",
+    "* **Specify Instructions Clearly:** Outline the tasks, format, and reasoning style (e.g., step-by-step) you want the model to follow.\n",
+    "* **Articulate Business Constraints & Goals:** Highlight challenges (e.g., excess inventory, limited budget) to guide strategic recommendations.\n",
+    "* **Structure the Output Requirements:** Break down the response into clear, logical sections (analysis, recommendations, marketing, etc.).\n",
+    "* **Iterate for Best Results:** Incrementally refining prompts yields **exponentially better outcomes**—invest time upfront for far greater business value.\n",
+    "\n",
+    "By enriching prompts with thorough details and well-defined objectives, you unlock the **full potential** of LLMs to generate accurate, context-aware, and **immediately applicable** insights."
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-analysis.ipynb/
