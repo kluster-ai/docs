@@ -8249,7 +8249,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
    "source": [
     "## 🟢 Best Prompt\n",
     "\n",
-    "Finally, we describe arrive at our best prompt. This prompt has comprehensive context, detailed instructions, and clear formatting requirements:"
+    "Finally, we arrive at our best prompt. This prompt has comprehensive context, detailed instructions, and clear formatting requirements:"
    ]
   },
   {
