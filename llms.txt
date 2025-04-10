@@ -8493,7 +8493,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
     "\n",
     "This side-by-side comparison demonstrates how the quality and specificity of a prompt directly influence the depth, utility, and strategic value of an LLM's output:\n",
     "* **Bad Prompt:** Minimal data and vague instructions yield only superficial insights—no clear direction or actionable strategies.\n",
-    "* **Better Prompt:** Adding pricing details** and specific tasks (like calculating revenue or ranking products) results in more concrete analysis and targeted recommendations.\n",
+    "* **Better Prompt:** Adding pricing details and specific tasks (like calculating revenue or ranking products) results in more concrete analysis and targeted recommendations.\n",
     "* **Best Prompt:** Providing comprehensive context—including profit margins, demographics, inventory challenges, and explicit formatting instructions—empowers the model to deliver nuanced, highly actionable advice aligned with real business needs.\n",
     "\n",
     "Key Takeaways for Effective Prompt Engineering\n",
