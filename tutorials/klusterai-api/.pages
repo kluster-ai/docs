@@ -9,3 +9,4 @@ nav:
   - 'LLM as a judge': llm-as-a-judge.ipynb
   - 'Fine-tuning': finetuning-sent-analysis.ipynb
   - 'Image analysis': image-analysis.ipynb
+  - 'Effective Prompt Engineering': effective-prompt-engineering.ipynb
