@@ -36,7 +36,7 @@ To start using kluster.ai with OpenAI's client libraries, set your [API key](/ge
 
 While kluster.ai's API is largely compatible with OpenAI's, the following sections outline the specific features and fields that are currently unsupported.
 
-### Chat completions endpoint
+### Chat completions parameters
 
 When creating a chat completion via the [`POST https://api.kluster.ai/v1/chat/completions` endpoint](/api-reference/reference#create-chat-completion){target=\_blank}, the following request parameters are not supported:
 
@@ -50,6 +50,9 @@ When creating a chat completion via the [`POST https://api.kluster.ai/v1/chat/co
 - `response_format`
 - `service_tier`
 - `stream_options`
+
+The following request parameters are supported only with Llama models:
+
 - `tools`
 - `tool_choice`
 - `parallel_tool_calls`
