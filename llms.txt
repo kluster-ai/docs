@@ -7942,13 +7942,31 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
 --- BEGIN CONTENT ---
 {
  "cells": [
+{
+   "cell_type": "markdown",
+   "id": "be189fde-4e5b-4f80-bae1-ded86a5075a7",
+   "metadata": {
+    "id": "be189fde-4e5b-4f80-bae1-ded86a5075a7"
+   },
+   "source": [
+    "# Effective prompt engineering with the kluster.ai API"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b17a77d9",
+   "metadata": {
+    "id": "b17a77d9"
+   },
+   "source": [
+    "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/examples/finetuning-sent-analysis.ipynb)"
+   ]
+  },
   {
    "cell_type": "markdown",
    "id": "b26c7677",
    "metadata": {},
    "source": [
-    "# Effective prompt engineering with the kluster.ai API\n",
-    "\n",
     "In this notebook, we'll showcase how prompt engineering can dramatically improve the quality of responses from LLMs. Effective prompt design often makes the difference between vague, generic outputs and precise, actionable business intelligence.\n",
     "\n",
     "In this notebook, we demonstrate the dramatic impact of prompt quality on LLM performance by comparing three increasingly sophisticated prompts, namely _Bad_, _Better_, and _Best_, applied to a retail sales analysis scenario. You'll see firsthand how adding structure, context, and specific business parameters transforms model outputs from basic observations into comprehensive strategic recommendations.\n",
@@ -8568,11 +8586,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
    "id": "22c05fc0-6f1c-4137-8d5b-fe36c8401c5c",
    "metadata": {},
    "source": [
-    "## Leveraging AI to Improve Your Prompts\n",
+    "## Leveraging AI to improve your prompts\n",
     "\n",
     "While it sounds like a meta approach, using an LLM to refine your prompt can accelerate your prompt engineering learning curve. This meta-approach (using AI to improve AI interactions) can quickly and easily improve the quality of your prompts.\n",
     "\n",
-    "### The Prompt Improvement Process\n",
+    "### The prompt improvement process\n",
     "\n",
     "**Ask the LLM to analyze and improve your prompt** by submitting a meta-prompt like:\n",
     "   ```\n",
@@ -8593,7 +8611,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
     "\n",
     "Remember that you can always iterate through several different versions of prompts, steadily refining the prompt as you go.\n",
     "\n",
-    "### Best Practices for AI-Assisted Prompt Improvement\n",
+    "### Best practices for AI-assisted prompt improvement\n",
     "\n",
     "For optimal results when using LLMs to refine your prompts:\n",
     "\n",
