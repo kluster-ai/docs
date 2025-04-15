@@ -1563,6 +1563,480 @@ The intended purpose of the file. Currently, only `batch` is supported.
 
 ---
 
+## Uploads
+
+### Create upload
+
+`POST https://api.kluster.ai/v1/uploads`
+
+Creates an intermediate Upload object that you can add Parts to. Currently, an Upload can accept at most 8 GB in total and expires after an hour after you create it.
+
+Once you complete the Upload, we will create a File object that contains all the parts you uploaded. This File is usable in the rest of our platform as a regular File object.
+
+<div class="grid" markdown>
+<div markdown>
+
+**Request**
+
+`bytes` ++"integer"++ <span class="required" markdown>++"required"++</span>
+
+The number of bytes in the file you are uploading.
+
+---
+
+`filename` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+The name of the file to upload.
+
+---
+
+`mime_type` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+The MIME type of the file.
+
+This must fall within the supported MIME types for your file purpose.
+
+---
+
+`purpose` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+The intended purpose of the uploaded file.
+
+---
+
+**Returns**
+
+The Upload object with status pending.
+
+</div>
+<div markdown>
+
+=== "Python"
+
+    ```python title="Example request"
+    from openai import OpenAI
+
+    # Configure OpenAI client
+    client = OpenAI(
+        base_url="https://api.kluster.ai/v1", 
+        api_key="INSERT_API_KEY" # Replace with your actual API key
+    )
+
+    upload = client.uploads.create(
+        purpose="fine-tune",
+        filename="training_examples.jsonl",
+        bytes=2147483648,
+        mime_type="text/jsonl"
+    )
+
+    print(upload.to_dict())
+    ```
+
+=== "curl"
+
+    ```bash title="Example request"
+    curl https://api.kluster.ai/v1/uploads \
+      -H "Authorization: Bearer INSERT_API_KEY" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "purpose": "batch",
+        "filename": "training_examples.jsonl",
+        "bytes": 2147483648,
+        "mime_type": "text/jsonl"
+      }'
+    ```
+
+```Json title="Response"
+{
+  "id": "67feae39d63649ef421416f8",
+  "object": "upload",
+  "bytes": 2147483648,
+  "created_at": 1744743993,
+  "filename": "training_examples.jsonl",
+  "status": "pending",
+  "expires_at": 1744747593
+}
+```
+
+</div>
+</div>
+
+---
+
+### Add upload part
+
+`POST https://api.kluster.ai/v1/uploads/{upload_id}/parts`
+
+Adds a Part to an Upload object. A Part represents a chunk of bytes from the file you are trying to upload.
+
+Each Part can be at most 64 MB, and you can add Parts until you hit the Upload maximum of 8 GB.
+
+It is possible to add multiple Parts in parallel. You can decide the intended order of the Parts when you complete the Upload.
+
+<div class="grid" markdown>
+<div markdown>
+
+**Path parameters**
+
+`upload_id` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+The ID of the Upload.
+
+---
+
+**Request**
+
+`data` ++"file"++ <span class="required" markdown>++"required"++</span>
+
+The chunk of bytes for this Part.
+
+---
+
+**Returns**
+
+The upload Part object.
+
+</div>
+<div markdown>
+
+=== "Python"
+
+    ```python title="Example request"
+    from openai import OpenAI
+
+    # Configure OpenAI client
+    client = OpenAI(
+        base_url="https://api.kluster.ai/v1", 
+        api_key="INSERT_API_KEY" # Replace with your actual API key
+    )
+
+    # Open the file you want to upload and replace upload ID
+    with open("training_examples.jsonl", "rb") as file:
+        part = client.uploads.parts.create(
+            upload_id="INSERT_UPLOAD_ID",
+            data=file
+        )
+
+    print(part.to_dict())
+
+    ```
+
+=== "curl"
+
+    ```bash title="Example request"
+    curl -s https://api.kluster.ai/v1/uploads/INSERT_UPLOAD_ID/parts \
+        -H "Authorization: Bearer $API_KEY" \
+        -F "data=@training_examples.jsonl"
+    ```
+
+```Json title="Response"
+{
+  "id": "67feb0c9f6f1dad39fec8d39",
+  "object": "upload.part",
+  "created_at": 1744744649,
+  "upload_id": "67feae39d63649ef421416f8"
+}
+```
+
+</div>
+</div>
+
+---
+
+### Complete upload
+
+`POST https://api.kluster.ai/v1/uploads/{upload_id}/complete`
+
+Completes the Upload.
+
+Within the returned Upload object, there is a nested File object that is ready to use in the rest of the platform.
+
+You can specify the order of the Parts by passing in an ordered list of the Part IDs.
+
+The number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.
+
+<div class="grid" markdown>
+<div markdown>
+
+**Path parameters**
+
+`upload_id` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+The ID of the Upload.
+
+---
+
+**Request**
+
+`part_ids` ++"array"++ <span class="required" markdown>++"required"++</span>
+
+The ordered list of Part IDs.
+
+---
+
+`md5` ++"string"++ <span class="optional" markdown>++"optional"++</span>
+
+The optional md5 checksum for the file contents to verify if the bytes uploaded matches what you expect.
+
+---
+
+**Returns**
+
+The Upload object with status completed with an additional file property containing the created usable File object.
+
+</div>
+<div markdown>
+
+=== "Python"
+
+    ```python title="Example request"
+    from openai import OpenAI
+
+    # Configure OpenAI client
+    client = OpenAI(
+        base_url="https://api.kluster.ai/v1", 
+        api_key="INSERT_API_KEY" # Replace with your actual API key
+    )
+
+    completed_upload = client.uploads.complete(
+        upload_id="INSERT_UPLOAD_ID",
+        part_ids=["INSERT_PART_ID", "INSERT_PART_ID"]
+    )
+
+    print(completed_upload.to_dict())
+    ```
+
+=== "curl"
+
+    ```bash title="Example request"
+    curl -s https://api.kluster.ai/v1/uploads/INSERT_UPLOAD_ID/complete \
+        -H "Authorization: Bearer $API_KEY" \
+        -d '{
+            "part_ids": ["INSERT_PART_ID", "INSERT_PART_ID"]
+        }'
+    ```
+
+```Json title="Response"
+{
+  "id": "67feae39d63649ef421416f8",
+  "object": "upload",
+  "bytes": 2147483648,
+  "created_at": 1744743993,
+  "filename": "training_examples.jsonl",
+  "status": "completed",
+  "expires_at": 1744747593,
+  "file": {
+    "id": "67feb2bff6f1dad39feca157",
+    "object": "file",
+    "created_at": 1744745151,
+    "filename": "67783976bf636f79b49643ee/d0b911d4-1fcf-4809-b8af-ca65c6a689a0-e7726314-de6d-4cb7-bed7-822cc12f9bbc",
+    "purpose": "batch",
+    "bytes": 1776
+  }
+}
+```
+
+</div>
+</div>
+
+---
+
+### Cancel upload
+
+`POST https://api.kluster.ai/v1/uploads/{upload_id}/cancel`
+
+Cancels the Upload. No Parts may be added after an Upload is cancelled.
+
+<div class="grid" markdown>
+<div markdown>
+
+**Path parameters**
+
+`upload_id` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+The ID of the Upload.
+
+---
+
+**Returns**
+
+The Upload object with status cancelled.
+
+</div>
+<div markdown>
+
+=== "Python"
+
+    ```python title="Example request"
+    from openai import OpenAI
+
+    # Configure OpenAI client
+    client = OpenAI(
+        base_url="https://api.kluster.ai/v1", 
+        api_key="INSERT_API_KEY" # Replace with your actual API key
+    )
+
+    cancelled_upload = client.uploads.cancel(
+        upload_id="INSERT_UPLOAD_ID"
+    )
+
+    print(cancelled_upload.to_dict())
+    ```
+
+=== "curl"
+
+    ```bash title="Example request"
+    curl -X POST -s https://api.kluster.ai/v1/uploads/INSERT_UPLOAD_ID/cancel \
+    -H "Authorization: Bearer INSERT_API_KEY"
+    ```
+
+```Json title="Response"
+{
+  "id": "67feb41fb779611ad5b3b635",
+  "object": "upload",
+  "bytes": 2147483648,
+  "created_at": 1744745503,
+  "filename": "training_examples.jsonl",
+  "status": "cancelled",
+  "expires_at": 1744749103
+}
+```
+
+</div>
+</div>
+
+---
+
+### Upload object
+
+<div class="grid" markdown>
+<div markdown>
+
+`id` ++"string"++
+
+The Upload unique identifier, which can be referenced in API endpoints.
+
+---
+
+`object` ++"string"++
+
+The object type, which is always `upload`.
+
+---
+
+`bytes` ++"integer"++
+
+The intended number of bytes to be uploaded.
+
+---
+
+`created_at` ++"integer"++
+
+The Unix timestamp (in seconds) for when the Upload was created.
+
+---
+
+`expires_at` ++"integer"++
+
+The Unix timestamp (in seconds) for when the Upload will expire.
+
+---
+
+`filename` ++"string"++
+
+The name of the file to upload.
+
+---
+
+`purpose` ++"string"++
+
+The intended purpose of the uploaded file.
+
+---
+
+`status` ++"string"++
+
+The status of the Upload.
+
+---
+
+`file` ++"undefined or null"++
+
+The ready File object after the Upload is completed.
+
+</div>
+<div markdown>
+
+```Json title="Upload object"
+{
+  "id": "upload_abc123",
+  "object": "upload",
+  "bytes": 2147483648,
+  "created_at": 1719184911,
+  "filename": "training_examples.jsonl",
+  "purpose": "fine-tune",
+  "status": "completed",
+  "expires_at": 1719127296,
+  "file": {
+    "id": "file-xyz321",
+    "object": "file",
+    "bytes": 2147483648,
+    "created_at": 1719186911,
+    "filename": "training_examples.jsonl",
+    "purpose": "fine-tune"
+  }
+}
+```
+
+</div>
+</div>
+
+---
+
+### Upload part object
+
+<div class="grid" markdown>
+<div markdown>
+
+`id` ++"string"++
+
+The upload Part unique identifier, which can be referenced in API endpoints.
+
+---
+
+`object` ++"string"++
+
+The object type, which is always `upload.part`.
+
+---
+
+`created_at` ++"integer"++
+
+The Unix timestamp (in seconds) for when the Part was created.
+
+---
+
+`upload_id` ++"string"++
+
+The ID of the Upload object that this Part was added to.
+
+</div>
+<div markdown>
+
+```Json title="Upload part object"
+{
+  "id": "part_def456",
+  "object": "upload.part",
+  "created_at": 1719185911,
+  "upload_id": "upload_abc123"
+}
+```
+
+</div>
+</div>
+
+---
+
 ## Models
 
 ### List supported models
