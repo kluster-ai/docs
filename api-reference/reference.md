@@ -1606,7 +1606,7 @@ The intended purpose of the uploaded file. Accepted values are `assistants`, `vi
 
 **Returns**
 
-The Upload object with status pending.
+The [Upload object](#upload-object) with status pending.
 
 </div>
 <div markdown>
@@ -1694,7 +1694,7 @@ The chunk of bytes for this UploadPart.
 
 **Returns**
 
-The UploadPart object.
+The [UploadPart](#upload-part-object) object.
 
 </div>
 <div markdown>
@@ -1781,7 +1781,7 @@ The optional md5 checksum for the file contents to verify if the bytes uploaded 
 
 **Returns**
 
-The Upload object with status completed with an additional file property containing the created usable File object.
+The Upload object with status completed with an additional file property containing the created usable File object. If the complete upload operation is unsuccessful, the Upload object will remain in `pending` state.
 
 </div>
 <div markdown>
@@ -1955,7 +1955,7 @@ The intended purpose of the uploaded file.
 
 `status` ++"string"++
 
-The status of the upload.
+The current status of the upload. Possible values are `pending`, `completed`, or `cancelled`.
 
 ---
 
