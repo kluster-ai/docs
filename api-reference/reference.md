@@ -1718,7 +1718,6 @@ The upload Part object.
         )
 
     print(part.to_dict())
-
     ```
 
 === "curl"
@@ -1774,7 +1773,7 @@ The ordered list of Part IDs.
 
 ---
 
-`md5` ++"string"++ <span class="optional" markdown>++"optional"++</span>
+`md5` ++"string"++
 
 The optional md5 checksum for the file contents to verify if the bytes uploaded matches what you expect.
 
