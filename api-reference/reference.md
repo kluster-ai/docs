@@ -1569,9 +1569,9 @@ The intended purpose of the file. Currently, only `batch` is supported.
 
 `POST https://api.kluster.ai/v1/uploads`
 
-Creates an intermediate Upload object to which you can add Parts. Currently, an Upload can accept at most 8 GB in total and expires after an hour after you create it.
+Creates an intermediate Upload object that accepts additional Parts. Each Upload can hold up to 8 GB of data and expires one hour after creation.
 
-Once you complete the Upload, we will create a File object containing all the uploaded parts. This File is usable in the rest of our platform as a regular File object.
+Upon completion, the uploaded parts are assembled into a single File object that functions as a regular File across the platform.
 
 <div class="grid" markdown>
 <div markdown>
