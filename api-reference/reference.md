@@ -1718,7 +1718,6 @@ The upload Part object.
         )
 
     print(part.to_dict())
-
     ```
 
 === "curl"
