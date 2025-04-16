@@ -1569,7 +1569,7 @@ The intended purpose of the file. Currently, only `batch` is supported.
 
 `POST https://api.kluster.ai/v1/uploads`
 
-Creates an intermediate Upload object that accepts additional Parts. Each Upload can hold up to 8 GB of data and expires one hour after creation.
+Creates an intermediate Upload object that accepts additional Parts. Each upload can hold up to 8 GB of data and expires one hour after creation.
 
 Upon completion, the uploaded parts are assembled into a single File object that functions as a regular File across the platform.
 
@@ -1669,9 +1669,9 @@ The Upload object with status pending.
 
 Adds an UploadPart to an Upload object. A UploadPart represents a chunk of bytes from the file you are trying to upload.
 
-Each UploadPart can be at most 64 MB, and you can add UploadParts until you hit the Upload maximum of 8 GB.
+Each UploadPart can be at most 64 MB, and you can add UploadParts until you hit the upload maximum of 8 GB.
 
-It is possible to add multiple UploadPart in parallel. You can decide the intended order of the UploadParts when you complete the Upload.
+It is possible to add multiple UploadPart in parallel. You can decide the intended order of the UploadParts when you complete the upload.
 
 <div class="grid" markdown>
 <div markdown>
@@ -1680,7 +1680,7 @@ It is possible to add multiple UploadPart in parallel. You can decide the intend
 
 `upload_id` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-The ID of the Upload.
+The ID of the upload.
 
 ---
 
@@ -1746,13 +1746,13 @@ The UploadPart object.
 
 `POST https://api.kluster.ai/v1/uploads/{upload_id}/complete`
 
-Completes the Upload.
+Completes the upload.
 
 Within the returned Upload object, there is a nested File object that is ready to use in the rest of the platform.
 
 You can specify the order of the UploadParts by passing in an ordered list of the Part IDs.
 
-The number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No UploadParts may be added after an Upload is completed.
+The number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No UploadParts may be added after an upload is completed.
 
 <div class="grid" markdown>
 <div markdown>
@@ -1761,7 +1761,7 @@ The number of bytes uploaded upon completion must match the number of bytes init
 
 `upload_id` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-The ID of the Upload.
+The ID of the upload.
 
 ---
 
@@ -1844,7 +1844,7 @@ The Upload object with status completed with an additional file property contain
 
 `POST https://api.kluster.ai/v1/uploads/{upload_id}/cancel`
 
-Cancels the Upload. No UploadParts may be added after an Upload is cancelled.
+Cancels the upload. No UploadParts may be added after an upload is cancelled.
 
 <div class="grid" markdown>
 <div markdown>
@@ -1853,13 +1853,13 @@ Cancels the Upload. No UploadParts may be added after an Upload is cancelled.
 
 `upload_id` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-The ID of the Upload.
+The ID of the upload.
 
 ---
 
 **Returns**
 
-The Upload object with status cancelled.
+The upload object with status cancelled.
 
 </div>
 <div markdown>
@@ -1913,7 +1913,7 @@ The Upload object with status cancelled.
 
 `id` ++"string"++
 
-The Upload unique identifier, which can be referenced in API endpoints.
+The upload unique identifier, which can be referenced in API endpoints.
 
 ---
 
@@ -1931,13 +1931,13 @@ The intended number of bytes to be uploaded.
 
 `created_at` ++"integer"++
 
-The Unix timestamp (in seconds) for when the Upload was created.
+The Unix timestamp (in seconds) for when the upload was created.
 
 ---
 
 `expires_at` ++"integer"++
 
-The Unix timestamp (in seconds) for when the Upload will expire.
+The Unix timestamp (in seconds) for when the upload will expire.
 
 ---
 
@@ -1955,13 +1955,13 @@ The intended purpose of the uploaded file.
 
 `status` ++"string"++
 
-The status of the Upload.
+The status of the upload.
 
 ---
 
 `file` ++"undefined or null"++
 
-The ready File object after the Upload is completed.
+The ready file object after the upload is completed.
 
 </div>
 <div markdown>
