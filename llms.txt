@@ -15027,7 +15027,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/uploads-api.ipynb/
    "id": "intro-description",
    "metadata": {},
    "source": [
-    "When working with large datasets for AI model training or batch inference, you may need to upload files that are several gigabytes in size. For these scenarios, Kluster.ai provides a multipart upload API that allows you to split your large files into smaller chunks and upload them efficiently.\n",
+    "When working with large datasets for AI model training or batch inference, you may need to upload files several gigabytes in size. For these scenarios, Kluster.ai provides a multipart upload API that allows you to split your large files into smaller chunks and upload them efficiently.\n",
     "\n",
     "This tutorial demonstrates how to:\n",
     "1. Split a large file into multiple parts\n",
@@ -15035,7 +15035,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/uploads-api.ipynb/
     "3. Complete the upload process to create a usable File object\n",
     "4. Use the uploaded file for a batch inference job\n",
     "\n",
-    "The example uses a large JSONL file for batch inference with a language model, but you can adapt this approach for any large file upload scenario."
+    "The example uses a large JSONL file for batch inference with a language model, but this approach can be adapted for any large file upload scenario."
    ]
   },
   {
