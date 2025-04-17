@@ -1719,12 +1719,6 @@ The organization that owns the model.
   "object": "list",
   "data": [
     {
-      "id": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo",
-      "object": "model",
-      "created": 1731336418,
-      "owned_by": "klusterai"
-    },
-    {
       "id": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
       "object": "model",
       "created": 1731336610,
@@ -1740,12 +1734,6 @@ The organization that owns the model.
       "id": "deepseek-ai/DeepSeek-R1",
       "object": "model",
       "created": 1737385699,
-      "owned_by": "klusterai"
-    },
-    {
-      "id": "deepseek-ai/DeepSeek-V3",
-      "object": "model",
-      "created": 1742323334,
       "owned_by": "klusterai"
     },
     {
@@ -2070,16 +2058,17 @@ A paginated list of [Fine-tuning job objects](#fine-tuning-job-object).
       "hyperparameters": {
         "batch_size": 4,
         "learning_rate_multiplier": 1,
-        "n_epochs": 3
+        "n_epochs": 2
       },
       "method": {
         "type": "supervised",
         "supervised": {
           "batch_size": 4,
           "learning_rate_multiplier": 1,
-          "n_epochs": 3
+          "n_epochs": 2
         }
       },
+      "trained_tokens": 3065,
       "integrations": []
     },
     {
@@ -8061,7 +8050,6 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-ana
     "models = {\n",
     "        '8B':\"klusterai/Meta-Llama-3.1-8B-Instruct-Turbo\",\n",
     "        '70B':\"klusterai/Meta-Llama-3.3-70B-Instruct-Turbo\",\n",
-    "        '405B':\"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\",\n",
     "        'ft_8B': fine_tuned_model\n",
     "        }\n",
     "\n",
@@ -8144,7 +8132,6 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-ana
     "rename_dict = {\n",
     "    'answer_base_8B': 'Base 8b model',\n",
     "    'answer_base_70B': 'Base 70b model',\n",
-    "    'answer_base_405B': 'Base 405b model',\n",
     "    'answer_ft_8B': 'Fine Tuned 8b model',\n",
     "}\n",
     "\n",
@@ -9856,7 +9843,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/llm-as-a-judge.ipyn
    "source": [
     "In our previous <a href= \"https://github.com/kluster-ai/klusterai-cookbook/blob/main/examples/model-comparison.ipynb\" target=\"_blank\">notebook</a>, we explored the idea of selecting the best model to perform a classification task. We did that by calculating the accuracy of each model based on a ground truth label. In real-life applications, though, the ground truth is not always available, and to create one, we might depend on human annotation, which is time-consuming and costly. \n",
     "\n",
-    "In this notebook, we will use the `Llama-3.1-8B-Instruct-Turbo` model to classify the genre of movies from the IMDb Top 1000 dataset based on their descriptions. To evaluate the accuracy of these predictions, we will use the `Llama-3.1-405B-Instruct-Turbo` model as a judge tasked with determining whether the base model's answers are correct. Since the dataset includes the true genres as ground truth, we can also assess how well the judge model aligns with the actual answers provided in the dataset."
+    "In this notebook, we will use the `Llama-3.1-8B-Instruct-Turbo` model to classify the genre of movies from the IMDb Top 1000 dataset based on their descriptions. To evaluate the accuracy of these predictions, we will use the `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo` model as a judge tasked with determining whether the base model's answers are correct. Since the dataset includes the true genres as ground truth, we can also assess how well the judge model aligns with the actual answers provided in the dataset."
    ]
   },
   {
@@ -10422,7 +10409,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/llm-as-a-judge.ipyn
     "task_list = create_tasks(user_contents=prompt_dict[\"USER_CONTENTS\"], \n",
     "                         system_prompt=prompt_dict[\"JUDGE_PROMPT\"], \n",
     "                         task_type='judge', \n",
-    "                         model=\"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\")\n",
+    "                         model=\"klusterai/Meta-Llama-3.3-70B-Instruct-Turbo\")\n",
     "filename = save_tasks(task_list, task_type='judge')\n",
     "job = create_batch_job(filename)\n",
     "monitor_job_status(client=client, job_id=job.id, task_type='judge')\n",
@@ -11076,7 +11063,6 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
     "models = {\n",
     "        '8B':\"klusterai/Meta-Llama-3.1-8B-Instruct-Turbo\",\n",
     "        '70B':\"klusterai/Meta-Llama-3.3-70B-Instruct-Turbo\",\n",
-    "        '405B':\"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\",\n",
     "        }\n",
     "\n",
     "# Process each model: create tasks, run jobs, and get results\n",
@@ -11600,7 +11586,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
         "id": "qS4JXT52wGJ-"
       },
       "source": [
-        "This example uses the `deepseek-ai/DeepSeek-V3` model. If you'd like to use a different model, feel free to change it by modifying the `model` field. In this notebook, you can also comment DeepSeek V3, and uncomment whatever model you want to try out.\n",
+        "This example uses the `deepseek-ai/DeepSeek-V3-0324` model. If you'd like to use a different model, feel free to change it by modifying the `model` field. \n",
         "\n",
         "Please refer to the <a href=\"/get-started/models/#model-comparison-table\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
         "\n",
@@ -11616,9 +11602,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
       "source": [
         "# Models\n",
         "# model=\"deepseek-ai/DeepSeek-R1\"\n",
-        "model = \"deepseek-ai/DeepSeek-V3\"\n",
+        "model = \"deepseek-ai/DeepSeek-V3-0324\"\n",
         "# model=\"klusterai/Meta-Llama-3.1-8B-Instruct-Turbo\"\n",
-        "# model=\"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\"\n",
         "# model=\"klusterai/Meta-Llama-3.3-70B-Instruct-Turbo\"\n",
         "# model=\"Qwen/Qwen2.5-VL-7B-Instruct\"\n",
         "\n",
@@ -12583,7 +12568,6 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
         "#model=\"deepseek-ai/DeepSeek-R1\"\n",
         "#model=\"deepseek-ai/DeepSeek-V3\"\n",
         "#model=\"klusterai/Meta-Llama-3.1-8B-Instruct-Turbo\"\n",
-        "#model=\"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\"\n",
         "model=\"klusterai/Meta-Llama-3.3-70B-Instruct-Turbo\"\n",
         "#model=\"Qwen/Qwen2.5-VL-7B-Instruct\"\n",
         "\n",
@@ -13181,7 +13165,6 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
         "#model=\"deepseek-ai/DeepSeek-R1\"\n",
         "#model=\"deepseek-ai/DeepSeek-V3\"\n",
         "model=\"klusterai/Meta-Llama-3.1-8B-Instruct-Turbo\"\n",
-        "#model=\"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\"\n",
         "#model=\"klusterai/Meta-Llama-3.3-70B-Instruct-Turbo\"\n",
         "#model=\"Qwen/Qwen2.5-VL-7B-Instruct\"\n",
         "\n",
@@ -14034,7 +14017,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
         "id": "qS4JXT52wGJ-"
       },
       "source": [
-        "This example selects the `deepseek-ai/DeepSeek-V3` model. If you'd like to use a different model, feel free to change it by modifying the `model` field. In this notebook, you can also comment DeepSeek V3, and uncomment whatever model you want to try out.\n",
+        "This example selects the `deepseek-ai/DeepSeek-V3-0324` model. If you'd like to use a different model, feel free to change it by modifying the `model` field.\n",
         "\n",
         "Please refer to the <a href=\"/get-started/models/#model-comparison-table\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
         "\n",
@@ -14058,9 +14041,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
         "\n",
         "# Models\n",
         "#model=\"deepseek-ai/DeepSeek-R1\"\n",
-        "model=\"deepseek-ai/DeepSeek-V3\"\n",
+        "model=\"deepseek-ai/DeepSeek-V3-0324\"\n",
         "#model=\"klusterai/Meta-Llama-3.1-8B-Instruct-Turbo\"\n",
-        "#model=\"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\"\n",
         "#model=\"klusterai/Meta-Llama-3.3-70B-Instruct-Turbo\"\n",
         "#model=\"Qwen/Qwen2.5-VL-7B-Instruct\"\n",
         "\n",
