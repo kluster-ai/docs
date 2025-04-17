@@ -1569,7 +1569,7 @@ The intended purpose of the file. Currently, only `batch` is supported.
 
 `POST https://api.kluster.ai/v1/uploads`
 
-Creates an intermediate Upload object that accepts additional Parts. Each upload can hold up to 8 GB of data and expires one hour after creation.
+Creates an intermediate upload object that accepts additional parts. Each upload can hold up to 8 GB of data and expires one hour after creation.
 
 Upon completion, the uploaded parts are assembled into a single File object that functions as a regular file across the platform.
 
@@ -1667,11 +1667,11 @@ The [Upload object](#upload-object) with status pending.
 
 `POST https://api.kluster.ai/v1/uploads/{upload_id}/parts`
 
-Adds an UploadPart to an Upload object. A UploadPart represents a chunk of bytes from the file you are trying to upload.
+Adds an upload part to an Upload object. A upload part represents a chunk of bytes from the file you are trying to upload.
 
-Each UploadPart can be at most 64 MB, and you can add UploadParts until you hit the upload maximum of 8 GB.
+Each upload part can be at most 64 MB, and you can add upload parts until you hit the upload maximum of 8 GB.
 
-It is possible to add multiple UploadPart in parallel. You can decide the intended order of the UploadParts when you complete the upload.
+It is possible to add multiple upload parts in parallel. You can decide the intended order of the upload parts when you complete the upload.
 
 <div class="grid" markdown>
 <div markdown>
@@ -1748,11 +1748,11 @@ The [UploadPart](#upload-part-object) object.
 
 Completes the upload.
 
-Within the returned Upload object, there is a nested File object that is ready to use in the rest of the platform.
+Within the returned [Upload object](#upload-object), there is a nested file object that is ready to use in the rest of the platform.
 
-You can specify the order of the UploadParts by passing in an ordered list of the Part IDs.
+You can specify the order of the upload parts by passing in an ordered list of the part IDs.
 
-The number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No UploadParts may be added after an upload is completed.
+The number of bytes uploaded upon completion must match the number of bytes initially specified when creating the upload object. No upload parts may be added after an upload is completed.
 
 <div class="grid" markdown>
 <div markdown>
@@ -1781,7 +1781,7 @@ The optional md5 checksum for the file contents to verify if the bytes uploaded 
 
 **Returns**
 
-The Upload object with status completed with an additional file property containing the created usable File object. If the complete upload operation is unsuccessful, the Upload object will remain in `pending` state.
+The [Upload object](#upload-object) with status completed with an additional file property containing the created usable file object. If the complete upload operation is unsuccessful, the upload object will remain in `pending` state.
 
 </div>
 <div markdown>
@@ -1844,7 +1844,7 @@ The Upload object with status completed with an additional file property contain
 
 `POST https://api.kluster.ai/v1/uploads/{upload_id}/cancel`
 
-Cancels the upload. No UploadParts may be added after an upload is cancelled.
+Cancels the upload. No upload parts may be added after an upload is cancelled.
 
 <div class="grid" markdown>
 <div markdown>
@@ -1999,7 +1999,7 @@ The ready file object after the upload is completed.
 
 `id` ++"string"++
 
-The UploadPart unique identifier, which can be referenced in API endpoints.
+The upload part unique identifier, which can be referenced in API endpoints.
 
 ---
 
@@ -2017,7 +2017,7 @@ The Unix timestamp (in seconds) for when the UploadPart was created.
 
 `upload_id` ++"string"++
 
-The ID of the Upload object that this UploadPart was added to.
+The ID of the Upload object that this upload part was added to.
 
 </div>
 <div markdown>
