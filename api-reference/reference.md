@@ -1571,7 +1571,7 @@ The intended purpose of the file. Currently, only `batch` is supported.
 
 Creates an intermediate Upload object that accepts additional Parts. Each upload can hold up to 8 GB of data and expires one hour after creation.
 
-Upon completion, the uploaded parts are assembled into a single File object that functions as a regular File across the platform.
+Upon completion, the uploaded parts are assembled into a single File object that functions as a regular file across the platform.
 
 <div class="grid" markdown>
 <div markdown>
