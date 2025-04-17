@@ -20,7 +20,6 @@ Each model supported by kluster.ai has a unique name that must be used when defi
 |     **DeepSeek V3 0324**      |           `deepseek-ai/DeepSeek-V3-0324`            |
 |        **Gemma 3 27B**        |               `google/gemma-3-27b-it`               |
 |       **Llama 3.1 8B**        |    `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`     |
-|      **Llama 3.1 405B**       |   `klusterai/Meta-Llama-3.1-405B-Instruct-Turbo`    |
 |       **Llama 3.3 70B**       |    `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`    |
 | **Llama 4 Maverick 17B 128E** | `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8` |
 |   **Llama 4 Scout 17B 16E**   |     `meta-llama/Llama-4-Scout-17B-16E-Instruct`     |
@@ -36,7 +35,6 @@ Each model supported by kluster.ai has a unique name that must be used when defi
 |     **DeepSeek V3 0324**      |      Natural language generation<br>Contextually rich writing       |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
 |        **Gemma 3 27B**        |  Multilingual applications<br>Image analysis<br>Complex reasoning   |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
 |       **Llama 3.1 8B**        |       Low-latency or simple tasks<br>Cost-efficient inference       |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
-|      **Llama 3.1 405B**       |                Detailed analysis<br>Maximum accuracy                |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         | :white_check_mark:  |
 |       **Llama 3.3 70B**       |           General-purpose AI<br>Balanced cost-performance           |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
 | **Llama 4 Maverick 17B 128E** | Advanced multimodal reasoning<br>Long-context, high-accuracy tasks  |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
 |   **Llama 4 Scout 17B 16E**   | Efficient multimodal performance<br>Extended context, general tasks |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
