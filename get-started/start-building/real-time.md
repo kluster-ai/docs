@@ -48,12 +48,6 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     --8<-- 'code/get-started/start-building/real-time/real-time-deepseekR1.py'
     ```
 
-??? example "DeepSeek V3"
-
-    ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-deepseekV3.py'
-    ```
-
 ??? example "DeepSeek V3 0324"
 
     ```python
@@ -70,12 +64,6 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
 
     ```python
     --8<-- 'code/get-started/start-building/real-time/real-time-llama3.1-8.py'
-    ```
-
-??? example "LLama 3.1 405B"
-
-    ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama3.1-405.py'
     ```
 
 ??? example "LLama 3.3 70B"
@@ -113,12 +101,6 @@ Similarly, the following curl commands showcase how to easily send a chat comple
     --8<-- 'code/get-started/start-building/real-time/real-time-deepseekR1.md'
     ```
 
-??? example "DeepSeek V3"
-
-    ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-deepseekV3.md'
-    ```
-
 ??? example "DeepSeek V3 0324"
 
     ```bash
@@ -135,12 +117,6 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 
     ```bash
     --8<-- 'code/get-started/start-building/real-time/real-time-llama3.1-8.md'
-    ```
-
-??? example "LLama 3.1 405B"
-
-    ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama3.1-405.md'
     ```
 
 ??? example "LLama 3.3 70B"

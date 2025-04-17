@@ -16,7 +16,6 @@ Each model supported by kluster.ai has a unique name that must be used when defi
 |             Model             |                   Model API name                    |
 |:-----------------------------:|:---------------------------------------------------:|
 |        **DeepSeek R1**        |              `deepseek-ai/DeepSeek-R1`              |
-|        **DeepSeek V3**        |              `deepseek-ai/DeepSeek-V3`              |
 |     **DeepSeek V3 0324**      |           `deepseek-ai/DeepSeek-V3-0324`            |
 |        **Gemma 3 27B**        |               `google/gemma-3-27b-it`               |
 |       **Llama 3.1 8B**        |    `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`     |
@@ -31,7 +30,6 @@ Each model supported by kluster.ai has a unique name that must be used when defi
 |             Model             |                          Main<br>use case                           | Real-time<br>inference support | Batch<br>inference support | Fine-tuning<br>support | Image<br>analysis  | Function<br>calling |
 |:-----------------------------:|:-------------------------------------------------------------------:|:------------------------------:|:--------------------------:|:----------------------:|:------------------:|:-------------------:|
 |        **DeepSeek R1**        |              Code generation<br>Complex data analysis               |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
-|        **DeepSeek V3**        |      Natural language generation<br>Contextually rich writing       |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
 |     **DeepSeek V3 0324**      |      Natural language generation<br>Contextually rich writing       |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
 |        **Gemma 3 27B**        |  Multilingual applications<br>Image analysis<br>Complex reasoning   |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
 |       **Llama 3.1 8B**        |       Low-latency or simple tasks<br>Cost-efficient inference       |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
