@@ -7951,7 +7951,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
     "\n",
     "Prompt engineering is the practice of crafting inputs to guide large language models (LLMs) toward high‑quality responses. Well‑designed prompts can turn vague outputs into precise, actionable insights.\n",
     "\n",
-    "**In this notebook, we show how prompt quality affects LLM performance by comparing three levels of prompts—Bad, Better, and Best—in a retail sales analysis scenario. The goal: uncover strategies to grow the business and boost profits.**\n",
+    "In this notebook, we show how prompt quality affects LLM performance by comparing three levels of prompts—Bad, Better, and Best—in a retail sales analysis scenario. The goal: uncover strategies to grow the business and boost profits.\n",
     "\n",
     "Using a simple retail dataset with sales, pricing, and profit data, you’ll see how adding structure, context, and business‑specific details transforms basic observations into strategic recommendations.\n",
     "\n",
@@ -8500,7 +8500,9 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
    "source": [
     "## Leveraging AI to improve your prompts\n",
     "\n",
-    "Using an LLM to refine your prompt might sound meta, but it’s a powerful way to accelerate your prompt engineering learning curve. By harnessing AI to analyze and tweak your own queries, you can rapidly elevate the quality of your prompts and, ultimately, your results. While our best prompt is already strong, prompting an LLM for further improvements highlighted additional considerations, such as setting a clear time horizon, specifying budget constraints (e.g., a $2,000 monthly marketing budget), and assessing potential risks (e.g., pitfalls of new approaches). Incorporating these refinements can make your prompts more actionable and better aligned with real-world business needs.\n",
+    "Using an LLM to refine your prompt might sound meta, but it’s a powerful way to accelerate your prompt engineering learning curve. By harnessing AI to analyze and tweak your own queries, you can rapidly elevate the quality of your prompts and, ultimately, your results. \n",
+    "\n",
+    "While our best prompt is already strong, prompting an LLM for further improvements highlighted additional considerations, such as setting a clear time horizon, specifying budget constraints (e.g., a $2,000 monthly marketing budget), and assessing potential risks (e.g., pitfalls of new approaches). Incorporating these refinements can make your prompts more actionable and better aligned with real-world business needs.\n",
     "\n",
     "You can ask the LLM to analyze and improve your prompt by submitting a meta-prompt like:\n",
     "```\n",
@@ -8599,7 +8601,14 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
    "source": [
     "### Analysis of the AI-enhanced prompt vs. the existing best prompt\n",
     "\n",
-    "The AI‑enhanced prompt is stronger because it embeds several best‑practice elements that the baseline prompt omits. First, it sets an explicit time horizon (“within 3 to 6 months”), which anchors the LLM’s reasoning to short‑term profitability instead of open‑ended strategy. Second, it introduces a hard marketing‑budget constraint ($2,000), forcing any recommendations to be fiscally realistic. Third, the prompt requests prioritization (“rank steps by highest immediate impact”), ensuring the model returns an ordered action plan rather than an unstructured list. Fourth, it calls for a brief risk or trade‑off note with every suggestion, prompting the LLM to surface downsides proactively. Finally, it asks for supporting calculations where relevant, promoting transparency and verifiability. These additions sharpen the prompt’s clarity, specificity, and operational relevance; they tell the model exactly what to deliver, within which limits, and how to present it, thereby increasing the likelihood of receiving actionable, decision‑ready insights regardless of which LLM you use."
+    "The AI‑enhanced prompt is stronger because it embeds several best‑practice elements that the baseline prompt omits:\n",
+    "- **Explicit time horizon** — sets \"within 3 to 6 months,\" anchoring the LLM's reasoning to short‑term profitability rather than an open‑ended strategy.\n",
+    "- **Hard marketing‑budget constraint** — imposes a $2,000 limit, forcing any recommendations to remain fiscally realistic.\n",
+    "- **Prioritization requirement** — asks the model to \"rank steps by highest immediate impact,\" ensuring an ordered action plan instead of an unstructured list.\n",
+    "- **Risk/trade‑off note** — requests a brief downside analysis for every suggestion, prompting the LLM to surface potential drawbacks proactively.\n",
+    "- **Supporting calculations** — calls for relevant calculations, promoting transparency and verifiability.\n",
+    "\n",
+    "These additions sharpen the prompt's clarity, specificity, and operational relevance; they tell the model exactly what to deliver, within which limits, and how to present it, thereby increasing the likelihood of receiving actionable, decision‑ready insights regardless of which LLM you use."
    ]
   },
   {
@@ -8616,7 +8625,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
     "- **Best prompt** - providing comprehensive context—including profit margins, demographics, inventory challenges, and explicit formatting instructions—empowers the model to deliver nuanced, highly actionable advice aligned with real business needs\n",
     "- **AI‑enhanced prompt** — layering on a defined 3‑to‑6‑month time horizon, a fixed $2,000 marketing budget, ranked priorities, risk/trade‑off notes, and requests for supporting calculations guides the model to provide an even more operationally realistic, budget‑aware, and immediately implementable plan of action\n",
     "\n",
-    "Key Takeaways for Effective Prompt Engineering:\n",
+    "Key takeaways for effective prompt engineering:\n",
     "\n",
     "- **Provide relevant context** - include all essential data (pricing, margins, customer segments) to enable deeper analysis\n",
     "- **Specify instructions clearly** - outline the tasks, format, and reasoning style (e.g., step-by-step) you want the model to follow\n",
