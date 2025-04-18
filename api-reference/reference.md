@@ -1688,7 +1688,7 @@ The ID of the upload.
 
 `data` ++"file"++ <span class="required" markdown>++"required"++</span>
 
-The chunk of bytes for this UploadPart.
+The chunk of bytes for this upload part.
 
 ---
 
