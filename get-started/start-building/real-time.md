@@ -190,7 +190,7 @@ If the request is successful, the response is contained in the `completion` vari
         }
     ],
     "created": 1742378836,
-    "model": "deepseek-ai/DeepSeek-V3",
+    "model": "deepseek-ai/DeepSeek-V3-0324",
     "object": "chat.completion",
     "service_tier": null,
     "system_fingerprint": null,
