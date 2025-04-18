@@ -1765,7 +1765,7 @@ The [Upload object](#upload-object) with status pending.
 
 `POST https://api.kluster.ai/v1/uploads/{upload_id}/parts`
 
-Adds an upload part to an Upload object. A upload part represents a chunk of bytes from the file you are trying to upload.
+Adds an upload part to an [Upload object](#upload-object). A upload part represents a chunk of bytes from the file you are trying to upload.
 
 Each upload part can be at most 64 MB, and you can add upload parts until you hit the upload maximum of 8 GB.
 
@@ -1786,13 +1786,13 @@ The ID of the upload.
 
 `data` ++"file"++ <span class="required" markdown>++"required"++</span>
 
-The chunk of bytes for this UploadPart.
+The chunk of bytes for this upload part.
 
 ---
 
 **Returns**
 
-The [UploadPart](#upload-part-object) object.
+The [Upload part object](#upload-part-object).
 
 </div>
 <div markdown>
@@ -2120,7 +2120,7 @@ The ID of the Upload object that this upload part was added to.
 </div>
 <div markdown>
 
-```Json title="UploadPart object"
+```Json title="Upload part object"
 {
   "id": "part_def456",
   "object": "upload.part",
