@@ -1629,12 +1629,6 @@ The organization that owns the model.
   "object": "list",
   "data": [
     {
-      "id": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo",
-      "object": "model",
-      "created": 1731336418,
-      "owned_by": "klusterai"
-    },
-    {
       "id": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
       "object": "model",
       "created": 1731336610,
@@ -1650,12 +1644,6 @@ The organization that owns the model.
       "id": "deepseek-ai/DeepSeek-R1",
       "object": "model",
       "created": 1737385699,
-      "owned_by": "klusterai"
-    },
-    {
-      "id": "deepseek-ai/DeepSeek-V3",
-      "object": "model",
-      "created": 1742323334,
       "owned_by": "klusterai"
     },
     {
@@ -1980,16 +1968,17 @@ A paginated list of [Fine-tuning job objects](#fine-tuning-job-object).
       "hyperparameters": {
         "batch_size": 4,
         "learning_rate_multiplier": 1,
-        "n_epochs": 3
+        "n_epochs": 2
       },
       "method": {
         "type": "supervised",
         "supervised": {
           "batch_size": 4,
           "learning_rate_multiplier": 1,
-          "n_epochs": 3
+          "n_epochs": 2
         }
       },
+      "trained_tokens": 3065,
       "integrations": []
     },
     {
