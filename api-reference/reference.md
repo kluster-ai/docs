@@ -1578,19 +1578,19 @@ Creates an embedding vector representing the input text. These vector representa
 
 `input` ++"string or array"++ <span class="required" markdown>++"required"++</span>
 
-Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or array of token arrays. The input must not exceed the max input tokens for the model (8192 tokens for `text-embedding-ada-002`), cannot be an empty string, and any array must be 2048 dimensions or less.
+Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or array of token arrays. The input must not exceed the max input tokens for the model (8192 tokens for `BAAI/bge-m3`), cannot be an empty string, and any array must be 2048 dimensions or less.
 
 ---
 
 `model` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-ID of the model to use. You can use the List models API to see all of your available models, or see our Model overview for descriptions of them.
+ID of the model to use.
 
 ---
 
 `dimensions` ++"integer"++
 
-The number of dimensions the resulting output embeddings should have. Only supported in `text-embedding-3` and later models.
+The number of dimensions the resulting output embeddings should have.
 
 ---
 
@@ -1602,13 +1602,13 @@ The format to return the embeddings in. Can be either `float` or `base64`. Defau
 
 `user` ++"string"++
 
-A unique identifier representing your end-user, which can help kluster.ai to monitor and detect abuse.
+A unique identifier representing your end-user.
 
 ---
 
 **Returns**
 
-A list of [embedding objects](#the-embedding-object).
+A list of [embedding objects](#embedding-object).
 
 </div>
 <div markdown>
@@ -1681,7 +1681,7 @@ A list of [embedding objects](#the-embedding-object).
 
 ---
 
-### The embedding object
+### Embedding object
 
 Represents an embedding vector returned by the embeddings endpoint.
 
@@ -1692,7 +1692,7 @@ Represents an embedding vector returned by the embeddings endpoint.
 
 `embedding` ++"array"++
 
-The embedding vector, which is a list of floats. The length of vector depends on the model as listed in the embedding guide.
+The embedding vector, which is a list of floats.
 
 ---
 
@@ -1704,7 +1704,7 @@ The index of the embedding in the list of embeddings.
 
 `object` ++"string"++
 
-The object type, which is always "embedding".
+The object type, which is always embedding.
 
 </div>
 <div markdown>
@@ -1713,10 +1713,17 @@ The object type, which is always "embedding".
 {
   "object": "embedding",
   "embedding": [
-    0.0023064255,
-    -0.009327292,
-    ... (1536 floats total for ada-002)
-    -0.0028842222
+    0.00885772705078125,
+    -0.0010204315185546875,
+    -0.045135498046875,
+    0.00478363037109375,
+    -0.02642822265625,
+    /* ... truncated for brevity ... */
+    -0.0168304443359375,
+    0.0229339599609375,
+    0.007648468017578125,
+    -0.03875732421875,
+    0.05487060546875
   ],
   "index": 0
 }
