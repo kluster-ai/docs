@@ -1694,7 +1694,7 @@ The chunk of bytes for this upload part.
 
 **Returns**
 
-The [UploadPart](#upload-part-object) object.
+The [Upload part object](#upload-part-object).
 
 </div>
 <div markdown>
