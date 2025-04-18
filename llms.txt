@@ -6038,7 +6038,7 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "deepseek-ai/DeepSeek-V3",
+            "model": "deepseek-ai/DeepSeek-V3-0324",
             "messages": [
                 {"role": "system", "content": "You are an experienced cook."},
                 {"role": "user", "content": "What is the ultimate breakfast sandwich?"},
@@ -6096,7 +6096,7 @@ with open(file_name, "w") as file:
 
     ```bash
     cat << EOF > my_batch_request.jsonl
-    {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "deepseek-ai/DeepSeek-V3", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
+    {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "deepseek-ai/DeepSeek-V3-0324", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
     {"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are a maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
     {"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"}}]}],"max_completion_tokens":1000}}
 EOF
@@ -6326,7 +6326,7 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "deepseek-ai/DeepSeek-V3",
+            "model": "deepseek-ai/DeepSeek-V3-0324",
             "messages": [
                 {"role": "system", "content": "You are an experienced cook."},
                 {"role": "user", "content": "What is the ultimate breakfast sandwich?"},
@@ -7128,9 +7128,10 @@ The following code shows how to do a chat completions request using the OpenAI l
 === "Python"
 
     ```python
-    from getpass import getpass
-import json
-import os
+    import os
+from getpass import getpass
+
+from openai import OpenAI
 
 # Get API key from user input
 api_key = getpass("Enter your kluster.ai API key: ")
@@ -7143,7 +7144,7 @@ client = OpenAI(
 
 # Create chat completion request
 completion = client.chat.completions.create(
-    model="deepseek-ai/DeepSeek-V3",
+    model="deepseek-ai/DeepSeek-V3-0324",
     messages=[
         {"role": "user", "content": "What is the ultimate breakfast sandwich?"}
     ]
@@ -7181,7 +7182,7 @@ If the request is successful, the response is contained in the `completion` vari
         }
     ],
     "created": 1742378836,
-    "model": "deepseek-ai/DeepSeek-V3",
+    "model": "deepseek-ai/DeepSeek-V3-0324",
     "object": "chat.completion",
     "service_tier": null,
     "system_fingerprint": null,
@@ -7200,6 +7201,7 @@ The following snippet demonstrates how to extract the data, log it to the consol
 === "Python"
 
     ```python
+    def log_response_to_file(response, filename="response_log.json"):
     """Logs the full AI response to a JSON file in the same directory as the script."""
 
     # Extract model name and AI-generated text
@@ -7223,7 +7225,6 @@ The following snippet demonstrates how to extract the data, log it to the consol
         print(f"💾 Response saved to {file_path}")
 
 # Log response to file
-log_response_to_file(completion)
     ```
 
 
@@ -7234,10 +7235,11 @@ For a detailed breakdown of the chat completion object, see the [chat completion
     === "Python"
 
         ```python
-        from openai import OpenAI
-from getpass import getpass
-import json
+        import json
 import os
+from getpass import getpass
+
+from openai import OpenAI
 
 # Get API key from user input
 api_key = getpass("Enter your kluster.ai API key: ")
@@ -7250,7 +7252,7 @@ client = OpenAI(
 
 # Create chat completion request
 completion = client.chat.completions.create(
-    model="deepseek-ai/DeepSeek-V3",
+    model="deepseek-ai/DeepSeek-V3-0324",
     messages=[
         {"role": "user", "content": "What is the ultimate breakfast sandwich?"}
     ]
@@ -9565,7 +9567,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
           "name": "stdout",
           "output_type": "stream",
           "text": [
-            "{\"custom_id\": \"keyword_extraction-0\", \"method\": \"POST\", \"url\": \"/v1/chat/completions\", \"body\": {\"model\": \"klusterai/Meta-Llama-3.1-405B-Instruct-Turbo\", \"temperature\": 0.5, \"messages\": [{\"role\": \"system\", \"content\": \"\\n    Extract up to 5 relevant keywords from the given text. Provide only the keywords between double quotes and separated by commas.\\n    \"}, {\"role\": \"user\", \"content\": \"Chorus Frog Found Croaking in Virginia - The Southern chorus frog has been found in southeastern Virginia, far outside its previously known range. The animal had never before been reported north of Beaufort County, N.C., about 125 miles to the south.\"}]}}\n"
+            "{\"custom_id\": \"keyword_extraction-0\", \"method\": \"POST\", \"url\": \"/v1/chat/completions\", \"body\": {\"model\": \"klusterai/Meta-Llama-3.3-70B-Instruct-Turbo\", \"temperature\": 0.5, \"messages\": [{\"role\": \"system\", \"content\": \"\\n    Extract up to 5 relevant keywords from the given text. Provide only the keywords between double quotes and separated by commas.\\n    \"}, {\"role\": \"user\", \"content\": \"Chorus Frog Found Croaking in Virginia - The Southern chorus frog has been found in southeastern Virginia, far outside its previously known range. The animal had never before been reported north of Beaufort County, N.C., about 125 miles to the south.\"}]}}\n"
           ]
         }
       ],
