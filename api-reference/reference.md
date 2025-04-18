@@ -2022,7 +2022,7 @@ The ID of the Upload object that this upload part was added to.
 </div>
 <div markdown>
 
-```Json title="UploadPart object"
+```Json title="Upload part object"
 {
   "id": "part_def456",
   "object": "upload.part",
