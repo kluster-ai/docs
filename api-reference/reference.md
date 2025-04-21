@@ -1608,7 +1608,7 @@ A unique identifier representing your end-user.
 
 **Returns**
 
-A list of [embedding objects](#embedding-object).
+A list of [Embedding objects](#embedding-object).
 
 </div>
 <div markdown>
