@@ -1588,23 +1588,13 @@ ID of the model to use.
 
 ---
 
-`dimensions` ++"integer"++
-
-The number of dimensions the resulting output embeddings should have.
-
----
-
 `encoding_format` ++"string"++
 
 The format to return the embeddings in. Can be either `float` or `base64`. Defaults to `float`.
 
 ---
 
-`user` ++"string"++
-
-A unique identifier representing your end-user.
-
----
+Please note, the embeddings endpoint doesn’t support the dimensions parameter. Models such as `BAAI/bge‑m3` always return a fixed 1024‑dimensional vector. Supplying dimensions will trigger a `400 Bad Request`.
 
 **Returns**
 
