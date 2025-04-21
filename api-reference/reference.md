@@ -1594,7 +1594,9 @@ The format to return the embeddings in. Can be either `float` or `base64`. Defau
 
 ---
 
-Please note, the embeddings endpoint doesn’t support the dimensions parameter. Models such as `BAAI/bge‑m3` always return a fixed 1024‑dimensional vector. Supplying dimensions will trigger a `400 Bad Request`.
+`dimensions` <span class="not-supported" markdown>++"not supported"++</span>
+
+Please note, the embeddings endpoint doesn’t support the `dimensions` parameter. Models such as `BAAI/bge‑m3` always return a fixed 1024‑dimensional vector. Supplying `dimensions` will trigger a `400 Bad Request`.
 
 **Returns**
 
