@@ -1667,7 +1667,7 @@ The intended purpose of the file. Currently, only `batch` is supported.
 
 `POST https://api.kluster.ai/v1/embeddings`
 
-Creates an embedding vector representing the input text. These vector representations can be easily consumed by machine learning models and algorithms to understand semantic relationships between pieces of text.
+Creates an embedding vector representing the input text. Machine learning models and algorithms can easily consume these vector representations to understand semantic relationships between pieces of text.
 
 <div class="grid" markdown>
 <div markdown>
@@ -1676,7 +1676,7 @@ Creates an embedding vector representing the input text. These vector representa
 
 `input` ++"string or array"++ <span class="required" markdown>++"required"++</span>
 
-Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or array of token arrays. The input must not exceed the max input tokens for the model (8192 tokens for `BAAI/bge-m3`), cannot be an empty string, and any array must be 2048 dimensions or less.
+Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or an array of token arrays. The input must not exceed the max input tokens for the model (8192 tokens for `BAAI/bge-m3`), it cannot be an empty string, and any array must be 2048 dimensions or less.
 
 ---
 
@@ -1686,27 +1686,17 @@ ID of the model to use.
 
 ---
 
-`dimensions` ++"integer"++
-
-The number of dimensions the resulting output embeddings should have.
-
----
-
 `encoding_format` ++"string"++
 
 The format to return the embeddings in. Can be either `float` or `base64`. Defaults to `float`.
 
 ---
 
-`user` ++"string"++
-
-A unique identifier representing your end-user.
-
----
+Please note, the embeddings endpoint doesn’t support the dimensions parameter. Models such as `BAAI/bge‑m3` always return a fixed 1024‑dimensional vector. Supplying dimensions will trigger a `400 Bad Request`.
 
 **Returns**
 
-A list of [embedding objects](#embedding-object).
+A list of [Embedding objects](#embedding-object).
 
 </div>
 <div markdown>
@@ -1802,7 +1792,7 @@ The index of the embedding in the list of embeddings.
 
 `object` ++"string"++
 
-The object type, which is always embedding.
+The object type, which is always `"embedding"`.
 
 </div>
 <div markdown>
