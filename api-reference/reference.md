@@ -1569,7 +1569,7 @@ The intended purpose of the file. Currently, only `batch` is supported.
 
 `POST https://api.kluster.ai/v1/embeddings`
 
-Creates an embedding vector representing the input text. These vector representations can be easily consumed by machine learning models and algorithms to understand semantic relationships between pieces of text.
+Creates an embedding vector representing the input text. Machine learning models and algorithms can easily consume these vector representations to understand semantic relationships between pieces of text.
 
 <div class="grid" markdown>
 <div markdown>
