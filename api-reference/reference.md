@@ -1704,7 +1704,7 @@ The index of the embedding in the list of embeddings.
 
 `object` ++"string"++
 
-The object type, which is always embedding.
+The object type, which is always `"embedding"`.
 
 </div>
 <div markdown>
