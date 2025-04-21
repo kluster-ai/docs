@@ -1,21 +1,16 @@
-name: Use Check MkDocs Build
+name: Use Reusable MkDocs Build
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 jobs:
-  call-check-mkdocs-build:
-    uses: Telucero/workflows/.github/workflows/check-mkdocs-build.yml@Central_repo_test
+  build-docs:
+    uses: Telucero/workflows/.github/workflows/check-mkdocs-build.yml@Central_repo_test  # Specify the branch name here
     with:
-      mkdocs_repo: papermoonio/kluster-docs  # Change this per repo
-      docs_dir: docs                         # Adjust if different per repo
-      branch: main
-      rewrite_image_paths: true              # Optional, set to true/false based on repo needs
-      rewrite_prefix: kluster                # Optional, e.g., for image paths like /kluster/img.png
-      deploy: false                          # Set to true only if you want to deploy to GitHub Pages
+      mkdocs_repo: Telucero/kluster-mkdocs  # or the appropriate repo for the client
+      docs_dir: docs
+      deploy: false
