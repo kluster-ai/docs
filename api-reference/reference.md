@@ -125,7 +125,7 @@ Set of key-value pairs that can be attached to an object. This can be useful for
 
         `completion_window` ++"string"++
 
-        The time frame within which the batch should be processed. The supported completion windows are 1, 3, 6, 12, and 24 hours to accommodate a range of use cases and budget requirements.
+        The time frame within which the batch should be processed. The supported completion windows are 24, 48, and 72 hours to accommodate a range of use cases and budget requirements.
 
         Learn more about how completion window selection affects cost by visiting the pricing section of the [kluster.ai website](https://www.kluster.ai){target=\_blank}.
 
@@ -488,7 +488,7 @@ Set of key-value pairs that can be attached to an object. This can be useful for
 
         `completion_window` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-        The time frame within which the batch should be processed. The supported completion windows are 1, 3, 6, 12, and 24 hours to accommodate a range of use cases and budget requirements.
+        The time frame within which the batch should be processed. The supported completion windows are 24, 48, and 72 hours to accommodate a range of use cases and budget requirements.
 
         Learn more about how completion window selection affects cost by visiting the pricing section of the [kluster.ai website](https://www.kluster.ai){target=\_blank}.
 
@@ -616,7 +616,7 @@ The endpoint to be used for all requests in the batch. Currently, only `/v1/chat
 
 `completion_window` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-The supported completion windows are 1, 3, 6, 12, and 24 hours to accommodate a range of use cases and budget requirements. The code samples provided utilize the 24-hour completion window.
+The supported completion windows are 24, 48, and 72 hours to accommodate a range of use cases and budget requirements. The code samples provided utilize the 24-hour completion window.
 
 Learn more about how completion window selection affects cost by visiting the pricing section of the [kluster.ai website](https://www.kluster.ai){target=\_blank}.
 
@@ -2028,6 +2028,169 @@ The ID of the Upload object that this upload part was added to.
   "object": "upload.part",
   "created_at": 1719185911,
   "upload_id": "upload_abc123"
+}
+```
+
+</div>
+</div>
+
+---
+
+## Embeddings
+
+### Create embeddings
+
+`POST https://api.kluster.ai/v1/embeddings`
+
+Creates an embedding vector representing the input text. Machine learning models and algorithms can easily consume these vector representations to understand semantic relationships between pieces of text.
+
+<div class="grid" markdown>
+<div markdown>
+
+**Request**
+
+`input` ++"string or array"++ <span class="required" markdown>++"required"++</span>
+
+Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or an array of token arrays. The input must not exceed the max input tokens for the model (8192 tokens for `BAAI/bge-m3`), it cannot be an empty string, and any array must be 2048 dimensions or less.
+
+---
+
+`model` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+ID of the model to use.
+
+---
+
+`encoding_format` ++"string"++
+
+The format to return the embeddings in. Can be either `float` or `base64`. Defaults to `float`.
+
+---
+
+`dimensions` <span class="not-supported" markdown>++"not supported"++</span>
+
+Please note, the embeddings endpoint doesn’t support the `dimensions` parameter. Models such as `BAAI/bge‑m3` always return a fixed 1024‑dimensional vector. Supplying `dimensions` will trigger a `400 Bad Request`.
+
+**Returns**
+
+A list of [Embedding objects](#embedding-object).
+
+</div>
+<div markdown>
+
+=== "Python"
+
+    ```python title="Example request"
+    from openai import OpenAI
+
+    # Configure OpenAI client
+    client = OpenAI(
+        base_url="https://api.kluster.ai/v1",
+        api_key="INSERT_API_KEY",  # Replace with your actual API key
+    )
+
+    response = client.embeddings.create(
+        model="BAAI/bge-m3",
+        input="The food was delicious and the waiter...",
+        encoding_format="float"
+    )
+
+    print(response)
+    ```
+
+=== "curl"
+
+    ```bash title="Example request"
+    curl -s https://api.kluster.ai/v1/embeddings \
+        -H "Authorization: Bearer $API_KEY" \
+        -H "Content-Type: application/json" \
+        -d '{
+        "input": "The food was delicious and the waiter...",
+        "model": "BAAI/bge-m3",
+        "encoding_format": "float"
+        }'
+    ```
+
+```Json title="Response"
+{
+  "object": "list",
+  "created": 1744935248,
+  "model": "BAAI/bge-m3",
+  "data": [
+    {
+      "object": "embedding",
+      "index": 0,
+      "embedding": [
+        0.00885772705078125,
+        -0.0010204315185546875,
+        -0.045135498046875,
+        0.00478363037109375,
+        -0.02642822265625,
+        /* ... truncated for brevity ... */
+        -0.0168304443359375,
+        0.0229339599609375,
+        0.007648468017578125,
+        -0.03875732421875,
+        0.05487060546875
+      ]
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 13
+  }
+}
+```
+
+</div>
+</div>
+
+---
+
+### Embedding object
+
+Represents an embedding vector returned by the embeddings endpoint.
+
+<div class="grid" markdown>
+<div markdown>
+
+**Properties**
+
+`embedding` ++"array"++
+
+The embedding vector, which is a list of floats.
+
+---
+
+`index` ++"integer"++
+
+The index of the embedding in the list of embeddings.
+
+---
+
+`object` ++"string"++
+
+The object type, which is always `"embedding"`.
+
+</div>
+<div markdown>
+
+```Json title="The embedding object"
+{
+  "object": "embedding",
+  "embedding": [
+    0.00885772705078125,
+    -0.0010204315185546875,
+    -0.045135498046875,
+    0.00478363037109375,
+    -0.02642822265625,
+    /* ... truncated for brevity ... */
+    -0.0168304443359375,
+    0.0229339599609375,
+    0.007648468017578125,
+    -0.03875732421875,
+    0.05487060546875
+  ],
+  "index": 0
 }
 ```
 
