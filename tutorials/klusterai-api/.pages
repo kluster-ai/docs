@@ -10,3 +10,4 @@ nav:
   - 'Fine-tuning': finetuning-sent-analysis.ipynb
   - 'Image analysis': image-analysis.ipynb
   - 'Effective prompt engineering': effective-prompt-engineering.ipynb
+  - 'Uploading large files': 'uploads-api.ipynb'
