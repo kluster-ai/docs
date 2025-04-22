@@ -125,7 +125,7 @@ Set of key-value pairs that can be attached to an object. This can be useful for
 
         `completion_window` ++"string"++
 
-        The time frame within which the batch should be processed. The supported completion windows are 1, 3, 6, 12, and 24 hours to accommodate a range of use cases and budget requirements.
+        The time frame within which the batch should be processed. The supported completion windows are 24, 48, and 72 hours to accommodate a range of use cases and budget requirements.
 
         Learn more about how completion window selection affects cost by visiting the pricing section of the [kluster.ai website](https://www.kluster.ai){target=\_blank}.
 
@@ -488,7 +488,7 @@ Set of key-value pairs that can be attached to an object. This can be useful for
 
         `completion_window` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-        The time frame within which the batch should be processed. The supported completion windows are 1, 3, 6, 12, and 24 hours to accommodate a range of use cases and budget requirements.
+        The time frame within which the batch should be processed. The supported completion windows are 24, 48, and 72 hours to accommodate a range of use cases and budget requirements.
 
         Learn more about how completion window selection affects cost by visiting the pricing section of the [kluster.ai website](https://www.kluster.ai){target=\_blank}.
 
@@ -616,7 +616,7 @@ The endpoint to be used for all requests in the batch. Currently, only `/v1/chat
 
 `completion_window` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-The supported completion windows are 1, 3, 6, 12, and 24 hours to accommodate a range of use cases and budget requirements. The code samples provided utilize the 24-hour completion window.
+The supported completion windows are 24, 48, and 72 hours to accommodate a range of use cases and budget requirements. The code samples provided utilize the 24-hour completion window.
 
 Learn more about how completion window selection affects cost by visiting the pricing section of the [kluster.ai website](https://www.kluster.ai){target=\_blank}.
 
