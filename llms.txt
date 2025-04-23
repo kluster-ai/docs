@@ -8111,18 +8111,26 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "b26c7677",
+   "id": "intro-heading",
    "metadata": {},
    "source": [
     "# Effective prompt engineering with the kluster.ai API\n",
     "\n",
+    "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/examples/effective-prompt-engineering.ipynb)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "intro-description",
+   "metadata": {},
+   "source": [
     "Prompt engineering is the practice of crafting inputs to guide large language models (LLMs) toward high‑quality responses. Well‑designed prompts can turn vague outputs into precise, actionable insights.\n",
     "\n",
     "In this notebook, we show how prompt quality affects LLM performance by comparing three levels of prompts—Bad, Better, and Best—in a retail sales analysis scenario. The goal: uncover strategies to grow the business and boost profits.\n",
     "\n",
-    "Using a simple retail dataset with sales, pricing, and profit data, you’ll see how adding structure, context, and business‑specific details transforms basic observations into strategic recommendations.\n",
+    "Using a simple retail dataset with sales, pricing, and profit data, you'll see how adding structure, context, and business‑specific details transforms basic observations into strategic recommendations.\n",
     "\n",
-    "By the end, you’ll be equipped to apply these principles to your own business data using any of the [supported models](https://docs.kluster.ai/api-reference/reference/#list-supported-models) available through the [kluster.ai](https://kluster.ai/) API—unlocking deeper, more valuable insights.\n"
+    "By the end, you'll be equipped to apply these principles to your own business data using any of the [supported models](https://docs.kluster.ai/api-reference/reference/#list-supported-models) available through the [kluster.ai](https://kluster.ai/) API—unlocking deeper, more valuable insights."
    ]
   },
   {
