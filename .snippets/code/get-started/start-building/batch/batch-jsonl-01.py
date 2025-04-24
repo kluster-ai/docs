@@ -20,7 +20,7 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "deepseek-ai/DeepSeek-V3",
+            "model": "deepseek-ai/DeepSeek-V3-0324",
             "messages": [
                 {"role": "system", "content": "You are an experienced cook."},
                 {"role": "user", "content": "What is the ultimate breakfast sandwich?"},
