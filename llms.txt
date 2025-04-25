@@ -8742,7 +8742,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
    "id": "7a0583b5",
    "metadata": {},
    "source": [
-    "### Analysis of the AI-enhanced prompt vs. the existing best prompt\n",
+    "### Analysis of the AI-enhanced prompt\n",
     "\n",
     "The AI‑enhanced prompt is stronger because it embeds several best‑practice elements that the baseline prompt omits:\n",
     "\n",
@@ -8759,9 +8759,9 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
    "id": "31f8e69c-15ba-4572-95f8-5823ef921e91",
    "metadata": {},
    "source": [
-    "### Comparing and Contrasting the Prepared Prompts\n",
+    "### Use the AI-enhanced prompt\n",
     "\n",
-    "Now that we have our AI-enhanced prompt, let's go ahead and submit it. We'll then compare it to the response received by the existing best (human generated) prompt.\n"
+    "Now that we have our AI-enhanced prompt let's submit it. We'll then compare it to the response the existing best (human-generated) prompt received.\n"
    ]
   },
   {
@@ -8868,18 +8868,18 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
    "id": "e0182d7f-d382-4426-b7f8-f9b70ad0ea1b",
    "metadata": {},
    "source": [
-    "### Comparing the Responses to the AI-enhanced prompt vs. the existing best prompt\n",
+    "### Analysis of the AI-enhanced prompt response\n",
     "\n",
     "The AI-generated answer stands out by delivering execution-ready depth the human version lacks:\n",
     "\n",
     "\n",
     "- **Quantified impact & ROI** – forecasts unit lifts and rolls them into a +34 % profit gain, turning ideas into numbers managers can judge\n",
-    "- **Actionable constraints** – assigns a $200 channel budget, splits spend, and names KPIs, giving a plug-and-play operating plan\n",
+    "- **Actionable constraints** – assigns a $200 channel budget, splits spending, and names KPIs, giving a plug-and-play operating plan\n",
     "- **Contextual targeting** – ties every promo to a demographic and to inventory pressure, showing clear \"why this, why now\" logic\n",
     "- **Concise orientation** – opens with a single P&L table and ranked profit list so readers grasp the situation at a glance\n",
     "- **Notable caveat** – a bundle-margin math slip highlights the need to prompt for intermediate calculations and self-checks\n",
     "\n",
-    "The strongest prompt may likely be hybrid style: AI-refined for structure and numeric rigor, then augmented with human-driven goals for brevity and inventive marketing flair."
+    "The strongest prompt may likely be hybrid style: AI-refined for structure and numeric rigor, augmented with human-driven goals for brevity and inventive marketing flair."
    ]
   },
   {
