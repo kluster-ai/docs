@@ -3,6 +3,9 @@ from getpass import getpass
 import json
 import time
 
+# Parking sign
+image_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
+
 # Get API key from user input
 api_key = getpass("Enter your kluster.ai API key: ")
 
@@ -19,7 +22,7 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo",
+            "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
             "messages": [
                 {"role": "system", "content": "You are an experienced cook."},
                 {"role": "user", "content": "What is the ultimate breakfast sandwich?"},
@@ -32,7 +35,7 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo",
+            "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
             "messages": [
                 {"role": "system", "content": "You are a maths tutor."},
                 {"role": "user", "content": "Explain the Pythagorean theorem."},
@@ -41,20 +44,24 @@ requests = [
         },
     },
     {
-        "custom_id": "request-4",
+        "custom_id": "request-3",
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "klusterai/Meta-Llama-3.1-405B-Instruct-Turbo",
+            "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
             "messages": [
                 {
-                    "role": "system",
-                    "content": "You are a multilingual, experienced maths tutor.",
-                },
-                {
                     "role": "user",
-                    "content": "Explain the Pythagorean theorem in Spanish",
-                },
+                    "content": [
+                        {"type": "text", "text": "Who can park in the area?"},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": image_url
+                            },
+                        },
+                    ],
+                }
             ],
             "max_completion_tokens": 1000,
         },

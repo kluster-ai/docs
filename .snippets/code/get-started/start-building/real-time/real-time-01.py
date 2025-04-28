@@ -1,7 +1,8 @@
-from openai import OpenAI
-from getpass import getpass
 import json
 import os
+from getpass import getpass
+
+from openai import OpenAI
 
 # Get API key from user input
 api_key = getpass("Enter your kluster.ai API key: ")
@@ -14,7 +15,7 @@ client = OpenAI(
 
 # Create chat completion request
 completion = client.chat.completions.create(
-    model="deepseek-ai/DeepSeek-V3",
+    model="deepseek-ai/DeepSeek-V3-0324",
     messages=[
         {"role": "user", "content": "What is the ultimate breakfast sandwich?"}
     ]

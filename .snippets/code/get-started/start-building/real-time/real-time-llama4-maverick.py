@@ -12,7 +12,7 @@ client = OpenAI(
 
 # Create chat completion request
 completion = client.chat.completions.create(
-    model="deepseek-ai/DeepSeek-V3",
+    model="meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
     messages=[
         {"role": "user", "content": "What is the ultimate breakfast sandwich?"}
     ]

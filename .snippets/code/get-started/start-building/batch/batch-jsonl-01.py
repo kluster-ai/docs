@@ -20,7 +20,7 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "deepseek-ai/DeepSeek-V3",
+            "model": "deepseek-ai/DeepSeek-V3-0324",
             "messages": [
                 {"role": "system", "content": "You are an experienced cook."},
                 {"role": "user", "content": "What is the ultimate breakfast sandwich?"},
@@ -55,7 +55,7 @@ requests = [
                         {
                             "type": "image_url",
                             "image_url": {
-                                "url": "https://github.com/kluster-ai/docs/blob/main/images/get-started/start-building/parking-image.jpg?raw=true"
+                                "url": "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
                             },
                         },
                     ],
