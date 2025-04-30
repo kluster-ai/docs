@@ -1,4 +1,3 @@
-# In: kluster-docs/.github/workflows/check-mkdocs.yml (client repo)
 
 name: CheckMkDocsBuild
 
@@ -12,7 +11,7 @@ jobs:
     uses: Telucero/workflows/.github/workflows/mkdocs-build.yml@main
     with:
       mkdocs_repo: papermoonio/kluster-mkdocs
-      docs_dir: kluster-docs
+      docs_dir: docs
       needs_mistune: true  # Pass needs_mistune as true
     secrets:
       token: ${{ secrets.KLUSTER_MKDOCS_READ }}
