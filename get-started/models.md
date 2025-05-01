@@ -24,6 +24,8 @@ Each model supported by kluster.ai has a unique name that must be used when defi
 |   **Llama 4 Scout 17B 16E**   |     `meta-llama/Llama-4-Scout-17B-16E-Instruct`     |
 |       **Llama 3.3 70B**       |    `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`    |
 |        **Qwen 2.5 7B**        |            `Qwen/Qwen2.5-VL-7B-Instruct`            |
+|        **Qwen 3 235B**        |             `Qwen/Qwen3-235B-A22B-FP8`              |
+
 
 ## Model comparison table
 
@@ -37,6 +39,8 @@ Each model supported by kluster.ai has a unique name that must be used when defi
 | **Llama 4 Maverick 17B 128E** | Advanced multimodal reasoning<br>Long-context, high-accuracy tasks  |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
 |   **Llama 4 Scout 17B 16E**   | Efficient multimodal performance<br>Extended context, general tasks |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
 |        **Qwen 2.5 7B**        |    Document analysis<br>Image-based reasoning<br>Multimodal chat    |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
+|        **Qwen 3 235B**        |    Agent tool use<br>Long-context handling<br>Complex reasoning     |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         | :white_check_mark:  |
+
 
 ## API request limits
 
