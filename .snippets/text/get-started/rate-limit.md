@@ -12,6 +12,8 @@ The following limits apply to API requests based on [your plan](https://platform
     | **Llama 4 Maverick 17B 128E** |           32k            |           4k           |         1000          |           20           |           30           |              1              |
     |   **Llama 4 Scout 17B 16E**   |           32k            |           4k           |         1000          |           20           |           30           |              1              |
     |        **Qwen 2.5 7B**        |           32k            |           4k           |         1000          |           20           |           30           |              1              |
+    |        **Qwen 3 235B**        |           32k            |           4k           |         1000          |           20           |           30           |              1              |
+
 
     
 
@@ -27,6 +29,8 @@ The following limits apply to API requests based on [your plan](https://platform
     | **Llama 4 Maverick 17B 128E** |            1M            |           1M           |         100k          |          100           |          600           |             10              |
     |   **Llama 4 Scout 17B 16E**   |           131k           |          131k          |         100k          |          100           |          600           |             10              |
     |        **Qwen 2.5 7B**        |           32k            |          32k           |         100k          |          100           |          600           |             10              |
+    |        **Qwen 3 235B**        |           32k            |          32k           |         100k          |          100           |          600           |             10              |
+
 
 === "Scale"
 
@@ -40,6 +44,8 @@ The following limits apply to API requests based on [your plan](https://platform
     | **Llama 4 Maverick 17B 128E** |            1M            |           1M           |         500k          |          100           |          1200          |             25              |
     |   **Llama 4 Scout 17B 16E**   |           131k           |          131k          |         500k          |          100           |          1200          |             25              |
     |        **Qwen 2.5 7B**        |           32k            |          32k           |         500k          |          100           |          1200          |             25              |
+    |        **Qwen 3 235B**        |           32k            |          32k           |         500k          |          100           |          1200          |             25              |
+
 
 === "Enterprise"
 
@@ -53,3 +59,5 @@ The following limits apply to API requests based on [your plan](https://platform
     | **Llama 4 Maverick 17B 128E** |            1M            |           1M           |       Unlimited       |          100           |       Unlimited        |          Unlimited          |
     |   **Llama 4 Scout 17B 16E**   |           131k           |          131k          |       Unlimited       |          100           |       Unlimited        |          Unlimited          |
     |        **Qwen 2.5 7B**        |           32k            |          32k           |       Unlimited       |          100           |       Unlimited        |          Unlimited          |
+    |        **Qwen 3 235B**        |           32k            |          32k           |       Unlimited       |          100           |       Unlimited        |          Unlimited          |
+

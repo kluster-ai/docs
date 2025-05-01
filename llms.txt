@@ -62,6 +62,8 @@ The following limits apply to API requests based on [your plan](https://platform
     | **Llama 4 Maverick 17B 128E** |           32k            |           4k           |         1000          |           20           |           30           |              1              |
     |   **Llama 4 Scout 17B 16E**   |           32k            |           4k           |         1000          |           20           |           30           |              1              |
     |        **Qwen 2.5 7B**        |           32k            |           4k           |         1000          |           20           |           30           |              1              |
+    |        **Qwen 3 235B**        |           32k            |           4k           |         1000          |           20           |           30           |              1              |
+
 
     
 
@@ -77,6 +79,8 @@ The following limits apply to API requests based on [your plan](https://platform
     | **Llama 4 Maverick 17B 128E** |            1M            |           1M           |         100k          |          100           |          600           |             10              |
     |   **Llama 4 Scout 17B 16E**   |           131k           |          131k          |         100k          |          100           |          600           |             10              |
     |        **Qwen 2.5 7B**        |           32k            |          32k           |         100k          |          100           |          600           |             10              |
+    |        **Qwen 3 235B**        |           32k            |          32k           |         100k          |          100           |          600           |             10              |
+
 
 === "Scale"
 
@@ -90,6 +94,8 @@ The following limits apply to API requests based on [your plan](https://platform
     | **Llama 4 Maverick 17B 128E** |            1M            |           1M           |         500k          |          100           |          1200          |             25              |
     |   **Llama 4 Scout 17B 16E**   |           131k           |          131k          |         500k          |          100           |          1200          |             25              |
     |        **Qwen 2.5 7B**        |           32k            |          32k           |         500k          |          100           |          1200          |             25              |
+    |        **Qwen 3 235B**        |           32k            |          32k           |         500k          |          100           |          1200          |             25              |
+
 
 === "Enterprise"
 
@@ -103,6 +109,7 @@ The following limits apply to API requests based on [your plan](https://platform
     | **Llama 4 Maverick 17B 128E** |            1M            |           1M           |       Unlimited       |          100           |       Unlimited        |          Unlimited          |
     |   **Llama 4 Scout 17B 16E**   |           131k           |          131k          |       Unlimited       |          100           |       Unlimited        |          Unlimited          |
     |        **Qwen 2.5 7B**        |           32k            |          32k           |       Unlimited       |          100           |       Unlimited        |          Unlimited          |
+    |        **Qwen 3 235B**        |           32k            |          32k           |       Unlimited       |          100           |       Unlimited        |          Unlimited          |
 
 --- 
 
@@ -4908,6 +4915,8 @@ Each model supported by kluster.ai has a unique name that must be used when defi
 |   **Llama 4 Scout 17B 16E**   |     `meta-llama/Llama-4-Scout-17B-16E-Instruct`     |
 |       **Llama 3.3 70B**       |    `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`    |
 |        **Qwen 2.5 7B**        |            `Qwen/Qwen2.5-VL-7B-Instruct`            |
+|        **Qwen 3 235B**        |             `Qwen/Qwen3-235B-A22B-FP8`              |
+
 
 ## Model comparison table
 
@@ -4921,6 +4930,8 @@ Each model supported by kluster.ai has a unique name that must be used when defi
 | **Llama 4 Maverick 17B 128E** | Advanced multimodal reasoning<br>Long-context, high-accuracy tasks  |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
 |   **Llama 4 Scout 17B 16E**   | Efficient multimodal performance<br>Extended context, general tasks |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
 |        **Qwen 2.5 7B**        |    Document analysis<br>Image-based reasoning<br>Multimodal chat    |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
+|        **Qwen 3 235B**        |    Agent tool use<br>Long-context handling<br>Complex reasoning     |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         | :white_check_mark:  |
+
 
 ## API request limits
 
@@ -4938,6 +4949,8 @@ The following limits apply to API requests based on [your plan](https://platform
     | **Llama 4 Maverick 17B 128E** |           32k            |           4k           |         1000          |           20           |           30           |              1              |
     |   **Llama 4 Scout 17B 16E**   |           32k            |           4k           |         1000          |           20           |           30           |              1              |
     |        **Qwen 2.5 7B**        |           32k            |           4k           |         1000          |           20           |           30           |              1              |
+    |        **Qwen 3 235B**        |           32k            |           4k           |         1000          |           20           |           30           |              1              |
+
 
     
 
@@ -4953,6 +4966,8 @@ The following limits apply to API requests based on [your plan](https://platform
     | **Llama 4 Maverick 17B 128E** |            1M            |           1M           |         100k          |          100           |          600           |             10              |
     |   **Llama 4 Scout 17B 16E**   |           131k           |          131k          |         100k          |          100           |          600           |             10              |
     |        **Qwen 2.5 7B**        |           32k            |          32k           |         100k          |          100           |          600           |             10              |
+    |        **Qwen 3 235B**        |           32k            |          32k           |         100k          |          100           |          600           |             10              |
+
 
 === "Scale"
 
@@ -4966,6 +4981,8 @@ The following limits apply to API requests based on [your plan](https://platform
     | **Llama 4 Maverick 17B 128E** |            1M            |           1M           |         500k          |          100           |          1200          |             25              |
     |   **Llama 4 Scout 17B 16E**   |           131k           |          131k          |         500k          |          100           |          1200          |             25              |
     |        **Qwen 2.5 7B**        |           32k            |          32k           |         500k          |          100           |          1200          |             25              |
+    |        **Qwen 3 235B**        |           32k            |          32k           |         500k          |          100           |          1200          |             25              |
+
 
 === "Enterprise"
 
@@ -4979,6 +4996,7 @@ The following limits apply to API requests based on [your plan](https://platform
     | **Llama 4 Maverick 17B 128E** |            1M            |           1M           |       Unlimited       |          100           |       Unlimited        |          Unlimited          |
     |   **Llama 4 Scout 17B 16E**   |           131k           |          131k          |       Unlimited       |          100           |       Unlimited        |          Unlimited          |
     |        **Qwen 2.5 7B**        |           32k            |          32k           |       Unlimited       |          100           |       Unlimited        |          Unlimited          |
+    |        **Qwen 3 235B**        |           32k            |          32k           |       Unlimited       |          100           |       Unlimited        |          Unlimited          |
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/get-started/openai-compatibility/
@@ -6102,6 +6120,118 @@ else:
     print(batch_status)
     ```
 
+??? example "Qwen 3 235B"
+
+    ```python
+    from openai import OpenAI
+from getpass import getpass
+import json
+import time
+
+# Get API key from user input
+api_key = getpass("Enter your kluster.ai API key: ")
+
+# Initialize OpenAI client pointing to kluster.ai API
+client = OpenAI(
+    base_url="https://api.kluster.ai/v1",
+    api_key=api_key,
+)
+
+# Create request with specified structure
+requests = [
+    {
+        "custom_id": "request-1",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "Qwen/Qwen3-235B-A22B-FP8",
+            "messages": [
+                {"role": "system", "content": "You are an experienced cook."},
+                {"role": "user", "content": "What is the ultimate breakfast sandwich?"},
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    {
+        "custom_id": "request-2",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "Qwen/Qwen3-235B-A22B-FP8",
+            "messages": [
+                {"role": "system", "content": "You are a maths tutor."},
+                {"role": "user", "content": "Explain the Pythagorean theorem."},
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    {
+        "custom_id": "request-4",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "Qwen/Qwen3-235B-A22B-FP8",
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "You are a multilingual, experienced maths tutor.",
+                },
+                {
+                    "role": "user",
+                    "content": "Explain the Pythagorean theorem in Spanish",
+                },
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    # Additional tasks can be added here
+]
+
+# Save tasks to a JSONL file (newline-delimited JSON)
+file_name = "my_batch_request.jsonl"
+with open(file_name, "w") as file:
+    for request in requests:
+        file.write(json.dumps(request) + "\n")
+
+# Upload batch job file
+batch_input_file = client.files.create(
+        file=open(file_name, "rb"),
+        purpose="batch"
+)
+
+# Submit batch job
+batch_request = client.batches.create(
+    input_file_id=batch_input_file.id,
+    endpoint="/v1/chat/completions",
+    completion_window="24h",
+)
+
+# Poll the batch status until it's complete
+while True:
+    batch_status = client.batches.retrieve(batch_request.id)
+    print("Batch status: {}".format(batch_status.status))
+    print(
+        f"Completed tasks: {batch_status.request_counts.completed} / {batch_status.request_counts.total}"
+    )
+
+    if batch_status.status.lower() in ["completed", "failed", "cancelled"]:
+        break
+
+    time.sleep(10)  # Wait for 10 seconds before checking again
+
+# Check if the Batch completed successfully
+if batch_status.status.lower() == "completed":
+    # Retrieve the results and log
+    result_file_id = batch_status.output_file_id
+    results = client.files.content(result_file_id).content
+
+    # Print response to console
+    print(f"\n🔍 AI batch response:")
+    print(results)
+else:
+    print(f"Batch failed with status: {batch_status.status}")
+    ``` 
+
 ### CLI
 
 Similarly, the following curl commands showcase how to easily send a chat completion request to kluster.ai for the different supported models. This example assumes you've exported your kluster.ai API key as the variable `API_KEY`.
@@ -6629,6 +6759,68 @@ echo -e "\n🔍 AI batch response:"
 echo "$OUTPUT_CONTENT"
     ```
 
+??? example "Qwen 3 235B"
+
+    ```python
+    #!/bin/bash
+
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo "Error: API_KEY environment variable is not set." >&2
+fi
+
+# Create request with specified structure
+cat << EOF > my_batch_request.jsonl
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen3-235B-A22B-FP8", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen3-235B-A22B-FP8", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
+{"custom_id": "request-4", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen3-235B-A22B-FP8", "messages":[{"role": "system", "content": "You are a multilingual, experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"}],"max_completion_tokens":1000}}
+EOF
+
+# Upload batch job file
+FILE_ID=$(curl -s https://api.kluster.ai/v1/files \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: multipart/form-data" \
+    -F "file=@my_batch_request.jsonl" \
+    -F "purpose=batch" | jq -r '.id')
+echo "File uploaded, file ID: $FILE_ID"
+
+# Submit batch job
+BATCH_ID=$(curl -s https://api.kluster.ai/v1/batches \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" \
+    -d '{
+        "input_file_id": "'"$FILE_ID"'",
+        "endpoint": "/v1/chat/completions",
+        "completion_window": "24h"
+    }' | jq -r '.id')
+echo "Batch job submitted, job ID: $BATCH_ID"
+
+
+# Poll the batch status until it's completed
+STATUS="in_progress"
+while [[ "$STATUS" != "completed" ]]; do
+    echo "Waiting for batch job to complete... Status: $STATUS"
+    sleep 10 # Wait for 10 seconds before checking again
+
+    STATUS=$(curl -s https://api.kluster.ai/v1/batches/$BATCH_ID \
+        -H "Authorization: Bearer $API_KEY" \
+        -H "Content-Type: application/json" | jq -r '.status')
+done
+
+# Retrieve the batch output file
+KLUSTER_OUTPUT_FILE=$(curl -s https://api.kluster.ai/v1/batches/$BATCH_ID \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" | jq -r '.output_file_id')
+
+# Retrieve the results
+OUTPUT_CONTENT=$(curl -s https://api.kluster.ai/v1/files/$KLUSTER_OUTPUT_FILE/content \
+    -H "Authorization: Bearer $API_KEY")
+
+# Log results
+echo -e "\n🔍 AI batch response:"
+echo "$OUTPUT_CONTENT"
+    ``` 
+
 ## Batch inference flow
 
 This section details the batch inference process using the kluster.ai API and DeepSeek R1 model, but you can adapt it to any of the [supported models](/get-started/models/){target=\_blank}.
@@ -6689,7 +6881,7 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+            "model": "Qwen/Qwen3-235B-A22B-FP8",
             "messages": [
                 {"role": "system", "content": "You are a maths tutor."},
                 {"role": "user", "content": "Explain the Pythagorean theorem."},
@@ -6702,7 +6894,7 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+            "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
             "messages": [
                 {
                     "role": "user",
@@ -6735,8 +6927,8 @@ with open(file_name, "w") as file:
     ```bash
     cat << EOF > my_batch_request.jsonl
     {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "deepseek-ai/DeepSeek-V3-0324", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
-    {"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are a maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
-    {"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"}}]}],"max_completion_tokens":1000}}
+    {"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen3-235B-A22B-FP8", "messages": [{"role": "system", "content": "You are a maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
+    {"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"}}]}],"max_completion_tokens":1000}}
 EOF
     ```
 
@@ -6977,7 +7169,7 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+            "model": "Qwen/Qwen3-235B-A22B-FP8",
             "messages": [
                 {"role": "system", "content": "You are a maths tutor."},
                 {"role": "user", "content": "Explain the Pythagorean theorem."},
@@ -6990,7 +7182,7 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+            "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
             "messages": [
                 {
                     "role": "user",
@@ -7538,6 +7730,40 @@ print(f"\n🔍 AI response (model: {model_name}):")
 print(text_response)
     ```
 
+??? example "Qwen 3 235B"
+
+    ```python
+    from openai import OpenAI
+from getpass import getpass
+
+# Get API key from user input
+api_key = getpass("Enter your kluster.ai API key: ")
+
+# Initialize OpenAI client pointing to kluster.ai API
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
+
+# Create chat completion request
+completion = client.chat.completions.create(
+    model="Qwen/Qwen3-235B-A22B-FP8",
+    messages=[
+        {"role": "user", "content": "What is the ultimate breakfast sandwich?"}
+    ]
+)
+
+"""Logs the full AI response to terminal."""
+
+# Extract model name and AI-generated text
+model_name = completion.model  
+text_response = completion.choices[0].message.content  
+
+# Print response to console
+print(f"\n🔍 AI response (model: {model_name}):")
+print(text_response)
+    ```    
+
 ### CLI
 
 Similarly, the following curl commands showcase how to easily send a chat completion request to kluster.ai for the different supported models. This example assumes you've exported your kluster.ai API key as the variable `API_KEY`.
@@ -7752,6 +7978,31 @@ curl https://api.kluster.ai/v1/chat/completions \
         ]
     }"
     ```
+
+??? example "Qwen 3 235B"
+
+    ```python
+    #!/bin/bash
+
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo -e "\nError: API_KEY environment variable is not set.\n" >&2
+fi
+
+# Submit real-time request
+curl https://api.kluster.ai/v1/chat/completions \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" \
+    -d "{
+            \"model\": \"Qwen/Qwen3-235B-A22B-FP8\", 
+            \"messages\": [
+                { 
+                    \"role\": \"user\", 
+                    \"content\": \"What is the ultimate breakfast sandwich?\"
+                }
+            ]
+    }"
+    ```   
 
 ## Real-time inference flow
 
@@ -8001,6 +8252,8 @@ The following limits apply to API requests based on [your plan](https://platform
     | **Llama 4 Maverick 17B 128E** |           32k            |           4k           |         1000          |           20           |           30           |              1              |
     |   **Llama 4 Scout 17B 16E**   |           32k            |           4k           |         1000          |           20           |           30           |              1              |
     |        **Qwen 2.5 7B**        |           32k            |           4k           |         1000          |           20           |           30           |              1              |
+    |        **Qwen 3 235B**        |           32k            |           4k           |         1000          |           20           |           30           |              1              |
+
 
     
 
@@ -8016,6 +8269,8 @@ The following limits apply to API requests based on [your plan](https://platform
     | **Llama 4 Maverick 17B 128E** |            1M            |           1M           |         100k          |          100           |          600           |             10              |
     |   **Llama 4 Scout 17B 16E**   |           131k           |          131k          |         100k          |          100           |          600           |             10              |
     |        **Qwen 2.5 7B**        |           32k            |          32k           |         100k          |          100           |          600           |             10              |
+    |        **Qwen 3 235B**        |           32k            |          32k           |         100k          |          100           |          600           |             10              |
+
 
 === "Scale"
 
@@ -8029,6 +8284,8 @@ The following limits apply to API requests based on [your plan](https://platform
     | **Llama 4 Maverick 17B 128E** |            1M            |           1M           |         500k          |          100           |          1200          |             25              |
     |   **Llama 4 Scout 17B 16E**   |           131k           |          131k          |         500k          |          100           |          1200          |             25              |
     |        **Qwen 2.5 7B**        |           32k            |          32k           |         500k          |          100           |          1200          |             25              |
+    |        **Qwen 3 235B**        |           32k            |          32k           |         500k          |          100           |          1200          |             25              |
+
 
 === "Enterprise"
 
@@ -8042,6 +8299,7 @@ The following limits apply to API requests based on [your plan](https://platform
     | **Llama 4 Maverick 17B 128E** |            1M            |           1M           |       Unlimited       |          100           |       Unlimited        |          Unlimited          |
     |   **Llama 4 Scout 17B 16E**   |           131k           |          131k          |       Unlimited       |          100           |       Unlimited        |          Unlimited          |
     |        **Qwen 2.5 7B**        |           32k            |          32k           |       Unlimited       |          100           |       Unlimited        |          Unlimited          |
+    |        **Qwen 3 235B**        |           32k            |          32k           |       Unlimited       |          100           |       Unlimited        |          Unlimited          |
 
 ## Where to go next
 
