@@ -10,3 +10,4 @@ nav:
   - 'PydanticAI': pydantic.md
   - 'SillyTavern': sillytavern.md
   - 'TypingMind': typingmind.md
+  - 'Llama OCR' : llama-ocr.md
