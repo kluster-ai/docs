@@ -5,7 +5,7 @@ description: Learn how to use kluster.ai as an LLM provider for the Llama OCR NP
 
 # Integrate Llama OCR with kluster.ai
 
-[Llama OCR](https://llamaocr.com/){target=\_blank} is an NPM library that converts images into richly-formatted Markdown by sending the image and a conversion prompt to a vision-capable LLM. Llama OCR is compatible with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API with just a few changes. Note that not all models supported by kluster.ai are capable of processing images. The [vision-capable models](/get-started/models/){target=\_blank} currently supported by kluster.ai include:
+[Llama OCR](https://llamaocr.com/){target=\_blank} is an NPM library that converts images into richly formatted Markdown by sending the image and a conversion prompt to a vision-capable LLM. Llama OCR is compatible with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API with just a few changes. Note that not all models supported by kluster.ai are capable of processing images. The [vision-capable models](/get-started/models/){target=\_blank} currently supported by kluster.ai include:
 
 - `google/gemma-3-27b-it` - Google's Gemma 3 model with vision capabilities
 - `Qwen/Qwen2.5-VL-7B-Instruct` - Qwen's visual language model
@@ -31,7 +31,7 @@ cd llama-ocr
 npm install
 ```
 
-Additionally, you'll need to install the OpenAI package which we'll use to interact with Kluster.ai's OpenAI-compatible API:
+Additionally, you'll need to install the OpenAI package, which we'll use to interact with Kluster.ai's OpenAI-compatible API:
 
 ```bash
 npm install openai
@@ -39,7 +39,7 @@ npm install openai
 
 ## Modify the OCR function
 
-Navigate to the `src` folder and find the `index.ts` file. There's just a few changes that need to be made here. 
+Navigate to the `src` folder and find the `index.ts` file. Just a few changes need to be made here.
 
 1. Update the imports: 
 ```typescript
@@ -68,7 +68,7 @@ const openai = new OpenAI({
 return getMarkdown({ openai, model, filePath });
 }
 ```
-4. **Revise the getMarkdown function to use the OpenAI SDK** - The contents of the prompt remains the same but the function switches from the Together SDK to the OpenAI SDK, so it renames the client/model args accordingly, encodes local images inline with `fs.readFileSync` as follows:
+4. **Revise the getMarkdown function to use the OpenAI SDK** - The contents of the prompt remain the same but the function switches from the Together SDK to the OpenAI SDK, so it renames the client/model args accordingly and encodes local images inline with `fs.readFileSync` as follows:
 ```typescript
 async function getMarkdown({
   openai,
@@ -120,7 +120,7 @@ You can find the full contents of the revised `index.ts` below:
 
 ## Create and run a test file
 
-The below example will demonstrate calling the `ocr` function from the `src/index.ts` file by passing in the file path of the image we want to process, along with the kluster.ai model you'd like to use, and your kluster API key. Since the example grocery receipt is located in the `test` folder, you might wish to create the below file in the same directory:
+The below example will demonstrate calling the `ocr` function from the `src/index.ts` file by passing in the file path of the image we want to process, along with the kluster.ai model you'd like to use and your kluster API key. Since the example grocery receipt is located in the `test` folder, you might wish to create the below file in the same directory:
 
 ```typescript title="test-receipt.ts"
 import { ocr } from "../src/index";
@@ -179,7 +179,7 @@ CUSTOMER COPY
 
 ## Summary
 
-You've now successfully integrated Kluster.ai with Llama OCR. This allows you to extract text from images using Kluster.ai's powerful vision-capable models, converting them into clean, structured markdown format.
+You've successfully integrated Kluster.ai with Llama OCR. This allows you to extract text from images using Kluster.ai's powerful vision-capable models and convert them into clean, structured markdown format.
 
 Some potential use cases for this integration include:
 
@@ -189,4 +189,4 @@ Some potential use cases for this integration include:
 - Extracting text from screenshots
 - Processing business cards
 
-Experiment with different Kluster.ai models to find the one that works best for your specific OCR needs. The OCR quality may vary depending on the image quality, text clarity, and the specific model used.
+Experiment with different Kluster.ai models to find the best one for your specific OCR needs. The OCR quality may vary depending on the image quality, text clarity, and the specific model used.
