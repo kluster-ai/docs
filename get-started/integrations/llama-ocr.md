@@ -146,7 +146,7 @@ ts-node test-receipt.ts
 
 The output will look similar to the following:
 
-```
+```txt
 # Trader Joe's
 
 785 Oak Grove Road
