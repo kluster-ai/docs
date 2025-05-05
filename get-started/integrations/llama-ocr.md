@@ -5,7 +5,9 @@ description: Learn how to use kluster.ai as an LLM provider for the Llama OCR NP
 
 # Integrate Llama OCR with kluster.ai
 
-[Llama OCR](https://llamaocr.com/){target=\_blank} is an NPM library that converts images into richly formatted Markdown by sending the image and a conversion prompt to a vision-capable LLM. Llama OCR is compatible with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API with just a few changes. Note that not all models supported by kluster.ai are capable of processing images. The [vision-capable models](/get-started/models/){target=\_blank} currently supported by kluster.ai include:
+[Llama OCR](https://llamaocr.com/){target=\_blank} is an NPM library that converts images into richly formatted Markdown by sending the image and a conversion prompt to a vision-capable LLM. Llama OCR is compatible with the [kluster.ai](https://www.kluster.ai/){target=\_blank} API with just a few changes.
+
+Note that not all models supported by kluster.ai are capable of processing images. The [vision-capable models](/get-started/models/){target=\_blank} currently supported by kluster.ai include:
 
 - `google/gemma-3-27b-it` - Google's Gemma 3 model with vision capabilities
 - `Qwen/Qwen2.5-VL-7B-Instruct` - Qwen's visual language model
