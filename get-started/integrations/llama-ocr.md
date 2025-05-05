@@ -33,7 +33,7 @@ cd llama-ocr
 npm install
 ```
 
-Additionally, you must install the OpenAI package, which we'll use to interact with kluster.ai's OpenAI-compatible API:
+Additionally, you must install the OpenAI package to interact with kluster.ai's OpenAI-compatible API:
 
 ```bash
 npm install openai
@@ -45,72 +45,22 @@ Navigate to the `src` folder, find the `index.ts` file, and make the following c
 
 1. Update the imports: 
 ```typescript
-import OpenAI from "openai"; 
-import fs from "fs";                   
+--8<-- "code/get-started/integrations/llama-ocr/index.ts::3"
 ```
+
 2. Modify the OCR function signature as follows: 
 ```typescript
-export async function ocr({
- filePath,
- apiKey = "INSERT_API_KEY",         
- model  = "google/gemma-3-27b-it",           
-}: {
- filePath: string;
- apiKey?: string;
- model?: string;                             
-}) {
+--8<-- "code/get-started/integrations/llama-ocr/index.ts:4:12"
 ```
-3. Initialize the OpenAI client with kluster.ai endpoint
-```typescript
-const openai = new OpenAI({
- apiKey,
- baseURL: "https://api.kluster.ai/v1",         
-});
 
-return getMarkdown({ openai, model, filePath });
-}
+3. Initialize the OpenAI client with kluster.ai endpoint:
+```typescript
+--8<-- "code/get-started/integrations/llama-ocr/index.ts:13:16"
 ```
-4. **Revise the getMarkdown function to use the OpenAI SDK** - The contents of the prompt remain the same but the function switches from the Together SDK to the OpenAI SDK, so it renames the client/model args accordingly and encodes local images inline with `fs.readFileSync` as follows:
+
+4. Revise the `getMarkdown` function to use the OpenAI SDK:
 ```typescript
-async function getMarkdown({
-  openai,
-  model,
-  filePath,
-}: {
-  openai: OpenAI;
-  model: string;
-  filePath: string;
-}) {
-  const systemPrompt = `Convert the provided image into Markdown format. Ensure that all content from the page is included, such as headers, footers, subtexts, images (with alt text if possible), tables, and any other elements.
-  
-  Requirements:
-  - Output only Markdown (no extra narrative).
-  - Do NOT wrap the result in code fences.
-  - Capture every visible element.`;
-
-  const imageAsBase64 = isRemote(filePath)
-    ? filePath
-    : `data:image/jpeg;base64,${fs.readFileSync(filePath).toString("base64")}`;
-
-  const response = await openai.chat.completions.create({
-    model,
-    messages: [
-      {
-        role: "user",
-        content: [
-          { type: "text", text: systemPrompt },
-          { type: "image_url", image_url: { url: imageAsBase64 } },
-        ],
-      },
-    ],
-  });
-
-  return response.choices[0].message.content!;
-}
-
-function isRemote(path: string) {
-  return path.startsWith("http://") || path.startsWith("https://");
-}
+--8<-- "code/get-started/integrations/llama-ocr/index.ts:20:"
 ```
 
 You can find the full contents of the revised `index.ts` below:
@@ -122,16 +72,16 @@ You can find the full contents of the revised `index.ts` below:
 
 ## Create and run a test file
 
-The below example will demonstrate calling the `ocr` function from the `src/index.ts` file by passing in the file path of the image we want to process, along with the kluster.ai model you'd like to use and your kluster API key. Since the example grocery receipt is located in the `test` folder, you might wish to create the below file in the same directory:
+The below example demonstrates calling the `ocr` function from the `src/index.ts` file by passing in the file path of the image to process, along with the kluster.ai model you'd like to use and your kluster API key. Since the example grocery receipt is located in the `test` folder, you might wish to create the below file in the same directory:
 
 ```typescript title="test-receipt.ts"
-import { ocr } from "../src/index";
+import { ocr } from '../src/index';
 
 (async () => {
   const markdown = await ocr({
-    filePath: "./trader-joes-receipt.jpg",
-    model: "google/gemma-3-27b-it",   // Use a vision-enabled model
-    apiKey: "INSERT_API_KEY"       	 
+    filePath: './trader-joes-receipt.jpg',
+    model: 'google/gemma-3-27b-it', // Use a vision-enabled model
+    apiKey: 'INSERT_API_KEY',
   });
 
   console.log(markdown);
@@ -178,7 +128,6 @@ Visa Debit $1.83
 PAYMENT CARD PURCHASE TRANSACTION
 CUSTOMER COPY
 ```
-
 ## Summary
 
 You've successfully integrated kluster.ai with Llama OCR. This allows you to extract text from images using kluster.ai's powerful vision-capable models and convert them into clean, structured markdown format.
@@ -192,3 +141,4 @@ Some potential use cases for this integration include:
 - Processing business cards
 
 Experiment with different kluster.ai models to find the best one for your specific OCR needs. The OCR quality may vary depending on the image quality, text clarity, and the specific model used.
+

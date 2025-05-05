@@ -1,10 +1,10 @@
-import OpenAI from "openai";
-import fs from "fs";
+import OpenAI from 'openai';
+import fs from 'fs';
 
 export async function ocr({
   filePath,
-  apiKey = process.env.KLUSTER_API_KEY!,     // read from env or param
-  model  = "google/gemma-3-27b-it",          // any vision model on kluster.ai
+  apiKey = process.env.KLUSTER_API_KEY!, // read from env or param
+  model = 'google/gemma-3-27b-it', // any vision model on kluster.ai
 }: {
   filePath: string;
   apiKey?: string;
@@ -12,7 +12,7 @@ export async function ocr({
 }) {
   const openai = new OpenAI({
     apiKey,
-    baseURL: "https://api.kluster.ai/v1",              
+    baseURL: 'https://api.kluster.ai/v1',
   });
 
   return getMarkdown({ openai, model, filePath });
@@ -36,16 +36,16 @@ async function getMarkdown({
 
   const imageAsBase64 = isRemote(filePath)
     ? filePath
-    : `data:image/jpeg;base64,${fs.readFileSync(filePath).toString("base64")}`;
+    : `data:image/jpeg;base64,${fs.readFileSync(filePath).toString('base64')}`;
 
   const response = await openai.chat.completions.create({
     model,
     messages: [
       {
-        role: "user",
+        role: 'user',
         content: [
-          { type: "text", text: systemPrompt },
-          { type: "image_url", image_url: { url: imageAsBase64 } },
+          { type: 'text', text: systemPrompt },
+          { type: 'image_url', image_url: { url: imageAsBase64 } },
         ],
       },
     ],
@@ -55,5 +55,5 @@ async function getMarkdown({
 }
 
 function isRemote(path: string) {
-  return path.startsWith("http://") || path.startsWith("https://");
+  return path.startsWith('http://') || path.startsWith('https://');
 }
