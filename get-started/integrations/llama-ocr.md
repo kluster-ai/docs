@@ -191,4 +191,4 @@ Some potential use cases for this integration include:
 - Extracting text from screenshots
 - Processing business cards
 
-Experiment with different Kluster.ai models to find the best one for your specific OCR needs. The OCR quality may vary depending on the image quality, text clarity, and the specific model used.
+Experiment with different kluster.ai models to find the best one for your specific OCR needs. The OCR quality may vary depending on the image quality, text clarity, and the specific model used.
