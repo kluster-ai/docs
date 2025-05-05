@@ -41,7 +41,7 @@ npm install openai
 
 ## Modify the OCR function
 
-Navigate to the `src` folder and find the `index.ts` file. Just a few changes need to be made here.
+Navigate to the `src` folder, find the `index.ts` file, and make the following changes:
 
 1. Update the imports: 
 ```typescript
