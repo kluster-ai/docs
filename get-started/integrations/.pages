@@ -6,8 +6,8 @@ nav:
   - 'Immersive Translate': immersive-translate.md
   - 'LangChain': langchain.md
   - 'LiteLLM': litellm.md
+  - 'Llama OCR': llama-ocr.md
   - 'Msty': msty.md
   - 'PydanticAI': pydantic.md
   - 'SillyTavern': sillytavern.md
   - 'TypingMind': typingmind.md
-  - 'Llama OCR' : llama-ocr.md
