@@ -60,7 +60,7 @@ export async function ocr({
  model?: string;                             
 }) {
 ```
-3. **Initialize the OpenAI client with kluster.ai endpoint**
+3. Initialize the OpenAI client with kluster.ai endpoint
 ```typescript
 const openai = new OpenAI({
  apiKey,
