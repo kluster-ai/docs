@@ -33,7 +33,7 @@ cd llama-ocr
 npm install
 ```
 
-Additionally, you'll need to install the OpenAI package, which we'll use to interact with Kluster.ai's OpenAI-compatible API:
+Additionally, you must install the OpenAI package, which we'll use to interact with kluster.ai's OpenAI-compatible API:
 
 ```bash
 npm install openai
