@@ -181,7 +181,7 @@ CUSTOMER COPY
 
 ## Summary
 
-You've successfully integrated Kluster.ai with Llama OCR. This allows you to extract text from images using Kluster.ai's powerful vision-capable models and convert them into clean, structured markdown format.
+You've successfully integrated kluster.ai with Llama OCR. This allows you to extract text from images using kluster.ai's powerful vision-capable models and convert them into clean, structured markdown format.
 
 Some potential use cases for this integration include:
 
