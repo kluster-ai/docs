@@ -25,7 +25,7 @@ This guide walks you through the minimal changes needed to:
 --8<-- 'text/kluster-api-onboarding.md'
 - Node version 18 or higher
 
-You can clone the Llama OCR repo and installed the required dependencies with the following commands:
+You can clone the Llama OCR repo and install the required dependencies with the following commands:
 
 ```bash
 git clone https://github.com/Nutlope/llama-ocr.git
