@@ -1,4 +1,5 @@
 title: API reference
 hide: false
 nav:
- - 'Reference': reference.md
+ # - 'Reference': reference.md
+ - 'API reference': api-portal.md
