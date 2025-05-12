@@ -13,3 +13,4 @@ nav:
   - 'Uploading large files': 'uploads-api.ipynb'
   - 'Integrating Tools': 'integrating-tools.ipynb'
   - 'RAG': 'rag.ipynb'
+  - 'Batch processing': 'batch.ipynb'
