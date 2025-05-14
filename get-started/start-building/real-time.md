@@ -96,6 +96,12 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     --8<-- 'code/get-started/start-building/real-time/real-time-qwen3-235.py'
     ```    
 
+??? example "Mistral Nemo Instruct 2407"
+
+    ```python
+    --8<-- 'code/get-started/start-building/real-time/real-time-mistral-nemo-instruct-2407.py'
+    ```
+
 ### CLI
 
 Similarly, the following curl commands showcase how to easily send a chat completion request to kluster.ai for the different supported models. This example assumes you've exported your kluster.ai API key as the variable `API_KEY`.
@@ -153,6 +159,12 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 
     ```python
     --8<-- 'code/get-started/start-building/real-time/real-time-qwen3-235.md'
+    ```   
+
+??? example "Mistral Nemo Instruct 2407"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-mistral-nemo-instruct-2407.md'
     ```   
 
 ## Real-time inference flow
