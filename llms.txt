@@ -13544,7 +13544,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "{\"custom_id\": \"DeepSeek-V3-0324-0-analysis\", \"method\": \"POST\", \"url\": \"/v1/chat/completions\", \"body\": {\"model\": \"deepseek-ai/DeepSeek-V3-0324\", \"temperature\": 0.5, \"messages\": [{\"role\": \"system\", \"content\": \"\\n    You are a helpful assitant that classifies movie genres based on the movie description. Your response must be one of these exact words and nothing else: \\n    Action, Adventure, Animation, Biography, Comedy, Crime, Drama, Family, Fantasy, Film-Noir, History, Horror, Music, Musical, Mystery, Romance, Sci-Fi, Sport, Thriller, War, Western.\\n    Respond with ONE WORD ONLY. No punctuation, no explanation, no formatting. Just the genre.\\n    \"}, {\"role\": \"user\", \"content\": \"Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.\"}]}}\n"
+      "{\"custom_id\": \"DeepSeek-V3-0324-0-analysis\", \"method\": \"POST\", \"url\": \"/v1/chat/completions\", \"body\": {\"model\": \"deepseek-ai/DeepSeek-V3-0324\", \"temperature\": 0.5, \"messages\": [{\"role\": \"system\", \"content\": \"\\n    You are a helpful assistant that classifies movie genres based on the movie description. Your response must be one of these exact words and nothing else: \\n    Action, Adventure, Animation, Biography, Comedy, Crime, Drama, Family, Fantasy, Film-Noir, History, Horror, Music, Musical, Mystery, Romance, Sci-Fi, Sport, Thriller, War, Western.\\n    Respond with ONE WORD ONLY. No punctuation, no explanation, no formatting. Just the genre.\\n    \"}, {\"role\": \"user\", \"content\": \"Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.\"}]}}\n"
      ]
     }
    ],
@@ -15299,7 +15299,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
     "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3"
    },
    "source": [
-    "Sentiment analysis is the process of reviewing text to determine whether there is positive, neutral, or negative notation to the statement. LLMs can be extremely powerful, processing a lot of data quickly, helping understand the overall sentiment of a large dataset.\n",
+    "Sentiment analysis is the process of reviewing text to determine whether there is positive, neutral, or negative connotation to the statement. LLMs can be extremely powerful, processing a lot of data quickly, helping understand the overall sentiment of a large dataset.\n",
     "\n",
     "This tutorial runs through a notebook where you'll learn how to use the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to run a sentiment analysis on sample data.\n",
     "\n",
