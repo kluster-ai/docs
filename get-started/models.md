@@ -15,32 +15,29 @@ Each model supported by kluster.ai has a unique name that must be used when defi
 
 |             Model             |                   Model API name                    |
 |:-----------------------------:|:---------------------------------------------------:|
-|        **DeepSeek R1**        |              `deepseek-ai/DeepSeek-R1`              |
-|     **DeepSeek V3 0324**      |           `deepseek-ai/DeepSeek-V3-0324`            |
+|        **DeepSeek-R1**        |              `deepseek-ai/DeepSeek-R1`              |
+|     **DeepSeek-V3-0324**      |           `deepseek-ai/DeepSeek-V3-0324`            |
 |        **Gemma 3 27B**        |               `google/gemma-3-27b-it`               |
-|       **Llama 3.1 8B**        |    `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`     |
-|       **Llama 3.3 70B**       |    `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`    |
-| **Llama 4 Maverick 17B 128E** | `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8` |
-|   **Llama 4 Scout 17B 16E**   |     `meta-llama/Llama-4-Scout-17B-16E-Instruct`     |
-|       **Llama 3.3 70B**       |    `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`    |
-|        **Qwen 2.5 7B**        |            `Qwen/Qwen2.5-VL-7B-Instruct`            |
-|        **Qwen 3 235B**        |             `Qwen/Qwen3-235B-A22B-FP8`              |
-
+|     **Meta Llama 3.1 8B**     |    `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`     |
+|    **Meta Llama 3.3 70B**     |    `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`    |
+|   **Meta Llama 4 Maverick**   | `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8` |
+|    **Meta Llama 4 Scout**     |     `meta-llama/Llama-4-Scout-17B-16E-Instruct`     |
+|       **Qwen2.5-VL 7B**       |            `Qwen/Qwen2.5-VL-7B-Instruct`            |
+|      **Qwen3-235B-A22B**      |             `Qwen/Qwen3-235B-A22B-FP8`              |
 
 ## Model comparison table
 
-|             Model             |                          Main<br>use case                           | Real-time<br>inference support | Batch<br>inference support | Fine-tuning<br>support | Image<br>analysis  | Function<br>calling |
-|:-----------------------------:|:-------------------------------------------------------------------:|:------------------------------:|:--------------------------:|:----------------------:|:------------------:|:-------------------:|
-|        **DeepSeek R1**        |              Code generation<br>Complex data analysis               |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
-|     **DeepSeek V3 0324**      |      Natural language generation<br>Contextually rich writing       |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         |         :x:         |
-|        **Gemma 3 27B**        |  Multilingual applications<br>Image analysis<br>Complex reasoning   |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
-|       **Llama 3.1 8B**        |       Low-latency or simple tasks<br>Cost-efficient inference       |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
-|       **Llama 3.3 70B**       |           General-purpose AI<br>Balanced cost-performance           |       :white_check_mark:       |     :white_check_mark:     |   :white_check_mark:   |        :x:         | :white_check_mark:  |
-| **Llama 4 Maverick 17B 128E** | Advanced multimodal reasoning<br>Long-context, high-accuracy tasks  |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
-|   **Llama 4 Scout 17B 16E**   | Efficient multimodal performance<br>Extended context, general tasks |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
-|        **Qwen 2.5 7B**        |    Document analysis<br>Image-based reasoning<br>Multimodal chat    |       :white_check_mark:       |     :white_check_mark:     |          :x:           | :white_check_mark: |         :x:         |
-|        **Qwen 3 235B**        |    Agent tool use<br>Long-context handling<br>Complex reasoning     |       :white_check_mark:       |     :white_check_mark:     |          :x:           |        :x:         | :white_check_mark:  |
-
+| Model | Description | Real-time<br>inference support | Batch<br>inference support | Fine-tuning<br>support | Image<br>analysis  |
+|:-----------------------------:|:-------------------------------------------------------------------:|:------------------------------:|:--------------------------:|:----------------------:|:------------------:|
+| **DeepSeek-R1** | Mathematical problem-solving<br>code generation<br>complex data analysis. | :white_check_mark: | :white_check_mark: | :x: | :x: |
+| **DeepSeek-V3-0324** | Natural language generation<br>open-ended text creation<br>contextually rich writing. | :white_check_mark: | :white_check_mark: | :x: | :x: |
+| **Gemma 3 27B** | Multilingual applications<br>extended-context tasks<br>image analysis<br>and complex reasoning. | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |
+| **Llama 3.1 8B** | Low-latency or simple tasks<br>cost-efficient inference. | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: |
+| **Llama 3.3 70B** | General-purpose AI<br>balanced cost-performance. | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: |
+| **Llama 4 Maverick** | A state-of-the-art multimodal<br>model with integrated vision<br>and language understanding,<br>optimized for complex<br>reasoning, coding, and<br>perception tasks | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |
+| **Llama 4 Scout** | General-purpose multimodal AI<br>extended context tasks<br>and balanced cost-performance across text and vision. | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |
+| **Qwen2.5-VL 7B** | Visual question answering<br>document analysis<br>image-based reasoning<br>multimodal chat. | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |
+| **Qwen3-235B-A22B** | Qwen3's flagship 235 billion<br>parameter model optimized with<br>8-bit quantization | :white_check_mark: | :white_check_mark: | :x: | :x: |
 
 ## API request limits
 
