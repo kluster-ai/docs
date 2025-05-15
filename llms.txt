@@ -11295,35 +11295,51 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
 {
  "cells": [
   {
-    "cell_type": "markdown",
-    "id": "intro_hdr",
-    "metadata": {},
-    "source": [
-      "# Integrating Tools with the kluster.ai API"
-    ]
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Integrating tools with the kluster.ai API"
+   ]
   },
   {
-    "cell_type": "markdown",
-    "id": "intro_badge",
-    "metadata": {},
-    "source": [
-      "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/examples/integrating-tools.ipynb)"
-    ]
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/examples/integrating-tools.ipynb)"
+   ]
   },
   {
-    "cell_type": "markdown",
-    "id": "intro_body",
-    "metadata": {},
-    "source": [
-      "Tools let you give an LLM safe, schema-defined superpowers. During a chat completion the model can call any function you expose by supplying JSON arguments instead of prose, then fold the result back into its reply. Your code runs the function, keeping credentials and business logic out of the model while still unlocking actions like database queries, BTC/USD look-ups, math, web scraping, or calendar updates. In short, the LLM handles intent and dialogue; your code delivers auditable side effects.\n",
-      "\n",
-      "This notebook shows how to use the kluster.ai Tools endpoint with Python. We’ll cover:\n",
-      "\n",
-      "1. Setting up the environment  \n",
-      "2. Calling a single tool  \n",
-      "3. Trying multiple tools (calculator, web search, etc.)  \n",
-      "4. Handling tool outputs and streaming responses"
-    ]
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Tools let you give an LLM safe, schema-defined superpowers. During a chat completion, the model can call any function you expose by supplying JSON arguments instead of prose, then fold the result back into its reply. Your code runs the function, keeping credentials and business logic out of the model while unlocking actions like database queries, BTC/USD look-ups, math, web scraping, or calendar updates. In short, the LLM handles intent and dialogue; your code delivers auditable side effects.\n",
+    "\n",
+    "This notebook shows how to use the kluster.ai tools endpoint with Python. We’ll cover:\n",
+    "\n",
+    "1. Setting up the environment  \n",
+    "2. Calling a single tool  \n",
+    "3. Trying multiple tools (calculator, web search, etc.)  \n",
+    "4. Handling tool outputs and streaming responses"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "41ea62a1",
+   "metadata": {},
+   "source": [
+    "## Prerequisites"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "83111fd4",
+   "metadata": {},
+   "source": [
+    "Before getting started, ensure you have the following:\n",
+    "\n",
+    "- **A kluster.ai account** - sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one\n",
+    "- **A kluster.ai API key** - after signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide"
+   ]
   },
   {
    "cell_type": "markdown",
@@ -11478,9 +11494,9 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
    "source": [
     "## Basic tool calling\n",
     "\n",
-    "Kluster.ai supports tool calling similar to OpenAI's function calling. Let's start with a simple example using a calculator tool. \n",
+    "kluster.ai supports tool calling similar to OpenAI's function calling. Let's start with a simple example using a calculator tool. \n",
     "\n",
-    "Kluster.ai treats tools as a capability you expose to the model: by including its JSON-Schema in the tools array, you tell the LLM, “if the user asks for arithmetic, call this function instead of guessing the answer.” When we send the prompt “What is 1337 × 42?” with `tool_choice=\"auto\"`, the model recognizes that the calculator is the best way to satisfy the request and answers not with prose but with a `tool_calls` block that contains the function name and a properly-formatted argument string (\"1337 * 42\")."
+    "kluster.ai treats tools as a capability you expose to the model: by including its JSON-Schema in the tools array, you tell the LLM, “if the user asks for arithmetic, call this function instead of guessing the answer.” When we send the prompt “What is 1337 × 42?” with `tool_choice=\"auto\"`, the model recognizes that the calculator is the best way to satisfy the request and answers not with prose but with a `tool_calls` block that contains the function name and a properly-formatted argument string (\"1337 * 42\")."
    ]
   },
   {
@@ -11587,7 +11603,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
    "source": [
     "### Interpreting the tool-call response\n",
     "\n",
-    "Let's take a closer look at the response above. The assistant’s reply isn’t prose, rather, it’s a structured tool call:\n",
+    "Let's take a closer look at the response above. The assistant’s reply isn’t prose; rather, it’s a structured tool call:\n",
     "\n",
     "1. **`finish_reason: \"tool_calls\"`** – signals the model has paused, waiting for us to run one or more tools\n",
     "2. **`message.tool_calls[0]`** – an array item that describes what to run:\n",
@@ -11610,7 +11626,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
     "To turn an LLM tool call into a human-friendly answer, we’ll take the following steps:\n",
     "\n",
     "1. **Parse the tool call** – inspect `response.choices[0].message.tool_calls`, grab the function name, and JSON-decode its arguments.  \n",
-    "2. **Run the side-effect safely** – hand the expression to `execute_calculator()`, which whitelists characters and evaluates it (placeholder logic; swap in a real math parser for production).  \n",
+    "2. **Run the side-effect safely** – hand the expression to `execute_calculator()`, which allowlists characters and evaluates it (placeholder logic; swap in a real math parser for production).  \n",
     "3. **Return the result to the model** – craft a new chat turn with `role:\"tool\"`, preserve the original `tool_call_id`, and embed a JSON payload such as `{ \"result\": 56154 }`.  \n",
     "4. **Let the model finish the thought** – call `chat.completions.create()` again so the LLM can weave the raw number into friendly prose (e.g., “The result of multiplying 1337 by 42 is 56,154”).  \n",
     "\n",
@@ -11737,7 +11753,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Why a stub? In production you'd call Bing, Google, or an internal search API. For this demo we return deterministic mock data so you can run the notebook offline."
+    "Why a stub? In production, you'd call Bing, Google, or an internal search API. For this demo, we return deterministic mock data so you can run the notebook offline."
    ]
   },
   {
@@ -11778,8 +11794,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "When the model emits a tool-call we run the tool, then post the result back as a `role=\"tool\"` message.  \n",
-    "Finally we ask the model to finish the answer."
+    "When the model emits a tool call, we run the tool and post the result back as a `role=\"tool\"` message.  \n",
+    "Finally, we ask the model to finish the answer."
    ]
   },
   {
@@ -11824,7 +11840,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "#### Run the demo"
+    "### Run the demo"
    ]
   },
   {
@@ -11873,17 +11889,17 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
     "\n",
     "> “If Earth’s temperature rises by 2 °C, what percentage increase is that from the current average of 15 °C?”\n",
     "\n",
-    "To answer, the model only needs arithmetic, but if the prompt also required live data—e.g. “*…and cite a recent study on global warming*”—it could call **two** tools in one turn: first `web_search`, then `calculator`. Here’s how we orchestrate that multi-tool workflow:"
+    "To answer, the model only needs arithmetic, but if the prompt also required live data—e.g., “*…and cite a recent study on global warming*”—it could call **two** tools in one turn: first `web_search`, then `calculator`. Here’s how we orchestrate that multi-tool workflow:"
    ]
   },
   {
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "1. **Describe each tool** – supply JSON-schema specs for `calculator` and `web_search`.\n",
-    "2. **Let the LLM plan** – pass both specs in `multi_tools`; the LLM can issue one or many `tool_calls`.\n",
-    "3. **Dispatch and execute** – `process_multi_tool_calls()` loops over each call, runs the matching helper, and returns results as `{role:\"tool\"}` messages.\n",
-    "4. **Finish in plain English** – a follow-up `chat.completions.create()` lets the model weave everything into a readable answer."
+    "1. **Describe each tool** – supply JSON-schema specs for `calculator` and `web_search`\n",
+    "2. **Let the LLM plan** – pass both specs in `multi_tools`; the LLM can issue one or many `tool_calls`\n",
+    "3. **Dispatch and execute** – `process_multi_tool_calls()` loops over each call, runs the matching helper, and returns results as `{role:\"tool\"}` messages\n",
+    "4. **Finish in plain English** – a follow-up `chat.completions.create()` lets the model weave everything into a readable answer"
    ]
   },
   {
@@ -11935,7 +11951,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "**Dispatcher helper** – run each requested tool, then feed the results back to the model."
+    "The below code will run each requested tool, then feed the results back to the model."
    ]
   },
   {
@@ -12017,10 +12033,10 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
     "\n",
     "We’ll let the model read a report and, when it spots numbers, invoke the calculator:\n",
     "\n",
-    "1. **Wrap the context** – embed the document and the user’s question in a single prompt.  \n",
-    "2. **Let the LLM decide** – pass the prompt along with `multi_tools`; the model can choose to read or calculate.  \n",
-    "3. **Process tool calls** – if the model pauses with a `tool_calls` block, we run the appropriate tools and feed the results back.  \n",
-    "4. **Return prose** – the model weaves the numeric answer into a natural-language response.\n",
+    "1. **Wrap the context** – embed the document and the user’s question in a single prompt  \n",
+    "2. **Let the LLM decide** – pass the prompt along with `multi_tools`; the model can choose to read or calculate  \n",
+    "3. **Process tool calls** – if the model pauses with a `tool_calls` block, we run the appropriate tools and feed the results back  \n",
+    "4. **Return prose** – the model weaves the numeric answer into a natural-language response\n",
     "\n",
     "This pattern scales to meeting minutes, legal contracts, or server log files—anywhere the model must blend language understanding with deterministic math.\n"
    ]
@@ -12095,12 +12111,14 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
    "source": [
     "## Streaming with tool calls\n",
     "\n",
-    "When you set `stream=True`, Kluster.ai pushes delta chunks to your client as soon as they’re ready. That means you can render tokens to the user in real time and watch the model decide mid-sentence to invoke a tool. In the helper above we listen to the stream, print regular text as it arrives, and intercept any `tool_calls` deltas: the moment we see `\"function\": {\"name\": \"calculator\" …}`, we log “Calling tool: calculator” and keep appending argument fragments until the model finishes the call. Only after the stream closes do we execute the tool and send the result back for a final completion. Streaming makes interactions feel instant, lets you show spinners or live-update UIs, and still preserves the deterministic tool-calling workflow you’ve seen in the earlier examples.\n"
+    "When you set `stream=True`, Kluster.ai pushes delta chunks to your client as soon as they’re ready. That means you can render tokens to the user in real time and watch the model decide mid-sentence to invoke a tool. \n",
+    "\n",
+    "In the helper above we listen to the stream, print regular text as it arrives, and intercept any `tool_calls` deltas: the moment we see `\"function\": {\"name\": \"calculator\" …}`, we log “Calling tool: calculator” and keep appending argument fragments until the model finishes the call. Only after the stream closes do we execute the tool and send the result back for a final completion. Streaming makes interactions feel instant, lets you show spinners or live-update UIs, and still preserves the deterministic tool-calling workflow you’ve seen in the earlier examples.\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 17,
+   "execution_count": 18,
    "metadata": {},
    "outputs": [
     {
