@@ -12278,7 +12278,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/llm-as-a-judge.ipyn
    "source": [
     "### Start the job\n",
     "\n",
-    "Once all the files have been successfully uploaded, we're ready to start (create) the batch jobs by providing the file ID. To start each job, we use the `batches.create` method, for which we need to set the endpoint to `/v1/chat/completions`. This will return each batch job details, with each ID."
+    "Once all the files have been successfully uploaded, we're ready to start (create) the batch jobs by providing the file ID. To start each job, we use the `batches.create` method, for which we need to set the endpoint to `/v1/chat/completions`. This will return each batch job's details, with each ID."
    ]
   },
   {
@@ -12923,18 +12923,10 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/llm-as-a-judge.ipyn
     "- Base model accuracy against real ground truth: 72.5%  \n",
     "- Judge model accuracy against real ground truth: 76.7%\n",
     "\n",
-    "These results show that while the base model achieved moderate accuracy when compared to human-annotated ground truth, it performed significantly worse when judged by the larger model. This suggests that the judge model applies stricter or more nuanced evaluation criteria. Notably, the judge model achieved the highest accuracy compared to the real ground truth\n",
+    "These results show that while the base model achieved moderate accuracy when compared to human-annotated ground truth, it performed significantly worse when judged by the larger model. This suggests that the judge model applies stricter or more nuanced evaluation criteria. Notably, the judge model achieved the highest accuracy compared to the real ground truth.\n",
     "\n",
     "As next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!\n"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "8cdc5e70-ad29-4414-af2b-f002bda116c7",
-   "metadata": {},
-   "outputs": [],
-   "source": []
   }
  ],
  "metadata": {
