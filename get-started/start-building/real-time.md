@@ -42,118 +42,148 @@ The following code snippets provide a complete end-to-end real-time inference ex
 
 To use these snippets, run the Python script and enter your kluster.ai API key when prompted.
 
-??? example "DeepSeek R1"
+??? example "DeepSeek-R1"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-deepseekR1.py'
+    --8<-- 'code/get-started/start-building/real-time/real-time-deepseek-r1.py'
     ```
 
-??? example "DeepSeek V3 0324"
+
+??? example "DeepSeek-V3-0324"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-deepseekV3-0324.py'
+    --8<-- 'code/get-started/start-building/real-time/real-time-deepseek-v3-0324.py'
     ```
+
 
 ??? example "Gemma 3 27B"
 
-    ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-gemma3-27.py'
+    ```python
+    --8<-- 'code/get-started/start-building/real-time/real-time-gemma-3-27b-it.py'
     ```
 
-??? example "LLama 3.1 8B"
+
+??? example "Meta Llama 3.1 8B"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama3.1-8.py'
+    --8<-- 'code/get-started/start-building/real-time/real-time-meta-llama-3-1-8b-instruct-turbo.py'
     ```
 
-??? example "LLama 3.3 70B"
+
+??? example "Meta Llama 3.3 70B"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama3.3-70.py'
+    --8<-- 'code/get-started/start-building/real-time/real-time-meta-llama-3-3-70b-instruct-turbo.py'
     ```
 
-??? example "Llama 4 Maverick 17B 128E"
+
+??? example "Meta Llama 4 Maverick"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama4-maverick.py'
+    --8<-- 'code/get-started/start-building/real-time/real-time-llama-4-maverick-17b-128e-instruct-fp8.py'
     ```
 
-??? example "Llama 4 Scout 17B 16E"
+
+??? example "Meta Llama 4 Scout"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama4-scout.py'
+    --8<-- 'code/get-started/start-building/real-time/real-time-llama-4-scout-17b-16e-instruct.py'
     ```
 
-??? example "Qwen 2.5 7B"
+
+??? example "Mistral NeMo"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-qwen2.5-7.py'
+    --8<-- 'code/get-started/start-building/real-time/real-time-mistral-nemo-instruct-2407.py'
     ```
 
-??? example "Qwen 3 235B"
+
+??? example "Qwen2.5-VL 7B"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-qwen3-235.py'
-    ```    
+    --8<-- 'code/get-started/start-building/real-time/real-time-qwen2-5-vl-7b-instruct.py'
+    ```
 
+
+??? example "Qwen3-235B-A22B"
+
+    ```python
+    --8<-- 'code/get-started/start-building/real-time/real-time-qwen3-235b-a22b-fp8.py'
+    ```
 ### CLI
 
 Similarly, the following curl commands showcase how to easily send a chat completion request to kluster.ai for the different supported models. This example assumes you've exported your kluster.ai API key as the variable `API_KEY`.
 
 
-??? example "DeepSeek R1"
+??? example "DeepSeek-R1"
 
     ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-deepseekR1.md'
+    --8<-- 'code/get-started/start-building/real-time/real-time-deepseek-r1.md'
     ```
 
-??? example "DeepSeek V3 0324"
+
+??? example "DeepSeek-V3-0324"
 
     ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-deepseekV3-0324.md'
+    --8<-- 'code/get-started/start-building/real-time/real-time-deepseek-v3-0324.md'
     ```
+
 
 ??? example "Gemma 3 27B"
 
     ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-gemma3-27.md'
+    --8<-- 'code/get-started/start-building/real-time/real-time-gemma-3-27b-it.md'
     ```
-    
-??? example "LLama 3.1 8B"
+
+
+??? example "Meta Llama 3.1 8B"
 
     ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama3.1-8.md'
+    --8<-- 'code/get-started/start-building/real-time/real-time-meta-llama-3-1-8b-instruct-turbo.md'
     ```
 
-??? example "LLama 3.3 70B"
+
+??? example "Meta Llama 3.3 70B"
 
     ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama3.3-70.md'
+    --8<-- 'code/get-started/start-building/real-time/real-time-meta-llama-3-3-70b-instruct-turbo.md'
     ```
 
-??? example "Llama 4 Maverick 17B 128E"
+
+??? example "Meta Llama 4 Maverick"
 
     ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama4-maverick.md'
+    --8<-- 'code/get-started/start-building/real-time/real-time-llama-4-maverick-17b-128e-instruct-fp8.md'
     ```
 
-??? example "Llama 4 Scout 17B 16E"
+
+??? example "Meta Llama 4 Scout"
 
     ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama4-scout.md'
+    --8<-- 'code/get-started/start-building/real-time/real-time-llama-4-scout-17b-16e-instruct.md'
     ```
 
-??? example "Qwen 2.5 7B"
 
-    ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-qwen2.5-7.md'
+??? example "Mistral NeMo"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-mistral-nemo-instruct-2407.md'
     ```
 
-??? example "Qwen 3 235B"
 
-    ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-qwen3-235.md'
-    ```   
+??? example "Qwen2.5-VL 7B"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-qwen2-5-vl-7b-instruct.md'
+    ```
+
+
+??? example "Qwen3-235B-A22B"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-qwen3-235b-a22b-fp8.md'
+    ```
+
 
 ## Real-time inference flow
 
