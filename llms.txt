@@ -12092,7 +12092,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
     "\n",
     "# Sample document and question\n",
     "sample_document = \"\"\"\n",
-    "Kluster.ai Performance Report 2024\n",
+    "kluster.ai Performance Report 2024\n",
     "\n",
     "In Q1 2024, our platform processed 2.5 million requests, a 25% increase from Q4 2023 (2 million requests). \n",
     "The average response time was reduced from 350ms to 280ms, representing a 20% improvement.\n",
@@ -12111,7 +12111,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
    "source": [
     "## Streaming with tool calls\n",
     "\n",
-    "When you set `stream=True`, Kluster.ai pushes delta chunks to your client as soon as they’re ready. That means you can render tokens to the user in real time and watch the model decide mid-sentence to invoke a tool. \n",
+    "When you set `stream=True`, kluster.ai pushes delta chunks to your client as soon as they’re ready. That means you can render tokens to the user in real time and watch the model decide mid-sentence to invoke a tool. \n",
     "\n",
     "In the helper above we listen to the stream, print regular text as it arrives, and intercept any `tool_calls` deltas: the moment we see `\"function\": {\"name\": \"calculator\" …}`, we log “Calling tool: calculator” and keep appending argument fragments until the model finishes the call. Only after the stream closes do we execute the tool and send the result back for a final completion. Streaming makes interactions feel instant, lets you show spinners or live-update UIs, and still preserves the deterministic tool-calling workflow you’ve seen in the earlier examples.\n"
    ]
@@ -12212,7 +12212,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
     "5. Real-world document analysis use case\n",
     "6. Streaming tool calls\n",
     "\n",
-    "You can extend this pattern to use other tools by defining their schemas and implementing the corresponding execution functions. Kluster.ai's OpenAI-compatible API makes it straightforward to integrate with existing codebases.\n",
+    "You can extend this pattern to use other tools by defining their schemas and implementing the corresponding execution functions. kluster.ai's OpenAI-compatible API makes it straightforward to integrate with existing codebases.\n",
     "\n",
     "For production use, remember to:\n",
     "- Store API keys securely\n",
