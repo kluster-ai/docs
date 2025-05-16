@@ -9590,7 +9590,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-ana
    },
    "outputs": [
     {
-     "name": "stdin",
+     "name": "stdout",
      "output_type": "stream",
      "text": [
       "Enter your kluster.ai API key:  ········\n"
@@ -10465,7 +10465,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-ana
    "source": [
     "### Start the job\n",
     "\n",
-    "Once all the files have been successfully uploaded, we're ready to start (create) the batch jobs by providing the file ID of each file, which we got in the previous step. To start each job, we use the `batches.create` method, for which we need to set the endpoint to `/v1/chat/completions`. This will return each batch job details, with each ID."
+    "Once all the files have been successfully uploaded, we're ready to start (create) the batch jobs by providing the file ID of each file, which we got in the previous step. To start each job, we use the `batches.create` method, for which we need to set the endpoint to `/v1/chat/completions`. This will return each batch job's details, with each ID."
    ]
   },
   {
@@ -10807,7 +10807,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-ana
     "- Data preparation: a subset of 1500 financial headlines was used, split into training and testing sets\n",
     "- Fine-tuning: we fine-tuned `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo` using labeled training data and system prompts for targeted learning\n",
     "- Batch inference & evaluation: we compared the fine-tuned model with a much larger base model (`Llama3.3-70B`) and the original untuned `Llama3.1-8B`\n",
-    "- Performance: the fine-tuned model delivered **higher accuracy** than the untuned 8B model, and surprisingly, **outperformed** the 70B model — all at **lower inference cost**. Note that the results may vary depending on the fine-tuning hyperparemeters, temperature, among others\n",
+    "- Performance: the fine-tuned model delivered **higher accuracy** than the untuned 8B model, and surprisingly, **outperformed** the 70B model — all at **lower inference cost**. Note that the results may vary depending on the fine-tuning hyperparameters, temperature, among others\n",
     "\n",
     "This reinforces the value of fine-tuning for domain-specific tasks: improved performance, reduced cost, and faster inference. Moreover, with kluster.ai, we achieved all this using the OpenAI Python library and API, no changes needed!\n",
     "\n",
@@ -13222,7 +13222,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
    "metadata": {},
    "outputs": [
     {
-     "name": "stdin",
+     "name": "stdout",
      "output_type": "stream",
      "text": [
       "Enter your kluster.ai API key:  ········\n"
@@ -13427,7 +13427,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
     "\n",
     "Please refer to the <a href=\"/get-started/models/#model-comparison-table\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
     "\n",
-    "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes (but we are only asking to respond with a single word, the genre)."
+    "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5`, but feel free to change it and play around with the different outcomes (but we are only asking to respond with a single word, the genre)."
    ]
   },
   {
@@ -13994,7 +13994,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
    "source": [
     "## Summary\n",
     "\n",
-    "This tutorial used the chat completion endpoint to perform genre classification on movie descriptions from the IMDb Top 1000 dataset using the kluster.ai batch API. We tested four models, comparing them based on accuracy, token usage, and cost:\n",
+    "This tutorial used the chat completion endpoint to perform genre classification on movie descriptions from the IMDb Top 1000 dataset using the kluster.ai batch API. We tested four models, comparing them based on accuracy, token usage, and cost. For the notebook run recorded:\n",
     "\n",
     "- DeepSeek V3 0324:\n",
     "  - Accuracy: 80.7%\n",
@@ -14026,7 +14026,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
     "\n",
     "1. Created the JSONL file, where each file line represented a separate request\n",
     "2. Submitted the file to the platform\n",
-    "3. Started the batch job, and monitored its progress\n",
+    "3. Started the batch job and monitored its progress\n",
     "4. Once completed, we fetched the results\n",
     "\n",
     "The results were then visualized in a bar chart showing **accuracy**, **token usage**, and **cost per model**, allowing for a clear comparison of trade-offs between quality and efficiency.\n",
