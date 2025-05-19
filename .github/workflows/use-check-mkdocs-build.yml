@@ -1,0 +1,17 @@
+
+name: CheckMkDocsBuild
+
+on:
+  pull_request_target:
+    branches:
+      - main
+
+jobs:
+  build-docs:
+    uses: Telucero/workflows/.github/workflows/mkdocs-build.yml@main
+    with:
+      mkdocs_repo: papermoonio/kluster-mkdocs
+      docs_dir: docs
+      needs_mistune: true  # Pass needs_mistune as true
+    secrets:
+      token: ${{ secrets.KLUSTER_MKDOCS_READ }}
