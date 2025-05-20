@@ -90,18 +90,8 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     --8<-- 'code/get-started/start-building/real-time/real-time-llama-4-scout-17b-16e-instruct.py'
     ```
 
-<<<<<<< HEAD
 
 ??? example "Mistral NeMo"
-=======
-??? example "Mistral Nemo Instruct 2407"
-
-    ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-mistral-nemo-instruct-2407.py'
-    ```
-
-??? example "Qwen 2.5 7B"
->>>>>>> origin/main
 
     ```python
     --8<-- 'code/get-started/start-building/real-time/real-time-mistral-nemo-instruct-2407.py'
@@ -115,14 +105,11 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     ```
 
 
-<<<<<<< HEAD
 ??? example "Qwen3-235B-A22B"
 
     ```python
     --8<-- 'code/get-started/start-building/real-time/real-time-qwen3-235b-a22b-fp8.py'
     ```
-=======
->>>>>>> origin/main
 ### CLI
 
 Similarly, the following curl commands showcase how to easily send a chat completion request to kluster.ai for the different supported models. This example assumes you've exported your kluster.ai API key as the variable `API_KEY`.
@@ -175,12 +162,6 @@ Similarly, the following curl commands showcase how to easily send a chat comple
     ```bash
     --8<-- 'code/get-started/start-building/real-time/real-time-llama-4-scout-17b-16e-instruct.md'
     ```
-    
-??? example "Mistral Nemo Instruct 2407"
-
-    ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-mistral-nemo-instruct-2407.md'
-    ```  
 
 
 ??? example "Mistral NeMo"
@@ -202,7 +183,6 @@ Similarly, the following curl commands showcase how to easily send a chat comple
     ```bash
     --8<-- 'code/get-started/start-building/real-time/real-time-qwen3-235b-a22b-fp8.md'
     ```
-
 
 
 ## Real-time inference flow

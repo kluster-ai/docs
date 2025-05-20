@@ -1,30 +1,30 @@
-# filepath: /Users/franzuzz/code/kluster-mkdocs/kluster-docs/.snippets/code/get-started/start-building/real-time/real-time-mistral-nemo-instruct-2407.py
-from openai import OpenAI
-from getpass import getpass
+# Real-time completions with the Mistral NeMo model on Kluster.
+import os
+import getpass
+import kluster
+from typing import Dict, Any
 
-# Get API key from user input
-api_key = getpass("Enter your kluster.ai API key: ")
+# 1. Initialize the Kluster SDK client
+# Get API key securely using getpass (will not be displayed or saved)
+api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
+client = kluster.Client(api_key=api_key)
 
-# Initialize OpenAI client pointing to kluster.ai API
-client = OpenAI(
-    api_key=api_key,
-    base_url="https://api.kluster.ai/v1"
-)
+# 2. Example inputs
+messages = [
+    {"role": "user", "content": "Write a poem about artificial intelligence."}
+]
 
-# Create chat completion request
-completion = client.chat.completions.create(
+# 3. Generate completion
+response = client.real_time.completions.create(
     model="mistralai/Mistral-Nemo-Instruct-2407",
-    messages=[
-        {"role": "user", "content": "What is the ultimate breakfast sandwich?"}
-    ]
+    messages=messages,
+    max_tokens=100,
 )
 
-"""Logs the full AI response to terminal."""
-
-# Extract model name and AI-generated text
-model_name = completion.model  
-text_response = completion.choices[0].message.content  
-
-# Print response to console
-print(f"\n🔍 AI response (model: {model_name}):")
-print(text_response)
+# 4. Process response
+print("Model:", response.model)
+print("Completion:", response.choices[0].message.content)
+print("Finish reason:", response.choices[0].finish_reason)
+print("Prompt tokens:", response.usage.prompt_tokens)
+print("Completion tokens:", response.usage.completion_tokens)
+print("Total tokens:", response.usage.total_tokens)
