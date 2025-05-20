@@ -12,7 +12,7 @@ curl -X POST \
     "messages": [
       {
         "role": "user", 
-        "content": "What is the capital of France?"
+        "content": "Write a poem about artificial intelligence."
       }
     ],
     "max_tokens": 100

@@ -5,9 +5,9 @@
 
 # 1. Create input file (batch_input.jsonl)
 cat > batch_input.jsonl << 'EOF'
-{"messages": [{"role": "user", "content": "What is the capital of France?"}], "max_tokens": 100}
-{"messages": [{"role": "user", "content": "What is machine learning?"}], "max_tokens": 150}
-{"messages": [{"role": "user", "content": "Write a haiku about clouds."}], "max_tokens": 50}
+{"messages": [{"role": "user", "content": "What is the capital of Argentina?"}], "max_tokens": 100}
+{"messages": [{"role": "user", "content": "Write a short poem about neural networks."}], "max_tokens": 150}
+{"messages": [{"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}], "max_tokens": 50}
 EOF
 
 # 2. Submit batch job
