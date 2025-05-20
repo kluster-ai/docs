@@ -1,12 +1,14 @@
 # Batch completions with the Meta Llama 4 Scout model on Kluster.
 import os
 import json
+import getpass
 import kluster
 from typing import Dict, Any
 
 # 1. Initialize the Kluster SDK client
-#    Your API key can also be specified via KLUSTER_API_KEY environment variable
-client = kluster.Client(api_key="YOUR_API_KEY")
+# Get API key securely using getpass (will not be displayed or saved)
+api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
+client = kluster.Client(api_key=api_key)
 
 # 2. Set up image URL
 image_url = "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"

@@ -1,11 +1,11 @@
 # Real-time API completions with DeepSeek-R1 model
 
-# Replace YOUR_API_KEY with your actual API key
-KLUSTER_API_KEY="YOUR_API_KEY"
+# Ensure your API key is set in your environment
+# export API_KEY="your_api_key_here"
 
 curl -X POST \
   https://api.kluster.ai/v1/real-time/completions \
-  -H "Authorization: Bearer $KLUSTER_API_KEY" \
+  -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "model": "deepseek-ai/DeepSeek-R1",

@@ -1,12 +1,14 @@
 # Batch completions with the Qwen3-235B-A22B model on Kluster.
 import os
 import json
+import getpass
 import kluster
 from typing import Dict, Any
 
 # 1. Initialize the Kluster SDK client
-#    Your API key can also be specified via KLUSTER_API_KEY environment variable
-client = kluster.Client(api_key="YOUR_API_KEY")
+# Get API key securely using getpass (will not be displayed or saved)
+api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
+client = kluster.Client(api_key=api_key)
 
 # 2. Create input file with multiple requests (JSONL format)
 input_jsonl_path = "batch_input.jsonl"
@@ -14,7 +16,7 @@ with open(input_jsonl_path, "w") as f:
     # Example 1
     f.write(json.dumps({
         "messages": [
-            {"role": "user", "content": "What is the capital of France?"}
+            {"role": "user", "content": "What is the capital of Argentina?"}
         ],
         "max_tokens": 100
     }) + "\n")
@@ -22,7 +24,7 @@ with open(input_jsonl_path, "w") as f:
     # Example 2
     f.write(json.dumps({
         "messages": [
-            {"role": "user", "content": "What is machine learning?"}
+            {"role": "user", "content": "Write a short poem about neural networks."}
         ],
         "max_tokens": 150
     }) + "\n")
@@ -30,9 +32,9 @@ with open(input_jsonl_path, "w") as f:
     # Example 3
     f.write(json.dumps({
         "messages": [
-            {"role": "user", "content": "Write a haiku about clouds."}
+            {"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}
         ],
-        "max_tokens": 50
+        "max_tokens": 100
     }) + "\n")
 
 # 3. Define output file path

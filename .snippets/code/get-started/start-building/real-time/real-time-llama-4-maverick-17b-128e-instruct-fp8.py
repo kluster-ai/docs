@@ -1,15 +1,17 @@
 # Real-time completions with the Meta Llama 4 Maverick model on Kluster.
 import os
+import getpass
 import kluster
 from typing import Dict, Any
 
 # 1. Initialize the Kluster SDK client
-#    Your API key can also be specified via KLUSTER_API_KEY environment variable
-client = kluster.Client(api_key="YOUR_API_KEY")
+# Get API key securely using getpass (will not be displayed or saved)
+api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
+client = kluster.Client(api_key=api_key)
 
 # 2. Example inputs
 messages = [
-    {"role": "user", "content": "What is the capital of France?"}
+    {"role": "user", "content": "Write a poem about artificial intelligence."}
 ]
 
 # 3. Generate completion
