@@ -1,64 +1,108 @@
-# Batch completions with the Mistral NeMo model on Kluster.
-import os
+# filepath: /Users/franzuzz/code/kluster-mkdocs/kluster-docs/.snippets/code/get-started/start-building/batch/batch-jsonl-mistral-nemo-instruct-2407.py
+from openai import OpenAI
+from getpass import getpass
 import json
-import getpass
-import kluster
-from typing import Dict, Any
+import time
 
-# 1. Initialize the Kluster SDK client
-# Get API key securely using getpass (will not be displayed or saved)
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+# Get API key from user input
+api_key = getpass("Enter your kluster.ai API key: ")
 
-# 2. Create input file with multiple requests (JSONL format)
-input_jsonl_path = "batch_input.jsonl"
-with open(input_jsonl_path, "w") as f:
-    # Example 1
-    f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "What is the capital of Argentina?"}
-        ],
-        "max_tokens": 100
-    }) + "\n")
-    
-    # Example 2
-    f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "Write a short poem about neural networks."}
-        ],
-        "max_tokens": 150
-    }) + "\n")
-    
-    # Example 3
-    f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}
-        ],
-        "max_tokens": 100
-    }) + "\n")
-
-# 3. Define output file path
-output_jsonl_path = "batch_output.jsonl"
-
-# 4. Submit a batch job
-batch_job = client.batch.completions.create(
-    model="mistralai/Mistral-Nemo-Instruct-2407",
-    input_file_path=input_jsonl_path,
-    output_file_path=output_jsonl_path,
+# Initialize OpenAI client pointing to kluster.ai API
+client = OpenAI(
+    base_url="https://api.kluster.ai/v1",
+    api_key=api_key,
 )
 
-print(f"Batch job submitted with ID: {batch_job.id}")
+# Create request with specified structure
+requests = [
+    {
+        "custom_id": "request-1",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "mistralai/Mistral-Nemo-Instruct-2407",
+            "messages": [
+                {"role": "system", "content": "You are an experienced cook."},
+                {"role": "user", "content": "What is the ultimate breakfast sandwich?"},
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    {
+        "custom_id": "request-2",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "mistralai/Mistral-Nemo-Instruct-2407",
+            "messages": [
+                {"role": "system", "content": "You are a maths tutor."},
+                {"role": "user", "content": "Explain the Pythagorean theorem."},
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    {
+        "custom_id": "request-4",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "mistralai/Mistral-Nemo-Instruct-2407",
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "You are a multilingual, experienced maths tutor.",
+                },
+                {
+                    "role": "user",
+                    "content": "Explain the Pythagorean theorem in Spanish",
+                },
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    # Additional tasks can be added here
+]
 
-# 5. Wait for job to complete (optional)
-completed_job = client.batch.jobs.wait(batch_job.id)
-print(f"Batch job completed with status: {completed_job.status}")
+# Save tasks to a JSONL file (newline-delimited JSON)
+file_name = "my_batch_request.jsonl"
+with open(file_name, "w") as file:
+    for request in requests:
+        file.write(json.dumps(request) + "\n")
 
-# 6. Process results from output file
-print("\nBatch results:")
-with open(output_jsonl_path, "r") as f:
-    for i, line in enumerate(f):
-        result = json.loads(line)
-        print(f"\nResult {i+1}:")
-        print(f"Completion: {result['choices'][0]['message']['content']}")
-        print(f"Finish reason: {result['choices'][0]['finish_reason']}")
-        print(f"Total tokens: {result['usage']['total_tokens']}")
+# Upload batch job file
+batch_input_file = client.files.create(
+        file=open(file_name, "rb"),
+        purpose="batch"
+)
+
+# Submit batch job
+batch_request = client.batches.create(
+    input_file_id=batch_input_file.id,
+    endpoint="/v1/chat/completions",
+    completion_window="24h",
+)
+
+# Poll the batch status until it's complete
+while True:
+    batch_status = client.batches.retrieve(batch_request.id)
+    print("Batch status: {}".format(batch_status.status))
+    print(
+        f"Completed tasks: {batch_status.request_counts.completed} / {batch_status.request_counts.total}"
+    )
+
+    if batch_status.status.lower() in ["completed", "failed", "cancelled"]:
+        break
+
+    time.sleep(10)  # Wait for 10 seconds before checking again
+
+# Check if the Batch completed successfully
+if batch_status.status.lower() == "completed":
+    # Retrieve the results and log
+    result_file_id = batch_status.output_file_id
+    results = client.files.content(result_file_id).content
+
+    # Print response to console
+    print(f"\n🔍 AI batch response:")
+    print(results)
+else:
+    print(f"Batch failed with status: {batch_status.status}")

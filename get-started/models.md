@@ -35,13 +35,8 @@ Each model supported by kluster.ai has a unique name that must be used when defi
 | **Gemma 3 27B** | Multilingual applications<br>extended-context tasks<br>image analysis<br>and complex reasoning. | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |
 | **Llama 3.1 8B** | Low-latency or simple tasks<br>cost-efficient inference. | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: |
 | **Llama 3.3 70B** | General-purpose AI<br>balanced cost-performance. | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: |
-| **Llama 4 Maverick** | A state-of-the-art multimodal<br>model with integrated vision<br>and language understanding,<br>optimized for complex<br>reasoning, coding, and<br>perception tasks | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |
+| **Llama 4 Maverick** | A multimodal<br>model with integrated vision<br>and language understanding,<br>optimized for complex<br>reasoning, coding, and<br>perception tasks. | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |
 | **Llama 4 Scout** | General-purpose multimodal AI<br>extended context tasks<br>and balanced cost-performance across text and vision. | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |
 | **Mistral NeMo** | Natural language generation<br>open-ended text creation<br>contextually rich writing. | :white_check_mark: | :white_check_mark: | :x: | :x: |
 | **Qwen2.5-VL 7B** | Visual question answering<br>document analysis<br>image-based reasoning<br>multimodal chat. | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |
-| **Qwen3-235B-A22B** | Qwen3's flagship 235 billion<br>parameter model optimized with<br>8-bit quantization | :white_check_mark: | :white_check_mark: | :x: | :x: |
-
-## API request limits
-
---8<-- "text/get-started/rate-limit.md"
-
+| **Qwen3-235B-A22B** | Qwen3's flagship 235 billion<br>parameter model optimized with<br>8-bit quantization. | :white_check_mark: | :white_check_mark: | :x: | :x: |
