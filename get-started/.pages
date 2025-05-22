@@ -6,3 +6,4 @@ nav:
   - start-building
   - 'OpenAI compatibility': openai-compatibility.md
   - 'Integrations': integrations
+  - fine-tuning
