@@ -31,6 +31,7 @@ kluster.ai currently supports fine-tuning for two base models:
 
 The process of fine-tuning a model using the kluster.ai API involves several key steps:
 
+
 ### Prepare your data
 
 High-quality, well-formatted data is crucial for successful fine-tuning:
@@ -42,9 +43,18 @@ High-quality, well-formatted data is crucial for successful fine-tuning:
 ```json
 {
   "messages": [
-    {"role": "system", "content": "You are a JSON Generation Specialist. Convert user requests into properly formatted JSON."},
-    {"role": "user", "content": "Create a configuration for a web application with name 'TaskMaster', version 1.2.0, and environment set to development."},
-    {"role": "assistant", "content": "{\n  \"application\": {\n    \"name\": \"TaskMaster\",\n    \"version\": \"1.2.0\",\n    \"environment\": \"development\"\n  }\n}"}
+    {
+      "role": "system",
+      "content": "You are a JSON Generation Specialist. Convert user requests into properly formatted JSON."
+    },
+    {
+      "role": "user",
+      "content": "Create a configuration for a web application with name 'TaskMaster', version 1.2.0, and environment set to development."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"application\": {\n    \"name\": \"TaskMaster\",\n    \"version\": \"1.2.0\",\n    \"environment\": \"development\"\n  }\n}"
+    }
   ]
 }
 ```
@@ -58,31 +68,63 @@ High-quality, well-formatted data is crucial for successful fine-tuning:
 !!! example "Find Llama datasets on Hugging Face"
     There is a wide range of datasets suitable for Llama model fine-tuning on [Hugging Face Datasets](https://huggingface.co/datasets?sort=trending&search=llama){target=_blank}. Browse trending and community-curated datasets to accelerate your data preparation.
 
+### Set up the client
+
+First, install the OpenAI Python library:
+
+```bash
+%pip install openai
+```
+
+Then initialize the client with the kluster.ai base URL:
+
+```python
+from openai import OpenAI
+from getpass import getpass
+
+api_key = getpass("Enter your kluster.ai API key: ")
+
+# Set up the client
+client = OpenAI(
+    base_url="https://api.kluster.ai/v1",
+    api_key=api_key
+)
+```
 ### Upload your training file
 
 Once your data is prepared, upload it to the kluster.ai platform:
 
 ```python
-# Upload fine-tuning file
+# Upload fine-tuning file (for files under 100MB)
 with open('training_data.jsonl', 'rb') as file:
     upload_response = client.files.create(
         file=file,
-        purpose="fine-tune"
+        purpose="fine-tune"  # Important: specify "fine-tune" as the purpose
     )
     
     # Get the file ID
     file_id = upload_response.id
+    print(f"File uploaded successfully. File ID: {file_id}")
 ```
+
+!!! note "Uploading large files"
+    If your training dataset is large (approaching 100MB), you may need to use the chunked upload method. See the [Uploading Large Files](https://docs.kluster.ai/tutorials/klusterai-api/uploads-api/) guide for detailed instructions on multi-part uploads.
+
+!!! warning "File size limits"
+    For the free tier, each fine-tuning file must not exceed 100 MB. For the standard tier, the maximum file size is also 100 MB per file. The difference between tiers is in the number of examples allowed - free tier is limited to fewer examples.
 
 ### Create a fine-tuning job
 
 After uploading your data, initiate the fine-tuning job:
 
 ```python
+# Model
+model = "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo"
+
 # Create fine-tune job
 fine_tuning_job = client.fine_tuning.jobs.create(
     training_file=file_id,
-    model="klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
+    model=model,
     # Optional hyperparameters
     # hyperparameters={
     #   "batch_size": 3,
@@ -92,8 +134,6 @@ fine_tuning_job = client.fine_tuning.jobs.create(
 )
 ```
 
-!!! warning
-    For the free tier, the maximum number of batch requests (lines in the JSONL file) must be less than 1000, and each file must not exceed 100 MB. For the standard tier, there is no limit to the number of batch requests, but the maximum batch file size is 100 MB per file.
 
 ### Monitor job progress
 
@@ -123,8 +163,6 @@ response = client.chat.completions.create(
     ]
 )
 ```
-
-
 ### Use your fine-tuned model in the playground (optional)
 
 After your fine-tuned model is created, you can also test it in the kluster.ai playground:
