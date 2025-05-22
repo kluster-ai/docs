@@ -1,5 +1,6 @@
 title: Fine-tuning
 hide: false
 nav:
+  - index: index.md
   - 'Platform Interface': platform.md
   - 'API Integration': api.md
