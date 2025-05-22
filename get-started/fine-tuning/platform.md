@@ -5,7 +5,7 @@ description: Learn how to create custom models tailored to your specific tasks b
 
 # Fine-tuning with the Platform
 
-The kluster.ai platform provides a visual, no-code approach to fine-tuning AI models. With an intuitive interface and real-time feedback, you can train customized models without writing a single line of code.
+The kluster.ai platform provides a visual, no-code approach to fine-tuning AI models with an intuitive interface and real-time feedback, you can train customized models without writing a single line of code.
 
 This guide walks you through the platform's fine-tuning workflow, from uploading your training data to deploying your specialized model.
 
@@ -34,12 +34,22 @@ High-quality, well-formatted data is crucial for successful fine-tuning:
 ```json
 {
   "messages": [
-    {"role": "system", "content": "You are a JSON Generation Specialist. Convert user requests into properly formatted JSON."},
-    {"role": "user", "content": "Create a configuration for a web application with name 'TaskMaster', version 1.2.0, and environment set to development."},
-    {"role": "assistant", "content": "{\n  \"application\": {\n    \"name\": \"TaskMaster\",\n    \"version\": \"1.2.0\",\n    \"environment\": \"development\"\n  }\n}"}
+    {
+      "role": "system",
+      "content": "You are a JSON Generation Specialist. Convert user requests into properly formatted JSON."
+    },
+    {
+      "role": "user",
+      "content": "Create a configuration for a web application with name 'TaskMaster', version 1.2.0, and environment set to development."
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"application\": {\n    \"name\": \"TaskMaster\",\n    \"version\": \"1.2.0\",\n    \"environment\": \"development\"\n  }\n}"
+    }
   ]
 }
 ```
+
 
 - **Quantity** - the minimum requirement is 10 examples, but more diverse and high-quality examples yield better results
 - **Quality** - ensure your data accurately represents the task you want the model to perform
@@ -58,38 +68,30 @@ The process of fine-tuning a model using the kluster.ai platform interface invol
 
 To begin, visit the [kluster.ai fine-tuning page](https://platform.kluster.ai/fine-tuning){target=_blank} and click the **Create new job** button.
 
-[INSERT_SCREENSHOT_HERE]
+![Create new fine-tuning job](/images/get-started/fine-tuning/fine-tuning-1.webp)
 
-### Select a base model
+### Choose model and upload data
 
-From the dropdown menu, select one of the available foundation models to fine-tune:
+  1. **Select a base model** - choose one of the available foundation models from the dropdown menu
+  2. **Upload your file** - upload your prepared JSONL training file by dragging and dropping the file or using the file selection dialog
 
-- **klusterai/Meta-Llama-3.1-8B-Instruct-Turbo**
-- **klusterai/Meta-Llama-3.3-70B-Instruct-Turbo**
 
-[INSERT_SCREENSHOT_HERE]
+![Select base model](/images/get-started/fine-tuning/fine-tuning-2.webp)
 
-### Upload your training data
-
-Upload your prepared JSONL training file by dragging and dropping the file or using the file selection dialog.
-
-[INSERT_SCREENSHOT_HERE]
 
 !!! note "Validation data"
     You can optionally upload a validation dataset in the same format as your training data. This helps evaluate your model's performance during training.
 
 ### Configure hyperparameters
+  Customize your fine-tuning job by configuring these settings:
 
-Customize your fine-tuning job by configuring these hyperparameters:
+   1. **Nickname** - add an optional custom suffix that will be appended to your fine-tuned model name
+   2. **Batch size** - control how many examples are processed in each training step
+   3. **Learning rate multiplier** - adjust how quickly the model adapts to your training data
+   4. **Number of epochs** - define how many times the model will cycle through your entire dataset
+   5. **Create** - click the Create button to start the fine-tuning process
 
-- **Nickname** - add an optional custom suffix that will be appended to your fine-tuned model name
-- **Batch size** - control how many examples are processed in each training step
-- **Learning rate multiplier** - adjust how quickly the model adapts to your training data
-- **Number of epochs** - define how many times the model will cycle through your entire dataset
-
-[INSERT_SCREENSHOT_HERE]
-
-After configuring the parameters, click the **Create** button to start the fine-tuning process.
+   ![Configure hyperparameters](/images/get-started/fine-tuning/fine-tuning-3.webp)
 
 ### Monitor job progress
 
@@ -97,35 +99,24 @@ After submitting your fine-tuning job, you can monitor the status and progress o
 
 Each job displays information including:
 
-- **Job ID**
-- **Base model**
-- **Training method**
-- **Creation date**
-- **Current status**
-- **Training metrics** (when complete)
+- Job ID
+- Base model
+- Training method
+- Creation date
+- Current status
+- Training metrics (when complete)
 
-[INSERT_SCREENSHOT_HERE]
+![Job Progress](/images/get-started/fine-tuning/fine-tuning-4.webp)
 
-The job status updates from "queued" to "running" to "succeeded" when complete.
+!!! tip "Status Update"
+    The job status updates will first display "queued," then "running," and "succeeded" when complete.
 
 ### Access your fine-tuned model
 
-Once fine-tuning is complete, your custom model will be:
+Once fine-tuning is complete, your custom model will be listed on the fine-tuning page with its unique identifier
+and available in the model selection dropdown in the [playground](https://platform.kluster.ai/playground){target=_blank}.
 
-1. Listed on the fine-tuning page with its unique identifier
-2. Available in the model selection dropdown in the [playground](https://platform.kluster.ai/playground){target=_blank}
-
-[INSERT_SCREENSHOT_HERE]
-
-### Use your model in the playground
-
-To test your fine-tuned model:
-
-1. Navigate to the [kluster.ai playground](https://platform.kluster.ai/playground){target=_blank}
-2. Select your fine-tuned model from the model dropdown menu
-3. Start chatting with your model to evaluate its performance on your specific task
-
-[INSERT_SCREENSHOT_HERE]
+![Playground Chat](/images/get-started/fine-tuning/fine-tuning-5.webp)
 
 ## Benefits of fine-tuning
 
