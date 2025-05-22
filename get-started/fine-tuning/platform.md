@@ -1,13 +1,13 @@
 ---
-title: Fine-tuning models with kluster.ai platform
-description: Learn how to create custom models tailored to your specific tasks by fine-tuning foundation models with your own data using the kluster.ai platform interface.
+title: Fine-tuning with the Platform
+description: Learn how to create custom models tailored to your specific tasks by fine-tuning foundation models with your own data using the kluster.ai visual interface.
 ---
 
-# Fine-tuning models with kluster.ai platform
+# Fine-tuning with the Platform
 
-Fine-tuning allows you to adapt kluster.ai's powerful foundation models to your specific tasks and datasets, significantly improving performance for your unique use cases while potentially reducing costs compared to larger general-purpose models.
+The kluster.ai platform provides a visual, no-code approach to fine-tuning AI models. With an intuitive interface and real-time feedback, you can train customized models without writing a single line of code.
 
-This guide will walk you through the essential steps to begin fine-tuning models using the user-friendly kluster.ai platform interface - no coding required.
+This guide walks you through the platform's fine-tuning workflow, from uploading your training data to deploying your specialized model.
 
 ## Prerequisites
 
@@ -59,15 +59,21 @@ The process of fine-tuning a model using the kluster.ai platform interface invol
 
 To begin, visit the [kluster.ai fine-tuning page](https://platform.kluster.ai/fine-tuning){target=_blank} and click on the **Create new job** button.
 
+[INSERT_SCREENSHOT_HERE]
+
 ### 2. Select a base model
 
 From the dropdown menu, select one of the available foundation models to fine-tune:
 - klusterai/Meta-Llama-3.1-8B-Instruct-Turbo
 - klusterai/Meta-Llama-3.3-70B-Instruct-Turbo
 
+[INSERT_SCREENSHOT_HERE]
+
 ### 3. Upload your training data
 
 Upload your prepared JSONL training file by dragging and dropping the file or using the file selection dialog.
+
+[INSERT_SCREENSHOT_HERE]
 
 !!! note "Validation data"
     You can optionally upload a validation dataset in the same format as your training data. This helps evaluate your model's performance during training.
@@ -80,6 +86,8 @@ Customize your fine-tuning job by configuring these hyperparameters:
 - **Batch size** - Control how many examples are processed in each training step
 - **Learning rate multiplier** - Adjust how quickly the model adapts to your training data
 - **Number of epochs** - Define how many times the model will cycle through your entire dataset
+
+[INSERT_SCREENSHOT_HERE]
 
 After configuring the parameters, click the **Create** button to start the fine-tuning process.
 
@@ -96,6 +104,8 @@ After submitting your fine-tuning job:
    - Current status
    - Training metrics (when complete)
 
+[INSERT_SCREENSHOT_HERE]
+
 The job status will update from "queued" to "running" to "succeeded" when complete.
 
 ### 6. Access your fine-tuned model
@@ -105,6 +115,8 @@ Once fine-tuning is complete, your custom model will be:
 1. Listed on the fine-tuning page with its unique identifier
 2. Available in the model selection dropdown in the [playground](https://platform.kluster.ai/playground){target=_blank}
 
+[INSERT_SCREENSHOT_HERE]
+
 ### 7. Use your model in the playground
 
 To test your fine-tuned model:
@@ -112,6 +124,8 @@ To test your fine-tuned model:
 1. Navigate to the [kluster.ai playground](https://platform.kluster.ai/playground){target=_blank}
 2. Select your fine-tuned model from the model dropdown menu
 3. Start chatting with your model to evaluate its performance on your specific task
+
+[INSERT_SCREENSHOT_HERE]
 
 ## Benefits of fine-tuning
 
