@@ -20,8 +20,8 @@ Before getting started with fine-tuning, ensure you have the following:
 
 kluster.ai currently supports fine-tuning for two base models:
 
-- **klusterai/Meta-Llama-3.1-8B-Instruct-Turbo** - 64,000 tokens max context window, best for long-context tasks and cost-sensitive scenarios
-- **klusterai/Meta-Llama-3.3-70B-Instruct-Turbo** - 32,000 tokens max context window, best for complex reasoning and high-stakes accuracy
+- **klusterai/Meta-Llama-3.1-8B-Instruct-Turbo** 
+- **klusterai/Meta-Llama-3.3-70B-Instruct-Turbo** 
 
 ## Data preparation
 

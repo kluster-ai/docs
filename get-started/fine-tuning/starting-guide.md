@@ -44,8 +44,8 @@ Fine-tuning delivers several key advantages over using general-purpose models:
 
 kluster.ai currently supports fine-tuning for two powerful foundation models:
 
-- **klusterai/Meta-Llama-3.1-8B-Instruct-Turbo** - has a 64,000 tokens max context window, best for long-context tasks and cost-sensitive scenarios
-- **klusterai/Meta-Llama-3.3-70B-Instruct-Turbo** - has a 32,000 tokens max context window, best for complex reasoning and high-stakes accuracy
+- **klusterai/Meta-Llama-3.1-8B-Instruct-Turbo** 
+- **klusterai/Meta-Llama-3.3-70B-Instruct-Turbo** 
 
 ## Choose your fine-tuning approach
 
