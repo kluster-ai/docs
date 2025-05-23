@@ -1,107 +1,57 @@
-from openai import OpenAI
-from getpass import getpass
-import json
-import time
+#!/bin/bash
 
-# Get API key from user input
-api_key = getpass("Enter your kluster.ai API key: ")
-
-# Initialize OpenAI client pointing to kluster.ai API
-client = OpenAI(
-    base_url="https://api.kluster.ai/v1",
-    api_key=api_key,
-)
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo "Error: API_KEY environment variable is not set." >&2
+fi
 
 # Create request with specified structure
-requests = [
-    {
-        "custom_id": "request-1",
-        "method": "POST",
-        "url": "/v1/chat/completions",
-        "body": {
-            "model": "mistralai/Mistral-Nemo-Instruct-2407",
-            "messages": [
-                {"role": "system", "content": "You are an experienced cook."},
-                {"role": "user", "content": "What is the ultimate breakfast sandwich?"},
-            ],
-            "max_completion_tokens": 1000,
-        },
-    },
-    {
-        "custom_id": "request-2",
-        "method": "POST",
-        "url": "/v1/chat/completions",
-        "body": {
-            "model": "mistralai/Mistral-Nemo-Instruct-2407",
-            "messages": [
-                {"role": "system", "content": "You are a maths tutor."},
-                {"role": "user", "content": "Explain the Pythagorean theorem."},
-            ],
-            "max_completion_tokens": 1000,
-        },
-    },
-    {
-        "custom_id": "request-4",
-        "method": "POST",
-        "url": "/v1/chat/completions",
-        "body": {
-            "model": "mistralai/Mistral-Nemo-Instruct-2407",
-            "messages": [
-                {
-                    "role": "system",
-                    "content": "You are a multilingual, experienced maths tutor.",
-                },
-                {
-                    "role": "user",
-                    "content": "Explain the Pythagorean theorem in Spanish",
-                },
-            ],
-            "max_completion_tokens": 1000,
-        },
-    },
-    # Additional tasks can be added here
-]
-
-# Save tasks to a JSONL file (newline-delimited JSON)
-file_name = "my_batch_request.jsonl"
-with open(file_name, "w") as file:
-    for request in requests:
-        file.write(json.dumps(request) + "\n")
+cat << EOF > my_batch_request.jsonl
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Mistral-Nemo-Instruct-2407", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Mistral-Nemo-Instruct-2407", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
+{"custom_id": "request-4", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Mistral-Nemo-Instruct-2407", "messages":[{"role": "system", "content": "You are a multilingual, experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"}],"max_completion_tokens":1000}}
+EOF
 
 # Upload batch job file
-batch_input_file = client.files.create(
-        file=open(file_name, "rb"),
-        purpose="batch"
-)
+FILE_ID=$(curl -s https://api.kluster.ai/v1/files \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: multipart/form-data" \
+    -F "file=@my_batch_request.jsonl" \
+    -F "purpose=batch" | jq -r '.id')
+echo "File uploaded, file ID: $FILE_ID"
 
 # Submit batch job
-batch_request = client.batches.create(
-    input_file_id=batch_input_file.id,
-    endpoint="/v1/chat/completions",
-    completion_window="24h",
-)
+BATCH_ID=$(curl -s https://api.kluster.ai/v1/batches \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" \
+    -d '{
+        "input_file_id": "'"$FILE_ID"'",
+        "endpoint": "/v1/chat/completions",
+        "completion_window": "24h"
+    }' | jq -r '.id')
+echo "Batch job submitted, job ID: $BATCH_ID"
 
-# Poll the batch status until it's complete
-while True:
-    batch_status = client.batches.retrieve(batch_request.id)
-    print("Batch status: {}".format(batch_status.status))
-    print(
-        f"Completed tasks: {batch_status.request_counts.completed} / {batch_status.request_counts.total}"
-    )
 
-    if batch_status.status.lower() in ["completed", "failed", "cancelled"]:
-        break
+# Poll the batch status until it's completed
+STATUS="in_progress"
+while [[ "$STATUS" != "completed" ]]; do
+    echo "Waiting for batch job to complete... Status: $STATUS"
+    sleep 10 # Wait for 10 seconds before checking again
 
-    time.sleep(10)  # Wait for 10 seconds before checking again
+    STATUS=$(curl -s https://api.kluster.ai/v1/batches/$BATCH_ID \
+        -H "Authorization: Bearer $API_KEY" \
+        -H "Content-Type: application/json" | jq -r '.status')
+done
 
-# Check if the Batch completed successfully
-if batch_status.status.lower() == "completed":
-    # Retrieve the results and log
-    result_file_id = batch_status.output_file_id
-    results = client.files.content(result_file_id).content
+# Retrieve the batch output file
+KLUSTER_OUTPUT_FILE=$(curl -s https://api.kluster.ai/v1/batches/$BATCH_ID \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" | jq -r '.output_file_id')
 
-    # Print response to console
-    print(f"\n🔍 AI batch response:")
-    print(results)
-else:
-    print(f"Batch failed with status: {batch_status.status}")
+# Retrieve the results
+OUTPUT_CONTENT=$(curl -s https://api.kluster.ai/v1/files/$KLUSTER_OUTPUT_FILE/content \
+    -H "Authorization: Bearer $API_KEY")
+
+# Log results
+echo -e "\n🔍 AI batch response:"
+echo "$OUTPUT_CONTENT"
