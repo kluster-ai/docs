@@ -9696,7 +9696,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
    "id": "7b78daa7-a4c5-4c98-b67c-cbcee856c1cc",
    "metadata": {},
    "source": [
-    "## Conclusion\n",
+    "## Summary\n",
     "\n",
     "This side-by-side comparison demonstrates how the quality and specificity of a prompt directly influence the depth, utility, and strategic value of an LLM's output:\n",
     "\n",
@@ -18808,7 +18808,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/uploads-api.ipynb/
    "id": "summary-heading",
    "metadata": {},
    "source": [
-    "## Conclusion\n",
+    "## Summary\n",
     "\n",
     "In this tutorial, we've learned how to:\n",
     "\n",
