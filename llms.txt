@@ -11949,7 +11949,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Conclusion\n",
+    "## Summary\n",
     "\n",
     "You’ve now seen kluster.ai’s tool-calling API end-to-end: from authentication all the way to streaming, multi-tool orchestration. This notebook covered:\n",
     "\n",
