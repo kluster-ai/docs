@@ -10,11 +10,11 @@ curl https://api.kluster.ai/v1/chat/completions \
     -H "Authorization: Bearer $API_KEY" \
     -H "Content-Type: application/json" \
     -d "{
-            \"model\": \"deepseek-ai/DeepSeek-V3\", 
+            \"model\": \"meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8\", 
             \"messages\": [
                 { 
                     \"role\": \"user\", 
                     \"content\": \"What is the ultimate breakfast sandwich?\"
                 }
             ]
-        }"
+    }"

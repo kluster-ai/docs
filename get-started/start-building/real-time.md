@@ -48,12 +48,6 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     --8<-- 'code/get-started/start-building/real-time/real-time-deepseekR1.py'
     ```
 
-??? example "DeepSeek V3"
-
-    ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-deepseekV3.py'
-    ```
-
 ??? example "DeepSeek V3 0324"
 
     ```python
@@ -72,16 +66,22 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     --8<-- 'code/get-started/start-building/real-time/real-time-llama3.1-8.py'
     ```
 
-??? example "LLama 3.1 405B"
-
-    ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama3.1-405.py'
-    ```
-
 ??? example "LLama 3.3 70B"
 
     ```python
     --8<-- 'code/get-started/start-building/real-time/real-time-llama3.3-70.py'
+    ```
+
+??? example "Llama 4 Maverick 17B 128E"
+
+    ```python
+    --8<-- 'code/get-started/start-building/real-time/real-time-llama4-maverick.py'
+    ```
+
+??? example "Llama 4 Scout 17B 16E"
+
+    ```python
+    --8<-- 'code/get-started/start-building/real-time/real-time-llama4-scout.py'
     ```
 
 ??? example "Qwen 2.5 7B"
@@ -99,12 +99,6 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 
     ```bash
     --8<-- 'code/get-started/start-building/real-time/real-time-deepseekR1.md'
-    ```
-
-??? example "DeepSeek V3"
-
-    ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-deepseekV3.md'
     ```
 
 ??? example "DeepSeek V3 0324"
@@ -125,16 +119,22 @@ Similarly, the following curl commands showcase how to easily send a chat comple
     --8<-- 'code/get-started/start-building/real-time/real-time-llama3.1-8.md'
     ```
 
-??? example "LLama 3.1 405B"
-
-    ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama3.1-405.md'
-    ```
-
 ??? example "LLama 3.3 70B"
 
     ```bash
     --8<-- 'code/get-started/start-building/real-time/real-time-llama3.3-70.md'
+    ```
+
+??? example "Llama 4 Maverick 17B 128E"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-llama4-maverick.md'
+    ```
+
+??? example "Llama 4 Scout 17B 16E"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-llama4-scout.md'
     ```
 
 ??? example "Qwen 2.5 7B"
@@ -190,7 +190,7 @@ If the request is successful, the response is contained in the `completion` vari
         }
     ],
     "created": 1742378836,
-    "model": "deepseek-ai/DeepSeek-V3",
+    "model": "deepseek-ai/DeepSeek-V3-0324",
     "object": "chat.completion",
     "service_tier": null,
     "system_fingerprint": null,
