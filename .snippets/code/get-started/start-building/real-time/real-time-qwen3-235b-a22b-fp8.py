@@ -1,4 +1,4 @@
-# Real-time completions with the Mistral NeMo model on Kluster.
+# Real-time completions with the Qwen3-235B-A22B model on Kluster.
 import os
 import getpass
 import kluster
@@ -16,7 +16,7 @@ messages = [
 
 # 3. Generate completion
 response = client.real_time.completions.create(
-    model="mistralai/Mistral-Nemo-Instruct-2407",
+    model="Qwen/Qwen3-235B-A22B-FP8",
     messages=messages,
     max_tokens=100,
 )

@@ -1,4 +1,4 @@
-# Batch completions with the Mistral NeMo model on Kluster.
+# Batch completions with the Meta Llama 3.3 70B model on Kluster.
 import os
 import json
 import getpass
@@ -42,7 +42,7 @@ output_jsonl_path = "batch_output.jsonl"
 
 # 4. Submit a batch job
 batch_job = client.batch.completions.create(
-    model="mistralai/Mistral-Nemo-Instruct-2407",
+    model="klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
     input_file_path=input_jsonl_path,
     output_file_path=output_jsonl_path,
 )

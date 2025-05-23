@@ -1,4 +1,4 @@
-# Batch completions with the Mistral NeMo model on Kluster.
+# Batch completions with the Meta Llama 4 Scout model on Kluster.
 import os
 import json
 import getpass
@@ -10,50 +10,57 @@ from typing import Dict, Any
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
 client = kluster.Client(api_key=api_key)
 
-# 2. Create input file with multiple requests (JSONL format)
+# 2. Set up image URL
+image_url = "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
+
+# 3. Create input file with multiple image requests (JSONL format)
 input_jsonl_path = "batch_input.jsonl"
 with open(input_jsonl_path, "w") as f:
     # Example 1
     f.write(json.dumps({
         "messages": [
-            {"role": "user", "content": "What is the capital of Argentina?"}
+            {
+                "role": "user", 
+                "content": [
+                    {"type": "text", "text": "Who can park in the area?"},
+                    {"type": "image_url", "image_url": {"url": image_url}}
+                ]
+            }
         ],
-        "max_tokens": 100
+        "max_tokens": 300
     }) + "\n")
     
     # Example 2
     f.write(json.dumps({
         "messages": [
-            {"role": "user", "content": "Write a short poem about neural networks."}
+            {
+                "role": "user", 
+                "content": [
+                    {"type": "text", "text": "What does this sign say?"},
+                    {"type": "image_url", "image_url": {"url": image_url}}
+                ]
+            }
         ],
-        "max_tokens": 150
-    }) + "\n")
-    
-    # Example 3
-    f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}
-        ],
-        "max_tokens": 100
+        "max_tokens": 300
     }) + "\n")
 
-# 3. Define output file path
+# 4. Define output file path
 output_jsonl_path = "batch_output.jsonl"
 
-# 4. Submit a batch job
+# 5. Submit a batch job
 batch_job = client.batch.completions.create(
-    model="mistralai/Mistral-Nemo-Instruct-2407",
+    model="meta-llama/Llama-4-Scout-17B-16E-Instruct",
     input_file_path=input_jsonl_path,
     output_file_path=output_jsonl_path,
 )
 
 print(f"Batch job submitted with ID: {batch_job.id}")
 
-# 5. Wait for job to complete (optional)
+# 6. Wait for job to complete (optional)
 completed_job = client.batch.jobs.wait(batch_job.id)
 print(f"Batch job completed with status: {completed_job.status}")
 
-# 6. Process results from output file
+# 7. Process results from output file
 print("\nBatch results:")
 with open(output_jsonl_path, "r") as f:
     for i, line in enumerate(f):

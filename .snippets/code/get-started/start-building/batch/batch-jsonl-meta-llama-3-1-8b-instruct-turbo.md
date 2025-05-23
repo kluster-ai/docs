@@ -1,4 +1,4 @@
-# Batch API completions with Mistral NeMo model
+# Batch API completions with Meta Llama 3.1 8B model
 
 # Ensure your API key is set in your environment
 # export API_KEY="your_api_key_here"
@@ -23,7 +23,7 @@ curl -X POST \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "mistralai/Mistral-Nemo-Instruct-2407",
+    "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
     "input_file_url": "file://batch_input.jsonl",
     "output_file_url": "file://batch_output.jsonl"
   }'

@@ -40,8 +40,3 @@ Each model supported by kluster.ai has a unique name that must be used when defi
 | **Mistral NeMo** | Natural language generation<br>open-ended text creation<br>contextually rich writing. | :white_check_mark: | :white_check_mark: | :x: | :x: |
 | **Qwen2.5-VL 7B** | Visual question answering<br>document analysis<br>image-based reasoning<br>multimodal chat. | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |
 | **Qwen3-235B-A22B** | Qwen3's flagship 235 billion<br>parameter model optimized with<br>8-bit quantization. | :white_check_mark: | :white_check_mark: | :x: | :x: |
-
-## API request limits
-
---8<-- "text/get-started/rate-limit.md"
-

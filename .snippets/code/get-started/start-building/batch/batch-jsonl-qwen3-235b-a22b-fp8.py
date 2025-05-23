@@ -1,4 +1,4 @@
-# Batch completions with the Mistral NeMo model on Kluster.
+# Batch completions with the Qwen3-235B-A22B model on Kluster.
 import os
 import json
 import getpass
@@ -42,7 +42,7 @@ output_jsonl_path = "batch_output.jsonl"
 
 # 4. Submit a batch job
 batch_job = client.batch.completions.create(
-    model="mistralai/Mistral-Nemo-Instruct-2407",
+    model="Qwen/Qwen3-235B-A22B-FP8",
     input_file_path=input_jsonl_path,
     output_file_path=output_jsonl_path,
 )

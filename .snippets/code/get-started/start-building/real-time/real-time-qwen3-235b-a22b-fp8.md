@@ -1,4 +1,4 @@
-# Real-time API completions with Mistral NeMo model
+# Real-time API completions with Qwen3-235B-A22B model
 
 # Ensure your API key is set in your environment
 # export API_KEY="your_api_key_here"
@@ -8,7 +8,7 @@ curl -X POST \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "mistralai/Mistral-Nemo-Instruct-2407",
+    "model": "Qwen/Qwen3-235B-A22B-FP8",
     "messages": [
       {
         "role": "user", 
