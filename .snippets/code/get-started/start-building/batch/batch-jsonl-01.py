@@ -33,7 +33,7 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+            "model": "Qwen/Qwen3-235B-A22B-FP8",
             "messages": [
                 {"role": "system", "content": "You are a maths tutor."},
                 {"role": "user", "content": "Explain the Pythagorean theorem."},
@@ -46,7 +46,7 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+            "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
             "messages": [
                 {
                     "role": "user",

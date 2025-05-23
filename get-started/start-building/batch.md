@@ -98,13 +98,25 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
 
     ```bash
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama4-scout.py'
+
     ```
+??? example "Mistral Nemo Instruct 2407"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-mistral-nemo-instruct-2407.py'
+    ```    
 
 ??? example "Qwen 2.5 7B"
 
     ```python
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-qwen2.5-7.py'
     ```
+
+??? example "Qwen 3 235B"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-qwen3-235.py'
+    ``` 
 
 ### CLI
 
@@ -151,11 +163,23 @@ Similarly, the following curl commands showcase how to easily send a chat comple
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama4-scout.md'
     ```
 
+??? example "Mistral Nemo Instruct 2407"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-mistral-nemo-instruct-2407.md'
+    ```
+
 ??? example "Qwen 2.5 7B"
 
     ```python
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-qwen2.5-7.md'
     ```
+
+??? example "Qwen 3 235B"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-qwen3-235.md'
+    ``` 
 
 ## Batch inference flow
 

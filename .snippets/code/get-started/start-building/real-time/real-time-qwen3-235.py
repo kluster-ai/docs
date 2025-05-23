@@ -12,7 +12,7 @@ client = OpenAI(
 
 # Create chat completion request
 completion = client.chat.completions.create(
-    model="meta-llama/Llama-4-Scout-17B-16E-Instruct",
+    model="Qwen/Qwen3-235B-A22B-FP8",
     messages=[
         {"role": "user", "content": "What is the ultimate breakfast sandwich?"}
     ]
