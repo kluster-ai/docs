@@ -12,7 +12,7 @@ client = OpenAI(
 
 # Create chat completion request
 completion = client.chat.completions.create(
-    model="deepseek-ai/DeepSeek-R1",
+    model="mistralai/Mistral-Nemo-Instruct-2407",
     messages=[
         {"role": "user", "content": "What is the ultimate breakfast sandwich?"}
     ]
