@@ -4,6 +4,7 @@
 Documentation: https://docs.kluster.ai/
 
 # List of doc pages:
+Doc-Page: https://docs.kluster.ai/api-reference/api-portal/
 Doc-Page: https://docs.kluster.ai/api-reference/reference/
 Doc-Page: https://docs.kluster.ai/get-started/get-api-key/
 Doc-Page: https://docs.kluster.ai/get-started/integrations/crewai/
@@ -36,11 +37,24 @@ Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/uploads-api/
 
 # Full content for each doc page
 
+Doc-Content: https://docs.kluster.ai/api-reference/api-portal/
+--- BEGIN CONTENT ---
+---
+title: API reference
+description: The kluster.ai API reference includes endpoints, available methods, required parameters, and response format information for kluster.ai's OpenAI-compatible API.
+hide: nav
+template: portal.html
+---
+
+# kluster.ai API reference
+--- END CONTENT ---
+
 Doc-Content: https://docs.kluster.ai/api-reference/reference/
 --- BEGIN CONTENT ---
 ---
 title: API Reference
 description: Explore the kluster.ai API reference to get a comprehensive overview on the available endpoints, request and response formats, and integration examples.
+hide_nav: true
 hide:
  - navigation
 template: api.html
