@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // --- Configuration ---
   // Adjust this selector to match your theme's fixed header.
-  // For Material for MkDocs, '.md-header' is usually correct.
   const headerSelector = ".md-header";
-  // Add any additional pixel offset you want below the header.
   const additionalOffset = 16;
 
   function getHeaderHeight() {
