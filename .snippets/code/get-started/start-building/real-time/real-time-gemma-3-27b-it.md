@@ -14,7 +14,7 @@ fi
 IMAGE_URL="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 curl -X POST \
-  https://api.kluster.ai/v1/real-time/completions \
+  https://api.kluster.ai/v1/chat/completions \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{

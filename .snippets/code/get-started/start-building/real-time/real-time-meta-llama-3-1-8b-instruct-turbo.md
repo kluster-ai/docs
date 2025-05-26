@@ -4,7 +4,7 @@
 # export API_KEY="your_api_key_here"
 
 curl -X POST \
-  https://api.kluster.ai/v1/real-time/completions \
+  https://api.kluster.ai/v1/chat/completions \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{

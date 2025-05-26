@@ -5422,66 +5422,99 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
 import os
 import json
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Create input file with multiple requests (JSONL format)
 input_jsonl_path = "batch_input.jsonl"
 with open(input_jsonl_path, "w") as f:
     # Example 1
     f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "What is the capital of Argentina?"}
-        ],
-        "max_tokens": 100
+        "custom_id": "request-1",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "deepseek-ai/DeepSeek-R1",
+            "messages": [
+                {"role": "user", "content": "What is the capital of Argentina?"}
+            ],
+            "max_tokens": 100
+        }
     }) + "\n")
     
     # Example 2
     f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "Write a short poem about neural networks."}
-        ],
-        "max_tokens": 150
+        "custom_id": "request-2",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "deepseek-ai/DeepSeek-R1",
+            "messages": [
+                {"role": "user", "content": "Write a short poem about neural networks."}
+            ],
+            "max_tokens": 150
+        }
     }) + "\n")
     
     # Example 3
     f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}
-        ],
-        "max_tokens": 100
+        "custom_id": "request-3",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "deepseek-ai/DeepSeek-R1",
+            "messages": [
+                {"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}
+            ],
+            "max_tokens": 100
+        }
     }) + "\n")
 
-# 3. Define output file path
-output_jsonl_path = "batch_output.jsonl"
+# 3. Upload batch input file
+with open(input_jsonl_path, "rb") as file:
+    batch_input_file = client.files.create(
+        file=file,
+        purpose="batch"
+    )
 
-# 4. Submit a batch job
-batch_job = client.batch.completions.create(
-    model="deepseek-ai/DeepSeek-R1",
-    input_file_path=input_jsonl_path,
-    output_file_path=output_jsonl_path,
+# 4. Submit batch job
+batch_request = client.batches.create(
+    input_file_id=batch_input_file.id,
+    endpoint="/v1/chat/completions",
+    completion_window="24h",
 )
 
-print(f"Batch job submitted with ID: {batch_job.id}")
+print(f"Batch job submitted with ID: {batch_request.id}")
 
-# 5. Wait for job to complete (optional)
-completed_job = client.batch.jobs.wait(batch_job.id)
-print(f"Batch job completed with status: {completed_job.status}")
+# 5. Check batch status (optional)
+batch_status = client.batches.retrieve(batch_request.id)
+print("Batch status: {}".format(batch_status.status))
 
-# 6. Process results from output file
-print("\nBatch results:")
-with open(output_jsonl_path, "r") as f:
-    for i, line in enumerate(f):
-        result = json.loads(line)
-        print(f"\nResult {i+1}:")
-        print(f"Completion: {result['choices'][0]['message']['content']}")
-        print(f"Finish reason: {result['choices'][0]['finish_reason']}")
-        print(f"Total tokens: {result['usage']['total_tokens']}")
+# 6. When completed, retrieve and process results
+# Note: In a real scenario, you would poll the status until completion
+if batch_status.status == "completed":
+    result_file_id = batch_status.output_file_id
+    result_content = client.files.content(result_file_id)
+    
+    print("\nBatch results:")
+    for line in result_content.iter_lines():
+        if line:
+            result = json.loads(line)
+            print(f"\nRequest ID: {result['custom_id']}")
+            if 'response' in result and 'body' in result['response']:
+                response_body = result['response']['body']
+                if 'choices' in response_body and len(response_body['choices']) > 0:
+                    print(f"Completion: {response_body['choices'][0]['message']['content']}")
+                    print(f"Finish reason: {response_body['choices'][0]['finish_reason']}")
+                if 'usage' in response_body:
+                    print(f"Total tokens: {response_body['usage']['total_tokens']}")
     ```
 
 
@@ -5492,66 +5525,99 @@ with open(output_jsonl_path, "r") as f:
 import os
 import json
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Create input file with multiple requests (JSONL format)
 input_jsonl_path = "batch_input.jsonl"
 with open(input_jsonl_path, "w") as f:
     # Example 1
     f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "What is the capital of Argentina?"}
-        ],
-        "max_tokens": 100
+        "custom_id": "request-1",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "deepseek-ai/DeepSeek-V3-0324",
+            "messages": [
+                {"role": "user", "content": "What is the capital of Argentina?"}
+            ],
+            "max_tokens": 100
+        }
     }) + "\n")
     
     # Example 2
     f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "Write a short poem about neural networks."}
-        ],
-        "max_tokens": 150
+        "custom_id": "request-2",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "deepseek-ai/DeepSeek-V3-0324",
+            "messages": [
+                {"role": "user", "content": "Write a short poem about neural networks."}
+            ],
+            "max_tokens": 150
+        }
     }) + "\n")
     
     # Example 3
     f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}
-        ],
-        "max_tokens": 100
+        "custom_id": "request-3",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "deepseek-ai/DeepSeek-V3-0324",
+            "messages": [
+                {"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}
+            ],
+            "max_tokens": 100
+        }
     }) + "\n")
 
-# 3. Define output file path
-output_jsonl_path = "batch_output.jsonl"
+# 3. Upload batch input file
+with open(input_jsonl_path, "rb") as file:
+    batch_input_file = client.files.create(
+        file=file,
+        purpose="batch"
+    )
 
-# 4. Submit a batch job
-batch_job = client.batch.completions.create(
-    model="deepseek-ai/DeepSeek-V3-0324",
-    input_file_path=input_jsonl_path,
-    output_file_path=output_jsonl_path,
+# 4. Submit batch job
+batch_request = client.batches.create(
+    input_file_id=batch_input_file.id,
+    endpoint="/v1/chat/completions",
+    completion_window="24h",
 )
 
-print(f"Batch job submitted with ID: {batch_job.id}")
+print(f"Batch job submitted with ID: {batch_request.id}")
 
-# 5. Wait for job to complete (optional)
-completed_job = client.batch.jobs.wait(batch_job.id)
-print(f"Batch job completed with status: {completed_job.status}")
+# 5. Check batch status (optional)
+batch_status = client.batches.retrieve(batch_request.id)
+print("Batch status: {}".format(batch_status.status))
 
-# 6. Process results from output file
-print("\nBatch results:")
-with open(output_jsonl_path, "r") as f:
-    for i, line in enumerate(f):
-        result = json.loads(line)
-        print(f"\nResult {i+1}:")
-        print(f"Completion: {result['choices'][0]['message']['content']}")
-        print(f"Finish reason: {result['choices'][0]['finish_reason']}")
-        print(f"Total tokens: {result['usage']['total_tokens']}")
+# 6. When completed, retrieve and process results
+# Note: In a real scenario, you would poll the status until completion
+if batch_status.status == "completed":
+    result_file_id = batch_status.output_file_id
+    result_content = client.files.content(result_file_id)
+    
+    print("\nBatch results:")
+    for line in result_content.iter_lines():
+        if line:
+            result = json.loads(line)
+            print(f"\nRequest ID: {result['custom_id']}")
+            if 'response' in result and 'body' in result['response']:
+                response_body = result['response']['body']
+                if 'choices' in response_body and len(response_body['choices']) > 0:
+                    print(f"Completion: {response_body['choices'][0]['message']['content']}")
+                    print(f"Finish reason: {response_body['choices'][0]['finish_reason']}")
+                if 'usage' in response_body:
+                    print(f"Total tokens: {response_body['usage']['total_tokens']}")
     ```
 
 
@@ -5562,13 +5628,15 @@ with open(output_jsonl_path, "r") as f:
 import os
 import json
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Set up image URL
 image_url = "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
@@ -5578,57 +5646,82 @@ input_jsonl_path = "batch_input.jsonl"
 with open(input_jsonl_path, "w") as f:
     # Example 1
     f.write(json.dumps({
-        "messages": [
-            {
-                "role": "user", 
-                "content": [
-                    {"type": "text", "text": "Who can park in the area?"},
-                    {"type": "image_url", "image_url": {"url": image_url}}
-                ]
-            }
-        ],
-        "max_tokens": 300
+        "custom_id": "request-1",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "google/gemma-3-27b-it",
+            "messages": [
+                {
+                    "role": "user", 
+                    "content": [
+                        {"type": "text", "text": "Who can park in the area?"},
+                        {"type": "image_url", "image_url": {"url": image_url}}
+                    ]
+                }
+            ],
+            "max_tokens": 300
+        }
     }) + "\n")
     
     # Example 2
     f.write(json.dumps({
-        "messages": [
-            {
-                "role": "user", 
-                "content": [
-                    {"type": "text", "text": "What does this sign say?"},
-                    {"type": "image_url", "image_url": {"url": image_url}}
-                ]
-            }
-        ],
-        "max_tokens": 300
+        "custom_id": "request-2",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "google/gemma-3-27b-it",
+            "messages": [
+                {
+                    "role": "user", 
+                    "content": [
+                        {"type": "text", "text": "What does this sign say?"},
+                        {"type": "image_url", "image_url": {"url": image_url}}
+                    ]
+                }
+            ],
+            "max_tokens": 300
+        }
     }) + "\n")
 
-# 4. Define output file path
-output_jsonl_path = "batch_output.jsonl"
+# 4. Upload batch input file
+with open(input_jsonl_path, "rb") as file:
+    batch_input_file = client.files.create(
+        file=file,
+        purpose="batch"
+    )
 
-# 5. Submit a batch job
-batch_job = client.batch.completions.create(
-    model="google/gemma-3-27b-it",
-    input_file_path=input_jsonl_path,
-    output_file_path=output_jsonl_path,
+# 5. Submit batch job
+batch_request = client.batches.create(
+    input_file_id=batch_input_file.id,
+    endpoint="/v1/chat/completions",
+    completion_window="24h",
 )
 
-print(f"Batch job submitted with ID: {batch_job.id}")
+print(f"Batch job submitted with ID: {batch_request.id}")
 
-# 6. Wait for job to complete (optional)
-completed_job = client.batch.jobs.wait(batch_job.id)
-print(f"Batch job completed with status: {completed_job.status}")
+# 6. Check batch status (optional)
+batch_status = client.batches.retrieve(batch_request.id)
+print("Batch status: {}".format(batch_status.status))
 
-# 7. Process results from output file
-print("\nBatch results:")
-with open(output_jsonl_path, "r") as f:
-    for i, line in enumerate(f):
-        result = json.loads(line)
-        print(f"\nResult {i+1}:")
-        print(f"Completion: {result['choices'][0]['message']['content']}")
-        print(f"Finish reason: {result['choices'][0]['finish_reason']}")
-        print(f"Total tokens: {result['usage']['total_tokens']}")
+# 7. When completed, retrieve and process results
+# Note: In a real scenario, you would poll the status until completion
+if batch_status.status == "completed":
+    result_file_id = batch_status.output_file_id
+    result_content = client.files.content(result_file_id)
+    
+    print("\nBatch results:")
+    for line in result_content.iter_lines():
+        if line:
+            result = json.loads(line)
+            print(f"\nRequest ID: {result['custom_id']}")
+            if 'response' in result and 'body' in result['response']:
+                response_body = result['response']['body']
+                if 'choices' in response_body and len(response_body['choices']) > 0:
+                    print(f"Completion: {response_body['choices'][0]['message']['content']}")
+                    print(f"Finish reason: {response_body['choices'][0]['finish_reason']}")
+                if 'usage' in response_body:
+                    print(f"Total tokens: {response_body['usage']['total_tokens']}")
     ```
 
 
@@ -5639,66 +5732,99 @@ with open(output_jsonl_path, "r") as f:
 import os
 import json
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Create input file with multiple requests (JSONL format)
 input_jsonl_path = "batch_input.jsonl"
 with open(input_jsonl_path, "w") as f:
     # Example 1
     f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "What is the capital of Argentina?"}
-        ],
-        "max_tokens": 100
+        "custom_id": "request-1",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
+            "messages": [
+                {"role": "user", "content": "What is the capital of Argentina?"}
+            ],
+            "max_tokens": 100
+        }
     }) + "\n")
     
     # Example 2
     f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "Write a short poem about neural networks."}
-        ],
-        "max_tokens": 150
+        "custom_id": "request-2",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
+            "messages": [
+                {"role": "user", "content": "Write a short poem about neural networks."}
+            ],
+            "max_tokens": 150
+        }
     }) + "\n")
     
     # Example 3
     f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}
-        ],
-        "max_tokens": 100
+        "custom_id": "request-3",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
+            "messages": [
+                {"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}
+            ],
+            "max_tokens": 100
+        }
     }) + "\n")
 
-# 3. Define output file path
-output_jsonl_path = "batch_output.jsonl"
+# 3. Upload batch input file
+with open(input_jsonl_path, "rb") as file:
+    batch_input_file = client.files.create(
+        file=file,
+        purpose="batch"
+    )
 
-# 4. Submit a batch job
-batch_job = client.batch.completions.create(
-    model="klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
-    input_file_path=input_jsonl_path,
-    output_file_path=output_jsonl_path,
+# 4. Submit batch job
+batch_request = client.batches.create(
+    input_file_id=batch_input_file.id,
+    endpoint="/v1/chat/completions",
+    completion_window="24h",
 )
 
-print(f"Batch job submitted with ID: {batch_job.id}")
+print(f"Batch job submitted with ID: {batch_request.id}")
 
-# 5. Wait for job to complete (optional)
-completed_job = client.batch.jobs.wait(batch_job.id)
-print(f"Batch job completed with status: {completed_job.status}")
+# 5. Check batch status (optional)
+batch_status = client.batches.retrieve(batch_request.id)
+print("Batch status: {}".format(batch_status.status))
 
-# 6. Process results from output file
-print("\nBatch results:")
-with open(output_jsonl_path, "r") as f:
-    for i, line in enumerate(f):
-        result = json.loads(line)
-        print(f"\nResult {i+1}:")
-        print(f"Completion: {result['choices'][0]['message']['content']}")
-        print(f"Finish reason: {result['choices'][0]['finish_reason']}")
-        print(f"Total tokens: {result['usage']['total_tokens']}")
+# 6. When completed, retrieve and process results
+# Note: In a real scenario, you would poll the status until completion
+if batch_status.status == "completed":
+    result_file_id = batch_status.output_file_id
+    result_content = client.files.content(result_file_id)
+    
+    print("\nBatch results:")
+    for line in result_content.iter_lines():
+        if line:
+            result = json.loads(line)
+            print(f"\nRequest ID: {result['custom_id']}")
+            if 'response' in result and 'body' in result['response']:
+                response_body = result['response']['body']
+                if 'choices' in response_body and len(response_body['choices']) > 0:
+                    print(f"Completion: {response_body['choices'][0]['message']['content']}")
+                    print(f"Finish reason: {response_body['choices'][0]['finish_reason']}")
+                if 'usage' in response_body:
+                    print(f"Total tokens: {response_body['usage']['total_tokens']}")
     ```
 
 
@@ -5709,66 +5835,99 @@ with open(output_jsonl_path, "r") as f:
 import os
 import json
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Create input file with multiple requests (JSONL format)
 input_jsonl_path = "batch_input.jsonl"
 with open(input_jsonl_path, "w") as f:
     # Example 1
     f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "What is the capital of Argentina?"}
-        ],
-        "max_tokens": 100
+        "custom_id": "request-1",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+            "messages": [
+                {"role": "user", "content": "What is the capital of Argentina?"}
+            ],
+            "max_tokens": 100
+        }
     }) + "\n")
     
     # Example 2
     f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "Write a short poem about neural networks."}
-        ],
-        "max_tokens": 150
+        "custom_id": "request-2",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+            "messages": [
+                {"role": "user", "content": "Write a short poem about neural networks."}
+            ],
+            "max_tokens": 150
+        }
     }) + "\n")
     
     # Example 3
     f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}
-        ],
-        "max_tokens": 100
+        "custom_id": "request-3",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+            "messages": [
+                {"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}
+            ],
+            "max_tokens": 100
+        }
     }) + "\n")
 
-# 3. Define output file path
-output_jsonl_path = "batch_output.jsonl"
+# 3. Upload batch input file
+with open(input_jsonl_path, "rb") as file:
+    batch_input_file = client.files.create(
+        file=file,
+        purpose="batch"
+    )
 
-# 4. Submit a batch job
-batch_job = client.batch.completions.create(
-    model="klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
-    input_file_path=input_jsonl_path,
-    output_file_path=output_jsonl_path,
+# 4. Submit batch job
+batch_request = client.batches.create(
+    input_file_id=batch_input_file.id,
+    endpoint="/v1/chat/completions",
+    completion_window="24h",
 )
 
-print(f"Batch job submitted with ID: {batch_job.id}")
+print(f"Batch job submitted with ID: {batch_request.id}")
 
-# 5. Wait for job to complete (optional)
-completed_job = client.batch.jobs.wait(batch_job.id)
-print(f"Batch job completed with status: {completed_job.status}")
+# 5. Check batch status (optional)
+batch_status = client.batches.retrieve(batch_request.id)
+print("Batch status: {}".format(batch_status.status))
 
-# 6. Process results from output file
-print("\nBatch results:")
-with open(output_jsonl_path, "r") as f:
-    for i, line in enumerate(f):
-        result = json.loads(line)
-        print(f"\nResult {i+1}:")
-        print(f"Completion: {result['choices'][0]['message']['content']}")
-        print(f"Finish reason: {result['choices'][0]['finish_reason']}")
-        print(f"Total tokens: {result['usage']['total_tokens']}")
+# 6. When completed, retrieve and process results
+# Note: In a real scenario, you would poll the status until completion
+if batch_status.status == "completed":
+    result_file_id = batch_status.output_file_id
+    result_content = client.files.content(result_file_id)
+    
+    print("\nBatch results:")
+    for line in result_content.iter_lines():
+        if line:
+            result = json.loads(line)
+            print(f"\nRequest ID: {result['custom_id']}")
+            if 'response' in result and 'body' in result['response']:
+                response_body = result['response']['body']
+                if 'choices' in response_body and len(response_body['choices']) > 0:
+                    print(f"Completion: {response_body['choices'][0]['message']['content']}")
+                    print(f"Finish reason: {response_body['choices'][0]['finish_reason']}")
+                if 'usage' in response_body:
+                    print(f"Total tokens: {response_body['usage']['total_tokens']}")
     ```
 
 
@@ -5779,13 +5938,15 @@ with open(output_jsonl_path, "r") as f:
 import os
 import json
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Set up image URL
 image_url = "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
@@ -5795,57 +5956,82 @@ input_jsonl_path = "batch_input.jsonl"
 with open(input_jsonl_path, "w") as f:
     # Example 1
     f.write(json.dumps({
-        "messages": [
-            {
-                "role": "user", 
-                "content": [
-                    {"type": "text", "text": "Who can park in the area?"},
-                    {"type": "image_url", "image_url": {"url": image_url}}
-                ]
-            }
-        ],
-        "max_tokens": 300
+        "custom_id": "request-1",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+            "messages": [
+                {
+                    "role": "user", 
+                    "content": [
+                        {"type": "text", "text": "Who can park in the area?"},
+                        {"type": "image_url", "image_url": {"url": image_url}}
+                    ]
+                }
+            ],
+            "max_tokens": 300
+        }
     }) + "\n")
     
     # Example 2
     f.write(json.dumps({
-        "messages": [
-            {
-                "role": "user", 
-                "content": [
-                    {"type": "text", "text": "What does this sign say?"},
-                    {"type": "image_url", "image_url": {"url": image_url}}
-                ]
-            }
-        ],
-        "max_tokens": 300
+        "custom_id": "request-2",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+            "messages": [
+                {
+                    "role": "user", 
+                    "content": [
+                        {"type": "text", "text": "What does this sign say?"},
+                        {"type": "image_url", "image_url": {"url": image_url}}
+                    ]
+                }
+            ],
+            "max_tokens": 300
+        }
     }) + "\n")
 
-# 4. Define output file path
-output_jsonl_path = "batch_output.jsonl"
+# 4. Upload batch input file
+with open(input_jsonl_path, "rb") as file:
+    batch_input_file = client.files.create(
+        file=file,
+        purpose="batch"
+    )
 
-# 5. Submit a batch job
-batch_job = client.batch.completions.create(
-    model="meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
-    input_file_path=input_jsonl_path,
-    output_file_path=output_jsonl_path,
+# 5. Submit batch job
+batch_request = client.batches.create(
+    input_file_id=batch_input_file.id,
+    endpoint="/v1/chat/completions",
+    completion_window="24h",
 )
 
-print(f"Batch job submitted with ID: {batch_job.id}")
+print(f"Batch job submitted with ID: {batch_request.id}")
 
-# 6. Wait for job to complete (optional)
-completed_job = client.batch.jobs.wait(batch_job.id)
-print(f"Batch job completed with status: {completed_job.status}")
+# 6. Check batch status (optional)
+batch_status = client.batches.retrieve(batch_request.id)
+print("Batch status: {}".format(batch_status.status))
 
-# 7. Process results from output file
-print("\nBatch results:")
-with open(output_jsonl_path, "r") as f:
-    for i, line in enumerate(f):
-        result = json.loads(line)
-        print(f"\nResult {i+1}:")
-        print(f"Completion: {result['choices'][0]['message']['content']}")
-        print(f"Finish reason: {result['choices'][0]['finish_reason']}")
-        print(f"Total tokens: {result['usage']['total_tokens']}")
+# 7. When completed, retrieve and process results
+# Note: In a real scenario, you would poll the status until completion
+if batch_status.status == "completed":
+    result_file_id = batch_status.output_file_id
+    result_content = client.files.content(result_file_id)
+    
+    print("\nBatch results:")
+    for line in result_content.iter_lines():
+        if line:
+            result = json.loads(line)
+            print(f"\nRequest ID: {result['custom_id']}")
+            if 'response' in result and 'body' in result['response']:
+                response_body = result['response']['body']
+                if 'choices' in response_body and len(response_body['choices']) > 0:
+                    print(f"Completion: {response_body['choices'][0]['message']['content']}")
+                    print(f"Finish reason: {response_body['choices'][0]['finish_reason']}")
+                if 'usage' in response_body:
+                    print(f"Total tokens: {response_body['usage']['total_tokens']}")
     ```
 
 
@@ -5856,13 +6042,15 @@ with open(output_jsonl_path, "r") as f:
 import os
 import json
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Set up image URL
 image_url = "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
@@ -5872,57 +6060,82 @@ input_jsonl_path = "batch_input.jsonl"
 with open(input_jsonl_path, "w") as f:
     # Example 1
     f.write(json.dumps({
-        "messages": [
-            {
-                "role": "user", 
-                "content": [
-                    {"type": "text", "text": "Who can park in the area?"},
-                    {"type": "image_url", "image_url": {"url": image_url}}
-                ]
-            }
-        ],
-        "max_tokens": 300
+        "custom_id": "request-1",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+            "messages": [
+                {
+                    "role": "user", 
+                    "content": [
+                        {"type": "text", "text": "Who can park in the area?"},
+                        {"type": "image_url", "image_url": {"url": image_url}}
+                    ]
+                }
+            ],
+            "max_tokens": 300
+        }
     }) + "\n")
     
     # Example 2
     f.write(json.dumps({
-        "messages": [
-            {
-                "role": "user", 
-                "content": [
-                    {"type": "text", "text": "What does this sign say?"},
-                    {"type": "image_url", "image_url": {"url": image_url}}
-                ]
-            }
-        ],
-        "max_tokens": 300
+        "custom_id": "request-2",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+            "messages": [
+                {
+                    "role": "user", 
+                    "content": [
+                        {"type": "text", "text": "What does this sign say?"},
+                        {"type": "image_url", "image_url": {"url": image_url}}
+                    ]
+                }
+            ],
+            "max_tokens": 300
+        }
     }) + "\n")
 
-# 4. Define output file path
-output_jsonl_path = "batch_output.jsonl"
+# 4. Upload batch input file
+with open(input_jsonl_path, "rb") as file:
+    batch_input_file = client.files.create(
+        file=file,
+        purpose="batch"
+    )
 
-# 5. Submit a batch job
-batch_job = client.batch.completions.create(
-    model="meta-llama/Llama-4-Scout-17B-16E-Instruct",
-    input_file_path=input_jsonl_path,
-    output_file_path=output_jsonl_path,
+# 5. Submit batch job
+batch_request = client.batches.create(
+    input_file_id=batch_input_file.id,
+    endpoint="/v1/chat/completions",
+    completion_window="24h",
 )
 
-print(f"Batch job submitted with ID: {batch_job.id}")
+print(f"Batch job submitted with ID: {batch_request.id}")
 
-# 6. Wait for job to complete (optional)
-completed_job = client.batch.jobs.wait(batch_job.id)
-print(f"Batch job completed with status: {completed_job.status}")
+# 6. Check batch status (optional)
+batch_status = client.batches.retrieve(batch_request.id)
+print("Batch status: {}".format(batch_status.status))
 
-# 7. Process results from output file
-print("\nBatch results:")
-with open(output_jsonl_path, "r") as f:
-    for i, line in enumerate(f):
-        result = json.loads(line)
-        print(f"\nResult {i+1}:")
-        print(f"Completion: {result['choices'][0]['message']['content']}")
-        print(f"Finish reason: {result['choices'][0]['finish_reason']}")
-        print(f"Total tokens: {result['usage']['total_tokens']}")
+# 7. When completed, retrieve and process results
+# Note: In a real scenario, you would poll the status until completion
+if batch_status.status == "completed":
+    result_file_id = batch_status.output_file_id
+    result_content = client.files.content(result_file_id)
+    
+    print("\nBatch results:")
+    for line in result_content.iter_lines():
+        if line:
+            result = json.loads(line)
+            print(f"\nRequest ID: {result['custom_id']}")
+            if 'response' in result and 'body' in result['response']:
+                response_body = result['response']['body']
+                if 'choices' in response_body and len(response_body['choices']) > 0:
+                    print(f"Completion: {response_body['choices'][0]['message']['content']}")
+                    print(f"Finish reason: {response_body['choices'][0]['finish_reason']}")
+                if 'usage' in response_body:
+                    print(f"Total tokens: {response_body['usage']['total_tokens']}")
     ```
 
 
@@ -5933,66 +6146,99 @@ with open(output_jsonl_path, "r") as f:
 import os
 import json
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Create input file with multiple requests (JSONL format)
 input_jsonl_path = "batch_input.jsonl"
 with open(input_jsonl_path, "w") as f:
     # Example 1
     f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "What is the capital of Argentina?"}
-        ],
-        "max_tokens": 100
+        "custom_id": "request-1",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "mistralai/Mistral-Nemo-Instruct-2407",
+            "messages": [
+                {"role": "user", "content": "What is the capital of Argentina?"}
+            ],
+            "max_tokens": 100
+        }
     }) + "\n")
     
     # Example 2
     f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "Write a short poem about neural networks."}
-        ],
-        "max_tokens": 150
+        "custom_id": "request-2",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "mistralai/Mistral-Nemo-Instruct-2407",
+            "messages": [
+                {"role": "user", "content": "Write a short poem about neural networks."}
+            ],
+            "max_tokens": 150
+        }
     }) + "\n")
     
     # Example 3
     f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}
-        ],
-        "max_tokens": 100
+        "custom_id": "request-3",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "mistralai/Mistral-Nemo-Instruct-2407",
+            "messages": [
+                {"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}
+            ],
+            "max_tokens": 100
+        }
     }) + "\n")
 
-# 3. Define output file path
-output_jsonl_path = "batch_output.jsonl"
+# 3. Upload batch input file
+with open(input_jsonl_path, "rb") as file:
+    batch_input_file = client.files.create(
+        file=file,
+        purpose="batch"
+    )
 
-# 4. Submit a batch job
-batch_job = client.batch.completions.create(
-    model="mistralai/Mistral-Nemo-Instruct-2407",
-    input_file_path=input_jsonl_path,
-    output_file_path=output_jsonl_path,
+# 4. Submit batch job
+batch_request = client.batches.create(
+    input_file_id=batch_input_file.id,
+    endpoint="/v1/chat/completions",
+    completion_window="24h",
 )
 
-print(f"Batch job submitted with ID: {batch_job.id}")
+print(f"Batch job submitted with ID: {batch_request.id}")
 
-# 5. Wait for job to complete (optional)
-completed_job = client.batch.jobs.wait(batch_job.id)
-print(f"Batch job completed with status: {completed_job.status}")
+# 5. Check batch status (optional)
+batch_status = client.batches.retrieve(batch_request.id)
+print("Batch status: {}".format(batch_status.status))
 
-# 6. Process results from output file
-print("\nBatch results:")
-with open(output_jsonl_path, "r") as f:
-    for i, line in enumerate(f):
-        result = json.loads(line)
-        print(f"\nResult {i+1}:")
-        print(f"Completion: {result['choices'][0]['message']['content']}")
-        print(f"Finish reason: {result['choices'][0]['finish_reason']}")
-        print(f"Total tokens: {result['usage']['total_tokens']}")
+# 6. When completed, retrieve and process results
+# Note: In a real scenario, you would poll the status until completion
+if batch_status.status == "completed":
+    result_file_id = batch_status.output_file_id
+    result_content = client.files.content(result_file_id)
+    
+    print("\nBatch results:")
+    for line in result_content.iter_lines():
+        if line:
+            result = json.loads(line)
+            print(f"\nRequest ID: {result['custom_id']}")
+            if 'response' in result and 'body' in result['response']:
+                response_body = result['response']['body']
+                if 'choices' in response_body and len(response_body['choices']) > 0:
+                    print(f"Completion: {response_body['choices'][0]['message']['content']}")
+                    print(f"Finish reason: {response_body['choices'][0]['finish_reason']}")
+                if 'usage' in response_body:
+                    print(f"Total tokens: {response_body['usage']['total_tokens']}")
     ```
 
 
@@ -6003,13 +6249,15 @@ with open(output_jsonl_path, "r") as f:
 import os
 import json
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Set up image URL
 image_url = "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
@@ -6019,57 +6267,82 @@ input_jsonl_path = "batch_input.jsonl"
 with open(input_jsonl_path, "w") as f:
     # Example 1
     f.write(json.dumps({
-        "messages": [
-            {
-                "role": "user", 
-                "content": [
-                    {"type": "text", "text": "Who can park in the area?"},
-                    {"type": "image_url", "image_url": {"url": image_url}}
-                ]
-            }
-        ],
-        "max_tokens": 300
+        "custom_id": "request-1",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+            "messages": [
+                {
+                    "role": "user", 
+                    "content": [
+                        {"type": "text", "text": "Who can park in the area?"},
+                        {"type": "image_url", "image_url": {"url": image_url}}
+                    ]
+                }
+            ],
+            "max_tokens": 300
+        }
     }) + "\n")
     
     # Example 2
     f.write(json.dumps({
-        "messages": [
-            {
-                "role": "user", 
-                "content": [
-                    {"type": "text", "text": "What does this sign say?"},
-                    {"type": "image_url", "image_url": {"url": image_url}}
-                ]
-            }
-        ],
-        "max_tokens": 300
+        "custom_id": "request-2",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+            "messages": [
+                {
+                    "role": "user", 
+                    "content": [
+                        {"type": "text", "text": "What does this sign say?"},
+                        {"type": "image_url", "image_url": {"url": image_url}}
+                    ]
+                }
+            ],
+            "max_tokens": 300
+        }
     }) + "\n")
 
-# 4. Define output file path
-output_jsonl_path = "batch_output.jsonl"
+# 4. Upload batch input file
+with open(input_jsonl_path, "rb") as file:
+    batch_input_file = client.files.create(
+        file=file,
+        purpose="batch"
+    )
 
-# 5. Submit a batch job
-batch_job = client.batch.completions.create(
-    model="Qwen/Qwen2.5-VL-7B-Instruct",
-    input_file_path=input_jsonl_path,
-    output_file_path=output_jsonl_path,
+# 5. Submit batch job
+batch_request = client.batches.create(
+    input_file_id=batch_input_file.id,
+    endpoint="/v1/chat/completions",
+    completion_window="24h",
 )
 
-print(f"Batch job submitted with ID: {batch_job.id}")
+print(f"Batch job submitted with ID: {batch_request.id}")
 
-# 6. Wait for job to complete (optional)
-completed_job = client.batch.jobs.wait(batch_job.id)
-print(f"Batch job completed with status: {completed_job.status}")
+# 6. Check batch status (optional)
+batch_status = client.batches.retrieve(batch_request.id)
+print("Batch status: {}".format(batch_status.status))
 
-# 7. Process results from output file
-print("\nBatch results:")
-with open(output_jsonl_path, "r") as f:
-    for i, line in enumerate(f):
-        result = json.loads(line)
-        print(f"\nResult {i+1}:")
-        print(f"Completion: {result['choices'][0]['message']['content']}")
-        print(f"Finish reason: {result['choices'][0]['finish_reason']}")
-        print(f"Total tokens: {result['usage']['total_tokens']}")
+# 7. When completed, retrieve and process results
+# Note: In a real scenario, you would poll the status until completion
+if batch_status.status == "completed":
+    result_file_id = batch_status.output_file_id
+    result_content = client.files.content(result_file_id)
+    
+    print("\nBatch results:")
+    for line in result_content.iter_lines():
+        if line:
+            result = json.loads(line)
+            print(f"\nRequest ID: {result['custom_id']}")
+            if 'response' in result and 'body' in result['response']:
+                response_body = result['response']['body']
+                if 'choices' in response_body and len(response_body['choices']) > 0:
+                    print(f"Completion: {response_body['choices'][0]['message']['content']}")
+                    print(f"Finish reason: {response_body['choices'][0]['finish_reason']}")
+                if 'usage' in response_body:
+                    print(f"Total tokens: {response_body['usage']['total_tokens']}")
     ```
 
 
@@ -6080,66 +6353,99 @@ with open(output_jsonl_path, "r") as f:
 import os
 import json
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Create input file with multiple requests (JSONL format)
 input_jsonl_path = "batch_input.jsonl"
 with open(input_jsonl_path, "w") as f:
     # Example 1
     f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "What is the capital of Argentina?"}
-        ],
-        "max_tokens": 100
+        "custom_id": "request-1",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "Qwen/Qwen3-235B-A22B-FP8",
+            "messages": [
+                {"role": "user", "content": "What is the capital of Argentina?"}
+            ],
+            "max_tokens": 100
+        }
     }) + "\n")
     
     # Example 2
     f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "Write a short poem about neural networks."}
-        ],
-        "max_tokens": 150
+        "custom_id": "request-2",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "Qwen/Qwen3-235B-A22B-FP8",
+            "messages": [
+                {"role": "user", "content": "Write a short poem about neural networks."}
+            ],
+            "max_tokens": 150
+        }
     }) + "\n")
     
     # Example 3
     f.write(json.dumps({
-        "messages": [
-            {"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}
-        ],
-        "max_tokens": 100
+        "custom_id": "request-3",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "Qwen/Qwen3-235B-A22B-FP8",
+            "messages": [
+                {"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}
+            ],
+            "max_tokens": 100
+        }
     }) + "\n")
 
-# 3. Define output file path
-output_jsonl_path = "batch_output.jsonl"
+# 3. Upload batch input file
+with open(input_jsonl_path, "rb") as file:
+    batch_input_file = client.files.create(
+        file=file,
+        purpose="batch"
+    )
 
-# 4. Submit a batch job
-batch_job = client.batch.completions.create(
-    model="Qwen/Qwen3-235B-A22B-FP8",
-    input_file_path=input_jsonl_path,
-    output_file_path=output_jsonl_path,
+# 4. Submit batch job
+batch_request = client.batches.create(
+    input_file_id=batch_input_file.id,
+    endpoint="/v1/chat/completions",
+    completion_window="24h",
 )
 
-print(f"Batch job submitted with ID: {batch_job.id}")
+print(f"Batch job submitted with ID: {batch_request.id}")
 
-# 5. Wait for job to complete (optional)
-completed_job = client.batch.jobs.wait(batch_job.id)
-print(f"Batch job completed with status: {completed_job.status}")
+# 5. Check batch status (optional)
+batch_status = client.batches.retrieve(batch_request.id)
+print("Batch status: {}".format(batch_status.status))
 
-# 6. Process results from output file
-print("\nBatch results:")
-with open(output_jsonl_path, "r") as f:
-    for i, line in enumerate(f):
-        result = json.loads(line)
-        print(f"\nResult {i+1}:")
-        print(f"Completion: {result['choices'][0]['message']['content']}")
-        print(f"Finish reason: {result['choices'][0]['finish_reason']}")
-        print(f"Total tokens: {result['usage']['total_tokens']}")
+# 6. When completed, retrieve and process results
+# Note: In a real scenario, you would poll the status until completion
+if batch_status.status == "completed":
+    result_file_id = batch_status.output_file_id
+    result_content = client.files.content(result_file_id)
+    
+    print("\nBatch results:")
+    for line in result_content.iter_lines():
+        if line:
+            result = json.loads(line)
+            print(f"\nRequest ID: {result['custom_id']}")
+            if 'response' in result and 'body' in result['response']:
+                response_body = result['response']['body']
+                if 'choices' in response_body and len(response_body['choices']) > 0:
+                    print(f"Completion: {response_body['choices'][0]['message']['content']}")
+                    print(f"Finish reason: {response_body['choices'][0]['finish_reason']}")
+                if 'usage' in response_body:
+                    print(f"Total tokens: {response_body['usage']['total_tokens']}")
     ```
 ### CLI
 
@@ -6161,21 +6467,31 @@ Error: API_KEY environment variable is not set.
 fi
 
 # 1. Create input file (batch_input.jsonl)
-cat > batch_input.jsonl << 'EOF'
-{"messages": [{"role": "user", "content": "What is the capital of Argentina?"}], "max_tokens": 100}
-{"messages": [{"role": "user", "content": "Write a short poem about neural networks."}], "max_tokens": 150}
-{"messages": [{"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}], "max_tokens": 50}
+cat > batch_input.jsonl << EOF
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "deepseek-ai/DeepSeek-R1", "messages": [{"role": "user", "content": "What is the capital of Argentina?"}], "max_tokens": 100}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "deepseek-ai/DeepSeek-R1", "messages": [{"role": "user", "content": "Write a short poem about neural networks."}], "max_tokens": 150}}
+{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "deepseek-ai/DeepSeek-R1", "messages": [{"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}], "max_tokens": 100}}
 EOF
 
-# 2. Submit batch job
+# 2. Upload batch input file
+UPLOAD_RESPONSE=$(curl -X POST \
+  https://api.kluster.ai/v1/files \
+  -H "Authorization: Bearer $API_KEY" \
+  -F "purpose=batch" \
+  -F "file=@batch_input.jsonl")
+
+# Extract file ID from upload response
+FILE_ID=$(echo $UPLOAD_RESPONSE | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4)
+
+# 3. Submit batch job
 curl -X POST \
-  https://api.kluster.ai/v1/batch/completions \
+  https://api.kluster.ai/v1/batches \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "deepseek-ai/DeepSeek-R1",
-    "input_file_url": "file://batch_input.jsonl",
-    "output_file_url": "file://batch_output.jsonl"
+    "input_file_id": "'$FILE_ID'",
+    "endpoint": "/v1/chat/completions",
+    "completion_window": "24h"
   }'
     ```
 
@@ -6196,21 +6512,31 @@ Error: API_KEY environment variable is not set.
 fi
 
 # 1. Create input file (batch_input.jsonl)
-cat > batch_input.jsonl << 'EOF'
-{"messages": [{"role": "user", "content": "What is the capital of Argentina?"}], "max_tokens": 100}
-{"messages": [{"role": "user", "content": "Write a short poem about neural networks."}], "max_tokens": 150}
-{"messages": [{"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}], "max_tokens": 50}
+cat > batch_input.jsonl << EOF
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "deepseek-ai/DeepSeek-V3-0324", "messages": [{"role": "user", "content": "What is the capital of Argentina?"}], "max_tokens": 100}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "deepseek-ai/DeepSeek-V3-0324", "messages": [{"role": "user", "content": "Write a short poem about neural networks."}], "max_tokens": 150}}
+{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "deepseek-ai/DeepSeek-V3-0324", "messages": [{"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}], "max_tokens": 100}}
 EOF
 
-# 2. Submit batch job
+# 2. Upload batch input file
+UPLOAD_RESPONSE=$(curl -X POST \
+  https://api.kluster.ai/v1/files \
+  -H "Authorization: Bearer $API_KEY" \
+  -F "purpose=batch" \
+  -F "file=@batch_input.jsonl")
+
+# Extract file ID from upload response
+FILE_ID=$(echo $UPLOAD_RESPONSE | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4)
+
+# 3. Submit batch job
 curl -X POST \
-  https://api.kluster.ai/v1/batch/completions \
+  https://api.kluster.ai/v1/batches \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "deepseek-ai/DeepSeek-V3-0324",
-    "input_file_url": "file://batch_input.jsonl",
-    "output_file_url": "file://batch_output.jsonl"
+    "input_file_id": "'$FILE_ID'",
+    "endpoint": "/v1/chat/completions",
+    "completion_window": "24h"
   }'
     ```
 
@@ -6234,20 +6560,30 @@ fi
 IMAGE_URL="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # 1. Create input file (batch_input.jsonl) with image content
-cat > batch_input.jsonl << 'EOF'
-{"messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "'$IMAGE_URL'"}}]}], "max_tokens": 300}
-{"messages": [{"role": "user", "content": [{"type": "text", "text": "What does this sign say?"}, {"type": "image_url", "image_url": {"url": "'$IMAGE_URL'"}}]}], "max_tokens": 300}
+cat > batch_input.jsonl << EOF
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "google/gemma-3-27b-it", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "$IMAGE_URL"}}]}], "max_tokens": 300}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "google/gemma-3-27b-it", "messages": [{"role": "user", "content": [{"type": "text", "text": "What does this sign say?"}, {"type": "image_url", "image_url": {"url": "$IMAGE_URL"}}]}], "max_tokens": 300}}
 EOF
 
-# 2. Submit batch job
+# 2. Upload batch input file
+UPLOAD_RESPONSE=$(curl -X POST \
+  https://api.kluster.ai/v1/files \
+  -H "Authorization: Bearer $API_KEY" \
+  -F "purpose=batch" \
+  -F "file=@batch_input.jsonl")
+
+# Extract file ID from upload response
+FILE_ID=$(echo $UPLOAD_RESPONSE | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4)
+
+# 3. Submit batch job
 curl -X POST \
-  https://api.kluster.ai/v1/batch/completions \
+  https://api.kluster.ai/v1/batches \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "google/gemma-3-27b-it",
-    "input_file_url": "file://batch_input.jsonl",
-    "output_file_url": "file://batch_output.jsonl"
+    "input_file_id": "'$FILE_ID'",
+    "endpoint": "/v1/chat/completions",
+    "completion_window": "24h"
   }'
     ```
 
@@ -6268,21 +6604,31 @@ Error: API_KEY environment variable is not set.
 fi
 
 # 1. Create input file (batch_input.jsonl)
-cat > batch_input.jsonl << 'EOF'
-{"messages": [{"role": "user", "content": "What is the capital of Argentina?"}], "max_tokens": 100}
-{"messages": [{"role": "user", "content": "Write a short poem about neural networks."}], "max_tokens": 150}
-{"messages": [{"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}], "max_tokens": 50}
+cat > batch_input.jsonl << EOF
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo", "messages": [{"role": "user", "content": "What is the capital of Argentina?"}], "max_tokens": 100}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo", "messages": [{"role": "user", "content": "Write a short poem about neural networks."}], "max_tokens": 150}}
+{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo", "messages": [{"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}], "max_tokens": 100}}
 EOF
 
-# 2. Submit batch job
+# 2. Upload batch input file
+UPLOAD_RESPONSE=$(curl -X POST \
+  https://api.kluster.ai/v1/files \
+  -H "Authorization: Bearer $API_KEY" \
+  -F "purpose=batch" \
+  -F "file=@batch_input.jsonl")
+
+# Extract file ID from upload response
+FILE_ID=$(echo $UPLOAD_RESPONSE | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4)
+
+# 3. Submit batch job
 curl -X POST \
-  https://api.kluster.ai/v1/batch/completions \
+  https://api.kluster.ai/v1/batches \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
-    "input_file_url": "file://batch_input.jsonl",
-    "output_file_url": "file://batch_output.jsonl"
+    "input_file_id": "'$FILE_ID'",
+    "endpoint": "/v1/chat/completions",
+    "completion_window": "24h"
   }'
     ```
 
@@ -6303,21 +6649,31 @@ Error: API_KEY environment variable is not set.
 fi
 
 # 1. Create input file (batch_input.jsonl)
-cat > batch_input.jsonl << 'EOF'
-{"messages": [{"role": "user", "content": "What is the capital of Argentina?"}], "max_tokens": 100}
-{"messages": [{"role": "user", "content": "Write a short poem about neural networks."}], "max_tokens": 150}
-{"messages": [{"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}], "max_tokens": 50}
+cat > batch_input.jsonl << EOF
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo", "messages": [{"role": "user", "content": "What is the capital of Argentina?"}], "max_tokens": 100}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo", "messages": [{"role": "user", "content": "Write a short poem about neural networks."}], "max_tokens": 150}}
+{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo", "messages": [{"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}], "max_tokens": 100}}
 EOF
 
-# 2. Submit batch job
+# 2. Upload batch input file
+UPLOAD_RESPONSE=$(curl -X POST \
+  https://api.kluster.ai/v1/files \
+  -H "Authorization: Bearer $API_KEY" \
+  -F "purpose=batch" \
+  -F "file=@batch_input.jsonl")
+
+# Extract file ID from upload response
+FILE_ID=$(echo $UPLOAD_RESPONSE | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4)
+
+# 3. Submit batch job
 curl -X POST \
-  https://api.kluster.ai/v1/batch/completions \
+  https://api.kluster.ai/v1/batches \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
-    "input_file_url": "file://batch_input.jsonl",
-    "output_file_url": "file://batch_output.jsonl"
+    "input_file_id": "'$FILE_ID'",
+    "endpoint": "/v1/chat/completions",
+    "completion_window": "24h"
   }'
     ```
 
@@ -6341,20 +6697,30 @@ fi
 IMAGE_URL="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # 1. Create input file (batch_input.jsonl) with image content
-cat > batch_input.jsonl << 'EOF'
-{"messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "'$IMAGE_URL'"}}]}], "max_tokens": 300}
-{"messages": [{"role": "user", "content": [{"type": "text", "text": "What does this sign say?"}, {"type": "image_url", "image_url": {"url": "'$IMAGE_URL'"}}]}], "max_tokens": 300}
+cat > batch_input.jsonl << EOF
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "$IMAGE_URL"}}]}], "max_tokens": 300}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8", "messages": [{"role": "user", "content": [{"type": "text", "text": "What does this sign say?"}, {"type": "image_url", "image_url": {"url": "$IMAGE_URL"}}]}], "max_tokens": 300}}
 EOF
 
-# 2. Submit batch job
+# 2. Upload batch input file
+UPLOAD_RESPONSE=$(curl -X POST \
+  https://api.kluster.ai/v1/files \
+  -H "Authorization: Bearer $API_KEY" \
+  -F "purpose=batch" \
+  -F "file=@batch_input.jsonl")
+
+# Extract file ID from upload response
+FILE_ID=$(echo $UPLOAD_RESPONSE | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4)
+
+# 3. Submit batch job
 curl -X POST \
-  https://api.kluster.ai/v1/batch/completions \
+  https://api.kluster.ai/v1/batches \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
-    "input_file_url": "file://batch_input.jsonl",
-    "output_file_url": "file://batch_output.jsonl"
+    "input_file_id": "'$FILE_ID'",
+    "endpoint": "/v1/chat/completions",
+    "completion_window": "24h"
   }'
     ```
 
@@ -6378,20 +6744,30 @@ fi
 IMAGE_URL="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # 1. Create input file (batch_input.jsonl) with image content
-cat > batch_input.jsonl << 'EOF'
-{"messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "'$IMAGE_URL'"}}]}], "max_tokens": 300}
-{"messages": [{"role": "user", "content": [{"type": "text", "text": "What does this sign say?"}, {"type": "image_url", "image_url": {"url": "'$IMAGE_URL'"}}]}], "max_tokens": 300}
+cat > batch_input.jsonl << EOF
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Scout-17B-16E-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "$IMAGE_URL"}}]}], "max_tokens": 300}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Scout-17B-16E-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "What does this sign say?"}, {"type": "image_url", "image_url": {"url": "$IMAGE_URL"}}]}], "max_tokens": 300}}
 EOF
 
-# 2. Submit batch job
+# 2. Upload batch input file
+UPLOAD_RESPONSE=$(curl -X POST \
+  https://api.kluster.ai/v1/files \
+  -H "Authorization: Bearer $API_KEY" \
+  -F "purpose=batch" \
+  -F "file=@batch_input.jsonl")
+
+# Extract file ID from upload response
+FILE_ID=$(echo $UPLOAD_RESPONSE | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4)
+
+# 3. Submit batch job
 curl -X POST \
-  https://api.kluster.ai/v1/batch/completions \
+  https://api.kluster.ai/v1/batches \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-    "input_file_url": "file://batch_input.jsonl",
-    "output_file_url": "file://batch_output.jsonl"
+    "input_file_id": "'$FILE_ID'",
+    "endpoint": "/v1/chat/completions",
+    "completion_window": "24h"
   }'
     ```
 
@@ -6412,21 +6788,31 @@ Error: API_KEY environment variable is not set.
 fi
 
 # 1. Create input file (batch_input.jsonl)
-cat > batch_input.jsonl << 'EOF'
-{"messages": [{"role": "user", "content": "What is the capital of Argentina?"}], "max_tokens": 100}
-{"messages": [{"role": "user", "content": "Write a short poem about neural networks."}], "max_tokens": 150}
-{"messages": [{"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}], "max_tokens": 50}
+cat > batch_input.jsonl << EOF
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Mistral-Nemo-Instruct-2407", "messages": [{"role": "user", "content": "What is the capital of Argentina?"}], "max_tokens": 100}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Mistral-Nemo-Instruct-2407", "messages": [{"role": "user", "content": "Write a short poem about neural networks."}], "max_tokens": 150}}
+{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Mistral-Nemo-Instruct-2407", "messages": [{"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}], "max_tokens": 100}}
 EOF
 
-# 2. Submit batch job
+# 2. Upload batch input file
+UPLOAD_RESPONSE=$(curl -X POST \
+  https://api.kluster.ai/v1/files \
+  -H "Authorization: Bearer $API_KEY" \
+  -F "purpose=batch" \
+  -F "file=@batch_input.jsonl")
+
+# Extract file ID from upload response
+FILE_ID=$(echo $UPLOAD_RESPONSE | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4)
+
+# 3. Submit batch job
 curl -X POST \
-  https://api.kluster.ai/v1/batch/completions \
+  https://api.kluster.ai/v1/batches \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "mistralai/Mistral-Nemo-Instruct-2407",
-    "input_file_url": "file://batch_input.jsonl",
-    "output_file_url": "file://batch_output.jsonl"
+    "input_file_id": "'$FILE_ID'",
+    "endpoint": "/v1/chat/completions",
+    "completion_window": "24h"
   }'
     ```
 
@@ -6450,20 +6836,30 @@ fi
 IMAGE_URL="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # 1. Create input file (batch_input.jsonl) with image content
-cat > batch_input.jsonl << 'EOF'
-{"messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "'$IMAGE_URL'"}}]}], "max_tokens": 300}
-{"messages": [{"role": "user", "content": [{"type": "text", "text": "What does this sign say?"}, {"type": "image_url", "image_url": {"url": "'$IMAGE_URL'"}}]}], "max_tokens": 300}
+cat > batch_input.jsonl << EOF
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "$IMAGE_URL"}}]}], "max_tokens": 300}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "What does this sign say?"}, {"type": "image_url", "image_url": {"url": "$IMAGE_URL"}}]}], "max_tokens": 300}}
 EOF
 
-# 2. Submit batch job
+# 2. Upload batch input file
+UPLOAD_RESPONSE=$(curl -X POST \
+  https://api.kluster.ai/v1/files \
+  -H "Authorization: Bearer $API_KEY" \
+  -F "purpose=batch" \
+  -F "file=@batch_input.jsonl")
+
+# Extract file ID from upload response
+FILE_ID=$(echo $UPLOAD_RESPONSE | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4)
+
+# 3. Submit batch job
 curl -X POST \
-  https://api.kluster.ai/v1/batch/completions \
+  https://api.kluster.ai/v1/batches \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "Qwen/Qwen2.5-VL-7B-Instruct",
-    "input_file_url": "file://batch_input.jsonl",
-    "output_file_url": "file://batch_output.jsonl"
+    "input_file_id": "'$FILE_ID'",
+    "endpoint": "/v1/chat/completions",
+    "completion_window": "24h"
   }'
     ```
 
@@ -6484,21 +6880,31 @@ Error: API_KEY environment variable is not set.
 fi
 
 # 1. Create input file (batch_input.jsonl)
-cat > batch_input.jsonl << 'EOF'
-{"messages": [{"role": "user", "content": "What is the capital of Argentina?"}], "max_tokens": 100}
-{"messages": [{"role": "user", "content": "Write a short poem about neural networks."}], "max_tokens": 150}
-{"messages": [{"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}], "max_tokens": 50}
+cat > batch_input.jsonl << EOF
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen3-235B-A22B-FP8", "messages": [{"role": "user", "content": "What is the capital of Argentina?"}], "max_tokens": 100}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen3-235B-A22B-FP8", "messages": [{"role": "user", "content": "Write a short poem about neural networks."}], "max_tokens": 150}}
+{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen3-235B-A22B-FP8", "messages": [{"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}], "max_tokens": 100}}
 EOF
 
-# 2. Submit batch job
+# 2. Upload batch input file
+UPLOAD_RESPONSE=$(curl -X POST \
+  https://api.kluster.ai/v1/files \
+  -H "Authorization: Bearer $API_KEY" \
+  -F "purpose=batch" \
+  -F "file=@batch_input.jsonl")
+
+# Extract file ID from upload response
+FILE_ID=$(echo $UPLOAD_RESPONSE | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4)
+
+# 3. Submit batch job
 curl -X POST \
-  https://api.kluster.ai/v1/batch/completions \
+  https://api.kluster.ai/v1/batches \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "Qwen/Qwen3-235B-A22B-FP8",
-    "input_file_url": "file://batch_input.jsonl",
-    "output_file_url": "file://batch_output.jsonl"
+    "input_file_id": "'$FILE_ID'",
+    "endpoint": "/v1/chat/completions",
+    "completion_window": "24h"
   }'
     ```
 
@@ -7132,13 +7538,15 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     # Real-time completions with the DeepSeek-R1 model on Kluster.
 import os
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Example inputs
 messages = [
@@ -7146,7 +7554,7 @@ messages = [
 ]
 
 # 3. Generate completion
-response = client.real_time.completions.create(
+response = client.chat.completions.create(
     model="deepseek-ai/DeepSeek-R1",
     messages=messages,
     max_tokens=100,
@@ -7168,13 +7576,15 @@ print("Total tokens:", response.usage.total_tokens)
     # Real-time completions with the DeepSeek-V3-0324 model on Kluster.
 import os
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Example inputs
 messages = [
@@ -7182,7 +7592,7 @@ messages = [
 ]
 
 # 3. Generate completion
-response = client.real_time.completions.create(
+response = client.chat.completions.create(
     model="deepseek-ai/DeepSeek-V3-0324",
     messages=messages,
     max_tokens=100,
@@ -7204,13 +7614,15 @@ print("Total tokens:", response.usage.total_tokens)
     # Real-time completions with the Gemma 3 27B model on Kluster.
 import os
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Example inputs
 messages = [
@@ -7218,7 +7630,7 @@ messages = [
 ]
 
 # 3. Generate completion
-response = client.real_time.completions.create(
+response = client.chat.completions.create(
     model="google/gemma-3-27b-it",
     messages=messages,
     max_tokens=100,
@@ -7245,7 +7657,7 @@ vision_messages = [
     }
 ]
 
-vision_response = client.real_time.completions.create(
+vision_response = client.chat.completions.create(
     model="google/gemma-3-27b-it",
     messages=vision_messages,
     max_tokens=300,
@@ -7261,13 +7673,15 @@ print("\nVision Completion:", vision_response.choices[0].message.content)
     # Real-time completions with the Meta Llama 3.1 8B model on Kluster.
 import os
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Example inputs
 messages = [
@@ -7275,7 +7689,7 @@ messages = [
 ]
 
 # 3. Generate completion
-response = client.real_time.completions.create(
+response = client.chat.completions.create(
     model="klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
     messages=messages,
     max_tokens=100,
@@ -7297,13 +7711,15 @@ print("Total tokens:", response.usage.total_tokens)
     # Real-time completions with the Meta Llama 3.3 70B model on Kluster.
 import os
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Example inputs
 messages = [
@@ -7311,7 +7727,7 @@ messages = [
 ]
 
 # 3. Generate completion
-response = client.real_time.completions.create(
+response = client.chat.completions.create(
     model="klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
     messages=messages,
     max_tokens=100,
@@ -7333,13 +7749,15 @@ print("Total tokens:", response.usage.total_tokens)
     # Real-time completions with the Meta Llama 4 Maverick model on Kluster.
 import os
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Example inputs
 messages = [
@@ -7347,7 +7765,7 @@ messages = [
 ]
 
 # 3. Generate completion
-response = client.real_time.completions.create(
+response = client.chat.completions.create(
     model="meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
     messages=messages,
     max_tokens=100,
@@ -7374,7 +7792,7 @@ vision_messages = [
     }
 ]
 
-vision_response = client.real_time.completions.create(
+vision_response = client.chat.completions.create(
     model="meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
     messages=vision_messages,
     max_tokens=300,
@@ -7390,13 +7808,15 @@ print("\nVision Completion:", vision_response.choices[0].message.content)
     # Real-time completions with the Meta Llama 4 Scout model on Kluster.
 import os
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Example inputs
 messages = [
@@ -7404,7 +7824,7 @@ messages = [
 ]
 
 # 3. Generate completion
-response = client.real_time.completions.create(
+response = client.chat.completions.create(
     model="meta-llama/Llama-4-Scout-17B-16E-Instruct",
     messages=messages,
     max_tokens=100,
@@ -7431,7 +7851,7 @@ vision_messages = [
     }
 ]
 
-vision_response = client.real_time.completions.create(
+vision_response = client.chat.completions.create(
     model="meta-llama/Llama-4-Scout-17B-16E-Instruct",
     messages=vision_messages,
     max_tokens=300,
@@ -7447,13 +7867,15 @@ print("\nVision Completion:", vision_response.choices[0].message.content)
     # Real-time completions with the Mistral NeMo model on Kluster.
 import os
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Example inputs
 messages = [
@@ -7461,7 +7883,7 @@ messages = [
 ]
 
 # 3. Generate completion
-response = client.real_time.completions.create(
+response = client.chat.completions.create(
     model="mistralai/Mistral-Nemo-Instruct-2407",
     messages=messages,
     max_tokens=100,
@@ -7483,13 +7905,15 @@ print("Total tokens:", response.usage.total_tokens)
     # Real-time completions with the Qwen2.5-VL 7B model on Kluster.
 import os
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Example inputs
 messages = [
@@ -7497,7 +7921,7 @@ messages = [
 ]
 
 # 3. Generate completion
-response = client.real_time.completions.create(
+response = client.chat.completions.create(
     model="Qwen/Qwen2.5-VL-7B-Instruct",
     messages=messages,
     max_tokens=100,
@@ -7524,7 +7948,7 @@ vision_messages = [
     }
 ]
 
-vision_response = client.real_time.completions.create(
+vision_response = client.chat.completions.create(
     model="Qwen/Qwen2.5-VL-7B-Instruct",
     messages=vision_messages,
     max_tokens=300,
@@ -7540,13 +7964,15 @@ print("\nVision Completion:", vision_response.choices[0].message.content)
     # Real-time completions with the Qwen3-235B-A22B model on Kluster.
 import os
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Example inputs
 messages = [
@@ -7554,7 +7980,7 @@ messages = [
 ]
 
 # 3. Generate completion
-response = client.real_time.completions.create(
+response = client.chat.completions.create(
     model="Qwen/Qwen3-235B-A22B-FP8",
     messages=messages,
     max_tokens=100,
@@ -7582,7 +8008,7 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 # export API_KEY="your_api_key_here"
 
 curl -X POST \
-  https://api.kluster.ai/v1/real-time/completions \
+  https://api.kluster.ai/v1/chat/completions \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -7607,7 +8033,7 @@ curl -X POST \
 # export API_KEY="your_api_key_here"
 
 curl -X POST \
-  https://api.kluster.ai/v1/real-time/completions \
+  https://api.kluster.ai/v1/chat/completions \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -7642,7 +8068,7 @@ fi
 IMAGE_URL="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 curl -X POST \
-  https://api.kluster.ai/v1/real-time/completions \
+  https://api.kluster.ai/v1/chat/completions \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -7670,7 +8096,7 @@ curl -X POST \
 # export API_KEY="your_api_key_here"
 
 curl -X POST \
-  https://api.kluster.ai/v1/real-time/completions \
+  https://api.kluster.ai/v1/chat/completions \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -7695,7 +8121,7 @@ curl -X POST \
 # export API_KEY="your_api_key_here"
 
 curl -X POST \
-  https://api.kluster.ai/v1/real-time/completions \
+  https://api.kluster.ai/v1/chat/completions \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -7730,7 +8156,7 @@ fi
 IMAGE_URL="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 curl -X POST \
-  https://api.kluster.ai/v1/real-time/completions \
+  https://api.kluster.ai/v1/chat/completions \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -7768,7 +8194,7 @@ fi
 IMAGE_URL="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 curl -X POST \
-  https://api.kluster.ai/v1/real-time/completions \
+  https://api.kluster.ai/v1/chat/completions \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -7796,7 +8222,7 @@ curl -X POST \
 # export API_KEY="your_api_key_here"
 
 curl -X POST \
-  https://api.kluster.ai/v1/real-time/completions \
+  https://api.kluster.ai/v1/chat/completions \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -7831,7 +8257,7 @@ fi
 IMAGE_URL="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 curl -X POST \
-  https://api.kluster.ai/v1/real-time/completions \
+  https://api.kluster.ai/v1/chat/completions \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -7859,7 +8285,7 @@ curl -X POST \
 # export API_KEY="your_api_key_here"
 
 curl -X POST \
-  https://api.kluster.ai/v1/real-time/completions \
+  https://api.kluster.ai/v1/chat/completions \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{

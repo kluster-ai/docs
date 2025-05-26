@@ -1,13 +1,15 @@
 # Real-time completions with the Meta Llama 4 Scout model on Kluster.
 import os
 import getpass
-import kluster
-from typing import Dict, Any
+from openai import OpenAI
 
-# 1. Initialize the Kluster SDK client
+# 1. Initialize OpenAI client pointing to kluster.ai API
 # Get API key securely using getpass (will not be displayed or saved)
 api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = kluster.Client(api_key=api_key)
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
 
 # 2. Example inputs
 messages = [
@@ -15,7 +17,7 @@ messages = [
 ]
 
 # 3. Generate completion
-response = client.real_time.completions.create(
+response = client.chat.completions.create(
     model="meta-llama/Llama-4-Scout-17B-16E-Instruct",
     messages=messages,
     max_tokens=100,
@@ -42,7 +44,7 @@ vision_messages = [
     }
 ]
 
-vision_response = client.real_time.completions.create(
+vision_response = client.chat.completions.create(
     model="meta-llama/Llama-4-Scout-17B-16E-Instruct",
     messages=vision_messages,
     max_tokens=300,

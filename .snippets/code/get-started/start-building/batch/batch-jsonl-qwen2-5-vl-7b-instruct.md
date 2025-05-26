@@ -14,18 +14,28 @@ fi
 IMAGE_URL="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # 1. Create input file (batch_input.jsonl) with image content
-cat > batch_input.jsonl << 'EOF'
-{"messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "'$IMAGE_URL'"}}]}], "max_tokens": 300}
-{"messages": [{"role": "user", "content": [{"type": "text", "text": "What does this sign say?"}, {"type": "image_url", "image_url": {"url": "'$IMAGE_URL'"}}]}], "max_tokens": 300}
+cat > batch_input.jsonl << EOF
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "$IMAGE_URL"}}]}], "max_tokens": 300}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "What does this sign say?"}, {"type": "image_url", "image_url": {"url": "$IMAGE_URL"}}]}], "max_tokens": 300}}
 EOF
 
-# 2. Submit batch job
+# 2. Upload batch input file
+UPLOAD_RESPONSE=$(curl -X POST \
+  https://api.kluster.ai/v1/files \
+  -H "Authorization: Bearer $API_KEY" \
+  -F "purpose=batch" \
+  -F "file=@batch_input.jsonl")
+
+# Extract file ID from upload response
+FILE_ID=$(echo $UPLOAD_RESPONSE | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4)
+
+# 3. Submit batch job
 curl -X POST \
-  https://api.kluster.ai/v1/batch/completions \
+  https://api.kluster.ai/v1/batches \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "Qwen/Qwen2.5-VL-7B-Instruct",
-    "input_file_url": "file://batch_input.jsonl",
-    "output_file_url": "file://batch_output.jsonl"
+    "input_file_id": "'$FILE_ID'",
+    "endpoint": "/v1/chat/completions",
+    "completion_window": "24h"
   }'
