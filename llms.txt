@@ -16597,12 +16597,12 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/rag.ipynb/
     "There are use cases when models struggle to complete tasks due to lack of specialized knowledge. This could lead to issues like hallucinations where models generate incorrect or fabricated information.\n",
     "To help mitigate this, **Retrieval-Augmented Generation (RAG)** allows the model to pull real-time data from specified sources.\n",
     "\n",
-    "This tutorial demonstrates how to use the [embeddings endpoint](https://docs.kluster.ai/api-reference/reference/#create-embeddings) in a RAG pipeline with PDF document support using [LlamaIndex](https://docs.llamaindex.ai/en/stable/module_guides/models/embeddings/) to handle the data and retrieval. \n",
+    "This tutorial demonstrates how to use the <a href=\"https://docs.kluster.ai/api-reference/reference/#create-embeddings\">embeddings endpoint</a> in a RAG pipeline with PDF document support using <a href=\"https://docs.llamaindex.ai/en/stable/module_guides/models/embeddings/\" target=\"_blank\">LlamaIndex</a> to handle the data and retrieval. \n",
     "\n",
     "\n",
     "**Models:**\n",
-    "- **Embeddings**: Leveraging the [BAAI/bge-m3](https://platform.kluster.ai/models) model.\n",
-    "- **Language Model (LLM) for Querying**: Utilizing the [meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8](https://platform.kluster.ai/playground?model=meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8) model.\n"
+    "- **Embeddings**: Leveraging the <a href=\"https://platform.kluster.ai/models\" target=\"_blank\">BAAI/bge-m3</a> model.\n",
+    "- **Language Model (LLM) for Querying**: Utilizing the <a href=\"https://platform.kluster.ai/playground?model=meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8\" target=\"_blank\">meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8</a> model.\n"
    ]
   },
   {
@@ -16815,7 +16815,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/rag.ipynb/
     "\n",
     "It's now time to load the 115-page PDF document into memory.\n",
     "\n",
-    "This example leverages [LlamaIndex](https://docs.llamaindex.ai/en/stable/examples/data_connectors/simple_directory_reader/) `SimpleDirectoryReader` as a data connector. Pass in an input directory or a list of files, and it selects the best file reader based on the file extensions."
+    "This example leverages <a href=\"https://docs.llamaindex.ai/en/stable/examples/data_connectors/simple_directory_reader/\" target=\"_blank\">LlamaIndex</a> `SimpleDirectoryReader` as a data connector. Pass in an input directory or a list of files, and it selects the best file reader based on the file extensions."
    ]
   },
   {
