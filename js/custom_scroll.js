@@ -1,10 +1,10 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   // --- Configuration ---
   // Adjust this selector to match your theme's fixed header.
   // For Material for MkDocs, '.md-header' is usually correct.
-  const headerSelector = '.md-header';
+  const headerSelector = ".md-header";
   // Add any additional pixel offset you want below the header.
-  const additionalOffset = 16; 
+  const additionalOffset = 16;
 
   function getHeaderHeight() {
     const header = document.querySelector(headerSelector);
@@ -17,15 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (targetElement) {
       const headerHeight = getHeaderHeight();
       // Calculate element's position relative to the document top
-      const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+      const elementPosition =
+        targetElement.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = elementPosition - headerHeight - additionalOffset;
 
       const scrollOptions = {
         top: offsetPosition,
-        behavior: 'auto'
+        behavior: "auto",
       };
       if (isInitialLoad) {
-        requestAnimationFrame(() => { 
+        requestAnimationFrame(() => {
           window.scrollTo(scrollOptions);
         });
       } else {
@@ -35,11 +36,11 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // --- Handle Clicks on Anchor Links ---
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(event) {
-      const href = this.getAttribute('href');
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (event) {
+      const href = this.getAttribute("href");
       // Ensure it's a page-local fragment and the target element exists
-      if (href.length > 1 && href.startsWith('#')) {
+      if (href.length > 1 && href.startsWith("#")) {
         const targetId = href.substring(1);
         if (document.getElementById(targetId)) {
           event.preventDefault(); // Stop the default browser jump
@@ -60,11 +61,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const targetId = window.location.hash.substring(1);
     // Ensure the element exists before trying to scroll
     if (document.getElementById(targetId)) {
-        // Using requestAnimationFrame helps ensure that the layout is stable
-        // and all elements (like the header) have their final dimensions.
-        requestAnimationFrame(() => {
-            scrollToTarget(targetId, true); // Pass true for initial load handling
-        });
+      // Using requestAnimationFrame helps ensure that the layout is stable
+      // and all elements (like the header) have their final dimensions.
+      requestAnimationFrame(() => {
+        scrollToTarget(targetId, true); // Pass true for initial load handling
+      });
     }
   }
 });
