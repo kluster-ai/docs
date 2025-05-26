@@ -12,5 +12,5 @@ nav:
   - 'Effective prompt engineering': effective-prompt-engineering.ipynb
   - 'Uploading large files': 'uploads-api.ipynb'
   - 'Integrating Tools': 'integrating-tools.ipynb'
-  - 'RAG': 'rag.ipynb'
-  - 'Batch processing': 'batch.ipynb'
+  - 'Retrieval Augmented Generation': 'rag.ipynb'
+ # - 'Batch processing': 'batch.ipynb' ## Hide until is completed.
