@@ -1,0 +1,7 @@
+title: Hallucination Detection
+nav:
+  - 'Starting Guide': starting-guide.md
+  - 'Question/Answer Detection': question-answer.md
+  - 'Chat Completion Detection': chat-completion.md
+  - 'Examples': examples.md
+  - 'API Reference': api.md
