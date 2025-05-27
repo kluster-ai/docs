@@ -5,6 +5,9 @@ if [[ -z "$API_KEY" ]]; then
     echo "Error: API_KEY environment variable is not set." >&2
 fi
 
+echo -e "📤 Sending batch request to kluster.ai...
+"
+
 # Create request with specified structure
 cat << EOF > my_batch_request.jsonl
 {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}

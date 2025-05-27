@@ -5,6 +5,8 @@ if [[ -z "$API_KEY" ]]; then
     echo -e "\nError: API_KEY environment variable is not set.\n" >&2
 fi
 
+echo -e "📤 Sending a chat completion request to kluster.ai...\n"
+
 image_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Submit real-time request

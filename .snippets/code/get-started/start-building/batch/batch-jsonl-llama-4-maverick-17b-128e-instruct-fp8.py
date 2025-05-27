@@ -1,4 +1,6 @@
 # Batch completions with the Meta Llama 4 Maverick model on kluster.ai
+
+from os import environ
 import json
 import time
 from getpass import getpass
@@ -13,13 +15,15 @@ image2_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/te
 image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Get API key from user input
-api_key = getpass("Enter your kluster.ai API key: ")
+api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
     base_url="https://api.kluster.ai/v1",
     api_key=api_key,
 )
+
+print(f"📤 Sending batch request to kluster.ai...\n")
 
 # Create request with specified structure
 requests = [

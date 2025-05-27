@@ -5,6 +5,8 @@ if [[ -z "$API_KEY" ]]; then
     echo -e "\nError: API_KEY environment variable is not set.\n" >&2
 fi
 
+echo -e "📤 Sending a chat completion request to kluster.ai...\n"
+
 # Submit real-time request
 curl https://api.kluster.ai/v1/chat/completions \
     -H "Authorization: Bearer $API_KEY" \

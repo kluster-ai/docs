@@ -5,6 +5,8 @@ if [[ -z "$API_KEY" ]]; then
     echo "Error: API_KEY environment variable is not set." >&2
 fi
 
+echo -e "📤 Sending batch request to kluster.ai...\n"
+
 # Define image URLs
 # Newton's cradle
 image1_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true"
@@ -14,14 +16,11 @@ image2_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/te
 image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Create request with specified structure
-cat << 'EOF' > my_batch_request.template
-{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "MODEL_ID_PLACEHOLDER", "messages": [{"role": "user", "content": [{"type": "text", "text": "What is this?"}, {"type": "image_url", "image_url": {"url": "$image1_url"}}]}],"max_completion_tokens": 1000}}
-{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "MODEL_ID_PLACEHOLDER", "messages": [{"role": "user", "content": [{"type": "text", "text": "Extract the text, find typos if any."}, {"type": "image_url", "image_url": {"url": "$image2_url"}}]}],"max_completion_tokens": 1000}}
-{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "MODEL_ID_PLACEHOLDER", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "$image3_url"}}]}],"max_completion_tokens": 1000}}
+cat << EOF > my_batch_request.jsonl
+{{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {{"model": "{model_id}", "messages": [{{"role": "user", "content": [{{"type": "text", "text": "What is this?"}}, {{"type": "image_url", "image_url": {{"url": "$image1_url"}}}}]}}],"max_completion_tokens": 1000}}}}
+{{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {{"model": "{model_id}", "messages": [{{"role": "user", "content": [{{"type": "text", "text": "Extract the text, find typos if any."}}, {{"type": "image_url", "image_url": {{"url": "$image2_url"}}}}]}}],"max_completion_tokens": 1000}}}}
+{{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {{"model": "{model_id}", "messages": [{{"role": "user", "content": [{{"type": "text", "text": "Who can park in the area?"}}, {{"type": "image_url", "image_url": {{"url": "$image3_url"}}}}]}}],"max_completion_tokens": 1000}}}}
 EOF
-
-# Replace the model ID placeholder with actual model ID
-sed "s/MODEL_ID_PLACEHOLDER/Qwen/Qwen2.5-VL-7B-Instruct/g" my_batch_request.template > my_batch_request.jsonl
 
 # Upload batch job file
 FILE_ID=$(curl -s https://api.kluster.ai/v1/files \
@@ -66,5 +65,5 @@ OUTPUT_CONTENT=$(curl -s https://api.kluster.ai/v1/files/$kluster_OUTPUT_FILE/co
 echo -e "\nImage1 URL: $image1_url"
 echo -e "\nImage2 URL: $image2_url"
 echo -e "\nImage3 URL: $image3_url"
-echo -e "\n�� AI batch response:"
+echo -e "\n🔍 AI batch response:"
 echo "$OUTPUT_CONTENT"

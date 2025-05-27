@@ -1,10 +1,13 @@
 # Real-time completions with the DeepSeek-V3-0324 model on kluster.ai
 
+from os import environ
 from openai import OpenAI
 from getpass import getpass
 
 # Get API key from user input
-api_key = getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+
+print(f"📤 Sending a chat completion request to kluster.ai...\n")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(

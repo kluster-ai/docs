@@ -1,17 +1,21 @@
 # Batch completions with the DeepSeek-V3-0324 model on kluster.ai
+
+from os import environ
 from openai import OpenAI
 from getpass import getpass
 import json
 import time
 
 # Get API key from user input
-api_key = getpass("Enter your kluster.ai API key: ")
+api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
     base_url="https://api.kluster.ai/v1",
     api_key=api_key,
 )
+
+print(f"📤 Sending batch request to kluster.ai...\n")
 
 # Create request with specified structure
 requests = [
