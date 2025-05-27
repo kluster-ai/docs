@@ -5427,7 +5427,7 @@ import json
 import time
 
 # Get API key from user input
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
@@ -5545,7 +5545,7 @@ import json
 import time
 
 # Get API key from user input
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
@@ -5671,7 +5671,7 @@ image2_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/te
 image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Get API key from user input
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
@@ -5814,7 +5814,7 @@ import json
 import time
 
 # Get API key from user input
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
@@ -5932,7 +5932,7 @@ import json
 import time
 
 # Get API key from user input
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
@@ -6058,7 +6058,7 @@ image2_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/te
 image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Get API key from user input
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
@@ -6209,7 +6209,7 @@ image2_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/te
 image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Get API key from user input
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
@@ -6352,7 +6352,7 @@ import json
 import time
 
 # Get API key from user input
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
@@ -6478,7 +6478,7 @@ image2_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/te
 image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Get API key from user input
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
@@ -6621,7 +6621,7 @@ import json
 import time
 
 # Get API key from user input
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
@@ -6737,6 +6737,7 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 # Check if API_KEY is set and not empty
 if [[ -z "$API_KEY" ]]; then
     echo "Error: API_KEY environment variable is not set." >&2
+    exit 1
 fi
 
 echo -e "📤 Sending batch request to kluster.ai...
@@ -6803,6 +6804,7 @@ echo "$OUTPUT_CONTENT"
 # Check if API_KEY is set and not empty
 if [[ -z "$API_KEY" ]]; then
     echo "Error: API_KEY environment variable is not set." >&2
+    exit 1
 fi
 
 echo -e "📤 Sending batch request to kluster.ai...
@@ -6869,6 +6871,7 @@ echo "$OUTPUT_CONTENT"
 # Check if API_KEY is set and not empty
 if [[ -z "$API_KEY" ]]; then
     echo "Error: API_KEY environment variable is not set." >&2
+    exit 1
 fi
 
 echo -e "📤 Sending batch request to kluster.ai...\n"
@@ -6883,9 +6886,9 @@ image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/pa
 
 # Create request with specified structure
 cat << EOF > my_batch_request.jsonl
-{{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {{"model": "{model_id}", "messages": [{{"role": "user", "content": [{{"type": "text", "text": "What is this?"}}, {{"type": "image_url", "image_url": {{"url": "$image1_url"}}}}]}}],"max_completion_tokens": 1000}}}}
-{{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {{"model": "{model_id}", "messages": [{{"role": "user", "content": [{{"type": "text", "text": "Extract the text, find typos if any."}}, {{"type": "image_url", "image_url": {{"url": "$image2_url"}}}}]}}],"max_completion_tokens": 1000}}}}
-{{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {{"model": "{model_id}", "messages": [{{"role": "user", "content": [{{"type": "text", "text": "Who can park in the area?"}}, {{"type": "image_url", "image_url": {{"url": "$image3_url"}}}}]}}],"max_completion_tokens": 1000}}}}
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "google/gemma-3-27b-it", "messages": [{"role": "user", "content": [{"type": "text", "text": "What is this?"}, {"type": "image_url", "image_url": {"url": "$image1_url"}}]}],"max_completion_tokens": 1000}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "google/gemma-3-27b-it", "messages": [{"role": "user", "content": [{"type": "text", "text": "Extract the text, find typos if any."}, {"type": "image_url", "image_url": {"url": "$image2_url"}}]}],"max_completion_tokens": 1000}}
+{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "google/gemma-3-27b-it", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "$image3_url"}}]}],"max_completion_tokens": 1000}}
 EOF
 
 # Upload batch job file
@@ -6944,6 +6947,7 @@ echo "$OUTPUT_CONTENT"
 # Check if API_KEY is set and not empty
 if [[ -z "$API_KEY" ]]; then
     echo "Error: API_KEY environment variable is not set." >&2
+    exit 1
 fi
 
 echo -e "📤 Sending batch request to kluster.ai...
@@ -7010,6 +7014,7 @@ echo "$OUTPUT_CONTENT"
 # Check if API_KEY is set and not empty
 if [[ -z "$API_KEY" ]]; then
     echo "Error: API_KEY environment variable is not set." >&2
+    exit 1
 fi
 
 echo -e "📤 Sending batch request to kluster.ai...
@@ -7076,6 +7081,7 @@ echo "$OUTPUT_CONTENT"
 # Check if API_KEY is set and not empty
 if [[ -z "$API_KEY" ]]; then
     echo "Error: API_KEY environment variable is not set." >&2
+    exit 1
 fi
 
 echo -e "📤 Sending batch request to kluster.ai...\n"
@@ -7090,9 +7096,9 @@ image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/pa
 
 # Create request with specified structure
 cat << EOF > my_batch_request.jsonl
-{{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {{"model": "{model_id}", "messages": [{{"role": "user", "content": [{{"type": "text", "text": "What is this?"}}, {{"type": "image_url", "image_url": {{"url": "$image1_url"}}}}]}}],"max_completion_tokens": 1000}}}}
-{{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {{"model": "{model_id}", "messages": [{{"role": "user", "content": [{{"type": "text", "text": "Extract the text, find typos if any."}}, {{"type": "image_url", "image_url": {{"url": "$image2_url"}}}}]}}],"max_completion_tokens": 1000}}}}
-{{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {{"model": "{model_id}", "messages": [{{"role": "user", "content": [{{"type": "text", "text": "Who can park in the area?"}}, {{"type": "image_url", "image_url": {{"url": "$image3_url"}}}}]}}],"max_completion_tokens": 1000}}}}
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8", "messages": [{"role": "user", "content": [{"type": "text", "text": "What is this?"}, {"type": "image_url", "image_url": {"url": "$image1_url"}}]}],"max_completion_tokens": 1000}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8", "messages": [{"role": "user", "content": [{"type": "text", "text": "Extract the text, find typos if any."}, {"type": "image_url", "image_url": {"url": "$image2_url"}}]}],"max_completion_tokens": 1000}}
+{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "$image3_url"}}]}],"max_completion_tokens": 1000}}
 EOF
 
 # Upload batch job file
@@ -7151,6 +7157,7 @@ echo "$OUTPUT_CONTENT"
 # Check if API_KEY is set and not empty
 if [[ -z "$API_KEY" ]]; then
     echo "Error: API_KEY environment variable is not set." >&2
+    exit 1
 fi
 
 echo -e "📤 Sending batch request to kluster.ai...\n"
@@ -7165,9 +7172,9 @@ image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/pa
 
 # Create request with specified structure
 cat << EOF > my_batch_request.jsonl
-{{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {{"model": "{model_id}", "messages": [{{"role": "user", "content": [{{"type": "text", "text": "What is this?"}}, {{"type": "image_url", "image_url": {{"url": "$image1_url"}}}}]}}],"max_completion_tokens": 1000}}}}
-{{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {{"model": "{model_id}", "messages": [{{"role": "user", "content": [{{"type": "text", "text": "Extract the text, find typos if any."}}, {{"type": "image_url", "image_url": {{"url": "$image2_url"}}}}]}}],"max_completion_tokens": 1000}}}}
-{{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {{"model": "{model_id}", "messages": [{{"role": "user", "content": [{{"type": "text", "text": "Who can park in the area?"}}, {{"type": "image_url", "image_url": {{"url": "$image3_url"}}}}]}}],"max_completion_tokens": 1000}}}}
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Scout-17B-16E-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "What is this?"}, {"type": "image_url", "image_url": {"url": "$image1_url"}}]}],"max_completion_tokens": 1000}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Scout-17B-16E-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "Extract the text, find typos if any."}, {"type": "image_url", "image_url": {"url": "$image2_url"}}]}],"max_completion_tokens": 1000}}
+{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Scout-17B-16E-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "$image3_url"}}]}],"max_completion_tokens": 1000}}
 EOF
 
 # Upload batch job file
@@ -7226,6 +7233,7 @@ echo "$OUTPUT_CONTENT"
 # Check if API_KEY is set and not empty
 if [[ -z "$API_KEY" ]]; then
     echo "Error: API_KEY environment variable is not set." >&2
+    exit 1
 fi
 
 echo -e "📤 Sending batch request to kluster.ai...
@@ -7292,6 +7300,7 @@ echo "$OUTPUT_CONTENT"
 # Check if API_KEY is set and not empty
 if [[ -z "$API_KEY" ]]; then
     echo "Error: API_KEY environment variable is not set." >&2
+    exit 1
 fi
 
 echo -e "📤 Sending batch request to kluster.ai...\n"
@@ -7306,9 +7315,9 @@ image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/pa
 
 # Create request with specified structure
 cat << EOF > my_batch_request.jsonl
-{{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {{"model": "{model_id}", "messages": [{{"role": "user", "content": [{{"type": "text", "text": "What is this?"}}, {{"type": "image_url", "image_url": {{"url": "$image1_url"}}}}]}}],"max_completion_tokens": 1000}}}}
-{{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {{"model": "{model_id}", "messages": [{{"role": "user", "content": [{{"type": "text", "text": "Extract the text, find typos if any."}}, {{"type": "image_url", "image_url": {{"url": "$image2_url"}}}}]}}],"max_completion_tokens": 1000}}}}
-{{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {{"model": "{model_id}", "messages": [{{"role": "user", "content": [{{"type": "text", "text": "Who can park in the area?"}}, {{"type": "image_url", "image_url": {{"url": "$image3_url"}}}}]}}],"max_completion_tokens": 1000}}}}
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "What is this?"}, {"type": "image_url", "image_url": {"url": "$image1_url"}}]}],"max_completion_tokens": 1000}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "Extract the text, find typos if any."}, {"type": "image_url", "image_url": {"url": "$image2_url"}}]}],"max_completion_tokens": 1000}}
+{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen2.5-VL-7B-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "$image3_url"}}]}],"max_completion_tokens": 1000}}
 EOF
 
 # Upload batch job file
@@ -7367,6 +7376,7 @@ echo "$OUTPUT_CONTENT"
 # Check if API_KEY is set and not empty
 if [[ -z "$API_KEY" ]]; then
     echo "Error: API_KEY environment variable is not set." >&2
+    exit 1
 fi
 
 echo -e "📤 Sending batch request to kluster.ai...
@@ -7452,18 +7462,21 @@ The following examples generate requests and save them in a JSONL file, which is
 
     ```python
     import time
+import os
 from getpass import getpass
 
 from openai import OpenAI
 
 # Get API key from user input
-api_key = getpass("Enter your kluster.ai API key: ")
+api_key = os.environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
     base_url="https://api.kluster.ai/v1",
     api_key=api_key,
 )
+
+print(f"📤 Sending batch request to kluster.ai...\n")
 
 # Create request with specified structure
 requests = [
@@ -7522,8 +7535,6 @@ requests = [
 # Save tasks to a JSONL file (newline-delimited JSON)
 file_name = "my_batch_request.jsonl"
 with open(file_name, "w") as file:
-    for request in requests:
-        file.write(json.dumps(request) + "\n")
     ```
 
 === "CLI"
@@ -7550,7 +7561,7 @@ Use the following command examples to upload your batch job files:
 === "Python"
 
     ```python
-    batch_input_file = client.files.create(file=open(file_name, "rb"), purpose="batch")
+    file.write(json.dumps(request) + "\n")
     ```
 
 === "curl"
@@ -7589,11 +7600,12 @@ You can use the following snippets to submit your batch job:
 === "Python"
 
     ```python
-    batch_request = client.batches.create(
+    batch_input_file = client.files.create(file=open(file_name, "rb"), purpose="batch")
+
+# Submit batch job
+batch_request = client.batches.create(
     input_file_id=batch_input_file.id,
     endpoint="/v1/chat/completions",
-    completion_window="24h",
-)
     ```
 
 === "curl"
@@ -7650,7 +7662,10 @@ You can use the following snippets to monitor your batch job:
 === "Python"
 
     ```python
-    while True:
+    )
+
+# Poll the batch status until it's complete
+while True:
     batch_status = client.batches.retrieve(batch_request.id)
     print(f"Batch status: {batch_status.status}")
     print(
@@ -7659,8 +7674,6 @@ You can use the following snippets to monitor your batch job:
 
     if batch_status.status.lower() in ["completed", "failed", "cancelled"]:
         break
-
-    time.sleep(10)  # Wait for 10 seconds before checking again
     ```
 
 === "curl"
@@ -7712,7 +7725,10 @@ You can use the following snippets to retrieve the results from your batch job:
 === "Python"
 
     ```python 
-    if batch_status.status.lower() == "completed":
+    time.sleep(10)  # Wait for 10 seconds before checking again
+
+# Check if the Batch completed successfully
+if batch_status.status.lower() == "completed":
     # Retrieve the results
     result_file_id = batch_status.output_file_id
     results = client.files.content(result_file_id).content
@@ -7721,9 +7737,6 @@ You can use the following snippets to retrieve the results from your batch job:
     result_file_name = "batch_results.jsonl"
     with open(result_file_name, "wb") as file:
         file.write(results)
-    print(f"💾 Response saved to {result_file_name}")
-else:
-    print(f"Batch failed with status: {batch_status.status}")
     ```
 
 === "curl"
@@ -7740,18 +7753,21 @@ else:
         ```python
         import json
 import time
+import os
 from getpass import getpass
 
 from openai import OpenAI
 
 # Get API key from user input
-api_key = getpass("Enter your kluster.ai API key: ")
+api_key = os.environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
     base_url="https://api.kluster.ai/v1",
     api_key=api_key,
 )
+
+print(f"📤 Sending batch request to kluster.ai...\n")
 
 # Create request with specified structure
 requests = [
@@ -8058,7 +8074,7 @@ from openai import OpenAI
 from getpass import getpass
 
 # Get API key from user input
-api_key = environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 print(f"📤 Sending a chat completion request to kluster.ai...\n")
 
@@ -8098,7 +8114,7 @@ from openai import OpenAI
 from getpass import getpass
 
 # Get API key from user input
-api_key = environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 print(f"📤 Sending a chat completion request to kluster.ai...\n")
 
@@ -8140,7 +8156,7 @@ from getpass import getpass
 image_url = "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Get API key from user input
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(api_key=api_key, base_url="https://api.kluster.ai/v1")
@@ -8185,7 +8201,7 @@ from openai import OpenAI
 from getpass import getpass
 
 # Get API key from user input
-api_key = environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 print(f"📤 Sending a chat completion request to kluster.ai...\n")
 
@@ -8225,7 +8241,7 @@ from openai import OpenAI
 from getpass import getpass
 
 # Get API key from user input
-api_key = environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 print(f"📤 Sending a chat completion request to kluster.ai...\n")
 
@@ -8267,7 +8283,7 @@ from getpass import getpass
 image_url = "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Get API key from user input
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(api_key=api_key, base_url="https://api.kluster.ai/v1")
@@ -8314,7 +8330,7 @@ from getpass import getpass
 image_url = "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Get API key from user input
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(api_key=api_key, base_url="https://api.kluster.ai/v1")
@@ -8359,7 +8375,7 @@ from openai import OpenAI
 from getpass import getpass
 
 # Get API key from user input
-api_key = environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 print(f"📤 Sending a chat completion request to kluster.ai...\n")
 
@@ -8401,7 +8417,7 @@ from getpass import getpass
 image_url = "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Get API key from user input
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(api_key=api_key, base_url="https://api.kluster.ai/v1")
@@ -8446,7 +8462,7 @@ from openai import OpenAI
 from getpass import getpass
 
 # Get API key from user input
-api_key = environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 print(f"📤 Sending a chat completion request to kluster.ai...\n")
 
@@ -8798,7 +8814,7 @@ from getpass import getpass
 from openai import OpenAI
 
 # Get API key from user input
-api_key = getpass("Enter your kluster.ai API key: ")
+api_key = os.environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
@@ -8806,13 +8822,13 @@ client = OpenAI(
     base_url="https://api.kluster.ai/v1"
 )
 
+print(f"📤 Sending a chat completion request to kluster.ai...\n")
+
 # Create chat completion request
 completion = client.chat.completions.create(
     model="deepseek-ai/DeepSeek-V3-0324",
     messages=[
         {"role": "user", "content": "What is the ultimate breakfast sandwich?"}
-    ]
-)
     ```
 
 If successful, the `completion` variable contains a full response, which you'll need to analyze to extract the answer you are looking for. In terms of configuration for real-time inferences, there are several parameters that you need to tweak:
@@ -8865,7 +8881,9 @@ The following snippet demonstrates how to extract the data, log it to the consol
 === "Python"
 
     ```python
-    def log_response_to_file(response, filename="response_log.json"):
+    )
+
+def log_response_to_file(response, filename="response_log.json"):
     """Logs the full AI response to a JSON file in the same directory as the script."""
 
     # Extract model name and AI-generated text
@@ -8887,8 +8905,6 @@ The following snippet demonstrates how to extract the data, log it to the consol
     with open(file_path, "w", encoding="utf-8") as json_file:
         json.dump(response_data, json_file, ensure_ascii=False, indent=4)
         print(f"💾 Response saved to {file_path}")
-
-# Log response to file
     ```
 
 
@@ -8906,13 +8922,15 @@ from getpass import getpass
 from openai import OpenAI
 
 # Get API key from user input
-api_key = getpass("Enter your kluster.ai API key: ")
+api_key = os.environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
     api_key=api_key,
     base_url="https://api.kluster.ai/v1"
 )
+
+print(f"📤 Sending a chat completion request to kluster.ai...\n")
 
 # Create chat completion request
 completion = client.chat.completions.create(
