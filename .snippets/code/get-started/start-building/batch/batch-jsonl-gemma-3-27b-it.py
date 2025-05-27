@@ -1,25 +1,29 @@
-# Batch completions with the Gemma 3 27B model on Kluster.
-import os
+# Batch completions with the Gemma 3 27B model on kluster.ai
 import json
-import getpass
+import time
+from getpass import getpass
+
 from openai import OpenAI
 
-# 1. Initialize OpenAI client pointing to kluster.ai API
-# Get API key securely using getpass (will not be displayed or saved)
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
+# Newton's cradle
+image1_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true"
+# Text with typos
+image2_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true"
+# Parking sign
+image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
+
+# Get API key from user input
+api_key = getpass("Enter your kluster.ai API key: ")
+
+# Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
+    base_url="https://api.kluster.ai/v1",
     api_key=api_key,
-    base_url="https://api.kluster.ai/v1"
 )
 
-# 2. Set up image URL
-image_url = "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
-
-# 3. Create input file with multiple image requests (JSONL format)
-input_jsonl_path = "batch_input.jsonl"
-with open(input_jsonl_path, "w") as f:
-    # Example 1
-    f.write(json.dumps({
+# Create request with specified structure
+requests = [
+    {
         "custom_id": "request-1",
         "method": "POST",
         "url": "/v1/chat/completions",
@@ -27,19 +31,22 @@ with open(input_jsonl_path, "w") as f:
             "model": "google/gemma-3-27b-it",
             "messages": [
                 {
-                    "role": "user", 
+                    "role": "user",
                     "content": [
-                        {"type": "text", "text": "Who can park in the area?"},
-                        {"type": "image_url", "image_url": {"url": image_url}}
-                    ]
+                        {"type": "text", "text": "What is this?"},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": image1_url
+                            },
+                        },
+                    ],
                 }
             ],
-            "max_tokens": 300
-        }
-    }) + "\n")
-    
-    # Example 2
-    f.write(json.dumps({
+            "max_completion_tokens": 1000,
+        },
+    },
+    {
         "custom_id": "request-2",
         "method": "POST",
         "url": "/v1/chat/completions",
@@ -47,52 +54,88 @@ with open(input_jsonl_path, "w") as f:
             "model": "google/gemma-3-27b-it",
             "messages": [
                 {
-                    "role": "user", 
+                    "role": "user",
                     "content": [
-                        {"type": "text", "text": "What does this sign say?"},
-                        {"type": "image_url", "image_url": {"url": image_url}}
-                    ]
+                        {"type": "text", "text": "Extract the text, find typos if any."},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": image2_url
+                            },
+                        },
+                    ],
                 }
             ],
-            "max_tokens": 300
-        }
-    }) + "\n")
+            "max_completion_tokens": 1000,
+        },
+    },
+    {
+        "custom_id": "request-3",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "google/gemma-3-27b-it",
+            "messages": [
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": "Who can park in the area?"},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": image3_url
+                            },
+                        },
+                    ],
+                }
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+]
 
-# 4. Upload batch input file
-with open(input_jsonl_path, "rb") as file:
-    batch_input_file = client.files.create(
-        file=file,
-        purpose="batch"
-    )
+# Save tasks to a JSONL file (newline-delimited JSON)
+file_name = "my_batch_request.jsonl"
+with open(file_name, "w") as file:
+    for request in requests:
+        file.write(json.dumps(request) + "\n")
 
-# 5. Submit batch job
+# Upload batch job file
+batch_input_file = client.files.create(file=open(file_name, "rb"), purpose="batch")
+
+# Submit batch job
 batch_request = client.batches.create(
     input_file_id=batch_input_file.id,
     endpoint="/v1/chat/completions",
     completion_window="24h",
 )
 
-print(f"Batch job submitted with ID: {batch_request.id}")
+# Poll the batch status until it's complete
+while True:
+    batch_status = client.batches.retrieve(batch_request.id)
+    print(f"Batch status: {batch_status.status}")
+    print(
+        f"Completed tasks: {batch_status.request_counts.completed} / {batch_status.request_counts.total}"
+    )
 
-# 6. Check batch status (optional)
-batch_status = client.batches.retrieve(batch_request.id)
-print("Batch status: {}".format(batch_status.status))
+    if batch_status.status.lower() in ["completed", "failed", "cancelled"]:
+        break
 
-# 7. When completed, retrieve and process results
-# Note: In a real scenario, you would poll the status until completion
-if batch_status.status == "completed":
+    time.sleep(10)  # Wait for 10 seconds before checking again
+
+print(f"\nImage1 URL: {image1_url}")
+print(f"\nImage2 URL: {image2_url}")
+print(f"\nImage3 URL: {image3_url}")
+
+# Check if the Batch completed successfully
+if batch_status.status.lower() == "completed":
+    # Retrieve the results and log
     result_file_id = batch_status.output_file_id
-    result_content = client.files.content(result_file_id)
-    
-    print("\nBatch results:")
-    for line in result_content.iter_lines():
-        if line:
-            result = json.loads(line)
-            print(f"\nRequest ID: {result['custom_id']}")
-            if 'response' in result and 'body' in result['response']:
-                response_body = result['response']['body']
-                if 'choices' in response_body and len(response_body['choices']) > 0:
-                    print(f"Completion: {response_body['choices'][0]['message']['content']}")
-                    print(f"Finish reason: {response_body['choices'][0]['finish_reason']}")
-                if 'usage' in response_body:
-                    print(f"Total tokens: {response_body['usage']['total_tokens']}")
+    results = client.files.content(result_file_id).content
+
+    # Print response to console
+    print(f"\n🔍 AI batch response:")
+    print(results)
+else:
+    print(f"Batch failed with status: {batch_status.status}")
+    print(batch_status)

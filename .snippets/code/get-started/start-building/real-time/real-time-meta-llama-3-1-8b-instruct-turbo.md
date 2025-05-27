@@ -1,19 +1,20 @@
-# Real-time API completions with Meta Llama 3.1 8B model
+#!/bin/bash
 
-# Ensure your API key is set in your environment
-# export API_KEY="your_api_key_here"
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo -e "\nError: API_KEY environment variable is not set.\n" >&2
+fi
 
-curl -X POST \
-  https://api.kluster.ai/v1/chat/completions \
-  -H "Authorization: Bearer $API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
-    "messages": [
-      {
-        "role": "user", 
-        "content": "Write a poem about artificial intelligence."
-      }
-    ],
-    "max_tokens": 100
-  }'
+# Submit real-time request
+curl https://api.kluster.ai/v1/chat/completions \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" \
+    -d "{
+            \"model\": \"klusterai/Meta-Llama-3.1-8B-Instruct-Turbo\", 
+            \"messages\": [
+                { 
+                    \"role\": \"user\", 
+                    \"content\": \"What is the ultimate breakfast sandwich?\"
+                }
+            ]
+        }"

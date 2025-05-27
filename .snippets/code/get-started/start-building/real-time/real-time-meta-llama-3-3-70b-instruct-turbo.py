@@ -1,32 +1,31 @@
-# Real-time completions with the Meta Llama 3.3 70B model on Kluster.
-import os
-import getpass
-from openai import OpenAI
+# Real-time completions with the Meta Llama 3.3 70B model on kluster.ai
 
-# 1. Initialize OpenAI client pointing to kluster.ai API
-# Get API key securely using getpass (will not be displayed or saved)
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
+from openai import OpenAI
+from getpass import getpass
+
+# Get API key from user input
+api_key = getpass("Enter your kluster.ai API key: ")
+
+# Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
     api_key=api_key,
     base_url="https://api.kluster.ai/v1"
 )
 
-# 2. Example inputs
-messages = [
-    {"role": "user", "content": "Write a poem about artificial intelligence."}
-]
-
-# 3. Generate completion
-response = client.chat.completions.create(
+# Create chat completion request
+completion = client.chat.completions.create(
     model="klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
-    messages=messages,
-    max_tokens=100,
+    messages=[
+        {"role": "user", "content": "What is the ultimate breakfast sandwich?"}
+    ]
 )
 
-# 4. Process response
-print("Model:", response.model)
-print("Completion:", response.choices[0].message.content)
-print("Finish reason:", response.choices[0].finish_reason)
-print("Prompt tokens:", response.usage.prompt_tokens)
-print("Completion tokens:", response.usage.completion_tokens)
-print("Total tokens:", response.usage.total_tokens)
+"""Logs the full AI response to terminal."""
+
+# Extract model name and AI-generated text
+model_name = completion.model
+text_response = completion.choices[0].message.content
+
+# Print response to console
+print(f"\n🔍 AI response (model: {model_name}):")
+print(text_response)

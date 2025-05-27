@@ -1,39 +1,57 @@
-# Batch API completions with Qwen3-235B-A22B model
-
-# Ensure your API key is set in your environment
-# export API_KEY="your_api_key_here"
+#!/bin/bash
 
 # Check if API_KEY is set and not empty
 if [[ -z "$API_KEY" ]]; then
-    echo -e "
-Error: API_KEY environment variable is not set.
-" >&2
+    echo "Error: API_KEY environment variable is not set." >&2
 fi
 
-# 1. Create input file (batch_input.jsonl)
-cat > batch_input.jsonl << EOF
-{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen3-235B-A22B-FP8", "messages": [{"role": "user", "content": "What is the capital of Argentina?"}], "max_tokens": 100}}
-{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen3-235B-A22B-FP8", "messages": [{"role": "user", "content": "Write a short poem about neural networks."}], "max_tokens": 150}}
-{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen3-235B-A22B-FP8", "messages": [{"role": "user", "content": "Create a short sci-fi story about AI in 50 words."}], "max_tokens": 100}}
+# Create request with specified structure
+cat << EOF > my_batch_request.jsonl
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen3-235B-A22B-FP8", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen3-235B-A22B-FP8", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
+{"custom_id": "request-4", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen3-235B-A22B-FP8", "messages":[{"role": "system", "content": "You are a multilingual, experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"}],"max_completion_tokens":1000}}
 EOF
 
-# 2. Upload batch input file
-UPLOAD_RESPONSE=$(curl -X POST \
-  https://api.kluster.ai/v1/files \
-  -H "Authorization: Bearer $API_KEY" \
-  -F "purpose=batch" \
-  -F "file=@batch_input.jsonl")
+# Upload batch job file
+FILE_ID=$(curl -s https://api.kluster.ai/v1/files \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: multipart/form-data" \
+    -F "file=@my_batch_request.jsonl" \
+    -F "purpose=batch" | jq -r '.id')
+echo "File uploaded, file ID: $FILE_ID"
 
-# Extract file ID from upload response
-FILE_ID=$(echo $UPLOAD_RESPONSE | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4)
+# Submit batch job
+BATCH_ID=$(curl -s https://api.kluster.ai/v1/batches \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" \
+    -d '{
+        "input_file_id": "'$FILE_ID'",
+        "endpoint": "/v1/chat/completions",
+        "completion_window": "24h"
+    }' | jq -r '.id')
+echo "Batch job submitted, job ID: $BATCH_ID"
 
-# 3. Submit batch job
-curl -X POST \
-  https://api.kluster.ai/v1/batches \
-  -H "Authorization: Bearer $API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "input_file_id": "'$FILE_ID'",
-    "endpoint": "/v1/chat/completions",
-    "completion_window": "24h"
-  }'
+
+# Poll the batch status until it's completed
+STATUS="in_progress"
+while [[ "$STATUS" != "completed" ]]; do
+    echo "Waiting for batch job to complete... Status: $STATUS"
+    sleep 10 # Wait for 10 seconds before checking again
+
+    STATUS=$(curl -s https://api.kluster.ai/v1/batches/$BATCH_ID \
+        -H "Authorization: Bearer $API_KEY" \
+        -H "Content-Type: application/json" | jq -r '.status')
+done
+
+# Retrieve the batch output file
+kluster_OUTPUT_FILE=$(curl -s https://api.kluster.ai/v1/batches/$BATCH_ID \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" | jq -r '.output_file_id')
+
+# Retrieve the results
+OUTPUT_CONTENT=$(curl -s https://api.kluster.ai/v1/files/$kluster_OUTPUT_FILE/content \
+    -H "Authorization: Bearer $API_KEY")
+
+# Log results
+echo -e "\n🔍 AI batch response:"
+echo "$OUTPUT_CONTENT"

@@ -1,53 +1,38 @@
-# Real-time completions with the Meta Llama 4 Maverick model on Kluster.
-import os
-import getpass
+# Real-time completions with the Meta Llama 4 Maverick model on kluster.ai
+
 from openai import OpenAI
+from getpass import getpass
 
-# 1. Initialize OpenAI client pointing to kluster.ai API
-# Get API key securely using getpass (will not be displayed or saved)
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your Kluster API key: ")
-client = OpenAI(
-    api_key=api_key,
-    base_url="https://api.kluster.ai/v1"
-)
-
-# 2. Example inputs
-messages = [
-    {"role": "user", "content": "Write a poem about artificial intelligence."}
-]
-
-# 3. Generate completion
-response = client.chat.completions.create(
-    model="meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
-    messages=messages,
-    max_tokens=100,
-)
-
-# 4. Process response
-print("Model:", response.model)
-print("Completion:", response.choices[0].message.content)
-print("Finish reason:", response.choices[0].finish_reason)
-print("Prompt tokens:", response.usage.prompt_tokens)
-print("Completion tokens:", response.usage.completion_tokens)
-print("Total tokens:", response.usage.total_tokens)
-
-# 5. Example with image input
 image_url = "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
-vision_messages = [
-    {
-        "role": "user", 
-        "content": [
-            {"type": "text", "text": "Describe what you see in this image."},
-            {"type": "image_url", "image_url": {"url": image_url}}
-        ]
-    }
-]
+# Get API key from user input
+api_key = getpass("Enter your kluster.ai API key: ")
 
-vision_response = client.chat.completions.create(
+# Initialize OpenAI client pointing to kluster.ai API
+client = OpenAI(api_key=api_key, base_url="https://api.kluster.ai/v1")
+
+# Create chat completion request
+completion = client.chat.completions.create(
     model="meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
-    messages=vision_messages,
-    max_tokens=300,
+    messages=[
+        {
+            "role": "user",
+            "content": [
+                {"type": "text", "text": "Who can park in the area?"},
+                {"type": "image_url", "image_url": {"url": image_url}},
+            ],
+        }
+    ],
 )
 
-print("\nVision Completion:", vision_response.choices[0].message.content)
+print(f"\nImage URL: {image_url}")
+
+"""Logs the full AI response to terminal."""
+
+# Extract model name and AI-generated text
+model_name = completion.model
+text_response = completion.choices[0].message.content
+
+# Print response to console
+print(f"\n🔍 AI response (model: {model_name}):")
+print(text_response)
