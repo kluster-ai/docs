@@ -15,7 +15,7 @@ image2_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/te
 image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Get API key from user input
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(

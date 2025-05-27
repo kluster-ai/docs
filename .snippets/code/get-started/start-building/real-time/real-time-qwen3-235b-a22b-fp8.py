@@ -5,7 +5,7 @@ from openai import OpenAI
 from getpass import getpass
 
 # Get API key from user input
-api_key = environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 print(f"📤 Sending a chat completion request to kluster.ai...\n")
 

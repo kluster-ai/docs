@@ -3,6 +3,7 @@
 # Check if API_KEY is set and not empty
 if [[ -z "$API_KEY" ]]; then
     echo "Error: API_KEY environment variable is not set." >&2
+    exit 1
 fi
 
 echo -e "📤 Sending batch request to kluster.ai...\n"
@@ -17,9 +18,9 @@ image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/pa
 
 # Create request with specified structure
 cat << EOF > my_batch_request.jsonl
-{{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {{"model": "{model_id}", "messages": [{{"role": "user", "content": [{{"type": "text", "text": "What is this?"}}, {{"type": "image_url", "image_url": {{"url": "$image1_url"}}}}]}}],"max_completion_tokens": 1000}}}}
-{{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {{"model": "{model_id}", "messages": [{{"role": "user", "content": [{{"type": "text", "text": "Extract the text, find typos if any."}}, {{"type": "image_url", "image_url": {{"url": "$image2_url"}}}}]}}],"max_completion_tokens": 1000}}}}
-{{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {{"model": "{model_id}", "messages": [{{"role": "user", "content": [{{"type": "text", "text": "Who can park in the area?"}}, {{"type": "image_url", "image_url": {{"url": "$image3_url"}}}}]}}],"max_completion_tokens": 1000}}}}
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "google/gemma-3-27b-it", "messages": [{"role": "user", "content": [{"type": "text", "text": "What is this?"}, {"type": "image_url", "image_url": {"url": "$image1_url"}}]}],"max_completion_tokens": 1000}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "google/gemma-3-27b-it", "messages": [{"role": "user", "content": [{"type": "text", "text": "Extract the text, find typos if any."}, {"type": "image_url", "image_url": {"url": "$image2_url"}}]}],"max_completion_tokens": 1000}}
+{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "google/gemma-3-27b-it", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "$image3_url"}}]}],"max_completion_tokens": 1000}}
 EOF
 
 # Upload batch job file

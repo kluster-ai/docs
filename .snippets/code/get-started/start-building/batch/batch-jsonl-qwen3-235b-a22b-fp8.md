@@ -3,6 +3,7 @@
 # Check if API_KEY is set and not empty
 if [[ -z "$API_KEY" ]]; then
     echo "Error: API_KEY environment variable is not set." >&2
+    exit 1
 fi
 
 echo -e "📤 Sending batch request to kluster.ai...

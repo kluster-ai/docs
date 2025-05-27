@@ -7,7 +7,7 @@ import json
 import time
 
 # Get API key from user input
-api_key = os.environ.get("API_KEY") or getpass.getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(

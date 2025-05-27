@@ -5,13 +5,15 @@ from getpass import getpass
 from openai import OpenAI
 
 # Get API key from user input
-api_key = getpass("Enter your kluster.ai API key: ")
+api_key = os.environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
     api_key=api_key,
     base_url="https://api.kluster.ai/v1"
 )
+
+print(f"📤 Sending a chat completion request to kluster.ai...\n")
 
 # Create chat completion request
 completion = client.chat.completions.create(
