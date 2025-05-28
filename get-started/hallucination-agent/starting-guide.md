@@ -5,11 +5,11 @@ description: Learn how to detect and prevent hallucinations in your applications
 
 # Hallucination Detection Agent with kluster.ai
 
-The kluster.ai **Hallucination Detection Agent** service helps you identify when AI responses contain fabricated or inaccurate information.
+The kluster.ai **Hallucination Detection Agent** service helps to identify when AI responses contain fabricated or inaccurate information.
 
 With this specialized service, you can verify the factual reliability of AI-generated content and build more trustworthy applications.
 
-The service can evaluate the AI response based on a given context, which makes it great for RAG applications. Without context, the agent can also be used as **real-time fact checking tool**.
+The service can evaluate the AI response based on a given context, which makes it great for RAG applications. Without providing a specific context, the agent can also be used as a **real-time fact-checking tool**.
 
 ## How it works
     
@@ -17,9 +17,9 @@ The Agent evaluates AI outputs in order to identify hallucinations or incorrect 
 
 For example:
    
-`user: where is the Eiffel tower?` 
+`user: where is the Eiffel Tower?` 
 
-`assistant: the Eiffel tower is located in Rome.`
+`assistant: the Eiffel Tower is located in Rome.`
 
 ```json
 {
@@ -34,9 +34,9 @@ For example:
 }
 ```
        
-- `is_hallucination=true/false` - indicates whether the response contains hallucinated content.
-- `explanation` - provides detailed reasoning for the determination.
-- `search_results` (optional) - shows the reference data used for factchecking.
+- **is_hallucination=true/false** - indicates whether the response contains hallucinated content.
+- **explanation** - provides detailed reasoning for the determination.
+- **search_results** - shows the reference data used for factchecking (when applicable).
 
 ## What to know
 
@@ -54,22 +54,11 @@ The service offers flexible options for verification supporting both **question-
 
 The hallucination detection service is ideal for scenarios where you need:
 
-- **Content verification** - validate AI-generated content against trusted source materials
-- **Factual consistency** - ensure responses are grounded in provided context
-- **Risk mitigation** - prevent misleading or fabricated information in sensitive applications
-- **Quality assurance** - implement automated checks for AI response accuracy
-- **Educational tools** - develop learning applications that provide factually correct information
-
-## Benefits of hallucination detection
-
-Detecting and preventing hallucinations delivers several key advantages:
-
-- **Enhanced reliability** - build AI systems users can trust for critical tasks
-- **Reduced misinformation** - prevent the spread of incorrect or fabricated information
-- **Quality control** - implement automated verification in your AI pipeline
-- **Transparent reasoning** - understand why content is flagged as hallucinated
-- **Contextual awareness** - ensure AI responses remain grounded in provided facts
-
+- **Model evaluation** - easily integrate our agent to compare models output quality.
+- **RAG applications** - verify that generated responses accurately reflect the provided reference documents rather than introducing fabricated information.
+- **Internet-sourced fact-checking** - validate claims against reliable online sources with transparent citation of evidence.
+- **Content moderation** - automatically flag potentially misleading information before it reaches end users.
+- **Regulatory compliance** - ensure AI-generated content meets accuracy requirements.
 
 ## Available detection methods
 

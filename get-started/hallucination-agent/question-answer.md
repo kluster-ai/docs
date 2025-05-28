@@ -22,7 +22,7 @@ The service evaluates the truthfulness of an answer to a question by:
 1. Analyzing the original question or prompt.
 2. Examining the provided answer.
 3. Determining if the answer contains hallucinated or unsupported information.
-4. Providing a detailed explanation of the reasoning behind the determination as well as the search results used for fact checking.
+4. Providing a detailed explanation of the reasoning behind the determination as well as the search results used for fact-checking.
 
 ### Parameters
 
@@ -198,7 +198,7 @@ This example checks whether an answer is correct based on the provided context.
 
 1. **Include relevant context** - When validating against specific information, provide comprehensive context.
 2. **Use domain-specific context** - Include authoritative references for specialized knowledge domains.
-3. **Consider fact checking only** - For common facts, the service can verify against general knowledge.
+3. **Consider fact-checking only** - For common facts, the service can verify against general knowledge.
 5. **Review explanations** - The detailed explanations provide valuable insights into the reasoning process.
 
 ## Next steps

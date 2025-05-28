@@ -1,6 +1,6 @@
 ---
 title: Chat Completion Hallucination Detection
-description: Learn how to use the kluster.ai Hallucination Detection API to validate responses in full chat conversations.
+description: Learn how to use the kluster.ai Hallucination Detection Agent to validate responses in full chat conversations.
 ---
 
 # Chat Completion
@@ -21,14 +21,14 @@ The service evaluates the truthfulness of responses within a conversation by:
 1. Analyzing the entire conversation history, including system instructions.
 2. Examining the assistant's responses within context.
 3. Determining if the responses contain hallucinated or unsupported information.
-4. Providing a detailed explanation of the reasoning behind the determination as well as the search results used for fact checking.
+4. Providing a detailed explanation of the reasoning behind the determination and the search results used for fact-checking.
 
 ## Usage modes
 
 The agent operates in two distinct modes depending on whether you provide context with your request:
 
-- **Dedicated Endpoint** - no need to specify a model, via API.
-- **OpenAI SDK** - define the Hallucination Detection Agent and use the SDK as normal.
+- **Dedicated Endpoint** - use the API directly without specifying a model.
+- **OpenAI SDK** - select the hallucination-detection model and use the SDK in a familiar way.
 
 ### Dedicated endpoint
 
@@ -52,15 +52,15 @@ By using the `/v1/judges/detect-hallucination` endpoint to check whether an assi
     "messages": [
       {
         "role": "system",
-        "content": "You are smart assistant which answer questions with full honestly and with scientific accuracy"
+        "content": "You are a smart assistant that answers questions with full honesty and scientific accuracy"
       },
       {
         "role": "user",
-        "content": "Are ghosts real??"
+        "content": "Are ghosts real?"
       },
       {
         "role": "assistant",
-        "content": "Yes. There is recent scientific study which confirms this"
+        "content": "Yes. There is a recent scientific study that confirms this
       }
     ],
     "max_tokens": 3600,
@@ -109,7 +109,7 @@ This example shows how to use the agent with the `https://api.kluster.ai/v1` end
     ]
     )
 
-    #Extract the hallucination detection response
+    # Extract the hallucination detection response
     text_response = completion.choices[0].message.content  
 
     # Print response to console
