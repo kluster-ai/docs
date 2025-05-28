@@ -8,7 +8,8 @@ description: Learn how to spin up and call private model deployments on kluster.
 Dedicated deployments let you run a private instance of any [Hugging Face text model](https://huggingface.co/models){target=\_blank} on hardware reserved just for you. Enjoy full control, predictable per‑minute billing, and zero per‑token costs.
 
 This page covers how to create, use, and stop your dedicated deployments.
-## How to create a deployment
+
+## Create a deployment
 
 Ensure you're logged in to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank}, then navigate to [Dedicated deployments](https://platform.kluster.ai/dedicated-deployments){target=\_blank} page, then press **Launch Deployment**.
 
