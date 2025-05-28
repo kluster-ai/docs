@@ -1,6 +1,6 @@
 ---
 title: Launch dedicated endpoints
-description: Learn how to spin up and call private model deployments on kluster.ai with predictable per‑minute pricing.
+description: Learn how to spin up and call private model deployments on kluster.ai with predictable per hour pricing.
 ---
 
 # Dedicated deployments
@@ -13,7 +13,7 @@ Ensure you're logged in to the kluster platform, then navigate to [Dedicated dep
 
 ![Launch deployment](/images/get-started/dedicated-endpoints/dedicated-1.webp)
 
-Then, complete in the following fields to configure your deployment:
+Then, complete the following fields to configure your deployment:
 
 1. **Deployment Name**: Enter a clear Deployment Name (e.g., `mydedicated`) so you can spot it later in the console.
 2. **Model selection**: Paste the Hugging Face model ID or URL (e.g., `deepseek-ai/DeepSeek-R1`). If the model is private, provide a Hugging Face access token.
@@ -60,6 +60,6 @@ curl https://api.kluster.ai/v1/chat/completions \
 
 ## Manage runtime & cost
 
-Click **Stop** next to your deployment in [Dedicated deployments](https://platform.kluster.ai/dedicated-deployments){target=\_blank} to shut your VM down immediately. Billing ends the moment it powers off. Otherwise, an auto‑shutdown timer kicks in after your specified auto-shutdown period (between 15 minutes to 12 hours of inactivity) depending on the period you chose when spinning up the instance. 
+Click **Stop** next to your deployment in [Dedicated deployments](https://platform.kluster.ai/dedicated-deployments){target=\_blank} to shut your VM down immediately. Billing ends the moment it powers off. Otherwise, an auto‑shutdown timer kicks in after your specified auto-shutdown period (between 15 minutes to 12 hours of inactivity), depending on the period you chose when spinning up the instance. 
 
-Questions? Email [support@kluster.ai](mailto:support@kluster.ai) and we’ll be happy to help!
+Questions? Email [support@kluster.ai](mailto:support@kluster.ai), and we’ll be happy to help!
