@@ -9,7 +9,7 @@ The Chat Completion method allows you to validate responses in full conversation
 
 ## Prerequisites
 
-Before getting started with hallucination detection, ensure you have the following:
+Before getting started with hallucination detection, ensure the following requirements are met:
 
 - **kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you do not have one
 - **kluster.ai API key** - after signing in, go to the [API Keys](https://platform.kluster.ai/apikeys){target=_blank} section and create a new key. For detailed instructions, see the [Get an API key](https://docs.kluster.ai/get-started/get-api-key/){target=_blank} guide
@@ -23,7 +23,12 @@ The service evaluates the truthfulness of responses within a conversation by:
 3. Determining if the responses contain hallucinated or unsupported information.
 4. Providing a detailed explanation of the reasoning behind the determination as well as the search results used for fact checking.
 
-There's two endpoints available:
+## Usage modes
+
+The agent operates in two distinct modes depending on whether you provide context with your request:
+
+- **Dedicated Endpoint** - no need to specify a model, via API.
+- **OpenAI SDK** - define the Hallucination Detection Agent and use the SDK as normal.
 
 ### Dedicated endpoint
 
@@ -66,9 +71,9 @@ By using the `/v1/judges/detect-hallucination` endpoint to check whether an assi
 
     ```
 
-## Standard chat completions endpoint
+### OpenAI client
 
-This example shows how to use the standard `/v1/chat/completions` endpoint with the specialized `klusterai/hallucination-detection` model to check for hallucinations.
+This example shows how to use the agent with the `https://api.kluster.ai/v1` endpoint with the specialized `klusterai/hallucination-detection` model.
 
 ??? example "Python"
 
@@ -104,11 +109,10 @@ This example shows how to use the standard `/v1/chat/completions` endpoint with 
     ]
     )
 
-    #Extract response
+    #Extract the hallucination detection response
     text_response = completion.choices[0].message.content  
 
     # Print response to console
-    print(f"\n🔍 AI response (model: {model_name}):")
     print(text_response)
     
     ```

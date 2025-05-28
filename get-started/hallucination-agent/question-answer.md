@@ -1,5 +1,5 @@
 ---
-title: Question/Answer Hallucination Detection
+title: Question - answer 
 description: Learn how to use the kluster.ai Hallucination Detection API to validate the truthfulness of answers to questions.
 ---
 
@@ -48,10 +48,16 @@ The API returns a JSON object with the following structure:
     "search_results": []  // Only included if return_search_results is true
 }
 ```
+## Usage modes
 
-## Example 1: Basic verification
+The agent operates in two distinct modes depending on whether you provide context with your request:
 
-This example checks whether an answer about contains hallucinated information. As no context has been provided it will be fact checked to identify hallucination.
+- **Fact-checking mode** - when no context is provided, the agent verifies answers against general knowledge and external sources.
+- **Context validation mode** - when context is provided, the agent only validates answers against the specified context.
+
+### Fact-checking mode
+
+This example checks whether an answer contains hallucinated information. As no context is provided, the answer will be fact-checked against general knowledge to identify hallucinations.
 
 ??? example "Python"
 
@@ -114,12 +120,12 @@ This example checks whether an answer about contains hallucinated information. A
     }'
     ```
 
-## Use context
+### Context validation mode
 
-When declaring the property `context`the agent will not fact check the answer. It only focus on wheter the answer complies with provided `context`.
+When providing the `context` parameter, the agent will not perform external fact-checking. Instead, it focuses on whether the answer complies with the provided context.
 
 !!! tip "RAG applications"
-    Ensure the LLM's responses are accuarte by using the Hallucination Detection Agent in your Retreival Augmented Generation workflows. [TODO: SEE TUTORIAL HERE]
+    Ensure the LLM's responses are accurate by using the Hallucination Detection Agent in your Retrieval Augmented Generation workflows.
 
 
 This example checks whether an answer is correct based on the provided context.
@@ -190,11 +196,10 @@ This example checks whether an answer is correct based on the provided context.
 
 ## Best practices
 
-1. **Provide specific questions** - Clearly defined questions yield more accurate hallucination detection.
-2. **Include relevant context** - When validating against specific information, provide comprehensive.context.
-3. **Use domain-specific context** - Include authoritative references for specialized knowledge domains.
-4. **Consider general knowledge** - For common facts, the service can verify against general knowledge.
-5. **Review explanations** - The detailed explanations provide valuable insights into the reasoning.process.
+1. **Include relevant context** - When validating against specific information, provide comprehensive context.
+2. **Use domain-specific context** - Include authoritative references for specialized knowledge domains.
+3. **Consider fact checking only** - For common facts, the service can verify against general knowledge.
+5. **Review explanations** - The detailed explanations provide valuable insights into the reasoning process.
 
 ## Next steps
 

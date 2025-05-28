@@ -1,5 +1,5 @@
 ---
-title: Hallucination Detection with kluster.ai
+title: Hallucination Detection Agent with kluster.ai
 description: Learn how to detect and prevent hallucinations in your applications using kluster.ai's specialized Hallucination Detection Agent.
 ---
 
@@ -89,7 +89,7 @@ kluster.ai offers two ways to detect hallucinations, each designed for different
 
     ---
 
-    Validate responses in full conversation histories using the same format as the chat completions API. Best for detecting hallucinations within context.
+    Validate responses in full conversation histories using the same format as the chat completions API.
 
     [:octicons-arrow-right-24: Visit the guide](/get-started/hallucination-agent/chat-completion/){target=_self}
 
