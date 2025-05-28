@@ -4,5 +4,6 @@ nav:
   - 'Get an API key': get-api-key.md
   - 'Models': models.md
   - start-building
+  - 'Dedicated endpoints': dedicated-endpoints.md
   - 'OpenAI compatibility': openai-compatibility.md
   - 'Integrations': integrations
