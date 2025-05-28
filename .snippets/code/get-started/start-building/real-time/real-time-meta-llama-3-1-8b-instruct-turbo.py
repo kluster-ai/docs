@@ -1,4 +1,4 @@
-# Real-time completions with the Mistral NeMo model on kluster.ai
+# Real-time completions with the Meta Llama 3.1 8B model on kluster.ai
 
 from os import environ
 from openai import OpenAI
@@ -17,7 +17,7 @@ client = OpenAI(
 
 # Create chat completion request
 completion = client.chat.completions.create(
-    model="mistralai/Mistral-Nemo-Instruct-2407",
+    model="klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
     messages=[
         {"role": "user", "content": "What is the ultimate breakfast sandwich?"}
     ]

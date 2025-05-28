@@ -6,14 +6,21 @@ if [[ -z "$API_KEY" ]]; then
     exit 1
 fi
 
-echo -e "📤 Sending batch request to kluster.ai...
-"
+echo -e "📤 Sending batch request to kluster.ai...\n"
+
+# Define image URLs
+# Newton's cradle
+image1_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true"
+# Text with typos
+image2_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true"
+# Parking sign
+image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Create request with specified structure
 cat << EOF > my_batch_request.jsonl
-{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Mistral-Nemo-Instruct-2407", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
-{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Mistral-Nemo-Instruct-2407", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
-{"custom_id": "request-4", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Mistral-Nemo-Instruct-2407", "messages":[{"role": "system", "content": "You are a multilingual, experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"}],"max_completion_tokens":1000}}
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Scout-17B-16E-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "What is this?"}, {"type": "image_url", "image_url": {"url": "$image1_url"}}]}],"max_completion_tokens": 1000}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Scout-17B-16E-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "Extract the text, find typos if any."}, {"type": "image_url", "image_url": {"url": "$image2_url"}}]}],"max_completion_tokens": 1000}}
+{"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Scout-17B-16E-Instruct", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "$image3_url"}}]}],"max_completion_tokens": 1000}}
 EOF
 
 # Upload batch job file
@@ -34,7 +41,6 @@ BATCH_ID=$(curl -s https://api.kluster.ai/v1/batches \
         "completion_window": "24h"
     }' | jq -r '.id')
 echo "Batch job submitted, job ID: $BATCH_ID"
-
 
 # Poll the batch status until it's completed
 STATUS="in_progress"
@@ -57,5 +63,8 @@ OUTPUT_CONTENT=$(curl -s https://api.kluster.ai/v1/files/$kluster_OUTPUT_FILE/co
     -H "Authorization: Bearer $API_KEY")
 
 # Log results
+echo -e "\nImage1 URL: $image1_url"
+echo -e "\nImage2 URL: $image2_url"
+echo -e "\nImage3 URL: $image3_url"
 echo -e "\n🔍 AI batch response:"
 echo "$OUTPUT_CONTENT"
