@@ -2973,6 +2973,8 @@ Then, complete the following fields to configure your deployment:
 
 After waiting 10-20 minutes for your instance to spin up, you can call it by using the endpoint ID as the model name when making a request. If you're unsure of your endpoint ID, look for it in the [Dedicated deployments page](https://platform.kluster.ai/dedicated-deployments){target=\_blank}.
 
+![Copy endpoint ID](/images/get-started/dedicated-endpoints/dedicated-3.webp)
+
 === "Python"
 
     ```python
@@ -3006,6 +3008,8 @@ After waiting 10-20 minutes for your instance to spin up, you can call it by usi
 ## Stop your deployment
 
 Click **Stop** next to your deployment in [Dedicated deployments](https://platform.kluster.ai/dedicated-deployments){target=\_blank} to shut your VM down immediately. Billing ends the moment it powers off. Otherwise, an auto‑shutdown timer kicks in after your specified auto-shutdown period (between 15 minutes to 12 hours of inactivity), depending on the period you chose when spinning up the instance. 
+
+![Stop deployment](/images/get-started/dedicated-endpoints/dedicated-4.webp)
 
 Questions? Email [support@kluster.ai](mailto:support@kluster.ai), and we’ll be happy to help!
 --- END CONTENT ---
