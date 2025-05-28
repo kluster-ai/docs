@@ -9,7 +9,7 @@ Dedicated deployments let you run a private instance of any [Hugging Face text m
 
 ## How to create a deployment
 
-Ensure you're logged in to the kluster platform, then navigate to [Dedicated deployments](https://platform.kluster.ai/dedicated-deployments){target=\_blank} page, then press **Launch Deployment**.
+Ensure you're logged in to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank}, then navigate to [Dedicated deployments](https://platform.kluster.ai/dedicated-deployments){target=\_blank} page, then press **Launch Deployment**.
 
 ![Launch deployment](/images/get-started/dedicated-endpoints/dedicated-1.webp)
 
