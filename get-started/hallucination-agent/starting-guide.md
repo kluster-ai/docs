@@ -1,41 +1,54 @@
 ---
 title: Hallucination Detection with kluster.ai
-description: Learn how to detect and prevent AI hallucinations in your applications using kluster.ai's specialized Hallucination Agent.
+description: Learn how to detect and prevent hallucinations in your applications using kluster.ai's specialized Hallucination Detection Agent.
 ---
 
-# Hallucination Agent with kluster.ai
+# Hallucination Detection Agent with kluster.ai
 
-The kluster.ai Hallucination Agent service helps you identify when AI responses contain fabricated or inaccurate information.
+The kluster.ai **Hallucination Detection Agent** service helps you identify when AI responses contain fabricated or inaccurate information.
 
 With this specialized service, you can verify the factual reliability of AI-generated content and build more trustworthy applications.
 
-The service can evaluate the AI response based on a given context which makes it great for RAG applications but can also be used as fact checking withouth providing any context.
+The service can evaluate the AI response based on a given context, which makes it great for RAG applications. Without context, the agent can also be used as **real-time fact checking tool**.
+
+## How it works
+    
+The Agent evaluates AI outputs in order to identify hallucinations or incorrect facts.
+
+For example:
+   
+`user: where is the Eiffel tower?` 
+
+`assistant: the Eiffel tower is located in Rome.`
 
 ```json
 {
-    "is_hallucination": boolean,
+    "is_hallucination": true,
     "usage": {
-        "completion_tokens": number,
-        "prompt_tokens": number,
-        "total_tokens": number
+        "completion_tokens": 154,
+        "prompt_tokens": 1100,
+        "total_tokens": 1254
     },
-    "explanation": "string",
-    "search_results": []  // Only included if return_search_results is true
+    "explanation": "The response provides a wrong location for the Eiffel Tower.\nThe Eiffel Tower is actually located in Paris, France, which is a well-known fact.\nThe response given is factually incorrect as Rome is the capital of Italy, not the location of the Eiffel Tower.",
+    "search_results": [] // Optional
 }
 ```
+       
+- `is_hallucination=true/false` - indicates whether the response contains hallucinated content.
+- `explanation` - provides detailed reasoning for the determination.
+- `search_results` (optional) - shows the reference data used for factchecking.
 
 ## What to know
 
-AI hallucinations occur when models generate information that appears plausible but is factually incorrect or unsupported by the provided context. The kluster.ai Hallucination Agent  evaluates AI responses to determine if they contain hallucinated content, providing detailed explanations of its reasoning. The service supports both question-answer pairs and full conversation histories, giving you flexible options for verification.
+!!! question "What's a Hallucination?"
+    Hallucinations occur when models generate information that appears plausible but is factually incorrect or unsupported by the provided context. 
 
-This process allows you to:
+The kluster.ai **Hallucination Detection Agent** evaluates AI responses to determine if they contain hallucinated content, providing detailed explanations of its reasoning. 
 
-- Detect when AI responses deviate from provided facts.
-- Understand why a response is considered hallucinated or factual.
-- Build more reliable AI systems with built-in fact-checking.
-- Prevent the spread of misinformation in AI-powered applications.
+The service offers flexible options for verification supporting both **question-answer** format and **chat completions** where the whole chat history is analyzed by the agent.
 
-Hallucination detection is particularly valuable when accuracy is critical, such as in educational tools, healthcare applications, legal assistants, or any system where factual correctness matters.
+!!! tip "Hallucinations can be problematic"
+    Hallucination detection is particularly valuable when accuracy is critical, such as in educational tools, healthcare applications, legal assistants, or any system where factual correctness matters.
 
 ## When to use hallucination detection
 
@@ -57,11 +70,6 @@ Detecting and preventing hallucinations delivers several key advantages:
 - **Transparent reasoning** - understand why content is flagged as hallucinated
 - **Contextual awareness** - ensure AI responses remain grounded in provided facts
 
-## How it works
-
-The kluster.ai hallucination detection service evaluates AI outputs using a specialized judge model.
-
-It returns `is_hallucination=true/false`, `explanation` with the reasoning and optionally can return the `serach_results`(optional) used.
 
 ## Available detection methods
 

@@ -1,7 +1,6 @@
-title: Hallucination Detection
+title: Hallucination Detection Agent
 nav:
-  - 'Starting Guide': starting-guide.md
-  - 'Question/Answer Detection': question-answer.md
-  - 'Chat Completion Detection': chat-completion.md
-  - 'Examples': examples.md
-  - 'API Reference': api.md
+  - 'Starting guide': starting-guide.md
+  - 'Question - answer': question-answer.md
+  - 'Chat completion': chat-completion.md
+

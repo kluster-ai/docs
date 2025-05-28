@@ -3,36 +3,36 @@ title: Question/Answer Hallucination Detection
 description: Learn how to use the kluster.ai Hallucination Detection API to validate the truthfulness of answers to questions.
 ---
 
-# Question/Answer Hallucination Detection
+# Question/Answer
 
-The Question/Answer hallucination detection endpoint allows you to validate whether an answer to a specific question contains hallucinated information. This approach is ideal for fact-checking individual responses against provided context or general knowledge.
+The Question/Answer method allows you to validate whether an answer to a specific question contains hallucinated information. This approach is ideal for fact-checking individual responses against provided context or general knowledge.
+
+## Prerequisites
+
+Before getting started with fine-tuning, ensure you have the following:
+
+- **kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you do not have one
+- **kluster.ai API key** - after signing in, go to the [API Keys](https://platform.kluster.ai/apikeys){target=_blank} section and create a new key. For detailed instructions, see the [Get an API key](https://docs.kluster.ai/get-started/get-api-key/){target=_blank} guide
+
 
 ## How it works
 
 The service evaluates the truthfulness of an answer to a question by:
 
-1. Analyzing the original question or prompt
-2. Examining the provided answer
-3. Comparing the answer against the provided context (if supplied)
-4. Determining if the answer contains hallucinated or unsupported information
-5. Providing a detailed explanation of the reasoning behind the determination
+1. Analyzing the original question or prompt.
+2. Examining the provided answer.
+3. Determining if the answer contains hallucinated or unsupported information.
+4. Providing a detailed explanation of the reasoning behind the determination as well as the search results used for fact checking.
 
-## API endpoint
-
-```
-https://api.kluster.ai/v1/judges/detect-hallucination
-```
-
-## Request parameters
+### Parameters
 
 | Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
-| `prompt` | string | Yes | The question asked or instruction given |
-| `output` | string | Yes | The answer to verify for hallucinations |
-| `context` | string | No | Optional reference material to validate against |
-| `return_search_results` | boolean | No | Whether to include search results (default: false) |
+| :---: | :---: | :---: | :---: |
+| `prompt` | string | Yes | The question asked or instruction given. |
+| `output` | string | Yes | The answer to verify for hallucinations. |
+| `context` | string | No | Optional reference material to validate against. |
+| `return_search_results` | boolean | No | Whether to include search results (default: false). |
 
-## Response format
 
 The API returns a JSON object with the following structure:
 
@@ -51,143 +51,150 @@ The API returns a JSON object with the following structure:
 
 ## Example 1: Basic verification
 
-This example checks whether an answer about the Earth's shape contains hallucinated information.
+This example checks whether an answer about contains hallucinated information. As no context has been provided it will be fact checked to identify hallucination.
 
-### Request
+??? example "Python"
 
-```bash
-curl --location 'https://api.kluster.ai/v1/judges/detect-hallucination' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer YOUR_API_KEY' \
---data '{
-    "prompt": "Is earth flat?",
-    "output": "Yes, my friend",
-    "context": "Scientific discussion",
-    "return_search_results": false
-}'
-```
+    ```python
+    import requests
+    from getpass import getpass
 
-### Response
+    # Get API key from user input
+    api_key = getpass("Enter your kluster.ai API key: ")
 
-```json
-{
-    "is_hallucination": true,
-    "usage": {
-        "completion_tokens": 165,
-        "prompt_tokens": 1034,
-        "total_tokens": 1199
-    },
-    "explanation": "The question asks if the Earth is flat. The provided answer 'Yes, my friend' affirms that the Earth is flat. However, this contradicts well-established scientific knowledge. The Earth has been proven to be approximately spherical through multiple lines of evidence including satellite imagery, circumnavigation, observation of ships disappearing hull-first over the horizon, and the curved shadow of the Earth during lunar eclipses. The answer provided is scientifically inaccurate and constitutes a hallucination."
-}
-```
-
-## Example 2: Verifying against specific context
-
-This example checks whether an answer about the Eiffel Tower's location is supported by the provided context.
-
-### Request
-
-```bash
-curl --location 'https://api.kluster.ai/v1/judges/detect-hallucination' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer YOUR_API_KEY' \
---data '{
-    "prompt": "the eiffel tower is in paris?",
-    "output": "yes, paris",
-    "context": "News Bulletin: Paris is struggling with a massive fire since 7am CET time",
-    "return_search_results": true
-}'
-```
-
-### Response
-
-```json
-{
-    "is_hallucination": false,
-    "usage": {
-        "completion_tokens": 173,
-        "prompt_tokens": 1122,
-        "total_tokens": 1295
-    },
-    "explanation": "The question asks if the Eiffel Tower is in Paris.\nThe provided document does not mention the Eiffel Tower or its location.\nThe answer 'yes, paris' confirms the Eiffel Tower is in Paris but does not provide any factual basis or reference from the document.\nThe general knowledge that the Eiffel Tower is in Paris is correct, but the answer does not use information from the provided document.\nThe response does not introduce false information, but it also does not use the provided document to support the claim.",
-    "search_results": []
-}
-```
-
-## Python implementation
-
-```python
-import requests
-import json
-
-def check_hallucination(question, answer, context=None, return_search_results=False):
-    """
-    Verify if an answer to a question contains hallucinated information.
-    
-    Args:
-        question: The question or prompt.
-        answer: The answer to verify.
-        context: Optional reference material for verification.
-        return_search_results: Whether to include search results in the response.
-        
-    Returns:
-        Dictionary with verification results.
-    """
-    API_KEY = "YOUR_API_KEY"
-    API_URL = "https://api.kluster.ai/v1/judges/detect-hallucination"
-    
+    # Set up request data
+    url = "https://api.kluster.ai/v1/judges/detect-hallucination"
     headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {API_KEY}"
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json"
     }
-    
-    data = {
-        "prompt": question,
-        "output": answer
+    payload = {
+        "prompt": "Is earth flat?",
+        "output": "Yes, my friend",
+        "return_search_results": False #Optional
     }
-    
-    # Add optional parameters if provided
-    if context:
-        data["context"] = context
-        
-    if return_search_results:
-        data["return_search_results"] = return_search_results
-    
-    try:
-        response = requests.post(API_URL, headers=headers, data=json.dumps(data))
-        result = response.json()
-        return result
-    except Exception as e:
-        return {
-            "error": f"Verification failed: {str(e)}",
-            "is_hallucination": None
-        }
 
-# Example usage
-result = check_hallucination(
-    question="Is Mount Everest the tallest mountain in the world?",
-    answer="Yes, Mount Everest is the tallest mountain in the world, with a height of 8,849 meters above sea level.",
-    context="Mount Everest, located in the Mahalangur Himal sub-range of the Himalayas, is Earth's highest mountain above sea level, with an elevation of 8,848.86 meters (29,031.7 ft)."
-)
+    # Send the request to the hallucination detection endpoint
+    response = requests.post(url, headers=headers, json=payload)
 
-if result.get("is_hallucination") is not None:
-    if result["is_hallucination"]:
-        print("⚠️ Hallucination detected!")
-        print(f"Explanation: {result['explanation']}")
-    else:
-        print("✅ Answer is factually supported.")
-        print(f"Explanation: {result['explanation']}")
-else:
-    print(f"Error: {result.get('error')}")
-```
+    # Convert the response to JSON
+    result = response.json()
+
+    # Extract key information
+    is_hallucination = result.get("is_hallucination")
+    explanation = result.get("explanation")
+
+    # Print full response
+    print(f"🔗 API Response: {result}")
+
+    # Print whether hallucination was detected
+    print(f"{'HALLUCINATION DETECTED' if is_hallucination else 'NO HALLUCINATION DETECTED'}")
+
+    # Print the explanation 
+    print(f"\nExplanation: {explanation}")
+    ```
+??? example "CLI"
+
+    ```bash
+    #!/bin/bash
+
+    # Check if API_KEY is set and not empty
+    if [[ -z "$API_KEY" ]]; then
+        echo -e "\nError: API_KEY environment variable is not set.\n" >&2
+    fi
+
+    # Submit hallucination detection request
+    curl --location 'https://api.kluster.ai/v1/judges/detect-hallucination' \
+    --header "Authorization: Bearer $API_KEY" \
+    --header "Content-Type: application/json" \
+    --data '{
+        "prompt": "Is earth flat?",
+        "output": "Yes, my friend",
+        "return_search_results": false 
+    }'
+    ```
+
+## Use context
+
+When declaring the property `context`the agent will not fact check the answer. It only focus on wheter the answer complies with provided `context`.
+
+!!! tip "RAG applications"
+    Ensure the LLM's responses are accuarte by using the Hallucination Detection Agent in your Retreival Augmented Generation workflows. [TODO: SEE TUTORIAL HERE]
+
+
+This example checks whether an answer is correct based on the provided context.
+
+??? example "Python"
+
+    ```python
+    import requests
+    from getpass import getpass
+
+    # Get API key from user input
+    api_key = getpass("Enter your kluster.ai API key: ")
+
+    # Set up request data
+    url = "https://api.kluster.ai/v1/judges/detect-hallucination"
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json"
+    }
+    payload = {
+        "prompt": "What's the invoice date?",
+        "output": "The Invoice date is: May 22, 2025 ",
+        "context": "InvID:INV7701B Co:OptiTech Client:Acme Amt:7116GBP Date:22May25 Due:21Jun25 Terms:N30 Ref:PO451C",
+        "return_search_results": False
+    }
+
+    # Send the request to the hallucination detection endpoint
+    response = requests.post(url, headers=headers, json=payload)
+
+    # Convert the response to JSON
+    result = response.json()
+
+    # Extract key information
+    is_hallucination = result.get("is_hallucination")
+    explanation = result.get("explanation")
+
+    # Print full response
+    print(f"🔗 API Response: {result}")
+
+    # Print whether hallucination was detected
+    print(f"{'HALLUCINATION DETECTED' if is_hallucination else 'NO HALLUCINATION DETECTED'}")
+
+    # Print the explanation 
+    print(f"\nExplanation: {explanation}")
+    ```
+
+??? example "CLI"
+
+    ```bash
+    #!/bin/bash
+
+    # Check if API_KEY is set and not empty
+    if [[ -z "$API_KEY" ]]; then
+        echo -e "\nError: API_KEY environment variable is not set.\n" >&2
+    fi
+
+    # Submit hallucination detection request
+    curl --location 'https://api.kluster.ai/v1/judges/detect-hallucination' \
+    --header "Authorization: Bearer $API_KEY" \
+    --header "Content-Type: application/json" \
+    --data '{
+        "prompt": "What's the invoice date?",
+        "output": "The Invoice date is: May 22, 2025 ",
+        "context": "InvID:INV7701B Co:OptiTech Client:Acme Amt:7116GBP Date:22May25 Due:21Jun2 Terms:N30 Ref:PO451C",
+        "return_search_results": true
+    }'
+    ```
 
 ## Best practices
 
-1. **Provide specific questions** - Clearly defined questions yield more accurate hallucination detection
-2. **Include relevant context** - When validating against specific information, provide comprehensive context
-3. **Use domain-specific context** - Include authoritative references for specialized knowledge domains
-4. **Consider general knowledge** - For common facts, the service can verify against general knowledge
-5. **Review explanations** - The detailed explanations provide valuable insights into the reasoning process
+1. **Provide specific questions** - Clearly defined questions yield more accurate hallucination detection.
+2. **Include relevant context** - When validating against specific information, provide comprehensive.context.
+3. **Use domain-specific context** - Include authoritative references for specialized knowledge domains.
+4. **Consider general knowledge** - For common facts, the service can verify against general knowledge.
+5. **Review explanations** - The detailed explanations provide valuable insights into the reasoning.process.
 
 ## Next steps
 
