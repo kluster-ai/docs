@@ -41,7 +41,7 @@ For example:
 ## What to know
 
 !!! question "What's a Hallucination?"
-    Hallucinations occur when models generate information that appears plausible but is factually incorrect or unsupported by the provided context. 
+    Hallucinations occur when models generate information that appears plausible but is factually incorrect or unsupported by the provided context. Check out our [Hallucination Detection Agent Tutorial](/tutorials/klusterai-api/hallucination-detection-agent){target=_blank}
 
 The kluster.ai **Hallucination Detection Agent** evaluates AI responses to determine if they contain hallucinated content, providing detailed explanations of its reasoning. 
 
@@ -88,6 +88,6 @@ kluster.ai offers two ways to detect hallucinations, each designed for different
 
 - **Question/Answer detection** - Learn how to [verify individual question-answer pairs](/get-started/hallucination-agent/question-answer/){target=_self}
 - **Chat Completion detection** - Discover how to [validate responses in conversations](/get-started/hallucination-agent/chat-completion/){target=_self}
-- **Practical examples** - Explore [real-world applications](/get-started/hallucination-agent/examples/){target=_self} of hallucination detection
+- **Practical examples** - Explore our [Tutorials](/tutorials/klusterai-api/hallucination-detection-agent){target=_blank} of hallucination detection
 - **API reference** - Review the complete [API documentation](/api-reference/reference/){target=_blank} for all hallucination detection endpoints
-- **Available models** - Explore our [Models](/get-started/models/){target=_blank} page to learn about the foundation models that power our hallucination detection
+
