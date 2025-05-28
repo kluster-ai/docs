@@ -227,7 +227,7 @@ The following examples generate requests and save them in a JSONL file, which is
 === "Python"
 
     ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:01:75'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:01:78'
     ```
 
 === "CLI"
@@ -250,7 +250,7 @@ Use the following command examples to upload your batch job files:
 === "Python"
 
     ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:76:78'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:79:81'
     ```
 
 === "curl"
@@ -289,7 +289,7 @@ You can use the following snippets to submit your batch job:
 === "Python"
 
     ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:79:85'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:82:88'
     ```
 
 === "curl"
@@ -346,7 +346,7 @@ You can use the following snippets to monitor your batch job:
 === "Python"
 
     ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:86:98'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:89:101'
     ```
 
 === "curl"
@@ -398,7 +398,7 @@ You can use the following snippets to retrieve the results from your batch job:
 === "Python"
 
     ```python 
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:99:111'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:102:'
     ```
 
 === "curl"
@@ -425,11 +425,12 @@ You can use the following snippets to list all of your batch jobs:
 === "Python"
 
     ```python
+    import os
     from openai import OpenAI
     from getpass import getpass
     
     # Get API key from user input
-    api_key = getpass("Enter your kluster.ai API key: ")
+    api_key = os.environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
     
     # Initialize OpenAI client pointing to kluster.ai API
     client = OpenAI(
@@ -499,11 +500,12 @@ You can use the following snippets to cancel a batch job:
 === "Python"
 
     ```python title="Example"
+    import os
     from openai import OpenAI
     from getpass import getpass
     
     # Get API key from user input
-    api_key = getpass("Enter your kluster.ai API key: ")
+    api_key = os.environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
     
     # Initialize OpenAI client pointing to kluster.ai API
     client = OpenAI(

@@ -198,7 +198,7 @@ The following code shows how to do a chat completions request using the OpenAI l
 === "Python"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-01.py:01:22'
+    --8<-- 'code/get-started/start-building/real-time/real-time-01.py:01:24'
     ```
 
 If successful, the `completion` variable contains a full response, which you'll need to analyze to extract the answer you are looking for. In terms of configuration for real-time inferences, there are several parameters that you need to tweak:
@@ -251,7 +251,7 @@ The following snippet demonstrates how to extract the data, log it to the consol
 === "Python"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-01.py:23:47'
+    --8<-- 'code/get-started/start-building/real-time/real-time-01.py:25:'
     ```
 
 
