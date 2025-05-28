@@ -17,7 +17,7 @@ Ensure you're logged in to the [kluster.ai platform](https://platform.kluster.ai
 
 Then, complete the following fields to configure your deployment:
 
-1. **Deployment Name**: Enter a clear Deployment Name (e.g., `mydedicated`) so you can spot it later in the console.
+1. **Deployment Name**: Enter a clear deployment name (e.g., `mydedicated`) so you can spot it later in the console.
 2. **Model selection**: Paste the Hugging Face model ID or URL (e.g., `deepseek-ai/DeepSeek-R1`). If the model is private, provide a Hugging Face access token.
 3. **Select Hardware**: Confirm a GPU configuration.
 4. **Specify auto-shutdown**: Set an auto‑shutdown window for your instance to power down after a specified period of inactivity, between 15 minutes to 12 hours. 
