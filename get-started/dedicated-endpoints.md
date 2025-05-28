@@ -64,7 +64,7 @@ After waiting 10-20 minutes for your instance to spin up, you can call it by usi
 
 ## Stop your deployment
 
-Click **Stop** next to your deployment in [Dedicated deployments](https://platform.kluster.ai/dedicated-deployments){target=\_blank} to shut your VM down immediately. Billing ends the moment it powers off. Otherwise, an auto‑shutdown timer kicks in after your specified auto-shutdown period (between 15 minutes to 12 hours of inactivity), depending on the period you chose when spinning up the instance. 
+Click **Stop** next to your deployment on the [**Dedicated Deployments**](https://platform.kluster.ai/dedicated-deployments){target=\_blank} page to shut your VM down immediately. Billing ends the moment it powers off. Otherwise, an auto‑shutdown timer kicks in after your specified auto-shutdown period (between 15 minutes to 12 hours of inactivity), depending on the period you chose when spinning up the instance. 
 
 ![Stop deployment](/images/get-started/dedicated-endpoints/dedicated-4.webp)
 
