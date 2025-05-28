@@ -1,6 +1,6 @@
 ---
 title: Launch dedicated endpoints
-description: Learn how to spin up and call private model deployments on kluster.ai with predictable per hour pricing.
+description: Deploy private model instances on kluster.ai with dedicated hardware, full control, and transparent per-hour pricing. No per-token fees, just predictable costs.
 ---
 
 # Dedicated deployments
@@ -21,7 +21,7 @@ Then, complete the following fields to configure your deployment:
 2. **Model selection**: Paste the Hugging Face model ID or URL (e.g., `deepseek-ai/DeepSeek-R1`). If the model is private, provide a Hugging Face access token.
 3. **Select Hardware**: Confirm a GPU configuration.
 4. **Specify auto-shutdown**: Set an auto‑shutdown window for your instance to power down after a specified period of inactivity, between 15 minutes to 12 hours. 
-4. **Launch**: Review the estimated price and then Click **Launch deployment**. Spin‑up takes ≈10–20 min; once the status shows `Running`, copy the Endpoint ID, as you'll use that to submit requests. 
+4. **Launch**: Review the estimated price and then Click **Launch deployment**. Spin‑up takes ≈10–20 min; once the status shows `Running`, copy the endpoint ID, as you'll use that to submit requests. 
 
 ![Configure deployment](/images/get-started/dedicated-endpoints/dedicated-2.webp)
 
@@ -43,7 +43,7 @@ After waiting 10-20 minutes for your instance to spin up, you can call it by usi
     )
 
     response = client.chat.completions.create(
-        model="INSERT_ENDPOINT_ID",   # your Endpoint ID
+        model="INSERT_ENDPOINT_ID",   # Your endpoint ID
         messages=[{"role": "user", "content": "What is the best taco place in SF?"}],
     )
 
