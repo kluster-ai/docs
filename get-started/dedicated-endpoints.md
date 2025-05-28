@@ -58,7 +58,7 @@ curl https://api.kluster.ai/v1/chat/completions \
   }'
 ```
 
-## Manage runtime & cost
+## Managing your deployment
 
 Click **Stop** next to your deployment in [Dedicated deployments](https://platform.kluster.ai/dedicated-deployments){target=\_blank} to shut your VM down immediately. Billing ends the moment it powers off. Otherwise, an auto‑shutdown timer kicks in after your specified auto-shutdown period (between 15 minutes to 12 hours of inactivity), depending on the period you chose when spinning up the instance. 
 
