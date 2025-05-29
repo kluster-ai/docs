@@ -12,3 +12,4 @@ nav:
   - 'Effective prompt engineering': effective-prompt-engineering.ipynb
   - 'Uploading large files': 'uploads-api.ipynb'
   - 'Integrating tools': 'integrating-tools.ipynb'
+  - 'Hallucination Detection Agent': 'hallucination-detection-agent.ipynb'
