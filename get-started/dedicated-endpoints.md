@@ -19,7 +19,7 @@ Then, complete the following fields to configure your deployment:
 
 1. **Deployment name**: Enter a clear deployment name (e.g., `mydedicated`) so you can spot it later in the console.
 2. **Model selection**: Paste the Hugging Face model ID or URL (e.g., `deepseek-ai/DeepSeek-R1`). If the model is private, provide a Hugging Face access token.
-3. **Select Hardware**: Confirm a GPU configuration.
+3. **Select hardware**: Confirm a GPU configuration.
 4. **Specify auto-shutdown**: Set an auto‑shutdown window for your instance to power down after a specified period of inactivity, between 15 minutes to 12 hours. 
 4. **Launch**: Review the estimated price and then Click **Launch deployment**. Spin‑up takes ≈10–20 min; once the status shows `Running`, copy the endpoint ID, as you'll use that to submit requests. 
 
