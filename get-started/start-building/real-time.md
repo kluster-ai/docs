@@ -48,6 +48,12 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     --8<-- 'code/get-started/start-building/real-time/real-time-deepseek-r1.py'
     ```
 
+??? example "DeepSeek-R1-0528"
+
+    ```python
+    --8<-- 'code/get-started/start-building/real-time/real-time-deepseek-r1-0528.py'
+    ```
+
 
 ??? example "DeepSeek-V3-0324"
 
@@ -55,13 +61,11 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     --8<-- 'code/get-started/start-building/real-time/real-time-deepseek-v3-0324.py'
     ```
 
-
 ??? example "Gemma 3 27B"
 
     ```python
     --8<-- 'code/get-started/start-building/real-time/real-time-gemma-3-27b-it.py'
     ```
-
 
 ??? example "Meta Llama 3.1 8B"
 
@@ -69,13 +73,11 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     --8<-- 'code/get-started/start-building/real-time/real-time-meta-llama-3-1-8b-instruct-turbo.py'
     ```
 
-
 ??? example "Meta Llama 3.3 70B"
 
     ```python
     --8<-- 'code/get-started/start-building/real-time/real-time-meta-llama-3-3-70b-instruct-turbo.py'
     ```
-
 
 ??? example "Meta Llama 4 Maverick"
 
@@ -83,13 +85,11 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     --8<-- 'code/get-started/start-building/real-time/real-time-llama-4-maverick-17b-128e-instruct-fp8.py'
     ```
 
-
 ??? example "Meta Llama 4 Scout"
 
     ```python
     --8<-- 'code/get-started/start-building/real-time/real-time-llama-4-scout-17b-16e-instruct.py'
     ```
-
 
 ??? example "Mistral NeMo"
 
@@ -97,13 +97,11 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     --8<-- 'code/get-started/start-building/real-time/real-time-mistral-nemo-instruct-2407.py'
     ```
 
-
 ??? example "Qwen2.5-VL 7B"
 
     ```python
     --8<-- 'code/get-started/start-building/real-time/real-time-qwen2-5-vl-7b-instruct.py'
     ```
-
 
 ??? example "Qwen3-235B-A22B"
 
@@ -121,6 +119,12 @@ Similarly, the following curl commands showcase how to easily send a chat comple
     --8<-- 'code/get-started/start-building/real-time/real-time-deepseek-r1.md'
     ```
 
+??? example "DeepSeek-R1-0528"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-deepseek-r1-0528.md'
+    ```
+
 
 ??? example "DeepSeek-V3-0324"
 
@@ -128,13 +132,11 @@ Similarly, the following curl commands showcase how to easily send a chat comple
     --8<-- 'code/get-started/start-building/real-time/real-time-deepseek-v3-0324.md'
     ```
 
-
 ??? example "Gemma 3 27B"
 
     ```bash
     --8<-- 'code/get-started/start-building/real-time/real-time-gemma-3-27b-it.md'
     ```
-
 
 ??? example "Meta Llama 3.1 8B"
 
@@ -142,13 +144,11 @@ Similarly, the following curl commands showcase how to easily send a chat comple
     --8<-- 'code/get-started/start-building/real-time/real-time-meta-llama-3-1-8b-instruct-turbo.md'
     ```
 
-
 ??? example "Meta Llama 3.3 70B"
 
     ```bash
     --8<-- 'code/get-started/start-building/real-time/real-time-meta-llama-3-3-70b-instruct-turbo.md'
     ```
-
 
 ??? example "Meta Llama 4 Maverick"
 
@@ -156,13 +156,11 @@ Similarly, the following curl commands showcase how to easily send a chat comple
     --8<-- 'code/get-started/start-building/real-time/real-time-llama-4-maverick-17b-128e-instruct-fp8.md'
     ```
 
-
 ??? example "Meta Llama 4 Scout"
 
     ```bash
     --8<-- 'code/get-started/start-building/real-time/real-time-llama-4-scout-17b-16e-instruct.md'
     ```
-
 
 ??? example "Mistral NeMo"
 
@@ -170,13 +168,11 @@ Similarly, the following curl commands showcase how to easily send a chat comple
     --8<-- 'code/get-started/start-building/real-time/real-time-mistral-nemo-instruct-2407.md'
     ```
 
-
 ??? example "Qwen2.5-VL 7B"
 
     ```bash
     --8<-- 'code/get-started/start-building/real-time/real-time-qwen2-5-vl-7b-instruct.md'
     ```
-
 
 ??? example "Qwen3-235B-A22B"
 
