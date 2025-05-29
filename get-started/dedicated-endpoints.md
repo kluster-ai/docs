@@ -32,6 +32,8 @@ After waiting 10-20 minutes for your instance to spin up, you can call it by usi
 
 ![Copy endpoint ID](/images/get-started/dedicated-endpoints/dedicated-3.webp)
 
+To call your dedicated endpoint, you'll need to provide the endpoint ID as the model name when making a request (`INSERT_ENDPOINT_ID` in the following example):
+
 === "Python"
 
     ```python
