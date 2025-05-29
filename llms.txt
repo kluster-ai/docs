@@ -5,7 +5,7 @@ Documentation: https://docs.kluster.ai/
 
 # List of doc pages:
 Doc-Page: https://docs.kluster.ai/api-reference/reference/
-Doc-Page: https://docs.kluster.ai/get-started/dedicated-endpoints/
+Doc-Page: https://docs.kluster.ai/get-started/dedicated-deployments/
 Doc-Page: https://docs.kluster.ai/get-started/get-api-key/
 Doc-Page: https://docs.kluster.ai/get-started/integrations/crewai/
 Doc-Page: https://docs.kluster.ai/get-started/integrations/eliza/
@@ -2940,10 +2940,10 @@ Array of integrations associated with the fine-tuning job.
 </div>
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/get-started/dedicated-endpoints/
+Doc-Content: https://docs.kluster.ai/get-started/dedicated-deployments/
 --- BEGIN CONTENT ---
 ---
-title: Launch dedicated endpoints
+title: Launch dedicated deployments
 description: Deploy private model instances on kluster.ai with dedicated hardware, full control, and transparent per-hour pricing. No per-token fees, just predictable costs.
 ---
 
@@ -2976,7 +2976,7 @@ After waiting 20-30 minutes for your instance to spin up, you can call it by usi
 
 ![Copy endpoint ID](/images/get-started/dedicated-endpoints/dedicated-3.webp)
 
-To call your dedicated endpoint, you'll need to provide the endpoint ID as the model name when making a request (`INSERT_ENDPOINT_ID` in the following example):
+To call your dedicated deployment, you'll need to provide the endpoint ID as the model name when making a request (`INSERT_ENDPOINT_ID` in the following example):
 
 === "Python"
 
