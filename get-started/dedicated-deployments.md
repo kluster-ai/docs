@@ -1,5 +1,5 @@
 ---
-title: Launch dedicated endpoints
+title: Launch dedicated deployments
 description: Deploy private model instances on kluster.ai with dedicated hardware, full control, and transparent per-hour pricing. No per-token fees, just predictable costs.
 ---
 
@@ -32,7 +32,7 @@ After waiting 20-30 minutes for your instance to spin up, you can call it by usi
 
 ![Copy endpoint ID](/images/get-started/dedicated-endpoints/dedicated-3.webp)
 
-To call your dedicated endpoint, you'll need to provide the endpoint ID as the model name when making a request (`INSERT_ENDPOINT_ID` in the following example):
+To call your dedicated deployment, you'll need to provide the endpoint ID as the model name when making a request (`INSERT_ENDPOINT_ID` in the following example):
 
 === "Python"
 
