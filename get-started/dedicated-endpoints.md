@@ -28,7 +28,7 @@ Then, complete the following fields to configure your deployment:
 
 ## Use your dedicated deployment
 
-After waiting 10-20 minutes for your instance to spin up, you can call it by using the endpoint ID as the model name when making a request. If you're unsure of your endpoint ID, look for it in the [**Dedicated Deployments** page](https://platform.kluster.ai/dedicated-deployments){target=\_blank}.
+After waiting 10-20 minutes for your instance to spin up, you can call it by using the endpoint ID as the model name when making a request. If you're unsure of your endpoint ID, look for it in the [**Dedicated deployments** page](https://platform.kluster.ai/dedicated-deployments){target=\_blank}.
 
 ![Copy endpoint ID](/images/get-started/dedicated-endpoints/dedicated-3.webp)
 
