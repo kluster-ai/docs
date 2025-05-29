@@ -21,14 +21,14 @@ Then, complete the following fields to configure your deployment:
 2. **Model selection**: Paste the Hugging Face model ID or URL (e.g., `deepseek-ai/DeepSeek-R1`). If the model is private, provide a Hugging Face access token.
 3. **Select hardware**: Confirm a GPU configuration.
 4. **Specify auto-shutdown**: Set an auto‑shutdown window for your instance to power down after a specified period of inactivity, between 15 minutes to 12 hours. 
-4. **Launch**: Review the estimated price and then Click **Launch deployment**. Spin‑up takes ≈10–20 min; once the status shows `Running`, copy the endpoint ID, as you'll use that to submit requests. 
+4. **Launch**: Review the estimated price and then Click **Launch deployment**. Spin‑up takes ≈20–30 min; once the status shows `Running`, copy the endpoint ID, as you'll use that to submit requests. 
 
 ![Configure deployment](/images/get-started/dedicated-endpoints/dedicated-2.webp)
 
 
 ## Use your dedicated deployment
 
-After waiting 10-20 minutes for your instance to spin up, you can call it by using the endpoint ID as the model name when making a request. If you're unsure of your endpoint ID, look for it in the [**Dedicated deployments** page](https://platform.kluster.ai/dedicated-deployments){target=\_blank}.
+After waiting 20-30 minutes for your instance to spin up, you can call it by using the endpoint ID as the model name when making a request. If you're unsure of your endpoint ID, look for it in the [**Dedicated deployments** page](https://platform.kluster.ai/dedicated-deployments){target=\_blank}.
 
 ![Copy endpoint ID](/images/get-started/dedicated-endpoints/dedicated-3.webp)
 
