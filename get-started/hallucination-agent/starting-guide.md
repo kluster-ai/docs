@@ -62,7 +62,7 @@ The hallucination detection service is ideal for scenarios where you need:
 
 ## Available detection methods
 
-kluster.ai offers two ways to detect hallucinations, each designed for different use cases:
+kluster.ai offers multiple ways to detect hallucinations, each designed for different use cases:
 
 <div class="grid cards" markdown>
 
@@ -82,12 +82,21 @@ kluster.ai offers two ways to detect hallucinations, each designed for different
 
     [:octicons-arrow-right-24: Visit the guide](/get-started/hallucination-agent/chat-completion/){target=_self}
 
+-   <span class="badge guide">Guide</span> __MCP Integration__
+
+    ---
+
+    Use kluster.ai's MCP server for seamless hallucination detection in MCP-compatible applications with fact_check and document_claim_check tools.
+
+    [:octicons-arrow-right-24: Visit the guide](/get-started/hallucination-agent/mcp/){target=_self}
+
 </div>
 
 ## Additional resources
 
 - **Question/Answer detection** - Learn how to [verify individual question-answer pairs](/get-started/hallucination-agent/question-answer/){target=_self}
 - **Chat Completion detection** - Discover how to [validate responses in conversations](/get-started/hallucination-agent/chat-completion/){target=_self}
+- **MCP Integration** - Integrate hallucination detection into [MCP-compatible applications](/get-started/hallucination-agent/mcp/){target=_self}
 - **Practical examples** - Explore our [Tutorials](/tutorials/klusterai-api/hallucination-detection-agent){target=_blank} of hallucination detection
 - **API reference** - Review the complete [API documentation](/api-reference/reference/){target=_blank} for all hallucination detection endpoints
 
