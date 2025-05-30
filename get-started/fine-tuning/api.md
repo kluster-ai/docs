@@ -13,16 +13,16 @@ This guide provides a practical overview of the fine-tuning process using the AP
 
 Before getting started with fine-tuning, ensure you have the following:
 
-- **kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you do not have one
-- **kluster.ai API key** - after signing in, go to the [API Keys](https://platform.kluster.ai/apikeys){target=_blank} section and create a new key. For detailed instructions, see the [Get an API key](https://docs.kluster.ai/get-started/get-api-key/){target=_blank} guide
-- **Prepared dataset** - you need data formatted according to kluster.ai's requirements for fine-tuning (detailed below)
+- **kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you do not have one.
+- **kluster.ai API key**: After signing in, go to the [API Keys](https://platform.kluster.ai/apikeys){target=_blank} section and create a new key. For detailed instructions, see the [Get an API key](https://docs.kluster.ai/get-started/get-api-key/){target=_blank} guide.
+- **Prepared dataset**: You need data formatted according to kluster.ai's requirements for fine-tuning (detailed below).
 
 ## Supported models
 
 kluster.ai currently supports fine-tuning for two base models:
 
-- **klusterai/Meta-Llama-3.1-8B-Instruct-Turbo**
-- **klusterai/Meta-Llama-3.3-70B-Instruct-Turbo** 
+- [klusterai/Meta-Llama-3.1-8B-Instruct-Turbo](https://docs.kluster.ai/get-started/models/){target=_blank}
+- [klusterai/Meta-Llama-3.3-70B-Instruct-Turbo](https://docs.kluster.ai/get-started/models/){target=_blank} 
 
 !!! info
     You can query the [models endpoint](https://docs.kluster.ai/api-reference/reference/#list-supported-models){target=_blank} in the API and filter for the tag "fine-tunable."
@@ -36,8 +36,8 @@ The process of fine-tuning a model using the kluster.ai API involves several key
 
 High-quality, well-formatted data is crucial for successful fine-tuning:
 
-- **Format** - data must be in JSONL format, where each line is a valid JSON object representing a training example
-- **Structure** - each JSON object should contain a `messages` array with system, user, and assistant messages
+- **Format**: Data must be in JSONL format, where each line is a valid JSON object representing a training example.
+- **Structure**: Each JSON object should contain a `messages` array with system, user, and assistant messages.
 - **Example format**:
 
 ```json
@@ -59,8 +59,8 @@ High-quality, well-formatted data is crucial for successful fine-tuning:
 }
 ```
 
-- **Quantity** - the minimum requirement is 10 examples, but more diverse and high-quality examples yield better results
-- **Quality** - ensure your data accurately represents the task you want the model to perform
+- **Quantity**: The minimum requirement is 10 examples, but more diverse and high-quality examples yield better results.
+- **Quality**: Ensure your data accurately represents the task you want the model to perform.
 
 !!! tip "Data preparation"
     For a detailed walkthrough of data preparation, see the [Fine-tuning Sentiment Analysis Tutorial](https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-analysis/#get-the-data){target=_blank}.
@@ -73,7 +73,7 @@ High-quality, well-formatted data is crucial for successful fine-tuning:
 First, install the OpenAI Python library:
 
 ```bash
-%pip install openai
+pip install openai
 ```
 
 Then initialize the client with the kluster.ai base URL:
@@ -108,7 +108,7 @@ with open('training_data.jsonl', 'rb') as file:
 ```
 
 !!! note "Uploading large files"
-    If your training dataset is large (approaching 100MB), you may need to use the chunked upload method. See the [Uploading Large Files](https://docs.kluster.ai/tutorials/klusterai-api/uploads-api/) guide for detailed instructions on multi-part uploads.
+    If your training dataset is large (approaching 100MB), you may need to use the chunked upload method. See the [Uploading Large Files](https://docs.kluster.ai/tutorials/klusterai-api/uploads-api/){target=_blank} guide for detailed instructions on multi-part uploads.
 
 !!! warning "File size limits"
     For the free tier, each fine-tuning file must not exceed 100 MB. For the standard tier, the maximum file size is also 100 MB per file. The difference between tiers is in the number of examples allowed - free tier is limited to fewer examples.
@@ -175,15 +175,15 @@ After your fine-tuned model is created, you can also test it in the kluster.ai p
 
 Fine-tuning offers several advantages over using general-purpose models:
 
-- **Improved performance** - fine-tuned models often outperform base models on specific tasks
-- **Cost efficiency** - smaller fine-tuned models can outperform larger models at a lower cost
-- **Reduced latency** - fine-tuned models can deliver faster responses for your applications
-- **Consistency** - more reliable outputs tailored to your specific task or domain
+- **Improved performance**: Fine-tuned models often outperform base models on specific tasks.
+- **Cost efficiency**: Smaller fine-tuned models can outperform larger models at a lower cost.
+- **Reduced latency**: Fine-tuned models can deliver faster responses for your applications.
+- **Consistency**: More reliable outputs tailored to your specific task or domain.
 
 
 ## Next steps
 
-- **Detailed tutorial** - follow the [Fine-tuning Sentiment Analysis Tutorial](https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-analysis/#get-the-data){target=_blank}
-- **API reference** - review the [API reference documentation](/api-reference/reference/){target=_blank} for all fine-tuning related endpoints
-- **Explore models** - see the [Models](/get-started/models/){target=_blank} page to check which foundation models support fine-tuning
-- **Platform approach** - try the [user-friendly platform interface](/get-started/fine-tuning/platform/){target=_blank} for fine-tuning without writing code
+- **Detailed tutorial**: Follow the [Fine-tuning Sentiment Analysis Tutorial](https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-analysis/#get-the-data){target=_blank}.
+- **API reference**: Review the [API reference documentation](/api-reference/reference/){target=_blank} for all fine-tuning related endpoints.
+- **Explore models**: See the [Models](/get-started/models/){target=_blank} page to check which foundation models support fine-tuning.
+- **Platform approach**: Try the [user-friendly platform interface](/get-started/fine-tuning/platform/){target=_blank} for fine-tuning without writing code.

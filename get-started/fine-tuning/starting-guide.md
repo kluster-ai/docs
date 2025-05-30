@@ -13,10 +13,10 @@ Fine-tuning takes a pre-trained foundation model and further trains it on your s
 
 This process allows the model to:
 
-- Learn domain-specific terminology and concepts
-- Adopt your preferred response style and tone
-- Follow consistent formatting and output structures
-- Develop specialized capabilities tailored to your use cases
+- Learn domain-specific terminology and concepts.
+- Adopt your preferred response style and tone.
+- Follow consistent formatting and output structures.
+- Develop specialized capabilities tailored to your use cases.
 
 Fine-tuning is particularly valuable when you want consistent, specialized responses that would otherwise require complex prompting or when you need the model to reliably generate outputs in a specific format.
 
@@ -24,28 +24,28 @@ Fine-tuning is particularly valuable when you want consistent, specialized respo
 
 Fine-tuning is ideal for scenarios where you need:
 
-- **Domain specialization** - create models that excel in specific fields like medicine, law, finance, or technical documentation
-- **Brand-aligned responses** - train models to match your company's voice, style, and communication guidelines
-- **Format consistency** - ensure reliable output in specific formats like JSON, XML, or markdown
-- **Enhanced reasoning** - improve analytical capabilities for specific types of problems
-- **Custom behavior** - develop assistants that follow your unique processes and workflows
+- **Domain specialization**: Create models that excel in specific fields like medicine, law, finance, or technical documentation.
+- **Brand-aligned responses**: Train models to match your company's voice, style, and communication guidelines.
+- **Format consistency**: Ensure reliable output in specific formats like JSON, XML, or Markdown.
+- **Enhanced reasoning**: Improve analytical capabilities for specific types of problems.
+- **Custom behavior**: Develop assistants that follow your unique processes and workflows.
 
 ## Benefits of fine-tuning
 
 Fine-tuning delivers several key advantages over using general-purpose models:
 
-- **Improved performance** - fine-tuned models consistently outperform base models on specific tasks
-- **Cost efficiency** - smaller fine-tuned models can match or exceed the performance of larger models at a lower cost
-- **Reduced latency** - fine-tuned models deliver faster responses, improving user experience
-- **Consistency** - achieve more reliable outputs tailored to your specific requirements
-- **Data privacy** - train models on your data without exposing sensitive information in prompts
+- **Improved performance**: Fine-tuned models consistently outperform base models on specific tasks.
+- **Cost efficiency**: Smaller fine-tuned models can match or exceed the performance of larger models at a lower cost.
+- **Reduced latency**: Fine-tuned models deliver faster responses, improving user experience.
+- **Consistency**: Achieve more reliable outputs tailored to your specific requirements.
+- **Data privacy**: Train models on your data without exposing sensitive information in prompts.
 
 ## Supported models
 
 kluster.ai currently supports fine-tuning for two powerful foundation models:
 
-- **klusterai/Meta-Llama-3.1-8B-Instruct-Turbo** 
-- **klusterai/Meta-Llama-3.3-70B-Instruct-Turbo** 
+- [klusterai/Meta-Llama-3.1-8B-Instruct-Turbo](https://docs.kluster.ai/get-started/models/){target=_blank}
+- [klusterai/Meta-Llama-3.3-70B-Instruct-Turbo](https://docs.kluster.ai/get-started/models/){target=_blank} 
 
 ## Choose your fine-tuning approach
 
@@ -57,7 +57,7 @@ kluster.ai offers two ways to fine-tune models, each designed for different user
 
     ---
 
-    Use the platform fine-tune, without writing code. The platform is ideal for users who want a guided, interactive experience and real-time feedback on training progress.
+    Use the platform to fine-tune, without writing code. The platform is ideal for users who want a guided, interactive experience and real-time feedback on training progress.
 
     [:octicons-arrow-right-24: Visit the guide](/get-started/fine-tuning/platform/){target=_blank}
 
@@ -73,6 +73,6 @@ kluster.ai offers two ways to fine-tune models, each designed for different user
 
 ## Additional resources
 
-- **Step-by-step tutorial** - Learn the fundamentals with our [Fine-tuning Sentiment Analysis Tutorial](https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-analysis/){target=_blank}
-- **Available models** - Explore our [Models](/get-started/models/){target=_blank} page to see all foundation models that support fine-tuning
-- **API reference** - Review the complete [API documentation](/api-reference/reference/){target=_blank} for all fine-tuning related endpoints
+- **Step-by-step tutorial**: Learn the fundamentals with our [Fine-tuning Sentiment Analysis Tutorial](https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-analysis/){target=_blank}.
+- **Available models**: Explore our [Models](/get-started/models/){target=_blank} page to see all foundation models that support fine-tuning.
+- **API reference**: Review the complete [API documentation](/api-reference/reference/){target=_blank} for all fine-tuning related endpoints.
