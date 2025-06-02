@@ -127,7 +127,7 @@ The SSE (Server-Sent Events) server provides HTTP endpoints for platforms that d
    - **Body**:
      ```json
      {
-       "claim": "{{ $json.statement }}",
+       "claim": "{% raw %}{{ $json.statement }}{% endraw %}",
        "return_search_results": true
      }
      ```
