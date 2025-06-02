@@ -1,11 +1,11 @@
 ---
 title: Client Setup
-description: Configure kluster.ai's MCP fact-checking server with Claude Desktop, VS Code, n8n, Dify, and other MCP-compatible platforms.
+description: Configure kluster verify's MCP fact-checking server with Claude Desktop, VS Code, n8n, Dify, and other MCP-compatible platforms.
 ---
 
 # Client Setup
 
-Configure the kluster.ai MCP server across different development environments and platforms.
+Configure the kluster verify MCP server across different development environments and platforms.
 
 ## Claude Desktop
 

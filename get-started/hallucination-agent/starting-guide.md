@@ -1,11 +1,11 @@
 ---
-title: Hallucination Detection Agent with kluster.ai
-description: Learn how to detect and prevent hallucinations in your applications using kluster.ai's specialized Hallucination Detection Agent.
+title: kluster verify
+description: Learn how to detect and prevent hallucinations in your applications using kluster.ai's specialized kluster verify.
 ---
 
-# Hallucination Detection Agent with kluster.ai
+# kluster verify
 
-The kluster.ai **Hallucination Detection Agent** service helps to identify when AI responses contain fabricated or inaccurate information.
+The **kluster verify** service helps to identify when AI responses contain fabricated or inaccurate information.
 
 With this specialized service, you can verify the factual reliability of AI-generated content and build more trustworthy applications.
 
@@ -41,9 +41,9 @@ For example:
 ## What to know
 
 !!! question "What's a Hallucination?"
-    Hallucinations occur when models generate information that appears plausible but is factually incorrect or unsupported by the provided context. Check out our [Hallucination Detection Agent Tutorial](/tutorials/klusterai-api/hallucination-detection-agent){target=_blank}
+    Hallucinations occur when models generate information that appears plausible but is factually incorrect or unsupported by the provided context. Check out our [kluster verify Tutorial](/tutorials/klusterai-api/hallucination-detection-agent){target=_blank}
 
-The kluster.ai **Hallucination Detection Agent** evaluates AI responses to determine if they contain hallucinated content, providing detailed explanations of its reasoning. 
+**kluster verify** evaluates AI responses to determine if they contain hallucinated content, providing detailed explanations of its reasoning. 
 
 The service offers flexible options for verification supporting both **question-answer** format and **chat completions** where the whole chat history is analyzed by the agent.
 

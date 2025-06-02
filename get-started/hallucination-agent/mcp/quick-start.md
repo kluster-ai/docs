@@ -1,6 +1,6 @@
 ---
 title: Quick Start
-description: Get kluster.ai's MCP fact-checking server running in five minutes with Docker and test it with a working example.
+description: Get kluster verify's MCP fact-checking server running in five minutes with Docker and test it with a working example.
 ---
 
 # Quick Start

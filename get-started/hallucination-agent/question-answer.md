@@ -1,9 +1,9 @@
 ---
 title: Question - answer 
-description: Learn how to use the kluster.ai Hallucination Detection API to validate the truthfulness of answers to questions.
+description: Learn how to use the kluster.ai hallucination detection API to validate the truthfulness of answers to questions.
 ---
 
-# Question/Answer
+# Question/answer
 
 The Question/Answer method allows you to validate whether an answer to a specific question contains hallucinated information. This approach is ideal for fact-checking individual responses against provided context or general knowledge.
 
@@ -125,7 +125,7 @@ This example checks whether an answer contains hallucinated information. As no c
 When providing the `context` parameter, the agent will not perform external fact-checking. Instead, it focuses on whether the answer complies with the provided context.
 
 !!! tip "RAG applications"
-    Ensure the LLM's responses are accurate by using the Hallucination Detection Agent in your Retrieval Augmented Generation workflows.
+    Ensure the LLM's responses are accurate by using kluster verify in your Retrieval Augmented Generation workflows.
 
 
 This example checks whether an answer is correct based on the provided context.
@@ -203,6 +203,6 @@ This example checks whether an answer is correct based on the provided context.
 
 ## Next steps
 
-- Learn how to use [Chat Completion Hallucination Detection](/get-started/hallucination-agent/chat-completion/){target=_self} for evaluating entire conversation histories
+- Learn how to use [Chat completion hallucination detection](/get-started/hallucination-agent/chat-completion/){target=_self} for evaluating entire conversation histories
 - Explore [Examples](/get-started/hallucination-agent/examples/){target=_self} of hallucination detection in real-world scenarios
 - Review the complete [API documentation](/api-reference/reference/){target=_blank} for detailed endpoint specifications

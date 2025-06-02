@@ -1,9 +1,9 @@
 ---
-title: Chat Completion Hallucination Detection
-description: Learn how to use the kluster.ai Hallucination Detection Agent to validate responses in full chat conversations.
+title: Chat completion hallucination detection
+description: Learn how to use the kluster.ai hallucination detection agent to validate responses in full chat conversations.
 ---
 
-# Chat Completion
+# Chat completion
 
 The Chat Completion method allows you to validate responses in full conversation histories using the same format as the standard chat completions API. This approach enables detection of hallucinations within the complete context of a conversation.
 
@@ -119,6 +119,6 @@ This example shows how to use the agent with the `https://api.kluster.ai/v1` end
 
 ## Next steps
 
-- Learn how to use [Question/Answer Hallucination Detection](/get-started/hallucination-agent/question-answer/){target=_self} for simpler verification scenarios
+- Learn how to use [Question/answer hallucination detection](/get-started/hallucination-agent/question-answer/){target=_self} for simpler verification scenarios
 - Explore [Examples](/get-started/hallucination-agent/examples/){target=_self} of hallucination detection in real-world scenarios
 - Review the complete [API documentation](/api-reference/reference/){target=_blank} for detailed endpoint specifications

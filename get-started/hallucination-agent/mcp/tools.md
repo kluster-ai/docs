@@ -5,7 +5,7 @@ description: Complete technical reference for fact_check and document_claim_chec
 
 # Tools Reference
 
-Technical documentation for the two fact-checking tools available through the kluster.ai MCP server.
+Technical documentation for the two fact-checking tools available through the kluster verify MCP server.
 
 ## Tool Overview
 

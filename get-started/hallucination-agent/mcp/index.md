@@ -1,13 +1,13 @@
 ---
 title: Integration
-description: Add fact-checking to your LLM applications using kluster.ai's MCP server with automated claim verification and document validation tools.
+description: Add fact-checking to your LLM applications using kluster verify's MCP server with automated claim verification and document validation tools.
 ---
 
 # Integration
 
-LLM applications generate convincing but false information. This breaks user trust and creates liability. The **kluster.ai MCP server** solves this by adding real-time fact-checking to any MCP-compatible environment.
+LLM applications generate convincing but false information. This breaks user trust and creates liability. The **kluster verify MCP server** solves this by adding real-time fact-checking to any MCP-compatible environment.
 
-## Why kluster.ai Built an MCP Server
+## Why kluster verify Built an MCP Server
 
 **The problem**: Your LLM applications work great until they confidently state wrong facts. Users lose trust. You lose credibility.
 
@@ -89,5 +89,5 @@ New to Model Context Protocol? Learn more in the [official MCP documentation](ht
 
 - **Question/Answer detection** - Learn how to [verify individual question-answer pairs](/get-started/hallucination-agent/question-answer/){target=_self}
 - **Chat Completion detection** - Discover how to [validate responses in conversations](/get-started/hallucination-agent/chat-completion/){target=_self}
-- **Practical examples** - Explore our [Tutorials](/tutorials/klusterai-api/hallucination-detection-agent){target=_blank} for hallucination detection
+- **Practical examples** - Explore our [Tutorials](/tutorials/klusterai-api/hallucination-detection-agent){target=_blank} for kluster verify
 - **API reference** - Review the complete [API documentation](/api-reference/reference/){target=_blank} for all hallucination detection endpoints
