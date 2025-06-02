@@ -3,5 +3,5 @@ nav:
   - 'Starting guide': starting-guide.md
   - 'Question - answer': question-answer.md
   - 'Chat completion': chat-completion.md
-  - 'MCP Integration': mcp.md
+  - mcp
 

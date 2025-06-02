@@ -86,9 +86,9 @@ kluster.ai offers multiple ways to detect hallucinations, each designed for diff
 
     ---
 
-    Use kluster.ai's MCP server for seamless hallucination detection in MCP-compatible applications with fact_check and document_claim_check tools.
+    Add real-time fact-checking to Claude Desktop, VS Code, n8n, and other MCP clients with two specialized verification tools.
 
-    [:octicons-arrow-right-24: Visit the guide](/get-started/hallucination-agent/mcp/){target=_self}
+    [:octicons-arrow-right-24: Start here](/get-started/hallucination-agent/mcp/){target=_self}
 
 </div>
 
@@ -97,6 +97,9 @@ kluster.ai offers multiple ways to detect hallucinations, each designed for diff
 - **Question/Answer detection** - Learn how to [verify individual question-answer pairs](/get-started/hallucination-agent/question-answer/){target=_self}
 - **Chat Completion detection** - Discover how to [validate responses in conversations](/get-started/hallucination-agent/chat-completion/){target=_self}
 - **MCP Integration** - Integrate hallucination detection into [MCP-compatible applications](/get-started/hallucination-agent/mcp/){target=_self}
+- **MCP Quick Start** - Get running in [5 minutes with Docker](/get-started/hallucination-agent/mcp/quick-start/){target=_self}
+- **MCP Tools** - Technical reference for [fact_check and document_claim_check](/get-started/hallucination-agent/mcp/tools/){target=_self}
+- **MCP Clients** - Setup guides for [Claude Desktop, VS Code, n8n, and Dify](/get-started/hallucination-agent/mcp/clients/){target=_self}
 - **Practical examples** - Explore our [Tutorials](/tutorials/klusterai-api/hallucination-detection-agent){target=_blank} of hallucination detection
 - **API reference** - Review the complete [API documentation](/api-reference/reference/){target=_blank} for all hallucination detection endpoints
 
