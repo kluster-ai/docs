@@ -4,5 +4,4 @@ nav:
   - 'Question/answer endpoint': question-answer.md
   - 'Chat completion endpoint': chat-completion.md
   - 'Workflow integrations': workflow-integrations.md
-  - 'MCP server integration': mcp
 

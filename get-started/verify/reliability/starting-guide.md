@@ -90,19 +90,10 @@ kluster.ai offers multiple ways to verify reliability, each designed for differe
 
     [:octicons-arrow-right-24: Get workflows](/get-started/verify/reliability/workflow-integrations/){target=_self}
 
--   <span class="badge guide">Guide</span> __MCP Integration__
-
-    ---
-
-    Add real-time fact-checking to Claude Desktop, VS Code, and other MCP clients with specialized verification tools.
-
-    [:octicons-arrow-right-24: Start here](/get-started/verify/reliability/mcp/){target=_self}
-
 </div>
 
 ## Additional resources
 
 - **Workflow Integrations** - Download [ready-to-use workflows for Dify, n8n](/get-started/verify/reliability/workflow-integrations/){target=_self}
-- **MCP Integration** - Integrate into [Claude Desktop and VS Code](/get-started/verify/reliability/mcp/){target=_self}
 - **Tutorial** - Explore our [kluster verify tutorial](/tutorials/klusterai-api/reliability-check){target=_blank} with code examples
 
