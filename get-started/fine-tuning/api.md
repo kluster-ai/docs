@@ -13,8 +13,7 @@ This guide provides a practical overview of the fine-tuning process using the AP
 
 Before getting started with fine-tuning, ensure you have the following:
 
-- **kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you do not have one.
-- **kluster.ai API key**: After signing in, go to the [API Keys](https://platform.kluster.ai/apikeys){target=_blank} section and create a new key. For detailed instructions, see the [Get an API key](https://docs.kluster.ai/get-started/get-api-key/){target=_blank} guide.
+--8<-- 'text/kluster-api-onboarding.md'
 - **Prepared dataset**: You need data formatted according to kluster.ai's requirements for fine-tuning (detailed below).
 
 ## Supported models
