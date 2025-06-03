@@ -56,7 +56,7 @@ kluster.ai offers two ways to fine-tune models, each designed for different user
 
     ---
 
-    Use the platform to fine-tune, without writing code. The platform is ideal for users who want a guided, interactive experience and real-time feedback on training progress.
+    Use the platform to fine-tune without writing code. The platform is ideal for users who want a guided, interactive experience and real-time feedback on training progress.
 
     [:octicons-arrow-right-24: Visit the guide](/get-started/fine-tuning/platform/){target=_blank}
 
