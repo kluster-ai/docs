@@ -86,7 +86,7 @@ To begin, visit the [kluster.ai fine-tuning page](https://platform.kluster.ai/fi
   2. **Batch size**: Control how many examples are processed in each training step.
   3. **Learning rate multiplier**: Adjust how quickly the model adapts to your training data.
   4. **Number of epochs**: Define how many times the model will cycle through your entire dataset.
-  5. **Create**: Click the Create button to start the fine-tuning process.
+  5. **Create**: Click the **Create** button to start the fine-tuning process.
 
    ![Configure hyperparameters](/images/get-started/fine-tuning/fine-tuning-3.webp)
 
