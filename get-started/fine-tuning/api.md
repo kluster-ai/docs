@@ -5,7 +5,7 @@ description: Learn how to programmatically create custom models tailored to your
 
 # Fine-tuning with the kluster.ai API
 
-The kluster.ai API lets you automate and integrate fine-tuning into your development workflows. You can create, manage, and monitor fine-tuning jobs directly from your code, making it easy to customize models for your specific needs.
+The [kluster.ai](https://www.kluster.ai/){target=\_blank} API lets you automate and integrate fine-tuning into your development workflows. You can create, manage, and monitor fine-tuning jobs directly from your code, making it easy to customize models for your specific needs.
 
 This guide provides a practical overview of the fine-tuning process using the API. It covers the required data format, how to upload your dataset, and how to launch and monitor a fine-tuning job. For a step-by-step walkthrough, see the linked tutorial in the tips below.
 
