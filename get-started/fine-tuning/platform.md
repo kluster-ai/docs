@@ -13,7 +13,7 @@ This guide walks you through the platform's fine-tuning workflow, from uploading
 
 Before getting started with fine-tuning, ensure you have the following:
 
---8<-- 'text/kluster-api-onboarding.md'
+--8<-- 'text/kluster-api-onboarding.md::1'
 - **Prepared dataset**: You need data formatted according to kluster.ai's requirements for fine-tuning (detailed below).
 
 ## Supported models

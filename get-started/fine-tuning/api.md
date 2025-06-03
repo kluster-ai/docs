@@ -140,7 +140,6 @@ fine_tuning_job = client.fine_tuning.jobs.create(
 )
 ```
 
-
 ### Monitor job progress
 
 Track the status of your fine-tuning job:
