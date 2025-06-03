@@ -3,7 +3,7 @@ title: Fine-tuning with the kluster.ai Platform
 description: Learn how to create custom models tailored to your specific tasks by fine-tuning foundation models with your own data using the kluster.ai visual interface.
 ---
 
-# Fine-tuning with the kluster.ai Platform
+# Fine-tuning with the kluster.ai platform
 
 The kluster.ai platform provides a visual, no-code approach to fine-tuning AI models. With an intuitive interface and real-time feedback, you can train customized models without writing a single line of code.
 
