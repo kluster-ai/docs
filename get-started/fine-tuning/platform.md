@@ -80,7 +80,8 @@ To begin, visit the [kluster.ai fine-tuning page](https://platform.kluster.ai/fi
     You can optionally upload a validation dataset in the same format as your training data. This helps evaluate the performance of your model during training.
 
 ### Configure hyperparameters
-  Customize your fine-tuning job by configuring these settings:
+
+Customize your fine-tuning job by configuring these settings:
 
   1. **Nickname**: Add an optional custom suffix that will be appended to your fine-tuned model name.
   2. **Batch size**: Control how many examples are processed in each training step.
