@@ -42,7 +42,7 @@ Fine-tuning delivers several key advantages over using general-purpose models:
 
 ## Supported models
 
-kluster.ai currently supports fine-tuning for two powerful foundation models:
+kluster.ai currently supports fine-tuning for the following models:
 
 --8<-- 'text/get-started/fine-tuning-supported-models.md'
 
