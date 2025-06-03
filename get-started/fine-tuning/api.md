@@ -169,6 +169,7 @@ response = client.chat.completions.create(
     ]
 )
 ```
+
 ### Use your fine-tuned model in the playground (optional)
 
 After your fine-tuned model is created, you can also test it in the kluster.ai playground:
