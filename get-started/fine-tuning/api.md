@@ -18,7 +18,7 @@ Before getting started with fine-tuning, ensure you have the following:
 
 ## Supported models
 
-kluster.ai currently supports fine-tuning for two base models:
+kluster.ai currently supports fine-tuning for the following models:
 
 --8<-- 'text/get-started/fine-tuning-supported-models.md'
 
