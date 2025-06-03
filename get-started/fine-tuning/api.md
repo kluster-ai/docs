@@ -35,7 +35,7 @@ Fine‑tuning a model with the kluster.ai API follows a straightforward five‑s
 4. **Monitor job progress**: Poll the job endpoint (or subscribe to webhooks) until the job reaches the `succeeded` state.
 5. **Use your fine‑tuned model**: Invoke the model name returned by the job for inference in your application or the kluster.ai playground.
 
-The following sections will take a closer look at each step.
+The following sections will provide a closer look at each step.
 
 ### Prepare your data
 
