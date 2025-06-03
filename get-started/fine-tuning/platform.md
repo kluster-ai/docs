@@ -1,9 +1,9 @@
 ---
-title: Fine-tuning with the Platform
+title: Fine-tuning with the kluster.ai Platform
 description: Learn how to create custom models tailored to your specific tasks by fine-tuning foundation models with your own data using the kluster.ai visual interface.
 ---
 
-# Fine-tuning with the Platform
+# Fine-tuning with the kluster.ai Platform
 
 The kluster.ai platform provides a visual, no-code approach to fine-tuning AI models. With an intuitive interface and real-time feedback, you can train customized models without writing a single line of code.
 
@@ -13,7 +13,7 @@ This guide walks you through the platform's fine-tuning workflow, from uploading
 
 Before getting started with fine-tuning, ensure you have the following:
 
-- **kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you do not have one.
+--8<-- 'text/kluster-api-onboarding.md'
 - **Prepared dataset**: You need data formatted according to kluster.ai's requirements for fine-tuning (detailed below).
 
 ## Supported models

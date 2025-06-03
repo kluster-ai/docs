@@ -1,6 +1,6 @@
 title: Fine-tuning
 hide: false
 nav:
-  - 'Starting Guide': starting-guide.md
+  - 'Overview': overview.md
   - 'Platform': platform.md
   - 'API': api.md
