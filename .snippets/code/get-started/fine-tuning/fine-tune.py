@@ -1,0 +1,1 @@
+--8<-- 'text/kluster-api-onboarding.md::1'
