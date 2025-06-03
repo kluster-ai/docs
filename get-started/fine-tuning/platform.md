@@ -77,7 +77,7 @@ To begin, visit the [kluster.ai fine-tuning page](https://platform.kluster.ai/fi
 ![Select base model](/images/get-started/fine-tuning/fine-tuning-2.webp)
 
 !!! note "Validation data"
-    You can optionally upload a validation dataset in the same format as your training data. This helps evaluate your model's performance during training.
+    You can optionally upload a validation dataset in the same format as your training data. This helps evaluate the performance of your model during training.
 
 ### Configure hyperparameters
   Customize your fine-tuning job by configuring these settings:
