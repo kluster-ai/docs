@@ -6,4 +6,4 @@ nav:
   - start-building
   - 'OpenAI compatibility': openai-compatibility.md
   - 'Integrations': integrations
-  - 'kluster verify': hallucination-agent
+  - 'kluster verify': verify
