@@ -1,4 +1,4 @@
-# Batch completions with the Mistral NeMo model on kluster.ai
+# Batch completions with the DeepSeek-R1-0528 model on kluster.ai
 
 from os import environ
 from openai import OpenAI
@@ -24,7 +24,7 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "mistralai/Mistral-Nemo-Instruct-2407",
+            "model": "deepseek-ai/DeepSeek-R1-0528",
             "messages": [
                 {"role": "system", "content": "You are an experienced cook."},
                 {"role": "user", "content": "What is the ultimate breakfast sandwich?"},
@@ -37,7 +37,7 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "mistralai/Mistral-Nemo-Instruct-2407",
+            "model": "deepseek-ai/DeepSeek-R1-0528",
             "messages": [
                 {"role": "system", "content": "You are a maths tutor."},
                 {"role": "user", "content": "Explain the Pythagorean theorem."},
@@ -50,7 +50,7 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "mistralai/Mistral-Nemo-Instruct-2407",
+            "model": "deepseek-ai/DeepSeek-R1-0528",
             "messages": [
                 {
                     "role": "system",

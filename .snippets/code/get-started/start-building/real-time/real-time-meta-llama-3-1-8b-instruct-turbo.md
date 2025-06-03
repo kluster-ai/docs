@@ -12,7 +12,7 @@ curl https://api.kluster.ai/v1/chat/completions \
     -H "Authorization: Bearer $API_KEY" \
     -H "Content-Type: application/json" \
     -d "{
-            \"model\": \"mistralai/Mistral-Nemo-Instruct-2407\", 
+            \"model\": \"klusterai/Meta-Llama-3.1-8B-Instruct-Turbo\", 
             \"messages\": [
                 { 
                     \"role\": \"user\", 

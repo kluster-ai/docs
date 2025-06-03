@@ -11,9 +11,9 @@ echo -e "📤 Sending batch request to kluster.ai...
 
 # Create request with specified structure
 cat << EOF > my_batch_request.jsonl
-{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Mistral-Nemo-Instruct-2407", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
-{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Mistral-Nemo-Instruct-2407", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
-{"custom_id": "request-4", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Mistral-Nemo-Instruct-2407", "messages":[{"role": "system", "content": "You are a multilingual, experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"}],"max_completion_tokens":1000}}
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "deepseek-ai/DeepSeek-V3-0324", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "deepseek-ai/DeepSeek-V3-0324", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
+{"custom_id": "request-4", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "deepseek-ai/DeepSeek-V3-0324", "messages":[{"role": "system", "content": "You are a multilingual, experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"}],"max_completion_tokens":1000}}
 EOF
 
 # Upload batch job file

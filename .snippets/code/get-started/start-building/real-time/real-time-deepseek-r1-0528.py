@@ -1,4 +1,4 @@
-# Real-time completions with the Mistral NeMo model on kluster.ai
+# Real-time completions with the DeepSeek-R1-0528 model on kluster.ai
 
 from os import environ
 from openai import OpenAI
@@ -17,7 +17,7 @@ client = OpenAI(
 
 # Create chat completion request
 completion = client.chat.completions.create(
-    model="mistralai/Mistral-Nemo-Instruct-2407",
+    model="deepseek-ai/DeepSeek-R1-0528",
     messages=[
         {"role": "user", "content": "What is the ultimate breakfast sandwich?"}
     ]

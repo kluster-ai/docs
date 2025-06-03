@@ -1,10 +1,18 @@
-# Batch completions with the Mistral NeMo model on kluster.ai
+# Batch completions with the Meta Llama 4 Maverick model on kluster.ai
 
 from os import environ
-from openai import OpenAI
-from getpass import getpass
 import json
 import time
+from getpass import getpass
+
+from openai import OpenAI
+
+# Newton's cradle
+image1_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true"
+# Text with typos
+image2_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true"
+# Parking sign
+image3_url="https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"
 
 # Get API key from user input
 api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
@@ -24,10 +32,20 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "mistralai/Mistral-Nemo-Instruct-2407",
+            "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
             "messages": [
-                {"role": "system", "content": "You are an experienced cook."},
-                {"role": "user", "content": "What is the ultimate breakfast sandwich?"},
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": "What is this?"},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": image1_url
+                            },
+                        },
+                    ],
+                }
             ],
             "max_completion_tokens": 1000,
         },
@@ -37,10 +55,20 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "mistralai/Mistral-Nemo-Instruct-2407",
+            "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
             "messages": [
-                {"role": "system", "content": "You are a maths tutor."},
-                {"role": "user", "content": "Explain the Pythagorean theorem."},
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": "Extract the text, find typos if any."},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": image2_url
+                            },
+                        },
+                    ],
+                }
             ],
             "max_completion_tokens": 1000,
         },
@@ -50,21 +78,24 @@ requests = [
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "mistralai/Mistral-Nemo-Instruct-2407",
+            "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
             "messages": [
                 {
-                    "role": "system",
-                    "content": "You are a multilingual, experienced maths tutor.",
-                },
-                {
                     "role": "user",
-                    "content": "Explain the Pythagorean theorem in Spanish",
-                },
+                    "content": [
+                        {"type": "text", "text": "Who can park in the area?"},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": image3_url
+                            },
+                        },
+                    ],
+                }
             ],
             "max_completion_tokens": 1000,
         },
     },
-    # Additional tasks can be added here
 ]
 
 # Save tasks to a JSONL file (newline-delimited JSON)
@@ -74,10 +105,7 @@ with open(file_name, "w") as file:
         file.write(json.dumps(request) + "\n")
 
 # Upload batch job file
-batch_input_file = client.files.create(
-        file=open(file_name, "rb"),
-        purpose="batch"
-)
+batch_input_file = client.files.create(file=open(file_name, "rb"), purpose="batch")
 
 # Submit batch job
 batch_request = client.batches.create(
@@ -99,6 +127,10 @@ while True:
 
     time.sleep(10)  # Wait for 10 seconds before checking again
 
+print(f"\nImage1 URL: {image1_url}")
+print(f"\nImage2 URL: {image2_url}")
+print(f"\nImage3 URL: {image3_url}")
+
 # Check if the Batch completed successfully
 if batch_status.status.lower() == "completed":
     # Retrieve the results and log
@@ -110,3 +142,4 @@ if batch_status.status.lower() == "completed":
     print(results)
 else:
     print(f"Batch failed with status: {batch_status.status}")
+    print(batch_status)
