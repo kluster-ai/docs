@@ -44,8 +44,7 @@ Fine-tuning delivers several key advantages over using general-purpose models:
 
 kluster.ai currently supports fine-tuning for two powerful foundation models:
 
-- [klusterai/Meta-Llama-3.1-8B-Instruct-Turbo](https://docs.kluster.ai/get-started/models/){target=_blank}
-- [klusterai/Meta-Llama-3.3-70B-Instruct-Turbo](https://docs.kluster.ai/get-started/models/){target=_blank} 
+--8<-- 'text/get-started/fine-tuning-supported-models.md'
 
 ## Choose your fine-tuning approach
 

@@ -20,8 +20,7 @@ Before getting started with fine-tuning, ensure you have the following:
 
 kluster.ai currently supports fine-tuning for two base models:
 
-- [klusterai/Meta-Llama-3.1-8B-Instruct-Turbo](https://docs.kluster.ai/get-started/models/){target=_blank}
-- [klusterai/Meta-Llama-3.3-70B-Instruct-Turbo](https://docs.kluster.ai/get-started/models/){target=_blank} 
+--8<-- 'text/get-started/fine-tuning-supported-models.md'
 
 ## Data preparation
 

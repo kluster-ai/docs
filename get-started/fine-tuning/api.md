@@ -20,8 +20,7 @@ Before getting started with fine-tuning, ensure you have the following:
 
 kluster.ai currently supports fine-tuning for two base models:
 
-- [klusterai/Meta-Llama-3.1-8B-Instruct-Turbo](https://docs.kluster.ai/get-started/models/){target=_blank}
-- [klusterai/Meta-Llama-3.3-70B-Instruct-Turbo](https://docs.kluster.ai/get-started/models/){target=_blank} 
+--8<-- 'text/get-started/fine-tuning-supported-models.md'
 
 !!! info
     You can query the [models endpoint](https://docs.kluster.ai/api-reference/reference/#list-supported-models){target=_blank} in the API and filter for the tag "fine-tunable."
@@ -185,7 +184,6 @@ Fine-tuning offers several advantages over using general-purpose models:
 - **Cost efficiency**: Smaller fine-tuned models can outperform larger models at a lower cost.
 - **Reduced latency**: Fine-tuned models can deliver faster responses for your applications.
 - **Consistency**: More reliable outputs tailored to your specific task or domain.
-
 
 ## Next steps
 
