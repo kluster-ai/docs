@@ -1,5 +1,5 @@
 ---
-title: Fine-tuning with the kluster.ai Platform
+title: Fine-tuning with the kluster.ai platform
 description: Learn how to create custom models tailored to your specific tasks by fine-tuning foundation models with your own data using the kluster.ai visual interface.
 ---
 
