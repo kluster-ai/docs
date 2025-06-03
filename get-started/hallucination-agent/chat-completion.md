@@ -1,6 +1,6 @@
 ---
 title: Chat completion hallucination detection
-description: Learn how to use the kluster.ai hallucination detection agent to validate responses in full chat conversations.
+description: Learn how to use kluster verify to validate responses in full chat conversations.
 ---
 
 # Chat completion

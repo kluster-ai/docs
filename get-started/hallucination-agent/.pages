@@ -1,7 +1,7 @@
 title: kluster verify
 nav:
   - 'Starting guide': starting-guide.md
-  - 'Question - answer': question-answer.md
-  - 'Chat completion': chat-completion.md
-  - mcp
+  - 'Question/answer endpoint': question-answer.md
+  - 'Chat completion endpoint': chat-completion.md
+  - 'MCP server integration': mcp
 

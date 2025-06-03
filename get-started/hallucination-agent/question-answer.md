@@ -1,11 +1,11 @@
 ---
 title: Question - answer 
-description: Learn how to use the kluster.ai hallucination detection API to validate the truthfulness of answers to questions.
+description: Learn how to use kluster verify to validate the truthfulness of answers to questions.
 ---
 
 # Question/answer
 
-The Question/Answer method allows you to validate whether an answer to a specific question contains hallucinated information. This approach is ideal for fact-checking individual responses against provided context or general knowledge.
+The Question/Answer method allows you to validate whether an answer to a specific question contains hallucinated information. This approach is ideal for fact-checking individual responses against provided context (when you include the `context` parameter) or general knowledge (when no context is provided).
 
 ## Prerequisites
 
