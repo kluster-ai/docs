@@ -95,6 +95,7 @@ client = OpenAI(
     api_key=api_key
 )
 ```
+
 ### Upload your training file
 
 Once your data is prepared, upload it to the kluster.ai platform:
