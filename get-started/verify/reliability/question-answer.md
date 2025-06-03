@@ -1,11 +1,11 @@
 ---
 title: Question - answer 
-description: Learn how to use kluster verify to validate the truthfulness of answers to questions.
+description: Learn how to use kluster verify to validate the reliability of answers to questions.
 ---
 
 # Question/answer
 
-The Question/Answer method allows you to validate whether an answer to a specific question contains hallucinated information. This approach is ideal for fact-checking individual responses against provided context (when you include the `context` parameter) or general knowledge (when no context is provided).
+The Question/Answer method allows you to validate whether an answer to a specific question contains unreliable information. This approach is ideal for fact-checking individual responses against provided context (when you include the `context` parameter) or general knowledge (when no context is provided).
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ The service evaluates the truthfulness of an answer to a question by:
 
 1. Analyzing the original question or prompt.
 2. Examining the provided answer.
-3. Determining if the answer contains hallucinated or unsupported information.
+3. Determining if the answer contains unreliable or unsupported information.
 4. Providing a detailed explanation of the reasoning behind the determination as well as the search results used for fact-checking.
 
 ### Parameters
@@ -29,7 +29,7 @@ The service evaluates the truthfulness of an answer to a question by:
 | Parameter | Type | Required | Description |
 | :---: | :---: | :---: | :---: |
 | `prompt` | string | Yes | The question asked or instruction given. |
-| `output` | string | Yes | The answer to verify for hallucinations. |
+| `output` | string | Yes | The answer to verify for reliability. |
 | `context` | string | No | Optional reference material to validate against. |
 | `return_search_results` | boolean | No | Whether to include search results (default: false). |
 
@@ -50,14 +50,14 @@ The API returns a JSON object with the following structure:
 ```
 ## Usage modes
 
-The agent operates in two distinct modes depending on whether you provide context with your request:
+The service operates in two distinct modes depending on whether you provide context with your request:
 
-- **Fact-checking mode** - when no context is provided, the agent verifies answers against general knowledge and external sources.
-- **Context validation mode** - when context is provided, the agent only validates answers against the specified context.
+- **Fact-checking mode** - when no context is provided, the service verifies answers against general knowledge and external sources.
+- **Context validation mode** - when context is provided, the service only validates answers against the specified context.
 
 ### Fact-checking mode
 
-This example checks whether an answer contains hallucinated information. As no context is provided, the answer will be fact-checked against general knowledge to identify hallucinations.
+This example checks whether an answer contains unreliable information. As no context is provided, the answer will be fact-checked against general knowledge to identify reliability issues.
 
 ??? example "Python"
 
@@ -69,7 +69,7 @@ This example checks whether an answer contains hallucinated information. As no c
     api_key = getpass("Enter your kluster.ai API key: ")
 
     # Set up request data
-    url = "https://api.kluster.ai/v1/judges/detect-hallucination"
+    url = "https://api.kluster.ai/v1/verify/reliability"
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
@@ -80,7 +80,7 @@ This example checks whether an answer contains hallucinated information. As no c
         "return_search_results": False #Optional
     }
 
-    # Send the request to the hallucination detection endpoint
+    # Send the request to the reliability verification endpoint
     response = requests.post(url, headers=headers, json=payload)
 
     # Convert the response to JSON
@@ -93,8 +93,8 @@ This example checks whether an answer contains hallucinated information. As no c
     # Print full response
     print(f"🔗 API Response: {result}")
 
-    # Print whether hallucination was detected
-    print(f"{'HALLUCINATION DETECTED' if is_hallucination else 'NO HALLUCINATION DETECTED'}")
+    # Print whether reliability issue was detected
+    print(f"{'RELIABILITY ISSUE DETECTED' if is_hallucination else 'NO RELIABILITY ISSUE DETECTED'}")
 
     # Print the explanation 
     print(f"\nExplanation: {explanation}")
@@ -109,8 +109,8 @@ This example checks whether an answer contains hallucinated information. As no c
         echo -e "\nError: API_KEY environment variable is not set.\n" >&2
     fi
 
-    # Submit hallucination detection request
-    curl --location 'https://api.kluster.ai/v1/judges/detect-hallucination' \
+    # Submit reliability verification request
+    curl --location 'https://api.kluster.ai/v1/verify/reliability' \
     --header "Authorization: Bearer $API_KEY" \
     --header "Content-Type: application/json" \
     --data '{
@@ -122,7 +122,7 @@ This example checks whether an answer contains hallucinated information. As no c
 
 ### Context validation mode
 
-When providing the `context` parameter, the agent will not perform external fact-checking. Instead, it focuses on whether the answer complies with the provided context.
+When providing the `context` parameter, the service will not perform external fact-checking. Instead, it focuses on whether the answer complies with the provided context.
 
 !!! tip "RAG applications"
     Ensure the LLM's responses are accurate by using kluster verify in your Retrieval Augmented Generation workflows.
@@ -140,7 +140,7 @@ This example checks whether an answer is correct based on the provided context.
     api_key = getpass("Enter your kluster.ai API key: ")
 
     # Set up request data
-    url = "https://api.kluster.ai/v1/judges/detect-hallucination"
+    url = "https://api.kluster.ai/v1/verify/reliability"
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
@@ -152,7 +152,7 @@ This example checks whether an answer is correct based on the provided context.
         "return_search_results": False
     }
 
-    # Send the request to the hallucination detection endpoint
+    # Send the request to the reliability verification endpoint
     response = requests.post(url, headers=headers, json=payload)
 
     # Convert the response to JSON
@@ -165,8 +165,8 @@ This example checks whether an answer is correct based on the provided context.
     # Print full response
     print(f"🔗 API Response: {result}")
 
-    # Print whether hallucination was detected
-    print(f"{'HALLUCINATION DETECTED' if is_hallucination else 'NO HALLUCINATION DETECTED'}")
+    # Print whether reliability issue was detected
+    print(f"{'RELIABILITY ISSUE DETECTED' if is_hallucination else 'NO RELIABILITY ISSUE DETECTED'}")
 
     # Print the explanation 
     print(f"\nExplanation: {explanation}")
@@ -182,8 +182,8 @@ This example checks whether an answer is correct based on the provided context.
         echo -e "\nError: API_KEY environment variable is not set.\n" >&2
     fi
 
-    # Submit hallucination detection request
-    curl --location 'https://api.kluster.ai/v1/judges/detect-hallucination' \
+    # Submit reliability verification request
+    curl --location 'https://api.kluster.ai/v1/verify/reliability' \
     --header "Authorization: Bearer $API_KEY" \
     --header "Content-Type: application/json" \
     --data '{
@@ -203,6 +203,5 @@ This example checks whether an answer is correct based on the provided context.
 
 ## Next steps
 
-- Learn how to use [Chat completion hallucination detection](/get-started/hallucination-agent/chat-completion/){target=_self} for evaluating entire conversation histories
-- Explore [Examples](/get-started/hallucination-agent/examples/){target=_self} of hallucination detection in real-world scenarios
+- Learn how to use [Chat completion reliability verification](/get-started/verify/reliability/chat-completion/){target=_self} for evaluating entire conversation histories
 - Review the complete [API documentation](/api-reference/reference/){target=_blank} for detailed endpoint specifications

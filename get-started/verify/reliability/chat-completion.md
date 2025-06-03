@@ -1,15 +1,15 @@
 ---
-title: Chat completion hallucination detection
+title: Chat completion reliability verification
 description: Learn how to use kluster verify to validate responses in full chat conversations.
 ---
 
 # Chat completion
 
-The Chat Completion method allows you to validate responses in full conversation histories using the same format as the standard chat completions API. This approach enables detection of hallucinations within the complete context of a conversation.
+The Chat Completion method allows you to validate responses in full conversation histories using the same format as the standard chat completions API. This approach enables verification of reliability within the complete context of a conversation.
 
 ## Prerequisites
 
-Before getting started with hallucination detection, ensure the following requirements are met:
+Before getting started with reliability verification, ensure the following requirements are met:
 
 - **kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you do not have one
 - **kluster.ai API key** - after signing in, go to the [API Keys](https://platform.kluster.ai/apikeys){target=_blank} section and create a new key. For detailed instructions, see the [Get an API key](https://docs.kluster.ai/get-started/get-api-key/){target=_blank} guide
@@ -20,19 +20,19 @@ The service evaluates the truthfulness of responses within a conversation by:
 
 1. Analyzing the entire conversation history, including system instructions.
 2. Examining the assistant's responses within context.
-3. Determining if the responses contain hallucinated or unsupported information.
+3. Determining if the responses contain unreliable or unsupported information.
 4. Providing a detailed explanation of the reasoning behind the determination and the search results used for fact-checking.
 
 ## Usage modes
 
-The agent operates in two distinct modes depending on whether you provide context with your request:
+The service operates in two distinct modes depending on whether you provide context with your request:
 
 - **Dedicated Endpoint** - use the API directly without specifying a model.
-- **OpenAI SDK** - select the hallucination-detection model and use the SDK in a familiar way.
+- **OpenAI SDK** - select the verify-reliability model and use the SDK in a familiar way.
 
 ### Dedicated endpoint
 
-By using the `/v1/judges/detect-hallucination` endpoint to check whether an assistant's answer is hallucination.
+By using the `/v1/verify/reliability` endpoint to check whether an assistant's answer is reliable.
 
 ??? example "CLI"
 
@@ -44,8 +44,8 @@ By using the `/v1/judges/detect-hallucination` endpoint to check whether an assi
         echo -e "\nError: API_KEY environment variable is not set.\n" >&2
     fi
     
-    # Submit hallucination detection request
-    curl --location 'https://api.kluster.ai/v1/judges/detect-hallucination' \
+    # Submit reliability verification request
+    curl --location 'https://api.kluster.ai/v1/verify/reliability' \
     --header 'Content-Type: application/json' \
     --header "Authorization: Bearer $API_KEY" \
     --data '{
@@ -73,7 +73,7 @@ By using the `/v1/judges/detect-hallucination` endpoint to check whether an assi
 
 ### OpenAI client
 
-This example shows how to use the agent with the `https://api.kluster.ai/v1` endpoint with the specialized `klusterai/hallucination-detection` model.
+This example shows how to use the service with the `https://api.kluster.ai/v1` endpoint with the specialized `klusterai/verify-reliability` model.
 
 ??? example "Python"
 
@@ -92,7 +92,7 @@ This example shows how to use the agent with the `https://api.kluster.ai/v1` end
 
     # Create chat completion request
     completion = client.chat.completions.create(
-        model="klusterai/hallucination-detection",
+        model="klusterai/verify-reliability",
         messages = [
         {
             "role": "system",
@@ -109,7 +109,7 @@ This example shows how to use the agent with the `https://api.kluster.ai/v1` end
     ]
     )
 
-    # Extract the hallucination detection response
+    # Extract the reliability verification response
     text_response = completion.choices[0].message.content  
 
     # Print response to console
@@ -119,6 +119,5 @@ This example shows how to use the agent with the `https://api.kluster.ai/v1` end
 
 ## Next steps
 
-- Learn how to use [Question/answer hallucination detection](/get-started/hallucination-agent/question-answer/){target=_self} for simpler verification scenarios
-- Explore [Examples](/get-started/hallucination-agent/examples/){target=_self} of hallucination detection in real-world scenarios
+- Learn how to use [Question/answer reliability verification](/get-started/verify/reliability/question-answer/){target=_self} for simpler verification scenarios
 - Review the complete [API documentation](/api-reference/reference/){target=_blank} for detailed endpoint specifications

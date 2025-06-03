@@ -52,7 +52,7 @@ Both tools return structured responses with explanations and source citations.
 
     Get running in five minutes with Docker. Perfect for testing and development environments.
 
-    [:octicons-arrow-right-24: Start here](/get-started/hallucination-agent/mcp/quick-start/){target=_self}
+    [:octicons-arrow-right-24: Start here](/get-started/verify/reliability/mcp/quick-start/){target=_self}
 
 -   <span class="badge reference">Reference</span> __Tools Reference__
 
@@ -60,7 +60,7 @@ Both tools return structured responses with explanations and source citations.
 
     Deep dive into fact_check and document_claim_check tools with examples and parameters.
 
-    [:octicons-arrow-right-24: See tools](/get-started/hallucination-agent/mcp/tools/){target=_self}
+    [:octicons-arrow-right-24: See tools](/get-started/verify/reliability/mcp/tools/){target=_self}
 
 -   <span class="badge integration">Integration</span> __Client Setup__
 
@@ -68,7 +68,7 @@ Both tools return structured responses with explanations and source citations.
 
     Integrate with Claude Desktop, VS Code, n8n, Dify, and other MCP-compatible platforms.
 
-    [:octicons-arrow-right-24: Setup clients](/get-started/hallucination-agent/mcp/clients/){target=_self}
+    [:octicons-arrow-right-24: Setup clients](/get-started/verify/reliability/mcp/clients/){target=_self}
 
 </div>
 
@@ -87,7 +87,7 @@ New to Model Context Protocol? Learn more in the [official MCP documentation](ht
 
 ## Additional Resources
 
-- **Question/Answer detection** - Learn how to [verify individual question-answer pairs](/get-started/hallucination-agent/question-answer/){target=_self}
-- **Chat Completion detection** - Discover how to [validate responses in conversations](/get-started/hallucination-agent/chat-completion/){target=_self}
-- **Practical examples** - Explore our [Tutorials](/tutorials/klusterai-api/hallucination-detection-agent){target=_blank} for kluster verify
-- **API reference** - Review the complete [API documentation](/api-reference/reference/){target=_blank} for all hallucination detection endpoints
+- **Question/Answer verification** - Learn how to [verify individual question-answer pairs](/get-started/verify/reliability/question-answer/){target=_self}
+- **Chat Completion verification** - Discover how to [validate responses in conversations](/get-started/verify/reliability/chat-completion/){target=_self}
+- **Practical examples** - Explore our [Tutorials](/tutorials/klusterai-api/reliability-check){target=_blank} for kluster verify
+- **API reference** - Review the complete [API documentation](/api-reference/reference/){target=_blank} for all reliability verification endpoints

@@ -15,8 +15,9 @@ Full MCP support with automatic tool selection and document parsing.
 
 1. **Build the server**:
    ```bash
+   # TODO: Define MCP repository URL
    git clone https://github.com/kluster-ai/hallucination-mcp-server
-   cd hallucination-mcp-server
+   cd verify-mcp-server  # TODO: Update folder name when repo is renamed
    npm run docker:build
    ```
 

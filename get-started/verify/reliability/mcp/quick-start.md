@@ -21,6 +21,7 @@ Before getting started with MCP integration, ensure the following requirements a
 ### Step 1: Get the Server
 
 ```bash
+# TODO: Define MCP repository URL
 git clone https://github.com/kluster-ai/hallucination-mcp-server
 cd hallucination-mcp-server
 npm run docker:build
