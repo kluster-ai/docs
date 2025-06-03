@@ -113,11 +113,9 @@ with open('training_data.jsonl', 'rb') as file:
     print(f"File uploaded successfully. File ID: {file_id}")
 ```
 
-!!! note "Uploading large files"
-    If your training dataset is large (approaching 100MB), you may need to use the chunked upload method. See the [Uploading large files](/tutorials/klusterai-api/uploads-api/){target=_blank} guide for detailed instructions on multi-part uploads.
-
-!!! warning "File size limits"
-    For the free tier, each fine-tuning file must not exceed 100 MB. For the standard tier, the maximum file size is also 100 MB per file. The difference between tiers is in the number of examples allowed - free tier is limited to fewer examples.
+!!! warning "File size & upload limits"
+    Each fine-tuning file must be ≤ 100 MB on both the free and standard tiers (the standard tier simply allows more total examples).  
+    When your dataset approaches this limit, use the [chunked upload](/tutorials/klusterai-api/uploads-api/){target=_blank} method for reliable multi-part uploads.
 
 ### Create a fine-tuning job
 
