@@ -18,7 +18,7 @@ This process allows the model to:
 - Follow consistent formatting and output structures.
 - Develop specialized capabilities tailored to your use cases.
 
-Fine-tuning is particularly valuable when you want consistent, specialized responses that would otherwise require complex prompting or when you need the model to reliably generate outputs in a specific format.
+Fine-tuning is particularly valuable when you want consistent, specialized responses that would otherwise require complex prompting or when you need the model to generate outputs in a specific format reliably.
 
 ## When to fine-tune your model
 
