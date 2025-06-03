@@ -23,7 +23,7 @@ kluster.ai currently supports fine-tuning for two base models:
 --8<-- 'text/get-started/fine-tuning-supported-models.md'
 
 !!! note
-    You can query the [models endpoint](https://docs.kluster.ai/api-reference/reference/#list-supported-models){target=_blank} in the API and filter for the tag "fine-tunable."
+    You can query the [models endpoint](/api-reference/reference/#list-supported-models){target=_blank} in the API and filter for the tag "fine-tunable."
 
 ## Fine-tuning workflow
 
