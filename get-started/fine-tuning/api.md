@@ -189,7 +189,7 @@ Fine-tuning offers several advantages over using general-purpose models:
 
 ## Next steps
 
-- **Detailed tutorial**: Follow the [Fine-tuning Sentiment Analysis Tutorial](https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-analysis/#get-the-data){target=_blank}.
+- **Detailed tutorial**: Follow the [Fine-tuning sentiment analysis tutorial](/tutorials/klusterai-api/finetuning-sent-analysis/#get-the-data){target=_blank}.
 - **API reference**: Review the [API reference documentation](/api-reference/reference/){target=_blank} for all fine-tuning related endpoints.
 - **Explore models**: See the [Models](/get-started/models/){target=_blank} page to check which foundation models support fine-tuning.
 - **Platform approach**: Try the [user-friendly platform interface](/get-started/fine-tuning/platform/){target=_blank} for fine-tuning without writing code.
