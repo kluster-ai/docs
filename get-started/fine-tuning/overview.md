@@ -9,7 +9,7 @@ Fine-tuning lets you transform general-purpose models into specialized AI assist
 
 ## What to know
 
-Fine-tuning takes a pre-trained foundation model and further trains it on your specific dataset to enhance its performance on particular tasks. Unlike prompt engineering, which works within the constraints of the base model, fine-tuning with _LoRA (Low-Rank Adaptation)_ efficiently adapts the model by adding small trainable adapter layers rather than modifying all original weights.
+Fine-tuning involves taking a pre-trained foundation model and further training it on your specific dataset to enhance its performance on particular tasks. Unlike prompt engineering, which works within the constraints of the base model, fine-tuning with _LoRA (Low-Rank Adaptation)_ efficiently adapts the model by adding small trainable adapter layers rather than modifying all original weights.
 
 This process allows the model to:
 
