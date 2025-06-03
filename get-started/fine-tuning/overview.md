@@ -36,7 +36,7 @@ Fine-tuning delivers several key advantages over using general-purpose models:
 
 - **Improved performance**: Fine-tuned models consistently outperform base models on specific tasks.
 - **Cost efficiency**: Smaller fine-tuned models can match or exceed the performance of larger models at a lower cost.
-- **Reduced latency**: Fine-tuned models deliver faster responses, improving user experience.
+- **Reduced latency**: Fine-tuned models provide faster responses, enhancing the user experience.
 - **Consistency**: Achieve more reliable outputs tailored to your specific requirements.
 - **Data privacy**: Train models on your data without exposing sensitive information in prompts.
 
