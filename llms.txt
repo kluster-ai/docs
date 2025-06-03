@@ -3043,8 +3043,8 @@ This guide provides a practical overview of the fine-tuning process using the AP
 
 Before getting started with fine-tuning, ensure you have the following:
 
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 - **Prepared dataset**: You need data formatted according to kluster.ai's requirements for fine-tuning (detailed below).
 
 ## Supported models
@@ -3077,24 +3077,24 @@ High-quality, well-formatted data is crucial for successful fine-tuning:
 - **Structure**: Each JSON object should contain a `messages` array with system, user, and assistant messages.
 - **Example format**:
 
-```json
-{
-  "messages": [
+    ```json
     {
-      "role": "system",
-      "content": "You are a JSON Generation Specialist. Convert user requests into properly formatted JSON."
-    },
-    {
-      "role": "user",
-      "content": "Create a configuration for a web application with name 'TaskMaster', version 1.2.0, and environment set to development."
-    },
-    {
-      "role": "assistant",
-      "content": "{\n  \"application\": {\n    \"name\": \"TaskMaster\",\n    \"version\": \"1.2.0\",\n    \"environment\": \"development\"\n  }\n}"
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a JSON Generation Specialist. Convert user requests into properly formatted JSON."
+        },
+        {
+          "role": "user",
+          "content": "Create a configuration for a web application with name 'TaskMaster', version 1.2.0, and environment set to development."
+        },
+        {
+          "role": "assistant",
+          "content": "{\n  \"application\": {\n    \"name\": \"TaskMaster\",\n    \"version\": \"1.2.0\",\n    \"environment\": \"development\"\n  }\n}"
+        }
+      ]
     }
-  ]
-}
-```
+    ```
 
 - **Quantity**: The minimum requirement is 10 examples, but more diverse and high-quality examples yield better results.
 - **Quality**: Ensure your data accurately represents the task you want the model to perform.
@@ -3117,7 +3117,6 @@ Then initialize the client with the kluster.ai base URL:
 
 ```python
 from openai import OpenAI
-from getpass import getpass
 
 api_key = getpass("Enter your kluster.ai API key: ")
 
@@ -3133,7 +3132,6 @@ client = OpenAI(
 Once your data is prepared, upload it to the kluster.ai platform:
 
 ```python
-# Upload fine-tuning file (for files under 100MB)
 with open('training_data.jsonl', 'rb') as file:
     upload_response = client.files.create(
         file=file,
@@ -3145,18 +3143,15 @@ with open('training_data.jsonl', 'rb') as file:
     print(f"File uploaded successfully. File ID: {file_id}")
 ```
 
-!!! note "Uploading large files"
-    If your training dataset is large (approaching 100MB), you may need to use the chunked upload method. See the [Uploading large files](/tutorials/klusterai-api/uploads-api/){target=_blank} guide for detailed instructions on multi-part uploads.
-
-!!! warning "File size limits"
-    For the free tier, each fine-tuning file must not exceed 100 MB. For the standard tier, the maximum file size is also 100 MB per file. The difference between tiers is in the number of examples allowed - free tier is limited to fewer examples.
+!!! warning "File size & upload limits"
+    Each fine-tuning file must be ≤ 100 MB on both the free and standard tiers (the standard tier simply allows more total examples).  
+    When your dataset approaches this limit, use the [chunked upload](/tutorials/klusterai-api/uploads-api/){target=_blank} method for reliable multi-part uploads.
 
 ### Create a fine-tuning job
 
 After uploading your data, initiate the fine-tuning job:
 
 ```python
-# Model
 model = "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo"
 
 # Create fine-tune job
@@ -3172,13 +3167,11 @@ fine_tuning_job = client.fine_tuning.jobs.create(
 )
 ```
 
-
 ### Monitor job progress
 
 Track the status of your fine-tuning job:
 
 ```python
-# Retrieve job status
 job_status = client.fine_tuning.jobs.retrieve(fine_tuning_job.id)
 print(f"Job status: {job_status.status}")
 ```
@@ -3188,7 +3181,6 @@ print(f"Job status: {job_status.status}")
 Once your fine-tuning job completes successfully, you will receive a unique fine-tuned model name that you can use for inference:
 
 ```python
-# Get the fine-tuned model name
 finished_job = client.fine_tuning.jobs.retrieve(fine_tuning_job.id)
 fine_tuned_model = finished_job.fine_tuned_model
 
@@ -3201,6 +3193,67 @@ response = client.chat.completions.create(
     ]
 )
 ```
+
+You can view the end-to-end python script below:
+
+??? code "fine-tune.py"
+
+    ```python
+    from getpass import getpass
+
+from openai import OpenAI
+
+api_key = getpass("Enter your kluster.ai API key: ")
+
+# Set up the client
+client = OpenAI(
+    base_url="https://api.kluster.ai/v1",
+    api_key=api_key
+)
+
+# Upload fine-tuning file (for files under 100MB)
+with open('training_data.jsonl', 'rb') as file:
+    upload_response = client.files.create(
+        file=file,
+        purpose="fine-tune"  # Important: specify "fine-tune" as the purpose
+    )
+    
+    # Get the file ID
+    file_id = upload_response.id
+    print(f"File uploaded successfully. File ID: {file_id}")
+
+# Model
+model = "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo"
+
+# Create fine-tune job
+fine_tuning_job = client.fine_tuning.jobs.create(
+    training_file=file_id,
+    model=model,
+    # Optional hyperparameters
+    # hyperparameters={
+    #   "batch_size": 3,
+    #   "n_epochs": 2,
+    #   "learning_rate_multiplier": 0.08
+    # }
+)
+
+# Retrieve job status
+job_status = client.fine_tuning.jobs.retrieve(fine_tuning_job.id)
+print(f"Job status: {job_status.status}")
+
+# Get the fine-tuned model name
+finished_job = client.fine_tuning.jobs.retrieve(fine_tuning_job.id)
+fine_tuned_model = finished_job.fine_tuned_model
+
+# Use the fine-tuned model for inference
+response = client.chat.completions.create(
+    model=fine_tuned_model,
+    messages=[
+        {"role": "system", "content": "You are a JSON Generation Specialist. Convert user requests into properly formatted JSON."},
+        {"role": "user", "content": "Create a configuration for a web application with name 'TaskMaster', version 1.2.0, and environment set to development."}
+    ]
+)
+    ```
 
 ### Use your fine-tuned model in the playground (optional)
 
@@ -3326,8 +3379,8 @@ This guide walks you through the platform's fine-tuning workflow, from uploading
 
 Before getting started with fine-tuning, ensure you have the following:
 
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 - **Prepared dataset**: You need data formatted according to kluster.ai's requirements for fine-tuning (detailed below).
 
 ## Supported models
@@ -3345,24 +3398,24 @@ High-quality, well-formatted data is crucial for successful fine-tuning:
 - **Structure**: Each JSON object should contain a `messages` array with system, user, and assistant messages.
 - **Example format**:
 
-```json
-{
-  "messages": [
+    ```json
     {
-      "role": "system",
-      "content": "You are a JSON Generation Specialist. Convert user requests into properly formatted JSON."
-    },
-    {
-      "role": "user",
-      "content": "Create a configuration for a web application with name 'TaskMaster', version 1.2.0, and environment set to development."
-    },
-    {
-      "role": "assistant",
-      "content": "{\n  \"application\": {\n    \"name\": \"TaskMaster\",\n    \"version\": \"1.2.0\",\n    \"environment\": \"development\"\n  }\n}"
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a JSON Generation Specialist. Convert user requests into properly formatted JSON."
+        },
+        {
+          "role": "user",
+          "content": "Create a configuration for a web application with name 'TaskMaster', version 1.2.0, and environment set to development."
+        },
+        {
+          "role": "assistant",
+          "content": "{\n  \"application\": {\n    \"name\": \"TaskMaster\",\n    \"version\": \"1.2.0\",\n    \"environment\": \"development\"\n  }\n}"
+        }
+      ]
     }
-  ]
-}
-```
+    ```
 
 
 - **Quantity**: The minimum requirement is 10 examples, but more diverse and high-quality examples yield better results.
@@ -3536,8 +3589,8 @@ This guide walks you through integrating [kluster.ai](https://www.kluster.ai/){t
 
 Before starting, ensure you have the following prerequisites:
 
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 - **CrewAI installed** - the [Installation Guide](https://docs.crewai.com/installation){target=\_blank} on the CrewAI website will walk you through installing CrewAI, setting up a virtual Python environment, and creating a new project. Note that CrewAI requires a Python version >=`3.10` and <`3.13`
 
 ## Create a project with the CLI
@@ -3775,8 +3828,8 @@ In this guide, you'll learn how to integrate [kluster.ai](https://www.kluster.ai
 
 Before starting, ensure you have the following kluster prerequisites:
 
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 - **Clone and install the eliza repository** - follow the installation instructions on the [eliza Quick Start guide](https://elizaos.github.io/eliza/docs/quickstart/){target=\_blank}
     
 !!! warning
@@ -3872,8 +3925,8 @@ In this guide, you'll learn how to integrate Immersive Translate with the [klust
 
 Before starting, ensure you have the following:
 
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 - **Installed the Immersive Translate plugin** - you can download the Immersive Translate plugin for your respective browser on the [Immersive Translate homepage](https://immersivetranslate.com/){target=\_blank}
 
 ## Configure Immersive Translate
@@ -3949,8 +4002,8 @@ This guide demonstrates how to integrate the `ChatOpenAI` class from the `langch
 
 Before starting, ensure you have the following:
 
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 - **[A python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}** - this is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial
 - **LangChain packages installed** - install the [`langchain` packages](https://github.com/langchain-ai/langchain){target=\_blank}:
 
@@ -4136,8 +4189,8 @@ Integrating LiteLLM with the [kluster.ai](https://www.kluster.ai/){target=\_blan
 
 Before starting, ensure you have the following:
 
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 - **[A python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}** - this is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial
 - [**LiteLLM installed**](https://github.com/BerriAI/litellm){target=\_blank} - to install the library, use the following command:
 
@@ -4487,8 +4540,8 @@ This guide walks you through the minimal changes needed to:
 
 ## Prerequisites
 
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 - Node version 18 or higher
 
 You can clone the Llama OCR repo and install the required dependencies with the following commands:
@@ -4809,8 +4862,8 @@ This guide will walk you through integrating [kluster.ai](https://www.kluster.ai
 
 Before starting, ensure you have the following prerequisites:
 
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 - **Msty app installed** - The [Msty app](https://msty.app/){target=_blank} can be downloaded with one click. You can also find an [Installation Guide](https://docs.msty.app/getting-started/download){target=\_blank} on the Msty docs site
 
 ## Quick start
@@ -4859,8 +4912,8 @@ This approach empowers you to harness the flexibility of large language models w
 
 Before starting, ensure you have the following:
 
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 - **[A python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}** - This is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial
 - [**PydanticAI installed**](https://github.com/pydantic/pydantic-ai){target=\_blank} - to install the library, use the following command:
 
@@ -5596,8 +5649,8 @@ By integrating SillyTavern with the [kluster.ai](https://www.kluster.ai/){target
 
 Before starting, ensure you have the following:
 
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 
 ## Configure SillyTavern
 
@@ -5661,8 +5714,8 @@ This guide will walk you through integrating [kluster.ai](https://www.kluster.ai
 
 Before starting, ensure you have the following prerequisites:
 
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 
 ## Quick start
 
@@ -5954,8 +6007,8 @@ This guide provides examples and instructions on how to create, submit, retrieve
 
 This guide assumes familiarity with Large Language Model (LLM) development and OpenAI libraries. Before getting started, make sure you have:
 
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 - **A virtual Python environment** - (optional) recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
 - **Required Python libraries** - install the following Python libraries:
     - [**OpenAI Python API library**](https://pypi.org/project/openai/) - to access the `openai` module
@@ -8893,8 +8946,8 @@ You will learn how to submit a request and retrieve responses, and where to find
 
 This guide assumes familiarity with Large Language Model (LLM) development and OpenAI libraries. Before getting started, make sure you have:
 
-- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
-- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 - **A virtual Python environment** - (optional) recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
 - **Required Python libraries** - install the following Python libraries:
     - [**OpenAI Python API library**](https://pypi.org/project/openai/) - to access the `openai` module

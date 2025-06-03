@@ -69,16 +69,7 @@ pip install openai
 Then initialize the client with the kluster.ai base URL:
 
 ```python
-from openai import OpenAI
-from getpass import getpass
-
-api_key = getpass("Enter your kluster.ai API key: ")
-
-# Set up the client
-client = OpenAI(
-    base_url="https://api.kluster.ai/v1",
-    api_key=api_key
-)
+--8<-- "code/get-started/fine-tuning/fine-tune.py:1:11"
 ```
 
 ### Upload your training file
@@ -86,16 +77,7 @@ client = OpenAI(
 Once your data is prepared, upload it to the kluster.ai platform:
 
 ```python
-# Upload fine-tuning file (for files under 100MB)
-with open('training_data.jsonl', 'rb') as file:
-    upload_response = client.files.create(
-        file=file,
-        purpose="fine-tune"  # Important: specify "fine-tune" as the purpose
-    )
-    
-    # Get the file ID
-    file_id = upload_response.id
-    print(f"File uploaded successfully. File ID: {file_id}")
+--8<-- "code/get-started/fine-tuning/fine-tune.py:13:22"
 ```
 
 !!! warning "File size & upload limits"
@@ -107,20 +89,7 @@ with open('training_data.jsonl', 'rb') as file:
 After uploading your data, initiate the fine-tuning job:
 
 ```python
-# Model
-model = "klusterai/Meta-Llama-3.1-8B-Instruct-Turbo"
-
-# Create fine-tune job
-fine_tuning_job = client.fine_tuning.jobs.create(
-    training_file=file_id,
-    model=model,
-    # Optional hyperparameters
-    # hyperparameters={
-    #   "batch_size": 3,
-    #   "n_epochs": 2,
-    #   "learning_rate_multiplier": 0.08
-    # }
-)
+--8<-- "code/get-started/fine-tuning/fine-tune.py:24:37"
 ```
 
 ### Monitor job progress
@@ -128,9 +97,7 @@ fine_tuning_job = client.fine_tuning.jobs.create(
 Track the status of your fine-tuning job:
 
 ```python
-# Retrieve job status
-job_status = client.fine_tuning.jobs.retrieve(fine_tuning_job.id)
-print(f"Job status: {job_status.status}")
+--8<-- "code/get-started/fine-tuning/fine-tune.py:39:41"
 ```
 
 ### Use your fine-tuned model
@@ -138,19 +105,16 @@ print(f"Job status: {job_status.status}")
 Once your fine-tuning job completes successfully, you will receive a unique fine-tuned model name that you can use for inference:
 
 ```python
-# Get the fine-tuned model name
-finished_job = client.fine_tuning.jobs.retrieve(fine_tuning_job.id)
-fine_tuned_model = finished_job.fine_tuned_model
-
-# Use the fine-tuned model for inference
-response = client.chat.completions.create(
-    model=fine_tuned_model,
-    messages=[
-        {"role": "system", "content": "You are a JSON Generation Specialist. Convert user requests into properly formatted JSON."},
-        {"role": "user", "content": "Create a configuration for a web application with name 'TaskMaster', version 1.2.0, and environment set to development."}
-    ]
-)
+--8<-- "code/get-started/fine-tuning/fine-tune.py:43:54"
 ```
+
+You can view the end-to-end python script below:
+
+??? code "fine-tune.py"
+
+    ```python
+    --8<-- "code/get-started/fine-tuning/fine-tune.py"
+    ```
 
 ### Use your fine-tuned model in the playground (optional)
 
