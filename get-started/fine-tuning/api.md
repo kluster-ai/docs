@@ -45,24 +45,24 @@ High-quality, well-formatted data is crucial for successful fine-tuning:
 - **Structure**: Each JSON object should contain a `messages` array with system, user, and assistant messages.
 - **Example format**:
 
-```json
-{
-  "messages": [
+    ```json
     {
-      "role": "system",
-      "content": "You are a JSON Generation Specialist. Convert user requests into properly formatted JSON."
-    },
-    {
-      "role": "user",
-      "content": "Create a configuration for a web application with name 'TaskMaster', version 1.2.0, and environment set to development."
-    },
-    {
-      "role": "assistant",
-      "content": "{\n  \"application\": {\n    \"name\": \"TaskMaster\",\n    \"version\": \"1.2.0\",\n    \"environment\": \"development\"\n  }\n}"
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a JSON Generation Specialist. Convert user requests into properly formatted JSON."
+        },
+        {
+          "role": "user",
+          "content": "Create a configuration for a web application with name 'TaskMaster', version 1.2.0, and environment set to development."
+        },
+        {
+          "role": "assistant",
+          "content": "{\n  \"application\": {\n    \"name\": \"TaskMaster\",\n    \"version\": \"1.2.0\",\n    \"environment\": \"development\"\n  }\n}"
+        }
+      ]
     }
-  ]
-}
-```
+    ```
 
 - **Quantity**: The minimum requirement is 10 examples, but more diverse and high-quality examples yield better results.
 - **Quality**: Ensure your data accurately represents the task you want the model to perform.
