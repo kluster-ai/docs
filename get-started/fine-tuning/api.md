@@ -68,7 +68,7 @@ High-quality, well-formatted data is crucial for successful fine-tuning:
 - **Quality**: Ensure your data accurately represents the task you want the model to perform.
 
 !!! tip "Data preparation"
-    For a detailed walkthrough of data preparation, see the [Fine-tuning Sentiment Analysis Tutorial](https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-analysis/#get-the-data){target=_blank}.
+    For a detailed walkthrough of data preparation, see the [Fine-tuning sentiment analysis tutorial](/tutorials/klusterai-api/finetuning-sent-analysis/#get-the-data){target=_blank}.
 
 !!! example "Find Llama datasets on Hugging Face"
     There is a wide range of datasets suitable for Llama model fine-tuning on [Hugging Face Datasets](https://huggingface.co/datasets?sort=trending&search=llama){target=_blank}. Browse trending and community-curated datasets to accelerate your data preparation.
