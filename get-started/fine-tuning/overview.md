@@ -3,7 +3,7 @@ title: Overview of Fine-tuning models
 description: Learn how to create custom models tailored to your specific tasks by fine-tuning foundation models with your own data using the kluster.ai platform.
 ---
 
-# Overview of fine-tuning models with kluster.ai
+# Overview of fine-tuning models
 
 Fine-tuning lets you transform general-purpose models into specialized AI assistants that excel at your unique tasks. With kluster.ai, you can fine-tune models using either the [platform](/get-started/fine-tuning/platform/){target=_self} or the [API](/get-started/fine-tuning/api/){target=_self}—choose the path that fits your workflow and technical needs.
 
