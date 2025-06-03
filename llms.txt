@@ -3291,18 +3291,19 @@ description: Learn how to create custom models tailored to your specific tasks b
 
 Fine-tuning lets you transform general-purpose models into specialized AI assistants that excel at your unique tasks. With [kluster.ai](https://www.kluster.ai/){target=\_blank}, you can fine-tune models using either the [platform](/get-started/fine-tuning/platform/) or the [API](/get-started/fine-tuning/api/)—choose the path that fits your workflow and technical needs.
 
-## What to know
+## Fine-tuning flow
 
-Fine-tuning involves taking a pre-trained foundation model and further training it on your specific dataset to enhance its performance on particular tasks. Unlike prompt engineering, which works within the constraints of the base model, fine-tuning with _LoRA (Low-Rank Adaptation)_ efficiently adapts the model by adding small trainable adapter layers rather than modifying all original weights.
+Fine-tuning on kluster.ai follows a simple, seven-step loop:
 
-This process allows the model to:
+1. **Prepare your dataset**: Collect representative examples for the task and save them as a JSON Lines (`.jsonl`) file.  
+2. **Upload the dataset**: Use the Platform “Upload” dialog **or** call `files.upload` via the API to receive a `file_id`.  
+3. **Configure & launch a job**: Choose a base model, set LoRA-specific (Low-Rank Adaptation) hyper-parameters (epochs, learning rate, adapter rank, etc.), and start the job.  
+4. **Monitor training**: Track status and metrics in the dashboard or poll `fine_tuning.jobs.retrieve` until the job reaches `succeeded` or `failed`.  
+5. **Retrieve the fine-tuned model**: When the job finishes, grab the returned `fine_tuned_model` ID and treat it like any other model.  
+6. **Evaluate & iterate**: Test the model on unseen prompts, compare against the base model, and re-run fine-tuning with refined data or parameters if needed. 
+7. **Deploy & integrate**: Call the model in production, export its LoRA adapter, or share it with teammates through kluster.ai’s model registry.  
 
-- Learn domain-specific terminology and concepts.
-- Adopt your preferred response style and tone.
-- Follow consistent formatting and output structures.
-- Develop specialized capabilities tailored to your use cases.
-
-Fine-tuning is particularly valuable when you want consistent, specialized responses that would otherwise require complex prompting or when you need the model to generate outputs in a specific format reliably.
+Fine-tuning is your go-to when you need **reliable, domain-specific outputs** (e.g., JSON-formatted responses, brand-aligned tone) that prompt engineering alone can’t guarantee.
 
 ## When to fine-tune your model
 
