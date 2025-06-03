@@ -5,97 +5,96 @@ description: Download and use pre-built workflows for kluster verify in Dify, n8
 
 # Workflow Integrations
 
-Ready-to-use workflow templates that integrate kluster verify's reliability checking directly into your automation platforms using HTTP API calls.
+Integrate kluster verify's reliability checking into your favorite automation platforms with our ready-to-use workflow templates. These pre-configured workflows connect directly to the kluster.ai API, allowing you to add AI verification capabilities to your existing processes in minutes.
 
 ## Prerequisites
 
-Before using these workflows, ensure you have:
+Before getting started, you'll need:
 
-- **kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you don't have one
-- **kluster.ai API key** - after signing in, go to the [API Keys](https://platform.kluster.ai/apikeys){target=_blank} section and create a new key
-- **Target platform** - Dify, n8n, or other workflow automation tool
+- **kluster.ai account** - Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you don't have one
+- **API key** - After signing in, navigate to [API Keys](https://platform.kluster.ai/apikeys){target=_blank} and create a new key
+- **Workflow platform** - Dify, n8n, or your preferred automation tool
 
-## Clients
+## Available Workflows
 
 ### Dify
 
-**Fact-Check Assistant** - Real-time verification of AI claims
-Pre-built Dify workflows that add reliability checking to your AI applications.
+Build AI applications that fact-check themselves. This workflow seamlessly integrates kluster verify into your Dify chatbots and agents, ensuring every response is validated for accuracy before reaching your users.
 
-<!-- TODO: Add screenshot -->
+![Dify workflow for kluster verify](/images/get-started/verify/dify_workflow.webp)
 
-**Setup kluster.ai Provider:**
+**Configure kluster.ai as a Model Provider** 
 
-1. Navigate to **Settings** → **Model Provider**
-2. Click **Add Provider** → **Custom Provider**
-3. Configure kluster.ai:
-   - **Name**: kluster.ai
-   - **Base URL**: `https://api.kluster.ai/v1`
-   - **API Key**: Your kluster.ai API key
-4. Save and test connection
+- Navigate to **Settings** and select **Model Provider**
+- Click on **Add Provider** and choose **OpenAI-API-compatible**
 
-**Workflow Setup:**
+Enter these settings:
 
-1. Download the workflow JSON file
-2. Import into your Dify workspace
-3. Configure your kluster.ai API key in the HTTP node
-4. Test with sample data
+- **Base URL**: `https://api.kluster.ai/v1`
+- **API Key**: Your kluster.ai API key
+- **Model**: Select from [available models](https://platform.kluster.ai/models){target=_blank}
 
-[Download Dify Workflows](#){target=_blank .md-button}
+Save and test the connection to ensure it works properly.
+
+**Set up the kluster verify node:**
+- Select the HTTP Request node `kluster verify`
+- Add your API key to the Authorization header.
+
+**Import and Configure the Workflow** 
+
+- Download the workflow template below and import it into your Dify workspace. The workflow comes pre-configured to verify AI responses in real-time. Test it with sample queries to ensure everything is functioning correctly.
+
+[Download Dify Workflow](workflows/dify_workflow.yml){target=_blank .md-button}
 
 ### n8n
 
-**RAG Reliability Check** - Validates AI responses against document context or tools 
+Add verification checkpoints to your n8n automation pipelines. This workflow validates AI-generated content against your source documents, tools, or real-time data, perfect for ensuring accuracy in automated content generation and data processing workflows.
 
-Automation workflows for n8n that integrate reliability checking into your data pipelines.
+![n8n workflow for kluster verify](/images/get-started/verify/n8n_workflow.webp)
 
-<!-- TODO: Add screenshot -->
+**Set Up API Credentials**
 
-**Setup kluster.ai Provider:**
+- Select the OpenAI and choose **Credentials**, click **Create New**,
 
-1. In n8n, add a new **HTTP Request** node
-2. Configure authentication:
-   - **Authentication**: Header Auth
-   - **Header Name**: `Authorization`
-   - **Header Value**: `Bearer YOUR_API_KEY`
-3. Set default request options:
-   - **URL**: `https://api.kluster.ai/v1/verify/reliability`
-   - **Method**: POST
-   - **Content Type**: JSON
-4. Save as credential for reuse
+- **Name**: kluster.ai Verify
+- **Header Name**: `Authorization`
+- **Header Value**: `Bearer YOUR_API_KEY`
 
-**Workflow Setup:**
+Save the credential for use in your workflows.
 
-1. Download the n8n workflow JSON
-2. Import via n8n interface
-3. Set your kluster.ai API credentials
-4. Configure input/output nodes as needed
+**Import and Configure the Workflow** - Download the workflow template below and import it via the n8n interface. The workflow includes pre-configured HTTP nodes that connect to the `/v1/verify/reliability` endpoint, handle request/response formatting, and parse verification results. Connect your data sources and configure output routing as needed.
 
-[Download n8n Workflows](#){target=_blank .md-button}
+[Download n8n Workflow](workflows/n8n_workflow.json){target=_blank .md-button}
 
-## API Integration
+## How It Works
 
-All workflows use the `/v1/verify/reliability` endpoint with standard HTTP requests:
+All workflows connect to kluster verify through a simple API call. Here's what happens under the hood:
 
+**Request Format:**
 ```json
 {
-  "prompt": "Your question or context",
-  "output": "AI response to verify", 
-  "context": "Optional reference material",
+  "prompt": "What was the user's question?",
+  "output": "The AI's response to verify", 
+  "context": "Optional reference documents or data",
   "return_search_results": false
 }
 ```
 
-**Response:**
+**Response Format:**
 ```json
 {
   "is_hallucination": false,
-  "explanation": "Detailed reasoning...",
+  "explanation": "The response accurately reflects the information...",
   "usage": {"total_tokens": 150}
 }
 ```
 
+The service analyzes the AI output against the provided context (or performs real-time fact-checking) and returns a clear verdict with detailed reasoning.
+
 ## Next Steps
 
-- Review [API documentation](/api-reference/reference/){target=_blank} for advanced parameters
-- Explore [Question/Answer verification](/get-started/verify/reliability/question-answer/){target=_self} for implementation details
+Ready to build more reliable AI applications?
+
+- **Explore the API** - Check our [complete API reference](/api-reference/reference/){target=_blank} for advanced configuration options
+- **Learn verification methods** - Dive into [question/answer verification](/get-started/verify/reliability/question-answer/){target=_self} for detailed implementation patterns
+- **Try the tutorial** - Follow our [hands-on reliability check tutorial](/tutorials/klusterai-api/reliability-check/){target=_blank} with code examples

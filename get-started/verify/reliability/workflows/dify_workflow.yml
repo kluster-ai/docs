@@ -1,0 +1,408 @@
+app:
+  description: Chatbot that uses kluster.ai verify agent
+  icon: 601f09d2-07d2-4dc7-8e5d-988b24ac46a3
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: kluster.ai verify agent workflow
+  use_icon_as_answer_icon: true
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openai_api_compatible:0.0.16@d41b09aca46cdd3876f70b4c91d464c4588fc0bdc844ced6ee426283ead6ce8e
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        sourceType: llm
+        targetType: answer
+      id: llm-answer
+      selected: false
+      source: llm
+      sourceHandle: source
+      target: answer
+      targetHandle: target
+      type: custom
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: question-classifier
+      id: 1748532579577-source-1748532805944-target
+      source: '1748532579577'
+      sourceHandle: source
+      target: '1748532805944'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: llm
+      id: 1748532805944-2-llm-target
+      source: '1748532805944'
+      sourceHandle: '2'
+      target: llm
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: http-request
+      id: 1748532805944-1-1748532912800-target
+      source: '1748532805944'
+      sourceHandle: '1'
+      target: '1748532912800'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: llm
+      id: 1748532912800-source-1748533112197-target
+      source: '1748532912800'
+      sourceHandle: source
+      target: '1748533112197'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1748533112197-source-1748533217793-target
+      source: '1748533112197'
+      sourceHandle: source
+      target: '1748533217793'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: Start
+        type: start
+        variables: []
+      height: 53
+      id: '1748532579577'
+      position:
+        x: 49.515806551897526
+        y: 83.61228689040351
+      positionAbsolute:
+        x: 49.515806551897526
+        y: 83.61228689040351
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        memory:
+          query_prompt_template: '{{#sys.query#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 10
+        model:
+          completion_params: {}
+          mode: chat
+          name: meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8
+          provider: langgenius/openai_api_compatible/openai_api_compatible
+        prompt_template:
+        - id: 213c3f32-ed31-4a31-bc34-b58af4f7868b
+          role: system
+          text: ''
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: llm
+      position:
+        x: 622.6930973360855
+        y: 224.3763313546187
+      positionAbsolute:
+        x: 622.6930973360855
+        y: 224.3763313546187
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '{{#llm.text#}}'
+        desc: ''
+        selected: false
+        title: not verified answer
+        type: answer
+        variables: []
+      height: 103
+      id: answer
+      position:
+        x: 894.8659603890387
+        y: 224.3763313546187
+      positionAbsolute:
+        x: 894.8659603890387
+        y: 224.3763313546187
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        classes:
+        - id: '1'
+          name: Fact-checking or any type of questions that includes current events,
+            updated data, or internet search
+        - id: '2'
+          name: normal question non related to facts
+        desc: ''
+        instructions: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8
+          provider: langgenius/openai_api_compatible/openai_api_compatible
+        query_variable_selector:
+        - '1748532579577'
+        - sys.query
+        selected: false
+        title: Question Classifier
+        topics: []
+        type: question-classifier
+        vision:
+          enabled: false
+      height: 219
+      id: '1748532805944'
+      position:
+        x: 318.5075119451401
+        y: 83.61228689040351
+      positionAbsolute:
+        x: 318.5075119451401
+        y: 83.61228689040351
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - id: key-value-225
+            key: ''
+            type: text
+            value: '{
+
+              "prompt": "fact check this:",
+
+              "output": "{{#sys.query#}}",
+
+              "return_search_results": "true"
+
+              }'
+          type: json
+        desc: ''
+        headers: 'Content-Type:application/json
+
+          Authorization:Bearer YOUR_KLUSTER_API_KEY'
+        method: post
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: kluster verify
+        type: http-request
+        url: https://api.klusterai.io/v1/verify/reliability
+        variables: []
+      height: 138
+      id: '1748532912800'
+      position:
+        x: 616.2532387879471
+        y: 57.39440236676407
+      positionAbsolute:
+        x: 616.2532387879471
+        y: 57.39440236676407
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8
+          provider: langgenius/openai_api_compatible/openai_api_compatible
+        prompt_template:
+        - id: 66dfb362-47e9-4b5c-ab94-1da2d2e7bae2
+          role: system
+          text: "Clean and post process the answer from the user fact checked \n##\
+            \ Format Response:\n-You must reply the msg in a very informative way,\
+            \ detailing your sources.  Make your response very nice and with emojis.\
+            \ But short and consice when needed!\n\nMake sure you never make aware\
+            \ the user that' there's a fact-checking agent or news reseach. Just directly\
+            \ address the user questions with all the extra knowlede gain from the\
+            \ HAD\n\n## UserQuestion\n{{#sys.query#}}\n## Answer\n{{#1748532912800.body#}}"
+        selected: false
+        title: Post-Process Response
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1748533112197'
+      position:
+        x: 869.3201883795134
+        y: 57.39440236676407
+      positionAbsolute:
+        x: 869.3201883795134
+        y: 57.39440236676407
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '{{#1748533112197.text#}}'
+        desc: ''
+        selected: false
+        title: Verified Answer
+        type: answer
+        variables: []
+      height: 103
+      id: '1748533217793'
+      position:
+        x: 1129.3192361270965
+        y: 57.39440236676407
+      positionAbsolute:
+        x: 1129.3192361270965
+        y: 57.39440236676407
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        author: franzuzz
+        desc: ''
+        height: 303
+        selected: true
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          16px;","text":"kluster verify workflow demo","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          16px;","textFormat":0},{"children":[],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          16px;","textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Before
+          getting started, make sure you have:","type":"text","version":1}],"direction":"ltr","format":"start","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"children":[{"detail":0,"format":1,"mode":"normal","style":"","text":"A
+          kluster.ai account","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":" -
+          sign up on the ","type":"text","version":1},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"kluster.ai
+          platform","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"link","version":1,"rel":null,"target":"_blank","title":null,"url":"https://platform.kluster.ai/signup"},{"detail":0,"format":0,"mode":"normal","style":"","text":" if
+          you don''t have one","type":"text","version":1}],"direction":"ltr","format":"start","indent":0,"type":"listitem","version":1,"value":1},{"children":[{"detail":0,"format":1,"mode":"normal","style":"","text":"A
+          kluster.ai API key","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":" -
+          after signing in, go to the ","type":"text","version":1},{"children":[{"detail":0,"format":1,"mode":"normal","style":"","text":"API
+          Keys","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"link","version":1,"textFormat":1,"rel":null,"target":"_blank","title":null,"url":"https://platform.kluster.ai/apikeys"},{"detail":0,"format":0,"mode":"normal","style":"","text":" section
+          and create a new key. For detailed instructions, check out the ","type":"text","version":1},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Get
+          an API key","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"link","version":1,"rel":null,"target":"_blank","title":null,"url":"http://127.0.0.1:8000/get-started/get-api-key/"},{"detail":0,"format":0,"mode":"normal","style":"","text":" guide","type":"text","version":1}],"direction":"ltr","format":"start","indent":0,"type":"listitem","version":1,"value":2}],"direction":"ltr","format":"","indent":0,"type":"list","version":1,"listType":"bullet","start":1,"tag":"ul"},{"children":[{"type":"linebreak","version":1},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Get
+          started with the official kluster.ai documentation","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"link","version":1,"rel":"noreferrer","target":null,"title":null,"url":"https://docs.kluster.aiget-started/verify/reliability/starting-guide/"}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          16px;","textFormat":0},{"children":[],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          14px;","text":"How to use: ","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          14px;","textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          14px;","text":"Ask any questions that needs a reliability check, like \"its
+          true that kluster.ai offers dedicated endpoints?\"","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          14px;","textFormat":0},{"children":[],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          16px;","textFormat":0}],"direction":"ltr","format":"","indent":0,"type":"root","version":1,"textStyle":"font-size:
+          14px;"}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 909
+      height: 303
+      id: '1748966019588'
+      position:
+        x: 355.2165444784421
+        y: -255.35572300164762
+      positionAbsolute:
+        x: 355.2165444784421
+        y: -255.35572300164762
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 909
+    viewport:
+      x: -40.2867257886337
+      y: 302.3295148864754
+      zoom: 0.8005047387094167

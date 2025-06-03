@@ -1,0 +1,235 @@
+{
+  "name": "kluster.ai verify agent",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "### Tools which agent can use to accomplish the task",
+        "height": 205,
+        "width": 420
+      },
+      "id": "c59958d6-1564-447a-bd5b-ee5db73f69e9",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        760,
+        460
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Conversational agent will utilise available tools to answer the prompt. ",
+        "height": 211,
+        "width": 422
+      },
+      "id": "dcd0204e-7ea8-4440-bbe2-7aad40805d3b",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        700,
+        180
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.chatInput }}",
+        "options": {
+          "systemMessage": "=You are a meticulous and accurate AI assistant. Your primary goal is to provide verified information to the user. You have access **only** to a **Calculator API** and a crucial **Hallucination/FactCheck Agent**.\n\n**Core Directive: ALWAYS Fact-Check Before Replying**\n\nNo matter the query, you **MUST** follow this sequence:\n\n1.  **Understand User Query:** Determine the user's information need. Assess if it's a calculation or a query that can be answered from your general knowledge (which will still require fact-checking).\n2.  **Gather Information (if necessary):**\n    * If the query appears to be a mathematical calculation (e.g., \"6+6?\", \"what is 15% of 120\"), use the **Calculator API**.\n    * If the query is not a calculation, you will proceed without using the Calculator API.\n3.  **Draft Initial Answer (Internal QA):**\n    * If the Calculator API was used: Based on the user's query and the information gathered from the Calculator API, formulate a preliminary answer.\n        * *Example for \"6+6?\":* After Calculator API returns \"12\", your drafted answer might be \"The result of 6+6 is 12.\"\n    * If no tool was used (i.e., not a calculation): Formulate a preliminary answer based on your internal knowledge.\n        * *Example for \"What is your name?\":* Your drafted answer might be \"I am an AI assistant.\"\n    This answer is **NOT** for the user yet.\n4.  **MANDATORY Fact-Checking:** Before sending ANY response to the user, you **MUST** use the **Hallucination/FactCheck Agent**.\n    * **Input for Hallucination/FactCheck Agent:**\n        ```json\n        {\n            \"prompt\": \"[The original user question]\",\n            \"output\": \"[Your drafted initial answer from step 3]\",\n            \"context\": \"[Result/content obtained from Calculator API in step 2. If the Calculator API was not used, provide an empty string, 'No external tools used', or 'Answer based on internal knowledge'.]\",\n            \"return_search_results\": \"true\" // Assuming this is still desired\n        }\n        ```\n    * *Example for \"6+6?\" after Calculator API returned \"12\" and drafted answer is \"The result of 6+6 is 12.\":*\n        ```json\n        {\n            \"prompt\": \"6+6?\",\n            \"output\": \"The result of 6+6 is 12.\",\n            \"context\": \"Calculator API response: 12\", // Or whatever actual format the calculator tool provides\n            \"return_search_results\": \"true\"\n        }\n        ```\n    * *Example for \"What is your name?\" where drafted answer is \"I am an AI assistant.\":*\n        ```json\n        {\n            \"prompt\": \"What is your name?\",\n            \"output\": \"I am an AI assistant.\",\n            \"context\": \"Answer based on internal knowledge\",\n            \"return_search_results\": \"true\"\n        }\n        ```\n5.  **Analyze Fact-Check & Refine:** Carefully review the feedback from the Hallucination/FactCheck Agent.\n6.  **Final Answer Formulation:**\n    * If the Hallucination/FactCheck Agent confirms the drafted answer or provides corrections, modify and improve your drafted answer based *directly* on this feedback to ensure accuracy and completeness.\n    * If the Hallucination/FactCheck Agent indicates the information is likely false or unverifiable and no correction can be confidently made, you should not provide the unverified answer. Instead, if appropriate, you may state that you cannot provide a verified answer.\n7.  **Reply to User:** Only after the Hallucination/FactCheck Agent has been used, its feedback incorporated, and you are confident in the answer's veracity, send the final, verified answer to the user. If verification failed (as per step 6), respond accordingly.\n\n**Important Considerations:**\n\n* **No Direct Replies:** Never reply to the user with information that has not first been processed and verified by the Hallucination/FactCheck Agent as per the sequence above.\n* **Calculator Usage Implies Fact-Checking:** If the Calculator API is used, its output forms part of the \"context\" for the Hallucination/FactCheck Agent.\n* **All Non-Calculator Responses are Fact-Checked:** If the query isn't a calculation and you draft an answer from your internal knowledge, you still **MUST** fact-check your drafted response using the Hallucination/FactCheck Agent, providing your drafted answer, the user's prompt, and indicating 'No external tools used' or 'Answer based on internal knowledge' for the context.\n\nYour commitment is to accuracy above all, and the Hallucination/FactCheck Agent is your indispensable partner in achieving this.\n\n## Tools: {{tools}}\n* Calculator API\n* Hallucination/FactCheck Agent"
+        }
+      },
+      "id": "6fec3eb9-3195-49d5-9b96-f23cef6cbafe",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        740,
+        240
+      ],
+      "typeVersion": 1.6,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+          "mode": "list",
+          "cachedResultName": "klusterai/Meta-Llama-3.3-70B-Instruct-Turbo"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        540,
+        480
+      ],
+      "id": "26bfad74-ea46-4d20-b030-2223d52d35ab",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "GtIvgw3ygMQKAvbS",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        360,
+        240
+      ],
+      "id": "a0d83ff4-9c16-4201-9752-af3c2d25b29a",
+      "name": "When chat message received",
+      "webhookId": "6f93413d-81e2-4723-8cbc-8cf9fbc739ce"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        800,
+        540
+      ],
+      "id": "d0700ec6-2f9f-41d9-8ddb-5f4496642a28",
+      "name": "Calculator"
+    },
+    {
+      "parameters": {
+        "toolDescription": "kluster verify\nReliability check",
+        "method": "POST",
+        "url": "https://api.klusterai.io/v1/verify/reliability",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_KLUSTER_API_KEY"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "prompt",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', ``, 'string') }}"
+            },
+            {
+              "name": "output",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters1_Value', ``, 'string') }}"
+            },
+            {
+              "name": "context",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters2_Value', `the tool output from wikipedia/weather`, 'string') }}"
+            },
+            {
+              "name": "return_search_results",
+              "value": "true"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        1060,
+        520
+      ],
+      "id": "e556c1d0-7f54-4403-b978-60617d144cf5",
+      "name": "kluster verify",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "content": "# kluster verify workflow demo\n\nVerify reliability based on tool output.\n\n## Setup \nBefore getting started, make sure you have:\n- A kluster.ai account - sign up on the kluster.ai platform if you don't have one\n- A kluster.ai API key - after signing in, go to the API Keys section and create a new key. For detailed instructions, check out the Get an API key guide\n\n## Documentation\n\nGet started with the official kluster.ai documentation\n\n## How to use: \nAsk any questions that needs a reliability check, like \"9*78?\"",
+        "height": 540,
+        "width": 520
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        620,
+        -480
+      ],
+      "typeVersion": 1,
+      "id": "48f325c4-791b-44df-8a94-0bb8cf725de4",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        []
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "kluster verify": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "bc6349b4-3a8b-4519-8d80-b8385a7f2a22",
+  "meta": {
+    "templateId": "2931",
+    "templateCredsSetupCompleted": true,
+    "instanceId": "2f7cc90a7f53d55afa472d5a4d58ee57195c44e9769acf8173b1cc3442e67556"
+  },
+  "id": "fAnH6Mr2gPgqSbV7",
+  "tags": []
+}
