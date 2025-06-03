@@ -82,11 +82,19 @@ kluster.ai offers multiple ways to verify reliability, each designed for differe
 
     [:octicons-arrow-right-24: Visit the guide](/get-started/verify/reliability/chat-completion/){target=_self}
 
+-   <span class="badge integration">Integration</span> __Workflow Integrations__
+
+    ---
+
+    Download ready-to-use workflows for Dify, n8n, and other platforms using direct API integration.
+
+    [:octicons-arrow-right-24: Get workflows](/get-started/verify/reliability/workflow-integrations/){target=_self}
+
 -   <span class="badge guide">Guide</span> __MCP Integration__
 
     ---
 
-    Add real-time fact-checking to Claude Desktop, VS Code, n8n, and other MCP clients with two specialized verification tools.
+    Add real-time fact-checking to Claude Desktop, VS Code, and other MCP clients with specialized verification tools.
 
     [:octicons-arrow-right-24: Start here](/get-started/verify/reliability/mcp/){target=_self}
 
@@ -94,12 +102,7 @@ kluster.ai offers multiple ways to verify reliability, each designed for differe
 
 ## Additional resources
 
-- **Question/Answer verification** - Learn how to [verify individual question-answer pairs](/get-started/verify/reliability/question-answer/){target=_self}
-- **Chat Completion verification** - Discover how to [validate responses in conversations](/get-started/verify/reliability/chat-completion/){target=_self}
-- **MCP Integration** - Integrate reliability checking into [MCP-compatible applications](/get-started/verify/reliability/mcp/){target=_self}
-- **MCP Quick Start** - Get running in [5 minutes with Docker](/get-started/verify/reliability/mcp/quick-start/){target=_self}
-- **MCP Tools** - Technical reference for [fact_check and document_claim_check](/get-started/verify/reliability/mcp/tools/){target=_self}
-- **MCP Clients** - Setup guides for [Claude Desktop, VS Code, n8n, and Dify](/get-started/verify/reliability/mcp/clients/){target=_self}
-- **Practical examples** - Explore our [Tutorials](/tutorials/klusterai-api/reliability-check){target=_blank} for reliability checking
-- **API reference** - Review the complete [API documentation](/api-reference/reference/){target=_blank} for all reliability verification endpoints
+- **Workflow Integrations** - Download [ready-to-use workflows for Dify, n8n](/get-started/verify/reliability/workflow-integrations/){target=_self}
+- **MCP Integration** - Integrate into [Claude Desktop and VS Code](/get-started/verify/reliability/mcp/){target=_self}
+- **Tutorial** - Explore our [kluster verify tutorial](/tutorials/klusterai-api/reliability-check){target=_blank} with code examples
 

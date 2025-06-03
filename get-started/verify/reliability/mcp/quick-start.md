@@ -13,7 +13,7 @@ Before getting started with MCP integration, ensure the following requirements a
 
 - **kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you do not have one
 - **kluster.ai API key** - after signing in, go to the [API Keys](https://platform.kluster.ai/apikeys){target=_blank} section and create a new key. For detailed instructions, see the [Get an API key](https://docs.kluster.ai/get-started/get-api-key/){target=_blank} guide
-- **Docker** installed and running
+- **Docker** installed and running (see [Node.js setup](/get-started/verify/reliability/mcp/clients/#nodejs-setup){target=_self} for alternative)
 - **Claude Desktop** for testing (or another MCP client)
 
 ## Setup
@@ -32,6 +32,7 @@ npm run docker:build
 Add this to your Claude Desktop configuration file:
 
 **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+
 **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
 
 ```json
@@ -42,14 +43,14 @@ Add this to your Claude Desktop configuration file:
       "args": [
         "run", "-i", "--rm",
         "kluster-mcp-server",
-        "--api-key", "YOUR_KLUSTER_AI_API_KEY"
+        "--api-key", "api_key"
       ]
     }
   }
 }
 ```
 
-**Replace `YOUR_KLUSTER_AI_API_KEY`** with your actual API key.
+**Replace `api_key`** with your actual API key.
 
 ### Step 3: Restart Claude Desktop
 
