@@ -9,10 +9,10 @@ The Question/Answer method allows you to validate whether an answer to a specifi
 
 ## Prerequisites
 
-Before getting started with fine-tuning, ensure you have the following:
+Before getting started, ensure you have the following:
 
-- **kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you do not have one
-- **kluster.ai API key** - after signing in, go to the [API Keys](https://platform.kluster.ai/apikeys){target=_blank} section and create a new key. For detailed instructions, see the [Get an API key](https://docs.kluster.ai/get-started/get-api-key/){target=_blank} guide
+- **kluster.ai account**: sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you do not have one
+- **kluster.ai API key**: after signing in, go to the [API Keys](https://platform.kluster.ai/apikeys){target=_blank} section and create a new key. For detailed instructions, see the [Get an API key](https://docs.kluster.ai/get-started/get-api-key/){target=_blank} guide
 
 
 ## How it works
@@ -52,8 +52,8 @@ The API returns a JSON object with the following structure:
 
 The service operates in two distinct modes depending on whether you provide context with your request:
 
-- **General knowledge verification** - when no context is provided, the service verifies answers against general knowledge and external sources.
-- **Context validation mode** - when context is provided, the service only validates answers against the specified context.
+- **General knowledge verification**: when no context is provided, the service verifies answers against general knowledge and external sources.
+- **Context validation mode**: when context is provided, the service only validates answers against the specified context.
 
 ### General knowledge verification
 
@@ -199,7 +199,7 @@ This example checks whether an answer is correct based on the provided context.
 1. **Include relevant context** - When validating against specific information, provide comprehensive context.
 2. **Use domain-specific context** - Include authoritative references for specialized knowledge domains.
 3. **Consider general verification** - For widely known information, the service can verify against general knowledge sources.
-5. **Review explanations** - The detailed explanations provide valuable insights into the reasoning process.
+4. **Review explanations**: The detailed explanations provide valuable insights into the reasoning process.
 
 ## Next steps
 

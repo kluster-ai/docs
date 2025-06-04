@@ -5,7 +5,7 @@ description: Learn how to verify reliability and prevent unreliable content in y
 
 # kluster verify
 
-The **kluster verify** service helps to to make sure AI responses are accuarate and compliant. The **Reliabitity check agent**  is able to identify when AI responses contain fabricated or inaccurate information.
+The **kluster verify** service helps to make sure AI responses are accurate and compliant. The **Reliability check agent** is able to identify when AI responses contain fabricated or inaccurate information.
 
 With this specialized service, you can verify the reliability of AI-generated content and build more trustworthy applications.
 
@@ -34,14 +34,14 @@ For example:
 }
 ```
        
-- **is_hallucination=true/false** - indicates whether the response contains unreliable content.
-- **explanation** - provides detailed reasoning for the determination.
-- **search_results** - shows the reference data used for verification (when applicable).
+- **is_hallucination=true/false**: indicates whether the response contains unreliable content.
+- **explanation**: provides detailed reasoning for the determination.
+- **search_results**: shows the reference data used for verification (when applicable).
 
 ## What to know
 
 !!! question "What are Reliability Issues?"
-    Reliability issues occur when models generate information that appears plausible but is unreliable or unsupported by the provided context. Check out our [kluster verify Tutorial](/tutorials/klusterai-api/reliability-check){target=_blank}
+    Reliability issues occur when models generate information that appears plausible but is unreliable or unsupported by the provided context. Check out the [kluster verify Tutorial](/tutorials/klusterai-api/reliability-check){target=_blank}
 
 **kluster verify** evaluates AI responses to determine if they contain unreliable content, providing detailed explanations of its reasoning. 
 
@@ -54,11 +54,11 @@ The service offers flexible options for verification supporting both **question-
 
 The reliability check service is ideal for scenarios where you need:
 
-- **Model evaluation** - easily integrate our service to compare models output quality.
-- **RAG applications** - verify that generated responses accurately reflect the provided reference documents rather than introducing fabricated information.
-- **Internet-sourced verification** - validate claims against reliable online sources with transparent citation of evidence.
-- **Content moderation** - automatically flag potentially misleading information before it reaches end users.
-- **Regulatory compliance** - ensure AI-generated content meets accuracy requirements.
+- **Model evaluation**: easily integrate the service to compare models output quality.
+- **RAG applications**: verify that generated responses accurately reflect the provided reference documents rather than introducing fabricated information.
+- **Internet-sourced verification**: validate claims against reliable online sources with transparent citation of evidence.
+- **Content moderation**: automatically flag potentially misleading information before it reaches end users.
+- **Regulatory compliance**: ensure AI-generated content meets accuracy requirements.
 
 ## Available verification methods
 
@@ -94,6 +94,6 @@ kluster.ai offers multiple ways to verify reliability, each designed for differe
 
 ## Additional resources
 
-- **Workflow Integrations** - Download [ready-to-use workflows for Dify, n8n](/get-started/verify/reliability/workflow-integrations/){target=_self}
-- **Tutorial** - Explore our [kluster verify tutorial](/tutorials/klusterai-api/reliability-check){target=_blank} with code examples
+- **Workflow Integrations**: Download [ready-to-use workflows for Dify, n8n](/get-started/verify/reliability/workflow-integrations/){target=_self}
+- **Tutorial**: Explore the [kluster verify tutorial](/tutorials/klusterai-api/reliability-check){target=_blank} with code examples
 

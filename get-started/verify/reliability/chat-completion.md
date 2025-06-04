@@ -11,8 +11,8 @@ The Chat Completion method allows you to validate responses in full conversation
 
 Before getting started with reliability verification, ensure the following requirements are met:
 
-- **kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you do not have one
-- **kluster.ai API key** - after signing in, go to the [API Keys](https://platform.kluster.ai/apikeys){target=_blank} section and create a new key. For detailed instructions, see the [Get an API key](https://docs.kluster.ai/get-started/get-api-key/){target=_blank} guide
+- **kluster.ai account**: sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you do not have one
+- **kluster.ai API key**: after signing in, go to the [API Keys](https://platform.kluster.ai/apikeys){target=_blank} section and create a new key. For detailed instructions, see the [Get an API key](https://docs.kluster.ai/get-started/get-api-key/){target=_blank} guide
 
 ## How it works
 
@@ -27,8 +27,8 @@ The service evaluates the truthfulness of responses within a conversation by:
 
 The service operates in two distinct modes depending on whether you provide context with your request:
 
-- **Dedicated Endpoint** - use the API directly without specifying a model.
-- **OpenAI SDK** - select the verify-reliability model and use the SDK in a familiar way.
+- **Dedicated Endpoint**: use the API directly without specifying a model.
+- **OpenAI SDK**: select the verify-reliability model and use the SDK in a familiar way.
 
 ### Dedicated endpoint
 

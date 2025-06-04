@@ -5,15 +5,15 @@ description: Download and use pre-built workflows for kluster verify in Dify, n8
 
 # Workflow Integrations
 
-Integrate kluster verify's reliability checking into your favorite automation platforms with our ready-to-use workflow templates. These pre-configured workflows connect directly to the kluster.ai API, allowing you to add AI verification capabilities to your existing processes in minutes.
+Integrate kluster verify's reliability checking into your favorite automation platforms with ready-to-use workflow templates. These pre-configured workflows connect directly to the kluster.ai API, allowing you to add AI verification capabilities to your existing processes in minutes.
 
 ## Prerequisites
 
 Before getting started, you'll need:
 
-- **kluster.ai account** - Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you don't have one
-- **API key** - After signing in, navigate to [API Keys](https://platform.kluster.ai/apikeys){target=_blank} and create a new key
-- **Workflow platform** - Dify, n8n, or your preferred automation tool
+- **kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you don't have one
+- **API key**: After signing in, navigate to [API Keys](https://platform.kluster.ai/apikeys){target=_blank} and create a new key
+- **Workflow platform**: Dify, n8n, or your preferred automation tool
 
 ## How It Works
 
@@ -96,6 +96,6 @@ Save the credential for use in your workflows.
 
 Ready to build more reliable AI applications?
 
-- **Explore the API** - Check our [complete API reference](/api-reference/reference/){target=_blank} for advanced configuration options
+- **Explore the API**: Check the [complete API reference](/api-reference/reference/){target=_blank} for advanced configuration options
 - **Learn verification methods** - Dive into [question/answer verification](/get-started/verify/reliability/question-answer/){target=_self} for detailed implementation patterns
-- **Try the tutorial** - Follow our [hands-on reliability check tutorial](/tutorials/klusterai-api/reliability-check/){target=_blank} with code examples
+- **Try the tutorial**: Follow the [hands-on reliability check tutorial](/tutorials/klusterai-api/reliability-check/){target=_blank} with code examples
