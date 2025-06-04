@@ -46,7 +46,7 @@ High-quality, well-formatted data is crucial for successful fine-tuning:
 
 ## Fine-tuning workflow
 
-The process of fine-tuning a model using the kluster.ai platform interface involves several key steps:
+The process of fine-tuning a model using the kluster.ai platform interface involves several key steps which will be described in more detail in the following sections.
 
 ### Navigate to the fine-tuning page
 
