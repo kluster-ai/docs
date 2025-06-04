@@ -5,14 +5,15 @@ description: Learn how to use kluster verify to validate responses in full chat 
 
 # Chat completion
 
-The Chat Completion method allows you to validate responses in full conversation histories using the same format as the standard chat completions API. This approach enables verification of reliability within the complete context of a conversation.
+Developers can access the reliability check feature via the regular chat completion endpoint. This allows you to validate responses in full conversation histories using the same format as the standard chat completions API. This approach enables verification of reliability within the complete context of a conversation.
+
+This guide provides a quick example of how the chat completion endpoint can be used for reliability check.
 
 ## Prerequisites
 
 Before getting started with reliability verification, ensure the following requirements are met:
 
-- **kluster.ai account**: sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you do not have one
-- **kluster.ai API key**: after signing in, go to the [API Keys](https://platform.kluster.ai/apikeys){target=_blank} section and create a new key. For detailed instructions, see the [Get an API key](https://docs.kluster.ai/get-started/get-api-key/){target=_blank} guide
+--8<-- 'text/kluster-api-onboarding.md'
 
 ## How it works
 
@@ -23,16 +24,16 @@ The service evaluates the truthfulness of responses within a conversation by:
 3. Determining if the responses contain unreliable or unsupported information.
 4. Providing a detailed explanation of the reasoning behind the determination and the search results used for verification.
 
-## Usage modes
+## Integration options
 
-The service operates in two distinct modes depending on whether you provide context with your request:
+You can access the reliability verification service in two flexible ways, depending on your preferred development workflow:
 
-- **Dedicated Endpoint**: use the API directly without specifying a model.
-- **OpenAI SDK**: select the verify-reliability model and use the SDK in a familiar way.
+- **Dedicated Endpoint**: Use the API directly without specifying a model via the `/v1/verify/reliability` endpoint.
+- **OpenAI SDK**: Configure kluster.ai with [OpenAI libraries](/get-started/openai-compatibility/#configuring-openai-to-use-klusterais-api){target=\_blank}, and set the model to `klusterai/verify-reliability` via the `chat.completions.create` endpoint.
 
 ### Dedicated endpoint
 
-By using the `/v1/verify/reliability` endpoint to check whether an assistant's answer is reliable.
+The following snippet uses the `/v1/verify/reliability` endpoint to check whether an assistant's answer is reliable.
 
 ??? example "CLI"
 
@@ -43,6 +44,8 @@ By using the `/v1/verify/reliability` endpoint to check whether an assistant's a
     if [[ -z "$API_KEY" ]]; then
         echo -e "\nError: API_KEY environment variable is not set.\n" >&2
     fi
+    
+    echo -e "📤 Sending a reliability request to kluster.ai...\n"
     
     # Submit reliability verification request
     curl --location 'https://api.kluster.ai/v1/verify/reliability' \
@@ -60,7 +63,7 @@ By using the `/v1/verify/reliability` endpoint to check whether an assistant's a
       },
       {
         "role": "assistant",
-        "content": "Yes. There is a recent scientific study that confirms this
+        "content": "Yes. There is a recent scientific study that confirms this."
       }
     ],
     "max_tokens": 3600,
@@ -78,11 +81,14 @@ This example shows how to use the service with the `https://api.kluster.ai/v1` e
 ??? example "Python"
 
     ```python
+    from os import environ
     from openai import OpenAI
     from getpass import getpass
 
     # Get API key from user input
-    api_key = getpass("Enter your kluster.ai API key: ")
+    api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
+    
+    print(f"📤 Sending a reliability request to kluster.ai...\n")
 
     # Initialize OpenAI client pointing to kluster.ai API
     client = OpenAI(
@@ -119,5 +125,5 @@ This example shows how to use the service with the `https://api.kluster.ai/v1` e
 
 ## Next steps
 
-- Learn how to use [Question/answer reliability verification](/get-started/verify/reliability/question-answer/){target=_self} for simpler verification scenarios
+- Learn how to use the [Question/answer endpoint for reliability checks](/get-started/verify/reliability/question-answer/){target=_self} for simpler verification scenarios
 - Review the complete [API documentation](/api-reference/reference/){target=_blank} for detailed endpoint specifications

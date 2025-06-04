@@ -1,12 +1,13 @@
 ---
-title: Question - answer 
+title: Question/answer reliability verification
 description: Learn how to use kluster verify to validate the reliability of answers to questions.
 ---
 
-# Question/answer
+#  Reliability check via the question/answer endpoint
 
-The Question/Answer method allows you to validate whether an answer to a specific question contains unreliable information. This approach is ideal for verifying individual responses against provided context (when you include the `context` parameter) or general knowledge (when no context is provided).
+The Question/Answer endpoint allows you to validate whether an answer to a specific question contains unreliable information. This approach is ideal for verifying individual responses against the provided context (when the `context` parameter is included) or general knowledge (when no context is provided).
 
+This guide provides a quick example of how use chat completion endpoint can be used for reliability check.
 ## Prerequisites
 
 Before getting started, ensure you have the following:
