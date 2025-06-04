@@ -196,9 +196,9 @@ This example checks whether an answer is correct based on the provided context.
 
 ## Best practices
 
-1. **Include relevant context** - When validating against specific information, provide comprehensive context.
-2. **Use domain-specific context** - Include authoritative references for specialized knowledge domains.
-3. **Consider general verification** - For widely known information, the service can verify against general knowledge sources.
+1. **Include relevant context**: When validating against specific information, provide comprehensive context.
+2. **Use domain-specific context**: Include authoritative references for specialized knowledge domains.
+3. **Consider general verification**: For widely known information, the service can verify against general knowledge sources.
 4. **Review explanations**: The detailed explanations provide valuable insights into the reasoning process.
 
 ## Next steps
