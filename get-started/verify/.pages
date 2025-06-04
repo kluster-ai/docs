@@ -1,3 +1,4 @@
-title: kluster verify
+title: kluster.ai verify
 nav:
+  - 'Overview': overview.md
   - reliability

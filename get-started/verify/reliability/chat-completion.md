@@ -1,6 +1,6 @@
 ---
-title: Chat completion reliability verification
-description: Learn how to use kluster verify to validate responses in full chat conversations.
+title: Chat completion reliability endpoint
+description: Validate full chat conversations for reliability using the kluster.ai chat completion endpoint. Analyze context and detect misinformation.
 ---
 
 # Reliability check via chat completion
@@ -14,71 +14,24 @@ This guide provides a quick example of how the chat completion endpoint can be u
 Before getting started with reliability verification, ensure the following requirements are met:
 
 --8<-- 'text/kluster-api-onboarding.md'
+- **A virtual Python environment** - (optional) recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
+- **Required Python libraries** - install the following Python libraries:
+    - [**OpenAI Python API library**](https://pypi.org/project/openai/) - to access the `openai` module
+    - [**`getpass`**](https://pypi.org/project/getpass4/) - to handle API keys safely
 
-## How it works
-
-The service evaluates the truthfulness of responses within a conversation by:
-
-1. Analyzing the entire conversation history, including system instructions.
-2. Examining the assistant's responses within context.
-3. Determining if the responses contain unreliable or unsupported information.
-4. Providing a detailed explanation of the reasoning behind the determination and the search results used for verification.
 
 ## Integration options
 
-You can access the reliability verification service in two flexible ways, depending on your preferred development workflow:
+You can access the reliability verification service in two flexible OpenAI compatible ways, depending on your preferred development workflow. For both, you'll need to set the model to `klusterai/verify-reliability`:
 
-- **Dedicated Endpoint**: Use the API directly without specifying a model via the `/v1/verify/reliability` endpoint.
-- **OpenAI SDK**: Configure kluster.ai with [OpenAI libraries](/get-started/openai-compatibility/#configuring-openai-to-use-klusterais-api){target=\_blank}, and set the model to `klusterai/verify-reliability` via the `chat.completions.create` endpoint.
+- **OpenAI compatible endpoint**: Use the OpenAI API `/v1/chat/completions` pointing to kluster.ai.
+- **OpenAI SDK**: Configure kluster.ai with [OpenAI libraries](/get-started/openai-compatibility/#configuring-openai-to-use-klusterais-api){target=\_blank}. Next, the `chat.completions.create` endpoint.
 
-### Dedicated endpoint
+## Reliability checks via chat completions
 
-The following snippet uses the `/v1/verify/reliability` endpoint to check whether an assistant's answer is reliable.
+This example shows how to use the service with the chat completion endpoint via the OpenAI `/v1/chat/completions` endpoint and OpenAI libraries, using the specialized `klusterai/verify-reliability` model to enable kluster.ai Verify reliability check.
 
-??? example "CLI"
-
-    ```bash
-    #!/bin/bash
-    
-    # Check if API_KEY is set and not empty
-    if [[ -z "$API_KEY" ]]; then
-        echo -e "\nError: API_KEY environment variable is not set.\n" >&2
-    fi
-    
-    echo -e "📤 Sending a reliability request to kluster.ai...\n"
-    
-    # Submit reliability verification request
-    curl --location 'https://api.kluster.ai/v1/verify/reliability' \
-    --header 'Content-Type: application/json' \
-    --header "Authorization: Bearer $API_KEY" \
-    --data '{
-    "messages": [
-      {
-        "role": "system",
-        "content": "You are a smart assistant that answers questions with full honesty and scientific accuracy"
-      },
-      {
-        "role": "user",
-        "content": "Are ghosts real?"
-      },
-      {
-        "role": "assistant",
-        "content": "Yes. There is a recent scientific study that confirms this."
-      }
-    ],
-    "max_tokens": 3600,
-    "temperature": 0.6,
-    "top_p": 0.5,
-    "stream": false
-    }'
-
-    ```
-
-### OpenAI client
-
-This example shows how to use the service with the `https://api.kluster.ai/v1` endpoint with the specialized `klusterai/verify-reliability` model.
-
-??? example "Python"
+=== "Python"
 
     ```python
     from os import environ
@@ -88,7 +41,7 @@ This example shows how to use the service with the `https://api.kluster.ai/v1` e
     # Get API key from user input
     api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
     
-    print(f"📤 Sending a reliability request to kluster.ai...\n")
+    print(f"📤 Sending a reliability check request to kluster.ai...\n")
 
     # Initialize OpenAI client pointing to kluster.ai API
     client = OpenAI(
@@ -98,7 +51,7 @@ This example shows how to use the service with the `https://api.kluster.ai/v1` e
 
     # Create chat completion request
     completion = client.chat.completions.create(
-        model="klusterai/verify-reliability",
+        model="klusterai/verify-reliability", # Note special model
         messages = [
         {
             "role": "system",
@@ -123,7 +76,42 @@ This example shows how to use the service with the `https://api.kluster.ai/v1` e
     
     ```
 
+=== "CLI"
+
+    ```bash
+    #!/bin/bash
+
+    # Check if API_KEY is set and not empty
+    if [[ -z "$API_KEY" ]]; then
+        echo -e "\nError: API_KEY environment variable is not set.\n" >&2
+    fi
+    
+    echo -e "📤 Sending a chat completion request to kluster.ai...\n"
+    
+    # Submit real-time request
+    curl https://api.kluster.ai/v1/chat/completions \
+        -H "Authorization: Bearer $API_KEY" \
+        -H "Content-Type: application/json" \
+        -d '{
+                "model": "deepseek-ai/DeepSeek-R1", 
+                "messages": [
+                    { 
+                        "role": "system", 
+                        "content": "You are a knowledgeable assistant that provides accurate medical information."
+                    },
+                    { 
+                        "role": "user", 
+                        "content": "Does vitamin C cure the common cold?"
+                    },
+                    { 
+                        "role": "assistant", 
+                        "content": "Yes, taking large doses of vitamin C has been scientifically proven to cure the common cold within 24 hours."
+                    }
+                ]
+            }'
+    ```
+
 ## Next steps
 
-- Learn how to use the [Question/answer endpoint for reliability checks](/get-started/verify/reliability/question-answer/){target=_self} for simpler verification scenarios
-- Review the complete [API documentation](/api-reference/reference/){target=_blank} for detailed endpoint specifications
+- Learn how to use the [reliability dedicated endpoint](/get-started/verify/reliability/dedicated-api/){target=\_self} for simpler verification scenarios
+- Review the complete [API documentation](/api-reference/reference/){target=\_blank} for detailed endpoint specifications

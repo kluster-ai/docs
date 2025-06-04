@@ -129,11 +129,11 @@ The SSE server provides HTTP endpoints for non-MCP platforms:
 ```
 
 !!! info "Workflow Integrations"
-    For platforms like Dify, n8n, and Zapier that use HTTP requests, see [Workflow Integrations](/get-started/verify/reliability/workflow-integrations/){target=_self}
+    For platforms like Dify, n8n, and Zapier that use HTTP requests, see [Workflow Integrations](/get-started/verify/reliability/workflow-integrations/){target=\_self}
 
 ## Additional Resources
 
-- **Quick Start** - Get running in [5 minutes](/get-started/verify/reliability/mcp/quick-start/){target=_self}
-- **Tools Reference** - Detailed [parameter documentation](/get-started/verify/reliability/mcp/tools/){target=_self}
-- **MCP Integration** - Return to the [main guide](/get-started/verify/reliability/mcp/){target=_self}
-- **Workflow Integrations** - HTTP-based [workflow templates](/get-started/verify/reliability/workflow-integrations/){target=_self}
+- **Quick Start** - Get running in [5 minutes](/get-started/verify/reliability/mcp/quick-start/){target=\_self}
+- **Tools Reference** - Detailed [parameter documentation](/get-started/verify/reliability/mcp/tools/){target=\_self}
+- **MCP Integration** - Return to the [main guide](/get-started/verify/reliability/mcp/){target=\_self}
+- **Workflow Integrations** - HTTP-based [workflow templates](/get-started/verify/reliability/workflow-integrations/){target=\_self}
