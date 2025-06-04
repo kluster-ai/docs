@@ -5,7 +5,7 @@ description: Learn how to use kluster verify to validate the reliability of answ
 
 # Question/answer
 
-The Question/Answer method allows you to validate whether an answer to a specific question contains unreliable information. This approach is ideal for fact-checking individual responses against provided context (when you include the `context` parameter) or general knowledge (when no context is provided).
+The Question/Answer method allows you to validate whether an answer to a specific question contains unreliable information. This approach is ideal for verifying individual responses against provided context (when you include the `context` parameter) or general knowledge (when no context is provided).
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ The service evaluates the truthfulness of an answer to a question by:
 1. Analyzing the original question or prompt.
 2. Examining the provided answer.
 3. Determining if the answer contains unreliable or unsupported information.
-4. Providing a detailed explanation of the reasoning behind the determination as well as the search results used for fact-checking.
+4. Providing a detailed explanation of the reasoning behind the determination as well as the search results used for verification.
 
 ### Parameters
 
@@ -52,12 +52,12 @@ The API returns a JSON object with the following structure:
 
 The service operates in two distinct modes depending on whether you provide context with your request:
 
-- **Fact-checking mode** - when no context is provided, the service verifies answers against general knowledge and external sources.
+- **General knowledge verification** - when no context is provided, the service verifies answers against general knowledge and external sources.
 - **Context validation mode** - when context is provided, the service only validates answers against the specified context.
 
-### Fact-checking mode
+### General knowledge verification
 
-This example checks whether an answer contains unreliable information. As no context is provided, the answer will be fact-checked against general knowledge to identify reliability issues.
+This example checks whether an answer contains unreliable information. As no context is provided, the answer will be verified against general knowledge to identify reliability issues.
 
 ??? example "Python"
 
@@ -122,7 +122,7 @@ This example checks whether an answer contains unreliable information. As no con
 
 ### Context validation mode
 
-When providing the `context` parameter, the service will not perform external fact-checking. Instead, it focuses on whether the answer complies with the provided context.
+When providing the `context` parameter, the service will not perform external verification. Instead, it focuses on whether the answer complies with the provided context.
 
 !!! tip "RAG applications"
     Ensure the LLM's responses are accurate by using kluster verify in your Retrieval Augmented Generation workflows.
@@ -198,7 +198,7 @@ This example checks whether an answer is correct based on the provided context.
 
 1. **Include relevant context** - When validating against specific information, provide comprehensive context.
 2. **Use domain-specific context** - Include authoritative references for specialized knowledge domains.
-3. **Consider fact-checking only** - For common facts, the service can verify against general knowledge.
+3. **Consider general verification** - For widely known information, the service can verify against general knowledge sources.
 5. **Review explanations** - The detailed explanations provide valuable insights into the reasoning process.
 
 ## Next steps

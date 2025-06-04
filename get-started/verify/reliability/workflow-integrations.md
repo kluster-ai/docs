@@ -15,11 +15,36 @@ Before getting started, you'll need:
 - **API key** - After signing in, navigate to [API Keys](https://platform.kluster.ai/apikeys){target=_blank} and create a new key
 - **Workflow platform** - Dify, n8n, or your preferred automation tool
 
+## How It Works
+
+All workflows connect to kluster verify through a simple API call. Here's what happens under the hood:
+
+**Request Format:**
+```json
+{
+  "prompt": "What was the user's question?",
+  "output": "The AI's response to verify", 
+  "context": "Optional reference documents or data",
+  "return_search_results": false
+}
+```
+
+**Response Format:**
+```json
+{
+  "is_hallucination": false,
+  "explanation": "The response accurately reflects the information...",
+  "usage": {"total_tokens": 150}
+}
+```
+
+The service analyzes the AI output against the provided context (or performs real-time verification) and returns a clear verdict with detailed reasoning.
+
 ## Available Workflows
 
 ### Dify
 
-Build AI applications that fact-check themselves. This workflow seamlessly integrates kluster verify into your Dify chatbots and agents, ensuring every response is validated for accuracy before reaching your users.
+Build AI applications with built-in reliability verification. This workflow seamlessly integrates kluster verify into your Dify chatbots and agents, ensuring every response is validated for accuracy and trustworthiness before reaching your users.
 
 ![Dify workflow for kluster verify](/images/get-started/verify/dify_workflow.webp)
 
@@ -66,30 +91,6 @@ Save the credential for use in your workflows.
 
 [Download n8n Workflow](workflows/n8n_workflow.json){target=_blank .md-button}
 
-## How It Works
-
-All workflows connect to kluster verify through a simple API call. Here's what happens under the hood:
-
-**Request Format:**
-```json
-{
-  "prompt": "What was the user's question?",
-  "output": "The AI's response to verify", 
-  "context": "Optional reference documents or data",
-  "return_search_results": false
-}
-```
-
-**Response Format:**
-```json
-{
-  "is_hallucination": false,
-  "explanation": "The response accurately reflects the information...",
-  "usage": {"total_tokens": 150}
-}
-```
-
-The service analyzes the AI output against the provided context (or performs real-time fact-checking) and returns a clear verdict with detailed reasoning.
 
 ## Next Steps
 

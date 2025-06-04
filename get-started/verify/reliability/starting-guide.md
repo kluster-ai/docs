@@ -7,13 +7,13 @@ description: Learn how to verify reliability and prevent unreliable content in y
 
 The **kluster verify** service helps to to make sure AI responses are accuarate and compliant. The **Reliabitity check agent**  is able to identify when AI responses contain fabricated or inaccurate information.
 
-With this specialized service, you can verify the factual reliability of AI-generated content and build more trustworthy applications.
+With this specialized service, you can verify the reliability of AI-generated content and build more trustworthy applications.
 
-The service can evaluate the AI response based on a given context, which makes it great for RAG applications. Without providing a specific context, the service can also be used as a **real-time fact-checking tool**.
+The service can evaluate the AI response based on a given context, which makes it great for RAG applications. Without providing a specific context, the service can also be used as a **real-time reliability verification service**.
 
 ## How it works
     
-The service evaluates AI outputs in order to identify reliability issues or incorrect facts.
+The service evaluates AI outputs in order to identify reliability issues or incorrect information.
 
 For example:
    
@@ -29,26 +29,26 @@ For example:
         "prompt_tokens": 1100,
         "total_tokens": 1254
     },
-    "explanation": "The response provides a wrong location for the Eiffel Tower.\nThe Eiffel Tower is actually located in Paris, France, which is a well-known fact.\nThe response given is factually incorrect as Rome is the capital of Italy, not the location of the Eiffel Tower.",
+    "explanation": "The response provides a wrong location for the Eiffel Tower.\nThe Eiffel Tower is actually located in Paris, France, not in Rome.\nThe response contains misinformation as it incorrectly states the tower's location.",
     "search_results": [] // Optional
 }
 ```
        
 - **is_hallucination=true/false** - indicates whether the response contains unreliable content.
 - **explanation** - provides detailed reasoning for the determination.
-- **search_results** - shows the reference data used for factchecking (when applicable).
+- **search_results** - shows the reference data used for verification (when applicable).
 
 ## What to know
 
 !!! question "What are Reliability Issues?"
-    Reliability issues occur when models generate information that appears plausible but is factually incorrect or unsupported by the provided context. Check out our [kluster verify Tutorial](/tutorials/klusterai-api/reliability-check){target=_blank}
+    Reliability issues occur when models generate information that appears plausible but is unreliable or unsupported by the provided context. Check out our [kluster verify Tutorial](/tutorials/klusterai-api/reliability-check){target=_blank}
 
 **kluster verify** evaluates AI responses to determine if they contain unreliable content, providing detailed explanations of its reasoning. 
 
 The service offers flexible options for verification supporting both **question-answer** format and **chat completions** where the whole chat history is analyzed by the agent.
 
 !!! tip "Reliability issues can be problematic"
-    Reliability checking is particularly valuable when accuracy is critical, such as in educational tools, healthcare applications, legal assistants, or any system where factual correctness matters.
+    Reliability checking is particularly valuable when accuracy is critical, such as in educational tools, healthcare applications, legal assistants, or any system where information accuracy and trustworthiness matter.
 
 ## When to use reliability checking
 
@@ -56,7 +56,7 @@ The reliability check service is ideal for scenarios where you need:
 
 - **Model evaluation** - easily integrate our service to compare models output quality.
 - **RAG applications** - verify that generated responses accurately reflect the provided reference documents rather than introducing fabricated information.
-- **Internet-sourced fact-checking** - validate claims against reliable online sources with transparent citation of evidence.
+- **Internet-sourced verification** - validate claims against reliable online sources with transparent citation of evidence.
 - **Content moderation** - automatically flag potentially misleading information before it reaches end users.
 - **Regulatory compliance** - ensure AI-generated content meets accuracy requirements.
 
@@ -70,7 +70,7 @@ kluster.ai offers multiple ways to verify reliability, each designed for differe
 
     ---
 
-    Verify the factual accuracy of an answer to a specific question. Ideal for fact-checking individual responses against specific context.
+    Verify the reliability and accuracy of an answer to a specific question. Ideal for validating individual responses against specific context or general knowledge.
 
     [:octicons-arrow-right-24: Visit the guide](/get-started/verify/reliability/question-answer/){target=_self}
 

@@ -21,7 +21,7 @@ The service evaluates the truthfulness of responses within a conversation by:
 1. Analyzing the entire conversation history, including system instructions.
 2. Examining the assistant's responses within context.
 3. Determining if the responses contain unreliable or unsupported information.
-4. Providing a detailed explanation of the reasoning behind the determination and the search results used for fact-checking.
+4. Providing a detailed explanation of the reasoning behind the determination and the search results used for verification.
 
 ## Usage modes
 
