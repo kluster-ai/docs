@@ -3,7 +3,7 @@ title: Chat completion reliability verification
 description: Learn how to use kluster verify to validate responses in full chat conversations.
 ---
 
-# Chat completion
+# Reliability check via chat completion
 
 Developers can access the reliability check feature via the regular chat completion endpoint. This allows you to validate responses in full conversation histories using the same format as the standard chat completions API. This approach enables verification of reliability within the complete context of a conversation.
 
