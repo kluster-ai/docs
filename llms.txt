@@ -10136,7 +10136,7 @@ title: Overview of kluster.ai Verify
 description: Learn more about the kluster.ai Verify service, a trust layer for AI stacks that provides a set of features to validate LLM outputs in real-time.
 ---
 
-# kluster.ai Verify
+# Verify
 
 LLMs can generate non-factual or irrelevant information (hallucinations). For developers, this presents significant challenges:
 
