@@ -7,3 +7,4 @@ nav:
   - 'Dedicated deployments': dedicated-deployments.md
   - 'OpenAI compatibility': openai-compatibility.md
   - 'Integrations': integrations
+  - 'kluster.ai verify': verify

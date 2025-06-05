@@ -263,7 +263,7 @@ For a detailed breakdown of the chat completion object, see the [chat completion
 
 ## Third-party integrations
 
-You can also set up [third-party LLM integrations](/get-started/integrations/){target=\_blank} using the kluster.ai API. For step-by-step instructions, check out the following integration guides:
+You can also set up third-party LLM integrations using the kluster.ai API. For step-by-step instructions, check out the following integration guides:
 
 - [**SillyTavern**](/get-started/integrations/sillytavern){target=\_blank} - multi-LLM chat interface
 - [**LangChain**](/get-started/integrations/langchain/){target=\_blank} - multi-turn conversational agent
