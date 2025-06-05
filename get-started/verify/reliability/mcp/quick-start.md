@@ -11,9 +11,8 @@ Get fact-checking working in your MCP client in five minutes.
 
 Before getting started with MCP integration, ensure the following requirements are met:
 
-- **kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you do not have one
-- **kluster.ai API key** - after signing in, go to the [API Keys](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, see the [Get an API key](https://docs.kluster.ai/get-started/get-api-key/){target=\_blank} guide
-- **Docker** installed and running (see [Node.js setup](/get-started/verify/reliability/mcp/clients/#nodejs-setup){target=\_self} for alternative)
+--8<-- 'text/kluster-api-onboarding.md'
+- **Docker** installed and running (see [Node.js setup](/get-started/verify/reliability/mcp/clients/#nodejs-setup){target=\_blank} for alternative)
 - **Claude Desktop** for testing (or another MCP client)
 
 ## Setup
@@ -88,12 +87,12 @@ Claude should use the `document_claim_check` tool to verify your claim against t
 
 ## Next Steps
 
-- **Learn the tools** - See [Tools Reference](/get-started/hallucination-agent/mcp-tools/){target=\_self} for detailed parameters and examples
-- **Setup other clients** - Check [Client Setup](/get-started/hallucination-agent/mcp-clients/){target=\_self} for VS Code, n8n, and Dify integration
+- **Learn the tools** - See [Tools Reference](/get-started/hallucination-agent/mcp-tools/){target=\_blank} for detailed parameters and examples
+- **Setup other clients** - Check [Client Setup](/get-started/hallucination-agent/mcp-clients/){target=\_blank} for VS Code, n8n, and Dify integration
 - **Production deployment** - Contact support for scaling recommendations
 
 ## Additional Resources
 
-- **MCP Integration overview** - Return to the [main MCP guide](/get-started/hallucination-agent/mcp/){target=\_self}
+- **MCP Integration overview** - Return to the [main MCP guide](/get-started/hallucination-agent/mcp/){target=\_blank}
 - **API documentation** - Review the complete [API reference](/api-reference/reference/){target=\_blank}
 - **Tutorials** - Explore [practical examples](/tutorials/klusterai-api/hallucination-detection-agent){target=\_blank}

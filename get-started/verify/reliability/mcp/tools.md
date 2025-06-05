@@ -186,7 +186,7 @@ No artificial limits imposed by the MCP server. Limited by your kluster.ai subsc
 
 ## Additional Resources
 
-- **Quick Start** - Get up and running with the [5-minute setup guide](/get-started/hallucination-agent/mcp-quick-start/){target=\_self}
-- **Client Setup** - Configure [different MCP clients](/get-started/hallucination-agent/mcp-clients/){target=\_self}  
-- **MCP Integration** - Return to the [main guide](/get-started/hallucination-agent/mcp/){target=\_self}
+- **Quick Start**: Get up and running with the [5-minute setup guide](/get-started/hallucination-agent/mcp-quick-start/){target=\_blank}.
+- **Client Setup**: Configure [different MCP clients](/get-started/hallucination-agent/mcp-clients/){target=\_blank}.
+- **MCP Integration**: Return to the [main guide](/get-started/hallucination-agent/mcp/){target=\_blank}.
 - **API Reference** - Complete [API documentation](/api-reference/reference/){target=\_blank}

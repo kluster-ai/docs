@@ -30,7 +30,7 @@ Verify analyzes these inputs and can leverage **real time internet access** to v
 
 ## Performance benchmarks
 
-Verify by kluster.ai has been benchmarked against other solutions on HaluEval and HaluBench datasets (over 25,000 samples).
+Verify by kluster.ai has been benchmarked against other solutions on [HaluEval](https://github.com/RUCAIBox/HaluEval){target=\_blank} and [HaluBench](https://huggingface.co/datasets/PatronusAI/HaluBench){target=\_blank} datasets (over 25,000 samples).
 
 - **Non-RAG Scenarios (Context-Free):**
     - Compared against CleanLab TLM (GPT 4o-mini, medium quality, optimized threshold).
@@ -38,7 +38,7 @@ Verify by kluster.ai has been benchmarked against other solutions on HaluEval an
 - **RAG Validation (Context-Provided):**
     - Compared against Patronus AI's Lynx (70B) and CleanLab TLM.
     - Results: On RAGTruth (factual consistency), Verify significantly outperformed Lynx 70B and CleanLab TLM. On DROP (numerical/logical reasoning), Verify showed competitive performance against Lynx and outperformed CleanLab TLM.
-    - *Note:* Lynx was trained on the training sets of DROP and RAGTruth, highlighting Verify's generalization capabilities to unseen data configurations.
+    - Note: Lynx was trained on the training sets of DROP and RAGTruth, highlighting Verify's generalization capabilities to unseen data configurations.
 
 These results indicate Verify's effectiveness in diverse scenarios relevant to production AI systems.
 

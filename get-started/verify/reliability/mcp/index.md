@@ -5,7 +5,7 @@ description: Add fact-checking to your LLM applications using kluster verify's M
 
 # Integration
 
-LLM applications sometimes generate convincing but false information. This breaks user trust and creates liability. The **kluster verify MCP server** solves this by adding real-time fact-checking to any MCP-compatible environment.
+LLM applications sometimes generate convincing but false information. This breaks user trust and creates liability. The kluster verify MCP server solves this by adding real-time fact-checking to any MCP-compatible environment.
 
 ## Why kluster verify Built an MCP Server
 
@@ -19,9 +19,8 @@ LLM applications sometimes generate convincing but false information. This break
 
 Before getting started with MCP integration, ensure the following requirements are met:
 
-- **kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you do not have one
-- **kluster.ai API key** - after signing in, go to the [API Keys](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, see the [Get an API key](https://docs.kluster.ai/get-started/get-api-key/){target=\_blank} guide
-- **Docker** installed on your system (see [Node.js setup](/get-started/verify/reliability/mcp/clients/#nodejs-setup){target=\_self} for alternative)
+--8<-- 'text/kluster-api-onboarding.md'
+- **Docker** installed on your system (see [Node.js setup](/get-started/verify/reliability/mcp/clients/#nodejs-setup){target=\_blank} for alternative)
 - **MCP-compatible client** such as Claude Desktop, VS Code, n8n, or Dify
 
 ## What You Get
@@ -76,10 +75,10 @@ Both tools return structured responses with explanations and source citations.
 
 The server integrates with your applications by:
 
-1. **Exposing tools** through the standard MCP protocol
-2. **Processing claims** using kluster.ai's verification API  
-3. **Returning results** with explanations and source citations
-4. **Working everywhere** MCP is supported
+1. Exposing tools through the standard MCP protocol
+2. Processing claims using kluster.ai's verification API  
+3. Returning results with explanations and source citations
+4. Working everywhere MCP is supported
 
 ## Learn More About MCP
 
@@ -87,7 +86,7 @@ New to Model Context Protocol? Learn more in the [official MCP documentation](ht
 
 ## Additional Resources
 
-- **Dedicated reliability endpoint** - Learn how to [verify individual question-answer pairs](/get-started/verify/reliability/dedicated-api/){target=\_self}
-- **Chat Completion verification** - Discover how to [validate responses in conversations](/get-started/verify/reliability/chat-completion/){target=\_self}
-- **Practical examples** - Explore our [Tutorials](/tutorials/klusterai-api/reliability-check){target=\_blank} for kluster verify
-- **API reference** - Review the complete [API documentation](/api-reference/reference/){target=\_blank} for all reliability verification endpoints
+- **Dedicated reliability endpoint**: Learn how to [verify individual question-answer pairs](/get-started/verify/reliability/dedicated-api/){target=\_blank}.
+- **Chat Completion verification**: Discover how to [validate responses in conversations](/get-started/verify/reliability/chat-completion/){target=\_blank}.
+- **Practical examples**: Explore our [Tutorials](/tutorials/klusterai-api/reliability-check){target=\_blank} for kluster verify.
+- **API reference**: Review the complete [API documentation](/api-reference/reference/){target=\_blank} for all reliability verification endpoints.

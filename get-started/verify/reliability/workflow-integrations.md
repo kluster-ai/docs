@@ -5,7 +5,7 @@ description: Easily integrate kluster.ai Verify into Dify, n8n, and more with re
 
 # Workflow integrations
 
-You can integrate kluster.ai Verify reliability check feature into your favorite automation platforms with ready-to-use workflow templates. These pre-configured workflows connect directly to the kluster.ai API, allowing you to add AI verification capabilities to your existing processes in minutes.
+You can integrate the kluster.ai Verify reliability check feature into your favorite automation platforms with ready-to-use workflow templates. These pre-configured workflows connect directly to the kluster.ai API, allowing you to add AI verification capabilities to your existing processes in minutes.
 
 ## Prerequisites
 
@@ -60,7 +60,7 @@ This workflow validates AI-generated content against your source documents, tool
 
 **Set Up API Credentials**
 
-- Select the OpenAI and choose **Credentials**, click **Create New**,
+- Select the OpenAI and choose **Credentials**. Then click **Create New**
 
 - **Base URL**: `https://api.kluster.ai/v1`
 - **API Key**: Your kluster.ai API key

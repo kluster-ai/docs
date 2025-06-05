@@ -64,9 +64,9 @@ Alternative to Docker for development environments:
 
 ### Features
 
-- **Real-time fact-checking** - Verify statements as you type
-- **Document verification** - Check claims against uploaded documents  
-- **Contextual integration** - Works seamlessly within conversations
+- **Real-time fact-checking**: Verify statements as you type.
+- **Document verification**: - Check claims against uploaded documents.  
+- **Contextual integration**: Works seamlessly within conversations.
 
 ## VS Code
 
@@ -95,9 +95,9 @@ Integrate reliability checking directly into your development workflow.
 
 ### Features
 
-- **Code comment verification** - Fact-check claims in documentation
-- **Inline fact-checking** - Verify statements while coding
-- **Agent Mode support** - Secure API key handling
+- **Code comment verification**: Fact-check claims in documentation.
+- **Inline fact-checking**: Verify statements while coding.
+- **Agent Mode support**: Secure API key handling.
 
 ## SSE Connection Type
 
@@ -129,11 +129,11 @@ The SSE server provides HTTP endpoints for non-MCP platforms:
 ```
 
 !!! info "Workflow Integrations"
-    For platforms like Dify, n8n, and Zapier that use HTTP requests, see [Workflow Integrations](/get-started/verify/reliability/workflow-integrations/){target=\_self}
+    For platforms like Dify, n8n, and Zapier that use HTTP requests, see [Workflow Integrations](/get-started/verify/reliability/workflow-integrations/){target=\_blank}
 
 ## Additional Resources
 
-- **Quick Start** - Get running in [5 minutes](/get-started/verify/reliability/mcp/quick-start/){target=\_self}
-- **Tools Reference** - Detailed [parameter documentation](/get-started/verify/reliability/mcp/tools/){target=\_self}
-- **MCP Integration** - Return to the [main guide](/get-started/verify/reliability/mcp/){target=\_self}
-- **Workflow Integrations** - HTTP-based [workflow templates](/get-started/verify/reliability/workflow-integrations/){target=\_self}
+- **Quick Start** - Get running in [5 minutes](/get-started/verify/reliability/mcp/quick-start/){target=\_blank}
+- **Tools Reference** - Detailed [parameter documentation](/get-started/verify/reliability/mcp/tools/){target=\_blank}
+- **MCP Integration** - Return to the [main guide](/get-started/verify/reliability/mcp/){target=\_blank}
+- **Workflow Integrations** - HTTP-based [workflow templates](/get-started/verify/reliability/workflow-integrations/){target=\_blank}

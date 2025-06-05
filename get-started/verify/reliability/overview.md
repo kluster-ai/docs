@@ -5,7 +5,7 @@ description: Learn how to use kluster.ai reliability check and prevent unreliabl
 
 # Reliability check by kluster.ai Verify
 
-**Reliability check**  is one of the features offered by kluster.ai Verify, and it is able to identify when AI responses contain fabricated or inaccurate information.
+Reliability check is one of the features offered by kluster.ai Verify, and it is able to identify when AI responses contain fabricated or inaccurate information.
 
 With this specialized service, you can gauge the reliability of AI-generated content and build more trustworthy applications.
 
@@ -64,7 +64,7 @@ The reliability check service is ideal for scenarios where you need:
 
 - **Model evaluation**: Easily integrate the service to compare models output quality.
 - **RAG applications**: Verify that generated responses accurately reflect the provided reference documents rather than introducing fabricated information.
-- **Internet-sourced verification**: vValidate claims against reliable online sources with transparent citation of evidence.
+- **Internet-sourced verification**: Validate claims against reliable online sources with transparent citation of evidence.
 - **Content moderation**: Automatically flag potentially misleading information before it reaches end users.
 - **Regulatory compliance**: Ensure AI-generated content meets accuracy requirements.
 
@@ -80,9 +80,9 @@ Verify by kluster.ai offers multiple ways to perform reliability checks, each de
 
     Verify the reliability and accuracy of an answer to a specific question via a dedicated API endpoint.
 
-    [:octicons-arrow-right-24: Visit the guide](/get-started/verify/reliability/question-answer/){target=\_self}
+    [:octicons-arrow-right-24: Visit the guide](/get-started/verify/reliability/dedicated-api/){target=\_self}
 
--   <span class="badge guide">Guide</span> __Chat completion endpoint
+-   <span class="badge guide">Guide</span> Chat completion endpoint
 
     ---
 
@@ -102,6 +102,6 @@ Verify by kluster.ai offers multiple ways to perform reliability checks, each de
 
 ## Additional resources
 
-- **Workflow Integrations**: Download [ready-to-use workflows for Dify, n8n](/get-started/verify/reliability/workflow-integrations/){target=\\_self}
+- **Workflow Integrations**: Download [ready-to-use workflows for Dify, n8n](/get-started/verify/reliability/workflow-integrations/){target=\_blank}.
 - **Tutorial**: Explore the [kluster verify tutorial](/tutorials/klusterai-api/reliability-check){target=\_blank} with code examples.
 

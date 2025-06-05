@@ -7,17 +7,17 @@ description: Validate full chat conversations for reliability using the kluster.
 
 Developers can access the reliability check feature via the regular chat completion endpoint. This allows you to validate responses in full conversation histories using the same format as the standard chat completions API. This approach enables verification of reliability within the complete context of a conversation.
 
-This guide provides a quick example of how the chat completion endpoint can be used for reliability check.
+This guide provides a quick example of how the chat completion endpoint can be used for reliability checks.
 
 ## Prerequisites
 
 Before getting started with reliability verification, ensure the following requirements are met:
 
 --8<-- 'text/kluster-api-onboarding.md'
-- **A virtual Python environment** - (optional) recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
-- **Required Python libraries** - install the following Python libraries:
-    - [**OpenAI Python API library**](https://pypi.org/project/openai/) - to access the `openai` module
-    - [**`getpass`**](https://pypi.org/project/getpass4/) - to handle API keys safely
+- **A virtual Python environment**: (Optional) Recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
+- **Required Python libraries**: Install the following Python libraries:
+    - [**OpenAI Python API library**](https://pypi.org/project/openai/){target=\_blank}: to access the `openai` module
+    - [**`getpass`**](https://pypi.org/project/getpass4/){target=\_blank}: To handle API keys safely
 
 
 ## Integration options
@@ -113,5 +113,5 @@ This example shows how to use the service with the chat completion endpoint via 
 
 ## Next steps
 
-- Learn how to use the [reliability dedicated endpoint](/get-started/verify/reliability/dedicated-api/){target=\_self} for simpler verification scenarios
+- Learn how to use the [reliability dedicated endpoint](/get-started/verify/reliability/dedicated-api/){target=\_blank} for simpler verification scenarios
 - Review the complete [API documentation](/api-reference/reference/){target=\_blank} for detailed endpoint specifications

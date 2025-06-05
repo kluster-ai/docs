@@ -41,7 +41,7 @@ The API returns a JSON object with the following structure:
 
 ## How to use the reliability endpoint
 
-The reliablity check feature operates in two distinct modes depending on whether you provide context with your request:
+The reliability check feature operates in two distinct modes depending on whether you provide context with your request:
 
 - **General knowledge verification**: When no context is provided, the service verifies answers against general knowledge and external sources.
 - **Context validation mode**: When context is provided, the service only validates answers against the specified context.
@@ -238,5 +238,5 @@ This example checks whether an answer is correct based on the provided context.
 
 ## Next steps
 
-- Learn how to use [Chat completion reliability verification](/get-started/verify/reliability/chat-completion/){target=\_self} for evaluating entire conversation histories
+- Learn how to use [Chat completion reliability verification](/get-started/verify/reliability/chat-completion/){target=\_blank} for evaluating entire conversation histories
 - Review the complete [API documentation](/api-reference/reference/){target=\_blank} for detailed endpoint specifications
