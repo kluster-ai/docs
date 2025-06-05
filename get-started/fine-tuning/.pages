@@ -2,5 +2,5 @@ title: Fine-tuning
 hide: false
 nav:
   - 'Overview': overview.md
-  - 'Platform': platform.md
-  - 'API': api.md
+  - 'Via the platform': platform.md
+  - 'Via the API': api.md
