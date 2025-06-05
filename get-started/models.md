@@ -7,7 +7,7 @@ description: Learn what models are supported by the kluster.ai API and the main 
 
 [kluster.ai](https://kluster.ai){target=\_blank} offers a wide variety of open-source models for both real-time and batch inferences, with more being constantly added.
  
-This page covers all the models the API supports, with the API request limits for each.ㅤ
+This page covers all the models the API supports, with the API request limits for each.
 
 ## Model names
 
