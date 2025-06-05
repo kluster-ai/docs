@@ -1,9 +1,9 @@
 app:
-  description: Chatbot that uses kluster.ai verify agent
+  description: Chatbot that uses Verify agent
   icon: 601f09d2-07d2-4dc7-8e5d-988b24ac46a3
   icon_background: '#FFEAD5'
   mode: advanced-chat
-  name: kluster.ai verify agent workflow
+  name: Verify agent workflow
   use_icon_as_answer_icon: true
 dependencies:
 - current_identifier: null
@@ -280,7 +280,7 @@ workflow:
           max_connect_timeout: 0
           max_read_timeout: 0
           max_write_timeout: 0
-        title: kluster.ai Verify
+        title: Verify
         type: http-request
         url: https://api.klusterai.io/v1/verify/reliability
         variables: []
@@ -363,7 +363,7 @@ workflow:
         selected: true
         showAuthor: true
         text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
-          16px;","text":"kluster.ai Verify workflow demo","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          16px;","text":"Verify workflow demo","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
           16px;","textFormat":0},{"children":[],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
           16px;","textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Before
           getting started, make sure you have:","type":"text","version":1}],"direction":"ltr","format":"start","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"children":[{"detail":0,"format":1,"mode":"normal","style":"","text":"A

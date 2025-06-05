@@ -8,4 +8,4 @@ nav:
   - 'Integrations': integrations
   - 'Dedicated deployments': dedicated-deployments.md
   - fine-tuning
-  - 'kluster.ai Verify': verify
+  - 'Verify': verify
