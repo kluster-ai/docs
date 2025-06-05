@@ -41,7 +41,7 @@ For example, for the following prompt:
 ...
 ```
 
-The reliablity check response would return:
+The reliability check response would return:
 
 ```json
 {
