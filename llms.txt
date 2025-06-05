@@ -2951,6 +2951,187 @@ Array of integrations associated with the fine-tuning job.
 
 </div>
 </div>
+
+## Verify
+
+### Reliability check
+
+`POST https://api.kluster.ai/v1/verify/reliability`
+
+The **Verify** endpoint evaluates whether an LLM answer is reliable or hallucinatory.
+It can operate in two modes:
+
+1. **General-knowledge verification** – if you omit `context`, the service cross-checks the answer against publicly available sources.
+2. **Context validation mode** – if you supply `context`, the answer is judged **only** against that reference text (perfect for RAG pipelines).
+
+<div class="grid" markdown>
+<div markdown>
+
+**Request**
+
+`prompt` ++"string"++ <span class="required" markdown>++"required"++</span>
+The original question or instruction.
+
+---
+
+`output` ++"string"++ <span class="required" markdown>++"required"++</span>
+The LLM response you want to verify.
+
+---
+
+`context` ++"string or null"++
+Optional reference material. When present, reliability is checked **only** against this context.
+
+---
+
+`return_search_results` ++"boolean or null"++
+Whether to return the web search snippets the judge used to fact-check the answer. Defaults to `false`.
+
+---
+
+**Returns**
+
+A [Reliability response object](#reliability-response-object) indicating if hallucination was detected.
+
+</div>
+<div markdown>
+
+=== "Python"
+
+    ```python title="Example request"
+    from typing import Any, Dict 
+
+    from openai import OpenAI
+
+    client = OpenAI(
+        base_url="https://api.kluster.ai/v1",
+        api_key="INSERT_API_KEY"
+    )
+
+    payload = {
+        "prompt": "Is earth flat?",
+        "output": "Yes, absolutely.",
+        "return_search_results": False
+    }
+
+    resp = client.post(
+        "/verify/reliability",
+        cast_to=Dict[str, Any], 
+        body=payload
+    )
+
+    print(resp)                      
+
+    ```
+
+=== "curl"
+
+    ```bash title="Example request"
+    curl -s https://api.kluster.ai/v1/verify/reliability \
+      -H "Authorization: Bearer INSERT_API_KEY" \
+      -H "Content-Type: application/json" \
+      -d '{
+            "prompt": "Is earth flat?",
+            "output": "Yes, absolutely.",
+            "return_search_results": false
+          }'
+    ```
+
+```json title="Response"
+{
+  "is_hallucination": true,
+  "usage": {
+    "completion_tokens": 301,
+    "prompt_tokens": 925,
+    "total_tokens": 1226
+  },
+  "explanation": "The response 'Yes, absolutely' is factually incorrect as it contradicts the established scientific fact that the Earth is not flat.\nThe statement is an unsupported claim because it goes against the overwhelming scientific consensus and evidence.\nThe response confidently presents a falsehood, which is a key characteristic of hallucination.",
+  "search_results": []
+}
+```
+
+</div>
+</div>
+
+---
+
+### Reliability response object
+
+<div class="grid" markdown>
+<div markdown>
+
+`is_hallucination` ++"boolean"++
+
+`true` if the answer contains unreliable or unsupported information.
+
+---
+
+`explanation` ++"string"++
+
+Reasoning behind the judgment. Useful for audit logs and model evaluation.
+
+---
+
+`usage` ++"object"++
+
+Token-level usage statistics for billing / monitoring.
+
+??? child "Show properties"
+
+    `prompt_tokens` ++"integer"++
+
+    Tokens consumed by the request.
+
+    ---
+
+    `completion_tokens` ++"integer"++
+
+    Tokens generated during the verification step.
+
+    ---
+
+    `total_tokens` ++"integer"++
+
+    Sum of prompt + completion tokens.
+
+---
+
+`search_results` ++"array"++
+
+Only present when `return_search_results=true`. Each element contains:
+
+| Field | Type   | Description                           |
+|-------|--------|---------------------------------------|
+| `title`   | string | Page title                            |
+| `snippet` | string | Passage supporting/refuting the claim |
+| `link`    | string | Source URL                            |
+
+</div>
+<div markdown>
+
+```json title="Reliability response object"
+{
+  "is_hallucination": false,
+  "explanation": "Answer matches the supplied context exactly.",
+  "usage": {
+    "prompt_tokens": 58,
+    "completion_tokens": 142,
+    "total_tokens": 200
+  },
+  "search_results": [
+    {
+      "title": "NASA – Shape of the Earth",
+      "snippet": "...the planet is an oblate spheroid...",
+      "link": "https://www.nasa.gov/..."
+    }
+  ]
+}
+```
+
+</div>
+</div>
+
+---
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/get-started/dedicated-deployments/
