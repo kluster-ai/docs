@@ -1,9 +1,9 @@
 ---
-title: Overview of kluster.ai Verify
-description: Learn more about the kluster.ai Verify service, a trust layer for AI stacks that provides a set of features to validate LLM outputs in real-time.
+title: Overview of Verify
+description: Learn more about the Verify service, a trust layer for AI stacks that provides a set of features to validate LLM outputs in real-time.
 ---
 
-# kluster.ai Verify
+# Verify
 
 LLMs can generate non-factual or irrelevant information (hallucinations). For developers, this presents significant challenges:
 
@@ -14,11 +14,11 @@ LLMs can generate non-factual or irrelevant information (hallucinations). For de
 
 Traditional validation methods may involve complex rule sets, fine-tuning, or exhibit high false-positive rates, adding to the development burden.
 
-kluster.ai Verify is an intelligent verification service that validates LLM outputs in real-time. It's designed to give you the trust needed to deploy AI at scale in production environments where accuracy matters most.
+Verify is an intelligent verification service that validates LLM outputs in real-time. It's designed to give you the trust needed to deploy AI at scale in production environments where accuracy matters most.
 
-This page provides an overview of the kluster.ai Verify service.
+This page provides an overview of the Verify service.
 
-## How kluster.ai Verify works
+## How Verify works
 
 The Verify service functions as an intelligent agent. It assesses LLM output reliability based on three key inputs provided in the API call:
 
@@ -30,7 +30,7 @@ Verify analyzes these inputs and can leverage **real time internet access** to v
 
 ## Performance benchmarks
 
-kluster.ai Verify has been benchmarked against other solutions on [HaluEval](https://github.com/RUCAIBox/HaluEval){target=\_blank} and [HaluBench](https://huggingface.co/datasets/PatronusAI/HaluBench){target=\_blank} datasets (over 25,000 samples).
+Verify has been benchmarked against other solutions on [HaluEval](https://github.com/RUCAIBox/HaluEval){target=\_blank} and [HaluBench](https://huggingface.co/datasets/PatronusAI/HaluBench){target=\_blank} datasets (over 25,000 samples).
 
 - **Non-RAG Scenarios (Context-Free):**
     - Compared against CleanLab TLM (GPT 4o-mini, medium quality, optimized threshold).

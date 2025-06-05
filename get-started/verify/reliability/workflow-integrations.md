@@ -1,11 +1,11 @@
 ---
 title: Workflow Integrations
-description: Easily integrate kluster.ai Verify into Dify, n8n, and more with ready-made workflows to automate AI response validation via API in minutes.
+description: Easily integrate Verify into Dify, n8n, and more with ready-made workflows to automate AI response validation via API in minutes.
 ---
 
 # Workflow integrations
 
-You can integrate the kluster.ai Verify reliability check feature into your favorite automation platforms with ready-to-use workflow templates. These pre-configured workflows connect directly to the kluster.ai API, allowing you to add AI verification capabilities to your existing processes in minutes.
+You can integrate the Verify reliability check feature into your favorite automation platforms with ready-to-use workflow templates. These pre-configured workflows connect directly to the kluster.ai API, allowing you to add AI verification capabilities to your existing processes in minutes.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ Before getting started with the workflow integrations, ensure the following requ
 
 By using [Dify](https://dify.ai/){target=\_blank}, you can build AI applications with built-in reliability verification. 
 
-This workflow seamlessly integrates kluster.ai verify into your Dify chatbots and agents, ensuring every response is validated for accuracy and trustworthiness before reaching your users.
+This workflow seamlessly integrates Verify into your Dify chatbots and agents, ensuring every response is validated for accuracy and trustworthiness before reaching your users.
 
 ![Dify workflow for kluster verify](/images/get-started/verify/dify_workflow.webp)
 

@@ -10132,11 +10132,11 @@ The following limits apply to API requests based on [your plan](https://platform
 Doc-Content: https://docs.kluster.ai/get-started/verify/overview/
 --- BEGIN CONTENT ---
 ---
-title: Overview of kluster.ai Verify
-description: Learn more about the kluster.ai Verify service, a trust layer for AI stacks that provides a set of features to validate LLM outputs in real-time.
+title: Overview of Verify
+description: Learn more about the Verify service, a trust layer for AI stacks that provides a set of features to validate LLM outputs in real-time.
 ---
 
-# kluster.ai Verify
+# Verify
 
 LLMs can generate non-factual or irrelevant information (hallucinations). For developers, this presents significant challenges:
 
@@ -10147,11 +10147,11 @@ LLMs can generate non-factual or irrelevant information (hallucinations). For de
 
 Traditional validation methods may involve complex rule sets, fine-tuning, or exhibit high false-positive rates, adding to the development burden.
 
-kluster.ai Verify is an intelligent verification service that validates LLM outputs in real-time. It's designed to give you the trust needed to deploy AI at scale in production environments where accuracy matters most.
+Verify is an intelligent verification service that validates LLM outputs in real-time. It's designed to give you the trust needed to deploy AI at scale in production environments where accuracy matters most.
 
-This page provides an overview of the kluster.ai Verify service.
+This page provides an overview of the Verify service.
 
-## How kluster.ai Verify works
+## How Verify works
 
 The Verify service functions as an intelligent agent. It assesses LLM output reliability based on three key inputs provided in the API call:
 
@@ -10163,7 +10163,7 @@ Verify analyzes these inputs and can leverage **real time internet access** to v
 
 ## Performance benchmarks
 
-kluster.ai Verify has been benchmarked against other solutions on [HaluEval](https://github.com/RUCAIBox/HaluEval){target=\_blank} and [HaluBench](https://huggingface.co/datasets/PatronusAI/HaluBench){target=\_blank} datasets (over 25,000 samples).
+Verify has been benchmarked against other solutions on [HaluEval](https://github.com/RUCAIBox/HaluEval){target=\_blank} and [HaluBench](https://huggingface.co/datasets/PatronusAI/HaluBench){target=\_blank} datasets (over 25,000 samples).
 
 - **Non-RAG Scenarios (Context-Free):**
     - Compared against CleanLab TLM (GPT 4o-mini, medium quality, optimized threshold).
@@ -10220,7 +10220,7 @@ You can access the reliability verification service in two flexible OpenAI compa
 
 ## Reliability checks via chat completions
 
-This example shows how to use the service with the chat completion endpoint via the OpenAI `/v1/chat/completions` endpoint and OpenAI libraries, using the specialized `klusterai/verify-reliability` model to enable kluster.ai Verify reliability check.
+This example shows how to use the service with the chat completion endpoint via the OpenAI `/v1/chat/completions` endpoint and OpenAI libraries, using the specialized `klusterai/verify-reliability` model to enable Verify reliability check.
 
 === "Python"
 
@@ -10451,7 +10451,7 @@ This example checks whether an answer contains unreliable information. As no con
 When providing the `context` parameter, the service will not perform external verification. Instead, it focuses on whether the answer complies with the provided context.
 
 !!! tip "RAG applications"
-    Ensure the LLM's responses are accurate by using kluster.ai Verify in your Retrieval Augmented Generation (RAG) workflows.
+    Ensure the LLM's responses are accurate by using Verify in your Retrieval Augmented Generation (RAG) workflows.
 
 This example checks whether an answer is correct based on the provided context.
 
@@ -10558,13 +10558,13 @@ This example checks whether an answer is correct based on the provided context.
 Doc-Content: https://docs.kluster.ai/get-started/verify/reliability/overview/
 --- BEGIN CONTENT ---
 ---
-title: Reliability check by kluster.ai Verify
-description: Learn how to use kluster.ai reliability check and prevent unreliable content in your applications using kluster.ai's specialized kluster.ai verify.
+title: Reliability check by Verify
+description: Learn how to use kluster.ai reliability check and prevent unreliable content in your applications using kluster.ai's specialized Verify.
 ---
 
-# Reliability check by kluster.ai Verify
+# Reliability check by Verify
 
-Reliability check is one of the features offered by kluster.ai Verify, and it is able to identify when AI responses contain fabricated or inaccurate information.
+Reliability check is one of the features offered by Verify, and it is able to identify when AI responses contain fabricated or inaccurate information.
 
 With this specialized service, you can gauge the reliability of AI-generated content and build more trustworthy applications.
 
@@ -10629,7 +10629,7 @@ The reliability check service is ideal for scenarios where you need:
 
 ## How to integrate reliability checks
 
-kluster.ai Verify offers multiple ways to perform reliability checks, each designed for different use cases:
+Verify offers multiple ways to perform reliability checks, each designed for different use cases:
 
 <div class="grid cards" markdown>
 
@@ -10662,19 +10662,19 @@ kluster.ai Verify offers multiple ways to perform reliability checks, each desig
 ## Additional resources
 
 - **Workflow Integrations**: Download [ready-to-use workflows for Dify, n8n](/get-started/verify/reliability/workflow-integrations/){target=\_blank}.
-- **Tutorial**: Explore the [kluster.ai Verify tutorial](/tutorials/klusterai-api/reliability-check){target=\_blank} with code examples.
+- **Tutorial**: Explore the [Verify tutorial](/tutorials/klusterai-api/reliability-check){target=\_blank} with code examples.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/get-started/verify/reliability/workflow-integrations/
 --- BEGIN CONTENT ---
 ---
 title: Workflow Integrations
-description: Easily integrate kluster.ai Verify into Dify, n8n, and more with ready-made workflows to automate AI response validation via API in minutes.
+description: Easily integrate Verify into Dify, n8n, and more with ready-made workflows to automate AI response validation via API in minutes.
 ---
 
 # Workflow integrations
 
-You can integrate the kluster.ai Verify reliability check feature into your favorite automation platforms with ready-to-use workflow templates. These pre-configured workflows connect directly to the kluster.ai API, allowing you to add AI verification capabilities to your existing processes in minutes.
+You can integrate the Verify reliability check feature into your favorite automation platforms with ready-to-use workflow templates. These pre-configured workflows connect directly to the kluster.ai API, allowing you to add AI verification capabilities to your existing processes in minutes.
 
 ## Prerequisites
 
@@ -10690,7 +10690,7 @@ Before getting started with the workflow integrations, ensure the following requ
 
 By using [Dify](https://dify.ai/){target=\_blank}, you can build AI applications with built-in reliability verification. 
 
-This workflow seamlessly integrates kluster.ai verify into your Dify chatbots and agents, ensuring every response is validated for accuracy and trustworthiness before reaching your users.
+This workflow seamlessly integrates Verify into your Dify chatbots and agents, ensuring every response is validated for accuracy and trustworthiness before reaching your users.
 
 ![Dify workflow for kluster verify](/images/get-started/verify/dify_workflow.webp)
 
@@ -18463,7 +18463,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/reliability-check.i
     "\n",
     "Reliability issues in AI occur when models generate information that appears plausible but is unreliable or unsupported by the provided context. This poses significant risks in production applications, particularly in domains where accuracy is critical.\n",
     "\n",
-    "This tutorial demonstrates how to use <a href=\"/get-started/verify/reliability/overview/\" target=\"_blank\">kluster.ai verify</a> to identify and prevent reliability issues in your applications. We'll explore available methods: a dedicated API endpoint and via the OpenAI compatible chat completions endpoint.\n",
+    "This tutorial demonstrates how to use <a href=\"/get-started/verify/reliability/overview/\" target=\"_blank\">Verify</a> to identify and prevent reliability issues in your applications. We'll explore available methods: a dedicated API endpoint and via the OpenAI compatible chat completions endpoint.\n",
     "\n",
     "The service can evaluate AI responses based on provided context (perfect for RAG applications) or perform real-time verification against general knowledge. By following this tutorial, you'll learn how to:\n",
     "\n",
@@ -19433,7 +19433,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/reliability-check.i
    "id": "d56fa810",
    "metadata": {},
    "source": [
-    "Now, by comparing these two answers, we can test the kluster.ai Verify reliability check response:"
+    "Now, by comparing these two answers, we can test the Verify reliability check response:"
    ]
   },
   {
@@ -19670,7 +19670,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/reliability-check.i
    "source": [
     "## Summary\n",
     "\n",
-    "This tutorial demonstrated how to use the reliability check feature of the kluster.ai Verify service to identify and prevent reliability issues in AI outputs.\n",
+    "This tutorial demonstrated how to use the reliability check feature of the Verify service to identify and prevent reliability issues in AI outputs.\n",
     "\n",
     "In this particular example, we used the dedicated reliability endpoint and the OpenAI-compatible method via the chat completions endpoint.\n",
     "\n",

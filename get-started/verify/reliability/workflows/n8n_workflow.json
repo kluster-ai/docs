@@ -1,5 +1,5 @@
 {
-  "name": "kluster.ai verify agent",
+  "name": "Verify agent",
   "nodes": [
     {
       "parameters": {
@@ -103,7 +103,7 @@
     },
     {
       "parameters": {
-        "toolDescription": "kluster.ai Verify\nReliability check",
+        "toolDescription": "Verify\nReliability check",
         "method": "POST",
         "url": "https://api.klusterai.io/v1/verify/reliability",
         "sendHeaders": true,
@@ -149,12 +149,12 @@
         520
       ],
       "id": "e556c1d0-7f54-4403-b978-60617d144cf5",
-      "name": "kluster.ai Verify",
+      "name": "Verify",
       "alwaysOutputData": true
     },
     {
       "parameters": {
-        "content": "# kluster.ai Verify workflow demo\n\nVerify reliability based on tool output.\n\n## Setup \nBefore getting started, make sure you have:\n- A kluster.ai account - sign up on the kluster.ai platform if you don't have one\n- A kluster.ai API key - after signing in, go to the API Keys section and create a new key. For detailed instructions, check out the Get an API key guide\n\n## Documentation\n\nGet started with the official kluster.ai documentation\n\n## How to use: \nAsk any questions that needs a reliability check, like \"9*78?\"",
+        "content": "# Verify workflow demo\n\nVerify reliability based on tool output.\n\n## Setup \nBefore getting started, make sure you have:\n- A kluster.ai account - sign up on the kluster.ai platform if you don't have one\n- A kluster.ai API key - after signing in, go to the API Keys section and create a new key. For detailed instructions, check out the Get an API key guide\n\n## Documentation\n\nGet started with the official kluster.ai documentation\n\n## How to use: \nAsk any questions that needs a reliability check, like \"9*78?\"",
         "height": 540,
         "width": 520
       },
@@ -208,7 +208,7 @@
         ]
       ]
     },
-    "kluster.ai Verify": {
+    "Verify": {
       "ai_tool": [
         [
           {

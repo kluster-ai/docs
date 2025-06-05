@@ -1,11 +1,11 @@
 ---
-title: Reliability check by kluster.ai Verify
-description: Learn how to use kluster.ai reliability check and prevent unreliable content in your applications using kluster.ai's specialized kluster.ai verify.
+title: Reliability check by Verify
+description: Learn how to use kluster.ai reliability check and prevent unreliable content in your applications using kluster.ai's specialized Verify.
 ---
 
-# Reliability check by kluster.ai Verify
+# Reliability check by Verify
 
-Reliability check is one of the features offered by kluster.ai Verify, and it is able to identify when AI responses contain fabricated or inaccurate information.
+Reliability check is one of the features offered by Verify, and it is able to identify when AI responses contain fabricated or inaccurate information.
 
 With this specialized service, you can gauge the reliability of AI-generated content and build more trustworthy applications.
 
@@ -70,7 +70,7 @@ The reliability check service is ideal for scenarios where you need:
 
 ## How to integrate reliability checks
 
-kluster.ai Verify offers multiple ways to perform reliability checks, each designed for different use cases:
+Verify offers multiple ways to perform reliability checks, each designed for different use cases:
 
 <div class="grid cards" markdown>
 
@@ -103,5 +103,5 @@ kluster.ai Verify offers multiple ways to perform reliability checks, each desig
 ## Additional resources
 
 - **Workflow Integrations**: Download [ready-to-use workflows for Dify, n8n](/get-started/verify/reliability/workflow-integrations/){target=\_blank}.
-- **Tutorial**: Explore the [kluster.ai Verify tutorial](/tutorials/klusterai-api/reliability-check){target=\_blank} with code examples.
+- **Tutorial**: Explore the [Verify tutorial](/tutorials/klusterai-api/reliability-check){target=\_blank} with code examples.
 
