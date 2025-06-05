@@ -3,8 +3,9 @@ hide: false
 nav:
   - 'Get an API key': get-api-key.md
   - 'Models': models.md
+  - 'OpenAI compatibility': openai-compatibility.md
   - start-building
   - 'Dedicated deployments': dedicated-deployments.md
-  - 'OpenAI compatibility': openai-compatibility.md
   - 'Integrations': integrations
   - fine-tuning
+  - 'kluster.ai verify': verify
