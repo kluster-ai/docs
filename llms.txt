@@ -10122,7 +10122,7 @@ For example, for the following prompt:
 ...
 ```
 
-The reliablity check response would return:
+The reliability check response would return:
 
 ```json
 {
@@ -10161,7 +10161,7 @@ kluster.ai Verify offers multiple ways to perform reliability checks, each desig
 
     Verify the reliability and accuracy of an answer to a specific question via a dedicated API endpoint.
 
-    [:octicons-arrow-right-24: Visit the guide](/get-started/verify/reliability/dedicated-api/){target=\_blank}
+    [:octicons-arrow-right-24: Visit the guide](/get-started/verify/reliability/dedicated-api/){target=\_self}
 
 -   <span class="badge guide">Guide</span> Chat completion endpoint
 
@@ -10169,7 +10169,7 @@ kluster.ai Verify offers multiple ways to perform reliability checks, each desig
 
     Validate responses in full conversation via the chat completions API using OpenAI libraries.
 
-    [:octicons-arrow-right-24: Visit the guide](/get-started/verify/reliability/chat-completion/){target=\_blank}
+    [:octicons-arrow-right-24: Visit the guide](/get-started/verify/reliability/chat-completion/){target=\_self}
 
 -   <span class="badge integration">Integration</span> __Workflow Integrations__
 
@@ -10177,7 +10177,7 @@ kluster.ai Verify offers multiple ways to perform reliability checks, each desig
 
     Download ready-to-use workflows for Dify, n8n, and other platforms using direct API integration.
 
-    [:octicons-arrow-right-24: Get workflows](/get-started/verify/reliability/workflow-integrations/){target=\_blank}
+    [:octicons-arrow-right-24: Get workflows](/get-started/verify/reliability/workflow-integrations/){target=\_self}
 
 </div>
 
