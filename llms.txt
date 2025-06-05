@@ -24,10 +24,6 @@ Doc-Page: https://docs.kluster.ai/get-started/start-building/setup/
 Doc-Page: https://docs.kluster.ai/get-started/verify/overview/
 Doc-Page: https://docs.kluster.ai/get-started/verify/reliability/chat-completion/
 Doc-Page: https://docs.kluster.ai/get-started/verify/reliability/dedicated-api/
-Doc-Page: https://docs.kluster.ai/get-started/verify/reliability/mcp/clients/
-Doc-Page: https://docs.kluster.ai/get-started/verify/reliability/mcp/
-Doc-Page: https://docs.kluster.ai/get-started/verify/reliability/mcp/quick-start/
-Doc-Page: https://docs.kluster.ai/get-started/verify/reliability/mcp/tools/
 Doc-Page: https://docs.kluster.ai/get-started/verify/reliability/overview/
 Doc-Page: https://docs.kluster.ai/get-started/verify/reliability/workflow-integrations/
 Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-engineering/
@@ -3018,7 +3014,7 @@ To delete an API key, take the following steps:
 
 ## Next steps
 
-Now that you have your API key, you can start integrating kluster.ai's LLMs into your applications. Refer to our [Getting Started](/get-started/start-api/){target=\_blank} guide for detailed instructions on using the API.
+Now that you have your API key, you can start integrating kluster.ai's LLMs into your applications. Refer to our [Getting Started](/get-started/start-building/setup/){target=\_blank} guide for detailed instructions on using the API.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/get-started/integrations/crewai/
@@ -3269,7 +3265,7 @@ description: Learn how to integrate kluster.ai with eliza, a fast, lightweight, 
 
 # Integrate eliza with kluster.ai
 
-[eliza](https://elizaos.github.io/eliza/){target=\_blank} is an open-source framework designed to create and manage AI agents that can handle a variety of tasks, from simple chat interactions to more complex automation.
+[eliza](https://eliza.how/){target=\_blank} is an open-source framework designed to create and manage AI agents that can handle a variety of tasks, from simple chat interactions to more complex automation.
 
 In this guide, you'll learn how to integrate [kluster.ai](https://www.kluster.ai/) into eliza to leverage its powerful models and quickly set up your AI-driven workflows.
 
@@ -3279,7 +3275,7 @@ Before starting, ensure you have the following kluster prerequisites:
 
 - **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
 - **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
-- **Clone and install the eliza repository** - follow the installation instructions on the [eliza Quick Start guide](https://elizaos.github.io/eliza/docs/quickstart/){target=\_blank}
+- **Clone and install the eliza repository** - follow the installation instructions on the [eliza Quick Start guide](https://eliza.how/docs/quickstart){target=\_blank}
     
 !!! warning
 
@@ -8763,7 +8759,7 @@ log_response_to_file(completion)
 
 ## Third-party integrations
 
-You can also set up [third-party LLM integrations](/get-started/integrations/){target=\_blank} using the kluster.ai API. For step-by-step instructions, check out the following integration guides:
+You can also set up third-party LLM integrations using the kluster.ai API. For step-by-step instructions, check out the following integration guides:
 
 - [**SillyTavern**](/get-started/integrations/sillytavern){target=\_blank} - multi-LLM chat interface
 - [**LangChain**](/get-started/integrations/langchain/){target=\_blank} - multi-turn conversational agent
@@ -8943,7 +8939,7 @@ LLMs can generate non-factual or irrelevant information (hallucinations). For de
 
 Traditional validation methods may involve complex rule sets, fine-tuning, or exhibit high false-positive rates, adding to the development burden.
 
-Verify by kluster.ai is an intelligent verification service that validates LLM outputs in real time. It's designed to give you the trust needed to deploy AI at scale in production environments where accuracy matters most.
+kluster.ai Verify is an intelligent verification service that validates LLM outputs in real-time. It's designed to give you the trust needed to deploy AI at scale in production environments where accuracy matters most.
 
 This page provides an overview of the kluster.ai Verify service.
 
@@ -8959,7 +8955,7 @@ Verify analyzes these inputs and can leverage **real time internet access** to v
 
 ## Performance benchmarks
 
-Verify by kluster.ai has been benchmarked against other solutions on HaluEval and HaluBench datasets (over 25,000 samples).
+kluster.ai Verify has been benchmarked against other solutions on [HaluEval](https://github.com/RUCAIBox/HaluEval){target=\_blank} and [HaluBench](https://huggingface.co/datasets/PatronusAI/HaluBench){target=\_blank} datasets (over 25,000 samples).
 
 - **Non-RAG Scenarios (Context-Free):**
     - Compared against CleanLab TLM (GPT 4o-mini, medium quality, optimized threshold).
@@ -8967,7 +8963,7 @@ Verify by kluster.ai has been benchmarked against other solutions on HaluEval an
 - **RAG Validation (Context-Provided):**
     - Compared against Patronus AI's Lynx (70B) and CleanLab TLM.
     - Results: On RAGTruth (factual consistency), Verify significantly outperformed Lynx 70B and CleanLab TLM. On DROP (numerical/logical reasoning), Verify showed competitive performance against Lynx and outperformed CleanLab TLM.
-    - *Note:* Lynx was trained on the training sets of DROP and RAGTruth, highlighting Verify's generalization capabilities to unseen data configurations.
+    - Note: Lynx was trained on the training sets of DROP and RAGTruth, highlighting Verify's generalization capabilities to unseen data configurations.
 
 These results indicate Verify's effectiveness in diverse scenarios relevant to production AI systems.
 
@@ -8993,7 +8989,7 @@ description: Validate full chat conversations for reliability using the kluster.
 
 Developers can access the reliability check feature via the regular chat completion endpoint. This allows you to validate responses in full conversation histories using the same format as the standard chat completions API. This approach enables verification of reliability within the complete context of a conversation.
 
-This guide provides a quick example of how the chat completion endpoint can be used for reliability check.
+This guide provides a quick example of how the chat completion endpoint can be used for reliability checks.
 
 ## Prerequisites
 
@@ -9001,10 +8997,10 @@ Before getting started with reliability verification, ensure the following requi
 
 - **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
 - **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
-- **A virtual Python environment** - (optional) recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
-- **Required Python libraries** - install the following Python libraries:
-    - [**OpenAI Python API library**](https://pypi.org/project/openai/) - to access the `openai` module
-    - [**`getpass`**](https://pypi.org/project/getpass4/) - to handle API keys safely
+- **A virtual Python environment**: (Optional) Recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
+- **Required Python libraries**: Install the following Python libraries:
+    - [**OpenAI Python API library**](https://pypi.org/project/openai/){target=\_blank}: to access the `openai` module
+    - [**`getpass`**](https://pypi.org/project/getpass4/){target=\_blank}: To handle API keys safely
 
 
 ## Integration options
@@ -9100,7 +9096,7 @@ This example shows how to use the service with the chat completion endpoint via 
 
 ## Next steps
 
-- Learn how to use the [reliability dedicated endpoint](/get-started/verify/reliability/dedicated-api/){target=\_self} for simpler verification scenarios
+- Learn how to use the [reliability dedicated endpoint](/get-started/verify/reliability/dedicated-api/){target=\_blank} for simpler verification scenarios
 - Review the complete [API documentation](/api-reference/reference/){target=\_blank} for detailed endpoint specifications
 --- END CONTENT ---
 
@@ -9150,7 +9146,7 @@ The API returns a JSON object with the following structure:
 
 ## How to use the reliability endpoint
 
-The reliablity check feature operates in two distinct modes depending on whether you provide context with your request:
+The reliability check feature operates in two distinct modes depending on whether you provide context with your request:
 
 - **General knowledge verification**: When no context is provided, the service verifies answers against general knowledge and external sources.
 - **Context validation mode**: When context is provided, the service only validates answers against the specified context.
@@ -9247,7 +9243,7 @@ This example checks whether an answer contains unreliable information. As no con
 When providing the `context` parameter, the service will not perform external verification. Instead, it focuses on whether the answer complies with the provided context.
 
 !!! tip "RAG applications"
-    Ensure the LLM's responses are accurate by using kluster verify in your Retrieval Augmented Generation (RAG) workflows.
+    Ensure the LLM's responses are accurate by using kluster.ai Verify in your Retrieval Augmented Generation (RAG) workflows.
 
 This example checks whether an answer is correct based on the provided context.
 
@@ -9347,547 +9343,8 @@ This example checks whether an answer is correct based on the provided context.
 
 ## Next steps
 
-- Learn how to use [Chat completion reliability verification](/get-started/verify/reliability/chat-completion/){target=\_self} for evaluating entire conversation histories
+- Learn how to use [Chat completion reliability verification](/get-started/verify/reliability/chat-completion/){target=\_blank} for evaluating entire conversation histories
 - Review the complete [API documentation](/api-reference/reference/){target=\_blank} for detailed endpoint specifications
---- END CONTENT ---
-
-Doc-Content: https://docs.kluster.ai/get-started/verify/reliability/mcp/clients/
---- BEGIN CONTENT ---
----
-title: Clients
-description: Configure kluster verify's MCP server with Claude Desktop, VS Code, and other MCP-compatible platforms.
----
-
-# Clients
-
-Configure the kluster verify MCP server with MCP-compatible clients that support the Model Context Protocol.
-
-## Claude Desktop
-
-Full MCP support with automatic tool selection and document parsing.
-
-### Docker Setup (Recommended)
-
-1. **Build the server**:
-   ```bash
-   # TODO: Define MCP repository URL
-   git clone https://github.com/kluster-ai/hallucination-mcp-server
-   cd verify-mcp-server  # TODO: Update folder name when repo is renamed
-   npm run docker:build
-   ```
-
-2. **Configure Claude Desktop**:
-   
-   Edit your configuration file:
-   - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-   - **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
-
-   ```json
-   {
-     "mcpServers": {
-       "kluster-verify": {
-         "command": "docker",
-         "args": [
-           "run", "-i", "--rm",
-           "kluster-mcp-server",
-           "--api-key", "api_key"
-         ]
-       }
-     }
-   }
-   ```
-
-3. **Restart Claude Desktop** to load the server
-
-### Node.js Setup
-
-Alternative to Docker for development environments:
-
-```json
-{
-  "mcpServers": {
-    "kluster-verify": {
-      "command": "node",
-      "args": ["/path/to/verify-mcp-server/dist/index.js"],
-      "env": {
-        "KLUSTER_API_KEY": "api_key"
-      }
-    }
-  }
-}
-```
-
-### Features
-
-- **Real-time fact-checking** - Verify statements as you type
-- **Document verification** - Check claims against uploaded documents  
-- **Contextual integration** - Works seamlessly within conversations
-
-## VS Code
-
-Integrate reliability checking directly into your development workflow.
-
-### MCP Extension Setup
-
-1. **Install MCP Extension** from VS Code marketplace
-2. **Configure server** in VS Code settings:
-   ```json
-   {
-     "mcp.servers": {
-       "kluster-verify": {
-         "command": "docker",
-         "args": [
-           "run", "-i", "--rm",
-           "kluster-mcp-server",
-           "--api-key", "api_key"
-         ]
-       }
-     }
-   }
-   ```
-
-3. **Restart VS Code** to activate the integration
-
-### Features
-
-- **Code comment verification** - Fact-check claims in documentation
-- **Inline fact-checking** - Verify statements while coding
-- **Agent Mode support** - Secure API key handling
-
-## SSE Connection Type
-
-For platforms that don't support native MCP but need HTTP endpoints, the server provides SSE (Server-Sent Events) support.
-
-### SSE Server Setup
-
-The SSE server provides HTTP endpoints for non-MCP platforms:
-
-1. **Start the SSE server**:
-   ```bash
-   npm run sse:start -- --api-key YOUR_KLUSTER_AI_API_KEY
-   ```
-
-2. **Server runs on**: `http://localhost:3000`
-
-### Available Endpoints
-
-- **Fact Check**: `POST http://localhost:3000/mcp/fact_check`
-- **Document Check**: `POST http://localhost:3000/mcp/document_claim_check`
-
-### Request Format
-
-```json
-{
-  "claim": "Statement to verify",
-  "return_search_results": true
-}
-```
-
-!!! info "Workflow Integrations"
-    For platforms like Dify, n8n, and Zapier that use HTTP requests, see [Workflow Integrations](/get-started/verify/reliability/workflow-integrations/){target=\_self}
-
-## Additional Resources
-
-- **Quick Start** - Get running in [5 minutes](/get-started/verify/reliability/mcp/quick-start/){target=\_self}
-- **Tools Reference** - Detailed [parameter documentation](/get-started/verify/reliability/mcp/tools/){target=\_self}
-- **MCP Integration** - Return to the [main guide](/get-started/verify/reliability/mcp/){target=\_self}
-- **Workflow Integrations** - HTTP-based [workflow templates](/get-started/verify/reliability/workflow-integrations/){target=\_self}
---- END CONTENT ---
-
-Doc-Content: https://docs.kluster.ai/get-started/verify/reliability/mcp/
---- BEGIN CONTENT ---
----
-title: Integration
-description: Add fact-checking to your LLM applications using kluster verify's MCP server with automated claim verification and document validation tools.
----
-
-# Integration
-
-LLM applications sometimes generate convincing but false information. This breaks user trust and creates liability. The **kluster verify MCP server** solves this by adding real-time fact-checking to any MCP-compatible environment.
-
-## Why kluster verify Built an MCP Server
-
-**The problem**: Your LLM applications work great until they confidently state wrong facts. Users lose trust. You lose credibility.
-
-**Our solution**: Two specialized tools that catch false claims before users see them.
-
-**Why MCP**: Works across Claude Desktop, VS Code, n8n, and other platforms you already use. No API changes to your existing code.
-
-## Prerequisites
-
-Before getting started with MCP integration, ensure the following requirements are met:
-
-- **kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you do not have one
-- **kluster.ai API key** - after signing in, go to the [API Keys](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, see the [Get an API key](https://docs.kluster.ai/get-started/get-api-key/){target=\_blank} guide
-- **Docker** installed on your system (see [Node.js setup](/get-started/verify/reliability/mcp/clients/#nodejs-setup){target=\_self} for alternative)
-- **MCP-compatible client** such as Claude Desktop, VS Code, n8n, or Dify
-
-## What You Get
-
-Two tools that integrate directly into your workflow:
-
-**`fact_check`** - Verify any statement against reliable sources
-```json
-Input: "The Eiffel Tower is in Rome"
-Output: "False. Located in Paris, France. [Sources included]"
-```
-
-**`document_claim_check`** - Verify claims about uploaded documents  
-```json
-Input: "This contract allows remote work"
-Output: "False. Section 4.2 requires office presence. [Exact quotes]"
-```
-
-Both tools return structured responses with explanations and source citations.
-
-## Choose Your Setup
-
-<div class="grid cards" markdown>
-
--   <span class="badge guide">Guide</span> __Quick Start__
-
-    ---
-
-    Get running in five minutes with Docker. Perfect for testing and development environments.
-
-    [:octicons-arrow-right-24: Start here](/get-started/verify/reliability/mcp/quick-start/){target=\_self}
-
--   <span class="badge reference">Reference</span> __Tools Reference__
-
-    ---
-
-    Deep dive into fact_check and document_claim_check tools with examples and parameters.
-
-    [:octicons-arrow-right-24: See tools](/get-started/verify/reliability/mcp/tools/){target=\_self}
-
--   <span class="badge integration">Integration</span> __Client Setup__
-
-    ---
-
-    Integrate with Claude Desktop, VS Code, n8n, Dify, and other MCP-compatible platforms.
-
-    [:octicons-arrow-right-24: Setup clients](/get-started/verify/reliability/mcp/clients/){target=\_self}
-
-</div>
-
-## How it Works
-
-The server integrates with your applications by:
-
-1. **Exposing tools** through the standard MCP protocol
-2. **Processing claims** using kluster.ai's verification API  
-3. **Returning results** with explanations and source citations
-4. **Working everywhere** MCP is supported
-
-## Learn More About MCP
-
-New to Model Context Protocol? Learn more in the [official MCP documentation](https://modelcontextprotocol.io/docs){target=\_blank} by Anthropic.
-
-## Additional Resources
-
-- **Dedicated reliability endpoint** - Learn how to [verify individual question-answer pairs](/get-started/verify/reliability/dedicated-api/){target=\_self}
-- **Chat Completion verification** - Discover how to [validate responses in conversations](/get-started/verify/reliability/chat-completion/){target=\_self}
-- **Practical examples** - Explore our [Tutorials](/tutorials/klusterai-api/reliability-check){target=\_blank} for kluster verify
-- **API reference** - Review the complete [API documentation](/api-reference/reference/){target=\_blank} for all reliability verification endpoints
---- END CONTENT ---
-
-Doc-Content: https://docs.kluster.ai/get-started/verify/reliability/mcp/quick-start/
---- BEGIN CONTENT ---
----
-title: Quick Start
-description: Get kluster verify's MCP fact-checking server running in five minutes with Docker and test it with a working example.
----
-
-# Quick Start
-
-Get fact-checking working in your MCP client in five minutes.
-
-## Prerequisites
-
-Before getting started with MCP integration, ensure the following requirements are met:
-
-- **kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you do not have one
-- **kluster.ai API key** - after signing in, go to the [API Keys](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, see the [Get an API key](https://docs.kluster.ai/get-started/get-api-key/){target=\_blank} guide
-- **Docker** installed and running (see [Node.js setup](/get-started/verify/reliability/mcp/clients/#nodejs-setup){target=\_self} for alternative)
-- **Claude Desktop** for testing (or another MCP client)
-
-## Setup
-
-### Step 1: Get the Server
-
-```bash
-# TODO: Define MCP repository URL
-git clone https://github.com/kluster-ai/hallucination-mcp-server
-cd hallucination-mcp-server
-npm run docker:build
-```
-
-### Step 2: Configure Claude Desktop
-
-Add this to your Claude Desktop configuration file:
-
-**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-
-**Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
-
-```json
-{
-  "mcpServers": {
-    "kluster-hallucination": {
-      "command": "docker",
-      "args": [
-        "run", "-i", "--rm",
-        "kluster-mcp-server",
-        "--api-key", "api_key"
-      ]
-    }
-  }
-}
-```
-
-**Replace `api_key`** with your actual API key.
-
-### Step 3: Restart Claude Desktop
-
-Close and reopen Claude Desktop to load the new server.
-
-## Test It Works
-
-Ask Claude to fact-check something obviously wrong:
-
-> "Can you fact-check this claim: The Eiffel Tower is located in Rome"
-
-Claude should automatically use the `fact_check` tool and return:
-- **Result**: False
-- **Explanation**: Why it's wrong
-- **Sources**: Supporting evidence
-
-## Test Document Verification
-
-Upload any document to Claude, then ask:
-
-> "This document says X. Can you verify if that's accurate?"
-
-Claude should use the `document_claim_check` tool to verify your claim against the actual document content.
-
-## Troubleshooting
-
-**Tool not available**: 
-- Verify Docker is running
-- Check your API key is correct
-- Restart Claude Desktop
-
-**Authentication errors**:
-- Confirm your kluster.ai API key has active credits
-- Check the key has permissions for hallucination detection
-
-## Next Steps
-
-- **Learn the tools** - See [Tools Reference](/get-started/hallucination-agent/mcp-tools/){target=\_self} for detailed parameters and examples
-- **Setup other clients** - Check [Client Setup](/get-started/hallucination-agent/mcp-clients/){target=\_self} for VS Code, n8n, and Dify integration
-- **Production deployment** - Contact support for scaling recommendations
-
-## Additional Resources
-
-- **MCP Integration overview** - Return to the [main MCP guide](/get-started/hallucination-agent/mcp/){target=\_self}
-- **API documentation** - Review the complete [API reference](/api-reference/reference/){target=\_blank}
-- **Tutorials** - Explore [practical examples](/tutorials/klusterai-api/hallucination-detection-agent){target=\_blank}
---- END CONTENT ---
-
-Doc-Content: https://docs.kluster.ai/get-started/verify/reliability/mcp/tools/
---- BEGIN CONTENT ---
----
-title: Tools Reference
-description: Complete technical reference for fact_check and document_claim_check tools including parameters, responses, and error handling.
----
-
-# Tools Reference
-
-Technical documentation for the two fact-checking tools available through the kluster verify MCP server.
-
-## Tool Overview
-
-| Tool | Purpose | Best For |
-| :---: | :---: | :---: |
-| `fact_check` | Verify standalone claims | General statements, trivia, current events |
-| `document_claim_check` | Verify claims about documents | Quotes, data extraction, legal interpretation |
-
-## fact_check Tool
-
-Verifies any statement against reliable online sources.
-
-### Parameters
-
-| Parameter | Type | Required | Description |
-| :---: | :---: | :---: | :---: |
-| `claim` | string | Yes | The statement to verify |
-| `return_search_results` | boolean | No | Include source citations (default: true) |
-
-### Request Example
-
-```json
-{
-  "claim": "OpenAI was founded in 2015",
-  "return_search_results": true
-}
-```
-
-### Response Format
-
-```json
-{
-  "claim": "OpenAI was founded in 2015",
-  "is_hallucination": false,
-  "explanation": "OpenAI was indeed founded in December 2015 by Sam Altman, Elon Musk, and others as a non-profit AI research company.",
-  "usage": {
-    "completion_tokens": 124,
-    "prompt_tokens": 67,
-    "total_tokens": 191
-  },
-  "search_results": [
-    {
-      "title": "OpenAI - Wikipedia",
-      "snippet": "OpenAI is an AI research laboratory founded in December 2015...",
-      "link": "https://en.wikipedia.org/wiki/OpenAI"
-    }
-  ]
-}
-```
-
-### Use Cases
-
-- **Current events** - "The 2024 Olympics were held in Paris"
-- **Historical facts** - "World War II ended in 1945" 
-- **Scientific claims** - "Water boils at 100°C at sea level"
-- **Company information** - "Microsoft was founded by Bill Gates"
-
-## document_claim_check Tool
-
-Verifies if claims accurately reflect uploaded document content.
-
-### Parameters
-
-| Parameter | Type | Required | Description |
-| :---: | :---: | :---: | :---: |
-| `claim` | string | Yes | Your interpretation of the document |
-| `document_content` | string | Yes | Full document text (auto-provided by MCP client) |
-| `return_search_results` | boolean | No | Include external sources (default: true) |
-
-### Request Example
-
-```json
-{
-  "claim": "This employment contract allows unlimited remote work",
-  "document_content": "Section 4.2: Employee must maintain primary residence within 50 miles of headquarters and work on-site minimum 3 days per week...",
-  "return_search_results": true
-}
-```
-
-### Response Format
-
-```json
-{
-  "claim": "This employment contract allows unlimited remote work",
-  "document_verification": {
-    "is_accurate": false,
-    "explanation": "The claim is incorrect. Section 4.2 explicitly requires on-site work minimum 3 days per week and residence within 50 miles of headquarters.",
-    "confidence_assessment": {
-      "completion_tokens": 156,
-      "prompt_tokens": 890,
-      "total_tokens": 1046
-    }
-  },
-  "search_results": [
-    {
-      "title": "Remote Work Employment Law",
-      "snippet": "Standard employment contracts typically specify work location requirements...",
-      "link": "https://example.com/employment-law"
-    }
-  ]
-}
-```
-
-### Use Cases
-
-- **Legal documents**: Contract terms, policy interpretation
-- **Research papers**: Data claims, methodology verification  
-- **Financial reports**: Revenue figures, growth claims
-- **Technical specifications**: Feature descriptions, requirements
-
-## Error Handling
-
-### Common Errors
-
-**Invalid API Key**:
-```json
-{
-  "error": "Authentication failed",
-  "message": "Invalid API key or insufficient permissions"
-}
-```
-
-**Empty Claim**:
-```json
-{
-  "error": "Invalid input", 
-  "message": "Claim cannot be empty"
-}
-```
-
-**Rate Limit Exceeded**:
-```json
-{
-  "error": "Rate limit exceeded",
-  "message": "API rate limit reached. Try again in 60 seconds"
-}
-```
-
-## Best Practices
-
-### Writing Effective Claims
-
-**Good**: "This document states the return policy is 30 days"
-**Bad**: "What's the return policy?"
-
-**Good**: "The Eiffel Tower is 324 meters tall"  
-**Bad**: "How tall is the Eiffel Tower?"
-
-### Performance Tips
-
-- **Shorter claims** process faster (under 100 words)
-- **Specific statements** get more accurate results than general questions
-- **Document claims** work best with exact quotes or data points
-
-### Token Usage
-
-- **fact_check**: Typically 50-200 tokens per request
-- **document_claim_check**: Varies by document size (100-2000+ tokens)
-- **Large documents**: Consider breaking into smaller sections
-
-## Integration Notes
-
-### Tool Selection
-
-MCP clients automatically choose the right tool:
-- **fact_check** for general statements
-- **document_claim_check** when documents are present
-
-### Response Time
-
-- **Simple claims**: 2-3 seconds
-- **Complex claims**: 3-5 seconds  
-- **Large documents**: 5-10 seconds
-
-### Concurrent Requests
-
-No artificial limits imposed by the MCP server. Limited by your kluster.ai subscription plan.
-
-## Additional Resources
-
-- **Quick Start** - Get up and running with the [5-minute setup guide](/get-started/hallucination-agent/mcp-quick-start/){target=\_self}
-- **Client Setup** - Configure [different MCP clients](/get-started/hallucination-agent/mcp-clients/){target=\_self}  
-- **MCP Integration** - Return to the [main guide](/get-started/hallucination-agent/mcp/){target=\_self}
-- **API Reference** - Complete [API documentation](/api-reference/reference/){target=\_blank}
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/get-started/verify/reliability/overview/
@@ -9899,7 +9356,7 @@ description: Learn how to use kluster.ai reliability check and prevent unreliabl
 
 # Reliability check by kluster.ai Verify
 
-**Reliability check**  is one of the features offered by kluster.ai Verify, and it is able to identify when AI responses contain fabricated or inaccurate information.
+Reliability check is one of the features offered by kluster.ai Verify, and it is able to identify when AI responses contain fabricated or inaccurate information.
 
 With this specialized service, you can gauge the reliability of AI-generated content and build more trustworthy applications.
 
@@ -9958,13 +9415,13 @@ The reliability check service is ideal for scenarios where you need:
 
 - **Model evaluation**: Easily integrate the service to compare models output quality.
 - **RAG applications**: Verify that generated responses accurately reflect the provided reference documents rather than introducing fabricated information.
-- **Internet-sourced verification**: vValidate claims against reliable online sources with transparent citation of evidence.
+- **Internet-sourced verification**: Validate claims against reliable online sources with transparent citation of evidence.
 - **Content moderation**: Automatically flag potentially misleading information before it reaches end users.
 - **Regulatory compliance**: Ensure AI-generated content meets accuracy requirements.
 
 ## How to integrate reliability checks
 
-Verify by kluster.ai offers multiple ways to perform reliability checks, each designed for different use cases:
+kluster.ai Verify offers multiple ways to perform reliability checks, each designed for different use cases:
 
 <div class="grid cards" markdown>
 
@@ -9974,9 +9431,9 @@ Verify by kluster.ai offers multiple ways to perform reliability checks, each de
 
     Verify the reliability and accuracy of an answer to a specific question via a dedicated API endpoint.
 
-    [:octicons-arrow-right-24: Visit the guide](/get-started/verify/reliability/question-answer/){target=\_self}
+    [:octicons-arrow-right-24: Visit the guide](/get-started/verify/reliability/dedicated-api/){target=\_self}
 
--   <span class="badge guide">Guide</span> __Chat completion endpoint
+-   <span class="badge guide">Guide</span> Chat completion endpoint
 
     ---
 
@@ -9996,8 +9453,8 @@ Verify by kluster.ai offers multiple ways to perform reliability checks, each de
 
 ## Additional resources
 
-- **Workflow Integrations**: Download [ready-to-use workflows for Dify, n8n](/get-started/verify/reliability/workflow-integrations/){target=\\_self}
-- **Tutorial**: Explore the [kluster verify tutorial](/tutorials/klusterai-api/reliability-check){target=\_blank} with code examples.
+- **Workflow Integrations**: Download [ready-to-use workflows for Dify, n8n](/get-started/verify/reliability/workflow-integrations/){target=\_blank}.
+- **Tutorial**: Explore the [kluster.ai Verify tutorial](/tutorials/klusterai-api/reliability-check){target=\_blank} with code examples.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/get-started/verify/reliability/workflow-integrations/
@@ -10009,7 +9466,7 @@ description: Easily integrate kluster.ai Verify into Dify, n8n, and more with re
 
 # Workflow integrations
 
-You can integrate kluster.ai Verify reliability check feature into your favorite automation platforms with ready-to-use workflow templates. These pre-configured workflows connect directly to the kluster.ai API, allowing you to add AI verification capabilities to your existing processes in minutes.
+You can integrate the kluster.ai Verify reliability check feature into your favorite automation platforms with ready-to-use workflow templates. These pre-configured workflows connect directly to the kluster.ai API, allowing you to add AI verification capabilities to your existing processes in minutes.
 
 ## Prerequisites
 
@@ -10065,7 +9522,7 @@ This workflow validates AI-generated content against your source documents, tool
 
 **Set Up API Credentials**
 
-- Select the OpenAI and choose **Credentials**, click **Create New**,
+- Select the OpenAI and choose **Credentials**. Then click **Create New**
 
 - **Base URL**: `https://api.kluster.ai/v1`
 - **API Key**: Your kluster.ai API key
@@ -19725,7 +19182,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
     "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3"
    },
    "source": [
-    "This notebook goes through the same example as in our previous <a href=\"/tutorials/klusterai-api/text-classification-api/\" target=\"_blank\">Text classification notebook</a>, but this time, we'll be using Bespoke Curator instead of the OpenAI Python library\n",
+    "This notebook goes through the same example as in our previous <a href=\"/tutorials/klusterai-api/text-classification/text-classification-openai-api/\" target=\"_blank\">Text classification notebook</a>, but this time, we'll be using Bespoke Curator instead of the OpenAI Python library\n",
     "\n",
     "To recap, the notebook uses <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to classify a data set based on a predefined set of categories.\n",
     "\n",
