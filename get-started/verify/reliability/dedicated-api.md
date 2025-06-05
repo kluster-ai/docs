@@ -138,7 +138,7 @@ This example checks whether an answer contains unreliable information. As no con
 When providing the `context` parameter, the service will not perform external verification. Instead, it focuses on whether the answer complies with the provided context.
 
 !!! tip "RAG applications"
-    Ensure the LLM's responses are accurate by using kluster verify in your Retrieval Augmented Generation (RAG) workflows.
+    Ensure the LLM's responses are accurate by using kluster.ai Verify in your Retrieval Augmented Generation (RAG) workflows.
 
 This example checks whether an answer is correct based on the provided context.
 

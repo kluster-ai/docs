@@ -280,7 +280,7 @@ workflow:
           max_connect_timeout: 0
           max_read_timeout: 0
           max_write_timeout: 0
-        title: kluster verify
+        title: kluster.ai Verify
         type: http-request
         url: https://api.klusterai.io/v1/verify/reliability
         variables: []
@@ -363,7 +363,7 @@ workflow:
         selected: true
         showAuthor: true
         text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
-          16px;","text":"kluster verify workflow demo","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          16px;","text":"kluster.ai Verify workflow demo","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
           16px;","textFormat":0},{"children":[],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
           16px;","textFormat":0},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Before
           getting started, make sure you have:","type":"text","version":1}],"direction":"ltr","format":"start","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"children":[{"detail":0,"format":1,"mode":"normal","style":"","text":"A
