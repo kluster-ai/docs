@@ -111,10 +111,10 @@ Verifies if claims accurately reflect uploaded document content.
 
 ### Use Cases
 
-- **Legal documents** - Contract terms, policy interpretation
-- **Research papers** - Data claims, methodology verification  
-- **Financial reports** - Revenue figures, growth claims
-- **Technical specifications** - Feature descriptions, requirements
+- **Legal documents**: Contract terms, policy interpretation
+- **Research papers**: Data claims, methodology verification  
+- **Financial reports**: Revenue figures, growth claims
+- **Technical specifications**: Feature descriptions, requirements
 
 ## Error Handling
 

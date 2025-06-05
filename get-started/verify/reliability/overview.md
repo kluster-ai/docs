@@ -103,5 +103,5 @@ Verify by kluster.ai offers multiple ways to perform reliability checks, each de
 ## Additional resources
 
 - **Workflow Integrations**: Download [ready-to-use workflows for Dify, n8n](/get-started/verify/reliability/workflow-integrations/){target=\\_self}
-- **Tutorial**: Explore the [kluster verify tutorial](/tutorials/klusterai-api/reliability-check){target=\_blank} with code examples
+- **Tutorial**: Explore the [kluster verify tutorial](/tutorials/klusterai-api/reliability-check){target=\_blank} with code examples.
 
