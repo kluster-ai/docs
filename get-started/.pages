@@ -5,7 +5,7 @@ nav:
   - 'Models': models.md
   - 'OpenAI compatibility': openai-compatibility.md
   - start-building
-  - 'Dedicated deployments': dedicated-deployments.md
   - 'Integrations': integrations
+  - 'Dedicated deployments': dedicated-deployments.md
   - fine-tuning
-  - 'kluster.ai verify': verify
+  - 'kluster.ai Verify': verify
