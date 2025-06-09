@@ -3,7 +3,7 @@ title: Verify API endpoint
 description: Validate the reliability of question-answer pairs using kluster.ai API, with or without context, to detect hallucinations and ensure response accuracy.
 ---
 
-#  Reliability check via the verify API
+#  Reliability check via the Verify API
 
 The `verify/reliability` endpoint allows you to validate whether an answer to a specific question contains unreliable information. This approach is ideal for verifying individual responses against the provided context (when the `context` parameter is included) or general knowledge (when no context is provided).
 
