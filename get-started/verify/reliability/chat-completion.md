@@ -1,5 +1,5 @@
 ---
-title: Chat completion reliability endpoint
+title: Chat completion Verify API
 description: Validate full chat conversations for reliability using the kluster.ai chat completion endpoint. Analyze context and detect misinformation.
 ---
 
@@ -113,5 +113,5 @@ This example shows how to use the service with the chat completion endpoint via 
 
 ## Next steps
 
-- Learn how to use the [reliability dedicated endpoint](/get-started/verify/reliability/dedicated-api/){target=\_blank} for simpler verification scenarios
+- Learn how to use the [Verify API](/get-started/verify/reliability/dedicated-api/){target=\_blank} for simpler verification scenarios
 - Review the complete [API documentation](/api-reference/reference/){target=\_blank} for detailed endpoint specifications
