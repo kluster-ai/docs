@@ -74,7 +74,7 @@ Verify offers multiple ways to perform reliability checks, each designed for dif
 
 <div class="grid cards" markdown>
 
--   <span class="badge guide">Guide</span> __Reliability dedicated endpoint__
+-   <span class="badge guide">Guide</span> __Verify API__
 
     ---
 
