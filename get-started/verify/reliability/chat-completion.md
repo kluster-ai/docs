@@ -1,5 +1,5 @@
 ---
-title: Chat completion reliability endpoint
+title: Chat completion Verify API
 description: Validate full chat conversations for reliability using the kluster.ai chat completion endpoint. Analyze context and detect misinformation.
 ---
 

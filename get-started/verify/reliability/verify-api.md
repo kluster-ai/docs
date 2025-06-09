@@ -39,7 +39,7 @@ The API returns a JSON object with the following structure:
 }
 ```
 
-## How to use the reliability endpoint
+## How to use the Verify API
 
 The reliability check feature operates in two distinct modes depending on whether you provide context with your request:
 
