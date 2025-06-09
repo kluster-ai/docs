@@ -10370,7 +10370,7 @@ Developers can integrate Verify into applications where LLM output accuracy is p
 Doc-Content: https://docs.kluster.ai/get-started/verify/reliability/chat-completion/
 --- BEGIN CONTENT ---
 ---
-title: Chat completion reliability endpoint
+title: Chat completion Verify API
 description: Validate full chat conversations for reliability using the kluster.ai chat completion endpoint. Analyze context and detect misinformation.
 ---
 
@@ -10643,7 +10643,7 @@ The API returns a JSON object with the following structure:
 }
 ```
 
-## How to use the reliability endpoint
+## How to use the Verify API
 
 The reliability check feature operates in two distinct modes depending on whether you provide context with your request:
 
@@ -18809,7 +18809,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/reliability-check.i
    "id": "63f0feda",
    "metadata": {},
    "source": [
-    "## Dedicated reliability endpoint\n",
+    "## Dedicated Verify API\n",
     "\n",
     "The reliability check via the Verify API validates whether an answer to a specific question contains unreliable or incorrect\n",
     "information. It operates in two modes:\n",
