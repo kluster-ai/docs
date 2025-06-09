@@ -10606,7 +10606,7 @@ title: Verify API endpoint
 description: Validate the reliability of question-answer pairs using kluster.ai API, with or without context, to detect hallucinations and ensure response accuracy.
 ---
 
-#  Reliability check via the verify API
+#  Reliability check via the Verify API
 
 The `verify/reliability` endpoint allows you to validate whether an answer to a specific question contains unreliable information. This approach is ideal for verifying individual responses against the provided context (when the `context` parameter is included) or general knowledge (when no context is provided).
 
@@ -10938,7 +10938,7 @@ The workflow includes pre-configured HTTP nodes that connect to the `/v1/verify/
 Ready to build more reliable AI applications?
 
 - **Explore the API**: Check the [complete API reference](/api-reference/reference/){target=\_blank} for advanced configuration options.
-- **Learn verification methods**: Dive into the [verify API endpoint](/get-started/verify/reliability/dedicated-api/){target=\_blank} for detailed implementation patterns.
+- **Learn verification methods**: Dive into the [Verify API endpoint](/get-started/verify/reliability/dedicated-api/){target=\_blank} for detailed implementation patterns.
 - **Try the tutorial**: Follow the [hands-on reliability check tutorial](/tutorials/klusterai-api/reliability-check/){target=\_blank} with code examples.
 --- END CONTENT ---
 
@@ -19857,7 +19857,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/reliability-check.i
     "\n",
     "Some key takeaways:\n",
     "\n",
-    "  - **Two reliability check methods**: A verify API for Q/A verifications, and a chat completions endpoint for conversations.\n",
+    "  - **Two reliability check methods**: A Verify API for Q/A verifications, and a chat completions endpoint for conversations.\n",
     "  - **Two operation modes**: General knowledge verification and context-based validation.\n",
     "  - **Detailed explanations**: The service provides clear reasoning for its determinations.\n",
     "  - **Transparent verification**: With `return_search_results` enabled, the service provides a list of sources used for\n",
