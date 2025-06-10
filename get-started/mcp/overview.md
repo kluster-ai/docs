@@ -17,15 +17,16 @@ MCP standardizes how AI applications access:
 
 With MCP, you can switch between AI providers while keeping the same tool integrations, similar to how USB-C works across different devices.
 
-## Why kluster Supports MCP
+## Why kluster.ai Supports MCP
 
-kluster embraces MCP to help developers build more capable AI applications. By providing pre-built MCP servers, kluster makes it easy to add specialized capabilities to any MCP-compatible environment like Claude Desktop, VS Code, or automation platforms.
+kluster.ai embraces MCP to help developers build more capable AI applications. By providing pre-built MCP servers, kluster.ai makes it easy to add specialized capabilities to any MCP-compatible environment like Claude Desktop, VS Code, or automation platforms.
 
-## Example: kluster verify MCP Server
+## Example: kluster.ai verify MCP Server
 
 As an example of MCP in action, kluster offers a verify MCP server that adds reliability checking capabilities to your AI assistant. This server provides two specialized tools:
 
 **`verify`**: Verify any statement against reliable sources
+
 **`verify_document`**: Verify claims about uploaded documents
 
 This is just one example of how MCP can extend AI capabilities. The protocol supports any type of tool or data integration you need.

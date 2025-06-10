@@ -13,11 +13,11 @@ Full MCP support with automatic tool selection and document parsing.
 
 ### Docker Setup (Recommended)
 
-1. **Run the server**:
+1. **Build the MCP server**:
    ```bash
-   docker run -d --name kluster-verify-mcp \
-     -e KLUSTER_API_KEY=YOUR_API_KEY \
-     ghcr.io/kluster-ai/verify-mcp:latest
+   git clone https://github.com/kluster-ai/verify-mcp
+   cd verify-mcp
+   docker build -t kluster-verify-mcp .
    ```
 
 2. **Configure Claude Desktop**:
@@ -26,19 +26,23 @@ Full MCP support with automatic tool selection and document parsing.
    - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
    - **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
 
-   ```json
-   {
-     "mcpServers": {
-       "kluster-verify": {
-         "command": "docker",
-         "args": [
-           "exec", "-i", "kluster-verify-mcp",
-           "node", "dist/index.js"
-         ]
-       }
-     }
-   }
-   ```
+```json
+{
+  "mcpServers": {
+    "kluster-verify": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "--interactive", 
+        "kluster-verify-mcp",
+        "--api-key",
+        "YOUR_API_KEY"
+      ]
+    }
+  }
+}
+```
 
 3. **Restart Claude Desktop** to load the server
 

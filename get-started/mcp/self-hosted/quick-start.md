@@ -19,17 +19,18 @@ Self-hosted MCP lets you run the kluster verify MCP server on your own infrastru
 Before getting started with MCP integration, ensure the following requirements are met:
 
 --8<-- 'text/kluster-api-onboarding.md'
-- **Docker** installed and running
-- **Claude Desktop** for testing (or another MCP client)
+- **[Docker Desktop](https://www.docker.com/products/docker-desktop/){target=_blank}** installed and running
+- **[Git](https://git-scm.com/){target=_blank}** for cloning the repository
+- **[Claude Desktop](https://claude.ai/download){target=_blank}** for testing (or another MCP client)
 
 ## Setup
 
-### Step 1: Run with Docker
+### Step 1: Build the MCP Server
 
 ```bash
-docker run -d --name kluster-verify-mcp \
-  -e KLUSTER_API_KEY=YOUR_API_KEY \
-  ghcr.io/kluster-ai/verify-mcp:latest
+git clone https://github.com/kluster-ai/verify-mcp
+cd verify-mcp
+docker build -t kluster-verify-mcp .
 ```
 
 ### Step 2: Configure Claude Desktop
@@ -46,8 +47,12 @@ Add this to your Claude Desktop configuration file:
     "kluster-verify": {
       "command": "docker",
       "args": [
-        "exec", "-i", "kluster-verify-mcp",
-        "node", "dist/index.js"
+        "run",
+        "--rm",
+        "--interactive",
+        "kluster-verify-mcp",
+        "--api-key",
+        "YOUR_API_KEY"
       ]
     }
   }
