@@ -1,0 +1,4 @@
+nav:
+  - Overview: overview.md
+  - Self-hosted MCP: self-hosted
+  - Platform MCP: platform
