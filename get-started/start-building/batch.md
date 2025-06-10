@@ -71,7 +71,6 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-deepseek-r1-0528.py'
     ```
 
-
 ??? example "DeepSeek-V3-0324"
 
     ```python
@@ -82,6 +81,12 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
 
     ```python
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-gemma-3-27b-it.py'
+    ```
+
+??? example "Magistral Small"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-magistral-small-2506.py'
     ```
 
 ??? example "Meta Llama 3.1 8B"
@@ -114,6 +119,12 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-mistral-nemo-instruct-2407.py'
     ```
 
+??? example "Mistral Small"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-mistral-small-24b-instruct-2501.py'
+    ```
+
 ??? example "Qwen2.5-VL 7B"
 
     ```python
@@ -141,7 +152,6 @@ Similarly, the following curl commands showcase how to easily send a chat comple
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-deepseek-r1-0528.md'
     ```
 
-
 ??? example "DeepSeek-V3-0324"
 
     ```bash
@@ -152,6 +162,12 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 
     ```bash
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-gemma-3-27b-it.md'
+    ```
+
+??? example "Magistral Small"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-magistral-small-2506.md'
     ```
 
 ??? example "Meta Llama 3.1 8B"
@@ -182,6 +198,12 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 
     ```bash
     --8<-- 'code/get-started/start-building/batch/batch-jsonl-mistral-nemo-instruct-2407.md'
+    ```
+
+??? example "Mistral Small"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-mistral-small-24b-instruct-2501.md'
     ```
 
 ??? example "Qwen2.5-VL 7B"
@@ -521,7 +543,6 @@ You can use the following snippets to cancel a batch job:
         -H "Content-Type: application/json" \
         -X POST
     ```
-
 ```Json title="Response"
 {
     "id": "mybatch-123",
@@ -562,3 +583,5 @@ You have now experienced the complete batch inference job lifecycle using kluste
 - Cancel jobs when needed
 
 The kluster.ai batch API is designed to efficiently and reliably handle your large-scale LLM workloads. If you have questions or suggestions, the [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
+
+
