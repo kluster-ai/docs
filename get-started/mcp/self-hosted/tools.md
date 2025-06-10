@@ -11,10 +11,10 @@ Technical documentation for the two reliability verification tools available thr
 
 | Tool | Purpose | Best For |
 |:---|:---|:---|
-| `fact_check` | Verify standalone claims | General statements, trivia, current events |
-| `document_claim_check` | Verify claims about documents | Quotes, data extraction, legal interpretation |
+| `verify` | Verify standalone claims | General statements, trivia, current events |
+| `verify_document` | Verify claims about documents | Quotes, data extraction, legal interpretation |
 
-## fact_check Tool
+## verify Tool
 
 Verifies any statement against reliable online sources.
 
@@ -63,7 +63,7 @@ Verifies any statement against reliable online sources.
 - **Scientific claims**: "Water boils at 100°C at sea level"
 - **Company information**: "Microsoft was founded by Bill Gates"
 
-## document_claim_check Tool
+## verify_document Tool
 
 Verifies if claims accurately reflect uploaded document content.
 
@@ -90,14 +90,12 @@ Verifies if claims accurately reflect uploaded document content.
 ```json
 {
   "claim": "This employment contract allows unlimited remote work",
-  "document_verification": {
-    "is_accurate": false,
-    "explanation": "The claim is incorrect. Section 4.2 explicitly requires on-site work minimum 3 days per week and residence within 50 miles of headquarters.",
-    "confidence_assessment": {
-      "completion_tokens": 156,
-      "prompt_tokens": 890,
-      "total_tokens": 1046
-    }
+  "is_hallucination": true,
+  "explanation": "The claim is incorrect. Section 4.2 explicitly requires on-site work minimum 3 days per week and residence within 50 miles of headquarters.",
+  "usage": {
+    "completion_tokens": 156,
+    "prompt_tokens": 890,
+    "total_tokens": 1046
   },
   "search_results": [
     {
@@ -162,8 +160,8 @@ Verifies if claims accurately reflect uploaded document content.
 
 ### Token Usage
 
-- **fact_check**: Typically 50-200 tokens per request
-- **document_claim_check**: Varies by document size (100-2000+ tokens)
+- **verify**: Typically 50-200 tokens per request
+- **verify_document**: Varies by document size (100-2000+ tokens)
 - **Large documents**: Consider breaking into smaller sections
 
 ## Integration Notes
@@ -171,8 +169,8 @@ Verifies if claims accurately reflect uploaded document content.
 ### Tool Selection
 
 MCP clients automatically choose the right tool:
-- **fact_check** for general statements
-- **document_claim_check** when documents are present
+- **verify** for general statements
+- **verify_document** when documents are present
 
 ### Response Time
 

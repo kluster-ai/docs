@@ -13,11 +13,11 @@ Full MCP support with automatic tool selection and document parsing.
 
 ### Docker Setup (Recommended)
 
-1. **Build the server**:
+1. **Run the server**:
    ```bash
-   git clone https://github.com/kluster-ai/verify-mcp
-   cd verify-mcp
-   npm run docker:build
+   docker run -d --name kluster-verify-mcp \
+     -e KLUSTER_API_KEY=YOUR_API_KEY \
+     ghcr.io/kluster-ai/verify-mcp:latest
    ```
 
 2. **Configure Claude Desktop**:
@@ -32,9 +32,8 @@ Full MCP support with automatic tool selection and document parsing.
        "kluster-verify": {
          "command": "docker",
          "args": [
-           "run", "-i", "--rm",
-           "kluster-verify-mcp",
-           "--api-key", "YOUR_API_KEY"
+           "exec", "-i", "kluster-verify-mcp",
+           "node", "dist/index.js"
          ]
        }
      }
@@ -45,17 +44,41 @@ Full MCP support with automatic tool selection and document parsing.
 
 ### Node.js Setup
 
-Alternative to Docker for development environments:
+For development or when Docker isn't available:
+
+```bash
+git clone https://github.com/kluster-ai/verify-mcp
+cd verify-mcp
+npm install
+npm run build
+```
+
+Configure with direct Node.js execution:
 
 ```json
 {
   "mcpServers": {
     "kluster-verify": {
       "command": "node",
-      "args": ["/path/to/verify-mcp/dist/index.js"],
+      "args": ["./dist/index.js"],
+      "cwd": "/path/to/verify-mcp",
       "env": {
         "KLUSTER_API_KEY": "YOUR_API_KEY"
       }
+    }
+  }
+}
+```
+
+**Custom Base URL**: For self-hosted kluster instances:
+
+```json
+{
+  "mcpServers": {
+    "kluster-verify": {
+      "command": "node", 
+      "args": ["./dist/index.js", "--api-key", "YOUR_API_KEY", "--base-url", "https://your-instance.com/v1"],
+      "cwd": "/path/to/verify-mcp"
     }
   }
 }
@@ -79,12 +102,9 @@ Integrate reliability checking directly into your development workflow.
    {
      "mcp.servers": {
        "kluster-verify": {
-         "command": "docker",
-         "args": [
-           "run", "-i", "--rm",
-           "kluster-verify-mcp",
-           "--api-key", "YOUR_API_KEY"
-         ]
+         "command": "node",
+         "args": ["./dist/index.js", "--api-key", "YOUR_API_KEY"],
+         "cwd": "/path/to/verify-mcp"
        }
      }
    }

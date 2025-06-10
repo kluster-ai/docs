@@ -25,8 +25,8 @@ kluster embraces MCP to help developers build more capable AI applications. By p
 
 As an example of MCP in action, kluster offers a verify MCP server that adds reliability checking capabilities to your AI assistant. This server provides two specialized tools:
 
-**`fact_check`**: Verify any statement against reliable sources
-**`document_claim_check`**: Verify claims about uploaded documents
+**`verify`**: Verify any statement against reliable sources
+**`verify_document`**: Verify claims about uploaded documents
 
 This is just one example of how MCP can extend AI capabilities. The protocol supports any type of tool or data integration you need.
 

@@ -19,17 +19,17 @@ Self-hosted MCP lets you run the kluster verify MCP server on your own infrastru
 Before getting started with MCP integration, ensure the following requirements are met:
 
 --8<-- 'text/kluster-api-onboarding.md'
-- **Docker** installed and running (see [Node.js setup](/get-started/mcp/self-hosted/clients/#nodejs-setup){target=\_self} for alternative)
+- **Docker** installed and running
 - **Claude Desktop** for testing (or another MCP client)
 
 ## Setup
 
-### Step 1: Get the Server
+### Step 1: Run with Docker
 
 ```bash
-git clone https://github.com/kluster-ai/verify-mcp
-cd verify-mcp
-npm run docker:build
+docker run -d --name kluster-verify-mcp \
+  -e KLUSTER_API_KEY=YOUR_API_KEY \
+  ghcr.io/kluster-ai/verify-mcp:latest
 ```
 
 ### Step 2: Configure Claude Desktop
@@ -46,9 +46,8 @@ Add this to your Claude Desktop configuration file:
     "kluster-verify": {
       "command": "docker",
       "args": [
-        "run", "-i", "--rm",
-        "kluster-verify-mcp",
-        "--api-key", "YOUR_API_KEY"
+        "exec", "-i", "kluster-verify-mcp",
+        "node", "dist/index.js"
       ]
     }
   }
@@ -65,9 +64,9 @@ Close and reopen Claude Desktop to load the new server.
 
 Ask Claude to verify something obviously wrong:
 
-> "Can you fact-check this claim: The Eiffel Tower is located in Rome"
+> "Can you verify this claim: The Eiffel Tower is located in Rome"
 
-Claude should automatically use the `fact_check` tool and return:
+Claude should automatically use the `verify` tool and return:
 - **Result**: False
 - **Explanation**: Why it's wrong
 - **Sources**: Supporting evidence
@@ -78,7 +77,7 @@ Upload any document to Claude, then ask:
 
 > "This document says X. Can you verify if that's accurate?"
 
-Claude should use the `document_claim_check` tool to verify your claim against the actual document content.
+Claude should use the `verify_document` tool to verify your claim against the actual document content.
 
 ## Troubleshooting
 
