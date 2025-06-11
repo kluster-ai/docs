@@ -1,73 +1,62 @@
 ---
 title: Tools Reference
-description: Complete technical reference for fact_check and document_claim_check tools including parameters, responses, and error handling.
+description: Technical reference for the Verify service tools in kluster.ai's example MCP server implementation.
 ---
 
 # Tools Reference
 
-Technical documentation for the two reliability verification tools available through the kluster verify MCP server.
+These tools provide access to the [Verify service](/get-started/verify/reliability/overview){target=self} for reliability checking and document verification.
 
 ## Tool Overview
 
 | Tool | Purpose | Best For |
 |:---|:---|:---|
-| `verify` | Verify standalone claims | General statements, trivia, current events |
-| `verify_document` | Verify claims about documents | Quotes, data extraction, legal interpretation |
+| `verify` | Verify standalone claims. | General statements, trivia, current events, news. |
+| `verify_document` | Verify claims about documents. | Quotes, data extraction, RAG hallucination checking. |
 
-## verify Tool
+### Verify
 
 Verifies any statement against reliable online sources.
 
-### Parameters
+#### Parameters
 
 | Parameter | Type | Required | Description |
 |:---|:---|:---|:---|
-| `claim` | string | Yes | The statement to verify |
-| `return_search_results` | boolean | No | Include source citations (default: true) |
+| `claim` | string | Yes | The statement to verify. |
+| `return_search_results` | boolean | No | Include source citations. (default: true) |
 
-### Request Example
+#### Request Example
 
 ```json
 {
-  "claim": "OpenAI was founded in 2015",
+  "claim": "The Eiffel Tower is located in Rome",
   "return_search_results": true
 }
 ```
 
-### Response Format
+#### Response Format
 
 ```json
 {
-  "claim": "OpenAI was founded in 2015",
-  "is_hallucination": false,
-  "explanation": "OpenAI was indeed founded in December 2015 by Sam Altman, Elon Musk, and others as a non-profit AI research company.",
+  "claim": "The Eiffel Tower is located in Rome",
+  "is_hallucination": true,
+  "explanation": "The response provides a wrong location for the Eiffel Tower.\n"
+                 "The Eiffel Tower is actually located in Paris, France, not in Rome.\n"
+                 "The response contains misinformation as it incorrectly states the tower's location.",
   "usage": {
-    "completion_tokens": 124,
-    "prompt_tokens": 67,
-    "total_tokens": 191
+    "completion_tokens": 343,
+    "prompt_tokens": 939,
+    "total_tokens": 1282
   },
-  "search_results": [
-    {
-      "title": "OpenAI - Wikipedia",
-      "snippet": "OpenAI is an AI research laboratory founded in December 2015...",
-      "link": "https://en.wikipedia.org/wiki/OpenAI"
-    }
-  ]
+  "search_results": []
 }
 ```
 
-### Use Cases
-
-- **Current events**: "The 2024 Olympics were held in Paris"
-- **Historical facts**: "World War II ended in 1945" 
-- **Scientific claims**: "Water boils at 100°C at sea level"
-- **Company information**: "Microsoft was founded by Bill Gates"
-
-## verify_document Tool
+### Verify document
 
 Verifies if claims accurately reflect uploaded document content.
 
-### Parameters
+#### Parameters
 
 | Parameter | Type | Required | Description |
 |:---|:---|:---|:---|
@@ -75,113 +64,33 @@ Verifies if claims accurately reflect uploaded document content.
 | `document_content` | string | Yes | Full document text (auto-provided by MCP client) |
 | `return_search_results` | boolean | No | Include external sources (default: true) |
 
-### Request Example
+#### Request Example
 
 ```json
 {
   "claim": "This employment contract allows unlimited remote work",
-  "document_content": "Section 4.2: Employee must maintain primary residence within 50 miles of headquarters and work on-site minimum 3 days per week...",
+  "document_content": "Section 4.2: Employee must maintain primary
+                       residence within 50 miles of headquarters and work on-site minimum 3 days per week...",
   "return_search_results": true
 }
 ```
 
-### Response Format
+#### Response Format
 
 ```json
 {
   "claim": "This employment contract allows unlimited remote work",
   "is_hallucination": true,
-  "explanation": "The claim is incorrect. Section 4.2 explicitly requires on-site work minimum 3 days per week and residence within 50 miles of headquarters.",
+  "explanation": "The claim is incorrect. Section 4.2 explicitly requires
+                 on-site work minimum 3 days per week and residence within 50 miles of headquarters.",
   "usage": {
     "completion_tokens": 156,
     "prompt_tokens": 890,
     "total_tokens": 1046
   },
-  "search_results": [
-    {
-      "title": "Remote Work Employment Law",
-      "snippet": "Standard employment contracts typically specify work location requirements...",
-      "link": "https://example.com/employment-law"
-    }
-  ]
+  "search_results": []
 }
 ```
-
-### Use Cases
-
-- **Legal documents**: Contract terms, policy interpretation
-- **Research papers**: Data claims, methodology verification  
-- **Financial reports**: Revenue figures, growth claims
-- **Technical specifications**: Feature descriptions, requirements
-
-## Error Handling
-
-### Common Errors
-
-**Invalid API Key**:
-```json
-{
-  "error": "Authentication failed",
-  "message": "Invalid API key or insufficient permissions"
-}
-```
-
-**Empty Claim**:
-```json
-{
-  "error": "Invalid input", 
-  "message": "Claim cannot be empty"
-}
-```
-
-**Rate Limit Exceeded**:
-```json
-{
-  "error": "Rate limit exceeded",
-  "message": "API rate limit reached. Try again in 60 seconds"
-}
-```
-
-## Best Practices
-
-### Writing Effective Claims
-
-**Good**: "This document states the return policy is 30 days"
-**Bad**: "What's the return policy?"
-
-**Good**: "The Eiffel Tower is 324 meters tall"  
-**Bad**: "How tall is the Eiffel Tower?"
-
-### Performance Tips
-
-- **Shorter claims** process faster (under 100 words)
-- **Specific statements** get more accurate results than general questions
-- **Document claims** work best with exact quotes or data points
-
-### Token Usage
-
-- **verify**: Typically 50-200 tokens per request
-- **verify_document**: Varies by document size (100-2000+ tokens)
-- **Large documents**: Consider breaking into smaller sections
-
-## Integration Notes
-
-### Tool Selection
-
-MCP clients automatically choose the right tool:
-- **verify** for general statements
-- **verify_document** when documents are present
-
-### Response Time
-
-- **Simple claims**: two to three seconds
-- **Complex claims**: three to five seconds  
-- **Large documents**: five to 10 seconds
-
-### Concurrent Requests
-
-No artificial limits imposed by the MCP server. Limited by your kluster.ai subscription plan.
-
 ## Additional Resources
 
 - **Quick Start**: Get up and running with the [five-minute setup guide](/get-started/mcp/self-hosted/quick-start/){target=\_self}

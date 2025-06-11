@@ -1,84 +1,66 @@
 ---
 title: MCP Integration
-description: Connect AI applications to external tools and data sources using the Model Context Protocol, with kluster's ready-to-use MCP servers.
+description: Connect AI applications to kluster.ai services using the Model Context Protocol for seamless development workflow integration.
 ---
 
-# MCP Integration
+# MCP integration
 
-The Model Context Protocol (MCP) is an open standard for connecting AI assistants to external tools and data sources. Think of it as the "USB-C port for AI applications" – a universal way to plug different capabilities into your AI workflows.
+[Model Context Protocol](https://modelcontextprotocol.io/introduction){target=_blank} or MCP, is an open standard for connecting AI assistants to specialized tools. 
+
+Think of it as "USB-C for AI" - one protocol that works everywhere.
+
+kluster.ai provides MCP servers that bring AI services directly into your development workflow.
 
 ## What is MCP?
 
-MCP standardizes how AI applications access:
+MCP lets AI applications access external capabilities:
 
-- **Local data**: Files, databases, and services on your computer
-- **Remote services**: APIs, web services, and cloud resources  
-- **Custom tools**: Specialized functions for your specific needs
+- **Local tools**: Files, databases, custom functions.
+- **Remote services**: APIs, web services, cloud resources.
+- **Specialized features**: Like kluster.ai's verification technology.
 
-With MCP, you can switch between AI providers while keeping the same tool integrations, similar to how USB-C works across different devices.
+Switch between AI providers while keeping the same tools - just like USB-C devices.
 
-## Why kluster.ai Supports MCP
+## Why MCP for kluster.ai services?
 
-kluster.ai embraces MCP to help developers build more capable AI applications. By providing pre-built MCP servers, kluster.ai makes it easy to add specialized capabilities to any MCP-compatible environment like Claude Desktop, VS Code, or automation platforms.
+Instead of managing API calls and integrations, access kluster.ai's AI capabilities as native tools in Claude Desktop, VS Code, and other MCP-compatible platforms.
 
-## Example: kluster.ai verify MCP Server
+## Self-hosted MCP server
 
-As an example of MCP in action, kluster offers a verify MCP server that adds reliability checking capabilities to your AI assistant. This server provides two specialized tools:
+Example implementation showcasing kluster.ai's [Verify service](/get-started/verify/reliability/overview){target=self} capabilities through two tools:
 
-**`verify`**: Verify any statement against reliable sources
+**`verify`**: Validates claims against reliable sources.
 
-**`verify_document`**: Verify claims about uploaded documents
+**`verify_document`**: Verifies claims about uploaded documents.
 
-This is just one example of how MCP can extend AI capabilities. The protocol supports any type of tool or data integration you need.
+This demonstrates how kluster.ai services can integrate seamlessly into development environments via MCP with the [Self-hosted MCP server](/get-started/mcp/self-hosted/quick-start/){target=self}.
 
-## How MCP Works
 
-MCP follows a client-server architecture:
 
-1. **MCP Hosts**: Your AI application (Claude Desktop, VS Code, etc.)
-2. **MCP Servers**: Programs that expose specific capabilities
-3. **Protocol**: Standardized communication between hosts and servers
-4. **Tools**: Functions that servers provide to AI assistants
-
-## Available MCP Implementations
-
-kluster currently offers the verify MCP server, with more implementations planned:
-
-### kluster verify MCP Server
-
-The verify MCP server adds reliability checking to your AI workflows:
+## Get started
 
 <div class="grid cards" markdown>
 
--   <span class="badge guide">Guide</span> __Self-hosted verify MCP__
+-   <span class="badge guide">Guide</span> __Self-hosted MCP Server__
 
     ---
 
-    Run the verify MCP server locally with Docker or Node.js. Perfect for developers who want full control over reliability checking.
+    Run the Verify MCP server locally with Docker or nodejs. Use it with Claude Desktop, VS Code or your preferred MCP Client.
 
-    [:octicons-arrow-right-24: Setup self-hosted](/get-started/mcp/self-hosted/quick-start/){target=\_self}
+    [:octicons-arrow-right-24: Five-minute setup](/get-started/mcp/self-hosted/quick-start/){target=\_self}
 
--   <span class="badge integration">Integration</span> __Platform verify MCP__
+-   <span class="badge integration">Integration</span> __Platform MCP__
 
     ---
 
-    Cloud-hosted verify MCP endpoints for no-code platforms. Coming soon.
+    Coming soon.
 
     [:octicons-arrow-right-24: Learn more](/get-started/mcp/platform/){target=\_self}
 
 </div>
 
-## Getting Started with MCP
+## Additional resources
 
-To use any MCP server with your AI application:
-
-1. **Choose an MCP-compatible client** (Claude Desktop, VS Code, etc.)
-2. **Select an MCP server** that provides the tools you need
-3. **Configure the connection** in your client settings
-4. **Start using the tools** in your AI conversations
-
-## Learn More
-
-- **MCP Protocol**: Read the [official MCP documentation](https://modelcontextprotocol.io/docs){target=\_blank} by Anthropic
-- **kluster verify**: Explore the [reliability checking service](/get-started/verify/reliability/){target=\_blank}
-- **API Reference**: Review the [kluster.ai API documentation](/api-reference/reference/){target=\_blank}
+- **MCP Protocol**: [Official MCP documentation](https://modelcontextprotocol.io/docs){target=\_blank}
+- **Verify service**: [Complete reliability verification guide](/get-started/verify/reliability/overview){target=\_blank}
+- **API Reference**: [kluster.ai API documentation](/api-reference/reference/){target=\_blank}
