@@ -1,6 +1,6 @@
 ---
 title: Platform MCP
-description: Cloud-hosted MCP endpoints for no-code platforms with managed infrastructure and simplified integration.
+description: Platform MCP for no-code platforms with managed infrastructure and simplified integration.
 ---
 
 # Platform MCP
@@ -12,10 +12,10 @@ Platform MCP will provide cloud-hosted tool. Unlike Self-hosted MCP, Platform MC
 
 ## Planned Features
 
-- **Managed infrastructure**: No servers to maintain or Docker containers to run
-- **Web-based configuration**: Enable/disable tools through a simple interface
-- **SSE endpoints**: Compatible with platforms supporting URL-based integrations
-- **API key management**: Generate and manage keys directly from the platform
+- **Managed infrastructure**: No servers to maintain or Docker containers to run.
+- **Web-based configuration**: Enable/disable tools through a simple interface.
+- **SSE endpoints**: Compatible with platforms supporting URL-based integrations.
+- **API key management**: Generate and manage keys directly from the platform.
 
 
 ## Who Is This For?
