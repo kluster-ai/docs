@@ -200,20 +200,18 @@ For platforms that don't support native MCP but need HTTP endpoints, the verify-
 }
 ```
 
-### Response Format
-
+**Response:**
 ```json
 {
   "success": true,
   "result": {
-    "tool": "verify",
-    "claim": "Statement to verify",
-    "is_hallucination": false,
-    "explanation": "Detailed verification explanation...",
+    "claim": "The Eiffel Tower is located in Rome",
+    "is_hallucination": true,
+    "explanation": "The response provides a wrong location for the Eiffel Tower...",
     "usage": {
-      "completion_tokens": 124,
-      "prompt_tokens": 67,
-      "total_tokens": 191
+      "completion_tokens": 343,
+      "prompt_tokens": 939,
+      "total_tokens": 1282
     },
     "search_results": []
   },
