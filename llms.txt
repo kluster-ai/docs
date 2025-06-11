@@ -70,11 +70,13 @@ The following limits apply to API requests based on [your plan](https://platform
     |**DeepSeek-R1-0528**|32k|4k|1000|20|30|1|
     |**DeepSeek-V3-0324**|32k|4k|1000|20|30|1|
     |**Gemma 3 27B**|32k|4k|1000|20|30|1|
+    |**Magistral Small**|32k|4k|1000|20|30|1|
     |**Meta Llama 3.1 8B**|32k|4k|1000|20|30|1|
     |**Meta Llama 3.3 70B**|32k|4k|1000|20|30|1|
     |**Meta Llama 4 Maverick**|32k|4k|1000|20|30|1|
     |**Meta Llama 4 Scout**|32k|4k|1000|20|30|1|
     |**Mistral NeMo**|32k|4k|1000|20|30|1|
+    |**Mistral Small**|32k|4k|1000|20|30|1|
     |**Qwen2.5-VL 7B**|32k|4k|1000|20|30|1|
     |**Qwen3-235B-A22B**|32k|4k|1000|20|30|1|
 
@@ -88,11 +90,13 @@ The following limits apply to API requests based on [your plan](https://platform
     |**DeepSeek-R1-0528**|163k|163k|100k|100|600|10|
     |**DeepSeek-V3-0324**|163k|163k|100k|100|600|10|
     |**Gemma 3 27B**|64k|8k|100k|100|600|10|
+    |**Magistral Small**|40k|40k|100k|100|600|10|
     |**Meta Llama 3.1 8B**|131k|131k|100k|100|600|10|
     |**Meta Llama 3.3 70B**|131k|131k|100k|100|600|10|
     |**Meta Llama 4 Maverick**|1M|1M|100k|100|600|10|
     |**Meta Llama 4 Scout**|131k|131k|100k|100|600|10|
     |**Mistral NeMo**|131k|131k|100k|100|600|10|
+    |**Mistral Small**|32k|32k|100k|100|600|10|
     |**Qwen2.5-VL 7B**|32k|32k|100k|100|600|10|
     |**Qwen3-235B-A22B**|40k|40k|100k|100|600|10|
 
@@ -106,11 +110,13 @@ The following limits apply to API requests based on [your plan](https://platform
     |**DeepSeek-R1-0528**|163k|163k|500k|100|1200|25|
     |**DeepSeek-V3-0324**|163k|163k|500k|100|1200|25|
     |**Gemma 3 27B**|64k|8k|500k|100|1200|25|
+    |**Magistral Small**|40k|40k|500k|100|1200|25|
     |**Meta Llama 3.1 8B**|131k|131k|500k|100|1200|25|
     |**Meta Llama 3.3 70B**|131k|131k|500k|100|1200|25|
     |**Meta Llama 4 Maverick**|1M|1M|500k|100|1200|25|
     |**Meta Llama 4 Scout**|131k|131k|500k|100|1200|25|
     |**Mistral NeMo**|131k|131k|500k|100|1200|25|
+    |**Mistral Small**|32k|32k|500k|100|1200|25|
     |**Qwen2.5-VL 7B**|32k|32k|500k|100|1200|25|
     |**Qwen3-235B-A22B**|40k|40k|500k|100|1200|25|
 
@@ -124,11 +130,13 @@ The following limits apply to API requests based on [your plan](https://platform
     |**DeepSeek-R1-0528**|163k|163k|Unlimited|100|Unlimited|Unlimited|
     |**DeepSeek-V3-0324**|163k|163k|Unlimited|100|Unlimited|Unlimited|
     |**Gemma 3 27B**|64k|8k|Unlimited|100|Unlimited|Unlimited|
+    |**Magistral Small**|40k|40k|Unlimited|100|Unlimited|Unlimited|
     |**Meta Llama 3.1 8B**|131k|131k|Unlimited|100|Unlimited|Unlimited|
     |**Meta Llama 3.3 70B**|131k|131k|Unlimited|100|Unlimited|Unlimited|
     |**Meta Llama 4 Maverick**|1M|1M|Unlimited|100|Unlimited|Unlimited|
     |**Meta Llama 4 Scout**|131k|131k|Unlimited|100|Unlimited|Unlimited|
     |**Mistral NeMo**|131k|131k|Unlimited|100|Unlimited|Unlimited|
+    |**Mistral Small**|32k|32k|Unlimited|100|Unlimited|Unlimited|
     |**Qwen2.5-VL 7B**|32k|32k|Unlimited|100|Unlimited|Unlimited|
     |**Qwen3-235B-A22B**|40k|40k|Unlimited|100|Unlimited|Unlimited|
 
@@ -5997,11 +6005,13 @@ Each model supported by kluster.ai has a unique name that must be used when defi
 |     **DeepSeek-R1-0528**      |           `deepseek-ai/DeepSeek-R1-0528`            |
 |     **DeepSeek-V3-0324**      |           `deepseek-ai/DeepSeek-V3-0324`            |
 |        **Gemma 3 27B**        |               `google/gemma-3-27b-it`               |
+|      **Magistral Small**      |          `mistralai/Magistral-Small-2506`           |
 |     **Meta Llama 3.1 8B**     |    `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`     |
 |    **Meta Llama 3.3 70B**     |    `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo`    |
 |   **Meta Llama 4 Maverick**   | `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8` |
 |    **Meta Llama 4 Scout**     |     `meta-llama/Llama-4-Scout-17B-16E-Instruct`     |
 |       **Mistral NeMo**        |       `mistralai/Mistral-Nemo-Instruct-2407`        |
+|       **Mistral Small**       |     `mistralai/Mistral-Small-24B-Instruct-2501`     |
 |       **Qwen2.5-VL 7B**       |            `Qwen/Qwen2.5-VL-7B-Instruct`            |
 |      **Qwen3-235B-A22B**      |             `Qwen/Qwen3-235B-A22B-FP8`              |
 
@@ -6013,11 +6023,13 @@ Each model supported by kluster.ai has a unique name that must be used when defi
 | **DeepSeek-R1-0528** | Mathematical problem-solving<br>code generation<br>complex data analysis. | :white_check_mark: | :white_check_mark: | :x: | :x: |
 | **DeepSeek-V3-0324** | Natural language generation<br>open-ended text creation<br>contextually rich writing. | :white_check_mark: | :white_check_mark: | :x: | :x: |
 | **Gemma 3 27B** | Multilingual applications<br>extended-context tasks<br>image analysis<br>and complex reasoning. | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |
+| **Magistral Small** | Reasoning<br>Natural language generation<br>open-ended text creation<br>contextually rich writing. | :white_check_mark: | :white_check_mark: | :x: | :x: |
 | **Llama 3.1 8B** | Low-latency or simple tasks<br>cost-efficient inference. | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: |
 | **Llama 3.3 70B** | General-purpose AI<br>balanced cost-performance. | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: |
 | **Llama 4 Maverick** | A state-of-the-art multimodal<br>model with integrated vision<br>and language understanding,<br>optimized for complex<br>reasoning, coding, and<br>perception tasks | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |
 | **Llama 4 Scout** | General-purpose multimodal AI<br>extended context tasks<br>and balanced cost-performance across text and vision. | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |
 | **Mistral NeMo** | Natural language generation<br>open-ended text creation<br>contextually rich writing. | :white_check_mark: | :white_check_mark: | :x: | :x: |
+| **Mistral Small** | Fast conversational agents<br>local inference on consumer hardware<br>domain-specific applications<br>and low-latency function calling. | :white_check_mark: | :white_check_mark: | :x: | :x: |
 | **Qwen2.5-VL 7B** | Visual question answering<br>document analysis<br>image-based reasoning<br>multimodal chat. | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |
 | **Qwen3-235B-A22B** | Qwen3's flagship 235 billion<br>parameter model optimized with<br>8-bit quantization | :white_check_mark: | :white_check_mark: | :x: | :x: |
 
@@ -6033,11 +6045,13 @@ The following limits apply to API requests based on [your plan](https://platform
     |**DeepSeek-R1-0528**|32k|4k|1000|20|30|1|
     |**DeepSeek-V3-0324**|32k|4k|1000|20|30|1|
     |**Gemma 3 27B**|32k|4k|1000|20|30|1|
+    |**Magistral Small**|32k|4k|1000|20|30|1|
     |**Meta Llama 3.1 8B**|32k|4k|1000|20|30|1|
     |**Meta Llama 3.3 70B**|32k|4k|1000|20|30|1|
     |**Meta Llama 4 Maverick**|32k|4k|1000|20|30|1|
     |**Meta Llama 4 Scout**|32k|4k|1000|20|30|1|
     |**Mistral NeMo**|32k|4k|1000|20|30|1|
+    |**Mistral Small**|32k|4k|1000|20|30|1|
     |**Qwen2.5-VL 7B**|32k|4k|1000|20|30|1|
     |**Qwen3-235B-A22B**|32k|4k|1000|20|30|1|
 
@@ -6051,11 +6065,13 @@ The following limits apply to API requests based on [your plan](https://platform
     |**DeepSeek-R1-0528**|163k|163k|100k|100|600|10|
     |**DeepSeek-V3-0324**|163k|163k|100k|100|600|10|
     |**Gemma 3 27B**|64k|8k|100k|100|600|10|
+    |**Magistral Small**|40k|40k|100k|100|600|10|
     |**Meta Llama 3.1 8B**|131k|131k|100k|100|600|10|
     |**Meta Llama 3.3 70B**|131k|131k|100k|100|600|10|
     |**Meta Llama 4 Maverick**|1M|1M|100k|100|600|10|
     |**Meta Llama 4 Scout**|131k|131k|100k|100|600|10|
     |**Mistral NeMo**|131k|131k|100k|100|600|10|
+    |**Mistral Small**|32k|32k|100k|100|600|10|
     |**Qwen2.5-VL 7B**|32k|32k|100k|100|600|10|
     |**Qwen3-235B-A22B**|40k|40k|100k|100|600|10|
 
@@ -6069,11 +6085,13 @@ The following limits apply to API requests based on [your plan](https://platform
     |**DeepSeek-R1-0528**|163k|163k|500k|100|1200|25|
     |**DeepSeek-V3-0324**|163k|163k|500k|100|1200|25|
     |**Gemma 3 27B**|64k|8k|500k|100|1200|25|
+    |**Magistral Small**|40k|40k|500k|100|1200|25|
     |**Meta Llama 3.1 8B**|131k|131k|500k|100|1200|25|
     |**Meta Llama 3.3 70B**|131k|131k|500k|100|1200|25|
     |**Meta Llama 4 Maverick**|1M|1M|500k|100|1200|25|
     |**Meta Llama 4 Scout**|131k|131k|500k|100|1200|25|
     |**Mistral NeMo**|131k|131k|500k|100|1200|25|
+    |**Mistral Small**|32k|32k|500k|100|1200|25|
     |**Qwen2.5-VL 7B**|32k|32k|500k|100|1200|25|
     |**Qwen3-235B-A22B**|40k|40k|500k|100|1200|25|
 
@@ -6087,11 +6105,13 @@ The following limits apply to API requests based on [your plan](https://platform
     |**DeepSeek-R1-0528**|163k|163k|Unlimited|100|Unlimited|Unlimited|
     |**DeepSeek-V3-0324**|163k|163k|Unlimited|100|Unlimited|Unlimited|
     |**Gemma 3 27B**|64k|8k|Unlimited|100|Unlimited|Unlimited|
+    |**Magistral Small**|40k|40k|Unlimited|100|Unlimited|Unlimited|
     |**Meta Llama 3.1 8B**|131k|131k|Unlimited|100|Unlimited|Unlimited|
     |**Meta Llama 3.3 70B**|131k|131k|Unlimited|100|Unlimited|Unlimited|
     |**Meta Llama 4 Maverick**|1M|1M|Unlimited|100|Unlimited|Unlimited|
     |**Meta Llama 4 Scout**|131k|131k|Unlimited|100|Unlimited|Unlimited|
     |**Mistral NeMo**|131k|131k|Unlimited|100|Unlimited|Unlimited|
+    |**Mistral Small**|32k|32k|Unlimited|100|Unlimited|Unlimited|
     |**Qwen2.5-VL 7B**|32k|32k|Unlimited|100|Unlimited|Unlimited|
     |**Qwen3-235B-A22B**|40k|40k|Unlimited|100|Unlimited|Unlimited|
 --- END CONTENT ---
@@ -6475,7 +6495,6 @@ else:
     print(f"Batch failed with status: {batch_status.status}")
     ```
 
-
 ??? example "DeepSeek-V3-0324"
 
     ```python
@@ -6741,6 +6760,123 @@ if batch_status.status.lower() == "completed":
 else:
     print(f"Batch failed with status: {batch_status.status}")
     print(batch_status)
+    ```
+
+??? example "Magistral Small"
+
+    ```python
+    # Batch completions with the Magistral Small model on kluster.ai
+
+from os import environ
+from openai import OpenAI
+from getpass import getpass
+import json
+import time
+
+# Get API key from user input
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
+
+# Initialize OpenAI client pointing to kluster.ai API
+client = OpenAI(
+    base_url="https://api.kluster.ai/v1",
+    api_key=api_key,
+)
+
+print(f"📤 Sending batch request to kluster.ai...\n")
+
+# Create request with specified structure
+requests = [
+    {
+        "custom_id": "request-1",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "mistralai/Magistral-Small-2506",
+            "messages": [
+                {"role": "system", "content": "You are an experienced cook."},
+                {"role": "user", "content": "What is the ultimate breakfast sandwich?"},
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    {
+        "custom_id": "request-2",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "mistralai/Magistral-Small-2506",
+            "messages": [
+                {"role": "system", "content": "You are a maths tutor."},
+                {"role": "user", "content": "Explain the Pythagorean theorem."},
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    {
+        "custom_id": "request-3",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "mistralai/Magistral-Small-2506",
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "You are a multilingual, experienced maths tutor.",
+                },
+                {
+                    "role": "user",
+                    "content": "Explain the Pythagorean theorem in Spanish",
+                },
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    # Additional tasks can be added here
+]
+
+# Save tasks to a JSONL file (newline-delimited JSON)
+file_name = "my_batch_request.jsonl"
+with open(file_name, "w") as file:
+    for request in requests:
+        file.write(json.dumps(request) + "\n")
+
+# Upload batch job file
+batch_input_file = client.files.create(
+        file=open(file_name, "rb"),
+        purpose="batch"
+)
+
+# Submit batch job
+batch_request = client.batches.create(
+    input_file_id=batch_input_file.id,
+    endpoint="/v1/chat/completions",
+    completion_window="24h",
+)
+
+# Poll the batch status until it's complete
+while True:
+    batch_status = client.batches.retrieve(batch_request.id)
+    print(f"Batch status: {batch_status.status}")
+    print(
+        f"Completed tasks: {batch_status.request_counts.completed} / {batch_status.request_counts.total}"
+    )
+
+    if batch_status.status.lower() in ["completed", "failed", "cancelled"]:
+        break
+
+    time.sleep(10)  # Wait for 10 seconds before checking again
+
+# Check if the Batch completed successfully
+if batch_status.status.lower() == "completed":
+    # Retrieve the results and log
+    result_file_id = batch_status.output_file_id
+    results = client.files.content(result_file_id).content
+
+    # Print response to console
+    print(f"\n🔍 AI batch response:")
+    print(results)
+else:
+    print(f"Batch failed with status: {batch_status.status}")
     ```
 
 ??? example "Meta Llama 3.1 8B"
@@ -7394,6 +7530,123 @@ else:
     print(f"Batch failed with status: {batch_status.status}")
     ```
 
+??? example "Mistral Small"
+
+    ```python
+    # Batch completions with the Mistral Small model on kluster.ai
+
+from os import environ
+from openai import OpenAI
+from getpass import getpass
+import json
+import time
+
+# Get API key from user input
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
+
+# Initialize OpenAI client pointing to kluster.ai API
+client = OpenAI(
+    base_url="https://api.kluster.ai/v1",
+    api_key=api_key,
+)
+
+print(f"📤 Sending batch request to kluster.ai...\n")
+
+# Create request with specified structure
+requests = [
+    {
+        "custom_id": "request-1",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "mistralai/Mistral-Small-24B-Instruct-2501",
+            "messages": [
+                {"role": "system", "content": "You are an experienced cook."},
+                {"role": "user", "content": "What is the ultimate breakfast sandwich?"},
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    {
+        "custom_id": "request-2",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "mistralai/Mistral-Small-24B-Instruct-2501",
+            "messages": [
+                {"role": "system", "content": "You are a maths tutor."},
+                {"role": "user", "content": "Explain the Pythagorean theorem."},
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    {
+        "custom_id": "request-3",
+        "method": "POST",
+        "url": "/v1/chat/completions",
+        "body": {
+            "model": "mistralai/Mistral-Small-24B-Instruct-2501",
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "You are a multilingual, experienced maths tutor.",
+                },
+                {
+                    "role": "user",
+                    "content": "Explain the Pythagorean theorem in Spanish",
+                },
+            ],
+            "max_completion_tokens": 1000,
+        },
+    },
+    # Additional tasks can be added here
+]
+
+# Save tasks to a JSONL file (newline-delimited JSON)
+file_name = "my_batch_request.jsonl"
+with open(file_name, "w") as file:
+    for request in requests:
+        file.write(json.dumps(request) + "\n")
+
+# Upload batch job file
+batch_input_file = client.files.create(
+        file=open(file_name, "rb"),
+        purpose="batch"
+)
+
+# Submit batch job
+batch_request = client.batches.create(
+    input_file_id=batch_input_file.id,
+    endpoint="/v1/chat/completions",
+    completion_window="24h",
+)
+
+# Poll the batch status until it's complete
+while True:
+    batch_status = client.batches.retrieve(batch_request.id)
+    print(f"Batch status: {batch_status.status}")
+    print(
+        f"Completed tasks: {batch_status.request_counts.completed} / {batch_status.request_counts.total}"
+    )
+
+    if batch_status.status.lower() in ["completed", "failed", "cancelled"]:
+        break
+
+    time.sleep(10)  # Wait for 10 seconds before checking again
+
+# Check if the Batch completed successfully
+if batch_status.status.lower() == "completed":
+    # Retrieve the results and log
+    result_file_id = batch_status.output_file_id
+    results = client.files.content(result_file_id).content
+
+    # Print response to console
+    print(f"\n🔍 AI batch response:")
+    print(results)
+else:
+    print(f"Batch failed with status: {batch_status.status}")
+    ```
+
 ??? example "Qwen2.5-VL 7B"
 
     ```python
@@ -7796,7 +8049,6 @@ echo -e "\n🔍 AI batch response:"
 echo "$OUTPUT_CONTENT"
     ```
 
-
 ??? example "DeepSeek-V3-0324"
 
     ```bash
@@ -7934,6 +8186,72 @@ OUTPUT_CONTENT=$(curl -s https://api.kluster.ai/v1/files/$kluster_OUTPUT_FILE/co
 echo -e "\nImage1 URL: $image1_url"
 echo -e "\nImage2 URL: $image2_url"
 echo -e "\nImage3 URL: $image3_url"
+echo -e "\n🔍 AI batch response:"
+echo "$OUTPUT_CONTENT"
+    ```
+
+??? example "Magistral Small"
+
+    ```bash
+    #!/bin/bash
+
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo "Error: API_KEY environment variable is not set." >&2
+    exit 1
+fi
+
+echo -e "📤 Sending batch request to kluster.ai...
+"
+
+# Create request with specified structure
+cat << EOF > my_batch_request.jsonl
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Magistral-Small-2506", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Magistral-Small-2506", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
+{"custom_id": "request-4", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Magistral-Small-2506", "messages":[{"role": "system", "content": "You are a multilingual, experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"}],"max_completion_tokens":1000}}
+EOF
+
+# Upload batch job file
+FILE_ID=$(curl -s https://api.kluster.ai/v1/files \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: multipart/form-data" \
+    -F "file=@my_batch_request.jsonl" \
+    -F "purpose=batch" | jq -r '.id')
+echo "File uploaded, file ID: $FILE_ID"
+
+# Submit batch job
+BATCH_ID=$(curl -s https://api.kluster.ai/v1/batches \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" \
+    -d '{
+        "input_file_id": "'$FILE_ID'",
+        "endpoint": "/v1/chat/completions",
+        "completion_window": "24h"
+    }' | jq -r '.id')
+echo "Batch job submitted, job ID: $BATCH_ID"
+
+
+# Poll the batch status until it's completed
+STATUS="in_progress"
+while [[ "$STATUS" != "completed" ]]; do
+    echo "Waiting for batch job to complete... Status: $STATUS"
+    sleep 10 # Wait for 10 seconds before checking again
+
+    STATUS=$(curl -s https://api.kluster.ai/v1/batches/$BATCH_ID \
+        -H "Authorization: Bearer $API_KEY" \
+        -H "Content-Type: application/json" | jq -r '.status')
+done
+
+# Retrieve the batch output file
+kluster_OUTPUT_FILE=$(curl -s https://api.kluster.ai/v1/batches/$BATCH_ID \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" | jq -r '.output_file_id')
+
+# Retrieve the results
+OUTPUT_CONTENT=$(curl -s https://api.kluster.ai/v1/files/$kluster_OUTPUT_FILE/content \
+    -H "Authorization: Bearer $API_KEY")
+
+# Log results
 echo -e "\n🔍 AI batch response:"
 echo "$OUTPUT_CONTENT"
     ```
@@ -8239,6 +8557,72 @@ cat << EOF > my_batch_request.jsonl
 {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Mistral-Nemo-Instruct-2407", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
 {"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Mistral-Nemo-Instruct-2407", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
 {"custom_id": "request-4", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Mistral-Nemo-Instruct-2407", "messages":[{"role": "system", "content": "You are a multilingual, experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"}],"max_completion_tokens":1000}}
+EOF
+
+# Upload batch job file
+FILE_ID=$(curl -s https://api.kluster.ai/v1/files \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: multipart/form-data" \
+    -F "file=@my_batch_request.jsonl" \
+    -F "purpose=batch" | jq -r '.id')
+echo "File uploaded, file ID: $FILE_ID"
+
+# Submit batch job
+BATCH_ID=$(curl -s https://api.kluster.ai/v1/batches \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" \
+    -d '{
+        "input_file_id": "'$FILE_ID'",
+        "endpoint": "/v1/chat/completions",
+        "completion_window": "24h"
+    }' | jq -r '.id')
+echo "Batch job submitted, job ID: $BATCH_ID"
+
+
+# Poll the batch status until it's completed
+STATUS="in_progress"
+while [[ "$STATUS" != "completed" ]]; do
+    echo "Waiting for batch job to complete... Status: $STATUS"
+    sleep 10 # Wait for 10 seconds before checking again
+
+    STATUS=$(curl -s https://api.kluster.ai/v1/batches/$BATCH_ID \
+        -H "Authorization: Bearer $API_KEY" \
+        -H "Content-Type: application/json" | jq -r '.status')
+done
+
+# Retrieve the batch output file
+kluster_OUTPUT_FILE=$(curl -s https://api.kluster.ai/v1/batches/$BATCH_ID \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" | jq -r '.output_file_id')
+
+# Retrieve the results
+OUTPUT_CONTENT=$(curl -s https://api.kluster.ai/v1/files/$kluster_OUTPUT_FILE/content \
+    -H "Authorization: Bearer $API_KEY")
+
+# Log results
+echo -e "\n🔍 AI batch response:"
+echo "$OUTPUT_CONTENT"
+    ```
+
+??? example "Mistral Small"
+
+    ```bash
+    #!/bin/bash
+
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo "Error: API_KEY environment variable is not set." >&2
+    exit 1
+fi
+
+echo -e "📤 Sending batch request to kluster.ai...
+"
+
+# Create request with specified structure
+cat << EOF > my_batch_request.jsonl
+{"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Mistral-Small-24B-Instruct-2501", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
+{"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Mistral-Small-24B-Instruct-2501", "messages": [{"role": "system", "content": "You are an experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
+{"custom_id": "request-4", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "mistralai/Mistral-Small-24B-Instruct-2501", "messages":[{"role": "system", "content": "You are a multilingual, experienced maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem in Spanish"}],"max_completion_tokens":1000}}
 EOF
 
 # Upload batch job file
@@ -9071,7 +9455,6 @@ You can use the following snippets to cancel a batch job:
         -H "Content-Type: application/json" \
         -X POST
     ```
-
 ```Json title="Response"
 {
     "id": "mybatch-123",
@@ -9239,7 +9622,6 @@ print(f"\n🔍 AI response (model: {model_name}):")
 print(text_response)
     ```
 
-
 ??? example "DeepSeek-V3-0324"
 
     ```python
@@ -9313,6 +9695,45 @@ completion = client.chat.completions.create(
 )
 
 print(f"\nImage URL: {image_url}")
+
+"""Logs the full AI response to terminal."""
+
+# Extract model name and AI-generated text
+model_name = completion.model
+text_response = completion.choices[0].message.content
+
+# Print response to console
+print(f"\n🔍 AI response (model: {model_name}):")
+print(text_response)
+    ```
+
+??? example "Magistral Small"
+
+    ```python
+    # Real-time completions with the Magistral Small model on kluster.ai
+
+from os import environ
+from openai import OpenAI
+from getpass import getpass
+
+# Get API key from user input
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
+
+print(f"📤 Sending a chat completion request to kluster.ai...\n")
+
+# Initialize OpenAI client pointing to kluster.ai API
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
+
+# Create chat completion request
+completion = client.chat.completions.create(
+    model="mistralai/Magistral-Small-2506",
+    messages=[
+        {"role": "user", "content": "What is the ultimate breakfast sandwich?"}
+    ]
+)
 
 """Logs the full AI response to terminal."""
 
@@ -9534,6 +9955,45 @@ print(f"\n🔍 AI response (model: {model_name}):")
 print(text_response)
     ```
 
+??? example "Mistral Small"
+
+    ```python
+    # Real-time completions with the Mistral Small model on kluster.ai
+
+from os import environ
+from openai import OpenAI
+from getpass import getpass
+
+# Get API key from user input
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
+
+print(f"📤 Sending a chat completion request to kluster.ai...\n")
+
+# Initialize OpenAI client pointing to kluster.ai API
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://api.kluster.ai/v1"
+)
+
+# Create chat completion request
+completion = client.chat.completions.create(
+    model="mistralai/Mistral-Small-24B-Instruct-2501",
+    messages=[
+        {"role": "user", "content": "What is the ultimate breakfast sandwich?"}
+    ]
+)
+
+"""Logs the full AI response to terminal."""
+
+# Extract model name and AI-generated text
+model_name = completion.model
+text_response = completion.choices[0].message.content
+
+# Print response to console
+print(f"\n🔍 AI response (model: {model_name}):")
+print(text_response)
+    ```
+
 ??? example "Qwen2.5-VL 7B"
 
     ```python
@@ -9677,7 +10137,6 @@ curl https://api.kluster.ai/v1/chat/completions \
         }"
     ```
 
-
 ??? example "DeepSeek-V3-0324"
 
     ```bash
@@ -9735,6 +10194,33 @@ curl https://api.kluster.ai/v1/chat/completions \
             }
         ]
     }"
+    ```
+
+??? example "Magistral Small"
+
+    ```bash
+    #!/bin/bash
+
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo -e "\nError: API_KEY environment variable is not set.\n" >&2
+fi
+
+echo -e "📤 Sending a chat completion request to kluster.ai...\n"
+
+# Submit real-time request
+curl https://api.kluster.ai/v1/chat/completions \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" \
+    -d "{
+            \"model\": \"mistralai/Magistral-Small-2506\", 
+            \"messages\": [
+                { 
+                    \"role\": \"user\", 
+                    \"content\": \"What is the ultimate breakfast sandwich?\"
+                }
+            ]
+        }"
     ```
 
 ??? example "Meta Llama 3.1 8B"
@@ -9882,6 +10368,33 @@ curl https://api.kluster.ai/v1/chat/completions \
         }"
     ```
 
+??? example "Mistral Small"
+
+    ```bash
+    #!/bin/bash
+
+# Check if API_KEY is set and not empty
+if [[ -z "$API_KEY" ]]; then
+    echo -e "\nError: API_KEY environment variable is not set.\n" >&2
+fi
+
+echo -e "📤 Sending a chat completion request to kluster.ai...\n"
+
+# Submit real-time request
+curl https://api.kluster.ai/v1/chat/completions \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: application/json" \
+    -d "{
+            \"model\": \"mistralai/Mistral-Small-24B-Instruct-2501\", 
+            \"messages\": [
+                { 
+                    \"role\": \"user\", 
+                    \"content\": \"What is the ultimate breakfast sandwich?\"
+                }
+            ]
+        }"
+    ```
+
 ??? example "Qwen2.5-VL 7B"
 
     ```bash
@@ -10000,7 +10513,7 @@ If the request is successful, the response is contained in the `completion` vari
             "index": 0,
             "logprobs": null,
             "message": {
-                "content": "The \"ultimate\" breakfast sandwich is subjective and can vary based on personal preferences, but here’s a classic, crowd-pleasing version that combines savory, sweet, and hearty elements for a satisfying morning meal:\n\n### **The Ultimate Breakfast Sandwich**\n**Ingredients:**\n- **Bread:** A toasted brioche bun, English muffin, or sourdough slice (your choice for texture and flavor).\n- **Protein:** Crispy bacon, sausage patty, or ham.\n- **Egg:** Fried, scrambled, or a fluffy omelet-style egg.\n- **Cheese:** Sharp cheddar, gooey American, or creamy Swiss.\n- **Sauce:** Spicy mayo, hollandaise, or a drizzle of maple syrup for sweetness.\n- **Extras:** Sliced avocado, caramelized onions, sautéed mushrooms, or fresh arugula for a gourmet touch.\n- **Seasoning:** Salt, pepper, and a pinch of red pepper flakes for heat.\n\n**Assembly:**\n1. Toast your bread or bun to golden perfection.\n2. Cook your protein to your desired crispiness or doneness.\n3. Prepare your egg—fried with a runny yolk is a classic choice.\n4. Layer the cheese on the warm egg or protein so it melts slightly.\n5. Add your extras (avocado, veggies, etc.) for freshness and flavor.\n6. Spread your sauce on the bread or drizzle it over the filling.\n7. Stack everything together, season with salt, pepper, or spices, and enjoy!\n\n**Optional Upgrades:**\n- Add a hash brown patty for extra crunch.\n- Swap regular bacon for thick-cut or maple-glazed bacon.\n- Use a croissant instead of bread for a buttery, flaky twist.\n\nThe ultimate breakfast sandwich is all about balance—crunchy, creamy, savory, and a hint of sweetness. Customize it to your taste and make it your own!",
+                "content": "The \"ultimate\" breakfast sandwich is subjective and can vary based on personal preferences, but here's a classic, crowd-pleasing version that combines savory, sweet, and hearty elements for a satisfying morning meal:\n\n### **The Ultimate Breakfast Sandwich**\n**Ingredients:**\n- **Bread:** A toasted brioche bun, English muffin, or sourdough slice (your choice for texture and flavor).\n- **Protein:** Crispy bacon, sausage patty, or ham.\n- **Egg:** Fried, scrambled, or a fluffy omelet-style egg.\n- **Cheese:** Sharp cheddar, gooey American, or creamy Swiss.\n- **Sauce:** Spicy mayo, hollandaise, or a drizzle of maple syrup for sweetness.\n- **Extras:** Sliced avocado, caramelized onions, sautéed mushrooms, or fresh arugula for a gourmet touch.\n- **Seasoning:** Salt, pepper, and a pinch of red pepper flakes for heat.\n\n**Assembly:**\n1. Toast your bread or bun to golden perfection.\n2. Cook your protein to your desired crispiness or doneness.\n3. Prepare your egg—fried with a runny yolk is a classic choice.\n4. Layer the cheese on the warm egg or protein so it melts slightly.\n5. Add your extras (avocado, veggies, etc.) for freshness and flavor.\n6. Spread your sauce on the bread or drizzle it over the filling.\n7. Stack everything together, season with salt, pepper, or spices, and enjoy!\n\n**Optional Upgrades:**\n- Add a hash brown patty for extra crunch.\n- Swap regular bacon for thick-cut or maple-glazed bacon.\n- Use a croissant instead of bread for a buttery, flaky twist.\n\nThe ultimate breakfast sandwich is all about balance—crunchy, creamy, savory, and a hint of sweetness. Customize it to your taste and make it your own!",
                 "refusal": null,
                 "role": "assistant",
                 "audio": null,
@@ -10216,11 +10729,13 @@ The following limits apply to API requests based on [your plan](https://platform
     |**DeepSeek-R1-0528**|32k|4k|1000|20|30|1|
     |**DeepSeek-V3-0324**|32k|4k|1000|20|30|1|
     |**Gemma 3 27B**|32k|4k|1000|20|30|1|
+    |**Magistral Small**|32k|4k|1000|20|30|1|
     |**Meta Llama 3.1 8B**|32k|4k|1000|20|30|1|
     |**Meta Llama 3.3 70B**|32k|4k|1000|20|30|1|
     |**Meta Llama 4 Maverick**|32k|4k|1000|20|30|1|
     |**Meta Llama 4 Scout**|32k|4k|1000|20|30|1|
     |**Mistral NeMo**|32k|4k|1000|20|30|1|
+    |**Mistral Small**|32k|4k|1000|20|30|1|
     |**Qwen2.5-VL 7B**|32k|4k|1000|20|30|1|
     |**Qwen3-235B-A22B**|32k|4k|1000|20|30|1|
 
@@ -10234,11 +10749,13 @@ The following limits apply to API requests based on [your plan](https://platform
     |**DeepSeek-R1-0528**|163k|163k|100k|100|600|10|
     |**DeepSeek-V3-0324**|163k|163k|100k|100|600|10|
     |**Gemma 3 27B**|64k|8k|100k|100|600|10|
+    |**Magistral Small**|40k|40k|100k|100|600|10|
     |**Meta Llama 3.1 8B**|131k|131k|100k|100|600|10|
     |**Meta Llama 3.3 70B**|131k|131k|100k|100|600|10|
     |**Meta Llama 4 Maverick**|1M|1M|100k|100|600|10|
     |**Meta Llama 4 Scout**|131k|131k|100k|100|600|10|
     |**Mistral NeMo**|131k|131k|100k|100|600|10|
+    |**Mistral Small**|32k|32k|100k|100|600|10|
     |**Qwen2.5-VL 7B**|32k|32k|100k|100|600|10|
     |**Qwen3-235B-A22B**|40k|40k|100k|100|600|10|
 
@@ -10252,11 +10769,13 @@ The following limits apply to API requests based on [your plan](https://platform
     |**DeepSeek-R1-0528**|163k|163k|500k|100|1200|25|
     |**DeepSeek-V3-0324**|163k|163k|500k|100|1200|25|
     |**Gemma 3 27B**|64k|8k|500k|100|1200|25|
+    |**Magistral Small**|40k|40k|500k|100|1200|25|
     |**Meta Llama 3.1 8B**|131k|131k|500k|100|1200|25|
     |**Meta Llama 3.3 70B**|131k|131k|500k|100|1200|25|
     |**Meta Llama 4 Maverick**|1M|1M|500k|100|1200|25|
     |**Meta Llama 4 Scout**|131k|131k|500k|100|1200|25|
     |**Mistral NeMo**|131k|131k|500k|100|1200|25|
+    |**Mistral Small**|32k|32k|500k|100|1200|25|
     |**Qwen2.5-VL 7B**|32k|32k|500k|100|1200|25|
     |**Qwen3-235B-A22B**|40k|40k|500k|100|1200|25|
 
@@ -10270,11 +10789,13 @@ The following limits apply to API requests based on [your plan](https://platform
     |**DeepSeek-R1-0528**|163k|163k|Unlimited|100|Unlimited|Unlimited|
     |**DeepSeek-V3-0324**|163k|163k|Unlimited|100|Unlimited|Unlimited|
     |**Gemma 3 27B**|64k|8k|Unlimited|100|Unlimited|Unlimited|
+    |**Magistral Small**|40k|40k|Unlimited|100|Unlimited|Unlimited|
     |**Meta Llama 3.1 8B**|131k|131k|Unlimited|100|Unlimited|Unlimited|
     |**Meta Llama 3.3 70B**|131k|131k|Unlimited|100|Unlimited|Unlimited|
     |**Meta Llama 4 Maverick**|1M|1M|Unlimited|100|Unlimited|Unlimited|
     |**Meta Llama 4 Scout**|131k|131k|Unlimited|100|Unlimited|Unlimited|
     |**Mistral NeMo**|131k|131k|Unlimited|100|Unlimited|Unlimited|
+    |**Mistral Small**|32k|32k|Unlimited|100|Unlimited|Unlimited|
     |**Qwen2.5-VL 7B**|32k|32k|Unlimited|100|Unlimited|Unlimited|
     |**Qwen3-235B-A22B**|40k|40k|Unlimited|100|Unlimited|Unlimited|
 

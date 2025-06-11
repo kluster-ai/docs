@@ -54,7 +54,6 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     --8<-- 'code/get-started/start-building/real-time/real-time-deepseek-r1-0528.py'
     ```
 
-
 ??? example "DeepSeek-V3-0324"
 
     ```python
@@ -65,6 +64,12 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
 
     ```python
     --8<-- 'code/get-started/start-building/real-time/real-time-gemma-3-27b-it.py'
+    ```
+
+??? example "Magistral Small"
+
+    ```python
+    --8<-- 'code/get-started/start-building/real-time/real-time-magistral-small-2506.py'
     ```
 
 ??? example "Meta Llama 3.1 8B"
@@ -97,6 +102,12 @@ To use these snippets, run the Python script and enter your kluster.ai API key w
     --8<-- 'code/get-started/start-building/real-time/real-time-mistral-nemo-instruct-2407.py'
     ```
 
+??? example "Mistral Small"
+
+    ```python
+    --8<-- 'code/get-started/start-building/real-time/real-time-mistral-small-24b-instruct-2501.py'
+    ```
+
 ??? example "Qwen2.5-VL 7B"
 
     ```python
@@ -125,7 +136,6 @@ Similarly, the following curl commands showcase how to easily send a chat comple
     --8<-- 'code/get-started/start-building/real-time/real-time-deepseek-r1-0528.md'
     ```
 
-
 ??? example "DeepSeek-V3-0324"
 
     ```bash
@@ -136,6 +146,12 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 
     ```bash
     --8<-- 'code/get-started/start-building/real-time/real-time-gemma-3-27b-it.md'
+    ```
+
+??? example "Magistral Small"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-magistral-small-2506.md'
     ```
 
 ??? example "Meta Llama 3.1 8B"
@@ -166,6 +182,12 @@ Similarly, the following curl commands showcase how to easily send a chat comple
 
     ```bash
     --8<-- 'code/get-started/start-building/real-time/real-time-mistral-nemo-instruct-2407.md'
+    ```
+
+??? example "Mistral Small"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-mistral-small-24b-instruct-2501.md'
     ```
 
 ??? example "Qwen2.5-VL 7B"
@@ -217,7 +239,7 @@ If the request is successful, the response is contained in the `completion` vari
             "index": 0,
             "logprobs": null,
             "message": {
-                "content": "The \"ultimate\" breakfast sandwich is subjective and can vary based on personal preferences, but here’s a classic, crowd-pleasing version that combines savory, sweet, and hearty elements for a satisfying morning meal:\n\n### **The Ultimate Breakfast Sandwich**\n**Ingredients:**\n- **Bread:** A toasted brioche bun, English muffin, or sourdough slice (your choice for texture and flavor).\n- **Protein:** Crispy bacon, sausage patty, or ham.\n- **Egg:** Fried, scrambled, or a fluffy omelet-style egg.\n- **Cheese:** Sharp cheddar, gooey American, or creamy Swiss.\n- **Sauce:** Spicy mayo, hollandaise, or a drizzle of maple syrup for sweetness.\n- **Extras:** Sliced avocado, caramelized onions, sautéed mushrooms, or fresh arugula for a gourmet touch.\n- **Seasoning:** Salt, pepper, and a pinch of red pepper flakes for heat.\n\n**Assembly:**\n1. Toast your bread or bun to golden perfection.\n2. Cook your protein to your desired crispiness or doneness.\n3. Prepare your egg—fried with a runny yolk is a classic choice.\n4. Layer the cheese on the warm egg or protein so it melts slightly.\n5. Add your extras (avocado, veggies, etc.) for freshness and flavor.\n6. Spread your sauce on the bread or drizzle it over the filling.\n7. Stack everything together, season with salt, pepper, or spices, and enjoy!\n\n**Optional Upgrades:**\n- Add a hash brown patty for extra crunch.\n- Swap regular bacon for thick-cut or maple-glazed bacon.\n- Use a croissant instead of bread for a buttery, flaky twist.\n\nThe ultimate breakfast sandwich is all about balance—crunchy, creamy, savory, and a hint of sweetness. Customize it to your taste and make it your own!",
+                "content": "The \"ultimate\" breakfast sandwich is subjective and can vary based on personal preferences, but here's a classic, crowd-pleasing version that combines savory, sweet, and hearty elements for a satisfying morning meal:\n\n### **The Ultimate Breakfast Sandwich**\n**Ingredients:**\n- **Bread:** A toasted brioche bun, English muffin, or sourdough slice (your choice for texture and flavor).\n- **Protein:** Crispy bacon, sausage patty, or ham.\n- **Egg:** Fried, scrambled, or a fluffy omelet-style egg.\n- **Cheese:** Sharp cheddar, gooey American, or creamy Swiss.\n- **Sauce:** Spicy mayo, hollandaise, or a drizzle of maple syrup for sweetness.\n- **Extras:** Sliced avocado, caramelized onions, sautéed mushrooms, or fresh arugula for a gourmet touch.\n- **Seasoning:** Salt, pepper, and a pinch of red pepper flakes for heat.\n\n**Assembly:**\n1. Toast your bread or bun to golden perfection.\n2. Cook your protein to your desired crispiness or doneness.\n3. Prepare your egg—fried with a runny yolk is a classic choice.\n4. Layer the cheese on the warm egg or protein so it melts slightly.\n5. Add your extras (avocado, veggies, etc.) for freshness and flavor.\n6. Spread your sauce on the bread or drizzle it over the filling.\n7. Stack everything together, season with salt, pepper, or spices, and enjoy!\n\n**Optional Upgrades:**\n- Add a hash brown patty for extra crunch.\n- Swap regular bacon for thick-cut or maple-glazed bacon.\n- Use a croissant instead of bread for a buttery, flaky twist.\n\nThe ultimate breakfast sandwich is all about balance—crunchy, creamy, savory, and a hint of sweetness. Customize it to your taste and make it your own!",
                 "refusal": null,
                 "role": "assistant",
                 "audio": null,
