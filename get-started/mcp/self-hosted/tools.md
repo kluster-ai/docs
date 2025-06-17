@@ -1,31 +1,33 @@
 ---
-title: Tools Reference
-description: Technical reference for the Verify service tools in kluster.ai's example MCP server implementation.
+title: Tools reference
+description: Technical reference for the Verify service tools in kluster.ai's MCP server implementation, including parameters, examples, and integration guides.
 ---
 
-# Tools Reference
+# Tools reference
 
-These tools provide access to the [Verify service](/get-started/verify/reliability/overview){target=self} for reliability checking and document verification.
+The MCP Verify server exposes kluster.ai's [Verify service](/get-started/verify/reliability/overview) as native tools for AI assistants. These tools enable real-time reliability verification directly within your development workflow without requiring manual API integration.
 
-## Tool Overview
+This page documents two verification tools: `verify` for validating standalone claims against online sources, and `verify_document` for checking claims about uploaded document content.
+
+## Tool overview
 
 | Tool | Purpose | Best For |
 |:---|:---|:---|
 | `verify` | Verify standalone claims. | General statements, trivia, current events, news. |
 | `verify_document` | Verify claims about documents. | Quotes, data extraction, RAG hallucination checking. |
 
-### Verify
+## Verify tool
 
 Verifies any statement against reliable online sources.
 
-#### Parameters
+**Parameters:**
 
 | Parameter | Type | Required | Description |
 |:---|:---|:---|:---|
 | `claim` | string | Yes | The statement to verify. |
 | `return_search_results` | boolean | No | Include source citations. (default: true) |
 
-#### Request Example
+**Request example:**
 
 ```json
 {
@@ -34,7 +36,7 @@ Verifies any statement against reliable online sources.
 }
 ```
 
-#### Response Format
+**Response format:**
 
 ```json
 {
@@ -52,11 +54,11 @@ Verifies any statement against reliable online sources.
 }
 ```
 
-### Verify document
+## Verify document tool
 
 Verifies if claims accurately reflect uploaded document content.
 
-#### Parameters
+**Parameters:**
 
 | Parameter | Type | Required | Description |
 |:---|:---|:---|:---|
@@ -64,7 +66,7 @@ Verifies if claims accurately reflect uploaded document content.
 | `document_content` | string | Yes | Full document text (auto-provided by MCP client) |
 | `return_search_results` | boolean | No | Include external sources (default: true) |
 
-#### Request Example
+**Request example:**
 
 ```json
 {
@@ -75,7 +77,7 @@ Verifies if claims accurately reflect uploaded document content.
 }
 ```
 
-#### Response Format
+**Response format:**
 
 ```json
 {
@@ -91,8 +93,8 @@ Verifies if claims accurately reflect uploaded document content.
   "search_results": []
 }
 ```
-## Additional Resources
+## Additional resources
 
-- **Quick Start**: Get up and running with the [five-minute setup guide](/get-started/mcp/self-hosted/quick-start/){target=\_self}
-- **Client Setup**: Configure [different MCP clients](/get-started/mcp/self-hosted/clients/){target=\_self}
-- **API Reference**: Complete [API documentation](/api-reference/reference/){target=\_blank}
+- **Get started**: Get up and running with the [five-minute setup guide](/get-started/mcp/self-hosted/get-started/).
+- **Client setup**: Configure [different MCP clients](/get-started/mcp/self-hosted/clients/).
+- **API reference**: Complete [API documentation](/api-reference/reference/).

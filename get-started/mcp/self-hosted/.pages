@@ -1,4 +1,4 @@
 nav:
-  - Quick Start: quick-start.md
-  - Tools Reference: tools.md
-  - Client Setup: clients.md
+  - 'Get started': get-started.md
+  - 'Tools reference': tools.md
+  - 'Client setup': clients.md
