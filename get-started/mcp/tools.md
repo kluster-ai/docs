@@ -5,7 +5,7 @@ description: Reference guide for kluster.ai's MCP verification tools - verify cl
 
 # Tools reference
 
-The [kluster.ai's](https://www.kluster.ai/){target=\_blank} MCP server provides two verification tools that work identically whether deployed [self-hosted](/get-started/mcp/self-hosted/) or via [Stream HTTP MCP](/get-started/mcp/stream-http/platform/). These tools enable real-time reliability verification directly within your AI assistant conversations.
+The [kluster.ai's](https://www.kluster.ai/){target=\_blank} MCP server provides two verification tools that work identically whether deployed [self-hosted](/get-started/mcp/self-hosted/) or via [Cloud MCP](/get-started/mcp/cloud/platform/). These tools enable real-time reliability verification directly within your AI assistant conversations.
 
 This page documents the tool parameters and response formats you'll see when usisng these tools in any MCP-compatible client.
 
@@ -71,4 +71,4 @@ All verification tools return the same response structure:
 
 - **Set up integrations**: Configure [client applications](/get-started/mcp/integrations/) to use these tools.
 - **Deploy locally**: Set up [self-hosted MCP server](/get-started/mcp/self-hosted/) for local development.
-- **Use cloud version**: Enable [Stream HTTP MCP](/get-started/mcp/stream-http/platform/) for managed deployment.
+- **Use cloud version**: Enable [Cloud MCP](/get-started/mcp/cloud/platform/) for managed deployment.

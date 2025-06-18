@@ -23,9 +23,9 @@ Instead of managing API calls and integrations, access kluster.ai's AI capabilit
 
 The kluster.ai MCP offers the [Verify service](/get-started/verify/reliability/overview) through two deployment options designed for different use cases and platforms.
 
-### Stream HTTP MCP
+### Cloud MCP
 
-Managed cloud implementation using JSON-RPC over HTTP - no infrastructure to maintain:
+Managed cloud implementation - no infrastructure to maintain:
 
 **`verify`**: Validates claims against reliable sources.  
 **`verify_document`**: Verifies claims about uploaded documents.
@@ -44,17 +44,17 @@ Same verification tools running on your infrastructure with full control. Deploy
 
     ---
 
-    Quick start guide using Stream HTTP MCP as the default path. Enable your endpoint and connect Claude Desktop in five minutes.
+    Quick start guide using Cloud MCP as the default path. Enable your endpoint and connect Claude Desktop in five minutes.
 
     [:octicons-arrow-right-24: Five-minute setup](/get-started/mcp/get-started/){target=_self}
 
--   <span class="badge integration">Integration</span> __Stream HTTP MCP__
+-   <span class="badge integration">Integration</span> __Cloud MCP__
 
     ---
 
     Enable managed MCP endpoints with MCP token authentication. No infrastructure to maintain, just enable and integrate.
 
-    [:octicons-arrow-right-24: Platform setup](/get-started/mcp/stream-http/platform/){target=_self}
+    [:octicons-arrow-right-24: Platform setup](/get-started/mcp/cloud/platform/){target=_self}
 
 -   <span class="badge tools">Tools</span> __Self-hosted MCP__
 

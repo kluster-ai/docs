@@ -3,5 +3,5 @@ nav:
   - 'Get started': get-started.md
   - 'Tools reference': tools.md
   - 'Client integrations': integrations.md
+  - 'Cloud MCP': cloud
   - 'Self-hosted MCP': self-hosted.md
-  - 'Stream HTTP MCP': stream-http

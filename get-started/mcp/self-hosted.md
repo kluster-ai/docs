@@ -5,7 +5,7 @@ description: Deploy kluster.ai's MCP server locally using Docker or Node.js for 
 
 # Self-hosted MCP
 
-Deploy [kluster.ai's](https://www.kluster.ai/){target=\_blank} MCP server locally for development and testing. This self-hosted implementation gives you full control over your infrastructure while providing the same verification tools as [Stream HTTP MCP](/get-started/mcp/stream-http/platform/).
+Deploy [kluster.ai's](https://www.kluster.ai/){target=\_blank} MCP server locally for development and testing. This self-hosted implementation gives you full control over your infrastructure while providing the same verification tools as [Cloud MCP](/get-started/mcp/cloud/platform/).
 
 ## Prerequisites
 
@@ -58,7 +58,7 @@ Use these connection details:
 
 ## Available tools
 
-Your self-hosted deployment provides the same verification tools as Stream HTTP MCP:
+Your self-hosted deployment provides the same verification tools as Cloud MCP:
 
 - **`verify`**: Validates claims against reliable online sources.
 - **`verify_document`**: Verifies claims about uploaded document content.
@@ -69,4 +69,4 @@ For detailed parameters and response formats, see the [Tools reference](/get-sta
 
 - **Configure clients**: Follow the [Client integrations](/get-started/mcp/integrations/) guide for VS Code, Claude Desktop, and other platforms.
 - **Learn the tools**: See [Tools reference](/get-started/mcp/tools/) for detailed examples.
-- **Try Stream HTTP**: Consider [Stream HTTP MCP](/get-started/mcp/stream-http/platform/) for managed cloud .deployment.
+- **Try Cloud MCP**: Consider [Cloud MCP](/get-started/mcp/cloud/platform/) for managed cloud deployment.

@@ -1,11 +1,11 @@
 ---
 title: Platform Management
-description: Enable and manage kluster.ai's Stream HTTP MCP endpoints through the platform UI with one-click setup and visual client examples.
+description: Enable and manage kluster.ai's Cloud MCP endpoints through the platform UI with one-click setup and visual client examples.
 ---
 
 # Platform management
 
-Manage your Stream HTTP MCP endpoint directly through the [kluster.ai platform](https://platform.kluster.ai){target=\_blank} interface. Enable your MCP, view your credentials, and access ready-to-use client examples.
+Manage your Cloud MCP endpoint directly through the [kluster.ai platform](https://platform.kluster.ai){target=\_blank} interface. Enable your MCP, view your credentials, and access ready-to-use client examples.
 
 This guide shows how to enable MCP through the platform UI and quickly integrate verification tools into your applications.
 
@@ -36,6 +36,6 @@ The platform provides ready-to-use integrations examples for VSCode, Cursor, Cla
 
 ## Next steps
 
-- **Explore the API**: Learn about [API usage and integration patterns](/get-started/mcp/stream-http/api/).
+- **Explore the API**: Learn about [API usage and integration patterns](/get-started/mcp/cloud/api/).
 - **View tutorials**: Follow the [reliability check tutorial](/tutorials/klusterai-api/reliability-check/).
 - **Check pricing**: Review [MCP usage pricing](https://kluster.ai/pricing){target=\_blank}.

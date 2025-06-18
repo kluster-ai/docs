@@ -1,13 +1,13 @@
 ---
 title: Get started with MCP
-description: Get kluster.ai verification tools integrated into Claude desktop in five minutes using Stream HTTP MCP. No setup required, just enable and connect.
+description: Get kluster.ai verification tools integrated into Claude desktop in five minutes using Cloud MCP. No setup required, just enable and connect.
 ---
 
 # Get started
 
-Connect [kluster.ai's](https://www.kluster.ai/){target=\_blank} verification tools to your AI assistant through Model Context Protocol (MCP). This guide shows you how to enable [Stream HTTP MCP](/get-started/mcp/stream-http/platform/) and integrate it with Claude desktop for real-time claim validation directly within your conversations.
+Connect [kluster.ai's](https://www.kluster.ai/){target=\_blank} verification tools to your AI assistant through Model Context Protocol (MCP). This guide shows you how to enable [Cloud MCP](/get-started/mcp/cloud/platform/) and integrate it with Claude desktop for real-time claim validation directly within your conversations.
 
-Stream HTTP MCP provides managed verification endpoints with no infrastructure to maintain - just enable your MCP endpoint and start verifying.
+Cloud MCP provides managed verification endpoints with no infrastructure to maintain - just enable your MCP endpoint and start verifying.
 
 ## Prerequisites
 
@@ -102,7 +102,7 @@ Claude will use the `verify_document` tool to verify your claim against the actu
 
 - **Self-hosted**: Prefer to run MCP locally? Set up the [self-hosted MCP server](/get-started/mcp/self-hosted/) for local development with full control.
 
-- **API activation**: Enable MCP using API calls with the [MCP API usage guide](/get-started/mcp/stream-http/api/).
+- **API activation**: Enable MCP using API calls with the [MCP API usage guide](/get-started/mcp/cloud/api/).
 
 ## Next steps
 

@@ -5,7 +5,7 @@ description: Connect Claude desktop, VS Code, Cursor, and Claude Code to kluster
 
 # Client integrations
 
-Connect any compatible client to [kluster.ai's](https://www.kluster.ai/){target=\_blank} MCP Verify server. This guide provides configuration examples for popular clients using [Stream HTTP MCP](/get-started/mcp/stream-http/platform/).
+Connect any compatible client to [kluster.ai's](https://www.kluster.ai/){target=\_blank} MCP Verify server. This guide provides configuration examples for popular clients using [Cloud MCP](/get-started/mcp/cloud/platform/).
 
 !!! info "Self-hosted deployment"
     For [self-hosted MCP](/get-started/mcp/self-hosted/), replace the URL with `http://localhost:3001/stream` and use your kluster.ai API key.
@@ -14,7 +14,7 @@ Connect any compatible client to [kluster.ai's](https://www.kluster.ai/){target=
       
 Before integrating with any client:
       
-1. **Enable MCP**: Follow the [platform guide](/get-started/mcp/stream-http/platform/) to activate the MCP capabilities.
+1. **Enable MCP**: Follow the [platform guide](/get-started/mcp/cloud/platform/) to activate the MCP capabilities.
 2. **Replace token**: Use your actual MCP token in place of `YOUR_MCP_TOKEN`.
 
 ## Configuration by client

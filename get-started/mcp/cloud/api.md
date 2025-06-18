@@ -1,11 +1,11 @@
 ---
 title: API Usage
-description: Complete guide to using kluster.ai's Stream HTTP MCP API with JSON-RPC requests. How to check status, enable, disable and test it. 
+description: Complete guide to using kluster.ai's Cloud MCP API with JSON-RPC requests. How to check status, enable, disable and test it. 
 ---
 
 # API usage
 
-Manage your Stream HTTP MCP endpoint using API calls. This guide covers checking status, enabling/disabling your endpoint, obtaining MCP tokens, and testing verification tools. Use this as an alternative to the [platform UI](/get-started/mcp/stream-http/platform/).
+Manage your Cloud MCP endpoint using API calls. This guide covers checking status, enabling/disabling your endpoint, obtaining MCP tokens, and testing verification tools. Use this as an alternative to the [platform UI](/get-started/mcp/cloud/platform/).
 
 ## Prerequisites
 
@@ -65,7 +65,7 @@ curl -X POST https://api.kluster.ai/v1/mcp/disable \
 
 ## API overview
 
-Stream HTTP MCP uses JSON-RPC 2.0 with streaming support:
+Cloud MCP uses JSON-RPC 2.0 with streaming support:
 
 - **Management endpoints**: Use your main API key with `Authorization: Bearer YOUR_API_KEY`
 - **MCP endpoint**: `https://api.kluster.ai/v1/mcp`
