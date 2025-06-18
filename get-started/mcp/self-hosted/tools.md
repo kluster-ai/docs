@@ -41,11 +41,11 @@ Verifies any statement against reliable online sources.
 ```json
 {
   "claim": "The Eiffel Tower is located in Rome",
-  "is_hallucination": true,
+  "is_accurate": false,
   "explanation": "The response provides a wrong location for the Eiffel Tower.\n"
                  "The Eiffel Tower is actually located in Paris, France, not in Rome.\n"
                  "The response contains misinformation as it incorrectly states the tower's location.",
-  "usage": {
+  "confidence": {
     "completion_tokens": 343,
     "prompt_tokens": 939,
     "total_tokens": 1282
@@ -82,10 +82,10 @@ Verifies if claims accurately reflect uploaded document content.
 ```json
 {
   "claim": "This employment contract allows unlimited remote work",
-  "is_hallucination": true,
+  "is_accurate": false,
   "explanation": "The claim is incorrect. Section 4.2 explicitly requires
                  on-site work minimum 3 days per week and residence within 50 miles of headquarters.",
-  "usage": {
+  "confidence": {
     "completion_tokens": 156,
     "prompt_tokens": 890,
     "total_tokens": 1046

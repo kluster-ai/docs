@@ -1,0 +1,3 @@
+nav:
+  - 'Platform management': platform.md
+  - 'API usage': api.md

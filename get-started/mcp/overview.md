@@ -13,9 +13,9 @@ description: Connect AI applications to kluster.ai services using the Model Cont
 
 MCP lets AI applications access external capabilities:
 
-- **Local tools**: Files, databases, custom functions.
-- **Remote services**: APIs, web services, cloud resources.
-- **Specialized features**: Like kluster.ai's verification technology.
+- **Local tools**: Files, databases, custom functions
+- **Remote services**: APIs, web services, cloud resources
+- **Specialized features**: Like kluster.ai's verification technology
 
 Switch between AI providers while keeping the same tools - just like USB-C devices.
 
@@ -23,21 +23,25 @@ Switch between AI providers while keeping the same tools - just like USB-C devic
 
 Instead of managing API calls and integrations, access kluster.ai's AI capabilities as native tools in Claude desktop, VS Code, and other MCP-compatible platforms.
 
-You can integrate kluster.ai services via MCP in two ways: self-hosted for local developlment, or platform managed services for simplified deployment.
+The kluster.ai MCP offers the [Verify service](/get-started/verify/reliability/overview) through two deployment options designed for different use cases and platforms.
 
 ### Self-hosted MCP
 
-Example implementation showcasing kluster.ai's [Verify service](/get-started/verify/reliability/overview) capabilities through two tools:
+Local implementation using the stdio protocol, perfect for development environments and native MCP clients:
 
-**`verify`**: Validates claims against reliable sources.
+**`verify`**: Validates claims against reliable sources
 
-**`verify_document`**: Verifies claims about uploaded documents.
+**`verify_document`**: Verifies claims about uploaded documents
 
-This demonstrates how kluster.ai services can integrate seamlessly into development environments via MCP with the [self-hosted MCP server](/get-started/mcp/self-hosted/get-started/).
+Deploy locally with Docker or Node.js for seamless integration into Claude desktop, VS Code, and other stdio-based MCP clients with the [self-hosted MCP server](/get-started/mcp/self-hosted/get-started/){target=_self}.
 
-### Platform MCP
+### Stream HTTP MCP
 
-Coming soon - managed MCP endpoints that eliminate setup complexity while providing the same verification capabilities and access to more tools.
+Cloud-based implementation using JSON-RPC over HTTP, ideal for workflow automation and no-code platforms:
+
+**Same verification tools** with managed infrastructure - no servers to maintain, just enable and integrate. Perfect for platforms like Dify, n8n, and any HTTP-compatible automation tool.
+
+Access through simple API management - enable your endpoint, get your API key, and start verifying with the [Stream HTTP MCP](/get-started/mcp/stream-http/platform/).
 
 ## How to integrate MCP
 
@@ -49,20 +53,20 @@ Coming soon - managed MCP endpoints that eliminate setup complexity while provid
 
     Run the Verify MCP server locally with Docker or Nodejs. Use it with Claude desktop, VS Code or your preferred MCP Client.
 
-    [:octicons-arrow-right-24: Five-minute setup](/get-started/mcp/self-hosted/get-started/)
+    [:octicons-arrow-right-24: Five-minute setup](/get-started/mcp/self-hosted/get-started/){target=_self}
 
--   <span class="badge integration">Integration</span> __Platform MCP__
+-   <span class="badge integration">Integration</span> __Stream HTTP MCP__
 
     ---
 
-    Coming soon.
+    Enable managed MCP endpoints with API key authentication. Connect to Dify, n8n, and HTTP-based platforms without infrastructure setup.
 
-    [:octicons-arrow-right-24: Learn more](/get-started/mcp/platform/)
+    [:octicons-arrow-right-24: Platform setup](/get-started/mcp/stream-http/platform/){target=_self}
 
 </div>
 
 ## Additional resources
 
 - **MCP protocol**: [Official MCP documentation](https://modelcontextprotocol.io/docs){target=\_blank}
-- **Verify service**: [Complete reliability verification guide](/get-started/verify/reliability/overview)
-- **API reference**: [kluster.ai API documentation](/api-reference/reference/)
+- **Verify service**: [Complete reliability verification guide](/get-started/verify/reliability/overview){target=_self}
+- **API reference**: [kluster.ai API documentation](/api-reference/reference/){target=_self}
