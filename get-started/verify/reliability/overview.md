@@ -80,7 +80,7 @@ Verify offers multiple ways to perform reliability checks, each designed for dif
 
     Verify the reliability and accuracy of an answer to a specific question via a dedicated API endpoint.
 
-    [:octicons-arrow-right-24: Visit the guide](/get-started/verify/reliability/dedicated-api/){target=\_blank}
+    [:octicons-arrow-right-24: Visit the guide](/get-started/verify/reliability/verify-api/){target=\_blank}
 
 -   <span class="badge guide">Guide</span> Chat completion endpoint
 
