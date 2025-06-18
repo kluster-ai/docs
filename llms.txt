@@ -11006,7 +11006,7 @@ This example shows how to use the service with the chat completion endpoint via 
 
 ## Next steps
 
-- Learn how to use the [Verify API](/get-started/verify/reliability/dedicated-api/){target=\_blank} for simpler verification scenarios
+- Learn how to use the [Verify API](/get-started/verify/reliability/verify-api/){target=\_blank} for simpler verification scenarios
 - Review the complete [API documentation](/api-reference/reference/){target=\_blank} for detailed endpoint specifications
 --- END CONTENT ---
 
@@ -11094,7 +11094,7 @@ Verify offers multiple ways to perform reliability checks, each designed for dif
 
     Verify the reliability and accuracy of an answer to a specific question via a dedicated API endpoint.
 
-    [:octicons-arrow-right-24: Visit the guide](/get-started/verify/reliability/dedicated-api/){target=\_blank}
+    [:octicons-arrow-right-24: Visit the guide](/get-started/verify/reliability/verify-api/){target=\_blank}
 
 -   <span class="badge guide">Guide</span> Chat completion endpoint
 
@@ -11459,7 +11459,7 @@ The workflow includes pre-configured HTTP nodes that connect to the `/v1/verify/
 Ready to build more reliable AI applications?
 
 - **Explore the API**: Check the [complete API reference](/api-reference/reference/){target=\_blank} for advanced configuration options.
-- **Learn verification methods**: Dive into the [Verify API endpoint](/get-started/verify/reliability/dedicated-api/){target=\_blank} for detailed implementation patterns.
+- **Learn verification methods**: Dive into the [Verify API endpoint](/get-started/verify/reliability/verify-api/){target=\_blank} for detailed implementation patterns.
 - **Try the tutorial**: Follow the [hands-on reliability check tutorial](/tutorials/klusterai-api/reliability-check/){target=\_blank} with code examples.
 --- END CONTENT ---
 
