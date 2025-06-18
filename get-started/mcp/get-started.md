@@ -33,7 +33,7 @@ To enable the MCP endpoint, go to the [kluster.ai platform](https://platform.klu
     
 The platform provides ready-to-use integrations examples for VSCode, Cursor, Claude code, and cloude dekstop.
 
-![MCP kluster.ai platform](/images/get-started/mcp/stream-http/platform/platform-get-started.webp)
+![MCP kluster.ai platform](/images/get-started/mcp/cloud/platform/platform-get-started.webp)
 
 ## Configure Claude desktop
 
@@ -63,7 +63,7 @@ Add the MCP server configuration:
 Replace `YOUR_MCP_TOKEN` with your actual token or copy the snippet from the platform.
 Restart Claude desktop. Once Claude desktop restarts, you'll see the verification tools available under `kluster-verify-mcp`.
 
-![List tools on Claude desktop](/images/get-started/mcp/self-hosted/quick-start/quick-start-1.webp)
+![List tools on Claude desktop](/images/get-started/mcp/get-started/get-started-1.webp)
 
 ## Available tools
 
@@ -86,7 +86,7 @@ Claude will automatically use the `verify` tool and provide:
 - **Detailed explanation**: Why it's wrong with supporting reasoning.
 - **Source citations**: Search results used for verification.
 
-![Verify MCP tool demo](/images/get-started/mcp/self-hosted/quick-start/quick-start-2.webp)
+![Verify MCP tool demo](/images/get-started/mcp/get-started/get-started-2.webp)
 
 ### Verify documents
 

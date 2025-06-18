@@ -32,7 +32,7 @@ To enable the MCP endpoint, go to the [kluster.ai platform](https://platform.klu
     
 The platform provides ready-to-use integrations examples for VSCode, Cursor, Claude code, and claude dekstop.
 
-![MCP kluster.ai platform](/images/get-started/mcp/stream-http/platform/platform-get-started.webp)
+![MCP kluster.ai platform](/images/get-started/mcp/cloud/platform/platform-get-started.webp)
 
 ## Next steps
 
