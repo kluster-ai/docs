@@ -1,4 +1,7 @@
 nav:
   - 'Overview': overview.md
-  - 'Self-hosted MCP': self-hosted
+  - 'Get started': get-started.md
+  - 'Tools reference': tools.md
+  - 'Client integrations': integrations.md
+  - 'Self-hosted MCP': self-hosted.md
   - 'Stream HTTP MCP': stream-http

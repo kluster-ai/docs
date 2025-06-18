@@ -7,7 +7,7 @@ description: Connect AI applications to kluster.ai services using the Model Cont
 
 [Model Context Protocol](https://modelcontextprotocol.io/introduction){target=\_blank} or MCP, is an open standard for connecting AI assistants to specialized tools. Think of it as "USB-C for AI" - one protocol that works everywhere, enabling seamless integration between AI applications and external capabilities.
 
-[kluster.ai](https://www.kluster.ai/){target=\_blank} provides MCP servers that bring AI services directly into your development workflow. This documentation covers self-hosted implementations for local development, tools overview and client integration.
+[kluster.ai](https://www.kluster.ai/){target=\_blank} provides MCP servers that bring AI services directly into your development workflow. Choose between managed cloud endpoint or self-hosted deployment for seamless integration across platforms.
 
 ## What is MCP?
 
@@ -17,51 +17,52 @@ MCP lets AI applications access external capabilities:
 - **Remote services**: APIs, web services, cloud resources
 - **Specialized features**: Like kluster.ai's verification technology
 
-Switch between AI providers while keeping the same tools - just like USB-C devices.
-
 ## MCP through kluster.ai services
 
 Instead of managing API calls and integrations, access kluster.ai's AI capabilities as native tools in Claude desktop, VS Code, and other MCP-compatible platforms.
 
 The kluster.ai MCP offers the [Verify service](/get-started/verify/reliability/overview) through two deployment options designed for different use cases and platforms.
 
-### Self-hosted MCP
-
-Local implementation using the stdio protocol, perfect for development environments and native MCP clients:
-
-**`verify`**: Validates claims against reliable sources
-
-**`verify_document`**: Verifies claims about uploaded documents
-
-Deploy locally with Docker or Node.js for seamless integration into Claude desktop, VS Code, and other stdio-based MCP clients with the [self-hosted MCP server](/get-started/mcp/self-hosted/get-started/){target=_self}.
-
 ### Stream HTTP MCP
 
-Cloud-based implementation using JSON-RPC over HTTP, ideal for workflow automation and no-code platforms:
+Managed cloud implementation using JSON-RPC over HTTP - no infrastructure to maintain:
 
-**Same verification tools** with managed infrastructure - no servers to maintain, just enable and integrate. Perfect for platforms like Dify, n8n, and any HTTP-compatible automation tool.
+**`verify`**: Validates claims against reliable sources.  
+**`verify_document`**: Verifies claims about uploaded documents.
 
-Access through simple API management - enable your endpoint, get your API key, and start verifying with the [Stream HTTP MCP](/get-started/mcp/stream-http/platform/).
+Enable your endpoint through the kluster.ai platform, get your MCP token, and start verifying. Works with any MCP client using standard connection patterns.
+
+### Self-hosted MCP
+
+Same verification tools running on your infrastructure with full control. Deploy locally with Docker or Node.js.
 
 ## How to integrate MCP
 
 <div class="grid cards" markdown>
 
--   <span class="badge guide">Guide</span> __Self-hosted MCP server__
+-   <span class="badge guide">Guide</span> __Get started with MCP__
 
     ---
 
-    Run the Verify MCP server locally with Docker or Nodejs. Use it with Claude desktop, VS Code or your preferred MCP Client.
+    Quick start guide using Stream HTTP MCP as the default path. Enable your endpoint and connect Claude Desktop in five minutes.
 
-    [:octicons-arrow-right-24: Five-minute setup](/get-started/mcp/self-hosted/get-started/){target=_self}
+    [:octicons-arrow-right-24: Five-minute setup](/get-started/mcp/get-started/){target=_self}
 
 -   <span class="badge integration">Integration</span> __Stream HTTP MCP__
 
     ---
 
-    Enable managed MCP endpoints with API key authentication. Connect to Dify, n8n, and HTTP-based platforms without infrastructure setup.
+    Enable managed MCP endpoints with MCP token authentication. No infrastructure to maintain, just enable and integrate.
 
     [:octicons-arrow-right-24: Platform setup](/get-started/mcp/stream-http/platform/){target=_self}
+
+-   <span class="badge tools">Tools</span> __Self-hosted MCP__
+
+    ---
+
+    Deploy the MCP server locally with Docker or Node.js. Perfect for development and testing with full control.
+
+    [:octicons-arrow-right-24: Local deployment](/get-started/mcp/self-hosted/){target=_self}
 
 </div>
 

@@ -1,0 +1,72 @@
+---
+title: Self-hosted MCP
+description: Deploy kluster.ai's MCP server locally using Docker or Node.js for development and testing with full control over your infrastructure.
+---
+
+# Self-hosted MCP
+
+Deploy [kluster.ai's](https://www.kluster.ai/){target=\_blank} MCP server locally for development and testing. This self-hosted implementation gives you full control over your infrastructure while providing the same verification tools as [Stream HTTP MCP](/get-started/mcp/stream-http/platform/).
+
+## Prerequisites
+
+Before deploying the self-hosted MCP server, ensure you have:
+
+--8<-- 'text/kluster-api-onboarding.md'
+- **[Docker Desktop](https://www.docker.com/products/docker-desktop/){target=_blank}** or **[Node.js 18+](https://nodejs.org/){target=_blank}**.
+- **[Git](https://git-scm.com/){target=_blank}** for cloning the repository.
+
+## Clone repository
+
+First, clone the MCP server repository:
+
+```bash
+git clone https://github.com/kluster-ai/verify-mcp
+cd verify-mcp
+```
+
+## Deployment options
+
+=== "Docker"
+
+    Build and run with Docker:
+
+    ```bash
+    docker build -t kluster-verify-mcp .
+    docker run --rm -p 3001:3001 kluster-verify-mcp --api-key YOUR_API_KEY
+    ```
+
+=== "Node.js"
+
+    Install dependencies and run:
+
+    ```bash
+    npm install
+    npm run build
+    npm start -- --api-key YOUR_API_KEY
+    ```
+
+The server will start on `http://localhost:3001` with the MCP endpoint at `/stream`.
+
+## Client integration
+
+Once your self-hosted server is running, configure your AI clients using the [Client integrations](/get-started/mcp/integrations/) guide.
+
+Use these connection details:
+
+- **MCP endpoint**: `http://localhost:3001/stream`.
+- **Authentication**: Your kluster.ai API key.
+
+## Available tools
+
+Your self-hosted deployment provides the same verification tools as Stream HTTP MCP:
+
+- **`verify`**: Validates claims against reliable online sources.
+- **`verify_document`**: Verifies claims about uploaded document content.
+
+For detailed parameters and response formats, see the [Tools reference](/get-started/mcp/tools/).
+
+## Next steps
+
+- **Configure clients**: Follow the [Client integrations](/get-started/mcp/integrations/) guide for VS Code, Claude Desktop, and other platforms.
+- **Learn the tools**: See [Tools reference](/get-started/mcp/tools/) for detailed examples.
+- **Try Stream HTTP**: Consider [Stream HTTP MCP](/get-started/mcp/stream-http/platform/) for managed cloud .deployment.

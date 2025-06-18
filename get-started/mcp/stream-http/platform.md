@@ -5,7 +5,7 @@ description: Enable and manage kluster.ai's Stream HTTP MCP endpoints through th
 
 # Platform management
 
-Manage your Stream HTTP MCP endpoints directly through the [kluster.ai platform](https://platform.kluster.ai){target=\_blank} interface. Enable your MCP endpoint one click, view your credentials, and access ready-to-use client examples.
+Manage your Stream HTTP MCP endpoint directly through the [kluster.ai platform](https://platform.kluster.ai){target=\_blank} interface. Enable your MCP, view your credentials, and access ready-to-use client examples.
 
 This guide shows how to enable MCP through the platform UI and quickly integrate verification tools into your applications.
 
@@ -13,51 +13,26 @@ This guide shows how to enable MCP through the platform UI and quickly integrate
 
 Before getting started with MCP management, ensure the following requirements are met:
 
-- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 
-## Enable MCP endpoint
+## Enable and use
 
-### Step 1: Access MCP settings
+To enable the MCP endpoint, go to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank}
 
-1. Log in to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank}
-2. Navigate to **MCP**
-3. View your current MCP status
+1. Navigate to **MCP** and view your your current MCP status.
 
-![MCP kluster.ai platform](/images/get-started/mcp/stream-http/platform/platform-get-started.webp)
 
-### Step 2: Enable your endpoint
+2. Click the **Enable Verify MCP** button to activate your endpoint.
 
-Click the **Enable Verify MCP** button to activate your endpoint.
 
-The platform will:
-
-- Generate your unique Bearer auth key.
-- Activate your endpoint `https://api.kluster.ai/v1/mcp`.
-- Display integration examples for popular platforms.
-
+3. Copy your client configuration.
 
 !!! success "Endpoint enabled"
-    Your MCP endpoint is now active. Copy your API key and save it securely - you'll need it for all MCP requests.
+    Your MCP endpoint is now active. Copy your API key and save it securely.
+    
+The platform provides ready-to-use integrations examples for VSCode, Cursor, Claude code, and claude dekstop.
 
-### Step 3: Copy credentials
-
-After enabling, you'll see:
-
-- **MCP endpoint**: `https://api.kluster.ai/v1/mcp`.
-- **Bearer auth key**: (unique to your account).
-
-
-## Quick integration
-
-The platform provides ready-to-use integrations examples for VSCode, Cursor, Claude code, and cloude dekstop
-
-
-## Disable endpoint
-
-To temporarily disable your MCP endpoint:
-
-1. Click the **Disable MCP** button
-2. Confirm the action
+![MCP kluster.ai platform](/images/get-started/mcp/stream-http/platform/platform-get-started.webp)
 
 ## Next steps
 
