@@ -5,15 +5,15 @@ description: Deploy kluster.ai's MCP server locally using Docker or Node.js for 
 
 # Self-hosted MCP
 
-Deploy [kluster.ai's](https://www.kluster.ai/){target=\_blank} MCP server locally for development and testing. This self-hosted implementation gives you full control over your infrastructure while providing the same verification tools as [Cloud MCP](/get-started/mcp/cloud/platform/).
+Deploy [kluster.ai's](https://www.kluster.ai/){target=\_blank} MCP server locally for development and testing. This self-hosted implementation gives you full control over your infrastructure while providing the same verification tools as [Cloud MCP](/get-started/mcp/cloud/platform/){target=\_blank}.
 
 ## Prerequisites
 
 Before deploying the self-hosted MCP server, ensure you have:
 
 --8<-- 'text/kluster-api-onboarding.md'
-- **[Docker Desktop](https://www.docker.com/products/docker-desktop/){target=_blank}** or **[Node.js 18+](https://nodejs.org/){target=_blank}**.
-- **[Git](https://git-scm.com/){target=_blank}** for cloning the repository.
+- **A runtime environment**: You can use either [Docker Desktop](https://www.docker.com/products/docker-desktop/){target=\_blank} or [Node.js 18+](https://nodejs.org/){target=\_blank}.
+- **[Git](https://git-scm.com/){target=\_blank}**: For cloning the repository.
 
 ## Clone repository
 
@@ -49,7 +49,7 @@ The server will start on `http://localhost:3001` with the MCP endpoint at `/stre
 
 ## Client integration
 
-Once your self-hosted server is running, configure your AI clients using the [Client integrations](/get-started/mcp/integrations/) guide.
+Once your self-hosted server is running, configure your AI clients using the [Client integrations](/get-started/mcp/integrations/){target=\_blank} guide.
 
 Use these connection details:
 
@@ -63,7 +63,7 @@ Your self-hosted deployment provides the same verification tools as Cloud MCP:
 - **`verify`**: Validates claims against reliable online sources.
 - **`verify_document`**: Verifies claims about uploaded document content.
 
-For detailed parameters and response formats, see the [Tools reference](/get-started/mcp/tools/).
+For detailed parameters and response formats, see the [Tools reference](/get-started/mcp/tools/){target=\_blank}.
 
 ## Next steps
 

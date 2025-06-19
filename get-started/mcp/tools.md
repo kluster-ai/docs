@@ -5,11 +5,14 @@ description: Reference guide for kluster.ai's MCP verification tools - verify cl
 
 # Tools reference
 
-The [kluster.ai's](https://www.kluster.ai/){target=\_blank} MCP server provides two verification tools that work identically whether deployed [self-hosted](/get-started/mcp/self-hosted/) or via [Cloud MCP](/get-started/mcp/cloud/platform/). These tools enable real-time reliability verification directly within your AI assistant conversations.
+The [kluster.ai's](https://www.kluster.ai/){target=\_blank} MCP server provides two verification tools that work identically whether deployed [self-hosted](/get-started/mcp/self-hosted/){target=\_blank} or via [Cloud MCP](/get-started/mcp/cloud/platform/){target=\_blank}. These tools enable real-time reliability verification directly within your AI assistant conversations.
 
-This page documents the tool parameters and response formats you'll see when usisng these tools in any MCP-compatible client.
+This page documents the tool parameters and response formats you'll see when using these tools in any MCP-compatible client.
 
 ## Tool overview
+
+
+The following tools are available through the kluster.ai MCP server:
 
 | Tool | Purpose | Best For |
 |:---|:---|:---|
@@ -18,7 +21,7 @@ This page documents the tool parameters and response formats you'll see when usi
 
 ### Verify
 
-Verifies any statement against reliable online sources.
+The verify tool allows you to check any statement against reliable online sources.
 
 **Parameters:**
 
@@ -30,7 +33,7 @@ Verifies any statement against reliable online sources.
 
 ### Verify document
 
-Verifies if claims accurately reflect uploaded document content.
+The verify document tool checks that claims accurately reflect the content of the uploaded document.
 
 **Parameters:**
 
@@ -51,7 +54,7 @@ All verification tools return the same response structure:
 - **`confidence`**: Token usage statistics.
 - **`search_results`**: Source citations (if requested).
 
-**Response format example:**
+An example can be seen below:
 
 ```json
 {

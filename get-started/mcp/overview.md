@@ -1,6 +1,6 @@
 ---
-title: MCP Integration
-description: Connect AI applications to kluster.ai services using the Model Context Protocol for seamless development workflow integration with verification tools and automated reliability checking.
+title: MCP integration
+description: Connect AI apps to kluster.ai services using MCP for seamless development workflow integration with verification tools and automated reliability checking.
 ---
 
 # MCP integration
@@ -13,15 +13,15 @@ description: Connect AI applications to kluster.ai services using the Model Cont
 
 MCP lets AI applications access external capabilities:
 
-- **Local tools**: Files, databases, custom functions
-- **Remote services**: APIs, web services, cloud resources
-- **Specialized features**: Like kluster.ai's verification technology
+- **Local tools**: Files, databases, custom functions.
+- **Remote services**: APIs, web services, cloud resources.
+- **Specialized features**: Like kluster.ai's verification technology.
 
 ## MCP through kluster.ai services
 
 Instead of managing API calls and integrations, access kluster.ai's AI capabilities as native tools in Claude desktop, VS Code, and other MCP-compatible platforms.
 
-The kluster.ai MCP offers the [Verify service](/get-started/verify/reliability/overview) through two deployment options designed for different use cases and platforms.
+The kluster.ai MCP offers the [Verify service](/get-started/verify/reliability/overview){target=\_blank} through two deployment options designed for different use cases and platforms.
 
 ### Cloud MCP
 
@@ -69,5 +69,5 @@ Same verification tools running on your infrastructure with full control. Deploy
 ## Additional resources
 
 - **MCP protocol**: [Official MCP documentation](https://modelcontextprotocol.io/docs){target=\_blank}
-- **Verify service**: [Complete reliability verification guide](/get-started/verify/reliability/overview){target=_self}
-- **API reference**: [kluster.ai API documentation](/api-reference/reference/){target=_self}
+- **Verify service**: [Complete reliability verification guide](/get-started/verify/reliability/overview)
+- **API reference**: [kluster.ai API documentation](/api-reference/reference/)

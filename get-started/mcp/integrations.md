@@ -78,7 +78,7 @@ Before integrating with any client:
 - **`verify`**: Validates claims against reliable sources.
 - **`verify_document`**: Verifies claims about uploaded documents.
 
-See [Tools reference](/get-started/mcp/tools/) for parameters and examples.
+See [Tools reference](/get-started/mcp/tools/){target=\_blank} for parameters and examples.
 
 ## Next steps
 
