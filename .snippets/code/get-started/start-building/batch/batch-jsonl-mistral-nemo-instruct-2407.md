@@ -3,7 +3,11 @@
 # Check if API_KEY is set and not empty
 if [[ -z "$API_KEY" ]]; then
     echo "Error: API_KEY environment variable is not set." >&2
+    exit 1
 fi
+
+echo -e "📤 Sending batch request to kluster.ai...
+"
 
 # Create request with specified structure
 cat << EOF > my_batch_request.jsonl
@@ -25,7 +29,7 @@ BATCH_ID=$(curl -s https://api.kluster.ai/v1/batches \
     -H "Authorization: Bearer $API_KEY" \
     -H "Content-Type: application/json" \
     -d '{
-        "input_file_id": "'"$FILE_ID"'",
+        "input_file_id": "'$FILE_ID'",
         "endpoint": "/v1/chat/completions",
         "completion_window": "24h"
     }' | jq -r '.id')
@@ -44,12 +48,12 @@ while [[ "$STATUS" != "completed" ]]; do
 done
 
 # Retrieve the batch output file
-KLUSTER_OUTPUT_FILE=$(curl -s https://api.kluster.ai/v1/batches/$BATCH_ID \
+kluster_OUTPUT_FILE=$(curl -s https://api.kluster.ai/v1/batches/$BATCH_ID \
     -H "Authorization: Bearer $API_KEY" \
     -H "Content-Type: application/json" | jq -r '.output_file_id')
 
 # Retrieve the results
-OUTPUT_CONTENT=$(curl -s https://api.kluster.ai/v1/files/$KLUSTER_OUTPUT_FILE/content \
+OUTPUT_CONTENT=$(curl -s https://api.kluster.ai/v1/files/$kluster_OUTPUT_FILE/content \
     -H "Authorization: Bearer $API_KEY")
 
 # Log results

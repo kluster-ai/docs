@@ -42,131 +42,165 @@ The following code snippets provide a complete end-to-end real-time inference ex
 
 To use these snippets, run the Python script and enter your kluster.ai API key when prompted.
 
-??? example "DeepSeek R1"
+??? example "DeepSeek-R1"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-deepseekR1.py'
+    --8<-- 'code/get-started/start-building/real-time/real-time-deepseek-r1.py'
     ```
 
-??? example "DeepSeek V3 0324"
+??? example "DeepSeek-R1-0528"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-deepseekV3-0324.py'
+    --8<-- 'code/get-started/start-building/real-time/real-time-deepseek-r1-0528.py'
+    ```
+
+??? example "DeepSeek-V3-0324"
+
+    ```python
+    --8<-- 'code/get-started/start-building/real-time/real-time-deepseek-v3-0324.py'
     ```
 
 ??? example "Gemma 3 27B"
 
-    ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-gemma3-27.py'
+    ```python
+    --8<-- 'code/get-started/start-building/real-time/real-time-gemma-3-27b-it.py'
     ```
 
-??? example "LLama 3.1 8B"
+??? example "Magistral Small"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama3.1-8.py'
+    --8<-- 'code/get-started/start-building/real-time/real-time-magistral-small-2506.py'
     ```
 
-??? example "LLama 3.3 70B"
+??? example "Meta Llama 3.1 8B"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama3.3-70.py'
+    --8<-- 'code/get-started/start-building/real-time/real-time-meta-llama-3-1-8b-instruct-turbo.py'
     ```
 
-??? example "Llama 4 Maverick 17B 128E"
+??? example "Meta Llama 3.3 70B"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama4-maverick.py'
+    --8<-- 'code/get-started/start-building/real-time/real-time-meta-llama-3-3-70b-instruct-turbo.py'
     ```
 
-??? example "Llama 4 Scout 17B 16E"
+??? example "Meta Llama 4 Maverick"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama4-scout.py'
+    --8<-- 'code/get-started/start-building/real-time/real-time-llama-4-maverick-17b-128e-instruct-fp8.py'
     ```
 
-??? example "Mistral Nemo Instruct 2407"
+??? example "Meta Llama 4 Scout"
+
+    ```python
+    --8<-- 'code/get-started/start-building/real-time/real-time-llama-4-scout-17b-16e-instruct.py'
+    ```
+
+??? example "Mistral NeMo"
 
     ```python
     --8<-- 'code/get-started/start-building/real-time/real-time-mistral-nemo-instruct-2407.py'
     ```
 
-??? example "Qwen 2.5 7B"
+??? example "Mistral Small"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-qwen2.5-7.py'
+    --8<-- 'code/get-started/start-building/real-time/real-time-mistral-small-24b-instruct-2501.py'
     ```
 
-??? example "Qwen 3 235B"
+??? example "Qwen2.5-VL 7B"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-qwen3-235.py'
-    ```    
+    --8<-- 'code/get-started/start-building/real-time/real-time-qwen2-5-vl-7b-instruct.py'
+    ```
 
+??? example "Qwen3-235B-A22B"
 
+    ```python
+    --8<-- 'code/get-started/start-building/real-time/real-time-qwen3-235b-a22b-fp8.py'
+    ```
 ### CLI
 
 Similarly, the following curl commands showcase how to easily send a chat completion request to kluster.ai for the different supported models. This example assumes you've exported your kluster.ai API key as the variable `API_KEY`.
 
 
-??? example "DeepSeek R1"
+??? example "DeepSeek-R1"
 
     ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-deepseekR1.md'
+    --8<-- 'code/get-started/start-building/real-time/real-time-deepseek-r1.md'
     ```
 
-??? example "DeepSeek V3 0324"
+??? example "DeepSeek-R1-0528"
 
     ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-deepseekV3-0324.md'
+    --8<-- 'code/get-started/start-building/real-time/real-time-deepseek-r1-0528.md'
+    ```
+
+??? example "DeepSeek-V3-0324"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-deepseek-v3-0324.md'
     ```
 
 ??? example "Gemma 3 27B"
 
     ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-gemma3-27.md'
+    --8<-- 'code/get-started/start-building/real-time/real-time-gemma-3-27b-it.md'
     ```
-    
-??? example "LLama 3.1 8B"
+
+??? example "Magistral Small"
 
     ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama3.1-8.md'
+    --8<-- 'code/get-started/start-building/real-time/real-time-magistral-small-2506.md'
     ```
 
-??? example "LLama 3.3 70B"
+??? example "Meta Llama 3.1 8B"
 
     ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama3.3-70.md'
+    --8<-- 'code/get-started/start-building/real-time/real-time-meta-llama-3-1-8b-instruct-turbo.md'
     ```
 
-??? example "Llama 4 Maverick 17B 128E"
+??? example "Meta Llama 3.3 70B"
 
     ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama4-maverick.md'
+    --8<-- 'code/get-started/start-building/real-time/real-time-meta-llama-3-3-70b-instruct-turbo.md'
     ```
 
-??? example "Llama 4 Scout 17B 16E"
+??? example "Meta Llama 4 Maverick"
 
     ```bash
-    --8<-- 'code/get-started/start-building/real-time/real-time-llama4-scout.md'
+    --8<-- 'code/get-started/start-building/real-time/real-time-llama-4-maverick-17b-128e-instruct-fp8.md'
     ```
-    
-??? example "Mistral Nemo Instruct 2407"
+
+??? example "Meta Llama 4 Scout"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-llama-4-scout-17b-16e-instruct.md'
+    ```
+
+??? example "Mistral NeMo"
 
     ```bash
     --8<-- 'code/get-started/start-building/real-time/real-time-mistral-nemo-instruct-2407.md'
-    ```  
-
-??? example "Qwen 2.5 7B"
-
-    ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-qwen2.5-7.md'
     ```
 
-??? example "Qwen 3 235B"
+??? example "Mistral Small"
 
-    ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-qwen3-235.md'
-    ```   
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-mistral-small-24b-instruct-2501.md'
+    ```
+
+??? example "Qwen2.5-VL 7B"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-qwen2-5-vl-7b-instruct.md'
+    ```
+
+??? example "Qwen3-235B-A22B"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/real-time/real-time-qwen3-235b-a22b-fp8.md'
+    ```
 
 
 ## Real-time inference flow
@@ -182,7 +216,7 @@ The following code shows how to do a chat completions request using the OpenAI l
 === "Python"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-01.py:01:22'
+    --8<-- 'code/get-started/start-building/real-time/real-time-01.py:01:24'
     ```
 
 If successful, the `completion` variable contains a full response, which you'll need to analyze to extract the answer you are looking for. In terms of configuration for real-time inferences, there are several parameters that you need to tweak:
@@ -205,7 +239,7 @@ If the request is successful, the response is contained in the `completion` vari
             "index": 0,
             "logprobs": null,
             "message": {
-                "content": "The \"ultimate\" breakfast sandwich is subjective and can vary based on personal preferences, but here’s a classic, crowd-pleasing version that combines savory, sweet, and hearty elements for a satisfying morning meal:\n\n### **The Ultimate Breakfast Sandwich**\n**Ingredients:**\n- **Bread:** A toasted brioche bun, English muffin, or sourdough slice (your choice for texture and flavor).\n- **Protein:** Crispy bacon, sausage patty, or ham.\n- **Egg:** Fried, scrambled, or a fluffy omelet-style egg.\n- **Cheese:** Sharp cheddar, gooey American, or creamy Swiss.\n- **Sauce:** Spicy mayo, hollandaise, or a drizzle of maple syrup for sweetness.\n- **Extras:** Sliced avocado, caramelized onions, sautéed mushrooms, or fresh arugula for a gourmet touch.\n- **Seasoning:** Salt, pepper, and a pinch of red pepper flakes for heat.\n\n**Assembly:**\n1. Toast your bread or bun to golden perfection.\n2. Cook your protein to your desired crispiness or doneness.\n3. Prepare your egg—fried with a runny yolk is a classic choice.\n4. Layer the cheese on the warm egg or protein so it melts slightly.\n5. Add your extras (avocado, veggies, etc.) for freshness and flavor.\n6. Spread your sauce on the bread or drizzle it over the filling.\n7. Stack everything together, season with salt, pepper, or spices, and enjoy!\n\n**Optional Upgrades:**\n- Add a hash brown patty for extra crunch.\n- Swap regular bacon for thick-cut or maple-glazed bacon.\n- Use a croissant instead of bread for a buttery, flaky twist.\n\nThe ultimate breakfast sandwich is all about balance—crunchy, creamy, savory, and a hint of sweetness. Customize it to your taste and make it your own!",
+                "content": "The \"ultimate\" breakfast sandwich is subjective and can vary based on personal preferences, but here's a classic, crowd-pleasing version that combines savory, sweet, and hearty elements for a satisfying morning meal:\n\n### **The Ultimate Breakfast Sandwich**\n**Ingredients:**\n- **Bread:** A toasted brioche bun, English muffin, or sourdough slice (your choice for texture and flavor).\n- **Protein:** Crispy bacon, sausage patty, or ham.\n- **Egg:** Fried, scrambled, or a fluffy omelet-style egg.\n- **Cheese:** Sharp cheddar, gooey American, or creamy Swiss.\n- **Sauce:** Spicy mayo, hollandaise, or a drizzle of maple syrup for sweetness.\n- **Extras:** Sliced avocado, caramelized onions, sautéed mushrooms, or fresh arugula for a gourmet touch.\n- **Seasoning:** Salt, pepper, and a pinch of red pepper flakes for heat.\n\n**Assembly:**\n1. Toast your bread or bun to golden perfection.\n2. Cook your protein to your desired crispiness or doneness.\n3. Prepare your egg—fried with a runny yolk is a classic choice.\n4. Layer the cheese on the warm egg or protein so it melts slightly.\n5. Add your extras (avocado, veggies, etc.) for freshness and flavor.\n6. Spread your sauce on the bread or drizzle it over the filling.\n7. Stack everything together, season with salt, pepper, or spices, and enjoy!\n\n**Optional Upgrades:**\n- Add a hash brown patty for extra crunch.\n- Swap regular bacon for thick-cut or maple-glazed bacon.\n- Use a croissant instead of bread for a buttery, flaky twist.\n\nThe ultimate breakfast sandwich is all about balance—crunchy, creamy, savory, and a hint of sweetness. Customize it to your taste and make it your own!",
                 "refusal": null,
                 "role": "assistant",
                 "audio": null,
@@ -235,7 +269,7 @@ The following snippet demonstrates how to extract the data, log it to the consol
 === "Python"
 
     ```python
-    --8<-- 'code/get-started/start-building/real-time/real-time-01.py:23:47'
+    --8<-- 'code/get-started/start-building/real-time/real-time-01.py:25:'
     ```
 
 
@@ -251,7 +285,7 @@ For a detailed breakdown of the chat completion object, see the [chat completion
 
 ## Third-party integrations
 
-You can also set up [third-party LLM integrations](/get-started/integrations/){target=\_blank} using the kluster.ai API. For step-by-step instructions, check out the following integration guides:
+You can also set up third-party LLM integrations using the kluster.ai API. For step-by-step instructions, check out the following integration guides:
 
 - [**SillyTavern**](/get-started/integrations/sillytavern){target=\_blank} - multi-LLM chat interface
 - [**LangChain**](/get-started/integrations/langchain/){target=\_blank} - multi-turn conversational agent

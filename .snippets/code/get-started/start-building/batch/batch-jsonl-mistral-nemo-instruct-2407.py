@@ -1,16 +1,21 @@
+# Batch completions with the Mistral NeMo model on kluster.ai
+
+from os import environ
 from openai import OpenAI
 from getpass import getpass
 import json
 import time
 
 # Get API key from user input
-api_key = getpass("Enter your kluster.ai API key: ")
+api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
     base_url="https://api.kluster.ai/v1",
     api_key=api_key,
 )
+
+print(f"📤 Sending batch request to kluster.ai...\n")
 
 # Create request with specified structure
 requests = [
@@ -41,7 +46,7 @@ requests = [
         },
     },
     {
-        "custom_id": "request-4",
+        "custom_id": "request-3",
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
@@ -84,7 +89,7 @@ batch_request = client.batches.create(
 # Poll the batch status until it's complete
 while True:
     batch_status = client.batches.retrieve(batch_request.id)
-    print("Batch status: {}".format(batch_status.status))
+    print(f"Batch status: {batch_status.status}")
     print(
         f"Completed tasks: {batch_status.request_counts.completed} / {batch_status.request_counts.total}"
     )
