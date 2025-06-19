@@ -32,7 +32,7 @@ export API_KEY=INSERT_API_KEY
 
 Please visit the [Models](/get-started/models/){target=\_blank} page to learn more about all the models supported by the kluster.ai batch API.
 
-In addition, you can see the complete list of available models programmatically using the [list supported models](/api-reference/reference/#list-supported-models){target=\_blank} endpoint.
+In addition, you can see the complete list of available models programmatically using the [list supported models](/api-reference/reference/#/http/api-endpoints/models/v1-models-get){target=\_blank} endpoint.
 
 ## Quickstart snippets
 
@@ -273,7 +273,7 @@ The following snippet demonstrates how to extract the data, log it to the consol
     ```
 
 
-For a detailed breakdown of the chat completion object, see the [chat completion API reference](/api-reference/reference#chat-completion-object){target=\_blank} section.
+For a detailed breakdown of the chat completion object, see the [chat completion API reference](/api-reference/reference/#/http/api-endpoints/realtime/v1-chat-completions-post){target=\_blank} section.
 
 ??? code "View the complete script"
 

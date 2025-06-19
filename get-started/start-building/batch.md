@@ -31,7 +31,7 @@ export API_KEY=INSERT_API_KEY
 
 Please visit the [Models](/get-started/models/){target=\_blank} page to learn more about all the models supported by the kluster.ai batch API.
 
-In addition, you can see the complete list of available models programmatically using the [list supported models](/api-reference/reference/#list-supported-models){target=\_blank} endpoint.
+In addition, you can see the complete list of available models programmatically using the [list supported models](/api-reference/reference/#/http/api-endpoints/models/v1-models-get){target=\_blank} endpoint.
 
 ## Batch job workflow overview
 
@@ -235,7 +235,7 @@ Each request must include the following arguments:
 - `body` ++"object"++ - a request body containing:
     - `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](/get-started/models/){target=\_blank}
     - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images)
-    - Any optional [chat completion parameters](/api-reference/reference/#create-chat-completion){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
+    - Any optional [chat completion parameters](/api-reference/reference/#/http/api-endpoints/realtime/v1-chat-completions-post){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
 
 !!! tip
     You can use a different model for each request you submit.
@@ -298,7 +298,7 @@ Use the following command examples to upload your batch job files:
 
 ### Submit a batch job
 
-Next, submit a batch job by calling the `batches` endpoint and providing the `id` of the uploaded batch job file (from the previous section) as the [`input_file_id`, and additional parameters](/api-reference/reference/#submit-a-batch-job){target=\_blank} to specify the job's configuration.
+Next, submit a batch job by calling the `batches` endpoint and providing the `id` of the uploaded batch job file (from the previous section) as the [`input_file_id`, and additional parameters](/api-reference/reference/#/http/models/structures/v1-batches-request){target=\_blank} to specify the job's configuration.
 
 The response includes an `id` that can be used to monitor the job's progress, as demonstrated in the next section.
 
@@ -354,9 +354,9 @@ You can use the following snippets to submit your batch job:
 
 ### Monitor job progress
 
-You can make periodic requests to the `batches` endpoint to monitor your batch job's progress. Use the `id` of the batch request from the preceding section as the [`batch_id`](/api-reference/reference/#retrieve-a-batch){target=\_blank} to check its status. The job is complete when the `status` field returns `"completed"`. You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
+You can make periodic requests to the `batches` endpoint to monitor your batch job's progress. Use the `id` of the batch request from the preceding section as the [`batch_id`](/api-reference/reference/#/http/api-endpoints/batch/v1-batches-by-batch-id-get){target=\_blank} to check its status. The job is complete when the `status` field returns `"completed"`. You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
 
-To see a complete list of the supported statuses, refer to the [Retrieve a batch](/api-reference/reference/#retrieve-a-batch){target=\_blank} API reference page.
+View a complete list of the [supported statuses](/api-reference/reference/#/http/models/enumerations/status){target=\_blank} on the API reference page.
 
 You can use the following snippets to monitor your batch job:
 
