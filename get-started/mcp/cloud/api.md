@@ -1,11 +1,11 @@
 ---
-title: API Usage
+title: API usage
 description: Complete guide to using kluster.ai's Cloud MCP API with JSON-RPC requests. How to check status, enable, disable and test it. 
 ---
 
 # API usage
 
-Manage your Cloud MCP endpoint using API calls. This guide covers checking status, enabling/disabling your endpoint, obtaining MCP tokens, and testing verification tools. Use this as an alternative to the [platform UI](/get-started/mcp/cloud/platform/).
+Manage your Cloud MCP endpoint using API calls. This guide covers checking status, enabling/disabling your endpoint, obtaining MCP tokens, and testing verification tools. Use this as an alternative to the [platform UI](/get-started/mcp/cloud/platform/){target=\_blank}.
 
 ## Prerequisites
 
@@ -67,12 +67,12 @@ curl -X POST https://api.kluster.ai/v1/mcp/disable \
 
 Cloud MCP uses JSON-RPC 2.0 with streaming support:
 
-- **Management endpoints**: Use your main API key with `Authorization: Bearer YOUR_API_KEY`
-- **MCP endpoint**: `https://api.kluster.ai/v1/mcp`
-- **Method**: `POST`
-- **Authentication**: `Authorization: Bearer YOUR_MCP_TOKEN` (uses the MCP token from enable response)
-- **Content-Type**: `application/json`
-- **Accept**: `application/json, text/event-stream` (required for streaming support)
+- **Management endpoints**: Use your main API key with `Authorization: Bearer YOUR_API_KEY`.
+- **MCP endpoint**: `https://api.kluster.ai/v1/mcp`.
+- **Method**: `POST`.
+- **Authentication**: `Authorization: Bearer YOUR_MCP_TOKEN` (uses the MCP token from enable response).
+- **Content-Type**: `application/json`.
+- **Accept**: `application/json, text/event-stream` (required for streaming support).
 
 ## Request structure
 
@@ -94,7 +94,7 @@ All requests use the MCP tools/call format:
 
 ## Test MCP tools
 
-Example using the `verify` tool:
+The following request is an example using the `verify` tool:
 
 ```bash
 curl -X POST https://api.kluster.ai/v1/mcp \
@@ -114,7 +114,7 @@ curl -X POST https://api.kluster.ai/v1/mcp \
   }'
 ```
 
-Response includes verification results nested in JSON-RPC format. See [Tools reference](/get-started/mcp/tools/) for complete tool parameters and response details.
+The response includes verification results nested in JSON-RPC format. See [Tools reference](/get-started/mcp/tools/) for complete tool parameters and response details.
 
 
 ## Next steps

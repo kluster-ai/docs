@@ -3,7 +3,7 @@ title: Get started with MCP
 description: Get kluster.ai verification tools integrated into Claude desktop in five minutes using Cloud MCP. No setup required, just enable and connect.
 ---
 
-# Get started
+# Get started with MCP
 
 Connect [kluster.ai's](https://www.kluster.ai/){target=\_blank} verification tools to your AI assistant through Model Context Protocol (MCP). This guide shows you how to enable [Cloud MCP](/get-started/mcp/cloud/platform/) and integrate it with Claude desktop for real-time claim validation directly within your conversations.
 
