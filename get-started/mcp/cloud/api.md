@@ -55,7 +55,8 @@ Your MCP token is a specialized authentication token used specifically for MCP v
 
 !!! warning "Store the token securely"
     Store the token securely as it provides access to your MCP verification services.
-    ### Disable endpoint (optional)
+        
+### Disable endpoint (optional)
 
 You may want to disable your MCP endpoint. This option prevents any further MCP calls using that token until you enable the endpoint again.
 

@@ -19,7 +19,7 @@ This guide shows how to enable MCP through the platform UI and quickly integrate
 
 To enable the MCP endpoint, go to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank}
 
-1. Navigate to **MCP** and view your your current MCP status.
+1. Navigate to **MCP** and view your current MCP status.
 
 
 2. Click the **Enable Verify MCP** button to activate your endpoint.
@@ -28,9 +28,6 @@ To enable the MCP endpoint, go to the [kluster.ai platform](https://platform.klu
 3. Copy your client configuration.
 
 Your MCP endpoint is now active. Copy your API key and save it securely. The platform provides ready-to-use integration examples for VSCode, Cursor, Claude code, and Claude desktop.
-    
-The platform provides ready-to-use integration examples for VSCode, Cursor, Claude code, and Claude desktop.
-
 ![MCP kluster.ai platform](/images/get-started/mcp/cloud/platform/platform-get-started.webp)
 
 ## Next steps

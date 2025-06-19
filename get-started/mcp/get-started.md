@@ -20,7 +20,7 @@ Before getting started, ensure you have:
 
 To enable the MCP endpoint, go to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank}
 
-1. Navigate to **MCP** and view your your current MCP status.
+1. Navigate to **MCP** and view your current MCP status.
 
 
 2. Click the **Enable Verify MCP** button to activate your endpoint.
