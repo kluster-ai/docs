@@ -56,7 +56,7 @@ Same verification tools running on your infrastructure with full control. Deploy
 
     [:octicons-arrow-right-24: Platform setup](/get-started/mcp/cloud/platform/){target=_self}
 
--   <span class="badge tools">Tools</span> __Self-hosted MCP__
+-   <span class="badge tools">Integration</span> __Self-hosted MCP__
 
     ---
 
