@@ -31,7 +31,7 @@ To enable the MCP endpoint, go to the [kluster.ai platform](https://platform.klu
 !!! success "Endpoint enabled"
     Your MCP endpoint is now active. Copy your API key and save it securely.
     
-The platform provides ready-to-use integrations examples for VSCode, Cursor, Claude code, and cloude dekstop.
+The platform provides ready-to-use integrations examples for VSCode, Cursor, Claude code, and Claude desktop.
 
 ![MCP kluster.ai platform](/images/get-started/mcp/cloud/platform/platform-get-started.webp)
 
@@ -39,8 +39,14 @@ The platform provides ready-to-use integrations examples for VSCode, Cursor, Cla
 
 Edit your Claude desktop configuration file:
 
-- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-- **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
+=== "macOS"
+    ```
+    ~/Library/Application Support/Claude/claude_desktop_config.json
+    ```
+=== "Windows"
+    ```
+    %APPDATA%/Claude/claude_desktop_config.json
+    ```
 
 Add the MCP server configuration:
 
@@ -72,7 +78,7 @@ Your MCP integration provides two verification tools:
 - **`verify`**: Validates claims against reliable online sources.
 - **`verify_document`**: Verifies claims about uploaded document content.
 
-For detailed parameters and response formats, see the [Tools reference](/get-started/mcp/tools/).
+For detailed parameters and response formats, see the [Tools reference](/get-started/mcp/tools/){target=\_blank}.
 
 ### Verify
 
@@ -98,9 +104,9 @@ Claude will use the `verify_document` tool to verify your claim against the actu
 
 ## Alternative setup options
 
-- **Other clients**: Want to use VS Code, Cursor, or Claude Code? Check the [Client integrations](/get-started/mcp/integrations/) guide for configuration examples.
+- **Other clients**: Want to use VS Code, Cursor, or Claude Code? Check the [Client integrations](/get-started/mcp/integrations/){target=\_blank} guide for configuration examples.
 
-- **Self-hosted**: Prefer to run MCP locally? Set up the [self-hosted MCP server](/get-started/mcp/self-hosted/) for local development with full control.
+- **Self-hosted**: Prefer to run MCP locally? Set up the [self-hosted MCP server](/get-started/mcp/self-hosted/){target=\_blank} for local development with full control.
 
 - **API activation**: Enable MCP using API calls with the [MCP API usage guide](/get-started/mcp/cloud/api/).
 
