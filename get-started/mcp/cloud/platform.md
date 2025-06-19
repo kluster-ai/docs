@@ -11,7 +11,7 @@ This guide shows how to enable MCP through the platform UI and quickly integrate
 
 ## Prerequisites
 
-Before getting started with MCP management, ensure the following requirements are met:
+--8<-- 'text/kluster-api-onboarding.md:1:1'
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 
@@ -27,8 +27,7 @@ To enable the MCP endpoint, go to the [kluster.ai platform](https://platform.klu
 
 3. Copy your client configuration.
 
-!!! success "Endpoint enabled"
-    Your MCP endpoint is now active. Copy your API key and save it securely.
+Your MCP endpoint is now active. Copy your API key and save it securely. The platform provides ready-to-use integration examples for VSCode, Cursor, Claude code, and Claude desktop.
     
 The platform provides ready-to-use integration examples for VSCode, Cursor, Claude code, and Claude desktop.
 

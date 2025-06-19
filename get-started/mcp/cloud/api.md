@@ -51,10 +51,13 @@ Response includes your MCP token:
 }
 ```
 
-!!! warning "Save your MCP token"
-    Store the `token` securely - use this MCP token (not your API key) for verification calls.
+Your MCP token is a specialized authentication token used specifically for MCP verification calls, separate from your main API key. Use this token when using all MCP verification tools.
 
-### Disable endpoint (optional)
+!!! warning "Store the token securely"
+    Store the token securely as it provides access to your MCP verification services.
+    ### Disable endpoint (optional)
+
+You may want to disable your MCP endpoint. This option prevents any further MCP calls using that token until you enable the endpoint again.
 
 To revoke access:
 
