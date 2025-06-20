@@ -26,9 +26,9 @@ cd verify-mcp
 
 ## Deployment options
 
-=== "Docker"
+Run one of the following commands to either get started with Docker or Node.js:
 
-    Build and run with Docker:
+=== "Docker"
 
     ```bash
     docker build -t kluster-verify-mcp .
@@ -36,8 +36,6 @@ cd verify-mcp
     ```
 
 === "Node.js"
-
-    Install dependencies and run:
 
     ```bash
     npm install
@@ -60,8 +58,7 @@ Use these connection details:
 
 Your self-hosted deployment provides the same verification tools as Cloud MCP:
 
-- **`verify`**: Validates claims against reliable online sources.
-- **`verify_document`**: Verifies claims about uploaded document content.
+--8<-- 'text/get-started/mcp/overview/overview-1.md'
 
 For detailed parameters and response formats, see the [Tools reference](/get-started/mcp/tools/){target=\_blank}.
 

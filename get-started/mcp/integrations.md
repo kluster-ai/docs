@@ -1,5 +1,5 @@
 ---
-title: Client integrations
+title: MCP client integrations
 description: Connect Claude desktop, VS Code, Cursor, and Claude Code to kluster.ai verification tools with ready-to-use configuration examples.
 ---
 
@@ -23,23 +23,11 @@ Before integrating with any client:
 
     Edit your Claude desktop configuration file:
       
-    - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`.
-    - **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`.
+    - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+    - **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
 
     ```json
-    {
-      "mcpServers": {
-        "kluster-verify-mcp": {
-          "command": "npx",
-          "args": [
-            "mcp-remote",
-            "https://api.kluster.ai/v1/mcp",
-            "--header",
-            "Authorization: Bearer YOUR_MCP_TOKEN"
-          ]
-        }
-      }
-    }
+    --8<-- 'code/get-started/mcp/get-started/get-started-1.json'
     ```
 
     Restart Claude desktop to load the tools.
@@ -48,17 +36,19 @@ Before integrating with any client:
 
     1. Install [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot){target=\_blank} extension.
     2. Open Chat view and click on the tools icon.
-    3. Choose "Add More Tools..." and click on "Add MCP Server".
+    3. Choose **Add More Tools...** and click on **Add MCP Server**.
     4. Enter server details:
-       - **Command**: `npx`
-       - **Args**: `mcp-remote https://api.kluster.ai/v1/mcp --header "Authorization: Bearer YOUR_MCP_TOKEN"`.
+        - **Command**: `npx`
+        - **Args**: `mcp-remote https://api.kluster.ai/v1/mcp --header "Authorization: Bearer YOUR_MCP_TOKEN"`
     5. Restart VS Code.
 
 === "Cursor"
 
-    1. Open Cursor settings and click on MCP.
+    1. Open Cursor settings and click on **MCP**.
     2. Add server configuration:
-       - **Command**: `npx mcp-remote https://api.kluster.ai/v1/mcp --header "Authorization: Bearer YOUR_MCP_TOKEN"`.
+        
+        - **Command**: `npx mcp-remote https://api.kluster.ai/v1/mcp --header "Authorization: Bearer YOUR_MCP_TOKEN"`
+
     3. Enable verification tools.
     4. Restart Cursor.
 
@@ -72,11 +62,9 @@ Before integrating with any client:
       --header "Authorization: Bearer YOUR_MCP_TOKEN"
     ```
 
-
 ## Available tools
 
-- **`verify`**: Validates claims against reliable sources.
-- **`verify_document`**: Verifies claims about uploaded documents.
+--8<-- 'text/get-started/mcp/overview/overview-1.md'
 
 See [Tools reference](/get-started/mcp/tools/){target=\_blank} for parameters and examples.
 

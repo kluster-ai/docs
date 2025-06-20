@@ -1,11 +1,11 @@
 ---
-title: API usage
+title: Cloud MCP API usage
 description: Complete guide to using kluster.ai's Cloud MCP API with JSON-RPC requests. How to check status, enable, disable and test it. 
 ---
 
 # API usage
 
-Manage your Cloud MCP endpoint using API calls. This guide covers checking status, enabling/disabling your endpoint, obtaining MCP tokens, and testing verification tools. Use this as an alternative to the [platform UI](/get-started/mcp/cloud/platform/){target=\_blank}.
+Manage your Cloud MCP endpoint using API calls. This guide covers checking status, enabling and disabling your endpoint, obtaining MCP tokens, and testing verification tools. Use this as an alternative to the [platform UI](/get-started/mcp/cloud/platform/){target=\_blank}.
 
 ## Prerequisites
 
@@ -24,7 +24,8 @@ curl -X GET https://api.kluster.ai/v1/mcp/status \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
-If disabled, response shows:
+If disabled, the response shows:
+
 ```json
 {
     "enabled": false,
@@ -42,19 +43,20 @@ curl -X POST https://api.kluster.ai/v1/mcp/enable \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
-Response includes your MCP token:
+The response includes your MCP token:
+
 ```json
 {
-  "enabled": true,
-  "url": "https://api.kluster.ai/v1/mcp",
-  "token": "MCP_TOKENxxxxxxxxxxxx"
+    "enabled": true,
+    "url": "https://api.kluster.ai/v1/mcp",
+    "token": "MCP_TOKENxxxxxxxxxxxx"
 }
 ```
 
 Your MCP token is a specialized authentication token used specifically for MCP verification calls, separate from your main API key. Use this token when using all MCP verification tools.
 
 !!! warning "Store the token securely"
-    Store the token securely as it provides access to your MCP verification services.
+    Store the token securely, as it provides access to your MCP verification services.
         
 ### Disable endpoint (optional)
 
@@ -84,15 +86,15 @@ All requests use the MCP tools/call format:
 
 ```json
 {
-  "jsonrpc": "2.0",
-  "method": "tools/call",
-  "params": {
-    "name": "tool_name",
-    "arguments": {
-      // Tool-specific parameters
-    }
-  },
-  "id": 1
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "params": {
+        "name": "tool_name",
+        "arguments": {
+            // Tool-specific parameters
+        }
+    },
+    "id": 1
 }
 ```
 
@@ -106,20 +108,19 @@ curl -X POST https://api.kluster.ai/v1/mcp \
   -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
   -d '{
-    "jsonrpc": "2.0",
-    "method": "tools/call",
-    "params": {
-      "name": "verify",
-      "arguments": {
-        "claim": "The Great Wall of China is visible from space"
-      }
-    },
-    "id": 1
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+          "name": "verify",
+          "arguments": {
+              "claim": "The Great Wall of China is visible from space"
+          }
+      },
+      "id": 1
   }'
 ```
 
 The response includes verification results nested in JSON-RPC format. See [Tools reference](/get-started/mcp/tools/) for complete tool parameters and response details.
-
 
 ## Next steps
 

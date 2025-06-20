@@ -1,0 +1,2 @@
+- **`verify`**: Validates claims against reliable sources.
+- **`verify_document`**: Verifies claims about uploaded documents.

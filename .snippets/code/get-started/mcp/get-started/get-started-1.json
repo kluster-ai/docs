@@ -1,0 +1,13 @@
+{
+    "mcpServers": {
+        "kluster-verify-mcp": {
+            "command": "npx",
+            "args": [
+                "mcp-remote",
+                "https://api.kluster.ai/v1/mcp",
+                "--header",
+                "Authorization: Bearer YOUR_MCP_TOKEN"
+            ]
+        }
+    }
+}
