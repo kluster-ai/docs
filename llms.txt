@@ -2908,13 +2908,13 @@ You can also clone and customize existing agents or create entirely new ones. Fo
 Doc-Content: https://docs.kluster.ai/get-started/mcp/cloud/api/
 --- BEGIN CONTENT ---
 ---
-title: API usage
+title: Cloud MCP API usage
 description: Complete guide to using kluster.ai's Cloud MCP API with JSON-RPC requests. How to check status, enable, disable and test it. 
 ---
 
 # API usage
 
-Manage your Cloud MCP endpoint using API calls. This guide covers checking status, enabling/disabling your endpoint, obtaining MCP tokens, and testing verification tools. Use this as an alternative to the [platform UI](/get-started/mcp/cloud/platform/){target=\_blank}.
+Manage your Cloud MCP endpoint using API calls. This guide covers checking status, enabling and disabling your endpoint, obtaining MCP tokens, and testing verification tools. Use this as an alternative to the [platform UI](/get-started/mcp/cloud/platform/){target=\_blank}.
 
 ## Prerequisites
 
@@ -2934,7 +2934,8 @@ curl -X GET https://api.kluster.ai/v1/mcp/status \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
-If disabled, response shows:
+If disabled, the response shows:
+
 ```json
 {
     "enabled": false,
@@ -2952,19 +2953,20 @@ curl -X POST https://api.kluster.ai/v1/mcp/enable \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
-Response includes your MCP token:
+The response includes your MCP token:
+
 ```json
 {
-  "enabled": true,
-  "url": "https://api.kluster.ai/v1/mcp",
-  "token": "MCP_TOKENxxxxxxxxxxxx"
+    "enabled": true,
+    "url": "https://api.kluster.ai/v1/mcp",
+    "token": "MCP_TOKENxxxxxxxxxxxx"
 }
 ```
 
 Your MCP token is a specialized authentication token used specifically for MCP verification calls, separate from your main API key. Use this token when using all MCP verification tools.
 
 !!! warning "Store the token securely"
-    Store the token securely as it provides access to your MCP verification services.
+    Store the token securely, as it provides access to your MCP verification services.
         
 ### Disable endpoint (optional)
 
@@ -2994,15 +2996,15 @@ All requests use the MCP tools/call format:
 
 ```json
 {
-  "jsonrpc": "2.0",
-  "method": "tools/call",
-  "params": {
-    "name": "tool_name",
-    "arguments": {
-      // Tool-specific parameters
-    }
-  },
-  "id": 1
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "params": {
+        "name": "tool_name",
+        "arguments": {
+            // Tool-specific parameters
+        }
+    },
+    "id": 1
 }
 ```
 
@@ -3016,20 +3018,19 @@ curl -X POST https://api.kluster.ai/v1/mcp \
   -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
   -d '{
-    "jsonrpc": "2.0",
-    "method": "tools/call",
-    "params": {
-      "name": "verify",
-      "arguments": {
-        "claim": "The Great Wall of China is visible from space"
-      }
-    },
-    "id": 1
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+          "name": "verify",
+          "arguments": {
+              "claim": "The Great Wall of China is visible from space"
+          }
+      },
+      "id": 1
   }'
 ```
 
 The response includes verification results nested in JSON-RPC format. See [Tools reference](/get-started/mcp/tools/) for complete tool parameters and response details.
-
 
 ## Next steps
 
@@ -3040,7 +3041,7 @@ The response includes verification results nested in JSON-RPC format. See [Tools
 Doc-Content: https://docs.kluster.ai/get-started/mcp/cloud/platform/
 --- BEGIN CONTENT ---
 ---
-title: Platform management
+title: Cloud MCP platform management
 description: Enable and manage kluster.ai's Cloud MCP endpoints through the platform UI with one-click setup and visual client examples.
 ---
 
@@ -3052,7 +3053,8 @@ This guide shows how to enable MCP through the platform UI and quickly integrate
 
 ## Prerequisites
 
-
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 
@@ -3061,15 +3063,12 @@ This guide shows how to enable MCP through the platform UI and quickly integrate
 To enable the MCP endpoint, go to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank}
 
 1. Navigate to **MCP** and view your current MCP status.
-
-
 2. Click the **Enable Verify MCP** button to activate your endpoint.
-
-
 3. Copy your client configuration.
 
 Your MCP endpoint is now active. Copy your API key and save it securely. The platform provides ready-to-use integration examples for VSCode, Cursor, Claude code, and Claude desktop.
-![MCP kluster.ai platform](/images/get-started/mcp/cloud/platform/platform-get-started.webp)
+
+![MCP kluster.ai platform](/images/get-started/mcp/cloud/platform/platform-1.webp)
 
 ## Next steps
 
@@ -3101,33 +3100,32 @@ Before getting started, ensure you have:
 
 ## Enable MCP 
 
-To enable the MCP endpoint, go to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank}
+To enable the MCP endpoint, go to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank} and take the following steps:
 
 1. Navigate to **MCP** and view your current MCP status.
-
-
 2. Click the **Enable Verify MCP** button to activate your endpoint.
-
-
 3. Copy your client configuration.
 
 !!! success "Endpoint enabled"
     Your MCP endpoint is now active. Copy your API key and save it securely.
     
-The platform provides ready-to-use integrations examples for VSCode, Cursor, Claude code, and Claude desktop.
+The platform provides ready-to-use integration examples for VSCode, Cursor, Claude code, and Claude desktop.
 
-![MCP kluster.ai platform](/images/get-started/mcp/cloud/platform/platform-get-started.webp)
+![MCP kluster.ai platform](/images/get-started/mcp/cloud/platform/platform-1.webp)
 
 ## Configure Claude desktop
 
 Edit your Claude desktop configuration file:
 
 === "macOS"
-    ```
+
+    ```text
     ~/Library/Application Support/Claude/claude_desktop_config.json
     ```
+
 === "Windows"
-    ```
+
+    ```text
     %APPDATA%/Claude/claude_desktop_config.json
     ```
 
@@ -3135,21 +3133,22 @@ Add the MCP server configuration:
 
 ```json
 {
-  "mcpServers": {
-    "kluster-verify-mcp": {
-      "command": "npx",
-      "args": [
-        "mcp-remote",
-        "https://api.kluster.ai/v1/mcp",
-        "--header",
-        "Authorization: Bearer YOUR_MCP_TOKEN"
-      ]
+    "mcpServers": {
+        "kluster-verify-mcp": {
+            "command": "npx",
+            "args": [
+                "mcp-remote",
+                "https://api.kluster.ai/v1/mcp",
+                "--header",
+                "Authorization: Bearer YOUR_MCP_TOKEN"
+            ]
+        }
     }
-  }
 }
 ```
 
 Replace `YOUR_MCP_TOKEN` with your actual token or copy the snippet from the platform.
+
 Restart Claude desktop. Once Claude desktop restarts, you'll see the verification tools available under `kluster-verify-mcp`.
 
 ![List tools on Claude desktop](/images/get-started/mcp/get-started/get-started-1.webp)
@@ -3158,8 +3157,8 @@ Restart Claude desktop. Once Claude desktop restarts, you'll see the verificatio
 
 Your MCP integration provides two verification tools:
 
-- **`verify`**: Validates claims against reliable online sources.
-- **`verify_document`**: Verifies claims about uploaded document content.
+- **`verify`**: Validates claims against reliable sources.
+- **`verify_document`**: Verifies claims about uploaded documents.
 
 For detailed parameters and response formats, see the [Tools reference](/get-started/mcp/tools/){target=\_blank}.
 
@@ -3169,7 +3168,7 @@ Ask Claude to verify something obviously wrong:
 
 > "Use the verify tool and tell me if The Eiffel Tower is located in Rome"
 
-Claude will automatically use the `verify` tool and provide:
+Claude will automatically use the `verify` tool and provide the following:
 
 - **Verification result**: Whether the claim is accurate.
 - **Detailed explanation**: Why it's wrong with supporting reasoning.
@@ -3191,19 +3190,19 @@ Claude will use the `verify_document` tool to verify your claim against the actu
 
 - **Self-hosted**: Prefer to run MCP locally? Set up the [self-hosted MCP server](/get-started/mcp/self-hosted/){target=\_blank} for local development with full control.
 
-- **API activation**: Enable MCP using API calls with the [MCP API usage guide](/get-started/mcp/cloud/api/).
+- **API activation**: Enable MCP using API calls with the [MCP API usage guide](/get-started/mcp/cloud/api/){target=\_blank}.
 
 ## Next steps
 
-- **Learn the tools**: See [Tools Reference](/get-started/mcp/tools/) for detailed parameters and examples
-- **Explore integrations**: Check [Client integrations](/get-started/mcp/integrations/) for other platforms
-- **Try the tutorial**: Follow the [reliability check notebook](/tutorials/klusterai-api/reliability-check/){target=\_blank} with code examples
+- **Learn the tools**: See [Tools reference](/get-started/mcp/tools/) for detailed parameters and examples.
+- **Explore integrations**: Check [Client integrations](/get-started/mcp/integrations/) for other platforms.
+- **Try the tutorial**: Follow the [Reliability check notebook](/tutorials/klusterai-api/reliability-check/) with code examples.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/get-started/mcp/integrations/
 --- BEGIN CONTENT ---
 ---
-title: Client integrations
+title: MCP client integrations
 description: Connect Claude desktop, VS Code, Cursor, and Claude Code to kluster.ai verification tools with ready-to-use configuration examples.
 ---
 
@@ -3227,23 +3226,23 @@ Before integrating with any client:
 
     Edit your Claude desktop configuration file:
       
-    - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`.
-    - **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`.
+    - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+    - **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
 
     ```json
     {
-      "mcpServers": {
+    "mcpServers": {
         "kluster-verify-mcp": {
-          "command": "npx",
-          "args": [
-            "mcp-remote",
-            "https://api.kluster.ai/v1/mcp",
-            "--header",
-            "Authorization: Bearer YOUR_MCP_TOKEN"
-          ]
+            "command": "npx",
+            "args": [
+                "mcp-remote",
+                "https://api.kluster.ai/v1/mcp",
+                "--header",
+                "Authorization: Bearer YOUR_MCP_TOKEN"
+            ]
         }
-      }
     }
+}
     ```
 
     Restart Claude desktop to load the tools.
@@ -3252,17 +3251,19 @@ Before integrating with any client:
 
     1. Install [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot){target=\_blank} extension.
     2. Open Chat view and click on the tools icon.
-    3. Choose "Add More Tools..." and click on "Add MCP Server".
+    3. Choose **Add More Tools...** and click on **Add MCP Server**.
     4. Enter server details:
-       - **Command**: `npx`
-       - **Args**: `mcp-remote https://api.kluster.ai/v1/mcp --header "Authorization: Bearer YOUR_MCP_TOKEN"`.
+        - **Command**: `npx`
+        - **Args**: `mcp-remote https://api.kluster.ai/v1/mcp --header "Authorization: Bearer YOUR_MCP_TOKEN"`
     5. Restart VS Code.
 
 === "Cursor"
 
-    1. Open Cursor settings and click on MCP.
+    1. Open Cursor settings and click on **MCP**.
     2. Add server configuration:
-       - **Command**: `npx mcp-remote https://api.kluster.ai/v1/mcp --header "Authorization: Bearer YOUR_MCP_TOKEN"`.
+        
+        - **Command**: `npx mcp-remote https://api.kluster.ai/v1/mcp --header "Authorization: Bearer YOUR_MCP_TOKEN"`
+
     3. Enable verification tools.
     4. Restart Cursor.
 
@@ -3275,7 +3276,6 @@ Before integrating with any client:
       npx mcp-remote https://api.kluster.ai/v1/mcp \
       --header "Authorization: Bearer YOUR_MCP_TOKEN"
     ```
-
 
 ## Available tools
 
@@ -3293,15 +3293,15 @@ See [Tools reference](/get-started/mcp/tools/){target=\_blank} for parameters an
 Doc-Content: https://docs.kluster.ai/get-started/mcp/overview/
 --- BEGIN CONTENT ---
 ---
-title: MCP integration
+title: MCP integration overview
 description: Connect AI apps to kluster.ai services using MCP for seamless development workflow integration with verification tools and automated reliability checking.
 ---
 
 # MCP integration
 
-[Model Context Protocol](https://modelcontextprotocol.io/introduction){target=\_blank} or MCP, is an open standard for connecting AI assistants to specialized tools. Think of it as "USB-C for AI" - one protocol that works everywhere, enabling seamless integration between AI applications and external capabilities.
+[Model Context Protocol](https://modelcontextprotocol.io/introduction){target=\_blank} (MCP), is an open standard for connecting AI assistants to specialized tools. Think of it as "USB-C for AI" - one protocol that works everywhere, enabling seamless integration between AI applications and external capabilities.
 
-[kluster.ai](https://www.kluster.ai/){target=\_blank} provides MCP servers that bring AI services directly into your development workflow. Choose between managed cloud endpoint or self-hosted deployment for seamless integration across platforms.
+[kluster.ai](https://www.kluster.ai/){target=\_blank} provides MCP servers that bring AI services directly into your development workflow. Choose between a managed cloud endpoint or self-hosted deployment for seamless integration across platforms.
 
 ## What is MCP?
 
@@ -3321,8 +3321,8 @@ The kluster.ai MCP offers the [Verify service](/get-started/verify/reliability/o
 
 Managed cloud implementation - no infrastructure to maintain:
 
-**`verify`**: Validates claims against reliable sources.  
-**`verify_document`**: Verifies claims about uploaded documents.
+- **`verify`**: Validates claims against reliable sources.
+- **`verify_document`**: Verifies claims about uploaded documents.
 
 Enable your endpoint through the kluster.ai platform, get your MCP token, and start verifying. Works with any MCP client using standard connection patterns.
 
@@ -3330,7 +3330,7 @@ Enable your endpoint through the kluster.ai platform, get your MCP token, and st
 
 Same verification tools running on your infrastructure with full control. Deploy locally with Docker or Node.js.
 
-## How to integrate MCP
+## Integrate MCP
 
 <div class="grid cards" markdown>
 
@@ -3342,7 +3342,7 @@ Same verification tools running on your infrastructure with full control. Deploy
 
     [:octicons-arrow-right-24: Five-minute setup](/get-started/mcp/get-started/){target=_self}
 
--   <span class="badge integration">Integration</span> __Cloud MCP__
+-   <span class="badge guide">Guide</span> __Cloud MCP__
 
     ---
 
@@ -3350,7 +3350,7 @@ Same verification tools running on your infrastructure with full control. Deploy
 
     [:octicons-arrow-right-24: Platform setup](/get-started/mcp/cloud/platform/){target=_self}
 
--   <span class="badge tools">Integration</span> __Self-hosted MCP__
+-   <span class="badge guide">Guide</span> __Self-hosted MCP__
 
     ---
 
@@ -3398,9 +3398,9 @@ cd verify-mcp
 
 ## Deployment options
 
-=== "Docker"
+Run one of the following commands to either get started with Docker or Node.js:
 
-    Build and run with Docker:
+=== "Docker"
 
     ```bash
     docker build -t kluster-verify-mcp .
@@ -3408,8 +3408,6 @@ cd verify-mcp
     ```
 
 === "Node.js"
-
-    Install dependencies and run:
 
     ```bash
     npm install
@@ -3432,8 +3430,8 @@ Use these connection details:
 
 Your self-hosted deployment provides the same verification tools as Cloud MCP:
 
-- **`verify`**: Validates claims against reliable online sources.
-- **`verify_document`**: Verifies claims about uploaded document content.
+- **`verify`**: Validates claims against reliable sources.
+- **`verify_document`**: Verifies claims about uploaded documents.
 
 For detailed parameters and response formats, see the [Tools reference](/get-started/mcp/tools/){target=\_blank}.
 
@@ -3447,7 +3445,7 @@ For detailed parameters and response formats, see the [Tools reference](/get-sta
 Doc-Content: https://docs.kluster.ai/get-started/mcp/tools/
 --- BEGIN CONTENT ---
 ---
-title: Tools reference
+title: MCP tools reference
 description: Reference guide for kluster.ai's MCP verification tools - verify claims and documents with detailed parameters and response formats.
 ---
 
@@ -3471,33 +3469,47 @@ The following tools are available through the kluster.ai MCP server:
 
 The verify tool allows you to check any statement against reliable online sources.
 
-**Parameters:**
+???+ interface "Parameters"
 
-| Parameter | Type | Required | Description |
-|:---|:---|:---|:---|
-| `claim` | string | Yes | The statement to verify |
-| `returnSearchResults` | boolean | No | Include source citations (default: true) |
+    `claim` ++"string"++ <span class="required" markdown>++"required"++</span>
 
+    The statement to verify.
+
+    ---
+
+    `returnSearchResults` ++"boolean"++
+
+    Include source citations. Defaults to `true`.
 
 ### Verify document
 
 The verify document tool checks that claims accurately reflect the content of the uploaded document.
 
-**Parameters:**
+???+ interface "Parameters"
 
-| Parameter | Type | Required | Description |
-|:---|:---|:---|:---|
-| `claim` | string | Yes | Your interpretation of the document |
-| `documentContent` | string | Yes | Full document text (auto-provided by MCP client) |
-| `returnSearchResults` | boolean | No | Include external sources (default: true) |
 
+    `claim` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+    The statement to verify.
+
+    ---
+
+    `documentContent` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+    Full document text (auto-provided by MCP client).
+
+    ---
+
+    `returnSearchResults` ++"boolean"++
+
+    Include source citations. Defaults to `true`.
 
 ## Response fields
 
 All verification tools return the same response structure:
 
 - **`claim`**: The verified claim.
-- **`is_accurate`**: Boolean indicating if claim is accurate.
+- **`is_accurate`**: Boolean indicating if the claim is accurate.
 - **`explanation`**: Detailed reasoning for the verdict.
 - **`confidence`**: Token usage statistics.
 - **`search_results`**: Source citations (if requested).
@@ -3506,22 +3518,22 @@ An example can be seen below:
 
 ```json
 {
-  "claim": "This employment contract allows unlimited remote work",
-  "is_accurate": false,
-  "explanation": "The claim is incorrect. Section 4.2 explicitly requires on-site work minimum 3 days per week and residence within 50 miles of headquarters.",
-  "confidence": {
-    "completion_tokens": 156,
-    "prompt_tokens": 890,
-    "total_tokens": 1046
-  },
-  "search_results": []
+    "claim": "This employment contract allows unlimited remote work",
+    "is_accurate": false,
+    "explanation": "The claim is incorrect. Section 4.2 explicitly requires on-site work minimum 3 days per week and residence within 50 miles of headquarters.",
+    "confidence": {
+        "completion_tokens": 156,
+        "prompt_tokens": 890,
+        "total_tokens": 1046
+    },
+    "search_results": []
 }
 ```
 
 ## Next steps
 
 - **Set up integrations**: Configure [client applications](/get-started/mcp/integrations/) to use these tools.
-- **Deploy locally**: Set up [self-hosted MCP server](/get-started/mcp/self-hosted/) for local development.
+- **Deploy locally**: Set up a [self-hosted MCP server](/get-started/mcp/self-hosted/) for local development.
 - **Use cloud version**: Enable [Cloud MCP](/get-started/mcp/cloud/platform/) for managed deployment.
 --- END CONTENT ---
 
