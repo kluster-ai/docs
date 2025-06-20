@@ -34,7 +34,7 @@ Then, take the following steps to configure TypingMind to use the kluster.ai API
     https://api.kluster.ai/v1/chat/completions
     ```
 
-4. Paste the name of the [supported kluster.ai model](/api-reference/reference/#list-supported-models){target=\_blank} you'd like to use. Note that you can specify multiple models
+4. Paste the name of the [supported kluster.ai model](/get-started/models/){target=\_blank} you'd like to use. Note that you can specify multiple models
 5. Press **Add Custom Headers** and for the **Key** value, specify `Authorization`. In the value field on the right, enter `Bearer` followed by your kluster.ai API key as follows: 
 
     ```text

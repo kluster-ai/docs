@@ -239,4 +239,4 @@ This example checks whether an answer is correct based on the provided context.
 ## Next steps
 
 - Learn how to use [Chat completion reliability verification](/get-started/verify/reliability/chat-completion/){target=\_blank} for evaluating entire conversation histories
-- Review the complete [API documentation](/api-reference/reference/){target=\_blank} for detailed endpoint specifications
+- Review the complete [API documentation](/api-reference/reference/#/http/api-endpoints/realtime/v1-verify-reliability-post){target=\_blank} for detailed endpoint specifications
