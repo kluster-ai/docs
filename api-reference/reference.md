@@ -2842,8 +2842,8 @@ Array of integrations associated with the fine-tuning job.
 The Verify endpoint evaluates whether an LLM answer is reliable or hallucinatory.
 It can operate in two modes:
 
-1. **General-knowledge verification** – if you omit `context`, the service cross-checks the answer against publicly available sources
-2. **Context validation mode** – if you supply `context`, the answer is judged only against that reference text (perfect for RAG pipelines)
+1. **General-knowledge verification** – if you omit `context`, the service cross-checks the answer against publicly available sources.
+2. **Context validation mode** – if you supply `context`, the answer is judged only against that reference text (perfect for RAG pipelines).
 
 <div class="grid" markdown>
 <div markdown>
