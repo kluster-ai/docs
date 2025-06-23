@@ -1,6 +1,6 @@
 ---
 title: Cloud MCP API usage
-description: Complete guide to using kluster.ai's Cloud MCP API with JSON-RPC requests. How to check status, enable, disable and test it. 
+description: Complete guide to using kluster.ai's Cloud MCP API with JSON-RPC requests. How to check it's status, enable, disable and test it. 
 ---
 
 # API usage
