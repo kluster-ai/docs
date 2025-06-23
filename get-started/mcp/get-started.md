@@ -85,7 +85,7 @@ Claude will automatically use the `verify` tool and provide the following:
 
 Perfect for detecting hallucinations or false claims about documents. Upload any document to Claude, then ask:
 
-> "This document says X. Use the verify_document tool and check if that's accurate"
+> "This document says X. Use the verify_document tool and check if that's accurate."
 
 Claude will use the `verify_document` tool to verify your claim against the actual document content.
 
