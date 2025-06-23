@@ -51,7 +51,7 @@ Same verification tools running on your infrastructure with full control. Deploy
 
     ---
 
-    Enable managed MCP endpoints with MCP token authentication. No infrastructure to maintain, just enable and integrate.
+    Enable managed MCP endpoints with MCP token authentication. There is no infrastructure to maintain, just enable and integrate.
 
     [:octicons-arrow-right-24: Platform setup](/get-started/mcp/cloud/platform/){target=_self}
 
