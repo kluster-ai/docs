@@ -35,7 +35,7 @@ Before integrating with any client:
 === "VS Code"
 
     1. Install [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot){target=\_blank} extension.
-    2. Open Chat view and click on the tools icon.
+    2. Open the Chat view and click on the tools icon.
 
         ![](/images/get-started/mcp/integrations/integrations-1.webp){ style="width:50%;" }
 
