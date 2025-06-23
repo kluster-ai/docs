@@ -71,7 +71,7 @@ For detailed parameters and response formats, see the [Tools reference](/get-sta
 
 Ask Claude to verify something obviously wrong:
 
-> "Use the verify tool and tell me if The Eiffel Tower is located in Rome"
+> "Use the verify tool and tell me if The Eiffel Tower is located in Rome."
 
 Claude will automatically use the `verify` tool and provide the following:
 
