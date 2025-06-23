@@ -36,18 +36,28 @@ Before integrating with any client:
 
     1. Install [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot){target=\_blank} extension.
     2. Open Chat view and click on the tools icon.
-    3. Choose **Add More Tools...** and click on **Add MCP Server**.
-    4. Enter server details:
-        - **Command**: `npx`
-        - **Args**: `mcp-remote https://api.kluster.ai/v1/mcp --header "Authorization: Bearer YOUR_MCP_TOKEN"`
+
+        ![](/images/get-started/mcp/integrations/integrations-1.webp){ style="width:50%;" }
+
+    3. Choose **Add More Tools...** and click on **Add MCP Server...**.
+    4. Select **Command (stdio)** and enter the following command, replacing `YOUR_MCP_TOKEN` with your actual MCP token:
+
+        ```bash
+        npx mcp-remote https://api.kluster.ai/v1/mcp \
+        --header "Authorization: Bearer YOUR_MCP_TOKEN"
+        ```
+
     5. Restart VS Code.
 
 === "Cursor"
 
     1. Open Cursor settings and click on **MCP**.
-    2. Add server configuration:
+    2. Add server configuration using the following command:
         
-        - **Command**: `npx mcp-remote https://api.kluster.ai/v1/mcp --header "Authorization: Bearer YOUR_MCP_TOKEN"`
+        ```bash
+        npx mcp-remote https://api.kluster.ai/v1/mcp \
+        --header "Authorization: Bearer YOUR_MCP_TOKEN"
+        ```
 
     3. Enable verification tools.
     4. Restart Cursor.
