@@ -2909,7 +2909,7 @@ Doc-Content: https://docs.kluster.ai/get-started/mcp/cloud/api/
 --- BEGIN CONTENT ---
 ---
 title: Cloud MCP API usage
-description: Complete guide to using kluster.ai's Cloud MCP API with JSON-RPC requests. How to check status, enable, disable and test it. 
+description: Complete guide to using kluster.ai's Cloud MCP API with JSON-RPC requests. How to check it's status, enable, disable and test it. 
 ---
 
 # API usage
@@ -2965,7 +2965,7 @@ The response includes your MCP token:
 
 Your MCP token is a specialized authentication token used specifically for MCP verification calls, separate from your main API key. Use this token when using all MCP verification tools.
 
-!!! warning "Store the token securely"
+!!! warning "Store your token securely"
     Store the token securely, as it provides access to your MCP verification services.
         
 ### Disable endpoint (optional)
@@ -3166,7 +3166,7 @@ For detailed parameters and response formats, see the [Tools reference](/get-sta
 
 Ask Claude to verify something obviously wrong:
 
-> "Use the verify tool and tell me if The Eiffel Tower is located in Rome"
+> "Use the verify tool and tell me if The Eiffel Tower is located in Rome."
 
 Claude will automatically use the `verify` tool and provide the following:
 
@@ -3180,7 +3180,7 @@ Claude will automatically use the `verify` tool and provide the following:
 
 Perfect for detecting hallucinations or false claims about documents. Upload any document to Claude, then ask:
 
-> "This document says X. Use the verify_document tool and check if that's accurate"
+> "This document says X. Use the verify_document tool and check if that's accurate."
 
 Claude will use the `verify_document` tool to verify your claim against the actual document content.
 
@@ -3250,7 +3250,7 @@ Before integrating with any client:
 === "VS Code"
 
     1. Install [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot){target=\_blank} extension.
-    2. Open Chat view and click on the tools icon.
+    2. Open the Chat view and click on the tools icon.
 
         ![](/images/get-started/mcp/integrations/integrations-1.webp){ style="width:50%;" }
 
@@ -3309,7 +3309,7 @@ description: Connect AI apps to kluster.ai services using MCP for seamless devel
 
 # MCP integration
 
-[Model Context Protocol](https://modelcontextprotocol.io/introduction){target=\_blank} (MCP), is an open standard for connecting AI assistants to specialized tools. Think of it as "USB-C for AI" - one protocol that works everywhere, enabling seamless integration between AI applications and external capabilities.
+[Model Context Protocol](https://modelcontextprotocol.io/introduction){target=\_blank} (MCP) is an open standard for connecting AI assistants to specialized tools. Think of it as "USB-C for AI" - one protocol that works everywhere, enabling seamless integration between AI applications and external capabilities.
 
 [kluster.ai](https://www.kluster.ai/){target=\_blank} provides MCP servers that bring AI services directly into your development workflow. Choose between a managed cloud endpoint or self-hosted deployment for seamless integration across platforms.
 
@@ -3356,7 +3356,7 @@ Same verification tools running on your infrastructure with full control. Deploy
 
     ---
 
-    Enable managed MCP endpoints with MCP token authentication. No infrastructure to maintain, just enable and integrate.
+    Enable managed MCP endpoints with MCP token authentication. There is no infrastructure to maintain, just enable and integrate.
 
     [:octicons-arrow-right-24: Platform setup](/get-started/mcp/cloud/platform/){target=_self}
 
@@ -3528,7 +3528,7 @@ An example can be seen below:
 
 ```json
 {
-    "claim": "This employment contract allows unlimited remote work",
+    "claim": "This employment contract allows unlimited remote work.",
     "is_accurate": false,
     "explanation": "The claim is incorrect. Section 4.2 explicitly requires on-site work minimum 3 days per week and residence within 50 miles of headquarters.",
     "confidence": {
