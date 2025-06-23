@@ -5,7 +5,7 @@ description: Connect AI apps to kluster.ai services using MCP for seamless devel
 
 # MCP integration
 
-[Model Context Protocol](https://modelcontextprotocol.io/introduction){target=\_blank} (MCP), is an open standard for connecting AI assistants to specialized tools. Think of it as "USB-C for AI" - one protocol that works everywhere, enabling seamless integration between AI applications and external capabilities.
+[Model Context Protocol](https://modelcontextprotocol.io/introduction){target=\_blank} (MCP) is an open standard for connecting AI assistants to specialized tools. Think of it as "USB-C for AI" - one protocol that works everywhere, enabling seamless integration between AI applications and external capabilities.
 
 [kluster.ai](https://www.kluster.ai/){target=\_blank} provides MCP servers that bring AI services directly into your development workflow. Choose between a managed cloud endpoint or self-hosted deployment for seamless integration across platforms.
 
