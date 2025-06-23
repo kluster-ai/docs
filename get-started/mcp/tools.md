@@ -72,7 +72,7 @@ An example can be seen below:
 
 ```json
 {
-    "claim": "This employment contract allows unlimited remote work",
+    "claim": "This employment contract allows unlimited remote work.",
     "is_accurate": false,
     "explanation": "The claim is incorrect. Section 4.2 explicitly requires on-site work minimum 3 days per week and residence within 50 miles of headquarters.",
     "confidence": {
