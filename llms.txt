@@ -3029,13 +3029,14 @@ curl -X POST https://api.kluster.ai/v1/mcp \
       "id": 1
   }'
 ```
-
-The response includes verification results nested in JSON-RPC format. See [Tools reference](/get-started/mcp/tools/) for complete tool parameters and response details.
+<!-- Commenting this for safekeeping -->
+The response includes verification results nested in JSON-RPC format. <!--See [Tools reference](/get-started/mcp/tools/) for complete tool parameters and response details.-->
 
 ## Next steps
 
 - [Client integrations](/get-started/mcp/integrations/) to configure your AI clients.
-- [Tools reference](/get-started/mcp/tools/) for complete tool documentation.
+<!-- Commenting this for safekeeping -->
+<!-- - [Tools reference](/get-started/mcp/tools/) for complete tool documentation.-->
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/get-started/mcp/cloud/platform/
@@ -3159,8 +3160,8 @@ Your MCP integration provides two verification tools:
 
 - **`verify`**: Validates claims against reliable sources.
 - **`verify_document`**: Verifies claims about uploaded documents.
-
-For detailed parameters and response formats, see the [Tools reference](/get-started/mcp/tools/){target=\_blank}.
+<!-- Commenting this for safekeeping -->
+<!--For detailed parameters and response formats, see the [Tools reference](/get-started/mcp/tools/){target=\_blank}.-->
 
 ### Verify
 
@@ -3193,8 +3194,8 @@ Claude will use the `verify_document` tool to verify your claim against the actu
 - **API activation**: Enable MCP using API calls with the [MCP API usage guide](/get-started/mcp/cloud/api/){target=\_blank}.
 
 ## Next steps
-
-- **Learn the tools**: See [Tools reference](/get-started/mcp/tools/) for detailed parameters and examples.
+<!-- Commenting this for safekeeping -->
+<!--- **Learn the tools**: See [Tools reference](/get-started/mcp/tools/) for detailed parameters and examples.-->
 - **Explore integrations**: Check [Client integrations](/get-started/mcp/integrations/) for other platforms.
 - **Try the tutorial**: Follow the [Reliability check notebook](/tutorials/klusterai-api/reliability-check/) with code examples.
 --- END CONTENT ---
@@ -3291,8 +3292,8 @@ Before integrating with any client:
 
 - **`verify`**: Validates claims against reliable sources.
 - **`verify_document`**: Verifies claims about uploaded documents.
-
-See [Tools reference](/get-started/mcp/tools/){target=\_blank} for parameters and examples.
+<!-- Commenting this for safekeeping -->
+<!--See [Tools reference](/get-started/mcp/tools/){target=\_blank} for parameters and examples.-->
 
 ## Next steps
 
@@ -3442,13 +3443,14 @@ Your self-hosted deployment provides the same verification tools as Cloud MCP:
 
 - **`verify`**: Validates claims against reliable sources.
 - **`verify_document`**: Verifies claims about uploaded documents.
-
-For detailed parameters and response formats, see the [Tools reference](/get-started/mcp/tools/){target=\_blank}.
+<!-- Commenting this for safekeeping -->
+<!--For detailed parameters and response formats, see the [Tools reference](/get-started/mcp/tools/){target=\_blank}.-->
 
 ## Next steps
 
 - **Configure clients**: Follow the [Client integrations](/get-started/mcp/integrations/) guide for VS Code, Claude Desktop, and other platforms.
-- **Learn the tools**: See [Tools reference](/get-started/mcp/tools/) for detailed examples.
+<!-- Commenting this for safekeeping -->
+<!--- **Learn the tools**: See [Tools reference](/get-started/mcp/tools/) for detailed examples.-->
 - **Try Cloud MCP**: Consider [Cloud MCP](/get-started/mcp/cloud/platform/) for managed cloud deployment.
 --- END CONTENT ---
 
