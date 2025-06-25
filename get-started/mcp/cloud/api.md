@@ -119,10 +119,11 @@ curl -X POST https://api.kluster.ai/v1/mcp \
       "id": 1
   }'
 ```
-
-The response includes verification results nested in JSON-RPC format. See [Tools reference](/get-started/mcp/tools/) for complete tool parameters and response details.
+<!-- Commenting this for safekeeping -->
+The response includes verification results nested in JSON-RPC format. <!--See [Tools reference](/get-started/mcp/tools/) for complete tool parameters and response details.-->
 
 ## Next steps
 
 - [Client integrations](/get-started/mcp/integrations/) to configure your AI clients.
-- [Tools reference](/get-started/mcp/tools/) for complete tool documentation.
+<!-- Commenting this for safekeeping -->
+<!-- - [Tools reference](/get-started/mcp/tools/) for complete tool documentation.-->

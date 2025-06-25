@@ -2,7 +2,6 @@ title: MCP
 nav:
   - 'Overview': overview.md
   - 'Get started': get-started.md
-  - 'Tools reference': tools.md
   - 'Client integrations': integrations.md
   - cloud
   - 'Self-hosted MCP': self-hosted.md

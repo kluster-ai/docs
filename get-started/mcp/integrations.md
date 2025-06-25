@@ -75,8 +75,8 @@ Before integrating with any client:
 ## Available tools
 
 --8<-- 'text/get-started/mcp/overview/overview-1.md'
-
-See [Tools reference](/get-started/mcp/tools/){target=\_blank} for parameters and examples.
+<!-- Commenting this for safekeeping -->
+<!--See [Tools reference](/get-started/mcp/tools/){target=\_blank} for parameters and examples.-->
 
 ## Next steps
 

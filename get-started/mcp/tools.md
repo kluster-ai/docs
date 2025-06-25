@@ -1,6 +1,8 @@
 ---
 title: MCP tools reference
 description: Reference guide for kluster.ai's MCP verification tools - verify claims and documents with detailed parameters and response formats.
+search:
+  exclude: true
 ---
 
 # Tools reference
