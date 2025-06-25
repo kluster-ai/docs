@@ -8,5 +8,5 @@ nav:
   - 'Integrations': integrations
   - 'Dedicated deployments': dedicated-deployments.md
   - fine-tuning
-  - 'Verify': verify
-  - 'MCP': mcp
+  - verify
+  - mcp

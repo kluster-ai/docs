@@ -1,13 +1,13 @@
 ---
-title: MCP integration
+title: MCP integration overview
 description: Connect AI apps to kluster.ai services using MCP for seamless development workflow integration with verification tools and automated reliability checking.
 ---
 
 # MCP integration
 
-[Model Context Protocol](https://modelcontextprotocol.io/introduction){target=\_blank} or MCP, is an open standard for connecting AI assistants to specialized tools. Think of it as "USB-C for AI" - one protocol that works everywhere, enabling seamless integration between AI applications and external capabilities.
+[Model Context Protocol](https://modelcontextprotocol.io/introduction){target=\_blank} (MCP) is an open standard for connecting AI assistants to specialized tools. Think of it as "USB-C for AI" - one protocol that works everywhere, enabling seamless integration between AI applications and external capabilities.
 
-[kluster.ai](https://www.kluster.ai/){target=\_blank} provides MCP servers that bring AI services directly into your development workflow. Choose between managed cloud endpoint or self-hosted deployment for seamless integration across platforms.
+[kluster.ai](https://www.kluster.ai/){target=\_blank} provides MCP servers that bring AI services directly into your development workflow. Choose between a managed cloud endpoint or self-hosted deployment for seamless integration across platforms.
 
 ## What is MCP?
 
@@ -27,8 +27,7 @@ The kluster.ai MCP offers the [Verify service](/get-started/verify/reliability/o
 
 Managed cloud implementation - no infrastructure to maintain:
 
-**`verify`**: Validates claims against reliable sources.  
-**`verify_document`**: Verifies claims about uploaded documents.
+--8<-- 'text/get-started/mcp/overview/overview-1.md'
 
 Enable your endpoint through the kluster.ai platform, get your MCP token, and start verifying. Works with any MCP client using standard connection patterns.
 
@@ -36,7 +35,7 @@ Enable your endpoint through the kluster.ai platform, get your MCP token, and st
 
 Same verification tools running on your infrastructure with full control. Deploy locally with Docker or Node.js.
 
-## How to integrate MCP
+## Integrate MCP
 
 <div class="grid cards" markdown>
 
@@ -48,15 +47,15 @@ Same verification tools running on your infrastructure with full control. Deploy
 
     [:octicons-arrow-right-24: Five-minute setup](/get-started/mcp/get-started/){target=_self}
 
--   <span class="badge integration">Integration</span> __Cloud MCP__
+-   <span class="badge guide">Guide</span> __Cloud MCP__
 
     ---
 
-    Enable managed MCP endpoints with MCP token authentication. No infrastructure to maintain, just enable and integrate.
+    Enable managed MCP endpoints with MCP token authentication. There is no infrastructure to maintain, just enable and integrate.
 
     [:octicons-arrow-right-24: Platform setup](/get-started/mcp/cloud/platform/){target=_self}
 
--   <span class="badge tools">Integration</span> __Self-hosted MCP__
+-   <span class="badge guide">Guide</span> __Self-hosted MCP__
 
     ---
 
