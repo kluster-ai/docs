@@ -59,11 +59,12 @@ Use these connection details:
 Your self-hosted deployment provides the same verification tools as Cloud MCP:
 
 --8<-- 'text/get-started/mcp/overview/overview-1.md'
-
-For detailed parameters and response formats, see the [Tools reference](/get-started/mcp/tools/){target=\_blank}.
+<!-- Commenting this for safekeeping -->
+<!--For detailed parameters and response formats, see the [Tools reference](/get-started/mcp/tools/){target=\_blank}.-->
 
 ## Next steps
 
 - **Configure clients**: Follow the [Client integrations](/get-started/mcp/integrations/) guide for VS Code, Claude Desktop, and other platforms.
-- **Learn the tools**: See [Tools reference](/get-started/mcp/tools/) for detailed examples.
+<!-- Commenting this for safekeeping -->
+<!--- **Learn the tools**: See [Tools reference](/get-started/mcp/tools/) for detailed examples.-->
 - **Try Cloud MCP**: Consider [Cloud MCP](/get-started/mcp/cloud/platform/) for managed cloud deployment.
