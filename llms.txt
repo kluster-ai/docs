@@ -173,7 +173,7 @@ kluster.ai currently supports fine-tuning for the following models:
 - [klusterai/Meta-Llama-3.3-70B-Instruct-Turbo](/get-started/models/){target=_blank}
 
 !!! note
-    You can query the [models endpoint](/api-reference/reference/#/http/api-endpoints/models/v1-models-get){target=_blank} in the API and filter for the tag "fine-tunable."
+    You can query the [models endpoint](/api-reference/reference/#tag/models/get/v1/models){target=_blank} in the API and filter for the tag "fine-tunable."
 
 ## Fine-tuning workflow
 
@@ -393,7 +393,7 @@ Fine-tuning offers several advantages over using general-purpose models:
 ## Next steps
 
 - **Detailed tutorial**: Follow the [Fine-tuning sentiment analysis tutorial](/tutorials/klusterai-api/finetuning-sent-analysis/#get-the-data){target=_blank}.
-- **API reference**: Review the [API reference documentation](/api-reference/reference/#/http/api-endpoints/fine-tuning/v1-fine-tuning-jobs-post){target=_blank} for all fine-tuning related endpoints.
+- **API reference**: Review the [API reference documentation](/api-reference/reference/#tag/fine-tuning/post/v1/fine_tuning/jobs){target=_blank} for all fine-tuning related endpoints.
 - **Explore models**: See the [Models](/get-started/models/){target=_blank} page to check which foundation models support fine-tuning.
 - **Platform approach**: Try the [user-friendly platform interface](/get-started/fine-tuning/platform/){target=_blank} for fine-tuning without writing code.
 --- END CONTENT ---
@@ -478,7 +478,7 @@ kluster.ai offers two ways to fine-tune models, each designed for different user
 
 - **Step-by-step tutorial**: Learn the fundamentals with our [Fine-tuning sentiment analysis tutorial](/tutorials/klusterai-api/finetuning-sent-analysis/){target=_blank}.
 - **Available models**: Explore our [Models](/get-started/models/){target=_blank} page to see all foundation models that support fine-tuning.
-- **API reference**: Review the complete [API documentation](/api-reference/reference/#/http/api-endpoints/fine-tuning/v1-fine-tuning-jobs-post){target=_blank} for all fine-tuning related endpoints.
+- **API reference**: Review the complete [API documentation](/api-reference/reference/#tag/fine-tuning/post/v1/fine_tuning/jobs){target=_blank} for all fine-tuning related endpoints.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/get-started/fine-tuning/platform/
@@ -614,7 +614,7 @@ Fine-tuning offers several advantages over using general-purpose models:
 ## Next steps
 
 - **Detailed tutorial**: Follow the [Fine-tuning sentiment analysis tutorial](/tutorials/klusterai-api/finetuning-sent-analysis/#get-the-data){target=_blank}.
-- **API reference**: Review the [API reference documentation](/api-reference/reference/#/http/api-endpoints/fine-tuning/v1-fine-tuning-jobs-post){target=_blank} for all fine-tuning related endpoints.
+- **API reference**: Review the [API reference documentation](/api-reference/reference/#tag/fine-tuning/post/v1/fine_tuning/jobs){target=_blank} for all fine-tuning related endpoints.
 - **Explore models**: See the [Models](/get-started/models/){target=_blank} page to check which foundation models support fine-tuning.
 - **API approach**: Learn how to [fine-tune models programmatically](/get-started/fine-tuning/api/){target=_blank} with the kluster.ai API.
 --- END CONTENT ---
@@ -3727,7 +3727,7 @@ While kluster.ai's API is largely compatible with OpenAI's, the following sectio
 
 ### Chat completions parameters
 
-When creating a chat completion via the [`POST https://api.kluster.ai/v1/chat/completions` endpoint](/api-reference/reference/#/http/api-endpoints/realtime/v1-chat-completions-post){target=\_blank}, the following request parameters are not supported:
+When creating a chat completion via the [`POST https://api.kluster.ai/v1/chat/completions` endpoint](/api-reference/reference/#tag/realtime/post/v1/chat/completions){target=\_blank}, the following request parameters are not supported:
 
 - `messages[].name` - attribute in `system`, `user`, and `assistant` type message objects
 - `messages[].refusal` - attribute in `assistant` type message objects
@@ -3757,7 +3757,7 @@ For more information on these parameters, refer to [OpenAI's API documentation o
 
 ### Chat completion object
 
-The following fields of the [chat completion object](/api-reference/reference/#/http/models/structures/v1-chat-completions-request){target=\_blank} are not supported:
+The following fields of the [chat completion object](/api-reference/reference/#tag/realtime/post/v1/chat/completions){target=\_blank} are not supported:
 
 - `system_fingerprint`
 - `usage.completion_tokens_details`
@@ -3802,7 +3802,7 @@ export API_KEY=INSERT_API_KEY
 
 Please visit the [Models](/get-started/models/){target=\_blank} page to learn more about all the models supported by the kluster.ai batch API.
 
-In addition, you can see the complete list of available models programmatically using the [list supported models](/api-reference/reference/#/http/api-endpoints/models/v1-models-get){target=\_blank} endpoint.
+In addition, you can see the complete list of available models programmatically using the [list supported models](/api-reference/reference/#tag/models/get/v1/models){target=\_blank} endpoint.
 
 ## Batch job workflow overview
 
@@ -6397,7 +6397,7 @@ Each request must include the following arguments:
 - `body` ++"object"++ - a request body containing:
     - `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](/get-started/models/){target=\_blank}
     - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images)
-    - Any optional [chat completion parameters](/api-reference/reference/#/http/api-endpoints/realtime/v1-chat-completions-post){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
+    - Any optional [chat completion parameters](/api-reference/reference/#tag/realtime/post/v1/chat/completions){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
 
 !!! tip
     You can use a different model for each request you submit.
@@ -6539,7 +6539,7 @@ Use the following command examples to upload your batch job files:
 
 ### Submit a batch job
 
-Next, submit a batch job by calling the `batches` endpoint and providing the `id` of the uploaded batch job file (from the previous section) as the [`input_file_id`, and additional parameters](/api-reference/reference/#/http/models/structures/v1-batches-request){target=\_blank} to specify the job's configuration.
+Next, submit a batch job by calling the `batches` endpoint and providing the `id` of the uploaded batch job file (from the previous section) as the [`input_file_id`, and additional parameters](/api-reference/reference/#tag/batch/post/v1/batches){target=\_blank} to specify the job's configuration.
 
 The response includes an `id` that can be used to monitor the job's progress, as demonstrated in the next section.
 
@@ -6599,9 +6599,9 @@ You can use the following snippets to submit your batch job:
 
 ### Monitor job progress
 
-You can make periodic requests to the `batches` endpoint to monitor your batch job's progress. Use the `id` of the batch request from the preceding section as the [`batch_id`](/api-reference/reference/#/http/api-endpoints/batch/v1-batches-by-batch-id-get){target=\_blank} to check its status. The job is complete when the `status` field returns `"completed"`. You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
+You can make periodic requests to the `batches` endpoint to monitor your batch job's progress. Use the `id` of the batch request from the preceding section as the [`batchId`](/api-reference/reference/#tag/batch/get/v1/batches/{batchId}){target=\_blank} to check its status. The job is complete when the `status` field returns `"completed"`. You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
 
-View a complete list of the [supported statuses](/api-reference/reference/#/http/models/enumerations/status){target=\_blank} on the API reference page.
+View a complete list of the [supported statuses](/api-reference/reference/#tag/batch/get/v1/batches){target=\_blank} on the API reference page.
 
 You can use the following snippets to monitor your batch job:
 
@@ -7103,7 +7103,7 @@ export API_KEY=INSERT_API_KEY
 
 Please visit the [Models](/get-started/models/){target=\_blank} page to learn more about all the models supported by the kluster.ai batch API.
 
-In addition, you can see the complete list of available models programmatically using the [list supported models](/api-reference/reference/#/http/api-endpoints/models/v1-models-get){target=\_blank} endpoint.
+In addition, you can see the complete list of available models programmatically using the [list supported models](/api-reference/reference/#tag/models/get/v1/models){target=\_blank} endpoint.
 
 ## Quickstart snippets
 
@@ -8165,7 +8165,7 @@ log_response_to_file(completion)
     ```
 
 
-For a detailed breakdown of the chat completion object, see the [chat completion API reference](/api-reference/reference/#/http/api-endpoints/realtime/v1-chat-completions-post){target=\_blank} section.
+For a detailed breakdown of the chat completion object, see the [chat completion API reference](/api-reference/reference/#tag/realtime/post/v1/chat/completions){target=\_blank} section.
 
 ??? code "View the complete script"
 
@@ -8394,7 +8394,7 @@ The following limits apply to API requests based on [your plan](https://platform
 
     Explore the complete kluster.ai API documentation and usage details.
 
-    [:octicons-arrow-right-24: Reference](/api-reference/reference/#/http/get-started/use-the-kluster-ai-api)
+    [:octicons-arrow-right-24: Reference](/api-reference/reference/)
 
 
 </div>
@@ -8576,7 +8576,7 @@ This example shows how to use the service with the chat completion endpoint via 
 ## Next steps
 
 - Learn how to use the [Verify API](/get-started/verify/reliability/verify-api/){target=\_blank} for simpler verification scenarios
-- Review the complete [API documentation](/api-reference/reference/#/http/api-endpoints/realtime/v1-verify-reliability-post){target=\_blank} for detailed endpoint specifications
+- Review the complete [API documentation](/api-reference/reference/#tag/realtime/post/v1/verify/reliability){target=\_blank} for detailed endpoint specifications
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/get-started/verify/reliability/overview/
@@ -8933,7 +8933,7 @@ This example checks whether an answer is correct based on the provided context.
 ## Next steps
 
 - Learn how to use [Chat completion reliability verification](/get-started/verify/reliability/chat-completion/){target=\_blank} for evaluating entire conversation histories
-- Review the complete [API documentation](/api-reference/reference/#/http/api-endpoints/realtime/v1-verify-reliability-post){target=\_blank} for detailed endpoint specifications
+- Review the complete [API documentation](/api-reference/reference/#tag/realtime/post/v1/verify/reliability){target=\_blank} for detailed endpoint specifications
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/get-started/verify/reliability/workflow-integrations/
@@ -9027,7 +9027,7 @@ The workflow includes pre-configured HTTP nodes that connect to the `/v1/verify/
 
 Ready to build more reliable AI applications?
 
-- **Explore the API**: Check the [complete API reference](/api-reference/reference/#/http/api-endpoints/realtime/v1-verify-reliability-post){target=\_blank} for advanced configuration options.
+- **Explore the API**: Check the [complete API reference](/api-reference/reference/#tag/realtime/post/v1/verify/reliability){target=\_blank} for advanced configuration options.
 - **Learn verification methods**: Dive into the [Verify API endpoint](/get-started/verify/reliability/verify-api/){target=\_blank} for detailed implementation patterns.
 - **Try the tutorial**: Follow the [hands-on reliability check tutorial](/tutorials/klusterai-api/reliability-check/){target=\_blank} with code examples.
 --- END CONTENT ---
@@ -10431,7 +10431,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-ana
     "\n",
     "Once the fine-tuning file has been successfully uploaded, we're ready to start the fine-tuning job by providing the file ID we got in the previous step. To do so, we use the `fine_tuning.jobs.create` method, for which we also need to provide the model to fine-tune (check the [supported models](https://docs.kluster.ai/get-started/models/) section). \n",
     "\n",
-    "Optionally, you can also provide an object containing the [hyperparameters for fine-tuning](https://docs.kluster.ai/api-reference/reference/#/http/api-endpoints/fine-tuning/v1-fine-tuning-jobs-post), such as number of epochs, batch size, and learning rate, to adjust training time and potential performance gains. Remember that increasing the number of epochs will lead to longer training time but may result in higher performance. If you're unsure which hyperparameters to set, you can also comment them to accept the default values."
+    "Optionally, you can also provide an object containing the [hyperparameters for fine-tuning](https://docs.kluster.ai/api-reference/reference/#tag/fine-tuning/post/v1/fine_tuning/jobs), such as number of epochs, batch size, and learning rate, to adjust training time and potential performance gains. Remember that increasing the number of epochs will lead to longer training time but may result in higher performance. If you're unsure which hyperparameters to set, you can also comment them to accept the default values."
    ]
   },
   {

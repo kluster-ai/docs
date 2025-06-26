@@ -75,4 +75,4 @@ kluster.ai offers two ways to fine-tune models, each designed for different user
 
 - **Step-by-step tutorial**: Learn the fundamentals with our [Fine-tuning sentiment analysis tutorial](/tutorials/klusterai-api/finetuning-sent-analysis/){target=_blank}.
 - **Available models**: Explore our [Models](/get-started/models/){target=_blank} page to see all foundation models that support fine-tuning.
-- **API reference**: Review the complete [API documentation](/api-reference/reference/#/http/api-endpoints/fine-tuning/v1-fine-tuning-jobs-post){target=_blank} for all fine-tuning related endpoints.
+- **API reference**: Review the complete [API documentation](/api-reference/reference/#tag/fine-tuning/post/v1/fine_tuning/jobs){target=_blank} for all fine-tuning related endpoints.

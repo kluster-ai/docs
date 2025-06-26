@@ -86,6 +86,6 @@ The workflow includes pre-configured HTTP nodes that connect to the `/v1/verify/
 
 Ready to build more reliable AI applications?
 
-- **Explore the API**: Check the [complete API reference](/api-reference/reference/#/http/api-endpoints/realtime/v1-verify-reliability-post){target=\_blank} for advanced configuration options.
+- **Explore the API**: Check the [complete API reference](/api-reference/reference/#tag/realtime/post/v1/verify/reliability){target=\_blank} for advanced configuration options.
 - **Learn verification methods**: Dive into the [Verify API endpoint](/get-started/verify/reliability/verify-api/){target=\_blank} for detailed implementation patterns.
 - **Try the tutorial**: Follow the [hands-on reliability check tutorial](/tutorials/klusterai-api/reliability-check/){target=\_blank} with code examples.
