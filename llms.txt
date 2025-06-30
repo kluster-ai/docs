@@ -63,7 +63,7 @@ description: The kluster.ai API reference includes endpoints, available methods,
 hide:
 - nav
 - footer
-template: portal.html
+template: api.html
 ---
 --- END CONTENT ---
 
