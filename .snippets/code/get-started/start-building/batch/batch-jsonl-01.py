@@ -1,17 +1,20 @@
 import json
 import time
+import os
 from getpass import getpass
 
 from openai import OpenAI
 
 # Get API key from user input
-api_key = getpass("Enter your kluster.ai API key: ")
+api_key = os.environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
 # Initialize OpenAI client pointing to kluster.ai API
 client = OpenAI(
     base_url="https://api.kluster.ai/v1",
     api_key=api_key,
 )
+
+print(f"📤 Sending batch request to kluster.ai...\n")
 
 # Create request with specified structure
 requests = [

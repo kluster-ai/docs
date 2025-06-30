@@ -38,7 +38,7 @@ While kluster.ai's API is largely compatible with OpenAI's, the following sectio
 
 ### Chat completions parameters
 
-When creating a chat completion via the [`POST https://api.kluster.ai/v1/chat/completions` endpoint](/api-reference/reference#create-chat-completion){target=\_blank}, the following request parameters are not supported:
+When creating a chat completion via the [`POST https://api.kluster.ai/v1/chat/completions` endpoint](/api-reference/reference/#/http/api-endpoints/realtime/v1-chat-completions-post){target=\_blank}, the following request parameters are not supported:
 
 - `messages[].name` - attribute in `system`, `user`, and `assistant` type message objects
 - `messages[].refusal` - attribute in `assistant` type message objects
@@ -68,7 +68,7 @@ For more information on these parameters, refer to [OpenAI's API documentation o
 
 ### Chat completion object
 
-The following fields of the [chat completion object](/api-reference/reference/#chat-completion-object) are not supported:
+The following fields of the [chat completion object](/api-reference/reference/#/http/models/structures/v1-chat-completions-request){target=\_blank} are not supported:
 
 - `system_fingerprint`
 - `usage.completion_tokens_details`

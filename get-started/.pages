@@ -3,6 +3,10 @@ hide: false
 nav:
   - 'Get an API key': get-api-key.md
   - 'Models': models.md
-  - start-building
   - 'OpenAI compatibility': openai-compatibility.md
+  - start-building
   - 'Integrations': integrations
+  - 'Dedicated deployments': dedicated-deployments.md
+  - fine-tuning
+  - verify
+  - mcp

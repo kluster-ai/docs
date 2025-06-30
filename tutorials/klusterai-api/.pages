@@ -11,6 +11,5 @@ nav:
   - 'Image analysis': image-analysis.ipynb
   - 'Effective prompt engineering': effective-prompt-engineering.ipynb
   - 'Uploading large files': 'uploads-api.ipynb'
-  - 'Integrating Tools': 'integrating-tools.ipynb'
-  - 'Retrieval Augmented Generation': 'rag.ipynb'
- # - 'Batch processing': 'batch.ipynb' ## Hide until is completed.
+  - 'Integrating tools': 'integrating-tools.ipynb'
+  - 'Reliability check': 'reliability-check.ipynb'
