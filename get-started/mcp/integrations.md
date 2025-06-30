@@ -50,17 +50,29 @@ Before integrating with any client:
     5. Restart VS Code.
 
 === "Cursor"
+    ![](/images/get-started/mcp/integrations/integrations-2.webp){ style="width:80%;" }
 
-    1. Open Cursor settings and click on **MCP**.
-    2. Add server configuration using the following command:
-        
-        ```bash
-        npx mcp-remote https://api.kluster.ai/v1/mcp \
-        --header "Authorization: Bearer YOUR_MCP_TOKEN"
+    Open Cursor settings and:
+    
+    1. Select **Tools & Integrations**.
+
+    2. Choose **New MCP Server** and add the following configuration:
+            
+        ```json
+        {
+        "mcpServers": {
+         "kluster-verify-mcp": 
+            {
+            "url": "https://api.kluster.ai/v1/mcp",
+            "headers": {
+              "Authorization": "Bearer YOUR_MCP_TOKEN"
+            }
+          }
+        }
+        }   
         ```
 
-    3. Enable verification tools.
-    4. Restart Cursor.
+    3. Restart Cursor.
 
 === "Claude code"
 
