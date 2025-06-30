@@ -9,18 +9,18 @@ Reliability check is one of the features offered by Verify, and it is able to id
 
 With this specialized service, you can gauge the reliability of AI-generated content and build more trustworthy applications.
 
-The service can evaluate the AI response based on a given context, which makes it great for RAG applications. Without providing a specific context, the service can also be used as a real-time reliability verification service.
+The service can evaluate the AI response based on a given context, which makes it ideal for RAG applications. Without providing a specific context, the service can also be used as a real-time reliability verification service.
 
 ## How reliability check works
 
 The service evaluates the truthfulness of an answer to a question by:
 
-1. Analyzing the original question, prompt or entire conversation history.
+1. Analyzing the original question, prompt, or entire conversation history.
 2. Examining the provided answer (with context if provided).
 3. Determining if the answer contains unreliable or unsupported information.
 4. Providing a detailed explanation of the reasoning behind the determination as well as the search results used for verification.
     
-The service evaluates AI outputs in order to identify reliability issues or incorrect information, with the following fields:
+The service evaluates AI outputs in order to identify reliability issues or incorrect information with the following fields:
 
 - **is_hallucination=true/false**: Indicates whether the response contains unreliable content.
 - **explanation**: Provides detailed reasoning for the determination.
