@@ -26,21 +26,21 @@ This workflow seamlessly integrates Verify into your Dify chatbots and agents, e
 
 **Configure kluster.ai as a Model Provider** 
 
-1. Navigate to **Settings** and select **Model Provider**
-2. Click on **Add Provider** and choose **OpenAI-API-compatible**
+1. Navigate to **Settings** and select **Model Provider**.
+2. Click on **Add Provider** and choose **OpenAI-API-compatible**.
 
 Enter these settings:
 
-- **Base URL**: `https://api.kluster.ai/v1`
-- **API Key**: Your kluster.ai API key
-- **Model**: Select from [available models](https://platform.kluster.ai/models){target=\_blank}
+- **Base URL**: `https://api.kluster.ai/v1`.
+- **API Key**: Your kluster.ai API key.
+- **Model**: Select from [available models](https://platform.kluster.ai/models){target=\_blank}.
 
 Save and test the connection to ensure it works properly.
 
 **Set up the kluster verify node:**
 
-1. Select the HTTP Request node `kluster verify`
-2. Add your API key to the Authorization header
+1. Select the HTTP Request node `kluster verify`.
+2. Add your API key to the Authorization header.
 
 **Import and Configure the Workflow** 
 
@@ -60,18 +60,18 @@ This workflow validates AI-generated content against your source documents, tool
 
 **Set Up API Credentials**
 
-- Select the OpenAI and choose **Credentials**. Then click **Create New**
+- Select the OpenAI and choose **Credentials**. Then click **Create New**.
 
-- **Base URL**: `https://api.kluster.ai/v1`
-- **API Key**: Your kluster.ai API key
-- **Model**: Select from [available models](https://platform.kluster.ai/models){target=\_blank}
+- **Base URL**: `https://api.kluster.ai/v1`.
+- **API Key**: Your kluster.ai API key.
+- **Model**: Select from [available models](https://platform.kluster.ai/models){target=\_blank}.
 
 **Set up the kluster verify node API key:**
 
 Open the kluster verify node and modify the headers as follow:
 
-- **Header Name**: `Authorization`
-- **Header Value**: `Bearer YOUR_API_KEY`
+- **Header Name**: `Authorization`.
+- **Header Value**: `Bearer YOUR_API_KEY`.
 
 
 **Import and Configure the Workflow** 
