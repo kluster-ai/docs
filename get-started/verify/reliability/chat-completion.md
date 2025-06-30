@@ -5,7 +5,7 @@ description: Validate full chat conversations for reliability using the kluster.
 
 # Reliability check via chat completion
 
-Developers can access the reliability check feature via the regular chat completion endpoint. This allows you to validate responses in full conversation histories using the same format as the standard chat completions API. This approach enables verification of reliability within the complete context of a conversation.
+Developers can access the reliability check feature via the regular chat completion endpoint. This allows you to validate responses in complete conversation histories using the same format as the standard chat completions API. This approach enables verification of reliability within the entire context of a conversation.
 
 This guide provides a quick example of how the chat completion endpoint can be used for reliability checks.
 
@@ -14,10 +14,10 @@ This guide provides a quick example of how the chat completion endpoint can be u
 Before getting started with reliability verification, ensure the following requirements are met:
 
 --8<-- 'text/kluster-api-onboarding.md'
-- **A virtual Python environment**: (Optional) Recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
+- **A virtual Python environment**: (Optional) Recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects.
 - **Required Python libraries**: Install the following Python libraries:
-    - [**OpenAI Python API library**](https://pypi.org/project/openai/){target=\_blank}: to access the `openai` module
-    - [**`getpass`**](https://pypi.org/project/getpass4/){target=\_blank}: To handle API keys safely
+    - [**OpenAI Python API library**](https://pypi.org/project/openai/){target=\_blank}: To access the `openai` module.
+    - [**`getpass`**](https://pypi.org/project/getpass4/){target=\_blank}: To handle API keys safely.
 
 
 ## Integration options
@@ -113,5 +113,5 @@ This example shows how to use the service with the chat completion endpoint via 
 
 ## Next steps
 
-- Learn how to use the [Verify API](/get-started/verify/reliability/verify-api/){target=\_blank} for simpler verification scenarios
-- Review the complete [API documentation](/api-reference/reference/#/http/api-endpoints/realtime/v1-verify-reliability-post){target=\_blank} for detailed endpoint specifications
+- Learn how to use the [Verify API](/get-started/verify/reliability/verify-api/){target=\_blank} for simpler verification scenarios.
+- Review the complete [API documentation](/api-reference/reference/#/http/api-endpoints/realtime/v1-verify-reliability-post){target=\_blank} for detailed endpoint specifications.
