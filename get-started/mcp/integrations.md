@@ -50,7 +50,6 @@ Before integrating with any client:
     5. Restart VS Code.
 
 === "Cursor"
-    ![](/images/get-started/mcp/integrations/integrations-2.webp){ style="width:80%;" }
 
     Open Cursor settings and:
     
@@ -73,6 +72,8 @@ Before integrating with any client:
         ```
 
     3. Restart Cursor.
+
+    ![](/images/get-started/mcp/integrations/integrations-2.webp){ style="width:80%;" }
 
 === "Claude code"
 
