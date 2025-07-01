@@ -56,20 +56,19 @@ Before integrating with any client:
     
     1. Select **Tools & Integrations**.
 
-    2. Choose **New MCP Server** and add the following configuration:
+    2. To add your first MCP, click **Add Custom MCP**. To add additional MCPs later, use **New MCP Server**. Then enter the following configuration:
             
         ```json
         {
-        "mcpServers": {
-         "kluster-verify-mcp": 
-            {
-            "url": "https://api.kluster.ai/v1/mcp",
-            "headers": {
-              "Authorization": "Bearer YOUR_MCP_TOKEN"
+            "mcpServers": {
+                "kluster-verify-mcp": {
+                    "url": "https://api.kluster.ai/v1/mcp",
+                    "headers": {
+                        "Authorization": "Bearer YOUR_MCP_TOKEN"
+                    }
+                }
             }
-          }
         }
-        }   
         ```
 
     3. Restart Cursor.
