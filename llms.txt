@@ -3570,7 +3570,6 @@ Each model supported by kluster.ai has a unique name that must be used when defi
 
 |             Model             |                   Model API name                    |
 |:-----------------------------:|:---------------------------------------------------:|
-|        **DeepSeek-R1**        |              `deepseek-ai/DeepSeek-R1`              |
 |     **DeepSeek-R1-0528**      |           `deepseek-ai/DeepSeek-R1-0528`            |
 |     **DeepSeek-V3-0324**      |           `deepseek-ai/DeepSeek-V3-0324`            |
 |        **Gemma 3 27B**        |               `google/gemma-3-27b-it`               |
@@ -3583,24 +3582,25 @@ Each model supported by kluster.ai has a unique name that must be used when defi
 |       **Mistral Small**       |     `mistralai/Mistral-Small-24B-Instruct-2501`     |
 |       **Qwen2.5-VL 7B**       |            `Qwen/Qwen2.5-VL-7B-Instruct`            |
 |      **Qwen3-235B-A22B**      |             `Qwen/Qwen3-235B-A22B-FP8`              |
+| **kluster reliability check** |           `klusterai/verify-reliability`            |
 
 ## Model comparison table
 
-| Model | Description | Real-time<br>inference support | Batch<br>inference support | Fine-tuning<br>support | Image<br>analysis  |
-|:-----------------------------:|:-------------------------------------------------------------------:|:------------------------------:|:--------------------------:|:----------------------:|:------------------:|
-| **DeepSeek-R1** | Mathematical problem-solving<br>code generation<br>complex data analysis. | :white_check_mark: | :white_check_mark: | :x: | :x: |
-| **DeepSeek-R1-0528** | Mathematical problem-solving<br>code generation<br>complex data analysis. | :white_check_mark: | :white_check_mark: | :x: | :x: |
-| **DeepSeek-V3-0324** | Natural language generation<br>open-ended text creation<br>contextually rich writing. | :white_check_mark: | :white_check_mark: | :x: | :x: |
-| **Gemma 3 27B** | Multilingual applications<br>extended-context tasks<br>image analysis<br>and complex reasoning. | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |
-| **Magistral Small** | Reasoning<br>Natural language generation<br>open-ended text creation<br>contextually rich writing. | :white_check_mark: | :white_check_mark: | :x: | :x: |
-| **Llama 3.1 8B** | Low-latency or simple tasks<br>cost-efficient inference. | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: |
-| **Llama 3.3 70B** | General-purpose AI<br>balanced cost-performance. | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: |
-| **Llama 4 Maverick** | A state-of-the-art multimodal<br>model with integrated vision<br>and language understanding,<br>optimized for complex<br>reasoning, coding, and<br>perception tasks | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |
-| **Llama 4 Scout** | General-purpose multimodal AI<br>extended context tasks<br>and balanced cost-performance across text and vision. | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |
-| **Mistral NeMo** | Natural language generation<br>open-ended text creation<br>contextually rich writing. | :white_check_mark: | :white_check_mark: | :x: | :x: |
-| **Mistral Small** | Fast conversational agents<br>local inference on consumer hardware<br>domain-specific applications<br>and low-latency function calling. | :white_check_mark: | :white_check_mark: | :x: | :x: |
-| **Qwen2.5-VL 7B** | Visual question answering<br>document analysis<br>image-based reasoning<br>multimodal chat. | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |
-| **Qwen3-235B-A22B** | Qwen3's flagship 235 billion<br>parameter model optimized with<br>8-bit quantization | :white_check_mark: | :white_check_mark: | :x: | :x: |
+| Model | Description | Real-time<br>inference | Batch<br>inference | Tools | Fine-tuning | Image<br>analysis  |
+|:-----------------------------:|:-------------------------------------------------------------------:|:------------------------------:|:--------------------------:|:----------------------:|:----------------------:|:------------------:|
+| **DeepSeek-R1-0528** | Mathematical problem-solving<br>code generation<br>complex data analysis. | :white_check_mark: | :white_check_mark: | :x: |:x: | :x: |
+| **DeepSeek-V3-0324** | Natural language generation<br>open-ended text creation<br>contextually rich writing. | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :x: |
+| **Gemma 3 27B** | Multilingual applications<br>extended-context tasks<br>image analysis<br>and complex reasoning. | :white_check_mark: | :white_check_mark: | :x: |:x: | :white_check_mark: |
+| **Magistral Small** | Reasoning<br>Natural language generation<br>open-ended text creation<br>contextually rich writing. | :white_check_mark: | :white_check_mark: | :x: |:x: | :x: |
+| **Llama 3.1 8B** | Low-latency or simple tasks<br>cost-efficient inference. | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :x: |
+| **Llama 3.3 70B** | General-purpose AI<br>balanced cost-performance. | :white_check_mark: | :white_check_mark: | :white_check_mark: |:white_check_mark: | :x: |
+| **Llama 4 Maverick** | A state-of-the-art multimodal<br>model with integrated vision<br>and language understanding,<br>optimized for complex<br>reasoning, coding, and<br>perception tasks | :white_check_mark: | :white_check_mark: | :x: |:x: | :white_check_mark: |
+| **Llama 4 Scout** | General-purpose multimodal AI<br>extended context tasks<br>and balanced cost-performance across text and vision. | :white_check_mark: | :white_check_mark: | :x: |:x: | :white_check_mark: |
+| **Mistral NeMo** | Natural language generation<br>open-ended text creation<br>contextually rich writing. | :white_check_mark: | :white_check_mark: | :x: |:x: | :x: |
+| **Mistral Small** | Fast conversational agents<br>local inference on consumer hardware<br>domain-specific applications<br>and low-latency function calling. | :white_check_mark: | :white_check_mark: | :x: |:x: | :x: |
+| **Qwen2.5-VL 7B** | Visual question answering<br>document analysis<br>image-based reasoning<br>multimodal chat. | :white_check_mark: | :white_check_mark: | :x: |:x: | :white_check_mark: |
+| **Qwen3-235B-A22B** | Qwen3's flagship 235 billion<br>parameter model optimized with<br>8-bit quantization | :white_check_mark: | :white_check_mark: | :white_check_mark: |:x: | :x: |
+| **kluster reliability check** | kluster.ai Verify is an advanced<br>AI-powered fact-checking tool<br>designed to identify<br>inaccuracies and<br>hallucinations in AI-generated<br>text | :white_check_mark: | :white_check_mark: | :x: |:x: | :x: |
 
 ## API request limits
 
@@ -3610,7 +3610,6 @@ The following limits apply to API requests based on [your plan](https://platform
 
     |             Model             | Context size<br>[tokens] | Max output<br>[tokens] | Max batch<br>requests | Concurrent<br>requests | Requests<br>per minute | Hosted fine-tuned<br>models |
     |:-----------------------------:|:------------------------:|:----------------------:|:---------------------:|:----------------------:|:----------------------:|:---------------------------:|
-    |**DeepSeek-R1**|32k|4k|1000|20|30|1|
     |**DeepSeek-R1-0528**|32k|4k|1000|20|30|1|
     |**DeepSeek-V3-0324**|32k|4k|1000|20|30|1|
     |**Gemma 3 27B**|32k|4k|1000|20|30|1|
@@ -3623,6 +3622,7 @@ The following limits apply to API requests based on [your plan](https://platform
     |**Mistral Small**|32k|4k|1000|20|30|1|
     |**Qwen2.5-VL 7B**|32k|4k|1000|20|30|1|
     |**Qwen3-235B-A22B**|32k|4k|1000|20|30|1|
+    |**kluster reliability check**|32k|4k|1000|20|30|1|
 
 
 
@@ -3630,7 +3630,6 @@ The following limits apply to API requests based on [your plan](https://platform
 
     |             Model             | Context size<br>[tokens] | Max output<br>[tokens] | Max batch<br>requests | Concurrent<br>requests | Requests<br>per minute | Hosted fine-tuned<br>models |
     |:-----------------------------:|:------------------------:|:----------------------:|:---------------------:|:----------------------:|:----------------------:|:---------------------------:|
-    |**DeepSeek-R1**|163k|163k|100k|100|600|10|
     |**DeepSeek-R1-0528**|163k|163k|100k|100|600|10|
     |**DeepSeek-V3-0324**|163k|163k|100k|100|600|10|
     |**Gemma 3 27B**|64k|8k|100k|100|600|10|
@@ -3643,6 +3642,7 @@ The following limits apply to API requests based on [your plan](https://platform
     |**Mistral Small**|32k|32k|100k|100|600|10|
     |**Qwen2.5-VL 7B**|32k|32k|100k|100|600|10|
     |**Qwen3-235B-A22B**|40k|40k|100k|100|600|10|
+    |**kluster reliability check**|100k|0|100k|100|600|10|
 
 
 
@@ -3650,7 +3650,6 @@ The following limits apply to API requests based on [your plan](https://platform
 
     |             Model             | Context size<br>[tokens] | Max output<br>[tokens] | Max batch<br>requests | Concurrent<br>requests | Requests<br>per minute | Hosted fine-tuned<br>models |
     |:-----------------------------:|:------------------------:|:----------------------:|:---------------------:|:----------------------:|:----------------------:|:---------------------------:|
-    |**DeepSeek-R1**|163k|163k|500k|100|1200|25|
     |**DeepSeek-R1-0528**|163k|163k|500k|100|1200|25|
     |**DeepSeek-V3-0324**|163k|163k|500k|100|1200|25|
     |**Gemma 3 27B**|64k|8k|500k|100|1200|25|
@@ -3663,6 +3662,7 @@ The following limits apply to API requests based on [your plan](https://platform
     |**Mistral Small**|32k|32k|500k|100|1200|25|
     |**Qwen2.5-VL 7B**|32k|32k|500k|100|1200|25|
     |**Qwen3-235B-A22B**|40k|40k|500k|100|1200|25|
+    |**kluster reliability check**|100k|0|500k|100|1200|25|
 
 
 
@@ -3670,7 +3670,6 @@ The following limits apply to API requests based on [your plan](https://platform
 
     |             Model             | Context size<br>[tokens] | Max output<br>[tokens] | Max batch<br>requests | Concurrent<br>requests | Requests<br>per minute | Hosted fine-tuned<br>models |
     |:-----------------------------:|:------------------------:|:----------------------:|:---------------------:|:----------------------:|:----------------------:|:---------------------------:|
-    |**DeepSeek-R1**|163k|163k|Unlimited|100|Unlimited|Unlimited|
     |**DeepSeek-R1-0528**|163k|163k|Unlimited|100|Unlimited|Unlimited|
     |**DeepSeek-V3-0324**|163k|163k|Unlimited|100|Unlimited|Unlimited|
     |**Gemma 3 27B**|64k|8k|Unlimited|100|Unlimited|Unlimited|
@@ -3683,6 +3682,7 @@ The following limits apply to API requests based on [your plan](https://platform
     |**Mistral Small**|32k|32k|Unlimited|100|Unlimited|Unlimited|
     |**Qwen2.5-VL 7B**|32k|32k|Unlimited|100|Unlimited|Unlimited|
     |**Qwen3-235B-A22B**|40k|40k|Unlimited|100|Unlimited|Unlimited|
+    |**kluster reliability check**|100k|0|Unlimited|100|Unlimited|Unlimited|
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/get-started/openai-compatibility/
@@ -8294,7 +8294,6 @@ The following limits apply to API requests based on [your plan](https://platform
 
     |             Model             | Context size<br>[tokens] | Max output<br>[tokens] | Max batch<br>requests | Concurrent<br>requests | Requests<br>per minute | Hosted fine-tuned<br>models |
     |:-----------------------------:|:------------------------:|:----------------------:|:---------------------:|:----------------------:|:----------------------:|:---------------------------:|
-    |**DeepSeek-R1**|32k|4k|1000|20|30|1|
     |**DeepSeek-R1-0528**|32k|4k|1000|20|30|1|
     |**DeepSeek-V3-0324**|32k|4k|1000|20|30|1|
     |**Gemma 3 27B**|32k|4k|1000|20|30|1|
@@ -8307,6 +8306,7 @@ The following limits apply to API requests based on [your plan](https://platform
     |**Mistral Small**|32k|4k|1000|20|30|1|
     |**Qwen2.5-VL 7B**|32k|4k|1000|20|30|1|
     |**Qwen3-235B-A22B**|32k|4k|1000|20|30|1|
+    |**kluster reliability check**|32k|4k|1000|20|30|1|
 
 
 
@@ -8314,7 +8314,6 @@ The following limits apply to API requests based on [your plan](https://platform
 
     |             Model             | Context size<br>[tokens] | Max output<br>[tokens] | Max batch<br>requests | Concurrent<br>requests | Requests<br>per minute | Hosted fine-tuned<br>models |
     |:-----------------------------:|:------------------------:|:----------------------:|:---------------------:|:----------------------:|:----------------------:|:---------------------------:|
-    |**DeepSeek-R1**|163k|163k|100k|100|600|10|
     |**DeepSeek-R1-0528**|163k|163k|100k|100|600|10|
     |**DeepSeek-V3-0324**|163k|163k|100k|100|600|10|
     |**Gemma 3 27B**|64k|8k|100k|100|600|10|
@@ -8327,6 +8326,7 @@ The following limits apply to API requests based on [your plan](https://platform
     |**Mistral Small**|32k|32k|100k|100|600|10|
     |**Qwen2.5-VL 7B**|32k|32k|100k|100|600|10|
     |**Qwen3-235B-A22B**|40k|40k|100k|100|600|10|
+    |**kluster reliability check**|100k|0|100k|100|600|10|
 
 
 
@@ -8334,7 +8334,6 @@ The following limits apply to API requests based on [your plan](https://platform
 
     |             Model             | Context size<br>[tokens] | Max output<br>[tokens] | Max batch<br>requests | Concurrent<br>requests | Requests<br>per minute | Hosted fine-tuned<br>models |
     |:-----------------------------:|:------------------------:|:----------------------:|:---------------------:|:----------------------:|:----------------------:|:---------------------------:|
-    |**DeepSeek-R1**|163k|163k|500k|100|1200|25|
     |**DeepSeek-R1-0528**|163k|163k|500k|100|1200|25|
     |**DeepSeek-V3-0324**|163k|163k|500k|100|1200|25|
     |**Gemma 3 27B**|64k|8k|500k|100|1200|25|
@@ -8347,6 +8346,7 @@ The following limits apply to API requests based on [your plan](https://platform
     |**Mistral Small**|32k|32k|500k|100|1200|25|
     |**Qwen2.5-VL 7B**|32k|32k|500k|100|1200|25|
     |**Qwen3-235B-A22B**|40k|40k|500k|100|1200|25|
+    |**kluster reliability check**|100k|0|500k|100|1200|25|
 
 
 
@@ -8354,7 +8354,6 @@ The following limits apply to API requests based on [your plan](https://platform
 
     |             Model             | Context size<br>[tokens] | Max output<br>[tokens] | Max batch<br>requests | Concurrent<br>requests | Requests<br>per minute | Hosted fine-tuned<br>models |
     |:-----------------------------:|:------------------------:|:----------------------:|:---------------------:|:----------------------:|:----------------------:|:---------------------------:|
-    |**DeepSeek-R1**|163k|163k|Unlimited|100|Unlimited|Unlimited|
     |**DeepSeek-R1-0528**|163k|163k|Unlimited|100|Unlimited|Unlimited|
     |**DeepSeek-V3-0324**|163k|163k|Unlimited|100|Unlimited|Unlimited|
     |**Gemma 3 27B**|64k|8k|Unlimited|100|Unlimited|Unlimited|
@@ -8367,6 +8366,7 @@ The following limits apply to API requests based on [your plan](https://platform
     |**Mistral Small**|32k|32k|Unlimited|100|Unlimited|Unlimited|
     |**Qwen2.5-VL 7B**|32k|32k|Unlimited|100|Unlimited|Unlimited|
     |**Qwen3-235B-A22B**|40k|40k|Unlimited|100|Unlimited|Unlimited|
+    |**kluster reliability check**|100k|0|Unlimited|100|Unlimited|Unlimited|
 
 ## Where to go next
 
