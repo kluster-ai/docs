@@ -14,7 +14,7 @@ This guide will walk you through integrating [kluster.ai](https://www.kluster.ai
 Before starting, ensure you have the following prerequisites:
 
 --8<-- 'text/kluster-api-onboarding.md'
-- **Msty app installed** - The [Msty app](https://msty.app/){target=_blank} can be downloaded with one click. You can also find an [Installation Guide](https://docs.msty.app/getting-started/download){target=\_blank} on the Msty docs site
+- **Msty app installed** - The [Msty app](https://msty.app/){target=_blank} can be downloaded with one click. You can also find an [Installation Guide](https://docs.msty.app/getting-started/download){target=\_blank} on the Msty docs site.
 
 ## Quick start
 
@@ -24,17 +24,17 @@ Upon launching the Msty app for the first time, you'll be prompted to configure 
 
 Then, take the following steps to configure Msty to use the kluster.ai API:
 
-1. For the **Provider** dropdown, select **Open AI Compatible**
-2. Provide a name, such as `kluster`
+1. For the **Provider** dropdown, select **Open AI Compatible**.
+2. Provide a name, such as `kluster`.
 3. Provide the kluster.ai API URL for the **API endpoint** field:
 
     ```text
     https://api.kluster.ai/v1
     ```
 
-4. Paste your API key and ensure **Save key securely in keychain** is selected
-5. Paste the name of the [kluster.ai model](/get-started/models/){target=\_blank} you'd like to use. Note that you can specify multiple models
-6. Press **Add** to finalize the addition of kluster.ai API as a provider
+4. Paste your API key and ensure **Save key securely in keychain** is selected.
+5. Paste the name of the [kluster.ai model](/get-started/models/){target=\_blank} you'd like to use. Note that you can specify multiple models.
+6. Press **Add** to finalize the addition of kluster.ai API as a provider.
 
 ![Configure remote model screen](/images/get-started/integrations/msty/msty-2.webp)
 

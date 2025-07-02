@@ -1,2 +1,2 @@
-- [klusterai/Meta-Llama-3.1-8B-Instruct-Turbo](/get-started/models/){target=_blank}
-- [klusterai/Meta-Llama-3.3-70B-Instruct-Turbo](/get-started/models/){target=_blank} 
+- [klusterai/Meta-Llama-3.1-8B-Instruct-Turbo](/get-started/models/){target=_blank}.
+- [klusterai/Meta-Llama-3.3-70B-Instruct-Turbo](/get-started/models/){target=_blank}.
