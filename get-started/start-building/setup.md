@@ -67,7 +67,7 @@ Check the [kluster.ai OpenAI compatibility page](/get-started/openai-compatibili
 
     Explore the complete kluster.ai API documentation and usage details.
 
-    [:octicons-arrow-right-24: Reference](/api-reference/reference/#/http/get-started/use-the-kluster-ai-api)
+    [:octicons-arrow-right-24: Reference](/api-reference/reference/)
 
 
 </div>

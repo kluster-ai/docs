@@ -23,7 +23,7 @@ kluster.ai currently supports fine-tuning for the following models:
 --8<-- 'text/get-started/fine-tuning-supported-models.md'
 
 !!! note
-    You can query the [models endpoint](/api-reference/reference/#/http/api-endpoints/models/v1-models-get){target=_blank} in the API and filter for the tag "fine-tunable."
+    You can query the [models endpoint](/api-reference/reference/#tag/models/get/v1/models){target=_blank} in the API and filter for the tag "fine-tunable."
 
 ## Fine-tuning workflow
 
@@ -136,6 +136,6 @@ Fine-tuning offers several advantages over using general-purpose models:
 ## Next steps
 
 - **Detailed tutorial**: Follow the [Fine-tuning sentiment analysis tutorial](/tutorials/klusterai-api/finetuning-sent-analysis/#get-the-data){target=_blank}.
-- **API reference**: Review the [API reference documentation](/api-reference/reference/#/http/api-endpoints/fine-tuning/v1-fine-tuning-jobs-post){target=_blank} for all fine-tuning related endpoints.
+- **API reference**: Review the [API reference documentation](/api-reference/reference/#tag/fine-tuning/post/v1/fine_tuning/jobs){target=_blank} for all fine-tuning related endpoints.
 - **Explore models**: See the [Models](/get-started/models/){target=_blank} page to check which foundation models support fine-tuning.
 - **Platform approach**: Try the [user-friendly platform interface](/get-started/fine-tuning/platform/){target=_blank} for fine-tuning without writing code.
