@@ -8,6 +8,7 @@ nav:
   - 'LiteLLM': litellm.md
   - 'Llama OCR': llama-ocr.md
   - 'Msty': msty.md
+  - 'OpenAI Agents': openai-agents.md
   - 'PydanticAI': pydantic.md
   - 'SillyTavern': sillytavern.md
   - 'TypingMind': typingmind.md
