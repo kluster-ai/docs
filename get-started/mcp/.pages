@@ -5,3 +5,4 @@ nav:
   - 'Client integrations': integrations.md
   - cloud
   - 'Self-hosted MCP': self-hosted.md
+  - 'Tools': tools.md
