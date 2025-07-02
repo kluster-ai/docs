@@ -17,10 +17,10 @@ Before starting, ensure you have the following:
 
 ## Configure SillyTavern
 
-1. Launch SillyTavern and open it in your browser at `http://127.0.0.1:8000/` (default port)
-2. Click on the **API Connections** icon (plug) in the top navigation menu
-3. In the **API** drop-down menu, select **Chat Completion**
-4. In the **Chat Completion Source** option, choose **Custom (OpenAI-compatible)**
+1. Launch SillyTavern and open it in your browser at `http://127.0.0.1:8000/` (default port).
+2. Click on the **API Connections** icon (plug) in the top navigation menu.
+3. In the **API** drop-down menu, select **Chat Completion**.
+4. In the **Chat Completion Source** option, choose **Custom (OpenAI-compatible)**.
 5. Enter the **kluster.ai** API endpoint in the **Custom Endpoint (Base URL)** field:
 
     ```text
@@ -29,15 +29,15 @@ Before starting, ensure you have the following:
 
     There should be no trailing slash (`/`) at the end of the URL
 
-6. Paste your **kluster.ai** API Key into the designated field
+6. Paste your **kluster.ai** API Key into the designated field.
 7. **Enter a Model ID**. For this example, you can enter:
 
     ```text
     klusterai/Meta-Llama-3.3-70B-Instruct-Turbo
     ```
 
-8. Click the **Connect** button. If you've configured the API correctly, you should see a **🟢 Valid** message next to the button
-9. Select one of the kluster.ai-supported models from the **Available Models** drop-down menu
+8. Click the **Connect** button. If you've configured the API correctly, you should see a **🟢 Valid** message next to the button.
+9. Select one of the kluster.ai-supported models from the **Available Models** drop-down menu.
 
 ![](/images/get-started/integrations/sillytavern/sillytavern-1.webp)
 
@@ -49,10 +49,10 @@ Now that you've configured kluster.ai with SillyTavern, you can test the API con
 
 Follow these steps to get started:
 
-1. Click the menu icon on the bottom-left corner of the page
-2. Select **Start New Chat** to open a new chat with the model
-3. Type a message in the **Type a message** bar at the bottom and send it
-4. Verify that the chatbot has returned a response successfully
+1. Click the menu icon on the bottom-left corner of the page.
+2. Select **Start New Chat** to open a new chat with the model.
+3. Type a message in the **Type a message** bar at the bottom and send it.
+4. Verify that the chatbot has returned a response successfully.
 
 ![](/images/get-started/integrations/sillytavern/sillytavern-2.webp)
 
