@@ -113,7 +113,8 @@ curl -X POST https://api.kluster.ai/v1/mcp \
       "params": {
           "name": "verify",
           "arguments": {
-              "claim": "The Great Wall of China is visible from space"
+              "prompt": "Is the Great Wall of China visible from space?",
+              "response": "Yes, the Great Wall of China is visible from space with the naked eye."
           }
       },
       "id": 1
