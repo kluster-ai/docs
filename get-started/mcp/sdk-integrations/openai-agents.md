@@ -95,7 +95,7 @@ That's all you need to start with OpenAI Agents SDK and kluster Verify! Next, th
 
 ## Enable MCP
 
-If you prefer you can enable MCP and obtain your token via API calls instead of using the platform interface. This approach allows you to automate the token retrieval process and integrate it directly into your application setup workflow.
+If you prefer, you can enable MCP and obtain your token via API calls instead of using the platform interface. This approach allows you to automate the token retrieval process and integrate it directly into your application setup workflow.
 
 ```python
 import requests

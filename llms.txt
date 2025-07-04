@@ -20,11 +20,12 @@ Doc-Page: https://docs.kluster.ai/get-started/integrations/msty/
 Doc-Page: https://docs.kluster.ai/get-started/integrations/pydantic/
 Doc-Page: https://docs.kluster.ai/get-started/integrations/sillytavern/
 Doc-Page: https://docs.kluster.ai/get-started/integrations/typingmind/
+Doc-Page: https://docs.kluster.ai/get-started/mcp/client-integrations/
 Doc-Page: https://docs.kluster.ai/get-started/mcp/cloud/api/
 Doc-Page: https://docs.kluster.ai/get-started/mcp/cloud/platform/
 Doc-Page: https://docs.kluster.ai/get-started/mcp/get-started/
-Doc-Page: https://docs.kluster.ai/get-started/mcp/integrations/
 Doc-Page: https://docs.kluster.ai/get-started/mcp/overview/
+Doc-Page: https://docs.kluster.ai/get-started/mcp/sdk-integrations/openai-agents/
 Doc-Page: https://docs.kluster.ai/get-started/mcp/self-hosted/
 Doc-Page: https://docs.kluster.ai/get-started/mcp/tools/
 Doc-Page: https://docs.kluster.ai/get-started/models/
@@ -2905,6 +2906,155 @@ Your AI agent is now ready to answer relevant questions and relies on the kluste
 You can also clone and customize existing agents or create entirely new ones. For more information on agents on TypingMind, be sure to check out the [TypingMind docs](https://docs.typingmind.com/ai-agents/ai-agents-overview){target=\_blank}.
 --- END CONTENT ---
 
+Doc-Content: https://docs.kluster.ai/get-started/mcp/client-integrations/
+--- BEGIN CONTENT ---
+---
+title: MCP client integrations
+description: Connect Claude desktop, VS Code, Cursor, and Claude Code to kluster.ai verification tools with ready-to-use configuration examples.
+---
+
+# Client integrations
+
+Connect any compatible client to [kluster.ai's](https://www.kluster.ai/){target=\_blank} MCP Verify server. This guide provides configuration examples for popular clients using [Cloud MCP](/get-started/mcp/cloud/platform/).
+
+!!! info "Self-hosted deployment"
+    For [self-hosted MCP](/get-started/mcp/self-hosted/){target=\_blank}, replace the URL with `http://localhost:3001/stream` and use your kluster.ai API key.
+
+## Prerequisites
+      
+Before integrating with any client, ensure you have the required credentials:
+      
+- **kluster.ai API key**: Get one from the [Get an API key guide](/get-started/get-api-key/)
+- **MCP token** (for some clients): Follow the [platform guide](/get-started/mcp/cloud/platform/) to enable MCP and obtain your token
+
+!!! info "Which credential do I need?"
+    Depending on the client and configuration method, you may need either your **kluster.ai API key** or your **MCP token**. Each configuration section below specifies which credential to use.
+
+## Configuration by client
+
+=== "Claude desktop (.dxt file)"
+
+    The easiest way to add kluster Verify to Claude desktop is using the .dxt extension file:
+
+    1. **Download** the extension: 
+       
+        [Download kluster-verify-mcp.dxt](/get-started/mcp/resources/kluster-verify-mcp.dxt){ .md-button .md-button--primary }
+
+    2. **Install** in Claude desktop: Drag and drop the .dxt file onto Claude desktop, then click **Install**.
+
+        ![](/images/get-started/mcp/integrations/integrations-3.webp){ style="width:80%;" }
+
+    3. **Add** your API key: When prompted, enter your kluster.ai API key (get one from [Get an API key guide](/get-started/get-api-key/)).
+
+        ![](/images/get-started/mcp/integrations/integrations-4.webp){ style="width:80%;" }
+
+    4. **Enable** extension and start using: The kluster Verify tools will be available immediately in your conversations.
+
+        ![](/images/get-started/mcp/integrations/integrations-5.webp){ style="width:80%;" }
+
+=== "Claude desktop (JSON config)"
+
+    If you prefer manual configuration, you can add kluster Verify by editing Claude desktop's configuration file:
+
+    1. **Locate the configuration file**:
+        - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+        - **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
+
+    2. **Add** the MCP server configuration:
+    
+        ```json
+        {
+    "mcpServers": {
+        "kluster-verify-mcp": {
+            "command": "npx",
+            "args": [
+                "mcp-remote",
+                "https://api.kluster.ai/v1/mcp",
+                "--header",
+                "Authorization: Bearer YOUR_MCP_TOKEN"
+            ]
+        }
+    }
+}
+        ```
+
+    3. **Replace** YOUR_MCP_TOKEN with your actual MCP token (obtained after [enabling MCP](/get-started/mcp/cloud/platform/)).
+
+    4. **Save** the file and **restart** Claude desktop to load the kluster Verify tools.
+
+        ![](/images/get-started/mcp/get-started/get-started-1.webp){ style="width:80%;" }
+
+=== "VS Code"
+
+    1. Install [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot){target=\_blank} extension.
+    2. Open the Chat view and click on the tools icon.
+
+        ![](/images/get-started/mcp/integrations/integrations-1.webp){ style="width:50%;" }
+
+    3. Choose **Add More Tools...** and click on **Add MCP Server...**.
+    4. Select **Command (stdio)** and enter the following command, replacing `YOUR_MCP_TOKEN` with your actual MCP token:
+
+        ```bash
+        npx mcp-remote https://api.kluster.ai/v1/mcp \
+        --header "Authorization: Bearer YOUR_MCP_TOKEN"
+        ```
+
+    5. Restart VS Code.
+
+=== "Cursor"
+
+    Open Cursor settings and:
+    
+    1. Select **Tools & Integrations**.
+
+    2. To add your first MCP, click **Add Custom MCP**. To add additional MCPs later, use **New MCP Server**. Then enter the following configuration:
+            
+        ```json
+        {
+            "mcpServers": {
+                "kluster-verify-mcp": {
+                    "url": "https://api.kluster.ai/v1/mcp",
+                    "headers": {
+                        "Authorization": "Bearer YOUR_MCP_TOKEN"
+                    }
+                }
+            }
+        }
+        ```
+
+    3. Restart Cursor.
+
+    ![](/images/get-started/mcp/integrations/integrations-2.webp){ style="width:80%;" }
+
+=== "Claude code"
+
+    Run this command in your terminal:
+
+    ```bash
+    claude mcp add kluster-verify-mcp \
+      npx mcp-remote https://api.kluster.ai/v1/mcp \
+      --header "Authorization: Bearer YOUR_MCP_TOKEN"
+    ```
+
+## Available tools
+
+- **`verify`**: Validates prompt and response pairs against reliable sources.
+- **`verify_document`**: Verifies prompt and response pairs about uploaded documents.
+<!-- Commenting this for safekeeping -->
+<!--See [Tools reference](/get-started/mcp/tools/){target=\_blank} for parameters and examples.-->
+
+## SDK integrations
+
+Looking to integrate MCP tools into your own applications? Check out our SDK integration guides:
+
+- **[OpenAI Agents SDK](/get-started/mcp/integrations/openai-agents/)**: Build Python agents with built-in verification capabilities using OpenAI's Agents framework.
+
+## Next steps
+
+- [Complete setup guide](/get-started/mcp/get-started/) with usage examples.
+- [Self-hosted deployment](/get-started/mcp/self-hosted/) for local development.
+--- END CONTENT ---
+
 Doc-Content: https://docs.kluster.ai/get-started/mcp/cloud/api/
 --- BEGIN CONTENT ---
 ---
@@ -3212,119 +3362,6 @@ This verifies the response against the actual document content.
 - **Try the tutorial**: Follow the [Reliability check notebook](/tutorials/klusterai-api/reliability-check/) with code examples.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/get-started/mcp/integrations/
---- BEGIN CONTENT ---
----
-title: MCP client integrations
-description: Connect Claude desktop, VS Code, Cursor, and Claude Code to kluster.ai verification tools with ready-to-use configuration examples.
----
-
-# Client integrations
-
-Connect any compatible client to [kluster.ai's](https://www.kluster.ai/){target=\_blank} MCP Verify server. This guide provides configuration examples for popular clients using [Cloud MCP](/get-started/mcp/cloud/platform/).
-
-!!! info "Self-hosted deployment"
-    For [self-hosted MCP](/get-started/mcp/self-hosted/){target=\_blank}, replace the URL with `http://localhost:3001/stream` and use your kluster.ai API key.
-
-## Prerequisites
-      
-Before integrating with any client:
-      
-1. **Enable MCP**: Follow the [platform guide](/get-started/mcp/cloud/platform/){target=\_blank} to activate the MCP capabilities.
-2. **Replace token**: Use your actual MCP token in place of `YOUR_MCP_TOKEN`.
-
-## Configuration by client
-
-=== "Claude desktop"
-
-    Edit your Claude desktop configuration file:
-      
-    - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-    - **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
-
-    ```json
-    {
-    "mcpServers": {
-        "kluster-verify-mcp": {
-            "command": "npx",
-            "args": [
-                "mcp-remote",
-                "https://api.kluster.ai/v1/mcp",
-                "--header",
-                "Authorization: Bearer YOUR_MCP_TOKEN"
-            ]
-        }
-    }
-}
-    ```
-
-    Restart Claude desktop to load the tools.
-
-=== "VS Code"
-
-    1. Install [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot){target=\_blank} extension.
-    2. Open the Chat view and click on the tools icon.
-
-        ![](/images/get-started/mcp/integrations/integrations-1.webp){ style="width:50%;" }
-
-    3. Choose **Add More Tools...** and click on **Add MCP Server...**.
-    4. Select **Command (stdio)** and enter the following command, replacing `YOUR_MCP_TOKEN` with your actual MCP token:
-
-        ```bash
-        npx mcp-remote https://api.kluster.ai/v1/mcp \
-        --header "Authorization: Bearer YOUR_MCP_TOKEN"
-        ```
-
-    5. Restart VS Code.
-
-=== "Cursor"
-
-    Open Cursor settings and:
-    
-    1. Select **Tools & Integrations**.
-
-    2. To add your first MCP, click **Add Custom MCP**. To add additional MCPs later, use **New MCP Server**. Then enter the following configuration:
-            
-        ```json
-        {
-            "mcpServers": {
-                "kluster-verify-mcp": {
-                    "url": "https://api.kluster.ai/v1/mcp",
-                    "headers": {
-                        "Authorization": "Bearer YOUR_MCP_TOKEN"
-                    }
-                }
-            }
-        }
-        ```
-
-    3. Restart Cursor.
-
-    ![](/images/get-started/mcp/integrations/integrations-2.webp){ style="width:80%;" }
-
-=== "Claude code"
-
-    Run this command in your terminal:
-
-    ```bash
-    claude mcp add kluster-verify-mcp \
-      npx mcp-remote https://api.kluster.ai/v1/mcp \
-      --header "Authorization: Bearer YOUR_MCP_TOKEN"
-    ```
-
-## Available tools
-
-- **`verify`**: Validates prompt and response pairs against reliable sources.
-- **`verify_document`**: Verifies prompt and response pairs about uploaded documents.
-<!-- Commenting this for safekeeping -->
-<!--See [Tools reference](/get-started/mcp/tools/){target=\_blank} for parameters and examples.-->
-
-## Next steps
-
-- [Complete setup guide](/get-started/mcp/get-started/) with usage examples.
-- [Self-hosted deployment](/get-started/mcp/self-hosted/) for local development.
---- END CONTENT ---
-
 Doc-Content: https://docs.kluster.ai/get-started/mcp/overview/
 --- BEGIN CONTENT ---
 ---
@@ -3400,6 +3437,337 @@ Same verification tools running on your infrastructure with full control. Deploy
 - **MCP protocol**: [Official MCP documentation](https://modelcontextprotocol.io/docs){target=\_blank}
 - **Verify service**: [Complete reliability verification guide](/get-started/verify/reliability/overview)
 - **API reference**: [kluster.ai API documentation](/api-reference/reference/)
+--- END CONTENT ---
+
+Doc-Content: https://docs.kluster.ai/get-started/mcp/sdk-integrations/openai-agents/
+--- BEGIN CONTENT ---
+---
+title: Integrate OpenAI Agents SDK with kluster Verify
+description: This guide walks you through integrating OpenAI Agents SDK with kluster Verify to build reliable AI agents with real-time hallucination detection and fact-checking capabilities.
+---
+
+# Integrate OpenAI Agents SDK with kluster Verify
+
+[OpenAI Agents SDK](https://openai.github.io/openai-agents-python/){target=_blank} provides a powerful framework for building AI agents that can use tools, maintain context, and interact with external services. By integrating with [kluster Verify](/get-started/verify/overview/){target=_blank}, you can create agents that not only generate responses using [kluster.ai's](https://www.kluster.ai/){target=_blank} language models but also perform real-time reliability checks to detect hallucinations and validate factual claims with internet-sourced verification.
+
+This guide demonstrates how to integrate the `Agent` and `Runner` classes from the OpenAI Agents SDK with kluster.ai's API and MCP server, then walks through building an interactive chatbot with kluster Verify's hallucination detection capabilities.
+
+## Prerequisites
+
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
+- **Python 3.9+** with pip installed.
+- **[A Python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=_blank}** - this is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial.
+- **OpenAI Agents SDK packages installed** - install the [`openai-agents` packages](https://github.com/openai/openai-agents-python){target=_blank}:
+
+    ```bash
+    pip install openai>=1.93.0 openai-agents>=0.1.0 "mcp[cli]>=1.10.1"
+    ```
+
+- **MCP enabled**: Via [platform](https://platform.kluster.ai){target=_blank} or [API](/get-started/mcp/cloud/api/).
+
+## Quick start
+
+It's easy to integrate kluster Verify with OpenAI Agents SDK—when configuring the agent, point your `AsyncOpenAI` instance to the correct base URL and configure the following settings:
+
+  - **Base URL**: Use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint.
+  - **API key**: Replace with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/).
+  - **Select your model**: Choose a model with tool support from [kluster.ai's models](https://platform.kluster.ai/models){target=_blank} (filter by "Tool Support").
+  - **MCP server**: Configure the MCP server URL and token for kluster Verify's reliability checking.
+
+```python
+from agents import Agent, Runner, set_tracing_disabled, set_default_openai_api, OpenAIChatCompletionsModel
+from agents.mcp.server import MCPServerStreamableHttp
+from openai import AsyncOpenAI
+import asyncio
+import getpass
+
+# Configure SDK for production use
+set_tracing_disabled(True)  # Disable OpenAI telemetry
+set_default_openai_api("chat_completions")  # Use stable Chat API
+
+# Get credentials securely
+api_key = getpass.getpass("Enter your kluster.ai API key: ")
+mcp_token = getpass.getpass("Enter your MCP token: ")
+
+# Create kluster.ai client
+kluster_client = AsyncOpenAI(
+    base_url="https://api.kluster.ai/v1",
+    api_key=api_key
+)
+
+# Configure MCP server for verification
+mcp_server = MCPServerStreamableHttp(
+    params={
+        "url": "https://api.kluster.ai/v1/mcp",
+        "headers": {"Authorization": f"Bearer {mcp_token}"},
+        "timeout": 15,
+        "sse_read_timeout": 15
+    }
+)
+
+# Create agent with kluster Verify capabilities
+agent = Agent(
+    name="ReliableAgent",
+    instructions="Use kluster Verify for factual claims. Verify can detect hallucinations and validate information against real-time sources.",
+    model=OpenAIChatCompletionsModel(
+        model="deepseek-ai/DeepSeek-V3-0324",
+        openai_client=kluster_client
+    ),
+    mcp_servers=[mcp_server]
+)
+
+# Run the agent
+async def main():
+    await mcp_server.connect()
+    result = await Runner.run(agent, "Is the Earth flat?")
+    print(result.final_output)
+
+asyncio.run(main())
+```
+
+That's all you need to start with OpenAI Agents SDK and kluster Verify! Next, this guide will explore building an interactive chatbot that showcases kluster Verify's hallucination detection and real-time verification capabilities.
+
+!!! info "Model requirement"
+    Only models with **tool support** can use MCP verification. Filter models by "Tool Support" on the [platform models page](https://platform.kluster.ai/models){target=_blank} to see compatible options.
+
+!!! warning "Known async cleanup issue"
+    You may see error messages about "Exception ignored in atexit callback" when the script exits. This is a [known issue](https://github.com/modelcontextprotocol/python-sdk/issues/521){target=_blank} with MCP's asyncio cleanup that **does not affect functionality**. Your script will work correctly despite these messages.
+
+!!! info "Self-hosted option"
+    For self-hosted MCP, use `http://localhost:3001/stream` and your kluster.ai API key.
+
+## Enable MCP
+
+If you prefer, you can enable MCP and obtain your token via API calls instead of using the platform interface. This approach allows you to automate the token retrieval process and integrate it directly into your application setup workflow.
+
+```python
+import requests
+
+# Enable MCP
+response = requests.post(
+    "https://api.kluster.ai/v1/mcp/enable",
+    headers={"Authorization": f"Bearer {api_key}"}
+)
+
+# Get status with token
+status = requests.get(
+    "https://api.kluster.ai/v1/mcp/status", 
+    headers={"Authorization": f"Bearer {api_key}"}
+)
+mcp_token = status.json()["apiKey"]
+```
+
+## Build an interactive chatbot
+
+This example creates an interactive chatbot where you can ask questions and see kluster Verify validate the responses in real-time, demonstrating how verification enhances conversational AI.
+
+```python
+from agents import Agent, Runner, set_tracing_disabled, set_default_openai_api, OpenAIChatCompletionsModel
+from agents.mcp.server import MCPServerStreamableHttp
+from openai import AsyncOpenAI
+import asyncio
+import getpass
+
+# Configure SDK
+set_tracing_disabled(True)
+set_default_openai_api("chat_completions")
+
+# Get credentials
+api_key = getpass.getpass("Enter your kluster.ai API key: ")
+mcp_token = getpass.getpass("Enter your MCP token: ")
+
+# Create kluster.ai client
+kluster_client = AsyncOpenAI(
+    base_url="https://api.kluster.ai/v1",
+    api_key=api_key
+)
+
+# Configure MCP server
+mcp_server = MCPServerStreamableHttp(
+    params={
+        "url": "https://api.kluster.ai/v1/mcp",
+        "headers": {"Authorization": f"Bearer {mcp_token}"},
+        "timeout": 15,
+        "sse_read_timeout": 15
+    }
+)
+
+# Create chatbot agent
+agent = Agent(
+    name="VerifyChatbot",
+    instructions="Use kluster Verify to validate factual claims and provide reliable responses.",
+    model=OpenAIChatCompletionsModel(
+        model="deepseek-ai/DeepSeek-V3-0324",
+        openai_client=kluster_client
+    ),
+    mcp_servers=[mcp_server]
+)
+
+# Interactive chat loop
+async def main():
+    await mcp_server.connect()
+    
+    print("🤖 Chatbot ready! Type 'quit' to exit.")
+    
+    while True:
+        user_input = input("\n👤 You: ").strip()
+        
+        if user_input.lower() in ['quit', 'exit', 'q']:
+            print("👋 Goodbye!")
+            break
+            
+        if user_input:
+            result = await Runner.run(agent, user_input)
+            print(f"🤖 Bot: {result.final_output}")
+
+asyncio.run(main())
+```
+
+## Complete example
+
+<details>
+<summary>Full integration script</summary>
+This complete example demonstrates how OpenAI Agents can leverage kluster Verify's hallucination detection through the MCP protocol.
+
+```python
+import asyncio
+import requests
+import getpass
+from agents import Agent, Runner, set_tracing_disabled, set_default_openai_api, OpenAIChatCompletionsModel
+from agents.mcp.server import MCPServerStreamableHttp
+from openai import AsyncOpenAI
+
+def setup_mcp_token():
+    """Enable MCP and get token"""
+    api_key = getpass.getpass("Enter your kluster.ai API key: ")
+    headers = {"Authorization": f"Bearer {api_key}"}
+    
+    # Enable MCP
+    requests.post("https://api.kluster.ai/v1/mcp/enable", headers=headers)
+    
+    # Get token
+    response = requests.get("https://api.kluster.ai/v1/mcp/status", headers=headers)
+    return api_key, response.json()["apiKey"]
+
+async def main():
+    set_tracing_disabled(True)
+    set_default_openai_api("chat_completions")
+    
+    api_key, mcp_token = setup_mcp_token()
+    
+    # Create kluster.ai client
+    kluster_client = AsyncOpenAI(
+        base_url="https://api.kluster.ai/v1",
+        api_key=api_key
+    )
+    
+    # Create MCP server
+    mcp_server = MCPServerStreamableHttp(
+        params={
+            "url": "https://api.kluster.ai/v1/mcp",
+            "headers": {"Authorization": f"Bearer {mcp_token}"},
+            "timeout": 15,
+            "sse_read_timeout": 15
+        }
+    )
+    
+    # Create agent
+    agent = Agent(
+        name="KlusterVerifyAgent",
+        instructions="""You are a helpful assistant. Answer questions directly and accurately. 
+
+IMPORTANT: Always use kluster Verify's reliability check for factual claims.
+When verification shows is_hallucination=true, acknowledge the correction.
+
+Include Verify's explanations and search results when provided.""",
+        model=OpenAIChatCompletionsModel(
+            model="deepseek-ai/DeepSeek-V3-0324",
+            openai_client=kluster_client
+        ),
+        mcp_servers=[mcp_server]
+    )
+    
+    await mcp_server.connect()
+    
+    print("\n✅ Chatbot ready! Type 'quit' to exit.")
+    print("💬 Ask me anything and I'll verify my responses:\n")
+    
+    while True:
+        try:
+            # Get user input
+            user_input = input("👤 You: ").strip()
+            
+            if user_input.lower() in ['quit', 'exit', 'q']:
+                print("\n👋 Goodbye!")
+                break
+                
+            if not user_input:
+                continue
+            
+            # Get agent response with verification
+            print("🤖 Bot: Thinking and verifying...")
+            result = await Runner.run(agent, user_input)
+            print(f"🤖 Bot: {result.final_output}\n")
+            
+        except KeyboardInterrupt:
+            print("\n\n👋 Goodbye!")
+            break
+        except Exception as e:
+            print(f"❌ Error: {e}\n")
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+</details>
+
+## Run the script
+
+```bash
+python reliable_agent.py
+```
+
+Enter your credentials when prompted:
+- kluster.ai API key (get one from [platform.kluster.ai](https://platform.kluster.ai){target=_blank}).
+- MCP token (obtained after [enabling MCP](/get-started/mcp/cloud/platform/)).
+
+Expected output:
+```
+🚀 kluster Verify + OpenAI Agents Chatbot
+==================================================
+🔑 Enter your kluster.ai credentials:
+API Key: 
+
+🔌 Enter your MCP server details:
+MCP URL (default: https://api.kluster.ai/v1/mcp): 
+MCP Token: 
+
+🤖 Creating chatbot...
+
+✅ Chatbot ready! Type 'quit' to exit.
+💬 Ask me anything and I'll verify my responses:
+
+👤 You: What is the capital of Japan?
+🤖 Bot: Thinking and verifying...
+🤖 Bot: The capital of Japan is Tokyo. ✓ Verified by kluster Verify
+
+👤 You: Is the Earth flat?
+🤖 Bot: Thinking and verifying...
+🤖 Bot: No, the Earth is not flat. It is an oblate spheroid. ✓ Verified with search results
+
+👤 You: quit
+
+👋 Goodbye!
+```
+
+That's it! You've successfully integrated OpenAI Agents SDK with kluster Verify, and your configured agent is ready to leverage real-time hallucination detection and reliability checking. For more information about the capabilities of OpenAI Agents SDK, be sure to check out the [OpenAI Agents docs](https://openai.github.io/openai-agents-python/){target=_blank}.
+
+## Next steps
+
+- Explore [kluster Verify's reliability checking](/get-started/verify/reliability/overview/) for all verification capabilities.
+- Try the [Verify API tutorial](/tutorials/klusterai-api/reliability-check) with detailed code examples.
+- Learn about [tool filtering](https://openai.github.io/openai-agents-python/mcp/#tool-filtering){target=_blank} to control tool access.
+- Check the [OpenAI Agents docs](https://openai.github.io/openai-agents-python/){target=_blank} for advanced features.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/get-started/mcp/self-hosted/

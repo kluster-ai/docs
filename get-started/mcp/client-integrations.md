@@ -46,7 +46,7 @@ Before integrating with any client, ensure you have the required credentials:
 
     If you prefer manual configuration, you can add kluster Verify by editing Claude desktop's configuration file:
 
-    1. Locate the configuration file:
+    1. **Locate the configuration file**:
         - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
         - **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
 
