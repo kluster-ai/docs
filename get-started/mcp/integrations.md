@@ -19,18 +19,45 @@ Before integrating with any client:
 
 ## Configuration by client
 
-=== "Claude desktop"
+=== "Claude desktop (.dxt file)"
 
-    Edit your Claude desktop configuration file:
-      
-    - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-    - **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
+    The easiest way to add kluster Verify to Claude desktop is using the .dxt extension file:
 
-    ```json
-    --8<-- 'code/get-started/mcp/get-started/get-started-1.json'
-    ```
+    1. **Download** the extension: 
+       
+        [Download kluster-verify-mcp.dxt](/get-started/mcp/downloads/kluster-verify-mcp.dxt){ .md-button .md-button--primary }
 
-    Restart Claude desktop to load the tools.
+    2. **Install** in Claude desktop: Drag and drop the .dxt file onto Claude desktop, then click **Install**.
+
+        ![](/images/get-started/mcp/integrations/integrations-3.webp){ style="width:80%;" }
+
+    3. **Add** your API key: When prompted, enter your kluster.ai API key (get one from [Get an API key guide](/get-started/get-api-key/)).
+
+        ![](/images/get-started/mcp/integrations/integrations-4.webp){ style="width:80%;" }
+
+    4. **Enable** extension and start using: The kluster Verify tools will be available immediately in your conversations.
+
+        ![](/images/get-started/mcp/integrations/integrations-5.webp){ style="width:80%;" }
+
+=== "Claude desktop (JSON config)"
+
+    If you prefer manual configuration, you can add kluster Verify by editing Claude desktop's configuration file:
+
+    1. Locate the configuration file:
+        - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+        - **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
+
+    2. **Add** the MCP server configuration:
+    
+        ```json
+        --8<-- 'code/get-started/mcp/get-started/get-started-1.json'
+        ```
+
+    3. **Replace** YOUR_MCP_TOKEN with your actual MCP token (obtained after [enabling MCP](/get-started/mcp/cloud/platform/)).
+
+    4. **Save** the file and **restart** Claude desktop to load the kluster Verify tools.
+
+        ![](/images/get-started/mcp/get-started/get-started-1.webp){ style="width:80%;" }
 
 === "VS Code"
 
