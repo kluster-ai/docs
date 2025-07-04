@@ -28,7 +28,7 @@ It's easy to integrate kluster Verify with OpenAI Agents SDK—when configuring 
 
   - **Base URL**: Use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint.
   - **API key**: Replace with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/).
-  - **Select your model**: Choose one of [kluster.ai's available models](/get-started/models/) based on your use case.
+  - **Select your model**: Choose a model with tool support from [kluster.ai's models](https://platform.kluster.ai/models){target=_blank} (filter by "Tool Support").
   - **MCP server**: Configure the MCP server URL and token for kluster Verify's reliability checking.
 
 ```python
@@ -67,7 +67,7 @@ agent = Agent(
     name="ReliableAgent",
     instructions="Use kluster Verify for factual claims. Verify can detect hallucinations and validate information against real-time sources.",
     model=OpenAIChatCompletionsModel(
-        model="klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+        model="deepseek-ai/DeepSeek-V3-0324",
         openai_client=kluster_client
     ),
     mcp_servers=[mcp_server]
@@ -82,7 +82,10 @@ async def main():
 asyncio.run(main())
 ```
 
-That's all you need to start with OpenAI Agents SDK and kluster Verify! Next, this guide will explore building a production-ready agent that showcases kluster Verify's hallucination detection and real-time verification capabilities.
+That's all you need to start with OpenAI Agents SDK and kluster Verify! Next, this guide will explore building an interactive chatbot that showcases kluster Verify's hallucination detection and real-time verification capabilities.
+
+!!! info "Model requirement"
+    Only models with **tool support** can use MCP verification. Filter models by "Tool Support" on the [platform models page](https://platform.kluster.ai/models){target=_blank} to see compatible options.
 
 !!! warning "Known async cleanup issue"
     You may see error messages about "Exception ignored in atexit callback" when the script exits. This is a [known issue](https://github.com/modelcontextprotocol/python-sdk/issues/521){target=_blank} with MCP's asyncio cleanup that **does not affect functionality**. Your script will work correctly despite these messages.
@@ -92,7 +95,7 @@ That's all you need to start with OpenAI Agents SDK and kluster Verify! Next, th
 
 ## Enable MCP
 
-If you prefer programmatic setup, you can enable MCP and obtain your token via API calls instead of using the platform interface. This approach allows you to automate the token retrieval process and integrate it directly into your application setup workflow.
+If you prefer you can enable MCP and obtain your token via API calls instead of using the platform interface. This approach allows you to automate the token retrieval process and integrate it directly into your application setup workflow.
 
 ```python
 import requests
@@ -113,19 +116,7 @@ mcp_token = status.json()["apiKey"]
 
 ## Build an interactive chatbot
 
-This section will explore what OpenAI Agents SDK can do beyond basic generation. In the following steps, you'll create an interactive chatbot where you can ask questions and see kluster Verify validate the responses in real-time, demonstrating how verification enhances conversational AI.
-
-### Create the script
-
-First, create a new Python file that will contain our interactive chatbot implementation. This script will demonstrate a complete conversation loop with kluster Verify integration.
-
-```bash
-touch reliable_agent.py
-```
-
-### Complete implementation
-
-This implementation shows how to build a conversational agent with secure credential handling, proper SDK configuration, and kluster Verify integration for real-time response validation.
+This example creates an interactive chatbot where you can ask questions and see kluster Verify validate the responses in real-time, demonstrating how verification enhances conversational AI.
 
 ```python
 from agents import Agent, Runner, set_tracing_disabled, set_default_openai_api, OpenAIChatCompletionsModel
@@ -134,127 +125,59 @@ from openai import AsyncOpenAI
 import asyncio
 import getpass
 
-def configure_sdk():
-    """Configure SDK for production use"""
-    set_tracing_disabled(True)  # Disable OpenAI telemetry
-    set_default_openai_api("chat_completions")  # Use stable API
+# Configure SDK
+set_tracing_disabled(True)
+set_default_openai_api("chat_completions")
 
-def get_credentials():
-    """Get API credentials securely"""
-    print("🔑 Enter your kluster.ai credentials:")
-    api_key = getpass.getpass("API Key: ")
-    
-    print("\n🔌 Enter your MCP server details:")
-    mcp_url = input("MCP URL (default: https://api.kluster.ai/v1/mcp): ") or "https://api.kluster.ai/v1/mcp"
-    mcp_token = getpass.getpass("MCP Token: ")
-    
-    return api_key, mcp_url, mcp_token
+# Get credentials
+api_key = getpass.getpass("Enter your kluster.ai API key: ")
+mcp_token = getpass.getpass("Enter your MCP token: ")
 
-async def create_reliable_agent(api_key: str, mcp_url: str, mcp_token: str) -> Agent:
-    """Create agent with kluster.ai and kluster Verify"""
-    
-    # Initialize kluster.ai client
-    kluster_client = AsyncOpenAI(
-        base_url="https://api.kluster.ai/v1",
-        api_key=api_key
-    )
-    
-    # Configure MCP server
-    mcp_server = MCPServerStreamableHttp(
-        params={
-            "url": mcp_url,
-            "headers": {"Authorization": f"Bearer {mcp_token}"},
-            "timeout": 15,
-            "sse_read_timeout": 15
-        }
-    )
-    
-    # Create agent
-    agent = Agent(
-        name="ReliableAgent",
-        instructions="""You are a reliable AI assistant powered by kluster Verify.
-        
-        IMPORTANT: Always use kluster Verify's reliability check for factual claims.
-        When verification shows is_hallucination=true, acknowledge the correction.
-        
-        Include Verify's explanations and search results when provided.""",
-        model=OpenAIChatCompletionsModel(
-            model="klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
-            openai_client=kluster_client
-        ),
-        mcp_servers=[mcp_server]
-    )
-    
-    await mcp_server.connect()
-    return agent
-```
+# Create kluster.ai client
+kluster_client = AsyncOpenAI(
+    base_url="https://api.kluster.ai/v1",
+    api_key=api_key
+)
 
-[SCREENSHOT]
+# Configure MCP server
+mcp_server = MCPServerStreamableHttp(
+    params={
+        "url": "https://api.kluster.ai/v1/mcp",
+        "headers": {"Authorization": f"Bearer {mcp_token}"},
+        "timeout": 15,
+        "sse_read_timeout": 15
+    }
+)
 
-### Interactive chatbot loop
+# Create chatbot agent
+agent = Agent(
+    name="VerifyChatbot",
+    instructions="Use kluster Verify to validate factual claims and provide reliable responses.",
+    model=OpenAIChatCompletionsModel(
+        model="deepseek-ai/DeepSeek-V3-0324",
+        openai_client=kluster_client
+    ),
+    mcp_servers=[mcp_server]
+)
 
-The main function creates an interactive conversation experience where users can ask questions and see kluster Verify validate each response, demonstrating real-time hallucination detection in action.
-
-```python
+# Interactive chat loop
 async def main():
-    """Interactive chatbot with kluster Verify"""
+    await mcp_server.connect()
     
-    print("🚀 kluster Verify + OpenAI Agents Chatbot")
-    print("=" * 50)
-    
-    configure_sdk()
-    api_key, mcp_url, mcp_token = get_credentials()
-    
-    print("\n🤖 Creating chatbot...")
-    agent = await create_reliable_agent(api_key, mcp_url, mcp_token)
-    
-    print("\n✅ Chatbot ready! Type 'quit' to exit.")
-    print("💬 Ask me anything and I'll verify my responses:\n")
+    print("🤖 Chatbot ready! Type 'quit' to exit.")
     
     while True:
-        try:
-            # Get user input
-            user_input = input("👤 You: ").strip()
-            
-            if user_input.lower() in ['quit', 'exit', 'q']:
-                print("\n👋 Goodbye!")
-                break
-                
-            if not user_input:
-                continue
-            
-            # Get agent response with verification
-            print("🤖 Bot: Thinking and verifying...")
-            result = await Runner.run(agent, user_input)
-            print(f"🤖 Bot: {result.final_output}\n")
-            
-        except KeyboardInterrupt:
-            print("\n\n👋 Goodbye!")
+        user_input = input("\n👤 You: ").strip()
+        
+        if user_input.lower() in ['quit', 'exit', 'q']:
+            print("👋 Goodbye!")
             break
-        except Exception as e:
-            print(f"❌ Error: {e}\n")
+            
+        if user_input:
+            result = await Runner.run(agent, user_input)
+            print(f"🤖 Bot: {result.final_output}")
 
-if __name__ == "__main__":
-    asyncio.run(main())
-```
-
-## Handle async cleanup errors
-
-Due to a known issue with MCP's asyncio cleanup process, you may see harmless error messages when the script exits. These messages don't affect functionality, but you can suppress them using this optional stderr redirection technique if you prefer cleaner output.
-
-```python
-import sys
-import os
-
-if __name__ == "__main__":
-    # Temporarily redirect stderr to suppress cleanup errors
-    stderr_backup = sys.stderr
-    try:
-        sys.stderr = open(os.devnull, 'w')
-        asyncio.run(main())
-    finally:
-        sys.stderr.close()
-        sys.stderr = stderr_backup
+asyncio.run(main())
 ```
 
 ## Complete example
@@ -315,7 +238,7 @@ When verification shows is_hallucination=true, acknowledge the correction.
 
 Include Verify's explanations and search results when provided.""",
         model=OpenAIChatCompletionsModel(
-            model="klusterai/Meta-Llama-3.3-70B-Instruct-Turbo",
+            model="deepseek-ai/DeepSeek-V3-0324",
             openai_client=kluster_client
         ),
         mcp_servers=[mcp_server]
