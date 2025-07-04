@@ -78,6 +78,12 @@ Before integrating with any client:
 <!-- Commenting this for safekeeping -->
 <!--See [Tools reference](/get-started/mcp/tools/){target=\_blank} for parameters and examples.-->
 
+## SDK integrations
+
+Looking to integrate MCP tools into your own applications? Check out our SDK integration guides:
+
+- **[OpenAI Agents SDK](/get-started/mcp/integrations/openai-agents/)**: Build Python agents with built-in verification capabilities using OpenAI's Agents framework.
+
 ## Next steps
 
 - [Complete setup guide](/get-started/mcp/get-started/) with usage examples.

@@ -3,6 +3,7 @@ nav:
   - 'Overview': overview.md
   - 'Get started': get-started.md
   - 'Client integrations': integrations.md
+  - integrations
   - cloud
   - 'Self-hosted MCP': self-hosted.md
   - 'Tools': tools.md
