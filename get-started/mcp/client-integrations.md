@@ -12,10 +12,13 @@ Connect any compatible client to [kluster.ai's](https://www.kluster.ai/){target=
 
 ## Prerequisites
       
-Before integrating with any client:
+Before integrating with any client, ensure you have the required credentials:
       
-1. **Enable MCP**: Follow the [platform guide](/get-started/mcp/cloud/platform/){target=\_blank} to activate the MCP capabilities.
-2. **Replace token**: Use your actual MCP token in place of `YOUR_MCP_TOKEN`.
+- **kluster.ai API key**: Get one from the [Get an API key guide](/get-started/get-api-key/)
+- **MCP token** (for some clients): Follow the [platform guide](/get-started/mcp/cloud/platform/) to enable MCP and obtain your token
+
+!!! info "Which credential do I need?"
+    Depending on the client and configuration method, you may need either your **kluster.ai API key** or your **MCP token**. Each configuration section below specifies which credential to use.
 
 ## Configuration by client
 
@@ -25,7 +28,7 @@ Before integrating with any client:
 
     1. **Download** the extension: 
        
-        [Download kluster-verify-mcp.dxt](/get-started/mcp/downloads/kluster-verify-mcp.dxt){ .md-button .md-button--primary }
+        [Download kluster-verify-mcp.dxt](/get-started/mcp/resources/kluster-verify-mcp.dxt){ .md-button .md-button--primary }
 
     2. **Install** in Claude desktop: Drag and drop the .dxt file onto Claude desktop, then click **Install**.
 
