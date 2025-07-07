@@ -71,11 +71,16 @@ Your MCP integration provides two verification tools:
 
 Ask Claude to verify something obviously wrong:
 
-> "Use the verify tool and tell me if The Eiffel Tower is located in Rome."
+> "The Eiffel Tower is located in Rome. Use the verify tool to check this."
 
-Claude will automatically use the `verify` tool and provide the following:
+Claude will automatically use the `verify` tool with:
 
-- **Verification result**: Whether the claim is accurate.
+- **prompt**: "Is the Eiffel Tower located in Rome?"
+- **response**: "The Eiffel Tower is located in Rome."
+
+And provide the following:
+
+- **Verification result**: Whether the response contains hallucinations.
 - **Detailed explanation**: Why it's wrong with supporting reasoning.
 - **Source citations**: Search results used for verification.
 
@@ -85,9 +90,15 @@ Claude will automatically use the `verify` tool and provide the following:
 
 Perfect for detecting hallucinations or false claims about documents. Upload any document to Claude, then ask:
 
-> "This document says X. Use the verify_document tool and check if that's accurate."
+> "Does this document say that employees can work remotely full-time? The document says employees can work remotely without restrictions. Use the verify_document tool to check."
 
-Claude will use the `verify_document` tool to verify your claim against the actual document content.
+Claude will use the `verify_document` tool with:
+
+- **prompt**: "Does this document say that employees can work remotely full-time?"
+- **response**: "The document says employees can work remotely without restrictions."
+- **documentContent**: (automatically provided by MCP client)
+
+This verifies the response against the actual document content.
 
 ## Alternative setup options
 
