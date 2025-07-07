@@ -45,7 +45,7 @@ The verify tool allows you to check a prompt from a user and response from the a
 
 ### Verify document
 
-The verify document tool checks that a prompt from a user and response from the agent accurately reflect the content of the uploaded document.
+The verify document tool checks that a prompt from a user and a response from the agent accurately reflect the content of the uploaded document.
 
 ???+ interface "Parameters"
 

@@ -78,7 +78,7 @@ Claude will automatically use the `verify` tool with:
 - **prompt**: "Is the Eiffel Tower located in Rome?"
 - **response**: "The Eiffel Tower is located in Rome."
 
-And provide the following:
+And provides the following:
 
 - **Verification result**: Whether the response contains hallucinations.
 - **Detailed explanation**: Why it's wrong with supporting reasoning.
