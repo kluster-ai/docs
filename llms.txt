@@ -3160,7 +3160,7 @@ Restart Claude desktop. Once Claude desktop restarts, you'll see the verificatio
 Your MCP integration provides two verification tools:
 
 - **`verify`**: Validates prompt and response pairs against reliable sources.
-- **`verify_document`**: Verifies prompt and response pairs about uploaded documents.
+- **`verify_document`**: Verifies prompt and response pairs in relation to uploaded documents.
 <!-- Commenting this for safekeeping -->
 <!--For detailed parameters and response formats, see the [Tools reference](/get-started/mcp/tools/){target=\_blank}.-->
 
@@ -3175,7 +3175,7 @@ Claude will automatically use the `verify` tool with:
 - **prompt**: "Is the Eiffel Tower located in Rome?"
 - **response**: "The Eiffel Tower is located in Rome."
 
-And provide the following:
+And provides the following:
 
 - **Verification result**: Whether the response contains hallucinations.
 - **Detailed explanation**: Why it's wrong with supporting reasoning.
@@ -3303,7 +3303,7 @@ Before integrating with any client:
 ## Available tools
 
 - **`verify`**: Validates prompt and response pairs against reliable sources.
-- **`verify_document`**: Verifies prompt and response pairs about uploaded documents.
+- **`verify_document`**: Verifies prompt and response pairs in relation to uploaded documents.
 <!-- Commenting this for safekeeping -->
 <!--See [Tools reference](/get-started/mcp/tools/){target=\_blank} for parameters and examples.-->
 
@@ -3345,7 +3345,7 @@ The kluster.ai MCP offers the [Verify service](/get-started/verify/reliability/o
 Managed cloud implementation - no infrastructure to maintain:
 
 - **`verify`**: Validates prompt and response pairs against reliable sources.
-- **`verify_document`**: Verifies prompt and response pairs about uploaded documents.
+- **`verify_document`**: Verifies prompt and response pairs in relation to uploaded documents.
 
 Enable your endpoint through the kluster.ai platform, get your MCP token, and start verifying. Works with any MCP client using standard connection patterns.
 
@@ -3454,7 +3454,7 @@ Use these connection details:
 Your self-hosted deployment provides the same verification tools as Cloud MCP:
 
 - **`verify`**: Validates prompt and response pairs against reliable sources.
-- **`verify_document`**: Verifies prompt and response pairs about uploaded documents.
+- **`verify_document`**: Verifies prompt and response pairs in relation to uploaded documents.
 <!-- Commenting this for safekeeping -->
 <!--For detailed parameters and response formats, see the [Tools reference](/get-started/mcp/tools/){target=\_blank}.-->
 
@@ -3515,7 +3515,7 @@ The verify tool allows you to check a prompt from a user and response from the a
 
 ### Verify document
 
-The verify document tool checks that a prompt from a user and response from the agent accurately reflect the content of the uploaded document.
+The verify document tool checks that a prompt from a user and a response from the agent accurately reflect the content of the uploaded document.
 
 ???+ interface "Parameters"
 
