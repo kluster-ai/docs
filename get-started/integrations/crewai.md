@@ -14,7 +14,7 @@ This guide walks you through integrating [kluster.ai](https://www.kluster.ai/){t
 Before starting, ensure you have the following prerequisites:
 
 --8<-- 'text/kluster-api-onboarding.md'
-- **CrewAI installed** - The [Installation Guide](https://docs.crewai.com/installation){target=\_blank} on the CrewAI website will walk you through installing CrewAI, setting up a virtual Python environment, and creating a new project. Note that CrewAI requires a Python version >=`3.10` and <`3.13`.
+- **CrewAI installed**: The [Installation Guide](https://docs.crewai.com/installation){target=\_blank} on the CrewAI website will walk you through installing CrewAI, setting up a virtual Python environment, and creating a new project. Note that CrewAI requires a Python version >=`3.10` and <`3.13`.
 
 ## Create a project with the CLI
 
