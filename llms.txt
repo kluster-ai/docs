@@ -187,7 +187,7 @@ Fine‑tuning a model with the kluster.ai API follows a straightforward five‑s
 
 The following sections will provide a closer look at each step.
 
-### Prepare your data 
+### Prepare your data
 
 High-quality, well-formatted data is crucial for successful fine-tuning:
 
