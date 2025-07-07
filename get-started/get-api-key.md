@@ -44,9 +44,9 @@ After you've signed up or logged into the platform through the [login page](http
 ![Copy API key](/images/get-started/get-api-key/get-api-key-4.webp)
 
 !!! abstract "Security tips"
-    - **Keep it secret** - Do not share your API key publicly or commit it to version control systems.
-    - **Use environment variables** - Store your API key in environment variables instead of hardcoding them.
-    - **Regenerate if compromised** - If you suspect your API key has been exposed, regenerate it immediately from the **API Keys** section.
+    - **Keep it secret**: Do not share your API key publicly or commit it to version control systems.
+    - **Use environment variables**: Store your API key in environment variables instead of hardcoding them.
+    - **Regenerate if compromised**: If you suspect your API key has been exposed, regenerate it immediately from the **API Keys** section.
 
 ## Managing your API keys
 
