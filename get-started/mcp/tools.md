@@ -80,7 +80,7 @@ All verification tools return the same response structure:
 - **`response`**: The agent's response.
 - **`is_hallucination`**: Boolean indicating if the response contains hallucinations.
 - **`explanation`**: Detailed reasoning for the verdict.
-- **`confidence`**: Token usage statistics (completion_tokens, prompt_tokens, total_tokens).
+- **`confidence`**: Token usage statistics `completion_tokens`, `prompt_tokens`, and `total_tokens`.
 - **`search_results`**: Source citations (if requested).
 
 An example can be seen below:
