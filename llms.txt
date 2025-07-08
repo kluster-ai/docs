@@ -17041,7 +17041,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/rag.ipynb/
    "id": "91011ad2",
    "metadata": {},
    "source": [
-    "## Building a RAG System with PDF Documents\n",
+    "## Build a RAG system with PDF documents\n",
     "\n",
     "Now that we understand how embeddings work, let's build a complete RAG system using a real PDF document. This section demonstrates how to:\n",
     "\n",
@@ -17147,7 +17147,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/rag.ipynb/
    "id": "df42ac97",
    "metadata": {},
    "source": [
-    "## Setup RAG\n",
+    "## Set up RAG\n",
     "\n",
     "If the entire PDF document is sent to the LLM, it would consume the entire context window with no success.\n",
     "\n",
