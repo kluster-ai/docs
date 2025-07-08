@@ -14,7 +14,7 @@ In this guide, you'll learn how to integrate Immersive Translate with the [klust
 Before starting, ensure you have the following:
 
 --8<-- 'text/kluster-api-onboarding.md'
-- **Installed the Immersive Translate plugin** - You can download the Immersive Translate plugin for your respective browser on the [Immersive Translate homepage](https://immersivetranslate.com/){target=\_blank}.
+- **Installed the Immersive Translate plugin**: You can download the Immersive Translate plugin for your respective browser on the [Immersive Translate homepage](https://immersivetranslate.com/){target=\_blank}.
 
 ## Configure Immersive Translate
 

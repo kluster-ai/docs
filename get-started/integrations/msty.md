@@ -14,7 +14,7 @@ This guide will walk you through integrating [kluster.ai](https://www.kluster.ai
 Before starting, ensure you have the following prerequisites:
 
 --8<-- 'text/kluster-api-onboarding.md'
-- **Msty app installed** - The [Msty app](https://msty.app/){target=_blank} can be downloaded with one click. You can also find an [Installation Guide](https://docs.msty.app/getting-started/download){target=\_blank} on the Msty docs site.
+- **Msty app installed**: The [Msty app](https://msty.app/){target=_blank} can be downloaded with one click. You can also find an [Installation Guide](https://docs.msty.app/getting-started/download){target=\_blank} on the Msty docs site.
 
 ## Quick start
 

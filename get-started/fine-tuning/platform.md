@@ -82,12 +82,12 @@ After submitting your fine-tuning job, you can monitor the status and progress o
 
 Each job displays information including:
 
-- Job ID.
-- Base model.
-- Training method.
-- Creation date.
-- Current status.
-- Training metrics (when complete).
+- Job ID
+- Base model
+- Training method
+- Creation date
+- Current status
+- Training metrics (when complete)
 
 ![Job Progress](/images/get-started/fine-tuning/fine-tuning-4.webp)
 

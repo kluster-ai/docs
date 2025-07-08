@@ -14,8 +14,8 @@ Integrating LiteLLM with the [kluster.ai](https://www.kluster.ai/){target=\_blan
 Before starting, ensure you have the following:
 
 --8<-- 'text/kluster-api-onboarding.md'
-- **[A python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}** - This is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial.
-- [**LiteLLM installed**](https://github.com/BerriAI/litellm){target=\_blank} - to install the library, use the following command:
+- **[A python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}**: This is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial.
+- [**LiteLLM installed**](https://github.com/BerriAI/litellm){target=\_blank}: to install the library, use the following command:
 
     ```bash
     pip install litellm
@@ -25,23 +25,23 @@ Before starting, ensure you have the following:
 
 In this section, you'll learn how to integrate kluster.ai with LiteLLM. You'll configure your environment variables, specify a kluster.ai model, and make a simple request using LiteLLM's OpenAI-like interface.
 
-1. **Import LiteLLM and its dependencies** - Create a new file (e.g., `hello-litellm.py`) and start by importing the necessary Python modules:
+1. **Import LiteLLM and its dependencies**: Create a new file (e.g., `hello-litellm.py`) and start by importing the necessary Python modules:
 ```python
 --8<-- "code/get-started/integrations/litellm/hello-litellm.py::04"
 ```
-2. **Set your kluster.ai API key and Base URL** - Replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
+2. **Set your kluster.ai API key and Base URL**: Replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 ```python
 --8<-- "code/get-started/integrations/litellm/hello-litellm.py:05:08"
 ```
-3. **Define your conversation (system + user messages)** - Set up your initial system prompt and user message. The system message defines your AI assistant's role, while the user message is the actual question or prompt.
+3. **Define your conversation (system + user messages)**: Set up your initial system prompt and user message. The system message defines your AI assistant's role, while the user message is the actual question or prompt.
 ```python
 --8<-- "code/get-started/integrations/litellm/hello-litellm.py:09:13"
 ```
-4. **Select your kluster.ai model** - Choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} that best fits your use case. Prepend the model name with `openai/` so LiteLLM recognizes it as an OpenAI-like model request.
+4. **Select your kluster.ai model**: Choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} that best fits your use case. Prepend the model name with `openai/` so LiteLLM recognizes it as an OpenAI-like model request.
 ```python
 --8<-- "code/get-started/integrations/litellm/hello-litellm.py:15:16"
 ```
-5. **Call the LiteLLM completion function** - Finally, invoke the completion function to send your request:
+5. **Call the LiteLLM completion function**: Finally, invoke the completion function to send your request:
 ```python
 --8<-- "code/get-started/integrations/litellm/hello-litellm.py:18:24"
 ```
@@ -73,16 +73,16 @@ You can enable streaming by simply passing `stream=True` to the `completion()` f
 
 To configure a streaming response, take the following steps:
 
-1. **Update the `messages` system prompt and first user message** - You can supply a user message or use the sample provided:
+1. **Update the `messages` system prompt and first user message**: You can supply a user message or use the sample provided:
 ```python
 --8<-- "code/get-started/integrations/litellm/litellm-features.py:13:16"
 ```
 
-2. **Initiate a streaming request to the model** - Set `stream=True` in the `completion()` function to tell LiteLLM to return partial pieces (chunks) of the response as they become available rather than waiting for the entire response to be ready.
+2. **Initiate a streaming request to the model**: Set `stream=True` in the `completion()` function to tell LiteLLM to return partial pieces (chunks) of the response as they become available rather than waiting for the entire response to be ready.
 ```python
 --8<-- "code/get-started/integrations/litellm/litellm-features.py:18:32"
 ```
-3. **Isolate the returned text content** - Returning all of the streamed data will include a lot of excessive noise like token counts, etc. You can isolate the text content from the rest of the streamed response with the following code:
+3. **Isolate the returned text content**: Returning all of the streamed data will include a lot of excessive noise like token counts, etc. You can isolate the text content from the rest of the streamed response with the following code:
 ```python
 --8<-- "code/get-started/integrations/litellm/litellm-features.py:34:42"
 ```
@@ -93,23 +93,23 @@ LiteLLM can facilitate multi-turn conversations by maintaining message history i
 
 Let's take a closer look at each step:
 
-1. **Combine the streamed chunks of the first message** - Since the message is streamed in chunks, you must re-assemble them into a single message. After collecting partial responses in `streamed_text`, join them into a single string called `complete_first_answer`:
+1. **Combine the streamed chunks of the first message**: Since the message is streamed in chunks, you must re-assemble them into a single message. After collecting partial responses in `streamed_text`, join them into a single string called `complete_first_answer`:
 ```python
 --8<-- "code/get-started/integrations/litellm/litellm-features.py:44:45"
 ```
-2. **Append the assistant's reply** - To enhance the context of the conversation. Add `complete_first_answer` back into messages under the "assistant" role as follows:
+2. **Append the assistant's reply**: To enhance the context of the conversation. Add `complete_first_answer` back into messages under the "assistant" role as follows:
 ```python
 --8<-- "code/get-started/integrations/litellm/litellm-features.py:47:48"
 ```
-3. **Craft the second message to the assistant** - Append a new message object to messages with the user's next question as follows:
+3. **Craft the second message to the assistant**: Append a new message object to messages with the user's next question as follows:
 ```python
 --8<-- "code/get-started/integrations/litellm/litellm-features.py:50:57"
 ```
-4. **Ask the model to respond to the second question** - This time, don't enable the streaming feature. Pass the updated messages to `completion()` with `stream=False`, prompting LiteLLM to generate a standard (single-shot) response as follows:
+4. **Ask the model to respond to the second question**: This time, don't enable the streaming feature. Pass the updated messages to `completion()` with `stream=False`, prompting LiteLLM to generate a standard (single-shot) response as follows:
 ```python
 --8<-- "code/get-started/integrations/litellm/litellm-features.py:59:69"
 ```
-5. **Parse and print the second answer** - Extract `response_2.choices[0].message["content"]`, store it in `second_answer_text`, and print to the console for your final output: 
+5. **Parse and print the second answer**: Extract `response_2.choices[0].message["content"]`, store it in `second_answer_text`, and print to the console for your final output: 
 ```python
 --8<-- "code/get-started/integrations/litellm/litellm-features.py:71:76"
 ```

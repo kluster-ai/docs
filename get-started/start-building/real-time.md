@@ -17,10 +17,10 @@ You will learn how to submit a request and retrieve responses, and where to find
 This guide assumes familiarity with Large Language Model (LLM) development and OpenAI libraries. Before getting started, make sure you have:
 
 --8<-- 'text/kluster-api-onboarding.md'
-- **A virtual Python environment (optional)** - Recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects.
-- **Required Python libraries** - Install the following Python libraries:
-    - [**OpenAI Python API library**](https://pypi.org/project/openai/) - To access the `openai` module.
-    - [**`getpass`**](https://pypi.org/project/getpass4/) - To handle API keys safely.
+- **A virtual Python environment (optional)**: Recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects.
+- **Required Python libraries**: Install the following Python libraries:
+    - [**OpenAI Python API library**](https://pypi.org/project/openai/): To access the `openai` module.
+    - [**`getpass`**](https://pypi.org/project/getpass4/): To handle API keys safely.
 
 If you plan to use cURL via the CLI, you can export kluster.ai API key as a variable:
 
@@ -221,8 +221,8 @@ The following code shows how to do a chat completions request using the OpenAI l
 
 If successful, the `completion` variable contains a full response, which you'll need to analyze to extract the answer you are looking for. In terms of configuration for real-time inferences, there are several parameters that you need to tweak:
 
-- `model` ++"string"++ <span class="required" markdown>++"required"++</span> - Name of one of the [supported models](/get-started/models/){target=\_blank}.
-- `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - A list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images). In this example, the query is "What is the ultimate breakfast sandwich?". 
+- `model` ++"string"++ <span class="required" markdown>++"required"++</span>: Name of one of the [supported models](/get-started/models/){target=\_blank}.
+- `messages` ++"array"++ <span class="required" markdown>++"required"++</span>: A list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images). In this example, the query is "What is the ultimate breakfast sandwich?". 
 
 Once these parameters are configured, run your script to send the request.
 
@@ -287,11 +287,11 @@ For a detailed breakdown of the chat completion object, see the [chat completion
 
 You can also set up third-party LLM integrations using the kluster.ai API. For step-by-step instructions, check out the following integration guides:
 
-- [**SillyTavern**](/get-started/integrations/sillytavern){target=\_blank} - Multi-LLM chat interface.
-- [**LangChain**](/get-started/integrations/langchain/){target=\_blank} - Multi-turn conversational agent.
-- [**eliza**](/get-started/integrations/eliza/){target=\_blank} - Create and manage AI agents.
-- [**CrewAI**](/get-started/integrations/crewai/){target=\_blank} - Specialized agents for complex tasks.
-- [**LiteLLM**](/get-started/integrations/litellm/){target=\_blank} - Streaming response and multi-turn conversation handling.
+- [**SillyTavern**](/get-started/integrations/sillytavern){target=\_blank}: Multi-LLM chat interface.
+- [**LangChain**](/get-started/integrations/langchain/){target=\_blank}: Multi-turn conversational agent.
+- [**eliza**](/get-started/integrations/eliza/){target=\_blank}: Create and manage AI agents.
+- [**CrewAI**](/get-started/integrations/crewai/){target=\_blank}: Specialized agents for complex tasks.
+- [**LiteLLM**](/get-started/integrations/litellm/){target=\_blank}: Streaming response and multi-turn conversation handling.
 
 ## Summary
 

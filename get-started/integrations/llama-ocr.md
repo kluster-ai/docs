@@ -9,10 +9,10 @@ description: Learn how to use kluster.ai as an LLM provider for the Llama OCR NP
 
 Note that not all models supported by kluster.ai are capable of processing images. The [vision-capable models](/get-started/models/){target=\_blank} currently supported by kluster.ai include:
 
-- **`google/gemma-3-27b-it`** - Google's Gemma 3 model with vision capabilities.
-- **`Qwen/Qwen2.5-VL-7B-Instruct`** - Qwen's visual language model.
-- **`meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8`** - Meta's Llama 4 Maverick model.
-- **`meta-llama/Llama-4-Scout-17B-16E-Instruct`** - Meta's Llama 4 Scout model.
+- **`google/gemma-3-27b-it`**: Google's Gemma 3 model with vision capabilities.
+- **`Qwen/Qwen2.5-VL-7B-Instruct`**: Qwen's visual language model.
+- **`meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8`**: Meta's Llama 4 Maverick model.
+- **`meta-llama/Llama-4-Scout-17B-16E-Instruct`**: Meta's Llama 4 Scout model.
 
 This guide walks you through the minimal changes needed to:
 
@@ -23,7 +23,7 @@ This guide walks you through the minimal changes needed to:
 ## Prerequisites
 
 --8<-- 'text/kluster-api-onboarding.md'
-- Node version 18 or higher
+- Node version 18 or higher.
 
 You can clone the Llama OCR repo and install the required dependencies with the following commands:
 
