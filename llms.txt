@@ -3193,7 +3193,7 @@ Claude will use the `verify_document` tool with:
 
 - **`prompt`**: "Does this document say that employees can work remotely full-time?"
 - **`response`**: "The document says employees can work remotely without restrictions."
-- **`documentContent`**: (automatically provided by MCP client)
+- **`documentContent`**:  The content of the document as provided by the MCP client for verification.
 
 This verifies the response against the actual document content.
 
