@@ -63,15 +63,15 @@ This workflow validates AI-generated content against your source documents, tool
 - Select the OpenAI and choose **Credentials**. Then click **Create New**.
 
 - **Base URL**: `https://api.kluster.ai/v1`.
-- **API Key**: Your kluster.ai API key.
+- **API key**: Your kluster.ai API key.
 - **Model**: Select from [available models](https://platform.kluster.ai/models){target=\_blank}.
 
 **Set up the kluster verify node API key:**
 
 Open the kluster verify node and modify the headers as follow:
 
-- **Header Name**: `Authorization`.
-- **Header Value**: `Bearer YOUR_API_KEY`.
+- **Header name**: `Authorization`
+- **Header value**: `Bearer YOUR_API_KEY`
 
 
 **Import and Configure the Workflow** 
