@@ -30,13 +30,13 @@ crewai create crew INSERT_PROJECT_NAME
 
 After finishing the CLI setup, you will see a `src` directory with files `crew.py` and `main.py`. This guide won't use these sample files because they include extra features outside the scope. Follow these steps to continue:
 
-1. **Create your first file**: Create a `hello_crew.py` file in `src/YOUR_PROJECT_NAME` to correspond to a simple AI agent chatbot:
+1. **Create your first file**: Create a `hello_crew.py` file in `src/YOUR_PROJECT_NAME` to correspond to a simple AI agent chatbot.
 2. **Import modules and select model**: Open `hello_crew.py` to add imports and define a custom LLM for kluster.ai by setting the following parameters:
-    - **provider**: You can specify `openai_compatible`.
-    - **model**: Choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case. Regardless of which model you choose, prepend its name with `openai/` to ensure CrewAI, which relies on LiteLLM, processes your requests correctly.
+    - **`provider`**: You can specify `openai_compatible`.
+    - **`model`**: Choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case. Regardless of which model you choose, prepend its name with `openai/` to ensure CrewAI, which relies on LiteLLM, processes your requests correctly.
 
-    - **base_url**: Use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint.
-    - **api_key**: Replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}.
+    - **`base_url`**: Use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint.
+    - **`api_key`**: Replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}.
   
     ```python title="hello_crew.py"
     --8<-- "code/get-started/integrations/crewai/hello_crew.py:0:23"

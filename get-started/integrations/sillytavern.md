@@ -29,7 +29,7 @@ Before starting, ensure you have the following:
 
     There should be no trailing slash (`/`) at the end of the URL
 
-6. Paste your **kluster.ai** API Key into the designated field.
+6. Paste your **kluster.ai** API key into the designated field.
 7. **Enter a Model ID**. For this example, you can enter:
 
     ```text

@@ -15,7 +15,7 @@ Before starting, ensure you have the following:
 
 --8<-- 'text/kluster-api-onboarding.md'
 - **[A python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}**: This is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial.
-- [**LiteLLM installed**](https://github.com/BerriAI/litellm){target=\_blank}: to install the library, use the following command:
+- [**LiteLLM installed**](https://github.com/BerriAI/litellm){target=\_blank}: To install the library, use the following command:
 
     ```bash
     pip install litellm
