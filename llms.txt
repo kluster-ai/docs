@@ -726,13 +726,13 @@ crewai create crew INSERT_PROJECT_NAME
 
 After finishing the CLI setup, you will see a `src` directory with files `crew.py` and `main.py`. This guide won't use these sample files because they include extra features outside the scope. Follow these steps to continue:
 
-1. **Create your first file**: Create a `hello_crew.py` file in `src/YOUR_PROJECT_NAME` to correspond to a simple AI agent chatbot:
+1. **Create your first file**: Create a `hello_crew.py` file in `src/YOUR_PROJECT_NAME` to correspond to a simple AI agent chatbot.
 2. **Import modules and select model**: Open `hello_crew.py` to add imports and define a custom LLM for kluster.ai by setting the following parameters:
-    - **provider**: You can specify `openai_compatible`.
-    - **model**: Choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case. Regardless of which model you choose, prepend its name with `openai/` to ensure CrewAI, which relies on LiteLLM, processes your requests correctly.
+    - **`provider`**: You can specify `openai_compatible`.
+    - **`model`**: Choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case. Regardless of which model you choose, prepend its name with `openai/` to ensure CrewAI, which relies on LiteLLM, processes your requests correctly.
 
-    - **base_url**: Use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint.
-    - **api_key**: Replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}.
+    - **`base_url`**: Use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint.
+    - **`api_key`**: Replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}.
   
     ```python title="hello_crew.py"
     import random
@@ -966,9 +966,9 @@ cp .env.example .env
 ```
 
 2. **Set variables**: Update the following variables in the `.env` file:
-    - **OPENAI_API_KEY**: Replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}.
-    - **OPENAI_API_URL**: Use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint.
-    - **OPENAI_DEFAULT_MODEL**: Choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case. You should also set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, and `LARGE_OPENAI_MODEL` to the same value to allow seamless experimentation as different characters use different default models.
+    - **`OPENAI_API_KEY`**: Replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}.
+    - **`OPENAI_API_URL`**: Use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint.
+    - **`OPENAI_DEFAULT_MODEL`**: Choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case. You should also set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, and `LARGE_OPENAI_MODEL` to the same value to allow seamless experimentation as different characters use different default models.
 
 The OpenAI configuration section of your `.env` file should resemble the following:
 
@@ -1070,7 +1070,7 @@ Take the following steps to configure the kluster.ai API as a custom translation
     ```
 
 3. Paste in your kluster.ai [API key](https://platform.kluster.ai/apikeys){target=\_blank}.
-4. **Check** the box to enable custom models .
+4. **Check** the box to enable custom models.
 5. Paste in the name of the kluster.ai [supported model](/get-started/models/){target=\_blank} you'd like to use.
 6. Specify a value of `1` for max requests per second to avoid rate limits. Paid kluster.ai API accounts may have higher rate limits.
 7. Press **Verify Service** in the upper right corner to validate the input values.
@@ -1310,7 +1310,7 @@ Before starting, ensure you have the following:
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 - **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 - **[A python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}**: This is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial.
-- [**LiteLLM installed**](https://github.com/BerriAI/litellm){target=\_blank}: to install the library, use the following command:
+- [**LiteLLM installed**](https://github.com/BerriAI/litellm){target=\_blank}: To install the library, use the following command:
 
     ```bash
     pip install litellm
@@ -2083,7 +2083,7 @@ if __name__ == '__main__':
     asyncio.run(main())
     ```
 
-2. **Define a custom model to use the kluster.ai API**: Replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For the model name, choose one of the kluster.ai [models](/get-started/start-building/real-time/#supported-models){target=_blank} that best fits your use case.
+2. **Define a custom model to use the kluster.ai API**: Replace `INSERT_API_KEY` with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For the model name, choose one of the kluster.ai [models](/get-started/start-building/real-time/#supported-models){target=_blank} that best fits your use case.
 
     ```python title="quick-start.py"
     # Configure pydantic-ai to use your custom base URL and model name
@@ -2785,7 +2785,7 @@ Before starting, ensure you have the following:
 
     There should be no trailing slash (`/`) at the end of the URL
 
-6. Paste your **kluster.ai** API Key into the designated field.
+6. Paste your **kluster.ai** API key into the designated field.
 7. **Enter a Model ID**. For this example, you can enter:
 
     ```text
@@ -9207,9 +9207,9 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
     "\n",
     "The Bad prompt offers only the most rudimentary information—products and their sales—and provides no clear instructions beyond \"tell me about it.\" This inevitably results in:\n",
     "\n",
-    "- **Minimal context** - Without pricing, profit margins, or a specific goal (e.g., analyzing profitability, recommending strategies), the LLM can only produce surface-level observations.\n",
-    "- **No actionable guidance** - The prompt doesn't request particular insights or next steps, so the model responds with high-level statements rather than solutions.\n",
-    "- **Limited utility** - Because the data is purely quantitative (sales alone) and lacks details such as time frame, product characteristics, or marketing context, the response cannot go beyond pointing out which products sold more or less.\n",
+    "- **Minimal context**: Without pricing, profit margins, or a specific goal (e.g., analyzing profitability, recommending strategies), the LLM can only produce surface-level observations.\n",
+    "- **No actionable guidance**: The prompt doesn't request particular insights or next steps, so the model responds with high-level statements rather than solutions.\n",
+    "- **Limited utility**: Because the data is purely quantitative (sales alone) and lacks details such as time frame, product characteristics, or marketing context, the response cannot go beyond pointing out which products sold more or less.\n",
     "\n",
     "Overall, this prompt's lack of clear direction and supporting information stifles the model's ability to provide meaningful analysis or recommendations."
    ]
@@ -12519,7 +12519,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
     "Let's take a closer look at the response above. The assistant’s reply isn’t prose; rather, it’s a structured tool call:\n",
     "\n",
     "1. **`finish_reason: \"tool_calls\"`**: Signals the model has paused, waiting for us to run one or more tools.\n",
-    "2. **`message.tool_calls[0]`** an array item that describes what to run:\n",
+    "2. **`message.tool_calls[0]`**: An array item that describes what to run:\n",
     "   * `id`: A unique identifier we must echo back.\n",
     "   * `function.name`: Here it's `calculator`.\n",
     "   * *`function.arguments`*: JSON-encoded string with the expression *`\"1337  42\"`.\n",
@@ -14628,7 +14628,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
     "We're choosing accuracy for this tutorial because:\n",
     "\n",
     "1. It's easy to understand and interpret.\n",
-    "2. It directly answers the question: \"How often is our model correct?\".\n",
+    "2. It directly answers the question: \"How often is our model correct?\"\n",
     "\n",
     "In the next section, we'll see how to implement this metric in our evaluation pipeline.\n",
     "\n",
@@ -15429,24 +15429,24 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
     "  - Accuracy: 80.7%\n",
     "  - Total tokens used: 138,699 (135,717 input / 2,982 output)\n",
     "  - Cost: $0.0992\n",
-    "  - Highest cost among the four models ❌.\n",
+    "  - Highest cost among the four models ❌\n",
     "\n",
     "- Llama 4 Maverick 17B:\n",
     "  - Accuracy: 80.5%\n",
     "  - Total tokens used: 147,549 (144,021 input / 3,528 output)\n",
     "  - Cost: $0.0316 ✅\n",
-    "  - Best overall cost-efficiency, delivering solid performance at the lowest price.\n",
+    "  - Best overall cost-efficiency, delivering solid performance at the lowest price\n",
     "\n",
     "- Llama 4 Scout 17B:\n",
     "  - Accuracy: 79.8%\n",
     "  - Total tokens used: 146,810 (144,021 input / 2,789 output)\n",
     "  - Cost: $0.1165\n",
-    "  - Slightly lower accuracy compared to Maverick, but significantly more expensive.\n",
+    "  - Slightly lower accuracy compared to Maverick, but significantly more expensive\n",
     "\n",
     "- Gemma 3 27B:\n",
     "  - Accuracy: 82.9% ✅\n",
     "  - Total tokens used: 145,796 (143,579 input / 2,217 output)\n",
-    "  - Best overall ratio between cost-efficiency and accuracy.\n",
+    "  - Best overall ratio between cost-efficiency and accuracy\n",
     "\n",
     "\n",
     "Each model was evaluated using the same set of 1000 movie overviews, with genre predictions compared against annotated ground-truth genres. Total input and output tokens were recorded and converted into USD using published prices per 1M tokens.\n",
