@@ -14,7 +14,7 @@ LLMs can generate non-factual or irrelevant information (hallucinations). For de
 
 Traditional validation methods may involve complex rule sets, fine-tuning, or exhibit high false-positive rates, adding to the development burden.
 
-Verify is an intelligent verification service that validates LLM outputs in real time. It's designed to give you the trust needed to deploy AI at scale in production environments where accuracy matters most.
+Verify is an intelligent verification service that validates LLM outputs in real-time. It's designed to give you the trust needed to deploy AI at scale in production environments where accuracy matters most.
 
 This page provides an overview of the Verify service.
 
