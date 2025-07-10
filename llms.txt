@@ -9121,8 +9121,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
     "\n",
     "api_key = getpass('Enter your kluster.ai API key: ')\n",
     "\n",
-    "# Feel free to swap out the model with any of Kluster's supported models\n",
-    "# You can also use your own Kluster dedicated deployment after launching one\n",
+    "# Feel free to swap out the model with any of kluster's supported models\n",
+    "# You can also use your own kluster.ai dedicated deployment after launching one\n",
     "# And specifying the model ID as the model parameter. \n",
     "# For more details, see https://docs.kluster.ai/get-started/dedicated-deployments/\n",
     "model = \"google/gemma-3-27b-it\"\n",
@@ -12184,7 +12184,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipyn
     "\n",
     "All of this using the OpenAI Python library and API, no changes needed!\n",
     "\n",
-    "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As the next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
+    "kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As the next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
    ]
   }
  ],
@@ -13539,7 +13539,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
         "\n",
         "All of this using the OpenAI Python library and API, no changes needed!\n",
         "\n",
-        "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As the next steps, feel free to create your dataset or expand on this example. Good luck!"
+        "kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As the next steps, feel free to create your dataset or expand on this example. Good luck!"
       ]
     }
   ],
@@ -16674,7 +16674,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
     "\n",
     "All of this using the OpenAI Python library and API, no changes needed!\n",
     "\n",
-    "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
+    "kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
    ]
   }
  ],
@@ -18649,7 +18649,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
     "\n",
     "All of this using the OpenAI Python library and API, no changes needed!\n",
     "\n",
-    "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
+    "kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
    ]
   }
  ],
@@ -20304,8 +20304,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/uploads-api.ipynb/
     "                \"method\": \"POST\",\n",
     "                \"url\": \"/v1/chat/completions\",\n",
     "                \"body\": {\n",
-    "                    # Feel free to swap out the model with any of Kluster's supported models\n",
-    "                    # You can also use your own Kluster dedicated deployment after launching one\n",
+    "                    # Feel free to swap out the model with any of kluster's supported models\n",
+    "                    # You can also use your own kluster.ai dedicated deployment after launching one\n",
     "                    # And specifying the model ID as the model parameter. \n",
     "                    # For more details, see https://docs.kluster.ai/get-started/dedicated-deployments/\n",
     "                    \"model\": \"klusterai/Meta-Llama-3.1-8B-Instruct-Turbo\",\n",
