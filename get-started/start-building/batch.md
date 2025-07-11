@@ -15,11 +15,11 @@ This guide provides examples and instructions on how to create, submit, retrieve
 This guide assumes familiarity with Large Language Model (LLM) development and OpenAI libraries. Before getting started, make sure you have:
 
 --8<-- 'text/kluster-api-onboarding.md'
-- **A virtual Python environment** - (optional) recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
-- **Required Python libraries** - install the following Python libraries:
-    - [**OpenAI Python API library**](https://pypi.org/project/openai/) - to access the `openai` module
-    - [**`getpass`**](https://pypi.org/project/getpass4/) - to handle API keys safely
-- **A basic understanding of** [**JSON Lines (JSONL)**](https://jsonlines.org/){target=\_blank} - JSONL is the required text input format for performing batch inferences with the kluster.ai API
+- **A virtual Python environment (optional)**: Recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects.
+- **Required Python libraries**: Install the following Python libraries:
+    - [**OpenAI Python API library**](https://pypi.org/project/openai/){target=\_blank}: To access the `openai` module.
+    - [**`getpass`**](https://pypi.org/project/getpass4/){target=\_blank}: To handle API keys safely.
+- **A basic understanding of** [**JSON Lines (JSONL)**](https://jsonlines.org/){target=\_blank}: JSONL is the required text input format for performing batch inferences with the kluster.ai API.
 
 If you plan to use cURL via the CLI, you can export your kluster.ai API key as a variable:
 
@@ -37,16 +37,16 @@ In addition, you can see the complete list of available models programmatically 
 
 Working with batch jobs in the kluster.ai API involves the following steps:
 
-1. **Create batch job file** - prepare a JSON Lines file containing one or more chat completion requests to execute in the batch
-2. **Upload batch job file** - upload the file to kluster.ai to receive a unique file ID
-3. **Start the batch job** - initiate a new batch job using the file ID
-4. **Monitor job progress** - track the status of your batch job to ensure successful completion
-5. **Retrieve results** - once the job finishes, access and process the results as needed
+1. **Create batch job file**: Prepare a JSON Lines file containing one or more chat completion requests to execute in the batch.
+2. **Upload batch job file**: Upload the file to kluster.ai to receive a unique file ID.
+3. **Start the batch job**: Initiate a new batch job using the file ID.
+4. **Monitor job progress**: Track the status of your batch job to ensure successful completion.
+5. **Retrieve results**: Once the job finishes, access and process the results as needed.
 
 In addition to these core steps, this guide will give you hands-on experience to:
 
-- **Cancel a batch job** - cancel an ongoing batch job before it completes
-- **List all batch jobs** - review all of your batch jobs
+- **Cancel a batch job**: Cancel an ongoing batch job before it completes.
+- **List all batch jobs**: Review all of your batch jobs.
 
 !!! warning
     For the free tier, the maximum number of batch requests (lines in the JSONL file) must be less than {{ batch.max_lines_free }}, and each file must not exceed {{ batch.max_size }}. For the standard tier, there is no limit to the number of batch requests, but the maximum batch file size is {{ batch.max_size }} per file.
@@ -229,12 +229,12 @@ To begin the batch job workflow, you'll need to assemble your batch requests and
 
 Each request must include the following arguments:
 
-- `custom_id` ++"string"++ - a unique request ID to match outputs to inputs
-- `method` ++"string"++ - the HTTP method to use for the request. Currently, only `POST` is supported
-- `url` ++"string"++ -  the `/v1/chat/completions` endpoint
-- `body` ++"object"++ - a request body containing:
-    - `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](/get-started/models/){target=\_blank}
-    - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images)
+- `custom_id` ++"string"++: A unique request ID to match outputs to inputs.
+- `method` ++"string"++: The HTTP method to use for the request. Currently, only `POST` is supported.
+- `url` ++"string"++:  The `/v1/chat/completions` endpoint.
+- `body` ++"object"++: A request body containing:
+    - `model` ++"string"++ <span class="required" markdown>++"required"++</span>: Name of one of the [supported models](/get-started/models/){target=\_blank}.
+    - `messages` ++"array"++ <span class="required" markdown>++"required"++</span>: A list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images).
     - Any optional [chat completion parameters](/api-reference/reference/#/http/api-endpoints/realtime/v1-chat-completions-post){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
 
 !!! tip
@@ -576,12 +576,10 @@ You can use the following snippets to cancel a batch job:
 
 You have now experienced the complete batch inference job lifecycle using kluster.ai's batch API. In this guide, you've learned how to:
 
-- Prepare and submit batch jobs with structured request inputs
-- Track your job's progress in real-time
-- Retrieve and handle job results
-- View and manage your batch jobs
-- Cancel jobs when needed
+- Prepare and submit batch jobs with structured request inputs.
+- Track your job's progress in real-time.
+- Retrieve and handle job results.
+- View and manage your batch jobs.
+- Cancel jobs when needed.
 
 The kluster.ai batch API is designed to efficiently and reliably handle your large-scale LLM workloads. If you have questions or suggestions, the [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
-
-

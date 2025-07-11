@@ -19,30 +19,30 @@ Before starting, ensure you have the following prerequisites:
 
 Navigate to [TypingMind](https://www.typingmind.com/){target=\_blank} and take the following steps to access the custom model setup:
 
-1. Click on the model dropdown
-2. Click on **Custom Models**
+1. Click on the model dropdown.
+2. Click on **Custom Models**.
 
 ![Launch screen](/images/get-started/integrations/typingmind/typingmind-1.webp)
 
 Then, take the following steps to configure TypingMind to use the kluster.ai API:
 
-1. Provide a name, such as `kluster`
-2. For the **API Type** dropdown, select **OpenAI Compatible API**
+1. Provide a name, such as `kluster`.
+2. For the **API Type** dropdown, select **OpenAI Compatible API**.
 3. Provide the following URL for the **Endpoint** field:
 
     ```text
     https://api.kluster.ai/v1/chat/completions
     ```
 
-4. Paste the name of the [supported kluster.ai model](/get-started/models/){target=\_blank} you'd like to use. Note that you can specify multiple models
+4. Paste the name of the [supported kluster.ai model](/get-started/models/){target=\_blank} you'd like to use. Note that you can specify multiple models.
 5. Press **Add Custom Headers** and for the **Key** value, specify `Authorization`. In the value field on the right, enter `Bearer` followed by your kluster.ai API key as follows: 
 
     ```text
     Bearer INSERT_KLUSTER_API_KEY
     ``` 
 
-6. Press **Test** to ensure the connection is successful
-7. Press **Add Model** to confirm adding the kluster.ai as a custom provider
+6. Press **Test** to ensure the connection is successful.
+7. Press **Add Model** to confirm adding the kluster.ai as a custom provider.
 
 ![Configure kluster.ai API as a provider](/images/get-started/integrations/typingmind/typingmind-2.webp)
 
@@ -50,9 +50,9 @@ Then, take the following steps to configure TypingMind to use the kluster.ai API
 
 You've configured the kluster.ai API as a provider, but it hasn't yet been selected as the default one. To change this, take the following steps: 
 
-1. Click on **Models** on the sidebar
-2. Select **kluster** (or whatever you named your custom model)
-3. Press **Set Default**
+1. Click on **Models** on the sidebar.
+2. Select **kluster** (or whatever you named your custom model).
+3. Press **Set Default**.
 
 ![Configure kluster.ai API as a provider](/images/get-started/integrations/typingmind/typingmind-3.webp)
 
@@ -64,8 +64,8 @@ And that's it! You can now query the LLM successfully using kluster.ai as the de
 
 TypingMind has a wide variety of prebuilt AI agents that you can use as-is or clone and customize to suit your needs. These AI agents can use the kluster.ai API to perform tasks tailored to your use cases. To get started, take the following steps:
 
-1. Click on **Agents** in the sidebar
-2. Click on **Browse Agents**
+1. Click on **Agents** in the sidebar.
+2. Click on **Browse Agents**.
 
 ![Agents home](/images/get-started/integrations/typingmind/typingmind-5.webp)
 

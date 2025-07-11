@@ -377,9 +377,9 @@ response = client.chat.completions.create(
 
 After your fine-tuned model is created, you can also test it in the kluster.ai playground:
 
-1. Go to the [kluster.ai playground](https://platform.kluster.ai/playground){target=_blank}
-2. Select your fine-tuned model from the model dropdown menu
-3. Start chatting with your model to evaluate its performance on your specific task
+1. Go to the [kluster.ai playground](https://platform.kluster.ai/playground){target=_blank}.
+2. Select your fine-tuned model from the model dropdown menu.
+3. Start chatting with your model to evaluate its performance on your specific task.
 
 ## Benefits of fine-tuning
 
@@ -636,10 +636,10 @@ This guide will help you obtain an API key, the first step to leveraging kluster
 
 If you haven't already created an account with kluster.ai, visit the [registration page](https://platform.kluster.ai/signup){target=\_blank} and take the following steps:
 
-1. Enter your full name
-2. Provide a valid email address
-3. Create a secure password
-4. Click the **Sign up** button
+1. Enter your full name.
+2. Provide a valid email address.
+3. Create a secure password.
+4. Click the **Sign up** button.
 
 ![Signup Page](/images/get-started/get-api-key/get-api-key-1.webp)
 
@@ -647,19 +647,19 @@ If you haven't already created an account with kluster.ai, visit the [registrati
 
 After you've signed up or logged into the platform through the [login page](https://platform.kluster.ai/login){target=\_blank}, take the following steps:
 
-1. Select **API Keys** on the left-hand side menu
-2. In the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section, click the **Issue New API Key** button
+1. Select **API Keys** on the left-hand side menu.
+2. In the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section, click the **Issue New API Key** button.
 
     ![Issue New API Key](/images/get-started/get-api-key/get-api-key-2.webp)
 
-3. Enter a descriptive name for your API key in the popup, then click **Create Key**
+3. Enter a descriptive name for your API key in the popup, then click **Create Key**.
 
     ![Generate API Key](/images/get-started/get-api-key/get-api-key-3.webp)
 
 ## Copy and secure your API key
 
-1. Once generated, your API key will be displayed
-2. Copy the key and store it in a secure location, such as a password manager
+1. Once generated, your API key will be displayed.
+2. Copy the key and store it in a secure location, such as a password manager.
 
     !!! warning "Warning"
         For security reasons, you won't be able to view the key again. If lost, you will need to generate a new one.
@@ -667,9 +667,9 @@ After you've signed up or logged into the platform through the [login page](http
 ![Copy API key](/images/get-started/get-api-key/get-api-key-4.webp)
 
 !!! abstract "Security tips"
-    - **Keep it secret** - do not share your API key publicly or commit it to version control systems
-    - **Use environment variables** - store your API key in environment variables instead of hardcoding them
-    - **Regenerate if compromised** - if you suspect your API key has been exposed, regenerate it immediately from the **API Keys** section
+    - **Keep it secret**: Do not share your API key publicly or commit it to version control systems.
+    - **Use environment variables**: Store your API key in environment variables instead of hardcoding them.
+    - **Regenerate if compromised**: If you suspect your API key has been exposed, regenerate it immediately from the **API Keys** section.
 
 ## Managing your API keys
 
@@ -677,9 +677,9 @@ The **API Key Management** section allows you to efficiently manage your kluster
 
 To delete an API key, take the following steps:
 
-1. Locate the API key you wish to delete in the list
-2. Click the trash bin icon ( :octicons-trash-24: ) in the **Actions** column
-3. Confirm the deletion when prompted
+1. Locate the API key you wish to delete in the list.
+2. Click the trash bin icon ( :octicons-trash-24: ) in the **Actions** column.
+3. Confirm the deletion when prompted.
 
 ![Delete API key](/images/get-started/get-api-key/get-api-key-5.webp)
 
@@ -710,30 +710,29 @@ Before starting, ensure you have the following prerequisites:
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 - **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
-- **CrewAI installed** - the [Installation Guide](https://docs.crewai.com/installation){target=\_blank} on the CrewAI website will walk you through installing CrewAI, setting up a virtual Python environment, and creating a new project. Note that CrewAI requires a Python version >=`3.10` and <`3.13`
+- **CrewAI installed**: The [Installation Guide](https://docs.crewai.com/installation){target=\_blank} on the CrewAI website will walk you through installing CrewAI, setting up a virtual Python environment, and creating a new project. Note that CrewAI requires a Python version >=`3.10` and <`3.13`.
 
 ## Create a project with the CLI
 
 Open your Python virtual environment, and then follow these steps to use the CrewAI CLI to create a new project:
 
-1. **Create a project** - following the installation guide, create your first project with the following command:
+1. **Create a project**: Following the installation guide, create your first project with the following command:
 ```bash
 crewai create crew INSERT_PROJECT_NAME
 ```
-2. **Select model and provider** - during setup, the CLI will ask you to choose a provider and a model. Select `openai` as the provider and then choose any available model. Because you'll configure kluster.ai as a custom model, your initial model choice won't affect the final integration. The CLI will prompt you for an OpenAI API key, but this isn’t required. Simply press enter to skip
+2. **Select model and provider**: During setup, the CLI will ask you to choose a provider and a model. Select `openai` as the provider and then choose any available model. Because you'll configure kluster.ai as a custom model, your initial model choice won't affect the final integration. The CLI will prompt you for an OpenAI API key, but this isn’t required. Simply press enter to skip.
 
 ## Build a simple AI agent
 
 After finishing the CLI setup, you will see a `src` directory with files `crew.py` and `main.py`. This guide won't use these sample files because they include extra features outside the scope. Follow these steps to continue:
 
-1. **Create your first file** - create a `hello_crew.py` file in `src/YOUR_PROJECT_NAME` to correspond to a simple AI agent chatbot
+1. **Create your first file**: Create a `hello_crew.py` file in `src/YOUR_PROJECT_NAME` to correspond to a simple AI agent chatbot.
+2. **Import modules and select model**: Open `hello_crew.py` to add imports and define a custom LLM for kluster.ai by setting the following parameters:
+    - **`provider`**: You can specify `openai_compatible`.
+    - **`model`**: Choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case. Regardless of which model you choose, prepend its name with `openai/` to ensure CrewAI, which relies on LiteLLM, processes your requests correctly.
 
-2. **Import modules and select model** - open `hello_crew.py` to add imports and define a custom LLM for kluster.ai by setting the following parameters:
-    - **provider** - you can specify `openai_compatible`
-    - **model** - choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case. Regardless of which model you choose, prepend its name with `openai/` to ensure CrewAI, which relies on LiteLLM, processes your requests correctly
-
-    - **base_url** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
-    - **api_key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
+    - **`base_url`**: Use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint.
+    - **`api_key`**: Replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}.
   
     ```python title="hello_crew.py"
     import random
@@ -762,7 +761,7 @@ class HelloWorldCrew:
 
     This example overrides `agents_config` and `tasks_config` with empty dictionaries to tell CrewAI to ignore all YAML files and rely solely on your code, keeping this guide as streamlined as possible. 
 
-3. **Define your agent** - set the agent's role, goal, and backstory, and assign the custom LLM (via the kluster.ai API) for generating creative greetings:
+3. **Define your agent**: Set the agent's role, goal, and backstory, and assign the custom LLM (via the kluster.ai API) for generating creative greetings:
 
     ```python title="hello_crew.py"
     @agent
@@ -779,7 +778,7 @@ class HelloWorldCrew:
         )
     ```
 
-4. **Give the agent a task** - define a task that prompts the agent for a unique, creative greeting using randomness to avoid repetition. Passing this prompt to `hello_agent()` ensures varied responses. CrewAI requires an `expected_output` field, defined here as a short greeting:
+4. **Give the agent a task**: Define a task that prompts the agent for a unique, creative greeting using randomness to avoid repetition. Passing this prompt to `hello_agent()` ensures varied responses. CrewAI requires an `expected_output` field, defined here as a short greeting:
 
     ```python title="hello_crew.py"
     def hello_task(self) -> Task:
@@ -801,7 +800,7 @@ class HelloWorldCrew:
         )
     ```
 
-5. **Tie it all together with a `@crew` method** - add the following method to return the assembled Crew object with a single agent and task. This method enables CrewAI to coordinate the agent and task you defined:
+5. **Tie it all together with a `@crew` method**: Add the following method to return the assembled Crew object with a single agent and task. This method enables CrewAI to coordinate the agent and task you defined:
 
     ```python title="hello_crew.py"
     def hello_crew(self) -> Crew:
@@ -816,7 +815,7 @@ class HelloWorldCrew:
         )
     ```
 
-6. **Set up the entry point for the agent** - create a new file named `hello_main.py`. In `hello_main.py`, import and initialize the `HelloWorldCrew` class, call its `hello_crew()` method, and then `kickoff()` to launch the task sequence:
+6. **Set up the entry point for the agent**: Create a new file named `hello_main.py`. In `hello_main.py`, import and initialize the `HelloWorldCrew` class, call its `hello_crew()` method, and then `kickoff()` to launch the task sequence:
 
     ```python title="hello_main.py"
     #!/usr/bin/env python
@@ -949,7 +948,7 @@ Before starting, ensure you have the following kluster prerequisites:
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 - **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
-- **Clone and install the eliza repository** - follow the installation instructions on the [eliza Quick Start guide](https://eliza.how/docs/quickstart){target=\_blank}
+- **Clone and install the eliza repository**: Follow the installation instructions on the [eliza Quick Start guide](https://eliza.how/docs/quickstart){target=\_blank}.
     
 !!! warning
 
@@ -961,15 +960,15 @@ Before starting, ensure you have the following kluster prerequisites:
 
 After installing eliza, it's simple to utilize kluster.ai with eliza. Only three main changes to the `.env` file are required. 
 
-1. **Create `.env` file** - run the following command to generate a `.env` file from the eliza repository example:
+1. **Create `.env` file**: Run the following command to generate a `.env` file from the eliza repository example:
 ```bash
 cp .env.example .env
 ```
 
-2. **Set variables** - update the following variables in the `.env` file:
-    - **OPENAI_API_KEY** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
-    - **OPENAI_API_URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
-    - **OPENAI_DEFAULT_MODEL** - choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case. You should also set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, and `LARGE_OPENAI_MODEL` to the same value to allow seamless experimentation as different characters use different default models
+2. **Set variables**: Update the following variables in the `.env` file:
+    - **`OPENAI_API_KEY`**: Replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}.
+    - **`OPENAI_API_URL`**: Use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint.
+    - **`OPENAI_DEFAULT_MODEL`**: Choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case. You should also set `SMALL_OPENAI_MODEL`, `MEDIUM_OPENAI_MODEL`, and `LARGE_OPENAI_MODEL` to the same value to allow seamless experimentation as different characters use different default models.
 
 The OpenAI configuration section of your `.env` file should resemble the following:
 
@@ -989,7 +988,7 @@ LARGE_OPENAI_MODEL=klusterai/Meta-Llama-3.3-70B-Instruct-Turbo
 
 Now that you've configured your environment, you're ready to run your first agent! eliza has several characters you can interact with by prompting or through autonomous tasks like tweeting. This guide relies on the `Dobby` character for its minimal setup requirements.
 
-1. **Verify character configuration** - open the `dobby.character.json` file inside the `characters` folder. By default, `Dobby` uses the `openai` model, which you've already configured to use the kluster.ai API. The `Dobby` configuration should start with the following:
+1. **Verify character configuration**: Open the `dobby.character.json` file inside the `characters` folder. By default, `Dobby` uses the `openai` model, which you've already configured to use the kluster.ai API. The `Dobby` configuration should start with the following:
 ```json title="dobby.character.json"
 {
   "name": "Dobby",
@@ -998,12 +997,12 @@ Now that you've configured your environment, you're ready to run your first agen
 }
 ```
 
-2. **Run the agent** - run the following command from the project root directory to run the `Dobby` agent:
+2. **Run the agent**: Run the following command from the project root directory to run the `Dobby` agent:
 ```bash
 pnpm start --character="characters/dobby.character.json"
 ``` 
 
-3. **Launch the UI** - in another terminal window, run the following command to launch the web UI: 
+3. **Launch the UI**: In another terminal window, run the following command to launch the web UI: 
 ```bash
 pnpm start:client
 ```
@@ -1016,7 +1015,7 @@ pnpm start:client
    <span data-ty>➜  press h + enter to show help</span>
 </div>
 
-4. **Open your browser** - follow the prompts and open your browser to [http://localhost:5173/](http://localhost:5173/){target=\_blank}
+4. **Open your browser**: Follow the prompts and open your browser to `http://localhost:5173/`.
 
 ## Put it all together
 
@@ -1046,7 +1045,7 @@ Before starting, ensure you have the following:
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 - **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
-- **Installed the Immersive Translate plugin** - you can download the Immersive Translate plugin for your respective browser on the [Immersive Translate homepage](https://immersivetranslate.com/){target=\_blank}
+- **Installed the Immersive Translate plugin**: You can download the Immersive Translate plugin for your respective browser on the [Immersive Translate homepage](https://immersivetranslate.com/){target=\_blank}.
 
 ## Configure Immersive Translate
 
@@ -1056,32 +1055,32 @@ First, open the Immersive Translate extension and click on the **Options** butto
 
 Then, take the following steps:
 
-1. Navigate to **Translatation Services**
-2. Press **Add OpenAI Compatible Service**
+1. Navigate to **Translatation Services**.
+2. Press **Add OpenAI Compatible Service**.
 
 ![](/images/get-started/integrations/immersivetranslate/immersive-2.webp)
 
 Take the following steps to configure the kluster.ai API as a custom translation service for Immersive Translate:
 
-1. Enter a name
+1. Enter a name.
 2. For the custom API interface address, enter the following:
 
     ```text
     https://api.kluster.ai/v1/chat/completions
     ```
 
-3. Paste in your kluster.ai [API key](https://platform.kluster.ai/apikeys){target=\_blank}
-4. **Check** the box to enable custom models 
-5. Paste in the name of the kluster.ai [supported model](/get-started/models/){target=\_blank} you'd like to use
-6. Specify a value of `1` for max requests per second to avoid rate limits. Paid kluster.ai API accounts may have higher rate limits
-7. Press **Verify Service** in the upper right corner to validate the input values
+3. Paste in your kluster.ai [API key](https://platform.kluster.ai/apikeys){target=\_blank}.
+4. **Check** the box to enable custom models.
+5. Paste in the name of the kluster.ai [supported model](/get-started/models/){target=\_blank} you'd like to use.
+6. Specify a value of `1` for max requests per second to avoid rate limits. Paid kluster.ai API accounts may have higher rate limits.
+7. Press **Verify Service** in the upper right corner to validate the input values.
 
 ![](/images/get-started/integrations/immersivetranslate/immersive-3.webp)
 
 You must take one more step before using kluster.ai with Immersive Translate. Although kluster.ai has been added as a provider, it is disabled by default. To enable it, take the following steps:
 
-1. Click on the **Translation Services** section of settings
-2. Toggle the switch to enable kluster.ai as a provider
+1. Click on the **Translation Services** section of settings.
+2. Toggle the switch to enable kluster.ai as a provider.
 
 That's it! The next section will demonstrate using Immersive Translate with the kluster.ai API to perform webpage translations.
 
@@ -1091,9 +1090,9 @@ That's it! The next section will demonstrate using Immersive Translate with the 
 
 With Immersive Translate, you can easily translate content with just a few clicks. To do so, navigate to the page with the foreign language content. Open the Immersive Translate plugin and take the following steps:
 
-1. The language of the existing content is auto-detected by the plugin, but it's a good idea to verify it
-2. Select the language to translate the content into. This is set by default to your native language 
-3. Press **Translate**
+1. The language of the existing content is auto-detected by the plugin, but it's a good idea to verify it.
+2. Select the language to translate the content into. This is set by default to your native language.
+3. Press **Translate**.
 
 ![](/images/get-started/integrations/immersivetranslate/immersive-5.webp)
 
@@ -1123,8 +1122,8 @@ Before starting, ensure you have the following:
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 - **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
-- **[A python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}** - this is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial
-- **LangChain packages installed** - install the [`langchain` packages](https://github.com/langchain-ai/langchain){target=\_blank}:
+- **[A python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}**: This is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial.
+- **LangChain packages installed**: Install the [`langchain` packages](https://github.com/langchain-ai/langchain){target=\_blank}:
 
     ```bash
     pip install langchain langchain_community langchain_core langchain_openai
@@ -1140,9 +1139,9 @@ Before starting, ensure you have the following:
 
 It's easy to integrate kluster.ai with LangChain—when configuring the chat model, point your `ChatOpenAI` instance to the correct base URL and configure the following settings:
 
-  - **Base URL** - use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint
-  - **API key** - replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}
-  - **Select your model** - choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case
+  - **Base URL**: Use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint.
+  - **API key**: Replace `INSERT_API_KEY` in the code below with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}.
+  - **Select your model**: Choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} based on your use case.
 
 ```python
 from langchain_openai import ChatOpenAI
@@ -1162,12 +1161,12 @@ That's all you need to start with LangChain and the kluster.ai API! Next, this g
 
 This section will explore what LangChain can do beyond a single prompt-and-response interaction. One standout feature of LangChain is its built-in memory, which tracks conversation context across multiple user queries. In the following steps, you'll set up a multi-turn conversational agent that takes advantage of this memory and seamlessly integrates with the kluster.ai API.
 
-1. **Create file** - create a new file called `langchain-advanced.py` using the following command in your terminal:
+1. **Create file**: Create a new file called `langchain-advanced.py` using the following command in your terminal:
 ```bash
 touch langchain-advanced.py
 ```
 
-2. **Import LangChain components** - inside your new file, import the following components for memory management, prompt handling, and kluster.ai integration:
+2. **Import LangChain components**: Inside your new file, import the following components for memory management, prompt handling, and kluster.ai integration:
 ```python
 from langchain.chains.conversation.memory import ConversationBufferMemory
 from langchain_community.chat_message_histories import ChatMessageHistory
@@ -1175,12 +1174,12 @@ from langchain_core.messages import HumanMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_openai import ChatOpenAI
 ```
-3. **Create a memory instance** - to store and manage the conversation's context, allowing the chatbot to remember previous user messages.
+3. **Create a memory instance**: To store and manage the conversation's context, allowing the chatbot to remember previous user messages.
 ```python
 message_history = ChatMessageHistory()
 memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 ```
-4. **Configure the `ChatOpenAI` model** - point to kluster.ai's endpoint with your API key and chosen model. Remember, you can always change the selected model based on your needs
+4. **Configure the `ChatOpenAI` model**: Point to kluster.ai's endpoint with your API key and chosen model. Remember, you can always change the selected model based on your needs.
 ```python
 llm = ChatOpenAI(
     base_url="https://api.kluster.ai/v1",
@@ -1188,7 +1187,7 @@ llm = ChatOpenAI(
     model="klusterai/Meta-Llama-3.1-8B-Instruct-Turbo",
 )
 ```
-5. **Define a prompt template** - include a system instruction for the assistant, a placeholder for the conversation history, and an input slot for the user's query 
+5. **Define a prompt template**: Include a system instruction for the assistant, a placeholder for the conversation history, and an input slot for the user's query.
 ```python
 prompt = ChatPromptTemplate.from_messages([
     ("system", "You are a helpful assistant."),
@@ -1196,7 +1195,7 @@ prompt = ChatPromptTemplate.from_messages([
     ("human", "{input}")
 ])
 ```
-6. **Create the `ConversationChain`** - pass in the LLM, memory, and this prompt template so every new user query is automatically enriched with the stored conversation context and guided by the assistant's role
+6. **Create the `ConversationChain`**: Pass in the LLM, memory, and this prompt template so every new user query is automatically enriched with the stored conversation context and guided by the assistant's role.
 ```python
 conversation = ConversationChain(
     llm=llm,
@@ -1204,14 +1203,14 @@ conversation = ConversationChain(
     prompt=prompt
 )
 ```
-7. **Prompt the model with the first question** - you can prompt the model with any question. The example chosen here is designed to demonstrate context awareness between questions
+7. **Prompt the model with the first question**: You can prompt the model with any question. The example chosen here is designed to demonstrate context awareness between questions.
 ```python
 question1 = "Hello! Can you tell me something interesting about the city of Kathmandu?"
 print("Question 1:", question1)
 response1 = conversation.predict(input=question1)
 print("Response 1:", response1)
 ```
-8. **Pose a follow-up question** - ask another question without resupplying the city name and notice how LangChain's memory implicitly handles the context. Return and print the questions and responses to see how the conversation informs each new query to create multi-turn interactions
+8. **Pose a follow-up question**: Ask another question without resupplying the city name and notice how LangChain's memory implicitly handles the context. Return and print the questions and responses to see how the conversation informs each new query to create multi-turn interactions.
 ```python
 question2 = "What is the population of that city?"
 print("\nQuestion 2:", question2)
@@ -1310,8 +1309,8 @@ Before starting, ensure you have the following:
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 - **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
-- **[A python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}** - this is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial
-- [**LiteLLM installed**](https://github.com/BerriAI/litellm){target=\_blank} - to install the library, use the following command:
+- **[A python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}**: This is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial.
+- [**LiteLLM installed**](https://github.com/BerriAI/litellm){target=\_blank}: To install the library, use the following command:
 
     ```bash
     pip install litellm
@@ -1321,7 +1320,7 @@ Before starting, ensure you have the following:
 
 In this section, you'll learn how to integrate kluster.ai with LiteLLM. You'll configure your environment variables, specify a kluster.ai model, and make a simple request using LiteLLM's OpenAI-like interface.
 
-1. **Import LiteLLM and its dependencies** - create a new file (e.g., `hello-litellm.py`) and start by importing the necessary Python modules:
+1. **Import LiteLLM and its dependencies**: Create a new file (e.g., `hello-litellm.py`) and start by importing the necessary Python modules:
 ```python
 import os
 
@@ -1348,23 +1347,23 @@ response = completion(
 
 print(response)
 ```
-2. **Set your kluster.ai API key and Base URL** - replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank} guide
+2. **Set your kluster.ai API key and Base URL**: Replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
 ```python
 os.environ["OPENAI_API_KEY"] = "INSERT_KLUSTER_API_KEY"
 os.environ["OPENAI_API_BASE"] = "https://api.kluster.ai/v1"
 ```
-3. **Define your conversation (system + user messages)** - set up your initial system prompt and user message. The system message defines your AI assistant's role, while the user message is the actual question or prompt
+3. **Define your conversation (system + user messages)**: Set up your initial system prompt and user message. The system message defines your AI assistant's role, while the user message is the actual question or prompt.
 ```python
 messages = [
     {"role": "system", "content": "You are a helpful assistant."},
     {"role": "user",   "content": "What is the capital of California?"}
 ]
 ```
-4. **Select your kluster.ai model** - choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} that best fits your use case. Prepend the model name with `openai/` so LiteLLM recognizes it as an OpenAI-like model request
+4. **Select your kluster.ai model**: Choose one of [kluster.ai's available models](/get-started/models/){target=\_blank} that best fits your use case. Prepend the model name with `openai/` so LiteLLM recognizes it as an OpenAI-like model request.
 ```python
 model = "openai/klusterai/Meta-Llama-3.3-70B-Instruct-Turbo"
 ```
-5. **Call the LiteLLM completion function** - finally, invoke the completion function to send your request:
+5. **Call the LiteLLM completion function**: Finally, invoke the completion function to send your request:
 ```python
 model=model,
     messages=messages,
@@ -1427,14 +1426,14 @@ You can enable streaming by simply passing `stream=True` to the `completion()` f
 
 To configure a streaming response, take the following steps:
 
-1. **Update the `messages` system prompt and first user message** - you can supply a user message or use the sample provided:
+1. **Update the `messages` system prompt and first user message**: You can supply a user message or use the sample provided:
 ```python
 {"role": "system", "content": "You are a helpful AI assistant."},
         {"role": "user",   "content": "Explain the significance of the California Gold Rush."},
     ]
 ```
 
-2. **Initiate a streaming request to the model** - set `stream=True` in the `completion()` function to tell LiteLLM to return partial pieces (chunks) of the response as they become available rather than waiting for the entire response to be ready
+2. **Initiate a streaming request to the model**: Set `stream=True` in the `completion()` function to tell LiteLLM to return partial pieces (chunks) of the response as they become available rather than waiting for the entire response to be ready.
 ```python
 try:
         response_stream = completion(
@@ -1451,7 +1450,7 @@ try:
     print("\n--------- STREAMING RESPONSE (text only) ---------")
     streamed_text = []
 ```
-3. **Isolate the returned text content** - returning all of the streamed data will include a lot of excessive noise like token counts, etc. You can isolate the text content from the rest of the streamed response with the following code:
+3. **Isolate the returned text content**: Returning all of the streamed data will include a lot of excessive noise like token counts, etc. You can isolate the text content from the rest of the streamed response with the following code:
 ```python
 for chunk in response_stream:
         if hasattr(chunk, "choices") and chunk.choices:
@@ -1469,15 +1468,15 @@ LiteLLM can facilitate multi-turn conversations by maintaining message history i
 
 Let's take a closer look at each step:
 
-1. **Combine the streamed chunks of the first message** - since the message is streamed in chunks, you must re-assemble them into a single message. After collecting partial responses in `streamed_text`, join them into a single string called `complete_first_answer`:
+1. **Combine the streamed chunks of the first message**: Since the message is streamed in chunks, you must re-assemble them into a single message. After collecting partial responses in `streamed_text`, join them into a single string called `complete_first_answer`:
 ```python
 complete_first_answer = "".join(streamed_text)
 ```
-2. **Append the assistant's reply** - to enhance the context of the conversation. Add `complete_first_answer` back into messages under the "assistant" role as follows:
+2. **Append the assistant's reply**: To enhance the context of the conversation. Add `complete_first_answer` back into messages under the "assistant" role as follows:
 ```python
 messages.append({"role": "assistant", "content": complete_first_answer})
 ```
-3. **Craft the second message to the assistant** - append a new message object to messages with the user's next question as follows:
+3. **Craft the second message to the assistant**: Append a new message object to messages with the user's next question as follows:
 ```python
 messages.append({
         "role": "user",
@@ -1487,7 +1486,7 @@ messages.append({
         ),
     })
 ```
-4. **Ask the model to respond to the second question** - this time, don't enable the streaming feature. Pass the updated messages to `completion()` with `stream=False`, prompting LiteLLM to generate a standard (single-shot) response as follows:
+4. **Ask the model to respond to the second question**: This time, don't enable the streaming feature. Pass the updated messages to `completion()` with `stream=False`, prompting LiteLLM to generate a standard (single-shot) response as follows:
 ```python
 response_2 = completion(
             model=model,
@@ -1500,7 +1499,7 @@ response_2 = completion(
         print(f"Error calling model: {err}")
         return
 ```
-5. **Parse and print the second answer** - extract `response_2.choices[0].message["content"]`, store it in `second_answer_text`, and print to the console for your final output: 
+5. **Parse and print the second answer**: Extract `response_2.choices[0].message["content"]`, store it in `second_answer_text`, and print to the console for your final output: 
 ```python
 second_answer_text = ""
     if response_2.choices and hasattr(response_2.choices[0], "message"):
@@ -1646,22 +1645,22 @@ description: Learn how to use kluster.ai as an LLM provider for the Llama OCR NP
 
 Note that not all models supported by kluster.ai are capable of processing images. The [vision-capable models](/get-started/models/){target=\_blank} currently supported by kluster.ai include:
 
-- **`google/gemma-3-27b-it`** - Google's Gemma 3 model with vision capabilities
-- **`Qwen/Qwen2.5-VL-7B-Instruct`** - Qwen's visual language model
-- **`meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8`** - Meta's Llama 4 Maverick model
-- **`meta-llama/Llama-4-Scout-17B-16E-Instruct`** - Meta's Llama 4 Scout model
+- **`google/gemma-3-27b-it`**: Google's Gemma 3 model with vision capabilities.
+- **`Qwen/Qwen2.5-VL-7B-Instruct`**: Qwen's visual language model.
+- **`meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8`**: Meta's Llama 4 Maverick model.
+- **`meta-llama/Llama-4-Scout-17B-16E-Instruct`**: Meta's Llama 4 Scout model.
 
 This guide walks you through the minimal changes needed to:
 
-- Clone the repo and install the dependencies
-- Configure kluster.ai as the provider
-- Run a working end-to-end OCR example against the sample grocery receipt image that ships with the repo
+- Clone the repo and install the dependencies.
+- Configure kluster.ai as the provider.
+- Run a working end-to-end OCR example against the sample grocery receipt image that ships with the repo.
 
 ## Prerequisites
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 - **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
-- Node version 18 or higher
+- Node version 18 or higher.
 
 You can clone the Llama OCR repo and install the required dependencies with the following commands:
 
@@ -1955,11 +1954,11 @@ You've successfully integrated kluster.ai with Llama OCR. This allows you to ext
 
 Some potential use cases for this integration include:
 
-- Processing receipts for expense tracking
-- Digitizing printed documents
-- Converting handwritten notes to digital text
-- Extracting text from screenshots
-- Processing business cards
+- Processing receipts for expense tracking.
+- Digitizing printed documents.
+- Converting handwritten notes to digital text.
+- Extracting text from screenshots.
+- Processing business cards.
 
 Experiment with different kluster.ai models to find the best one for your specific OCR needs. The OCR quality may vary depending on the image quality, text clarity, and the specific model used.
 --- END CONTENT ---
@@ -1983,7 +1982,7 @@ Before starting, ensure you have the following prerequisites:
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 - **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
-- **Msty app installed** - The [Msty app](https://msty.app/){target=_blank} can be downloaded with one click. You can also find an [Installation Guide](https://docs.msty.app/getting-started/download){target=\_blank} on the Msty docs site
+- **Msty app installed**: The [Msty app](https://msty.app/){target=_blank} can be downloaded with one click. You can also find an [Installation Guide](https://docs.msty.app/getting-started/download){target=\_blank} on the Msty docs site.
 
 ## Quick start
 
@@ -1993,17 +1992,17 @@ Upon launching the Msty app for the first time, you'll be prompted to configure 
 
 Then, take the following steps to configure Msty to use the kluster.ai API:
 
-1. For the **Provider** dropdown, select **Open AI Compatible**
-2. Provide a name, such as `kluster`
+1. For the **Provider** dropdown, select **Open AI Compatible**.
+2. Provide a name, such as `kluster`.
 3. Provide the kluster.ai API URL for the **API endpoint** field:
 
     ```text
     https://api.kluster.ai/v1
     ```
 
-4. Paste your API key and ensure **Save key securely in keychain** is selected
-5. Paste the name of the [kluster.ai model](/get-started/models/){target=\_blank} you'd like to use. Note that you can specify multiple models
-6. Press **Add** to finalize the addition of kluster.ai API as a provider
+4. Paste your API key and ensure **Save key securely in keychain** is selected.
+5. Paste the name of the [kluster.ai model](/get-started/models/){target=\_blank} you'd like to use. Note that you can specify multiple models.
+6. Press **Add** to finalize the addition of kluster.ai API as a provider.
 
 ![Configure remote model screen](/images/get-started/integrations/msty/msty-2.webp)
 
@@ -2033,27 +2032,28 @@ Before starting, ensure you have the following:
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 - **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
-- **[A python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}** - This is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial
-- [**PydanticAI installed**](https://github.com/pydantic/pydantic-ai){target=\_blank} - to install the library, use the following command:
+- [**A python virtual environment**](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank}: This is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial.
+- Install the library [**PydanticAI**](https://github.com/pydantic/pydantic-ai){target=\_blank} with the following command:
 
     ```bash
     pip install pydantic-ai 
     ```
 
-- **Supporting libraries installed** - a few additional supporting libraries are needed for the weather agent tutorial. To install them, use the following command:
+- Install the **supporting libraries** required for the weather agent tutorial with the following command:
+    
     ```bash
     pip install httpx devtools logfire
     ```
 
-- [**A Tomorrow.io Weather API key**](https://www.tomorrow.io/weather-api/){target=\_blank} - this free API key will allow your weather agent to source accurate real-time weather data
+- [**A Tomorrow.io Weather API key**](https://www.tomorrow.io/weather-api/){target=\_blank}: This free API key will allow your weather agent to source accurate real-time weather data.
 
-- [**A maps.co geocoding API key**](https://geocode.maps.co/){target=\_blank} - this free API key will allow your weather agent to convert a human-readable address into a pair of latitude and longitude coordinates
+- [**A maps.co geocoding API key**](https://geocode.maps.co/){target=\_blank}: This free API key will allow your weather agent to convert a human-readable address into a pair of latitude and longitude coordinates.
 
 ## Quick start
 
 In this section, you'll learn how to integrate kluster.ai with PydanticAI. You’ll configure your API key, set your base URL, specify a kluster.ai model, and make a simple request to verify functionality.
 
-1. **Import required libraries** - create a new file (e.g., `quick-start.py`) and import the necessary Python modules:
+1. **Import required libraries**: Create a new file (e.g., `quick-start.py`) and import the necessary Python modules:
 
     ```python title="quick-start.py"
     import asyncio
@@ -2083,7 +2083,7 @@ if __name__ == '__main__':
     asyncio.run(main())
     ```
 
-2. **Define a custom model to use the kluster.ai API** - replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For the model name, choose one of the kluster.ai [models](/get-started/start-building/real-time/#supported-models){target=_blank} that best fits your use case
+2. **Define a custom model to use the kluster.ai API**: Replace `INSERT_API_KEY` with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For the model name, choose one of the kluster.ai [models](/get-started/start-building/real-time/#supported-models){target=_blank} that best fits your use case.
 
     ```python title="quick-start.py"
     # Configure pydantic-ai to use your custom base URL and model name
@@ -2094,7 +2094,7 @@ if __name__ == '__main__':
     )
     ```
 
-3. **Create a PydanticAI agent** - instantiate a PydanticAI agent using the custom model configuration. Then, send a simple prompt to confirm the agent can successfully communicate with the kluster.ai endpoint and print the model's response 
+3. **Create a PydanticAI agent**: Instantiate a PydanticAI agent using the custom model configuration. Then, send a simple prompt to confirm the agent can successfully communicate with the kluster.ai endpoint and print the model's response.
 
     ```python title="quick-start.py"
     agent = Agent(model)
@@ -2155,7 +2155,7 @@ That's it! You've successfully integrated PydanticAI with the kluster.ai API. Co
 
 In this section, you'll build a weather agent that interprets natural language queries like "What’s the weather in San Francisco?" and uses PydanticAI to call both a geo API for latitude/longitude and a weather API for real-time conditions. By defining two tools—one for location lookup and another for weather retrieval—your agent can chain these steps automatically and return a concise, validated response. This approach keeps your AI workflow clean, type-safe, and easy to debug.
 
-1. **Set up dependencies** - create a new file (e.g., `weather-agent.py`), import required packages, and define a `Deps` data class to store API keys for geocoding and weather. You'll use these dependencies to request latitude/longitude data and real-time weather information
+1. **Set up dependencies**: Create a new file (e.g., `weather-agent.py`), import required packages, and define a `Deps` data class to store API keys for geocoding and weather. You'll use these dependencies to request latitude/longitude data and real-time weather information.
 
     ```python
     # 1. Import dependencies and handle initial setup 
@@ -2352,7 +2352,7 @@ if __name__ == "__main__":
     asyncio.run(main())
     ```
 
-2. **Define a custom model to use the kluster.ai API** - replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For the model name, choose one of the kluster.ai [models](/get-started/start-building/real-time/#supported-models){target=_blank} that best fits your use case
+2. **Define a custom model to use the kluster.ai API**: Replace INSERT_API_KEY with your actual API key. If you don't have one yet, refer to the [Get an API key](/get-started/get-api-key/){target=\_blank}. For the model name, choose one of the kluster.ai [models](/get-started/start-building/real-time/#supported-models){target=_blank} that best fits your use case.
 
     ```python
     model_name='klusterai/Meta-Llama-3.3-70B-Instruct-Turbo',
@@ -2361,7 +2361,7 @@ if __name__ == "__main__":
 )
     ```
 
-3. **Define the system prompt** - instruct the weather agent on how and when to call the geocoding and weather tools. The agent follows these rules to get valid lat/lng data, fetch the weather, and return a concise response
+3. **Define the system prompt**: Instruct the weather agent on how and when to call the geocoding and weather tools. The agent follows these rules to get valid lat/lng data, fetch the weather, and return a concise response.
 
     ```python
     system_instructions = """
@@ -2409,7 +2409,7 @@ weather_agent = Agent(
 )
     ```
 
-4. **Define the geocoding tool** - create a tool the agent calls behind the scenes to transform city names to lat/lng using the geocoding API. If the API key is missing or the location is invalid, it defaults to London or raises an error for self-correction
+4. **Define the geocoding tool**: Create a tool the agent calls behind the scenes to transform city names to lat/lng using the geocoding API. If the API key is missing or the location is invalid, it defaults to London or raises an error for self-correction.
 
     ```python
     async def get_lat_lng(ctx: RunContext[Deps], location_description: str) -> dict[str, float]:
@@ -2439,7 +2439,7 @@ weather_agent = Agent(
         raise ModelRetry(f"Could not find location '{location_description}'.")
     ```
 
-5. **Define the weather fetching tool** - create a tool that fetches weather from [Tomorrow.io](https://www.tomorrow.io/weather-api/){target=_blank} for a given lat/lng, converting temperatures to Celsius and Fahrenheit. Defaults to a mock response if the API key is missing
+5. **Define the weather fetching tool**: Create a tool that fetches weather from [Tomorrow.io](https://www.tomorrow.io/weather-api/){target=_blank} for a given lat/lng, converting temperatures to Celsius and Fahrenheit. Defaults to a mock response if the API key is missing.
 
     ```python
     async def get_weather(ctx: RunContext[Deps], lat: float, lng: float) -> dict[str, Any]:
@@ -2499,7 +2499,7 @@ weather_agent = Agent(
     }
     ```
 
-6. **Create a CLI chat** - prompt users for a location, send it to the weather agent, and print the final response
+6. **Create a CLI chat**: Prompt users for a location, send it to the weather agent, and print the final response.
 
     ```python
     async with AsyncClient() as client:
@@ -2773,10 +2773,10 @@ Before starting, ensure you have the following:
 
 ## Configure SillyTavern
 
-1. Launch SillyTavern and open it in your browser at `http://127.0.0.1:8000/` (default port)
-2. Click on the **API Connections** icon (plug) in the top navigation menu
-3. In the **API** drop-down menu, select **Chat Completion**
-4. In the **Chat Completion Source** option, choose **Custom (OpenAI-compatible)**
+1. Launch SillyTavern and open it in your browser at `http://127.0.0.1:8000/` (default port).
+2. Click on the **API Connections** icon (plug) in the top navigation menu.
+3. In the **API** drop-down menu, select **Chat Completion**.
+4. In the **Chat Completion Source** option, choose **Custom (OpenAI-compatible)**.
 5. Enter the **kluster.ai** API endpoint in the **Custom Endpoint (Base URL)** field:
 
     ```text
@@ -2785,15 +2785,15 @@ Before starting, ensure you have the following:
 
     There should be no trailing slash (`/`) at the end of the URL
 
-6. Paste your **kluster.ai** API Key into the designated field
+6. Paste your **kluster.ai** API key into the designated field.
 7. **Enter a Model ID**. For this example, you can enter:
 
     ```text
     klusterai/Meta-Llama-3.3-70B-Instruct-Turbo
     ```
 
-8. Click the **Connect** button. If you've configured the API correctly, you should see a **🟢 Valid** message next to the button
-9. Select one of the kluster.ai-supported models from the **Available Models** drop-down menu
+8. Click the **Connect** button. If you've configured the API correctly, you should see a **🟢 Valid** message next to the button.
+9. Select one of the kluster.ai-supported models from the **Available Models** drop-down menu.
 
 ![](/images/get-started/integrations/sillytavern/sillytavern-1.webp)
 
@@ -2805,10 +2805,10 @@ Now that you've configured kluster.ai with SillyTavern, you can test the API con
 
 Follow these steps to get started:
 
-1. Click the menu icon on the bottom-left corner of the page
-2. Select **Start New Chat** to open a new chat with the model
-3. Type a message in the **Type a message** bar at the bottom and send it
-4. Verify that the chatbot has returned a response successfully
+1. Click the menu icon on the bottom-left corner of the page.
+2. Select **Start New Chat** to open a new chat with the model.
+3. Type a message in the **Type a message** bar at the bottom and send it.
+4. Verify that the chatbot has returned a response successfully.
 
 ![](/images/get-started/integrations/sillytavern/sillytavern-2.webp)
 
@@ -2840,30 +2840,30 @@ Before starting, ensure you have the following prerequisites:
 
 Navigate to [TypingMind](https://www.typingmind.com/){target=\_blank} and take the following steps to access the custom model setup:
 
-1. Click on the model dropdown
-2. Click on **Custom Models**
+1. Click on the model dropdown.
+2. Click on **Custom Models**.
 
 ![Launch screen](/images/get-started/integrations/typingmind/typingmind-1.webp)
 
 Then, take the following steps to configure TypingMind to use the kluster.ai API:
 
-1. Provide a name, such as `kluster`
-2. For the **API Type** dropdown, select **OpenAI Compatible API**
+1. Provide a name, such as `kluster`.
+2. For the **API Type** dropdown, select **OpenAI Compatible API**.
 3. Provide the following URL for the **Endpoint** field:
 
     ```text
     https://api.kluster.ai/v1/chat/completions
     ```
 
-4. Paste the name of the [supported kluster.ai model](/get-started/models/){target=\_blank} you'd like to use. Note that you can specify multiple models
+4. Paste the name of the [supported kluster.ai model](/get-started/models/){target=\_blank} you'd like to use. Note that you can specify multiple models.
 5. Press **Add Custom Headers** and for the **Key** value, specify `Authorization`. In the value field on the right, enter `Bearer` followed by your kluster.ai API key as follows: 
 
     ```text
     Bearer INSERT_KLUSTER_API_KEY
     ``` 
 
-6. Press **Test** to ensure the connection is successful
-7. Press **Add Model** to confirm adding the kluster.ai as a custom provider
+6. Press **Test** to ensure the connection is successful.
+7. Press **Add Model** to confirm adding the kluster.ai as a custom provider.
 
 ![Configure kluster.ai API as a provider](/images/get-started/integrations/typingmind/typingmind-2.webp)
 
@@ -2871,9 +2871,9 @@ Then, take the following steps to configure TypingMind to use the kluster.ai API
 
 You've configured the kluster.ai API as a provider, but it hasn't yet been selected as the default one. To change this, take the following steps: 
 
-1. Click on **Models** on the sidebar
-2. Select **kluster** (or whatever you named your custom model)
-3. Press **Set Default**
+1. Click on **Models** on the sidebar.
+2. Select **kluster** (or whatever you named your custom model).
+3. Press **Set Default**.
 
 ![Configure kluster.ai API as a provider](/images/get-started/integrations/typingmind/typingmind-3.webp)
 
@@ -2885,8 +2885,8 @@ And that's it! You can now query the LLM successfully using kluster.ai as the de
 
 TypingMind has a wide variety of prebuilt AI agents that you can use as-is or clone and customize to suit your needs. These AI agents can use the kluster.ai API to perform tasks tailored to your use cases. To get started, take the following steps:
 
-1. Click on **Agents** in the sidebar
-2. Click on **Browse Agents**
+1. Click on **Agents** in the sidebar.
+2. Click on **Browse Agents**.
 
 ![Agents home](/images/get-started/integrations/typingmind/typingmind-5.webp)
 
@@ -3397,9 +3397,9 @@ Same verification tools running on your infrastructure with full control. Deploy
 
 ## Additional resources
 
-- **MCP protocol**: [Official MCP documentation](https://modelcontextprotocol.io/docs){target=\_blank}
-- **Verify service**: [Complete reliability verification guide](/get-started/verify/reliability/overview)
-- **API reference**: [kluster.ai API documentation](/api-reference/reference/)
+- **MCP protocol**: [Official MCP documentation](https://modelcontextprotocol.io/docs){target=\_blank}.
+- **Verify service**: [Complete reliability verification guide](/get-started/verify/reliability/overview).
+- **API reference**: [kluster.ai API documentation](/api-reference/reference/).
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/get-started/mcp/self-hosted/
@@ -3767,10 +3767,10 @@ While kluster.ai's API is largely compatible with OpenAI's, the following sectio
 
 When creating a chat completion via the [`POST https://api.kluster.ai/v1/chat/completions` endpoint](/api-reference/reference/#/http/api-endpoints/realtime/v1-chat-completions-post){target=\_blank}, the following request parameters are not supported:
 
-- `messages[].name` - attribute in `system`, `user`, and `assistant` type message objects
-- `messages[].refusal` - attribute in `assistant` type message objects
-- `messages[].audio` - attribute in `assistant` type message objects
-- `messages[].tool_calls` - attribute in `assistant` type message objects
+- `messages[].name`: Attribute in `system`, `user`, and `assistant` type message objects.
+- `messages[].refusal`: Attribute in `assistant` type message objects.
+- `messages[].audio`: Attribute in `assistant` type message objects.
+- `messages[].tool_calls`: Attribute in `assistant` type message objects.
 - `store`
 - `n`
 - `modalities`
@@ -3786,8 +3786,8 @@ The following request parameters are supported only with Llama models:
 
 The following request parameters are *deprecated*:
 
-- `messages[].function_call` - attribute in `assistant` type message objects <!-- TODO: Once `messages[].tool_calls` is supported, this should be updated to use `messages[].tool_calls instead -->
-- `max_tokens` - use `max_completion_tokens` instead
+- `messages[].function_call`: Attribute in `assistant` type message objects. <!-- TODO: Once `messages[].tool_calls` is supported, this should be updated to use `messages[].tool_calls instead -->
+- `max_tokens`: Use `max_completion_tokens` instead.
 - `function_call` <!-- TODO: Once `tool_choice` is supported, this should be updated to use `tool_choice` instead -->
 - `functions` <!-- TODO: Once `tools` is supported, this should be updated to use `tools` instead -->
 
@@ -3824,11 +3824,11 @@ This guide assumes familiarity with Large Language Model (LLM) development and O
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 - **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
-- **A virtual Python environment** - (optional) recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
-- **Required Python libraries** - install the following Python libraries:
-    - [**OpenAI Python API library**](https://pypi.org/project/openai/) - to access the `openai` module
-    - [**`getpass`**](https://pypi.org/project/getpass4/) - to handle API keys safely
-- **A basic understanding of** [**JSON Lines (JSONL)**](https://jsonlines.org/){target=\_blank} - JSONL is the required text input format for performing batch inferences with the kluster.ai API
+- **A virtual Python environment (optional)**: Recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects.
+- **Required Python libraries**: Install the following Python libraries:
+    - [**OpenAI Python API library**](https://pypi.org/project/openai/){target=\_blank}: To access the `openai` module.
+    - [**`getpass`**](https://pypi.org/project/getpass4/){target=\_blank}: To handle API keys safely.
+- **A basic understanding of** [**JSON Lines (JSONL)**](https://jsonlines.org/){target=\_blank}: JSONL is the required text input format for performing batch inferences with the kluster.ai API.
 
 If you plan to use cURL via the CLI, you can export your kluster.ai API key as a variable:
 
@@ -3846,16 +3846,16 @@ In addition, you can see the complete list of available models programmatically 
 
 Working with batch jobs in the kluster.ai API involves the following steps:
 
-1. **Create batch job file** - prepare a JSON Lines file containing one or more chat completion requests to execute in the batch
-2. **Upload batch job file** - upload the file to kluster.ai to receive a unique file ID
-3. **Start the batch job** - initiate a new batch job using the file ID
-4. **Monitor job progress** - track the status of your batch job to ensure successful completion
-5. **Retrieve results** - once the job finishes, access and process the results as needed
+1. **Create batch job file**: Prepare a JSON Lines file containing one or more chat completion requests to execute in the batch.
+2. **Upload batch job file**: Upload the file to kluster.ai to receive a unique file ID.
+3. **Start the batch job**: Initiate a new batch job using the file ID.
+4. **Monitor job progress**: Track the status of your batch job to ensure successful completion.
+5. **Retrieve results**: Once the job finishes, access and process the results as needed.
 
 In addition to these core steps, this guide will give you hands-on experience to:
 
-- **Cancel a batch job** - cancel an ongoing batch job before it completes
-- **List all batch jobs** - review all of your batch jobs
+- **Cancel a batch job**: Cancel an ongoing batch job before it completes.
+- **List all batch jobs**: Review all of your batch jobs.
 
 !!! warning
     For the free tier, the maximum number of batch requests (lines in the JSONL file) must be less than {{ batch.max_lines_free }}, and each file must not exceed {{ batch.max_size }}. For the standard tier, there is no limit to the number of batch requests, but the maximum batch file size is {{ batch.max_size }} per file.
@@ -6429,12 +6429,12 @@ To begin the batch job workflow, you'll need to assemble your batch requests and
 
 Each request must include the following arguments:
 
-- `custom_id` ++"string"++ - a unique request ID to match outputs to inputs
-- `method` ++"string"++ - the HTTP method to use for the request. Currently, only `POST` is supported
-- `url` ++"string"++ -  the `/v1/chat/completions` endpoint
-- `body` ++"object"++ - a request body containing:
-    - `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](/get-started/models/){target=\_blank}
-    - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images)
+- `custom_id` ++"string"++: A unique request ID to match outputs to inputs.
+- `method` ++"string"++: The HTTP method to use for the request. Currently, only `POST` is supported.
+- `url` ++"string"++:  The `/v1/chat/completions` endpoint.
+- `body` ++"object"++: A request body containing:
+    - `model` ++"string"++ <span class="required" markdown>++"required"++</span>: Name of one of the [supported models](/get-started/models/){target=\_blank}.
+    - `messages` ++"array"++ <span class="required" markdown>++"required"++</span>: A list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images).
     - Any optional [chat completion parameters](/api-reference/reference/#/http/api-endpoints/realtime/v1-chat-completions-post){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
 
 !!! tip
@@ -7095,11 +7095,11 @@ You can use the following snippets to cancel a batch job:
 
 You have now experienced the complete batch inference job lifecycle using kluster.ai's batch API. In this guide, you've learned how to:
 
-- Prepare and submit batch jobs with structured request inputs
-- Track your job's progress in real-time
-- Retrieve and handle job results
-- View and manage your batch jobs
-- Cancel jobs when needed
+- Prepare and submit batch jobs with structured request inputs.
+- Track your job's progress in real-time.
+- Retrieve and handle job results.
+- View and manage your batch jobs.
+- Cancel jobs when needed.
 
 The kluster.ai batch API is designed to efficiently and reliably handle your large-scale LLM workloads. If you have questions or suggestions, the [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
 --- END CONTENT ---
@@ -7126,10 +7126,10 @@ This guide assumes familiarity with Large Language Model (LLM) development and O
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 - **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-started/get-api-key/){target=\_blank} guide.
-- **A virtual Python environment** - (optional) recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
-- **Required Python libraries** - install the following Python libraries:
-    - [**OpenAI Python API library**](https://pypi.org/project/openai/) - to access the `openai` module
-    - [**`getpass`**](https://pypi.org/project/getpass4/) - to handle API keys safely
+- **A virtual Python environment (optional)**: Recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects.
+- **Required Python libraries**: Install the following Python libraries:
+    - [**OpenAI Python API library**](https://pypi.org/project/openai/): To access the `openai` module.
+    - [**`getpass`**](https://pypi.org/project/getpass4/): To handle API keys safely.
 
 If you plan to use cURL via the CLI, you can export kluster.ai API key as a variable:
 
@@ -8102,8 +8102,8 @@ completion = client.chat.completions.create(
 
 If successful, the `completion` variable contains a full response, which you'll need to analyze to extract the answer you are looking for. In terms of configuration for real-time inferences, there are several parameters that you need to tweak:
 
-- `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](/get-started/models/){target=\_blank}
-- `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images). In this example, the query is "What is the ultimate breakfast sandwich?". 
+- `model` ++"string"++ <span class="required" markdown>++"required"++</span>: Name of one of the [supported models](/get-started/models/){target=\_blank}.
+- `messages` ++"array"++ <span class="required" markdown>++"required"++</span>: A list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images). In this example, the query is "What is the ultimate breakfast sandwich?". 
 
 Once these parameters are configured, run your script to send the request.
 
@@ -8266,19 +8266,19 @@ log_response_to_file(completion)
 
 You can also set up third-party LLM integrations using the kluster.ai API. For step-by-step instructions, check out the following integration guides:
 
-- [**SillyTavern**](/get-started/integrations/sillytavern){target=\_blank} - multi-LLM chat interface
-- [**LangChain**](/get-started/integrations/langchain/){target=\_blank} - multi-turn conversational agent
-- [**eliza**](/get-started/integrations/eliza/){target=\_blank} - create and manage AI agents
-- [**CrewAI**](/get-started/integrations/crewai/){target=\_blank} - specialized agents for complex tasks
-- [**LiteLLM**](/get-started/integrations/litellm/){target=\_blank} - streaming response and multi-turn conversation handling
+- [**SillyTavern**](/get-started/integrations/sillytavern){target=\_blank}: Multi-LLM chat interface.
+- [**LangChain**](/get-started/integrations/langchain/){target=\_blank}: Multi-turn conversational agent.
+- [**eliza**](/get-started/integrations/eliza/){target=\_blank}: Create and manage AI agents.
+- [**CrewAI**](/get-started/integrations/crewai/){target=\_blank}: Specialized agents for complex tasks.
+- [**LiteLLM**](/get-started/integrations/litellm/){target=\_blank}: Streaming response and multi-turn conversation handling.
 
 ## Summary
 
 You have now experienced the complete real-time inference job lifecycle using kluster.ai's chat completion API. In this guide, you've learned:
 
-- How to submit a real-rime inference request
-- How to configure real-time inference-related API parameters
-- How to interpret the chat completion object API response
+- How to submit a real-rime inference request.
+- How to configure real-time inference-related API parameters.
+- How to interpret the chat completion object API response.
 
 The kluster.ai batch API is designed to efficiently and reliably handle your large-scale LLM workloads. If you have questions or suggestions, the [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
 --- END CONTENT ---
@@ -9117,8 +9117,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
     "\n",
     "Before getting started, ensure you have:\n",
     "\n",
-    "- **A kluster.ai account** - sign up at [kluster.ai](https://platform.kluster.ai/signup)\n",
-    "- **A kluster.ai API key** - get your key from the [API Keys](https://platform.kluster.ai/apikeys) page. For instructions, see the [API key guide](https://platform.kluster.ai/get-started/get-api-key/)"
+    "- **A kluster.ai account**: Sign up at [kluster.ai](https://platform.kluster.ai/signup).\n",
+    "- **A kluster.ai API key**: Get your key from the [API Keys](https://platform.kluster.ai/apikeys) page. For instructions, see the [API key guide](https://platform.kluster.ai/get-started/get-api-key/)."
    ]
   },
   {
@@ -9245,9 +9245,9 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
     "\n",
     "The Bad prompt offers only the most rudimentary information—products and their sales—and provides no clear instructions beyond \"tell me about it.\" This inevitably results in:\n",
     "\n",
-    "- **Minimal context** - without pricing, profit margins, or a specific goal (e.g., analyzing profitability, recommending strategies), the LLM can only produce surface-level observations\n",
-    "- **No actionable guidance** - the prompt doesn't request particular insights or next steps, so the model responds with high-level statements rather than solutions\n",
-    "- **Limited utility** - because the data is purely quantitative (sales alone) and lacks details such as time frame, product characteristics, or marketing context, the response cannot go beyond pointing out which products sold more or less\n",
+    "- **Minimal context**: Without pricing, profit margins, or a specific goal (e.g., analyzing profitability, recommending strategies), the LLM can only produce surface-level observations.\n",
+    "- **No actionable guidance**: The prompt doesn't request particular insights or next steps, so the model responds with high-level statements rather than solutions.\n",
+    "- **Limited utility**: Because the data is purely quantitative (sales alone) and lacks details such as time frame, product characteristics, or marketing context, the response cannot go beyond pointing out which products sold more or less.\n",
     "\n",
     "Overall, this prompt's lack of clear direction and supporting information stifles the model's ability to provide meaningful analysis or recommendations."
    ]
@@ -9264,7 +9264,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": null,
    "id": "d1c3d4c4",
    "metadata": {},
    "outputs": [
@@ -9390,9 +9390,9 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
     "\n",
     "This Better prompt elevates the request beyond the \"Bad\" version by incorporating pricing details and clearer instructions, which yield more focused calculations and recommendations. The prompt also specifies a timeline (January 2025) and outlines key tasks (calculating revenue, identifying product performance, suggesting sales-boosting strategies). As a result, the LLM response provides:\n",
     "\n",
-    "- **Structured revenue calculations** - by explicitly asking for per-product revenue, it brings a quantitative foundation to the analysis\n",
-    "- **Actionable recommendations** - requests for pricing and marketing adjustments prompt specific suggestions, rather than broad, generic ideas\n",
-    "- **Organized output** - clearly defined sections ensure the response is easy to interpret and act upon\n",
+    "- **Structured revenue calculations**: By explicitly asking for per-product revenue, it brings a quantitative foundation to the analysis.\n",
+    "- **Actionable recommendations**: Requests for pricing and marketing adjustments prompt specific suggestions, rather than broad, generic ideas.\n",
+    "- **Organized output**: Clearly defined sections ensure the response is easy to interpret and act upon.\n",
     "\n",
     "However, the prompt stops short of requesting profit margins, customer demographics, or broader business context (e.g., marketing channels or inventory challenges) seen in the Best prompt. Consequently, while the Better prompt moves toward more concrete, data-driven insights, it still lacks the richness and depth needed to produce thorough, strategic recommendations."
    ]
@@ -9409,7 +9409,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": null,
    "id": "cb27726c",
    "metadata": {
     "scrolled": true
@@ -9507,20 +9507,20 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
     "### Additional Business Context:\n",
     "\n",
     "- **Customer Demographics:**\n",
-    "  - Primary: Young adults (18-30 years old)\n",
-    "  - Secondary: Middle-aged professionals (35-50 years old)\n",
-    "  - Marketing channels: Instagram ads, email newsletters, weekend promotions\n",
+    "  - Primary: Young adults (18-30 years old).\n",
+    "  - Secondary: Middle-aged professionals (35-50 years old).\n",
+    "  - Marketing channels: Instagram ads, email newsletters, weekend promotions.\n",
     "\n",
     "- **Product Context:**\n",
-    "  - **Product A:** Everyday consumable, consistent demand\n",
-    "  - **Product B:** Lower-priced, frequent purchases, popular with young adults\n",
-    "  - **Product C:** Premium product, aimed at professionals, slow-moving, excess inventory\n",
-    "  - **Product D:** Mid-range product, recently gaining popularity\n",
+    "  - **Product A:** Everyday consumable, consistent demand.\n",
+    "  - **Product B:** Lower-priced, frequent purchases, popular with young adults.\n",
+    "  - **Product C:** Premium product, aimed at professionals, slow-moving, excess inventory.\n",
+    "  - **Product D:** Mid-range product, recently gaining popularity.\n",
     "\n",
     "- **Challenges:**\n",
-    "  - Overstock of Product C; immediate action required\n",
-    "  - Limited marketing budget; high ROI needed\n",
-    "  - Seeking quick profitability improvements through inventory and pricing strategies, avoiding new product lines\n",
+    "  - Overstock of Product C; immediate action required.\n",
+    "  - Limited marketing budget; high ROI needed.\n",
+    "  - Seeking quick profitability improvements through inventory and pricing strategies, avoiding new product lines.\n",
     "\n",
     "### Clearly and specifically, please provide the following structured analysis:\n",
     "\n",
@@ -9566,11 +9566,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
     "\n",
     "Key strengths of this Best prompt:\n",
     "\n",
-    "- **Complete data & metrics** - monthly sales, pricing, and profit margins remove guesswork and allow precise revenue/profit calculations\n",
-    "- **Focused business context** - target customer demographics, marketing channels, and product nuances (e.g., overstock of Product C) align the output with real business priorities\n",
-    "- **Clear task breakdown** - dividing the request into distinct sections (Revenue/Profit Analysis, Profitability Recommendations, Marketing Strategies) ensures the response is both methodical and thorough\n",
-    "- **Actionability & specificity** - the prompt requests concrete next steps—such as pricing tweaks and promotional ideas—tailored to each product's characteristics and customer segment\n",
-    "- **Logical reasoning instructions** - guiding the LLM to \"think step-by-step\" fosters more thoughtful planning, especially around clearing excess inventory and leveraging different marketing channels\n",
+    "- **Complete data & metrics**: Monthly sales, pricing, and profit margins remove guesswork and allow precise revenue/profit calculations.\n",
+    "- **Focused business context**: Target customer demographics, marketing channels, and product nuances (e.g., overstock of Product C) align the output with real business priorities.\n",
+    "- **Clear task breakdown**: Dividing the request into distinct sections (Revenue/Profit Analysis, Profitability Recommendations, Marketing Strategies) ensures the response is both methodical and thorough.\n",
+    "- **Actionability & specificity**: The prompt requests concrete next steps—such as pricing tweaks and promotional ideas—tailored to each product's characteristics and customer segment.\n",
+    "- **Logical reasoning instructions**: Guiding the LLM to \"think step-by-step\" fosters more thoughtful planning, especially around clearing excess inventory and leveraging different marketing channels.\n",
     "\n",
     "Overall, this approach maximizes the LLM's potential, yielding responses that are precise, context-aware, and immediately useful to decision-makers."
    ]
@@ -9721,10 +9721,10 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
     "\n",
     "The AI‑enhanced prompt is stronger because it embeds several best‑practice elements that the baseline prompt omits:\n",
     "\n",
-    "- **Clear scope & constraints** - sets time horizon, budget, and focus areas so the model delivers realistic short-term actions\n",
-    "- **Structured, ranked output** - provides a template and asks for impact-ordered steps with supporting calculations for decision-ready clarity\n",
-    "- **Rich context** - supplies demographics, product details, challenges, and KPIs to drive tailored, not generic, recommendations\n",
-    "- **Built-in risk check** - requires downside analysis on each suggestion, surfacing trade-offs upfront\n",
+    "- **Clear scope & constraints**: Sets time horizon, budget, and focus areas so the model delivers realistic short-term actions.\n",
+    "- **Structured, ranked output**: Provides a template and asks for impact-ordered steps with supporting calculations for decision-ready clarity.\n",
+    "- **Rich context**: Supplies demographics, product details, challenges, and KPIs to drive tailored, not generic, recommendations.\n",
+    "- **Built-in risk check**: Requires downside analysis on each suggestion, surfacing trade-offs upfront.\n",
     "\n",
     "These additions sharpen the prompt's clarity, specificity, and operational relevance; they tell the model exactly what to deliver, within which limits, and how to present it, thereby increasing the likelihood of receiving actionable, decision‑ready insights regardless of which LLM you use."
    ]
@@ -9848,11 +9848,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
     "The AI-generated answer stands out by delivering execution-ready depth the human version lacks:\n",
     "\n",
     "\n",
-    "- **Quantified impact & ROI** – forecasts unit lifts and rolls them into a +34 % profit gain, turning ideas into numbers managers can judge\n",
-    "- **Actionable constraints** – assigns a $200 channel budget, splits spending, and names KPIs, giving a plug-and-play operating plan\n",
-    "- **Contextual targeting** – ties every promo to a demographic and to inventory pressure, showing clear \"why this, why now\" logic\n",
-    "- **Concise orientation** – opens with a single P&L table and ranked profit list so readers grasp the situation at a glance\n",
-    "- **Notable caveat** – a bundle-margin math slip highlights the need to prompt for intermediate calculations and self-checks\n",
+    "- **Quantified impact & ROI**: Forecasts unit lifts and rolls them into a +34 % profit gain, turning ideas into numbers managers can judge.\n",
+    "- **Actionable constraints**: Assigns a $200 channel budget, splits spending, and names KPIs, giving a plug-and-play operating plan.\n",
+    "- **Contextual targeting**: Ties every promo to a demographic and to inventory pressure, showing clear \"why this, why now\" logic.\n",
+    "- **Concise orientation**: Opens with a single P&L table and ranked profit list so readers grasp the situation at a glance.\n",
+    "- **Notable caveat**: A bundle-margin math slip highlights the need to prompt for intermediate calculations and self-checks.\n",
     "\n",
     "The strongest prompt may likely be hybrid style: AI-refined for structure and numeric rigor, augmented with human-driven goals for brevity and inventive marketing flair."
    ]
@@ -9866,18 +9866,18 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
     "\n",
     "This side-by-side comparison demonstrates how the quality and specificity of a prompt directly influence the depth, utility, and strategic value of an LLM's output:\n",
     "\n",
-    "- **Bad prompt** - minimal data and vague instructions yield only superficial insights—no clear direction or actionable strategies\n",
-    "- **Better prompt** - adding pricing details and specific tasks (like calculating revenue or ranking products) results in more concrete analysis and targeted recommendations\n",
-    "- **Best prompt** - providing comprehensive context—including profit margins, demographics, inventory challenges, and explicit formatting instructions—empowers the model to deliver nuanced, highly actionable advice aligned with real business needs\n",
-    "- **AI‑enhanced prompt** — layering on a defined 3‑to‑6‑month time horizon, a fixed $2,000 marketing budget, ranked priorities, risk/trade‑off notes, and requests for supporting calculations guides the model to provide an even more operationally realistic, budget‑aware, and immediately implementable plan of action\n",
+    "- **Bad prompt**: Minimal data and vague instructions yield only superficial insights—no clear direction or actionable strategies.\n",
+    "- **Better prompt**: Adding pricing details and specific tasks (like calculating revenue or ranking products) results in more concrete analysis and targeted recommendations.\n",
+    "- **Best prompt**: Providing comprehensive context—including profit margins, demographics, inventory challenges, and explicit formatting instructions—empowers the model to deliver nuanced, highly actionable advice aligned with real business needs.\n",
+    "- **AI‑enhanced prompt**: Layering on a defined 3‑to‑6‑month time horizon, a fixed $2,000 marketing budget, ranked priorities, risk/trade‑off notes, and requests for supporting calculations guides the model to provide an even more operationally realistic, budget‑aware, and immediately implementable plan of action.\n",
     "\n",
     "Key takeaways for effective prompt engineering:\n",
     "\n",
-    "- **Provide relevant context** - include all essential data (pricing, margins, customer segments) to enable deeper analysis\n",
-    "- **Specify instructions clearly** - outline the tasks, format, and reasoning style (e.g., step-by-step) you want the model to follow\n",
-    "- **Articulate business constraints and goals** - highlight challenges (e.g., excess inventory, limited budget) to guide strategic recommendations\n",
-    "- **Structure the output requirements** - break down the response into clear, logical sections (analysis, recommendations, marketing, etc.)\n",
-    "- **Iterate for best results** - incrementally refining prompts yields exponentially better outcomes—invest time upfront for far greater business value\n",
+    "- **Provide relevant context**: Include all essential data (pricing, margins, customer segments) to enable deeper analysis.\n",
+    "- **Specify instructions clearly**: Outline the tasks, format, and reasoning style (e.g., step-by-step) you want the model to follow.\n",
+    "- **Articulate business constraints and goals**: Highlight challenges (e.g., excess inventory, limited budget) to guide strategic recommendations.\n",
+    "- **Structure the output requirements**: Break down the response into clear, logical sections (analysis, recommendations, marketing, etc.).\n",
+    "- **Iterate for best results**: Incrementally refining prompts yields exponentially better outcomes—invest time upfront for far greater business value.\n",
     "\n",
     "By enriching prompts with thorough details and well-defined objectives, you unlock the full potential of LLMs to generate accurate, context-aware, and immediately applicable insights."
    ]
@@ -9985,8 +9985,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-ana
    "source": [
     "Before getting started, ensure you have the following:\n",
     "\n",
-    "- **A kluster.ai account** - sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one\n",
-    "- **A kluster.ai API key** - after signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide"
+    "- **A kluster.ai account**: Sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one.\n",
+    "- **A kluster.ai API key**: After signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide."
    ]
   },
   {
@@ -10297,11 +10297,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-ana
     "\n",
     "To fine-tune a model, we'll take the following steps:\n",
     "\n",
-    "1. **Create the training data file** - we'll generate a JSON lines file with the training data that contains the data and ground truth\n",
-    "2. **Upload the training data file** - once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file\n",
-    "3. **Create fine-tuning job** - after the file is uploaded, we'll initiate the fine-tuning job, using the file ID obtained before\n",
-    "4. **Monitor job progress** - (optional) track the status of the fine-tuning job to ensure it has been successfully completed\n",
-    "5. **Retrieve results** - once the job has completed execution, we will get a fine-tuned model that we can use\n",
+    "1. **Create the training data file**: We'll generate a JSON lines file with the training data that contains the data and ground truth.\n",
+    "2. **Upload the training data file**: Once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file.\n",
+    "3. **Create fine-tuning job**: After the file is uploaded, we'll initiate the fine-tuning job, using the file ID obtained before.\n",
+    "4. **Monitor job progress (optional)**: Track the status of the fine-tuning job to ensure it has been successfully completed.\n",
+    "5. **Retrieve results**: Once the job has completed execution, we will get a fine-tuned model that we can use.\n",
     "\n",
     "This notebook is prepared for you to follow along. Run the cells below to watch it all come together.\n",
     "\n",
@@ -11236,17 +11236,17 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/finetuning-sent-ana
     "\n",
     "This tutorial showed how to fine-tune a large language model using the kluster.ai platform for a financial sentiment analysis task. Key takeaways include:\n",
     "\n",
-    "- Data preparation: a subset of 1500 financial headlines was used, split into training and testing sets\n",
-    "- Fine-tuning: we fine-tuned `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo` using labeled training data and system prompts for targeted learning\n",
-    "- Batch inference & evaluation: we compared the fine-tuned model with a much larger base model (`Llama3.3-70B`) and the original untuned `Llama3.1-8B`\n",
-    "- Performance: the fine-tuned model delivered **higher accuracy** than the untuned 8B model, and surprisingly, **outperformed** the 70B model — all at **lower inference cost**. Note that the results may vary depending on the fine-tuning hyperparameters, temperature, among others\n",
+    "- Data preparation: a subset of 1500 financial headlines was used, split into training and testing sets.\n",
+    "- Fine-tuning: we fine-tuned `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo` using labeled training data and system prompts for targeted learning.\n",
+    "- Batch inference & evaluation: we compared the fine-tuned model with a much larger base model (`Llama3.3-70B`) and the original untuned `Llama3.1-8B`.\n",
+    "- Performance: the fine-tuned model delivered **higher accuracy** than the untuned 8B model, and surprisingly, **outperformed** the 70B model — all at **lower inference cost**. Note that the results may vary depending on the fine-tuning hyperparameters, temperature, among others.\n",
     "\n",
     "This reinforces the value of fine-tuning for domain-specific tasks: improved performance, reduced cost, and faster inference. Moreover, with kluster.ai, we achieved all this using the OpenAI Python library and API, no changes needed!\n",
     "\n",
     "You are now ready to experiment further with:\n",
-    "- Larger or more diverse datasets\n",
-    "- Hyperparameter tuning\n",
-    "- Alternate system prompts or evaluation metrics\n",
+    "- Larger or more diverse datasets.\n",
+    "- Hyperparameter tuning.\n",
+    "- Alternate system prompts or evaluation metrics.\n",
     "\n",
     "Fine-tuning doesn't just make your model better — it makes it *yours*.\n"
    ]
@@ -11314,21 +11314,21 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipyn
     "\n",
     "The example uses four separate images. For each image, we will ask the models to fetch a specific feature and compare how they respond:\n",
     "\n",
-    "- A <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\" target=\"_blank\">Newton's cradle</a>, we will ask what the device's name is and how many balls are in the image (5)\n",
-    "- <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/eggs-image.jpeg?raw=true\" target=\"_blank\">Eggs</a> of different colors, we will ask how many total eggs and per color (10 total, 8 brown and 2 white)\n",
-    "- <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true\" target=\"_blank\">Alien-only parking sign</a>, we will ask to interpret the sign (only aliens can park, funny reference)\n",
-    "- <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true\" target=\"_blank\">Handwritten note with a typo</a>, we will ask what the text in the image is and to find a typo (\"I LOVE PROGRAMING\", \"I love programing\" missing an \"m\" in both instances)\n",
+    "- A <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\" target=\"_blank\">Newton's cradle</a>, we will ask what the device's name is and how many balls are in the image (5).\n",
+    "- <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/eggs-image.jpeg?raw=true\" target=\"_blank\">Eggs</a> of different colors, we will ask how many total eggs and per color (10 total, 8 brown and 2 white).\n",
+    "- <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true\" target=\"_blank\">Alien-only parking sign</a>, we will ask to interpret the sign (only aliens can park, funny reference).\n",
+    "- <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true\" target=\"_blank\">Handwritten note with a typo</a>, we will ask what the text in the image is and to find a typo (\"I LOVE PROGRAMING\", \"I love programing\" missing an \"m\" in both instances).\n",
     "\n",
     "You can adapt this example by using your own images or requests. With this approach, you can effortlessly process images of any scale, big or small, and obtain image analysis powered by a state-of-the-art language model."
    ]
   },
-    {
-  "cell_type": "markdown",
-  "id": "video-demo-cell",
-  "metadata": {
+  {
+   "cell_type": "markdown",
+   "id": "video-demo-cell",
+   "metadata": {
     "id": "video-demo-cell"
-  },
-  "source": [
+   },
+   "source": [
     "\n",
     "For a video version of this tutorial, see the YouTube video below.\n",
     "\n",
@@ -11337,7 +11337,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipyn
     "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/nXj8aVPPjtQ?si=hstve0QlHV6RinDa\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\n",
     "</div>\n",
     "<style>.caption { font-family: Open Sans, sans-serif; font-size: 0.9em; color: rgba(170, 170, 170, 1); font-style: italic; letter-spacing: 0px; position: relative;}</style>"
-  ]
+   ]
   },
   {
    "cell_type": "markdown",
@@ -11354,8 +11354,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipyn
    "source": [
     "Before getting started, ensure you have the following:\n",
     "\n",
-    "- **A kluster.ai account** - sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one\n",
-    "- **A kluster.ai API key** - after signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide"
+    "- **A kluster.ai account**: Sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one.\n",
+    "- **A kluster.ai API key**: After signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide."
    ]
   },
   {
@@ -11383,7 +11383,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipyn
    "metadata": {},
    "outputs": [
     {
-     "name": "stdin",
+     "name": "stdout",
      "output_type": "stream",
      "text": [
       "Enter your kluster.ai API key:  ········\n"
@@ -11493,8 +11493,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipyn
    "source": [
     "There are two main ways to proceed when working with images:\n",
     "\n",
-    "1. You can provide the raw image file as a URL from the source, for example, GitHub\n",
-    "2. You can provide Base64 encoded. These are typically represented with a blob of text, which starts with `data:image/png;base64,ENCODING_DATA_HERE...`\n",
+    "1. You can provide the raw image file as a URL from the source, for example, GitHub.\n",
+    "2. You can provide Base64 encoded. These are typically represented with a blob of text, which starts with `data:image/png;base64,ENCODING_DATA_HERE...`.\n",
     "\n",
     "With both methodologies, image data needs to be provided as an object in the content array with the following format:\n",
     "\n",
@@ -11577,11 +11577,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipyn
    "source": [
     "To execute the batch inference job, we'll take the following steps:\n",
     "\n",
-    "1. **Create the batch job file** - we'll generate a JSON lines file with the desired requests to be processed by the model\n",
-    "2. **Upload the batch job file** - once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file\n",
-    "3. **Start the batch job** - after the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before\n",
-    "4. **Monitor job progress** - (optional) track the status of the batch job to ensure it has been successfully completed\n",
-    "5. **Retrieve results** - once the job has completed execution, we can access and process the resultant data\n",
+    "1. **Create the batch job file**: We'll generate a JSON lines file with the desired requests to be processed by the model.\n",
+    "2. **Upload the batch job file**: Once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file.\n",
+    "3. **Start the batch job**: After the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before.\n",
+    "4. **Monitor job progress (optional)**: Track the status of the batch job to ensure it has been successfully completed.\n",
+    "5. **Retrieve results**: Once the job has completed execution, we can access and process the resultant data.\n",
     "\n",
     "This notebook is prepared for you to follow along. Run the cells below to watch it all come together."
    ]
@@ -12197,25 +12197,25 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipyn
     "This tutorial used the chat completion endpoint to image analysis on multiple images using kluster.ai batch API. This particular example uploaded four specific images:\n",
     "\n",
     "- A <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/balls-image.jpeg?raw=true\" target=\"_blank\">Newton's cradle</a>, we asked what the device's name is and how many balls were in the image (5):\n",
-    "    - All models responded correctly ✅\n",
+    "    - All models responded correctly ✅.\n",
     "- <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/eggs-image.jpeg?raw=true\" target=\"_blank\">Eggs</a> of different colors, we asked how many total eggs and per color (10 total, 8 brown and 2 white):\n",
-    "    - Gemma 3 27B was able to identify all 10 eggs correctly, counting 8 brown and 2 white ✅ (although sometimes it provided a 7/3 split between white and brown eggs, specially with a lower temperature)\n",
-    "    - Qwen 2.5 7B was able to identify all 10 eggs correctly, counting 8 brown and 2 white ✅ (although sometimes it provided a 9/3 split between shite and brown eggs, specially with a lower temperature)\n",
-    "    - Llama 4 Maverick was able to identify all 10 eggs properly, counting 8 brown and 2 white ✅\n",
-    "    - Llama 4 Scout was able to count a total of 10 eggs ✅, but wrongly identified 9 brown and 2 white (not adding up to 10)\n",
+    "    - Gemma 3 27B was able to identify all 10 eggs correctly, counting 8 brown and 2 white ✅ (although sometimes it provided a 7/3 split between white and brown eggs, specially with a lower temperature).\n",
+    "    - Qwen 2.5 7B was able to identify all 10 eggs correctly, counting 8 brown and 2 white ✅ (although sometimes it provided a 9/3 split between shite and brown eggs, specially with a lower temperature).\n",
+    "    - Llama 4 Maverick was able to identify all 10 eggs properly, counting 8 brown and 2 white ✅.\n",
+    "    - Llama 4 Scout was able to count a total of 10 eggs ✅, but wrongly identified 9 brown and 2 white (not adding up to 10).\n",
     "- <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true\" target=\"_blank\">Aliens only parking sign</a>, we asked to interpret the sign (only aliens can park, funny reference):\n",
-    "    - All models identified the sign appropriately ✅\n",
+    "    - All models identified the sign appropriately ✅.\n",
     "- <a href=\"https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/text-typo-image.jpeg?raw=true\" target=\"_blank\">Hand written note with a typo</a>, we asked what the text in the image is and to find a typo if any (\"I LOVE PROGRAMING\", \"I love programing\" missing an \"m\" in both instances):\n",
-    "    - All models responded correctly ✅\n",
+    "    - All models responded correctly ✅.\n",
     "  \n",
     "All models were also tested with a musical score by asking them to identify the sequence of notes. However, none of the models were able to correctly recognize the musical notes, so this test was not included in the final notebook.\n",
     "\n",
     "To submit a batch job, we've:\n",
     "\n",
-    "1. Created the JSONL file, where each file line represented a separate request. We provided the images as URLs from GitHub\n",
-    "2. Submitted the file to the platform\n",
-    "3. Started the batch job, and monitored its progress\n",
-    "4. Once completed, we fetched the results\n",
+    "1. Created the JSONL file, where each file line represented a separate request. We provided the images as URLs from GitHub.\n",
+    "2. Submitted the file to the platform.\n",
+    "3. Started the batch job, and monitored its progress.\n",
+    "4. Once completed, we fetched the results.\n",
     "\n",
     "All of this using the OpenAI Python library and API, no changes needed!\n",
     "\n",
@@ -12273,10 +12273,10 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
     "\n",
     "This notebook shows how to use the kluster.ai tools endpoint with Python. We’ll cover:\n",
     "\n",
-    "1. Setting up the environment  \n",
-    "2. Calling a single tool  \n",
-    "3. Trying multiple tools (calculator, web search, etc.)  \n",
-    "4. Handling tool outputs and streaming responses"
+    "1. Setting up the environment.\n",
+    "2. Calling a single tool.\n",
+    "3. Trying multiple tools (calculator, web search, etc.).\n",
+    "4. Handling tool outputs and streaming responses."
    ]
   },
   {
@@ -12292,8 +12292,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
    "source": [
     "Before getting started, ensure you have the following:\n",
     "\n",
-    "- **A kluster.ai account** - sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one\n",
-    "- **A kluster.ai API key** - after signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide"
+    "- **A kluster.ai account**: Sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one.\n",
+    "- **A kluster.ai API key**: After signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide."
    ]
   },
   {
@@ -12556,12 +12556,12 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
     "\n",
     "Let's take a closer look at the response above. The assistant’s reply isn’t prose; rather, it’s a structured tool call:\n",
     "\n",
-    "1. **`finish_reason: \"tool_calls\"`**: Signals the model has paused, waiting for us to run one or more tools\n",
+    "1. **`finish_reason: \"tool_calls\"`**: Signals the model has paused, waiting for us to run one or more tools.\n",
     "2. **`message.tool_calls[0]`**: An array item that describes what to run:\n",
-    "   * `id` – a unique identifier we must echo back\n",
-    "   * `function.name` – here it's `calculator`\n",
-    "   * *`function.arguments`* – JSON-encoded string with the expression *`\"1337  42\"`\n",
-    "3. **`content: null`**: No human-readable answer yet; that will come after we execute the tool and return the result\n",
+    "   * `id`: A unique identifier we must echo back.\n",
+    "   * `function.name`: Here it's `calculator`.\n",
+    "   * *`function.arguments`*: JSON-encoded string with the expression *`\"1337  42\"`.\n",
+    "3. **`content: null`**: No human-readable answer yet; that will come after we execute the tool and return the result.\n",
     "\n",
     "In short, the model has delegated the arithmetic. Our job is to run `execute_calculator(\"1337 * 42\")`, package the numeric result in a `{role:\"tool\"}` message (preserving the `tool_call_id`), and feed it back to the chat endpoint.\n",
     "\n",
@@ -12910,20 +12910,20 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
     "\n",
     "You’ve now seen kluster.ai’s tool-calling API end-to-end: from authentication all the way to streaming, multi-tool orchestration. This notebook covered:\n",
     "\n",
-    "1. Basic setup and authentication\n",
-    "2. Single tool calling (calculator)\n",
-    "3. Web search tool usage\n",
-    "4. Multiple tool combinations\n",
-    "5. Real-world document analysis use case\n",
-    "6. Currency conversion with web search and calculator tools\n",
+    "1. Basic setup and authentication.\n",
+    "2. Single tool calling (calculator).\n",
+    "3. Web search tool usage.\n",
+    "4. Multiple tool combinations.\n",
+    "5. Real-world document analysis use case.\n",
+    "6. Currency conversion with web search and calculator tools.\n",
     "\n",
     "You can extend this pattern to use other tools by defining their schemas and implementing the corresponding execution functions. kluster.ai's OpenAI-compatible API makes it straightforward to integrate with existing codebases.\n",
     "\n",
     "For production use, remember to:\n",
-    "- Store API keys securely\n",
-    "- Implement proper error handling\n",
-    "- Use more sophisticated tool execution methods\n",
-    "- Consider rate limits and costs"
+    "- Store API keys securely.\n",
+    "- Implement proper error handling.\n",
+    "- Use more sophisticated tool execution methods.\n",
+    "- Consider rate limits and costs."
    ]
   }
  ],
@@ -12996,8 +12996,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
         "\n",
         "Before getting started, ensure you have the following:\n",
         "\n",
-        "- **A kluster.ai account** - sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one\n",
-        "- **A kluster.ai API key** - after signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide"
+        "- **A kluster.ai account**: Sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one.\n",
+        "- **A kluster.ai API key**: After signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide."
       ]
     },
     {
@@ -13161,11 +13161,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
       "source": [
         "To execute the batch inference job, we'll take the following steps:\n",
         "\n",
-        "1. **Create the batch job file** - we'll generate a JSON lines file with the desired requests to be processed by the model\n",
-        "2. **Upload the batch job file** - once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file\n",
-        "3. **Start the batch job** - after the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before\n",
-        "4. **Monitor job progress** - (optional) track the status of the batch job to ensure it has been successfully completed\n",
-        "5. **Retrieve results** - once the job has completed execution, we can access and process the resultant data\n",
+        "1. **Create the batch job file**: We'll generate a JSON lines file with the desired requests to be processed by the model.\n",
+        "2. **Upload the batch job file**: Once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file.\n",
+        "3. **Start the batch job**: After the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before.\n",
+        "4. **Monitor job progress (optional)**: Track the status of the batch job to ensure it has been successfully completed.\n",
+        "5. **Retrieve results**: Once the job has completed execution, we can access and process the resultant data.\n",
         "\n",
         "This notebook is prepared for you to follow along. Run the cells below to watch it all come together."
       ]
@@ -13567,10 +13567,10 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
         "\n",
         "To submit a batch job we've:\n",
         "\n",
-        "1. Created the JSONL file, where each line of the file represented a separate request\n",
-        "2. Submitted the file to the platform\n",
-        "3. Started the batch job, and monitored its progress\n",
-        "4. Once completed, we fetched the results\n",
+        "1. Created the JSONL file, where each line of the file represented a separate request.\n",
+        "2. Submitted the file to the platform.\n",
+        "3. Started the batch job, and monitored its progress.\n",
+        "4. Once completed, we fetched the results.\n",
         "\n",
         "All of this using the OpenAI Python library and API, no changes needed!\n",
         "\n",
@@ -13641,8 +13641,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/llm-as-a-judge.ipyn
     "\n",
     "Before getting started, ensure you have the following:\n",
     "\n",
-    "- **A kluster.ai account** - sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one\n",
-    "- **A kluster.ai API key** - after signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide\n",
+    "- **A kluster.ai account**: Sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one.\n",
+    "- **A kluster.ai API key**: After signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide.\n",
     "\n",
     "## Setup\n",
     "\n",
@@ -13844,11 +13844,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/llm-as-a-judge.ipyn
     "\n",
     "To execute the batch inference job, we'll create the following functions:\n",
     "\n",
-    "1. **Create the batch job file** - we'll generate a JSON lines file with the desired requests to be processed by the model. Consequently, we'll create a file for the assistant model and one for the judge model. You can also work with a single file by providing the different models for each request\n",
-    "2. **Upload the batch job file** - once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file\n",
-    "3. **Start the batch job** - after the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before\n",
-    "4. **Monitor job progress** - (optional) track the status of the batch job to ensure it has been successfully completed\n",
-    "5. **Retrieve results** - once the job has completed execution, we can access and process the resultant data\n",
+    "1. **Create the batch job file**: We'll generate a JSON lines file with the desired requests to be processed by the model. Consequently, we'll create a file for the assistant model and one for the judge model. You can also work with a single file by providing the different models for each request.\n",
+    "2. **Upload the batch job file**: Once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file.\n",
+    "3. **Start the batch job**: After the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before.\n",
+    "4. **Monitor job progress (optional)**: Track the status of the batch job to ensure it has been successfully completed.\n",
+    "5. **Retrieve results**: Once the job has completed execution, we can access and process the resultant data.\n",
     "\n",
     "Next, we will run the functions for the base model and feed the results to the pipeline using the judge model.\n",
     "\n",
@@ -14581,13 +14581,13 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/llm-as-a-judge.ipyn
     "First, we built a pipeline to submit batch jobs and retrieve results using the base model. We then applied the same pipeline with a larger \"judge\" model, which evaluated whether the base model's genre predictions were correct, based on strict formatting and semantic criteria.\n",
     "\n",
     "Finally, we compared three types of accuracy (results may vary depending on each notebook execution):\n",
-    "- Base model accuracy against LLM ground truth: 59.2%  \n",
-    "- Base model accuracy against real ground truth: 72.5%  \n",
-    "- Judge model accuracy against real ground truth: 76.7%\n",
+    "- Base model accuracy against LLM ground truth: 59.2%.\n",
+    "- Base model accuracy against real ground truth: 72.5%.\n",
+    "- Judge model accuracy against real ground truth: 76.7%.\n",
     "\n",
     "These results show that while the base model achieved moderate accuracy when compared to human-annotated ground truth, it performed significantly worse when judged by the larger model. This suggests that the judge model applies stricter or more nuanced evaluation criteria. Notably, the judge model achieved the highest accuracy compared to the real ground truth.\n",
     "\n",
-    "As next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!\n"
+    "As next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
    ]
   }
  ],
@@ -14646,10 +14646,10 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
     "\n",
     "This tutorial walks through a notebook where you'll learn how to systematically evaluate Large Language Models (LLMs) using the <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API, showcasing a practical example of comparing different models for a real-world task. The systematic evaluation pipeline does the following:\n",
     "\n",
-    "1. Loads and processes a public dataset (which you can later replace with your own)\n",
-    "2. Tests three state-of-the-art models on a text classification task\n",
-    "3. Compares their accuracy using annotated data\n",
-    "4. Helps you make an informed decision based on both performance and cost\n",
+    "1. Loads and processes a public dataset (which you can later replace with your own).\n",
+    "2. Tests three state-of-the-art models on a text classification task.\n",
+    "3. Compares their accuracy using annotated data.\n",
+    "4. Helps you make an informed decision based on both performance and cost.\n",
     "\n",
     "You'll be using the same dataset as in our <a href=\"/tutorials/klusterai-api/text-classification/text-classification-openai-api/\" target=\"_blank\">text classification notebook</a>, which is an extract from the IMDB top 1000 movies dataset categorized into 21 different genres.\n",
     "\n",
@@ -14665,7 +14665,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
     "\n",
     "We're choosing accuracy for this tutorial because:\n",
     "\n",
-    "1. It's easy to understand and interpret\n",
+    "1. It's easy to understand and interpret.\n",
     "2. It directly answers the question: \"How often is our model correct?\"\n",
     "\n",
     "In the next section, we'll see how to implement this metric in our evaluation pipeline.\n",
@@ -14674,8 +14674,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
     "\n",
     "Before getting started, ensure you have the following:\n",
     "\n",
-    "- **A kluster.ai account** - sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one\n",
-    "- **A kluster.ai API key** - after signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide\n",
+    "- **A kluster.ai account**: Sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one.\n",
+    "- **A kluster.ai API key**: After signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide.\n",
     "\n",
     "## Setup\n",
     "\n",
@@ -14880,11 +14880,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
     "\n",
     "To execute the batch inference job, we'll take the following steps:\n",
     "\n",
-    "1. **Create the batch job file** - we'll generate a JSON lines file with the desired requests to be processed by the model\n",
-    "2. **Upload the batch job file** - once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file\n",
-    "3. **Start the batch job** - after the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before\n",
-    "4. **Monitor job progress** - (optional) track the status of the batch job to ensure it has been successfully completed\n",
-    "5. **Retrieve results** - once the job has completed execution, we can access and process the resultant data\n",
+    "1. **Create the batch job file**: We'll generate a JSON lines file with the desired requests to be processed by the model.\n",
+    "2. **Upload the batch job file**: Once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file.\n",
+    "3. **Start the batch job**: After the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before.\n",
+    "4. **Monitor job progress (optional)**: Track the status of the batch job to ensure it has been successfully completed.\n",
+    "5. **Retrieve results**: Once the job has completed execution, we can access and process the resultant data.\n",
     "\n",
     "This notebook is prepared for you to follow along. Run the cells below to watch it all come together.\n",
     "\n",
@@ -15491,10 +15491,10 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison.ip
     "\n",
     "To submit and evaluate the batch jobs, we:\n",
     "\n",
-    "1. Created the JSONL file, where each file line represented a separate request\n",
-    "2. Submitted the file to the platform\n",
-    "3. Started the batch job and monitored its progress\n",
-    "4. Once completed, we fetched the results\n",
+    "1. Created the JSONL file, where each file line represented a separate request.\n",
+    "2. Submitted the file to the platform.\n",
+    "3. Started the batch job and monitored its progress.\n",
+    "4. Once completed, we fetched the results.\n",
     "\n",
     "The results were then visualized in a bar chart showing **accuracy**, **token usage**, and **cost per model**, allowing for a clear comparison of trade-offs between quality and efficiency.\n",
     "\n",
@@ -15579,8 +15579,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
    "source": [
     "Before getting started, ensure you have the following:\n",
     "\n",
-    "- **A kluster.ai account** - sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one\n",
-    "- **A kluster.ai API key** - after signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide"
+    "- **A kluster.ai account**: Sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one.\n",
+    "- **A kluster.ai API key**: After signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide."
    ]
   },
   {
@@ -15608,7 +15608,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
    "metadata": {},
    "outputs": [
     {
-     "name": "stdin",
+     "name": "stdout",
      "output_type": "stream",
      "text": [
       "Enter your kluster.ai API key:  ········\n"
@@ -15872,11 +15872,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
    "source": [
     "For this particular tutorial, we predefined five requests for the model to execute based on common customer use cases:\n",
     "\n",
-    "- **Sentiment analysis** - reviewing text to determine whether there is positive, neutral, or negative notation to the statement\n",
-    "- **Translation** - translate the text to any other language, in this example, Spanish\n",
-    "- **Summarization** - express the text in a concise form\n",
-    "- **Topic classification** - classify the text between a given set of categories\n",
-    "- **Keyword extraction** - provide a number of keywords\n",
+    "- **Sentiment analysis**: Reviewing text to determine whether there is positive, neutral, or negative notation to the statement.\n",
+    "- **Translation**: Translate the text to any other language, in this example, Spanish.\n",
+    "- **Summarization**: Express the text in a concise form.\n",
+    "- **Topic classification**: Classify the text between a given set of categories.\n",
+    "- **Keyword extraction**: Provide a number of keywords.\n",
     "\n",
     "Requests are defined as a system prompt. This example runs through different types of requests, so they are defined as JSON objects. For each use case, we also defined the structure of the response we expect from the model.\n",
     "\n",
@@ -16702,10 +16702,10 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
     "\n",
     "To submit a batch job we've:\n",
     "\n",
-    "1. Created the JSONL file, where each line of the file represented a separate request (for each task and element of dataset)\n",
-    "2. Submitted the file to the platform\n",
-    "3. Started the batch job, and monitored its progress\n",
-    "4. Once completed, we fetched the results\n",
+    "1. Created the JSONL file, where each line of the file represented a separate request (for each task and element of dataset).\n",
+    "2. Submitted the file to the platform.\n",
+    "3. Started the batch job, and monitored its progress.\n",
+    "4. Once completed, we fetched the results.\n",
     "\n",
     "All of this using the OpenAI Python library and API, no changes needed!\n",
     "\n",
@@ -18073,8 +18073,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
    "source": [
     "Before getting started, ensure you have the following:\n",
     "\n",
-    "- **A kluster.ai account** - sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one\n",
-    "- **A kluster.ai API key** - after signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide"
+    "- **A kluster.ai account**: Sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one.\n",
+    "- **A kluster.ai API key**: After signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide."
    ]
   },
   {
@@ -18246,11 +18246,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
    "source": [
     "To execute the batch inference job, we'll take the following steps:\n",
     "\n",
-    "1. **Create the batch job file** - we'll generate a JSON lines file with the desired requests to be processed by the model\n",
-    "2. **Upload the batch job file** - once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file\n",
-    "3. **Start the batch job** - after the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before\n",
-    "4. **Monitor job progress** - (optional) track the status of the batch job to ensure it has been successfully completed\n",
-    "5. **Retrieve results** - once the job has completed execution, we can access and process the resultant data\n",
+    "1. **Create the batch job file**: We'll generate a JSON lines file with the desired requests to be processed by the model.\n",
+    "2. **Upload the batch job file**: Once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file.\n",
+    "3. **Start the batch job**: After the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before.\n",
+    "4. **Monitor job progress (optional)**: Track the status of the batch job to ensure it has been successfully completed.\n",
+    "5. **Retrieve results**: Once the job has completed execution, we can access and process the resultant data.\n",
     "\n",
     "This notebook is prepared for you to follow along. Run the cells below to watch it all come together."
    ]
@@ -18677,10 +18677,10 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
     "\n",
     "To submit a batch job, we've:\n",
     "\n",
-    "1. Created the JSONL file, where each line of the file represented a separate request\n",
-    "2. Submitted the file to the platform\n",
-    "3. Started the batch job, and monitored its progress\n",
-    "4. Once completed, we fetched the results\n",
+    "1. Created the JSONL file, where each line of the file represented a separate request.\n",
+    "2. Submitted the file to the platform.\n",
+    "3. Started the batch job, and monitored its progress.\n",
+    "4. Once completed, we fetched the results.\n",
     "\n",
     "All of this using the OpenAI Python library and API, no changes needed!\n",
     "\n",
@@ -18763,8 +18763,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
     "\n",
     "Before getting started, ensure you have the following:\n",
     "\n",
-    "- **A kluster.ai account** - sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one\n",
-    "- **A kluster.ai API key** - after signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide"
+    "- **A kluster.ai account**: Sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one.\n",
+    "- **A kluster.ai API key**: After signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide."
    ]
   },
   {
@@ -18800,7 +18800,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
    },
    "outputs": [
     {
-     "name": "stdin",
+     "name": "stdout",
      "output_type": "stream",
      "text": [
       "Enter your kluster.ai API key:  ········\n"
@@ -19436,8 +19436,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
    "source": [
     "Before getting started, ensure you have the following:\n",
     "\n",
-    "- **A kluster.ai account** - sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one\n",
-    "- **A kluster.ai API key** - after signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide"
+    "- **A kluster.ai account**: Sign up on the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> if you don't have one.\n",
+    "- **A kluster.ai API key**: After signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide."
    ]
   },
   {
@@ -19473,7 +19473,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
    },
    "outputs": [
     {
-     "name": "stdin",
+     "name": "stdout",
      "output_type": "stream",
      "text": [
       "Enter your kluster.ai API key:  ········\n"
@@ -19631,11 +19631,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
    "source": [
     "To execute the batch inference job, we'll take the following steps:\n",
     "\n",
-    "1. **Create the batch job file** - we'll generate a JSON lines file with the desired requests to be processed by the model\n",
-    "2. **Upload the batch job file** - once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file\n",
-    "3. **Start the batch job** - after the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before\n",
-    "4. **Monitor job progress** - (optional) track the status of the batch job to ensure it has been successfully completed\n",
-    "5. **Retrieve results** - once the job has completed execution, we can access and process the resultant data\n",
+    "1. **Create the batch job file**: We'll generate a JSON lines file with the desired requests to be processed by the model.\n",
+    "2. **Upload the batch job file**: Once it is ready, we'll upload it to the <a href=\"https://platform.kluster.ai/signup\" target=\"_blank\">kluster.ai platform</a> using the API, where it will be processed. We'll receive a unique ID associated with our file.\n",
+    "3. **Start the batch job**: After the file is uploaded, we'll initiate the job to process the uploaded data, using the file ID obtained before.\n",
+    "4. **Monitor job progress (optional)**: Track the status of the batch job to ensure it has been successfully completed.\n",
+    "5. **Retrieve results**: Once the job has completed execution, we can access and process the resultant data.\n",
     "\n",
     "This notebook is prepared for you to follow along. Run the cells below to watch it all come together."
    ]
@@ -20105,10 +20105,10 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
     "\n",
     "To submit a batch job we've:\n",
     "\n",
-    "1. Created the JSONL file, where each line of the file represented a separate request\n",
-    "2. Submitted the file to the platform\n",
-    "3. Started the batch job, and monitored its progress\n",
-    "4. Once completed, we fetched the results\n",
+    "1. Created the JSONL file, where each line of the file represented a separate request.\n",
+    "2. Submitted the file to the platform.\n",
+    "3. Started the batch job, and monitored its progress.\n",
+    "4. Once completed, we fetched the results.\n",
     "\n",
     "All of this using the OpenAI Python library and API, no changes needed!\n",
     "\n",
@@ -20165,10 +20165,10 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/uploads-api.ipynb/
     "When working with large datasets for AI model training or batch inference, you may need to upload files several gigabytes in size. For these scenarios, [kluster.ai](https://www.kluster.ai/) provides a multipart upload API that allows you to split your large files into smaller chunks and upload them efficiently.\n",
     "\n",
     "This tutorial demonstrates how to:\n",
-    "1. Split a large file into multiple parts\n",
-    "2. Upload each part using the kluster.ai uploads API\n",
-    "3. Complete the upload process to create a usable File object\n",
-    "4. Use the uploaded file for a batch inference job\n",
+    "1. Split a large file into multiple parts.\n",
+    "2. Upload each part using the kluster.ai uploads API.\n",
+    "3. Complete the upload process to create a usable File object.\n",
+    "4. Use the uploaded file for a batch inference job.\n",
     "\n",
     "The example uses a large JSONL file for batch inference with a language model, but this approach can be adapted for any large file upload scenario."
    ]
@@ -20182,8 +20182,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/uploads-api.ipynb/
     "\n",
     "Before getting started, ensure you have the following:\n",
     "\n",
-    "- **A kluster.ai account** - sign up on the [kluster.ai platform](https://platform.kluster.ai/signup) if you don't have one\n",
-    "- **A kluster.ai API key** - after signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys) section and create a new key"
+    "- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup) if you don't have one.\n",
+    "- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys) section and create a new key."
    ]
   },
   {
@@ -20235,7 +20235,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/uploads-api.ipynb/
    "metadata": {},
    "outputs": [
     {
-     "name": "stdin",
+     "name": "stdout",
      "output_type": "stream",
      "text": [
       "Enter your kluster.ai API key:  ········\n"
@@ -20366,9 +20366,9 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/uploads-api.ipynb/
     "\n",
     "Now, let's implement the multipart upload process. We'll break this down into several steps:\n",
     "\n",
-    "1. Create the [Upload object](https://docs.kluster.ai/api-reference/reference/#upload-object)\n",
-    "2. Split the file into chunks and upload each chunk as a part\n",
-    "3. Complete the upload process"
+    "1. Create the [Upload object](https://docs.kluster.ai/api-reference/reference/#upload-object).\n",
+    "2. Split the file into chunks and upload each chunk as a part.\n",
+    "3. Complete the upload process."
    ]
   },
   {
@@ -20841,11 +20841,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/uploads-api.ipynb/
     "\n",
     "Here are some best practices and tips for using the kluster.ai Uploads API effectively:\n",
     "\n",
-    "- **Optimal part size** - choose an appropriate part size based on your network conditions. While the API allows parts up to 64 MB, you might want to use smaller parts if your network is unstable\n",
-    "- **Parallel uploads** - for very large files, consider uploading parts in parallel to speed up the process\n",
-    "- **Error handling** - implement proper error handling and retries for failed part uploads\n",
-    "- **Upload expiration** - remember that uploads expire after an hour, so make sure to complete the upload within that time frame\n",
-    "- **Cleanup** - always clean up temporary files created during the upload process"
+    "- **Optimal part size**: Choose an appropriate part size based on your network conditions. While the API allows parts up to 64 MB, you might want to use smaller parts if your network is unstable.\n",
+    "- **Parallel uploads**: For very large files, consider uploading parts in parallel to speed up the process.\n",
+    "- **Error handling**: Implement proper error handling and retries for failed part uploads.\n",
+    "- **Upload expiration**: Remember that uploads expire after an hour, so make sure to complete the upload within that time frame.\n",
+    "- **Cleanup**: Always clean up temporary files created during the upload process."
    ]
   },
   {
@@ -20999,11 +20999,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/uploads-api.ipynb/
     "\n",
     "In this tutorial, we've learned how to:\n",
     "\n",
-    "1. Create an Upload object using the kluster.ai API\n",
-    "2. Split a large file into smaller parts and upload each part\n",
-    "3. Complete the upload process to create a usable File object\n",
-    "4. Use the uploaded file for a batch inference job\n",
-    "5. Monitor the batch job progress and retrieve results\n",
+    "1. Create an Upload object using the kluster.ai API.\n",
+    "2. Split a large file into smaller parts and upload each part.\n",
+    "3. Complete the upload process to create a usable File object.\n",
+    "4. Use the uploaded file for a batch inference job.\n",
+    "5. Monitor the batch job progress and retrieve results.\n",
     "\n",
     "This approach allows you to efficiently upload and process large datasets with kluster.ai, making it an invaluable tool for your AI workflows."
    ]
