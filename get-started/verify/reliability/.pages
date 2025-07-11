@@ -1,0 +1,7 @@
+title: Reliability check
+nav:
+  - 'Overview': overview.md
+  - 'Verify API': verify-api.md
+  - 'Chat completion endpoint': chat-completion.md
+  - 'Workflow integrations': workflow-integrations.md
+

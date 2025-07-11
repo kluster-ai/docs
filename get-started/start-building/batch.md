@@ -31,7 +31,7 @@ export API_KEY=INSERT_API_KEY
 
 Please visit the [Models](/get-started/models/){target=\_blank} page to learn more about all the models supported by the kluster.ai batch API.
 
-In addition, you can see the complete list of available models programmatically using the [list supported models](/api-reference/reference/#list-supported-models){target=\_blank} endpoint.
+In addition, you can see the complete list of available models programmatically using the [list supported models](/api-reference/reference/#/http/api-endpoints/models/v1-models-get){target=\_blank} endpoint.
 
 ## Batch job workflow overview
 
@@ -59,103 +59,165 @@ The following code snippets provide a full end-to-end batch inference example fo
 
 To use these snippets, run the Python script and enter your kluster.ai API key when prompted.
 
-??? example "DeepSeek R1"
+??? example "DeepSeek-R1"
 
     ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-deepseekR1.py'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-deepseek-r1.py'
     ```
 
-??? example "DeepSeek V3 0324"
+??? example "DeepSeek-R1-0528"
 
     ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-deepseekV3-0324.py'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-deepseek-r1-0528.py'
     ```
+
+??? example "DeepSeek-V3-0324"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-deepseek-v3-0324.py'
+    ```
+
 ??? example "Gemma 3 27B"
 
     ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-gemma3-27.py'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-gemma-3-27b-it.py'
     ```
 
-??? example "LLama 3.1 8B"
+??? example "Magistral Small"
 
     ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.1-8.py'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-magistral-small-2506.py'
     ```
 
-??? example "LLama 3.3 70B"
+??? example "Meta Llama 3.1 8B"
 
     ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.3-70.py'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-meta-llama-3-1-8b-instruct-turbo.py'
     ```
 
-??? example "Llama 4 Maverick 17B 128E"
-
-    ```bash
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama4-maverick.py'
-    ```
-
-??? example "Llama 4 Scout 17B 16E"
-
-    ```bash
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama4-scout.py'
-    ```
-
-??? example "Qwen 2.5 7B"
+??? example "Meta Llama 3.3 70B"
 
     ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-qwen2.5-7.py'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-meta-llama-3-3-70b-instruct-turbo.py'
     ```
 
+??? example "Meta Llama 4 Maverick"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama-4-maverick-17b-128e-instruct-fp8.py'
+    ```
+
+??? example "Meta Llama 4 Scout"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama-4-scout-17b-16e-instruct.py'
+    ```
+
+??? example "Mistral NeMo"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-mistral-nemo-instruct-2407.py'
+    ```
+
+??? example "Mistral Small"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-mistral-small-24b-instruct-2501.py'
+    ```
+
+??? example "Qwen2.5-VL 7B"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-qwen2-5-vl-7b-instruct.py'
+    ```
+
+??? example "Qwen3-235B-A22B"
+
+    ```python
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-qwen3-235b-a22b-fp8.py'
+    ```
 ### CLI
 
 Similarly, the following curl commands showcase how to easily send a chat completion request to kluster.ai for the different supported models. This example assumes you've exported your kluster.ai API key as the variable `API_KEY`.
 
-??? example "DeepSeek R1"
+??? example "DeepSeek-R1"
 
     ```bash
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-deepseekR1.md'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-deepseek-r1.md'
     ```
 
-??? example "DeepSeek V3 0324"
+??? example "DeepSeek-R1-0528"
 
-    ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-deepseekV3-0324.md'
+    ```bash
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-deepseek-r1-0528.md'
     ```
+
+??? example "DeepSeek-V3-0324"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-deepseek-v3-0324.md'
+    ```
+
 ??? example "Gemma 3 27B"
 
-    ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-gemma3-27.md'
+    ```bash
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-gemma-3-27b-it.md'
     ```
 
-??? example "LLama 3.1 8B"
+??? example "Magistral Small"
 
     ```bash
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.1-8.md'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-magistral-small-2506.md'
     ```
 
-??? example "LLama 3.3 70B"
+??? example "Meta Llama 3.1 8B"
 
     ```bash
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama3.3-70.md'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-meta-llama-3-1-8b-instruct-turbo.md'
     ```
 
-??? example "Llama 4 Maverick 17B 128E"
+??? example "Meta Llama 3.3 70B"
 
     ```bash
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama4-maverick.md'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-meta-llama-3-3-70b-instruct-turbo.md'
     ```
 
-??? example "Llama 4 Scout 17B 16E"
+??? example "Meta Llama 4 Maverick"
 
     ```bash
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama4-scout.md'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama-4-maverick-17b-128e-instruct-fp8.md'
     ```
 
-??? example "Qwen 2.5 7B"
+??? example "Meta Llama 4 Scout"
 
-    ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-qwen2.5-7.md'
+    ```bash
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-llama-4-scout-17b-16e-instruct.md'
     ```
+
+??? example "Mistral NeMo"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-mistral-nemo-instruct-2407.md'
+    ```
+
+??? example "Mistral Small"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-mistral-small-24b-instruct-2501.md'
+    ```
+
+??? example "Qwen2.5-VL 7B"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-qwen2-5-vl-7b-instruct.md'
+    ```
+
+??? example "Qwen3-235B-A22B"
+
+    ```bash
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-qwen3-235b-a22b-fp8.md'
+    ```
+
 
 ## Batch inference flow
 
@@ -173,7 +235,7 @@ Each request must include the following arguments:
 - `body` ++"object"++ - a request body containing:
     - `model` ++"string"++ <span class="required" markdown>++"required"++</span> - name of one of the [supported models](/get-started/models/){target=\_blank}
     - `messages` ++"array"++ <span class="required" markdown>++"required"++</span> - a list of chat messages (`system`, `user`, or `assistant` roles, and also `image_url` for images)
-    - Any optional [chat completion parameters](/api-reference/reference/#create-chat-completion){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
+    - Any optional [chat completion parameters](/api-reference/reference/#/http/api-endpoints/realtime/v1-chat-completions-post){target=\_blank}, such as `temperature`, `max_completion_tokens`, etc.
 
 !!! tip
     You can use a different model for each request you submit.
@@ -183,7 +245,7 @@ The following examples generate requests and save them in a JSONL file, which is
 === "Python"
 
     ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:01:75'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:01:78'
     ```
 
 === "CLI"
@@ -206,7 +268,7 @@ Use the following command examples to upload your batch job files:
 === "Python"
 
     ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:76:78'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:79:81'
     ```
 
 === "curl"
@@ -236,7 +298,7 @@ Use the following command examples to upload your batch job files:
 
 ### Submit a batch job
 
-Next, submit a batch job by calling the `batches` endpoint and providing the `id` of the uploaded batch job file (from the previous section) as the [`input_file_id`, and additional parameters](/api-reference/reference/#submit-a-batch-job){target=\_blank} to specify the job's configuration.
+Next, submit a batch job by calling the `batches` endpoint and providing the `id` of the uploaded batch job file (from the previous section) as the [`input_file_id`, and additional parameters](/api-reference/reference/#/http/models/structures/v1-batches-request){target=\_blank} to specify the job's configuration.
 
 The response includes an `id` that can be used to monitor the job's progress, as demonstrated in the next section.
 
@@ -245,7 +307,7 @@ You can use the following snippets to submit your batch job:
 === "Python"
 
     ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:79:85'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:82:88'
     ```
 
 === "curl"
@@ -292,9 +354,9 @@ You can use the following snippets to submit your batch job:
 
 ### Monitor job progress
 
-You can make periodic requests to the `batches` endpoint to monitor your batch job's progress. Use the `id` of the batch request from the preceding section as the [`batch_id`](/api-reference/reference/#retrieve-a-batch){target=\_blank} to check its status. The job is complete when the `status` field returns `"completed"`. You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
+You can make periodic requests to the `batches` endpoint to monitor your batch job's progress. Use the `id` of the batch request from the preceding section as the [`batch_id`](/api-reference/reference/#/http/api-endpoints/batch/v1-batches-by-batch-id-get){target=\_blank} to check its status. The job is complete when the `status` field returns `"completed"`. You can also monitor jobs in the [**Batch** tab](https://platform.kluster.ai/batch) of the kluster.ai platform UI.
 
-To see a complete list of the supported statuses, refer to the [Retrieve a batch](/api-reference/reference/#retrieve-a-batch){target=\_blank} API reference page.
+View a complete list of the [supported statuses](/api-reference/reference/#/http/models/enumerations/status){target=\_blank} on the API reference page.
 
 You can use the following snippets to monitor your batch job:
 
@@ -302,7 +364,7 @@ You can use the following snippets to monitor your batch job:
 === "Python"
 
     ```python
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:86:98'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:89:101'
     ```
 
 === "curl"
@@ -354,7 +416,7 @@ You can use the following snippets to retrieve the results from your batch job:
 === "Python"
 
     ```python 
-    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:99:111'
+    --8<-- 'code/get-started/start-building/batch/batch-jsonl-01.py:102:'
     ```
 
 === "curl"
@@ -381,11 +443,12 @@ You can use the following snippets to list all of your batch jobs:
 === "Python"
 
     ```python
+    import os
     from openai import OpenAI
     from getpass import getpass
     
     # Get API key from user input
-    api_key = getpass("Enter your kluster.ai API key: ")
+    api_key = os.environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
     
     # Initialize OpenAI client pointing to kluster.ai API
     client = OpenAI(
@@ -455,11 +518,12 @@ You can use the following snippets to cancel a batch job:
 === "Python"
 
     ```python title="Example"
+    import os
     from openai import OpenAI
     from getpass import getpass
     
     # Get API key from user input
-    api_key = getpass("Enter your kluster.ai API key: ")
+    api_key = os.environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
     
     # Initialize OpenAI client pointing to kluster.ai API
     client = OpenAI(
@@ -479,7 +543,6 @@ You can use the following snippets to cancel a batch job:
         -H "Content-Type: application/json" \
         -X POST
     ```
-
 ```Json title="Response"
 {
     "id": "mybatch-123",
@@ -520,3 +583,5 @@ You have now experienced the complete batch inference job lifecycle using kluste
 - Cancel jobs when needed
 
 The kluster.ai batch API is designed to efficiently and reliably handle your large-scale LLM workloads. If you have questions or suggestions, the [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
+
+
