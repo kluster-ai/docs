@@ -11,5 +11,6 @@ jobs:
       docs_repo: kluster-ai/docs
       mkdocs_repo_name: kluster-mkdocs
       docs_repo_name: kluster-docs
+      url: https://docs.kluster.ai
     secrets:
       GH_TOKEN: ${{ secrets.GH_PR_404_CHECKER }}
