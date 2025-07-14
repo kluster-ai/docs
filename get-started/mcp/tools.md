@@ -45,7 +45,7 @@ The verify tool allows you to check a prompt from a user and response from the a
 
 ### Verify document
 
-The verify document tool checks that a prompt from a user and response from the agent accurately reflect the content of the uploaded document.
+The verify document tool checks that a prompt from a user and a response from the agent accurately reflect the content of the uploaded document.
 
 ???+ interface "Parameters"
 
@@ -80,7 +80,7 @@ All verification tools return the same response structure:
 - **`response`**: The agent's response.
 - **`is_hallucination`**: Boolean indicating if the response contains hallucinations.
 - **`explanation`**: Detailed reasoning for the verdict.
-- **`confidence`**: Token usage statistics (completion_tokens, prompt_tokens, total_tokens).
+- **`confidence`**: Token usage statistics `completion_tokens`, `prompt_tokens`, and `total_tokens`.
 - **`search_results`**: Source citations (if requested).
 
 An example can be seen below:

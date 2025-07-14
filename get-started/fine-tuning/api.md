@@ -120,9 +120,9 @@ You can view the end-to-end python script below:
 
 After your fine-tuned model is created, you can also test it in the kluster.ai playground:
 
-1. Go to the [kluster.ai playground](https://platform.kluster.ai/playground){target=_blank}
-2. Select your fine-tuned model from the model dropdown menu
-3. Start chatting with your model to evaluate its performance on your specific task
+1. Go to the [kluster.ai playground](https://platform.kluster.ai/playground){target=_blank}.
+2. Select your fine-tuned model from the model dropdown menu.
+3. Start chatting with your model to evaluate its performance on your specific task.
 
 ## Benefits of fine-tuning
 

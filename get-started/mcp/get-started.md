@@ -74,10 +74,10 @@ Ask Claude to verify something obviously wrong:
 
 Claude will automatically use the `verify` tool with:
 
-- **prompt**: "Is the Eiffel Tower located in Rome?"
-- **response**: "The Eiffel Tower is located in Rome."
+- **`prompt`**: "Is the Eiffel Tower located in Rome?"
+- **`response`**: "The Eiffel Tower is located in Rome."
 
-And provide the following:
+And provides the following:
 
 - **Verification result**: Whether the response contains hallucinations.
 - **Detailed explanation**: Why it's wrong with supporting reasoning.
@@ -93,9 +93,9 @@ Perfect for detecting hallucinations or false claims about documents. Upload any
 
 Claude will use the `verify_document` tool with:
 
-- **prompt**: "Does this document say that employees can work remotely full-time?"
-- **response**: "The document says employees can work remotely without restrictions."
-- **documentContent**: (automatically provided by MCP client)
+- **`prompt`**: "Does this document say that employees can work remotely full-time?"
+- **`response`**: "The document says employees can work remotely without restrictions."
+- **`documentContent`**:  The content of the document as provided by the MCP client for verification.
 
 This verifies the response against the actual document content.
 
