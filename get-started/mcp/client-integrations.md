@@ -14,7 +14,7 @@ Connect any compatible client to [kluster.ai's](https://www.kluster.ai/){target=
       
 Before integrating with any client, ensure you have the required credentials:
       
-- **kluster.ai API key**: Get one from the [Get an API key guide](/get-started/get-api-key/)
+--8<-- 'text/kluster-api-onboarding.md'
 - **MCP token** (for some clients): Follow the [platform guide](/get-started/mcp/cloud/platform/) to enable MCP and obtain your token
 
 !!! info "Which credential do I need?"

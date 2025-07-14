@@ -17,7 +17,7 @@ This guide demonstrates how to integrate the `Agent` and `Runner` classes from t
 - **OpenAI Agents SDK packages installed** - install the [`openai-agents` packages](https://github.com/openai/openai-agents-python){target=_blank}:
 
     ```bash
-    pip install openai>=1.93.0 openai-agents>=0.1.0 "mcp[cli]>=1.10.1"
+    pip install "openai>=1.93.0" "openai-agents>=0.1.0" "mcp[cli]>=1.10.1"
     ```
 
 - **MCP enabled**: Via [platform](https://platform.kluster.ai){target=_blank} or [API](/get-started/mcp/cloud/api/).
