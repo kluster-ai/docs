@@ -59,7 +59,8 @@ mcp_server = MCPServerStreamableHttp(
         "headers": {"Authorization": f"Bearer {mcp_token}"},
         "timeout": 15,
         "sse_read_timeout": 15
-    }
+    },
+    client_session_timeout_seconds=30  # Increase from default 5 seconds to 30 seconds
 )
 
 # Create agent with kluster Verify capabilities
@@ -138,15 +139,15 @@ kluster_client = AsyncOpenAI(
     base_url="https://api.kluster.ai/v1",
     api_key=api_key
 )
-
-# Configure MCP server
+# Create MCP server
 mcp_server = MCPServerStreamableHttp(
     params={
         "url": "https://api.kluster.ai/v1/mcp",
         "headers": {"Authorization": f"Bearer {mcp_token}"},
         "timeout": 15,
         "sse_read_timeout": 15
-    }
+    },
+    client_session_timeout_seconds=30  # Increase from default 5 seconds to 30 seconds
 )
 
 # Create chatbot agent
@@ -218,6 +219,7 @@ async def main():
         api_key=api_key
     )
     
+
     # Create MCP server
     mcp_server = MCPServerStreamableHttp(
         params={
@@ -225,7 +227,8 @@ async def main():
             "headers": {"Authorization": f"Bearer {mcp_token}"},
             "timeout": 15,
             "sse_read_timeout": 15
-        }
+        },
+        client_session_timeout_seconds=30  # Increase from default 5 seconds to 30 seconds
     )
     
     # Create agent
@@ -284,32 +287,29 @@ python reliable_agent.py
 ```
 
 Enter your credentials when prompted:
+
 - kluster.ai API key (get one from [platform.kluster.ai](https://platform.kluster.ai){target=_blank}).
-- MCP token (obtained after [enabling MCP](/get-started/mcp/cloud/platform/)).
+
 
 Expected output:
 ```
-🚀 kluster Verify + OpenAI Agents Chatbot
-==================================================
-🔑 Enter your kluster.ai credentials:
-API Key: 
-
-🔌 Enter your MCP server details:
-MCP URL (default: https://api.kluster.ai/v1/mcp): 
-MCP Token: 
-
-🤖 Creating chatbot...
+🔑 Enter your kluster.ai API Key: 
 
 ✅ Chatbot ready! Type 'quit' to exit.
 💬 Ask me anything and I'll verify my responses:
 
-👤 You: What is the capital of Japan?
+👤 You: Is it true that the Eiffel Tower was moved to London in May 2025?
 🤖 Bot: Thinking and verifying...
-🤖 Bot: The capital of Japan is Tokyo. ✓ Verified by kluster Verify
+🤖 Bot: No, the Eiffel Tower was not moved to London in May 2025 or at any other time. It remains in its original location in Paris, France. 
 
-👤 You: Is the Earth flat?
-🤖 Bot: Thinking and verifying...
-🤖 Bot: No, the Earth is not flat. It is an oblate spheroid. ✓ Verified with search results
+### Verification Details:
+- **Explanation**: The search results confirm that the Eiffel Tower is located in Paris, and there is no credible information suggesting it was relocated to London. 
+- **Supporting Sources**:
+  - [Eiffel Tower - Wikipedia](https://en.wikipedia.org/wiki/Eiffel_Tower) describes its location as Paris, France.
+  - Other sources mention proposals or ideas for towers in London but confirm these are unrelated to the Eiffel Tower.
+
+The claim about the Eiffel Tower being moved to London is false.
+
 
 👤 You: quit
 

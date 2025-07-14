@@ -64,8 +64,7 @@ Restart Claude desktop. Once Claude desktop restarts, you'll see the verificatio
 Your MCP integration provides two verification tools:
 
 --8<-- 'text/get-started/mcp/overview/overview-1.md'
-<!-- Commenting this for safekeeping -->
-<!--For detailed parameters and response formats, see the [Tools reference](/get-started/mcp/tools/){target=\_blank}.-->
+
 
 ### Verify
 
@@ -109,7 +108,7 @@ This verifies the response against the actual document content.
 - **API activation**: Enable MCP using API calls with the [MCP API usage guide](/get-started/mcp/cloud/api/){target=\_blank}.
 
 ## Next steps
-<!-- Commenting this for safekeeping -->
-<!--- **Learn the tools**: See [Tools reference](/get-started/mcp/tools/) for detailed parameters and examples.-->
+
 - **Explore integrations**: Check [Client integrations](/get-started/mcp/integrations/) for other platforms.
+
 - **Try the tutorial**: Follow the [Reliability check notebook](/tutorials/klusterai-api/reliability-check/) with code examples.
