@@ -9083,7 +9083,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinatio
       "source": [
         "# Combat Hallucinations with **kluster Verify**\n",
         "\n",
-        "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/examples/verify-api.ipynb)"
+        "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/examples/combat-hallucinations.ipynb)"
       ]
     },
     {
@@ -9113,8 +9113,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinatio
         "   * `output`: The LLM’s response to be checked.\n",
         "   * *(Optional)* `context`: A set of ground‑truth docs (URLs, text, PDFs, etc.) that Verify **only** reads in this sandbox.\n",
         "2. **Retrieval & evidence gathering**: If `context` is omitted, Verify performs real‑time web search and retrieval, pulling the top public sources most likely to contain evidence.\n",
-        "3. **Cross‑Examination**: Verify compares factual claims in `output` against the gathered evidence.\n",
-        "4. **Results**: It returns:\n",
+        "3. **Cross‑examination**: Verify compares factual claims in `output` against the gathered evidence.\n",
+        "4. **Results**: verify returns:\n",
         "   * `is_hallucination` – Boolean verdict.\n",
         "   * `explanation` – Natural‑language rationale.\n",
         "   * `search_results` – List of URLs & snippets (if `return_search_results=true`).\n",
@@ -9129,8 +9129,8 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinatio
       "source": [
         "## Prerequisites\n",
         "\n",
-        "- a **kluster.ai account** – sign up at <https://platform.kluster.ai/signup>\n",
-        "- a **kluster.ai api key** – create one in **api keys** (<https://platform.kluster.ai/apikeys>)"
+        "- A **kluster.ai account**: sign up at <https://platform.kluster.ai/signup>\n",
+        "- A **kluster.ai api key**: create one in **api keys** (<https://platform.kluster.ai/apikeys>)"
       ]
     },
     {
@@ -9156,7 +9156,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinatio
       "metadata": {},
       "outputs": [],
       "source": [
-        "%pip install -q openai requests tqdm"
+        "%pip install -q openai requests"
       ]
     },
     {
@@ -9315,7 +9315,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinatio
         "3. **Constrain with `context`**: When context is provided, the service only validates answers against the specified context.\n",
         "4. **Log evidence**: Keep `search_results` so reviewers can audit decisions.\n",
         "5. **Experiment**: Different LLMs hallucinate differently. Try other models (e.g., Gemma, Llama 3) and prompts to see how Verify responds. \n",
-        "6. **Check out the Hallucination Leaderboard**: The kluster team built a [Hallucination Leaderboard]( https://huggingface.co/spaces/kluster-ai/LLM-Hallucination-Detection-Leaderboard) that showcases model hallucination rates across RAG and non-RAG settings, which can help you pick the model best suited for your use case."
+        "6. **Check out the Hallucination Leaderboard**: The kluster team built a [Hallucination Leaderboard](https://huggingface.co/spaces/kluster-ai/LLM-Hallucination-Detection-Leaderboard) that showcases model hallucination rates across RAG and non-RAG settings, which can help you pick the model best suited for your use case."
       ]
     },
     {
