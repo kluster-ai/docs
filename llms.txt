@@ -46,7 +46,6 @@ Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-api
 Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/llm-as-a-judge/
 Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/model-comparison/
 Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batch-api/
-Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/rag/
 Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/reliability-check/
 Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-api/
 Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/text-classification/text-classification-curator/
