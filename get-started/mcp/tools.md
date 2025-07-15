@@ -18,18 +18,24 @@ The following tools are available through the kluster.ai MCP server:
 
 | Tool | Purpose | Best For |
 |:---|:---|:---|
-| `verify` | Verify standalone claims | General statements, trivia, current events, news |
-| `verify_document` | Verify claims about documents | Quotes, data extraction, RAG hallucination checking |
+| `verify` | Verify prompt and response pairs | General statements, trivia, current events, news |
+| `verify_document` | Verify prompt and response about documents | Quotes, data extraction, RAG hallucination checking |
 
 ### Verify
 
-The verify tool allows you to check any statement against reliable online sources.
+The verify tool allows you to check a prompt from a user and response from the agent against reliable online sources.
 
 ???+ interface "Parameters"
 
-    `claim` ++"string"++ <span class="required" markdown>++"required"++</span>
+    `prompt` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-    The statement to verify.
+    The prompt the user made to the agent.
+
+    ---
+
+    `response` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+    The response from the agent that must be verified.
 
     ---
 
@@ -39,14 +45,20 @@ The verify tool allows you to check any statement against reliable online source
 
 ### Verify document
 
-The verify document tool checks that claims accurately reflect the content of the uploaded document.
+The verify document tool checks that a prompt from a user and a response from the agent accurately reflect the content of the uploaded document.
 
 ???+ interface "Parameters"
 
 
-    `claim` ++"string"++ <span class="required" markdown>++"required"++</span>
+    `prompt` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-    The statement to verify.
+    The prompt the user made to the agent about the document.
+
+    ---
+
+    `response` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+    The response from the agent that must be verified against the document content.
 
     ---
 
@@ -64,19 +76,21 @@ The verify document tool checks that claims accurately reflect the content of th
 
 All verification tools return the same response structure:
 
-- **`claim`**: The verified claim.
-- **`is_accurate`**: Boolean indicating if the claim is accurate.
+- **`prompt`**: The user's prompt.
+- **`response`**: The agent's response.
+- **`is_hallucination`**: Boolean indicating if the response contains hallucinations.
 - **`explanation`**: Detailed reasoning for the verdict.
-- **`confidence`**: Token usage statistics.
+- **`confidence`**: Token usage statistics `completion_tokens`, `prompt_tokens`, and `total_tokens`.
 - **`search_results`**: Source citations (if requested).
 
 An example can be seen below:
 
 ```json
 {
-    "claim": "This employment contract allows unlimited remote work.",
-    "is_accurate": false,
-    "explanation": "The claim is incorrect. Section 4.2 explicitly requires on-site work minimum 3 days per week and residence within 50 miles of headquarters.",
+    "prompt": "Does this employment contract allow unlimited remote work?",
+    "response": "This employment contract allows unlimited remote work.",
+    "is_hallucination": true,
+    "explanation": "The response is incorrect. Section 4.2 explicitly requires on-site work minimum 3 days per week and residence within 50 miles of headquarters.",
     "confidence": {
         "completion_tokens": 156,
         "prompt_tokens": 890,
