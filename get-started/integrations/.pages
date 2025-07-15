@@ -3,6 +3,7 @@ hide: false
 nav:
   - 'CrewAI': crewai.md
   - 'eliza': eliza.md
+  - 'Guardrails': guardrails.md
   - 'Immersive Translate': immersive-translate.md
   - 'LangChain': langchain.md
   - 'LiteLLM': litellm.md
