@@ -1,0 +1,16 @@
+name: 'PR Docs Link Check'
+
+on:
+  pull_request:
+
+jobs:
+  check-docs-links:
+    uses: papermoonio/workflows/.github/workflows/core-pr-link-checker.yml@main
+    with:
+      mkdocs_repo: papermoonio/kluster-mkdocs
+      docs_repo: kluster-ai/docs
+      mkdocs_repo_name: kluster-mkdocs
+      docs_repo_name: kluster-docs
+      url: https://docs.kluster.ai
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_PR_404_CHECKER }}
