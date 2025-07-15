@@ -9064,15 +9064,14 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinatio
       "id": "581c9428",
       "metadata": {},
       "source": [
-        "Large language models occasionally invent facts (“hallucinations”). **kluster Verify** is a drop‑in fact‑checker that scores any LLM response for reliability—either with one click inside the kluster Playground or via a simple API call.\n",
+        "Large language models occasionally invent facts (“hallucinations”). **[kluster Verify](https://docs.kluster.ai/get-started/verify/reliability/overview/)** is a drop‑in fact‑checker that scores any LLM response for reliability—either with one click inside the [kluster Playground](https://platform.kluster.ai/playground) or via a simple API call.\n",
         "\n",
         "This notebook shows you how to:\n",
-        "1. Trigger a one‑click verification in the Playground (no code).\n",
-        "2. Call the `POST /v1/verify/reliability` endpoint to fact‑check model output programmatically.\n",
-        "3. Interpret the JSON response returned by kluster Verify.\n",
-        "4. Apply best‑practice guard‑rails in your own applications.\n",
+        "1. Call the `POST /v1/verify/reliability` endpoint to fact‑check model output programmatically.\n",
+        "2. Interpret the JSON response returned by kluster Verify.\n",
+        "3. Apply best‑practice guard‑rails in your own applications.\n",
         "\n",
-        "> **Note** – We use *mistral‑small‑2506* as the demo model. Performance varies by model and prompt, so feel free to experiment."
+        "> **Note** – We use *mistral‑small‑2506* as the demo model to generate the example prompt responses. Performance varies by model and prompt, so feel free to experiment."
       ]
     },
     {
@@ -9080,15 +9079,15 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinatio
       "id": "08080c97",
       "metadata": {},
       "source": [
-        "## How kluster Verify Works Under the Hood\n",
+        "## How kluster Verify works under the hood\n",
         "\n",
-        "1. **Inputs** – You send at least two fields:\n",
-        "   * `prompt`: the original user request.\n",
-        "   * `output`: the LLM’s answer you want to check.\n",
-        "   * *(Optional)* `context`: a set of ground‑truth docs (URLs, text, PDFs, etc.). When provided, Verify **only** looks inside this sandbox.\n",
-        "2. **Retrieval & Evidence Gathering** – If `context` is omitted, Verify performs real‑time web search and retrieval, pulling the top public sources most likely to contain evidence.\n",
-        "3. **Cross‑Examination** – Verify compares factual claims in `output` against the gathered evidence using an ensemble of retrieval‑augmented reasoning models.\n",
-        "4. **Scoring** – It returns:\n",
+        "1. **Inputs**: You send at least two fields:\n",
+        "   * `prompt`: The original user request.\n",
+        "   * `output`: The LLM’s response to be checked.\n",
+        "   * *(Optional)* `context`: A set of ground‑truth docs (URLs, text, PDFs, etc.) that Verify **only** reads in this sandbox.\n",
+        "2. **Retrieval & evidence gathering**: If `context` is omitted, Verify performs real‑time web search and retrieval, pulling the top public sources most likely to contain evidence.\n",
+        "3. **Cross‑Examination**: Verify compares factual claims in `output` against the gathered evidence.\n",
+        "4. **Results**: It returns:\n",
         "   * `is_hallucination` – Boolean verdict.\n",
         "   * `explanation` – Natural‑language rationale.\n",
         "   * `search_results` – List of URLs & snippets (if `return_search_results=true`).\n",
@@ -9120,7 +9119,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinatio
       "id": "546df0e5",
       "metadata": {},
       "source": [
-        "Install required libraries. The kluster API is OpenAI‑compatible, so we reuse the `openai` Python client. We’ll also need `requests`."
+        "Install required libraries. The kluster API is OpenAI‑compatible, so you can reuse the `openai` Python client. You'll also need `requests`."
       ]
     },
     {
@@ -9159,7 +9158,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinatio
       "metadata": {},
       "outputs": [],
       "source": [
-        "import requests, json, textwrap"
+        "import requests, json"
       ]
     },
     {
@@ -9284,11 +9283,12 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinatio
       "metadata": {},
       "source": [
         "## Best Practices\n",
-        "1. **Auto‑verify short answers** – the[kluster Playground] has an auto-verify feature that you can enable with one click\n",
-        "2. **Block, regenerate, or escalate** whenever `is_hallucination == true`.\n",
-        "3. **Constrain with `context`** when you have trusted documents; Verify then ignores the wider web.\n",
-        "4. **Log evidence** – keep `search_results` so reviewers can audit decisions.\n",
-        "5. **Experiment** – Different LLMs hallucinate differently. Try other models (e.g., Gemma, Llama 3) and prompts to see how Verify responds."
+        "1. **Auto‑verify short answers**: The [kluster Playground](https://platform.kluster.ai/playground) has an auto-verify feature that you can enable with one click\n",
+        "2. **Block, regenerate, or escalate**: Whenever `is_hallucination == true`, take corrective action.\n",
+        "3. **Constrain with `context`**: When context is provided, the service only validates answers against the specified context.\n",
+        "4. **Log evidence**: Keep `search_results` so reviewers can audit decisions.\n",
+        "5. **Experiment**: Different LLMs hallucinate differently. Try other models (e.g., Gemma, Llama 3) and prompts to see how Verify responds. \n",
+        "6. **Check out the Hallucination Leaderboard**: The kluster team built a [Hallucination Leaderboard]( https://huggingface.co/spaces/kluster-ai/LLM-Hallucination-Detection-Leaderboard) that showcases model hallucination rates across RAG and non-RAG settings, which can help you pick the model best suited for your use case."
       ]
     },
     {
