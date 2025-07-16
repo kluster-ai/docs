@@ -17564,7 +17564,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/reliability-check.i
     "id": "b17a77d9"
    },
    "source": [
-    "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/tutorials/kluster-api/reliability-check.ipynb)"
+    "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/examples/reliability-check.ipynb)"
    ]
   },
   {
@@ -19549,7 +19549,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
     "id": "6d1d06ea-79c1-4f28-b312-0e5aabe18ff3"
    },
    "source": [
-    "This notebook goes through the same example as in our previous <a href=\"/tutorials/klusterai-api/text-classification/text-classification-openai-api/\" target=\"_blank\">Text classification notebook</a>, but this time, we'll be using Bespoke Curator instead of the OpenAI Python library\n",
+    "This notebook goes through the same example as in our previous <a href=\"https://docs.kluster.ai/tutorials/klusterai-api/text-classification/text-classification-curator/\" target=\"_blank\">Text classification notebook</a>, but this time, we'll be using Bespoke Curator instead of the OpenAI Python library\n",
     "\n",
     "To recap, the notebook uses <a href=\"https://kluster.ai/\" target=\"_blank\">kluster.ai</a> batch API to classify a data set based on a predefined set of categories.\n",
     "\n",
