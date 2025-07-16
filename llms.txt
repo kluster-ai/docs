@@ -9135,7 +9135,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
    "id": "342a8e93-3bac-41c1-8bd5-16daaa9f7039",
    "metadata": {},
    "source": [
-    "In this notebook, we'll use Python's `getpass` module to safely input the key. Provide your kluster API key when prompted. Then, we'll import the required dependencies, specify the LLM model to use, and initialize the client. Refer to the [supported models](https://docs.kluster.ai/get-started/models/) chart if you're unsure which one to choose. "
+    "In this notebook, we'll use Python's `getpass` module to safely input the key. Provide your kluster API key when prompted. Then, we'll import the required dependencies, specify the LLM model to use, and initialize the client. Refer to the [supported models](https://docs.kluster.ai/get-started/models/) chart if you're unsure which one to choose or launch your own [dedicated deployment](https://docs.kluster.ai/get-started/dedicated-deployments/).  "
    ]
   },
   {
@@ -9160,7 +9160,10 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/effective-prompt-en
     "\n",
     "api_key = getpass('Enter your kluster.ai API key: ')\n",
     "\n",
-    "# Feel free to swap out the model with any of Kluster's supported models\n",
+    "# Feel free to swap out the model with any of kluster's supported models\n",
+    "# You can also use your own kluster.ai dedicated deployment after launching one\n",
+    "# And specifying the model ID as the model parameter. \n",
+    "# For more details, see https://docs.kluster.ai/get-started/dedicated-deployments/\n",
     "model = \"google/gemma-3-27b-it\"\n",
     "client = OpenAI(base_url=\"https://api.kluster.ai/v1\", api_key=api_key)"
    ]
@@ -11606,7 +11609,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipyn
    "source": [
     "This example uses two models more oriented to image vision/analysis: `google/gemma-3-27b-it`, `Qwen/Qwen2.5-VL-7B-Instruct`, `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8` and `meta-llama/Llama-4-Scout-17B-16E-Instruct`. Other models might not support providing images.\n",
     "\n",
-    "In addition, please refer to the <a href=\"/get-started/models/#model-comparison-table\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
+    "In addition, please refer to the <a href=\"/get-started/models/#model-comparison-table\" target=\"_blank\">Supported models</a> section for a list of the models we support. You can also launch your own [dedicated deployment](https://docs.kluster.ai/get-started/dedicated-deployments/) to reserve private hardware and benefit from predictable per-minute billing and zero token costs.  \n",
     "\n",
     "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes.\n"
    ]
@@ -12220,7 +12223,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/image-analysis.ipyn
     "\n",
     "All of this using the OpenAI Python library and API, no changes needed!\n",
     "\n",
-    "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As the next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
+    "kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As the next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
    ]
   }
  ],
@@ -12413,7 +12416,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/integrating-tools.i
     "\n",
     "This example selects the `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo` model. If you'd like to use a different model, feel free to change it by modifying the model field. Remember to use the full length model name to avoid errors.\n",
     "\n",
-    "Please refer to the [supported models](https://docs.kluster.ai/get-started/models/) section for a list of the models we support."
+    "Please refer to the [supported models](https://docs.kluster.ai/get-started/models/) section for a list of the models we support. You can also launch your own [dedicated deployment](https://docs.kluster.ai/get-started/dedicated-deployments/) to benefit from predictable per-minute billing and zero token costs."
    ]
   },
   {
@@ -13188,9 +13191,9 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
         "id": "qS4JXT52wGJ-"
       },
       "source": [
-        "This example selects the `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo` model. If you'd like to use a different model, feel free to change it by modifying the `model` field.\n",
+        "This example selects the `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo` model. If you'd like to use a different model, feel free to change it by modifying the `model` field. \n",
         "\n",
-        "Please refer to the <a href=\"/get-started/models/\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
+        "Please refer to the [supported models](https://docs.kluster.ai/get-started/models/) section for a list of the models we support. You can also launch your own [dedicated deployment](https://docs.kluster.ai/get-started/dedicated-deployments/) to benefit from predictable per-minute billing and zero token costs.\n",
         "\n",
         "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its model. Also, we are using a temperature of `0.5`, but feel free to change it and play around with the different outcomes (but we are only asking to respond with a single word, the genre)."
       ]
@@ -13575,7 +13578,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/keyword-extraction-
         "\n",
         "All of this using the OpenAI Python library and API, no changes needed!\n",
         "\n",
-        "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As the next steps, feel free to create your dataset or expand on this example. Good luck!"
+        "kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As the next steps, feel free to create your dataset or expand on this example. Good luck!"
       ]
     }
   ],
@@ -15952,7 +15955,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
    "source": [
     "This example uses the `deepseek-ai/DeepSeek-V3-0324` model. If you'd like to use a different model, feel free to change it by modifying the `model` field. \n",
     "\n",
-    "Please refer to the <a href=\"/get-started/models/#model-comparison-table\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
+    "Please refer to the [supported models](https://docs.kluster.ai/get-started/models/) section for a list of the models we support. You can also launch your own [dedicated deployment](https://docs.kluster.ai/get-started/dedicated-deployments/) to benefit from predictable per-minute billing and zero token costs.\n",
     "\n",
     "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes."
    ]
@@ -16710,7 +16713,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/multiple-tasks-batc
     "\n",
     "All of this using the OpenAI Python library and API, no changes needed!\n",
     "\n",
-    "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
+    "kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
    ]
   }
  ],
@@ -17643,7 +17646,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/reliability-check.i
    },
    "outputs": [
     {
-     "name": "stdin",
+     "name": "stdout",
      "output_type": "stream",
      "text": [
       "Enter your kluster.ai API key:  ········\n"
@@ -19077,7 +19080,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
    "source": [
     "This example selects the `klusterai/Meta-Llama-3.3-70B-Instruct-Turbo` model. If you'd like to use a different model, feel free to change it by modifying the `model` field. In this notebook, you can also comment Llama 3.3 70B, and uncomment whatever model you want to try out.\n",
     "\n",
-    "Please refer to the <a href=\"/get-started/models/\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
+    "Please refer to the [supported models](https://docs.kluster.ai/get-started/models/) section for a list of the models we support. You can also launch your own [dedicated deployment](https://docs.kluster.ai/get-started/dedicated-deployments/) to benefit from predictable per-minute billing and zero token costs.\n",
     "\n",
     "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes."
    ]
@@ -19487,7 +19490,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/sentiment-analysis-
     "\n",
     "All of this using the OpenAI Python library and API, no changes needed!\n",
     "\n",
-    "Kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
+    "kluster.ai's batch API empowers you to scale your workflows seamlessly, making it an invaluable tool for processing extensive datasets. As next steps, feel free to create your own dataset, or expand on top of this existing example. Good luck!"
    ]
   }
  ],
@@ -19661,7 +19664,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
     "\n",
     "This example uses `klusterai/Meta-Llama-3.1-8B-Instruct-Turbo`, but feel free to comment it and uncomment any other model you want to try out.\n",
     "\n",
-    "Please refer to the <a href=\"/get-started/models/\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n"
+    "Please refer to the [supported models](https://docs.kluster.ai/get-started/models/) section for a list of the models we support. You can also launch your own [dedicated deployment](https://docs.kluster.ai/get-started/dedicated-deployments/) to benefit from predictable per-minute billing and zero token costs.\n"
    ]
   },
   {
@@ -20462,7 +20465,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/text-classification
    "source": [
     "This example selects the `deepseek-ai/DeepSeek-V3-0324` model. If you'd like to use a different model, feel free to change it by modifying the `model` field.\n",
     "\n",
-    "Please refer to the <a href=\"/get-started/models/#model-comparison-table\" target=\"_blank\">Supported models</a> section for a list of the models we support.\n",
+    "Please refer to the [supported models](https://docs.kluster.ai/get-started/models/) section for a list of the models we support. You can also launch your own [dedicated deployment](https://docs.kluster.ai/get-started/dedicated-deployments/) to benefit from predictable per-minute billing and zero token costs.\n",
     "\n",
     "The following snippets prepare the JSONL file, where each line represents a different request. Note that each separate batch request can have its own model. Also, we are using a temperature of `0.5` but feel free to change it and play around with the different outcomes (but we are only asking to respond with a single word, the genre)."
    ]
@@ -21142,6 +21145,10 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/uploads-api.ipynb/
     "                \"method\": \"POST\",\n",
     "                \"url\": \"/v1/chat/completions\",\n",
     "                \"body\": {\n",
+    "                    # Feel free to swap out the model with any of kluster's supported models\n",
+    "                    # You can also use your own kluster.ai dedicated deployment after launching one\n",
+    "                    # And specifying the model ID as the model parameter. \n",
+    "                    # For more details, see https://docs.kluster.ai/get-started/dedicated-deployments/\n",
     "                    \"model\": \"klusterai/Meta-Llama-3.1-8B-Instruct-Turbo\",\n",
     "                    \"temperature\": 0.7,\n",
     "                    \"messages\": [\n",
