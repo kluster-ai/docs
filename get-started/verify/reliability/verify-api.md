@@ -3,11 +3,11 @@ title: Verify API endpoint
 description: Validate the reliability of question-answer pairs using kluster.ai API, with or without context, to detect hallucinations and ensure response accuracy.
 ---
 
-#  Reliability check via the Verify API
+# Reliability check via the Verify API
 
 The `verify/reliability` endpoint allows you to validate whether an answer to a specific question contains unreliable information. This approach is ideal for verifying individual responses against the provided context (when the `context` parameter is included) or general knowledge (when no context is provided).
 
-This guide provides a quick example of how use the `verify/reliability` endpoint for reliability check.
+This guide provides a quick example of how to use the `verify/reliability` endpoint for reliability check.
 
 ## Prerequisites
 
@@ -15,36 +15,15 @@ Before getting started with reliability verification, ensure the following requi
 
 --8<-- 'text/kluster-api-onboarding.md'
 
-## Endpoint parameters
-
-The `verify/reliability` endpoint accepts the following input parameters:
-
-- **`prompt`** (`string`| required): The question asked or instruction given. 
-- **`output`** (`string`|required):  The LLM answer to verify for reliability.
-- **`context`** (`string`|optional): Reference material to validate against.
-- **`return_search_results`** (`boolean`|optional): Whether to include search results (default: false).
-
-The API returns a JSON object with the following structure:
-
-```json
-{
-    "is_hallucination": boolean,
-    "usage": {
-        "completion_tokens": number,
-        "prompt_tokens": number,
-        "total_tokens": number
-    },
-    "explanation": "string",
-    "search_results": []  // Only included if return_search_results is true
-}
-```
-
 ## How to use the Verify API
 
 The reliability check feature operates in two distinct modes depending on whether you provide context with your request:
 
 - **General knowledge verification**: When no context is provided, the service verifies answers against general knowledge and external sources.
 - **Context validation mode**: When context is provided, the service only validates answers against the specified context.
+
+??? note "Looking for endpoint details?"
+    See the [`verify/reliability` API reference](/api-reference/reference/#/http/api-endpoints/realtime/v1-verify-reliability-post){target=_blank} for full details on input parameters and response structure.
 
 ### General knowledge verification
 
@@ -84,7 +63,7 @@ This example checks whether an answer contains unreliable information. As no con
     is_hallucination = result.get("is_hallucination")
     explanation = result.get("explanation")
 
-    # Print whether reliability issue was detected
+    # Print whether a reliability issue was detected
     print(f"{'🚨RELIABILITY ISSUE DETECTED' if is_hallucination else '✅NO RELIABILITY ISSUE DETECTED'}")
 
     # Print the explanation 
@@ -93,7 +72,8 @@ This example checks whether an answer contains unreliable information. As no con
     # Print full response
     print(f"\n🔗API Response: {result}")
     ```
-=== "CLI"
+
+=== "curl"
 
     ```bash
     #!/bin/bash
@@ -119,7 +99,7 @@ This example checks whether an answer contains unreliable information. As no con
     is_hallucination=$(echo "$response" | jq -r '.is_hallucination')
     explanation=$(echo "$response" | jq -r '.explanation')
     
-    # Print whether reliability issue was detected
+    # Print whether a reliability issue was detected
     if [[ "$is_hallucination" == "true" ]]; then
         echo -e "\n🚨 RELIABILITY ISSUE DETECTED"
     else
@@ -187,7 +167,7 @@ This example checks whether an answer is correct based on the provided context.
     print(f"\n🔗API Response: {result}")
     ```
 
-=== "CLI"
+=== "curl"
 
     ```bash
     #!/bin/bash
