@@ -5,20 +5,20 @@ description: Learn how to integrate kluster.ai Verify validator with Guardrails,
 
 # Integrate Guardrails with kluster.ai
 
-[Guardrails](https://www.guardrailsai.com/){target=\_blank} is an open-source framework designed to validate, structure, and correct the outputs of large language models (LLMs). It enables developers to define validation rules and constraints, ensuring AI-generated content meets specific quality and accuracy standards while providing mechanisms to handle failures gracefully.
+[Guardrails](https://www.guardrailsai.com/){target=_blank} is an open-source framework designed to validate, structure, and correct the outputs of large language models (LLMs). It enables developers to define validation rules and constraints, ensuring AI-generated content meets specific quality and accuracy standards while providing mechanisms to handle failures gracefully.
 
-This guide walks you through integrating the [kluster.ai Verify validator](https://github.com/kluster-ai/verify-guardrails-validator){target=\_blank} with Guardrails to detect and prevent hallucinations and ensure AI-generated content meets your quality standards.
+This guide walks you through integrating the [kluster.ai Verify validator](https://github.com/kluster-ai/verify-guardrails-validator){target=_blank} with Guardrails to detect and prevent hallucinations and ensure AI-generated content meets your quality standards.
 
 ## Prerequisites
 
 Before starting, ensure you have the following prerequisites:
 
 --8<-- 'text/kluster-api-onboarding.md'
-- **Guardrails installed**: Install Guardrails with `pip install guardrails-ai>=0.4.0`. The kluster.ai validator also requires `requests>=2.25.0`.
+- **Guardrails installed**: Install Guardrails with `pip install guardrails-ai>=0.4.0`. The kluster.ai validator also requires `requests>=2.25.0`
 
 ## Install from Guardrails Hub
 
-Install the kluster.ai Verify validator from the Guardrails Hub with the following command:
+Install the kluster.ai Verify validator from the Guardrails Hub using the following command:
 
 ```bash
 guardrails hub install hub://kluster/verify
@@ -81,7 +81,7 @@ from guardrails.hub import KlusterVerify
 # Setup Guard
 guard = Guard().use(KlusterVerify)
 
-# Define context from your reference documents (e.g., retrieved chunks from vector DB)
+# Define context from your reference documents
 context = "InvID:INV7701B Date:22May25"  # Example: invoice data from your document
 
 # Validate that the AI response accurately reflects the context
