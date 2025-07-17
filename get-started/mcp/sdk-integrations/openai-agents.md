@@ -7,20 +7,20 @@ description: This guide walks you through integrating OpenAI Agents SDK with klu
 
 [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/){target=_blank} provides a powerful framework for building AI agents that can use tools, maintain context, and interact with external services. By integrating with [kluster Verify](/get-started/verify/overview/){target=_blank}, you can create agents that not only generate responses using [kluster.ai's](https://www.kluster.ai/){target=_blank} language models but also perform real-time reliability checks to detect hallucinations and validate factual claims with internet-sourced verification.
 
-This guide demonstrates how to integrate the `Agent` and `Runner` classes from the OpenAI Agents SDK with kluster.ai's API and MCP server, then walks through building an interactive chatbot with kluster Verify's hallucination detection capabilities.
+This guide demonstrates how to integrate the `Agent` and `Runner` classes from the OpenAI Agents SDK with kluster.ai's API and MCP server, and then walks through building an interactive chatbot that utilizes kluster Verify's hallucination detection capabilities.
 
 ## Prerequisites
 
 --8<-- 'text/kluster-api-onboarding.md'
 - **Python 3.9+** with pip installed.
-- **[A Python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=_blank}** - this is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial.
-- **OpenAI Agents SDK packages installed** - install the [`openai-agents` packages](https://github.com/openai/openai-agents-python){target=_blank}:
+- **[A Python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=_blank}**: This is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial.
+- **OpenAI Agents SDK packages installed**: Use the following command to install the [`openai-agents` packages](https://github.com/openai/openai-agents-python){target=_blank}.
 
     ```bash
     pip install "openai>=1.93.0" "openai-agents>=0.1.0" "mcp[cli]>=1.10.1"
     ```
 
-- **MCP enabled**: Via [platform](https://platform.kluster.ai){target=_blank} or [API](/get-started/mcp/cloud/api/).
+- **MCP enabled**: This can be done via the [platform](https://platform.kluster.ai){target=_blank} or the [API](/get-started/mcp/cloud/api/){target=\_blank}.
 
 ## Quick start
 
@@ -282,14 +282,14 @@ if __name__ == "__main__":
 
 ## Run the script
 
-```bash
-python reliable_agent.py
-```
 
-Enter your credentials when prompted:
+1. Use the following command to run the script:
 
-- kluster.ai API key (get one from [platform.kluster.ai](https://platform.kluster.ai){target=_blank}).
+    ```bash
+    python reliable_agent.py
+    ```
 
+2. Enter your kluster.ai API key when prompted. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}.
 
 Expected output:
 ```

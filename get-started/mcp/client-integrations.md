@@ -15,30 +15,28 @@ Connect any compatible client to [kluster.ai's](https://www.kluster.ai/){target=
 Before integrating with any client, ensure you have the required credentials:
       
 --8<-- 'text/kluster-api-onboarding.md'
-- **MCP token** (for some clients): Follow the [platform guide](/get-started/mcp/cloud/platform/) to enable MCP and obtain your token
+- **MCP token** (for some clients): Follow the [platform guide](/get-started/mcp/cloud/platform/){target=\_blank} to enable MCP and obtain your token.
 
 !!! info "Which credential do I need?"
-    Depending on the client and configuration method, you may need either your **kluster.ai API key** or your **MCP token**. Each configuration section below specifies which credential to use.
+    Depending on the client and configuration method, you may need either your kluster.ai API key or your MCP token. Each configuration section below specifies which credential to use.
 
 ## Configuration by client
 
 === "Claude desktop (.dxt file)"
 
-    The easiest way to add kluster Verify to Claude desktop is using the .dxt extension file:
+    The easiest way to add kluster Verify to Claude desktop is using the `.dxt` extension file:
 
-    1. **Download** the extension: 
-       
-        [Download kluster-verify-mcp.dxt](/get-started/mcp/resources/kluster-verify-mcp.dxt){ .md-button .md-button--primary }
+    1. **Download the extension**: [kluster-verify-mcp.dxt](/get-started/mcp/resources/kluster-verify-mcp.dxt)
 
-    2. **Install** in Claude desktop: Drag and drop the .dxt file onto Claude desktop Extension tab, then click **Install**.
+    2. **Install the Verify MCP**: Go to the **Extensions** tab in the settings menu and drag and drop the `.dxt` file, then click **Install**.
 
         ![](/images/get-started/mcp/integrations/integrations-3.webp){ style="width:80%;" }
 
-    3. **Add** your API key: When prompted, enter your kluster.ai API key (get one from [Get an API key guide](/get-started/get-api-key/)).
+    3. **Add your API key**: When prompted, enter your kluster.ai API key (follow the [Get an API key guide](/get-started/get-api-key/){target=\_blank} to obtain one).
 
         ![](/images/get-started/mcp/integrations/integrations-4.webp){ style="width:80%;" }
 
-    4. **Enable** extension and start using: The kluster Verify tools will be available immediately in your conversations.
+    4. **Enable the extension and start using**: The kluster Verify tools will be available immediately in your conversations.
 
         ![](/images/get-started/mcp/integrations/integrations-5.webp){ style="width:80%;" }
 
@@ -46,19 +44,19 @@ Before integrating with any client, ensure you have the required credentials:
 
     If you prefer manual configuration, you can add kluster Verify by editing Claude desktop's configuration file:
 
-    1. **Locate the configuration file**:
+    1. Locate the configuration file:
         - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
         - **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
 
-    2. **Add** the MCP server configuration:
+    2. Add the MCP server configuration:
     
         ```json
         --8<-- 'code/get-started/mcp/get-started/get-started-1.json'
         ```
 
-    3. **Replace** YOUR_MCP_TOKEN with your actual MCP token (obtained after [enabling MCP](/get-started/mcp/cloud/platform/)).
+    3. Replace `YOUR_MCP_TOKEN` with your actual MCP token (obtained after [enabling MCP](/get-started/mcp/cloud/platform/){target=\_blank}) on the kluster.ai platform.
 
-    4. **Save** the file and **restart** Claude desktop to load the kluster Verify tools.
+    4. Save the file and restart Claude desktop to load the kluster Verify tools.
 
         ![](/images/get-started/mcp/get-started/get-started-1.webp){ style="width:80%;" }
 
@@ -122,7 +120,7 @@ Before integrating with any client, ensure you have the required credentials:
 
 ## SDK integrations
 
-Looking to integrate MCP tools into your own applications? Check out our SDK integration guides:
+Looking to integrate MCP tools into your own applications? Check out the SDK integration guides:
 
 - **[OpenAI Agents SDK](/get-started/mcp/integrations/openai-agents/)**: Build Python agents with built-in verification capabilities using OpenAI's Agents framework.
 
