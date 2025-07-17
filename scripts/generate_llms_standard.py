@@ -1,6 +1,6 @@
 # Project-specific input
 docs_repo = 'kluster-docs'
-docs_url = 'https://docs.kluster.ai//'
+docs_url = 'https://docs.kluster.ai/'
 docs_org = 'kluster-ai'
 
 import yaml
@@ -100,7 +100,7 @@ def build_index_section(files):
         rel_path = os.path.relpath(file, docs_dir)
         raw_url = f"{raw_base_url}/{rel_path.replace(os.sep, '/')}"
         # add back -({categories}) after title once categories are available
-        section += f"[{title}]: ({raw_url})\n"
+        section += f"[{title}]({raw_url})\n"
     return section
 
 # Parse snippet paths to extract file and line ranges if available.
@@ -146,7 +146,7 @@ def fetch_local_snippet(snippet_ref, snippet_directory):
             snippet_content = '\n'.join(lines[line_start - 1 : line_end])
 
     # 🚀 Recursively process the snippet content for any nested --8<--
-    snippet_content = replace_snippet_placeholders(snippet_content, snippet_directory, {})
+    snippet_content = replace_snippet_placeholders(snippet_content, snippet_directory, yaml_file)
 
     return snippet_content.strip()
 
@@ -285,7 +285,7 @@ def generate_llms_structure_txt(files):
         rel_path = os.path.relpath(file, docs_dir)
         doc_url = f"{raw_base_url}/{rel_path.replace(os.sep, '/')}"
         # add back -({categories}) after title once categories are available
-        structure_lines.append(f"- [{title}] ({doc_url}): {description}")
+        structure_lines.append(f"- [{title}]({doc_url}): {description}")
 
     # Write output file
     with open(structure_output, 'w', encoding='utf-8') as f:

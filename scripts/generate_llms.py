@@ -1,6 +1,6 @@
 # generate_llms.py
 
-from generate_llms_standard import generate_standard_llms
+from scripts.generate_llms_standard import generate_standard_llms
 # from generate_llms_by_category import generate_all_categories
 
 def main():
