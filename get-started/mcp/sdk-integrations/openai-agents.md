@@ -12,7 +12,7 @@ This guide demonstrates how to integrate the `Agent` and `Runner` classes fr
 ## Prerequisites
 
 --8<-- 'text/kluster-api-onboarding.md'
-- **Python 3.9+** with pip installed.
+- **Python 3.9+**: Make sure pip is also installed.
 - **[A Python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=_blank}**: This is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial.
 - **OpenAI Agents SDK packages installed**: Use the following command to install the [`openai-agents` packages](https://github.com/openai/openai-agents-python){target=_blank}.
 
