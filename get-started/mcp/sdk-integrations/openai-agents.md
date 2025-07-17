@@ -32,7 +32,13 @@ It's easy to integrate kluster Verify with OpenAI Agents SDK—when configuring 
   - **MCP server**: Configure the MCP server URL and token for kluster Verify's reliability checking.
 
 ```python
-from agents import Agent, Runner, set_tracing_disabled, set_default_openai_api, OpenAIChatCompletionsModel
+from agents import (
+    Agent, 
+    Runner, 
+    set_tracing_disabled, 
+    set_default_openai_api, 
+    OpenAIChatCompletionsModel
+)
 from agents.mcp.server import MCPServerStreamableHttp
 from openai import AsyncOpenAI
 import asyncio
@@ -83,16 +89,14 @@ async def main():
 asyncio.run(main())
 ```
 
-That's all you need to start with OpenAI Agents SDK and kluster Verify! Next, this guide will explore building an interactive chatbot that showcases kluster Verify's hallucination detection and real-time verification capabilities.
+That's all needed to start with OpenAI Agents SDK and kluster Verify! Next, this guide will explore building an interactive chatbot that showcases kluster Verify's hallucination detection and real-time verification capabilities.
 
-!!! info "Model requirement"
-    Only models with **tool support** can use MCP verification. Filter models by "Tool Support" on the [platform models page](https://platform.kluster.ai/models){target=_blank} to see compatible options.
+Only models with **tool support** can use MCP verification. To find compatible options, filter by "Tool Support" on the [platform models page](https://platform.kluster.ai/models){target=_blank}.
+
+For self-hosted MCP, use `http://localhost:3001/stream` along with the kluster.ai API key.
 
 !!! warning "Known async cleanup issue"
-    You may see error messages about "Exception ignored in atexit callback" when the script exits. This is a [known issue](https://github.com/modelcontextprotocol/python-sdk/issues/521){target=_blank} with MCP's asyncio cleanup that **does not affect functionality**. Your script will work correctly despite these messages.
-
-!!! info "Self-hosted option"
-    For self-hosted MCP, use `http://localhost:3001/stream` and your kluster.ai API key.
+    Error messages about "Exception ignored in atexit callback" may appear when the script exits. This is a [known issue](https://github.com/modelcontextprotocol/python-sdk/issues/521){target=_blank} with MCP's asyncio cleanup that **does not affect functionality**. The script will work correctly despite these messages.
 
 ## Enable MCP
 
@@ -119,8 +123,16 @@ mcp_token = status.json()["apiKey"]
 
 This example creates an interactive chatbot where you can ask questions and see kluster Verify validate the responses in real-time, demonstrating how verification enhances conversational AI.
 
+Unlike the previous single-query example, this implementation creates a persistent conversational experience that continues until the user chooses to exit. Each interaction goes through the full verification pipeline, meaning every response is automatically checked for accuracy and potential hallucinations before being presented to the user.
+
 ```python
-from agents import Agent, Runner, set_tracing_disabled, set_default_openai_api, OpenAIChatCompletionsModel
+from agents import (
+    Agent, 
+    Runner, 
+    set_tracing_disabled, 
+    set_default_openai_api, 
+    OpenAIChatCompletionsModel
+)
 from agents.mcp.server import MCPServerStreamableHttp
 from openai import AsyncOpenAI
 import asyncio
@@ -181,104 +193,107 @@ async def main():
 asyncio.run(main())
 ```
 
-## Complete example
+??? code "Complete example"
 
-<details>
-<summary>Full integration script</summary>
-This complete example demonstrates how OpenAI Agents can leverage kluster Verify's hallucination detection through the MCP protocol.
+    This complete example demonstrates how OpenAI Agents can leverage kluster Verify's hallucination detection through the MCP protocol.
 
-```python
-import asyncio
-import requests
-import getpass
-from agents import Agent, Runner, set_tracing_disabled, set_default_openai_api, OpenAIChatCompletionsModel
-from agents.mcp.server import MCPServerStreamableHttp
-from openai import AsyncOpenAI
-
-def setup_mcp_token():
-    """Enable MCP and get token"""
-    api_key = getpass.getpass("Enter your kluster.ai API key: ")
-    headers = {"Authorization": f"Bearer {api_key}"}
-    
-    # Enable MCP
-    requests.post("https://api.kluster.ai/v1/mcp/enable", headers=headers)
-    
-    # Get token
-    response = requests.get("https://api.kluster.ai/v1/mcp/status", headers=headers)
-    return api_key, response.json()["apiKey"]
-
-async def main():
-    set_tracing_disabled(True)
-    set_default_openai_api("chat_completions")
-    
-    api_key, mcp_token = setup_mcp_token()
-    
-    # Create kluster.ai client
-    kluster_client = AsyncOpenAI(
-        base_url="https://api.kluster.ai/v1",
-        api_key=api_key
+    ```python
+    import asyncio
+    import requests
+    import getpass
+    from agents import (
+        Agent, 
+        Runner, 
+        set_tracing_disabled, 
+        set_default_openai_api, 
+        OpenAIChatCompletionsModel
     )
-    
+    from agents.mcp.server import MCPServerStreamableHttp
+    from openai import AsyncOpenAI
 
-    # Create MCP server
-    mcp_server = MCPServerStreamableHttp(
-        params={
-            "url": "https://api.kluster.ai/v1/mcp",
-            "headers": {"Authorization": f"Bearer {mcp_token}"},
-            "timeout": 15,
-            "sse_read_timeout": 15
-        },
-        client_session_timeout_seconds=30  # Increase from default 5 seconds to 30 seconds
-    )
-    
-    # Create agent
-    agent = Agent(
-        name="KlusterVerifyAgent",
-        instructions="""You are a helpful assistant. Answer questions directly and accurately. 
+    def setup_mcp_token():
+        """Enable MCP and get token"""
+        api_key = getpass.getpass("Enter your kluster.ai API key: ")
+        headers = {"Authorization": f"Bearer {api_key}"}
+        
+        # Enable MCP
+        requests.post("https://api.kluster.ai/v1/mcp/enable", headers=headers)
+        
+        # Get token
+        response = requests.get("https://api.kluster.ai/v1/mcp/status", headers=headers)
+        return api_key, response.json()["apiKey"]
 
-IMPORTANT: Always use kluster Verify's reliability check for factual claims.
-When verification shows is_hallucination=true, acknowledge the correction.
+    async def main():
+        set_tracing_disabled(True)
+        set_default_openai_api("chat_completions")
+        
+        api_key, mcp_token = setup_mcp_token()
+        
+        # Create kluster.ai client
+        kluster_client = AsyncOpenAI(
+            base_url="https://api.kluster.ai/v1",
+            api_key=api_key
+        )
+        
 
-Include Verify's explanations and search results when provided.""",
-        model=OpenAIChatCompletionsModel(
-            model="deepseek-ai/DeepSeek-V3-0324",
-            openai_client=kluster_client
-        ),
-        mcp_servers=[mcp_server]
-    )
-    
-    await mcp_server.connect()
-    
-    print("\n✅ Chatbot ready! Type 'quit' to exit.")
-    print("💬 Ask me anything and I'll verify my responses:\n")
-    
-    while True:
-        try:
-            # Get user input
-            user_input = input("👤 You: ").strip()
-            
-            if user_input.lower() in ['quit', 'exit', 'q']:
-                print("\n👋 Goodbye!")
-                break
+        # Create MCP server
+        mcp_server = MCPServerStreamableHttp(
+            params={
+                "url": "https://api.kluster.ai/v1/mcp",
+                "headers": {"Authorization": f"Bearer {mcp_token}"},
+                "timeout": 15,
+                "sse_read_timeout": 15
+            },
+            client_session_timeout_seconds=30  # Increase from default 5 seconds to 30 seconds
+        )
+        
+        # Create agent
+        agent = Agent(
+            name="KlusterVerifyAgent",
+            instructions="""You are a helpful assistant. Answer questions directly and accurately. 
+
+    IMPORTANT: Always use kluster Verify's reliability check for factual claims.
+    When verification shows is_hallucination=true, acknowledge the correction.
+
+    Include Verify's explanations and search results when provided.""",
+            model=OpenAIChatCompletionsModel(
+                model="deepseek-ai/DeepSeek-V3-0324",
+                openai_client=kluster_client
+            ),
+            mcp_servers=[mcp_server]
+        )
+        
+        await mcp_server.connect()
+        
+        print("\n✅ Chatbot ready! Type 'quit' to exit.")
+        print("💬 Ask me anything and I'll verify my responses:\n")
+        
+        while True:
+            try:
+                # Get user input
+                user_input = input("👤 You: ").strip()
                 
-            if not user_input:
-                continue
-            
-            # Get agent response with verification
-            print("🤖 Bot: Thinking and verifying...")
-            result = await Runner.run(agent, user_input)
-            print(f"🤖 Bot: {result.final_output}\n")
-            
-        except KeyboardInterrupt:
-            print("\n\n👋 Goodbye!")
-            break
-        except Exception as e:
-            print(f"❌ Error: {e}\n")
+                if user_input.lower() in ['quit', 'exit', 'q']:
+                    print("\n👋 Goodbye!")
+                    break
+                    
+                if not user_input:
+                    continue
+                
+                # Get agent response with verification
+                print("🤖 Bot: Thinking and verifying...")
+                result = await Runner.run(agent, user_input)
+                print(f"🤖 Bot: {result.final_output}\n")
+                
+            except KeyboardInterrupt:
+                print("\n\n👋 Goodbye!")
+                break
+            except Exception as e:
+                print(f"❌ Error: {e}\n")
 
-if __name__ == "__main__":
-    asyncio.run(main())
-```
-</details>
+    if __name__ == "__main__":
+        asyncio.run(main())
+    ```
 
 ## Run the script
 
@@ -292,29 +307,30 @@ if __name__ == "__main__":
 2. Enter your kluster.ai API key when prompted. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/){target=\_blank}.
 
 Expected output:
-```
-🔑 Enter your kluster.ai API Key: 
 
-✅ Chatbot ready! Type 'quit' to exit.
-💬 Ask me anything and I'll verify my responses:
-
-👤 You: Is it true that the Eiffel Tower was moved to London in May 2025?
-🤖 Bot: Thinking and verifying...
-🤖 Bot: No, the Eiffel Tower was not moved to London in May 2025 or at any other time. It remains in its original location in Paris, France. 
-
-### Verification Details:
-- **Explanation**: The search results confirm that the Eiffel Tower is located in Paris, and there is no credible information suggesting it was relocated to London. 
-- **Supporting Sources**:
-  - [Eiffel Tower - Wikipedia](https://en.wikipedia.org/wiki/Eiffel_Tower) describes its location as Paris, France.
-  - Other sources mention proposals or ideas for towers in London but confirm these are unrelated to the Eiffel Tower.
-
-The claim about the Eiffel Tower being moved to London is false.
-
-
-👤 You: quit
-
-👋 Goodbye!
-```
+<div class="termynal" data-termynal>
+    <span data-ty="input">python reliable_agent.py</span>
+    <span data-ty="input">🔑 Enter your kluster.ai API Key: ••••••••••••••••</span>
+    <span data-ty>✅ Chatbot ready! Type 'quit' to exit.</span>
+    <span data-ty>💬 Ask me anything and I'll verify my responses:</span>
+    <span data-ty></span>
+    <span data-ty="input">👤 You: Is it true that the Eiffel Tower was moved to London in May 2025?</span>
+    <span data-ty>🤖 Bot: Thinking and verifying...</span>
+    <span data-ty>🤖 Bot: No, the Eiffel Tower was not moved to London in May 2025 or at any other time. It remains in its original location in Paris, France.</span>
+    <span data-ty></span>
+    <span data-ty>### Verification Details:</span>
+    <span data-ty>- **Explanation**: The search results confirm that the Eiffel Tower is located in Paris, and there is no credible information suggesting it was relocated to London.</span>
+    <span data-ty>- **Supporting Sources**:</span>
+    <span data-ty>  - [Eiffel Tower - Wikipedia](https://en.wikipedia.org/wiki/Eiffel_Tower) describes its location as Paris, France.</span>
+    <span data-ty>  - Other sources mention proposals or ideas for towers in London but confirm these are unrelated to the Eiffel Tower.</span>
+    <span data-ty></span>
+    <span data-ty>The claim about the Eiffel Tower being moved to London is false.</span>
+    <span data-ty></span>
+    <span data-ty></span>
+    <span data-ty="input">👤 You: quit</span>
+    <span data-ty></span>
+    <span data-ty>👋 Goodbye!</span>
+</div>
 
 That's it! You've successfully integrated OpenAI Agents SDK with kluster Verify, and your configured agent is ready to leverage real-time hallucination detection and reliability checking. For more information about the capabilities of OpenAI Agents SDK, be sure to check out the [OpenAI Agents docs](https://openai.github.io/openai-agents-python/){target=_blank}.
 
