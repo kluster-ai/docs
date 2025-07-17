@@ -1,6 +1,6 @@
 ---
 title: Integrate OpenAI Agents SDK with kluster Verify
-description: This guide walks you through integrating OpenAI Agents SDK with kluster Verify to build reliable AI agents with real-time hallucination detection and fact-checking capabilities.
+description: Integrate OpenAI Agents SDK with kluster Verify to create AI agents that detect hallucinations and validate facts with real-time verification.
 ---
 
 # Integrate OpenAI Agents SDK with kluster Verify
