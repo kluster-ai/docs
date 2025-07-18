@@ -3,46 +3,46 @@ kluster. kluster is the developer AI cloud platform to deploy, scale, and fine-t
 
 ## Generated automatically. Do not edit directly.
 
-Documentation: https://docs.kluster.ai//
+Documentation: https://docs.kluster.ai/
 
 ## List of doc pages:
-[API reference]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/api-reference/reference.md)
-[Launch dedicated deployments]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/dedicated-deployments.md)
-[Fine-tuning with the kluster.ai API]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/fine-tuning/api.md)
-[Overview of Fine-tuning models]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/fine-tuning/overview.md)
-[Fine-tuning with the kluster.ai platform]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/fine-tuning/platform.md)
-[Get a kluster.ai API key]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/get-api-key.md)
-[Integrate CrewAI with kluster.ai API]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/crewai.md)
-[Integrate eliza with kluster.ai]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/eliza.md)
-[Integrate Immersive Translate]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/immersive-translate.md)
-[Integrate LangChain with kluster.ai]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/langchain.md)
-[Integrate LiteLLM with kluster.ai]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/litellm.md)
-[Integrate Llama OCR with kluster.ai API]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/llama-ocr.md)
-[Integrate Msty with the kluster.ai API]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/msty.md)
-[Integrate PydanticAI with the kluster.ai]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/pydantic.md)
-[Integrate SillyTavern with kluster.ai]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/sillytavern.md)
-[Integrate TypingMind with the kluster.ai API]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/typingmind.md)
-[Cloud MCP API usage]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/mcp/cloud/api.md)
-[Cloud MCP platform management]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/mcp/cloud/platform.md)
-[Get started with MCP]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/mcp/get-started.md)
-[MCP client integrations]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/mcp/integrations.md)
-[MCP integration overview]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/mcp/overview.md)
-[Self-hosted MCP]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/mcp/self-hosted.md)
-[MCP tools reference]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/mcp/tools.md)
-[Supported AI Models]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/models.md)
-[Compatibility with OpenAI client libraries]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/openai-compatibility.md)
-[Perform batch inference jobs]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/start-building/batch.md)
-[Perform real-time inference jobs]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/start-building/real-time.md)
-[Untitled]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/start-building/setup.md)
-[Overview of Verify]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/verify/overview.md)
-[Chat completion Verify API]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/verify/reliability/chat-completion.md)
-[Reliability check by Verify]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/verify/reliability/overview.md)
-[Verify API endpoint]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/verify/reliability/verify-api.md)
-[Workflow Integrations]: (https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/verify/reliability/workflow-integrations.md)
+[API reference](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/api-reference/reference.md)
+[Launch dedicated deployments](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/dedicated-deployments.md)
+[Fine-tuning with the kluster.ai API](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/fine-tuning/api.md)
+[Overview of Fine-tuning models](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/fine-tuning/overview.md)
+[Fine-tuning with the kluster.ai platform](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/fine-tuning/platform.md)
+[Get a kluster.ai API key](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/get-api-key.md)
+[Integrate CrewAI with kluster.ai API](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/crewai.md)
+[Integrate eliza with kluster.ai](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/eliza.md)
+[Integrate Immersive Translate](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/immersive-translate.md)
+[Integrate LangChain with kluster.ai](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/langchain.md)
+[Integrate LiteLLM with kluster.ai](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/litellm.md)
+[Integrate Llama OCR with kluster.ai API](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/llama-ocr.md)
+[Integrate Msty with the kluster.ai API](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/msty.md)
+[Integrate PydanticAI with the kluster.ai](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/pydantic.md)
+[Integrate SillyTavern with kluster.ai](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/sillytavern.md)
+[Integrate TypingMind with the kluster.ai API](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/integrations/typingmind.md)
+[Cloud MCP API usage](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/mcp/cloud/api.md)
+[Cloud MCP platform management](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/mcp/cloud/platform.md)
+[Get started with MCP](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/mcp/get-started.md)
+[MCP client integrations](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/mcp/integrations.md)
+[MCP integration overview](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/mcp/overview.md)
+[Self-hosted MCP](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/mcp/self-hosted.md)
+[MCP tools reference](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/mcp/tools.md)
+[Supported AI Models](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/models.md)
+[Compatibility with OpenAI client libraries](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/openai-compatibility.md)
+[Perform batch inference jobs](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/start-building/batch.md)
+[Perform real-time inference jobs](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/start-building/real-time.md)
+[Untitled](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/start-building/setup.md)
+[Overview of Verify](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/verify/overview.md)
+[Chat completion Verify API](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/verify/reliability/chat-completion.md)
+[Reliability check by Verify](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/verify/reliability/overview.md)
+[Verify API endpoint](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/verify/reliability/verify-api.md)
+[Workflow Integrations](https://raw.githubusercontent.com/kluster-ai/kluster-docs/refs/heads/main/get-started/verify/reliability/workflow-integrations.md)
 
 ## Full content for each doc page
 
-Doc-Content: https://docs.kluster.ai//api-reference/reference/
+Doc-Content: https://docs.kluster.ai/api-reference/reference/
 --- BEGIN CONTENT ---
 ---
 title: API reference
@@ -54,7 +54,7 @@ template: portal.html
 ---
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/dedicated-deployments/
+Doc-Content: https://docs.kluster.ai/get-started/dedicated-deployments/
 --- BEGIN CONTENT ---
 ---
 title: Launch dedicated deployments
@@ -133,7 +133,7 @@ Otherwise, an auto‑shutdown timer kicks in after your specified auto-shutdown 
 Questions? Email [support@kluster.ai](mailto:support@kluster.ai), and we’ll be happy to help!
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/fine-tuning/api/
+Doc-Content: https://docs.kluster.ai/get-started/fine-tuning/api/
 --- BEGIN CONTENT ---
 ---
 title: Fine-tuning with the kluster.ai API
@@ -393,7 +393,7 @@ Fine-tuning offers several advantages over using general-purpose models:
 - **Platform approach**: Try the [user-friendly platform interface](/get-started/fine-tuning/platform/){target=_blank} for fine-tuning without writing code.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/fine-tuning/overview/
+Doc-Content: https://docs.kluster.ai/get-started/fine-tuning/overview/
 --- BEGIN CONTENT ---
 ---
 title: Overview of Fine-tuning models
@@ -476,7 +476,7 @@ kluster.ai offers two ways to fine-tune models, each designed for different user
 - **API reference**: Review the complete [API documentation](/api-reference/reference/#/http/api-endpoints/fine-tuning/v1-fine-tuning-jobs-post){target=_blank} for all fine-tuning related endpoints.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/fine-tuning/platform/
+Doc-Content: https://docs.kluster.ai/get-started/fine-tuning/platform/
 --- BEGIN CONTENT ---
 ---
 title: Fine-tuning with the kluster.ai platform
@@ -614,7 +614,7 @@ Fine-tuning offers several advantages over using general-purpose models:
 - **API approach**: Learn how to [fine-tune models programmatically](/get-started/fine-tuning/api/){target=_blank} with the kluster.ai API.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/get-api-key/
+Doc-Content: https://docs.kluster.ai/get-started/get-api-key/
 --- BEGIN CONTENT ---
 ---
 title: Get a kluster.ai API key
@@ -686,7 +686,7 @@ To delete an API key, take the following steps:
 Now that you have your API key, you can start integrating kluster.ai's LLMs into your applications. Refer to our [Getting Started](/get-started/start-building/setup/){target=\_blank} guide for detailed instructions on using the API.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/integrations/crewai/
+Doc-Content: https://docs.kluster.ai/get-started/integrations/crewai/
 --- BEGIN CONTENT ---
 ---
 title: Integrate CrewAI with kluster.ai API
@@ -905,7 +905,7 @@ Upon running the script, you'll see output that looks like the following:
 And that's it! You've now successfully configured your AI agent harnessing CrewAI and the power of the kluster.ai API!
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/integrations/eliza/
+Doc-Content: https://docs.kluster.ai/get-started/integrations/eliza/
 --- BEGIN CONTENT ---
 ---
 title: Integrate eliza with kluster.ai
@@ -1002,7 +1002,7 @@ You can now interact with Dobby by selecting on the **Send Message** button and 
 That's it! You've successfully integrated eliza with the kluster.ai API. You're now ready to harness the power of AI agents with the kluster.ai API!
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/integrations/immersive-translate/
+Doc-Content: https://docs.kluster.ai/get-started/integrations/immersive-translate/
 --- BEGIN CONTENT ---
 ---
 title: Integrate Immersive Translate
@@ -1079,7 +1079,7 @@ Then, the content translated by the Immersive Translate plugin will begin to app
 And that's it! You've now set up Immersive Translate to use the kluster.ai API and learned how to translate content.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/integrations/langchain/
+Doc-Content: https://docs.kluster.ai/get-started/integrations/langchain/
 --- BEGIN CONTENT ---
 ---
 title: Integrate LangChain with kluster.ai
@@ -1273,7 +1273,7 @@ python langchain-advanced.py
 That's it! You've successfully integrated LangChain with the kluster.ai API, and your configured multi-turn conversational agent is ready to leverage the power of LangChain and the kluster.ai API. For more information about the capabilities of LangChain, be sure to check out the [LangChain docs](https://python.langchain.com/docs/introduction/){target=\_blank}.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/integrations/litellm/
+Doc-Content: https://docs.kluster.ai/get-started/integrations/litellm/
 --- BEGIN CONTENT ---
 ---
 title: Integrate LiteLLM with kluster.ai
@@ -1627,7 +1627,7 @@ You should see output that resembles the following:
 Both responses appear to trail off abruptly, but that's because we limited the output to `300` tokens each. Feel free to tweak the parameters and rerun the script at your leisure!
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/integrations/llama-ocr/
+Doc-Content: https://docs.kluster.ai/get-started/integrations/llama-ocr/
 --- BEGIN CONTENT ---
 ---
 title: Integrate Llama OCR with kluster.ai API
@@ -1960,7 +1960,7 @@ Some potential use cases for this integration include:
 Experiment with different kluster.ai models to find the best one for your specific OCR needs. The OCR quality may vary depending on the image quality, text clarity, and the specific model used.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/integrations/msty/
+Doc-Content: https://docs.kluster.ai/get-started/integrations/msty/
 --- BEGIN CONTENT ---
 ---
 title: Integrate Msty with the kluster.ai API
@@ -2008,7 +2008,7 @@ Great job! You’re now ready to use Msty to query LLMs through the kluster.ai A
 ![Interact with LLM](/images/get-started/integrations/msty/msty-3.webp)
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/integrations/pydantic/
+Doc-Content: https://docs.kluster.ai/get-started/integrations/pydantic/
 --- BEGIN CONTENT ---
 ---
 title: Integrate PydanticAI with the kluster.ai
@@ -2755,7 +2755,7 @@ You should see terminal output similar to the following:
 That's it! You've built a fully functional weather agent using PydanticAI and kluster.ai, showcasing how to integrate type-safe tools and LLMs for real-world data retrieval. Visit the [PydanticAI docs site](https://ai.pydantic.dev/){target=\_blank} to continue exploring PydanticAI's flexible tool and system prompt features to expand your agent's capabilities and handle more complex use cases with ease.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/integrations/sillytavern/
+Doc-Content: https://docs.kluster.ai/get-started/integrations/sillytavern/
 --- BEGIN CONTENT ---
 ---
 title: Integrate SillyTavern with kluster.ai
@@ -2820,7 +2820,7 @@ Follow these steps to get started:
     If you encounter errors, revisit the [configuration instructions](#configure-sillytavern-to-use-klusterai) and double-check your API key and base URL and that you've received a **Valid** response after connecting the API (see step 8).
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/integrations/typingmind/
+Doc-Content: https://docs.kluster.ai/get-started/integrations/typingmind/
 --- BEGIN CONTENT ---
 ---
 title: Integrate TypingMind with the kluster.ai API
@@ -2909,7 +2909,7 @@ Your AI agent is now ready to answer relevant questions and relies on the kluste
 You can also clone and customize existing agents or create entirely new ones. For more information on agents on TypingMind, be sure to check out the [TypingMind docs](https://docs.typingmind.com/ai-agents/ai-agents-overview){target=\_blank}.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/mcp/cloud/api/
+Doc-Content: https://docs.kluster.ai/get-started/mcp/cloud/api/
 --- BEGIN CONTENT ---
 ---
 title: Cloud MCP API usage
@@ -3044,7 +3044,7 @@ The response includes verification results nested in JSON-RPC format. <!--See [T
 <!-- - [Tools reference](/get-started/mcp/tools/) for complete tool documentation.-->
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/mcp/cloud/platform/
+Doc-Content: https://docs.kluster.ai/get-started/mcp/cloud/platform/
 --- BEGIN CONTENT ---
 ---
 title: Cloud MCP platform management
@@ -3083,7 +3083,7 @@ Your MCP endpoint is now active. Copy your API key and save it securely. The pla
 - **Check pricing**: Review [MCP usage pricing](https://kluster.ai/pricing){target=\_blank}.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/mcp/get-started/
+Doc-Content: https://docs.kluster.ai/get-started/mcp/get-started/
 --- BEGIN CONTENT ---
 ---
 title: Get started with MCP
@@ -3216,7 +3216,7 @@ This verifies the response against the actual document content.
 - **Try the tutorial**: Follow the [Reliability check notebook](/tutorials/klusterai-api/reliability-check/) with code examples.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/mcp/integrations/
+Doc-Content: https://docs.kluster.ai/get-started/mcp/integrations/
 --- BEGIN CONTENT ---
 ---
 title: MCP client integrations
@@ -3329,7 +3329,7 @@ Before integrating with any client:
 - [Self-hosted deployment](/get-started/mcp/self-hosted/) for local development.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/mcp/overview/
+Doc-Content: https://docs.kluster.ai/get-started/mcp/overview/
 --- BEGIN CONTENT ---
 ---
 title: MCP integration overview
@@ -3406,7 +3406,7 @@ Same verification tools running on your infrastructure with full control. Deploy
 - **API reference**: [kluster.ai API documentation](/api-reference/reference/).
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/mcp/self-hosted/
+Doc-Content: https://docs.kluster.ai/get-started/mcp/self-hosted/
 --- BEGIN CONTENT ---
 ---
 title: Self-hosted MCP
@@ -3482,7 +3482,7 @@ Your self-hosted deployment provides the same verification tools as Cloud MCP:
 - **Try Cloud MCP**: Consider [Cloud MCP](/get-started/mcp/cloud/platform/) for managed cloud deployment.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/mcp/tools/
+Doc-Content: https://docs.kluster.ai/get-started/mcp/tools/
 --- BEGIN CONTENT ---
 ---
 title: MCP tools reference
@@ -3593,7 +3593,7 @@ An example can be seen below:
 - **Use cloud version**: Enable [Cloud MCP](/get-started/mcp/cloud/platform/) for managed deployment.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/models/
+Doc-Content: https://docs.kluster.ai/get-started/models/
 --- BEGIN CONTENT ---
 ---
 title: Supported AI Models
@@ -3727,7 +3727,7 @@ The following limits apply to API requests based on [your plan](https://platform
     |**kluster reliability check**|100k|0|Unlimited|100|Unlimited|Unlimited|
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/openai-compatibility/
+Doc-Content: https://docs.kluster.ai/get-started/openai-compatibility/
 --- BEGIN CONTENT ---
 ---
 title: Compatibility with OpenAI client libraries
@@ -3808,7 +3808,7 @@ The following fields of the [chat completion object](/api-reference/reference/#/
 For more information on these parameters, refer to [OpenAI's API documentation on the chat completion object](https://platform.openai.com/docs/api-reference/chat/object){target=_blank}.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/start-building/batch/
+Doc-Content: https://docs.kluster.ai/get-started/start-building/batch/
 --- BEGIN CONTENT ---
 ---
 
@@ -7112,7 +7112,7 @@ You have now experienced the complete batch inference job lifecycle using kluste
 The kluster.ai batch API is designed to efficiently and reliably handle your large-scale LLM workloads. If you have questions or suggestions, the [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/start-building/real-time/
+Doc-Content: https://docs.kluster.ai/get-started/start-building/real-time/
 --- BEGIN CONTENT ---
 ---
 
@@ -8292,7 +8292,7 @@ You have now experienced the complete real-time inference job lifecycle using kl
 The kluster.ai batch API is designed to efficiently and reliably handle your large-scale LLM workloads. If you have questions or suggestions, the [support](mailto:support@kluster.ai){target=\_blank} team would love to hear from you.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/start-building/setup/
+Doc-Content: https://docs.kluster.ai/get-started/start-building/setup/
 --- BEGIN CONTENT ---
 title: Start building with the kluster.ai API
 description: The kluster.ai API getting started guide provides examples and instructions for submitting and managing Batch jobs using kluster.ai's OpenAI-compatible API.
@@ -8447,7 +8447,7 @@ The following limits apply to API requests based on [your plan](https://platform
 </div>
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/verify/overview/
+Doc-Content: https://docs.kluster.ai/get-started/verify/overview/
 --- BEGIN CONTENT ---
 ---
 title: Overview of Verify
@@ -8504,7 +8504,7 @@ Developers can integrate Verify into applications where LLM output accuracy is p
 - Internal workflow automation involving LLM-generated text.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/verify/reliability/chat-completion/
+Doc-Content: https://docs.kluster.ai/get-started/verify/reliability/chat-completion/
 --- BEGIN CONTENT ---
 ---
 title: Chat completion Verify API
@@ -8626,7 +8626,7 @@ This example shows how to use the service with the chat completion endpoint via 
 - Review the complete [API documentation](/api-reference/reference/#/http/api-endpoints/realtime/v1-verify-reliability-post){target=\_blank} for detailed endpoint specifications
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/verify/reliability/overview/
+Doc-Content: https://docs.kluster.ai/get-started/verify/reliability/overview/
 --- BEGIN CONTENT ---
 ---
 title: Reliability check by Verify
@@ -8736,7 +8736,7 @@ Verify offers multiple ways to perform reliability checks, each designed for dif
 - **Tutorial**: Explore the [Verify tutorial](/tutorials/klusterai-api/reliability-check){target=\_blank} with code examples.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/verify/reliability/verify-api/
+Doc-Content: https://docs.kluster.ai/get-started/verify/reliability/verify-api/
 --- BEGIN CONTENT ---
 ---
 title: Verify API endpoint
@@ -8983,7 +8983,7 @@ This example checks whether an answer is correct based on the provided context.
 - Review the complete [API documentation](/api-reference/reference/#/http/api-endpoints/realtime/v1-verify-reliability-post){target=\_blank} for detailed endpoint specifications
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai//get-started/verify/reliability/workflow-integrations/
+Doc-Content: https://docs.kluster.ai/get-started/verify/reliability/workflow-integrations/
 --- BEGIN CONTENT ---
 ---
 title: Workflow Integrations
