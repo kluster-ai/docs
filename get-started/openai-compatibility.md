@@ -40,10 +40,10 @@ While kluster.ai's API is largely compatible with OpenAI's, the following sectio
 
 When creating a chat completion via the [`POST https://api.kluster.ai/v1/chat/completions` endpoint](/api-reference/reference/#/http/api-endpoints/realtime/v1-chat-completions-post){target=\_blank}, the following request parameters are not supported:
 
-- `messages[].name` - attribute in `system`, `user`, and `assistant` type message objects
-- `messages[].refusal` - attribute in `assistant` type message objects
-- `messages[].audio` - attribute in `assistant` type message objects
-- `messages[].tool_calls` - attribute in `assistant` type message objects
+- `messages[].name`: Attribute in `system`, `user`, and `assistant` type message objects.
+- `messages[].refusal`: Attribute in `assistant` type message objects.
+- `messages[].audio`: Attribute in `assistant` type message objects.
+- `messages[].tool_calls`: Attribute in `assistant` type message objects.
 - `store`
 - `n`
 - `modalities`
@@ -59,8 +59,8 @@ The following request parameters are supported only with Llama models:
 
 The following request parameters are *deprecated*:
 
-- `messages[].function_call` - attribute in `assistant` type message objects <!-- TODO: Once `messages[].tool_calls` is supported, this should be updated to use `messages[].tool_calls instead -->
-- `max_tokens` - use `max_completion_tokens` instead
+- `messages[].function_call`: Attribute in `assistant` type message objects. <!-- TODO: Once `messages[].tool_calls` is supported, this should be updated to use `messages[].tool_calls instead -->
+- `max_tokens`: Use `max_completion_tokens` instead.
 - `function_call` <!-- TODO: Once `tool_choice` is supported, this should be updated to use `tool_choice` instead -->
 - `functions` <!-- TODO: Once `tools` is supported, this should be updated to use `tools` instead -->
 
