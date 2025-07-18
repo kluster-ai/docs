@@ -13,4 +13,5 @@ nav:
   - 'Uploading large files': 'uploads-api.ipynb'
   - 'Integrating tools': 'integrating-tools.ipynb'
   - 'Reliability check': 'reliability-check.ipynb'
+  - 'Retrieval-augmented generation': 'rag.ipynb'
   - 'Combat hallucinations': 'combat-hallucinations.ipynb'
