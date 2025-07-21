@@ -7,14 +7,14 @@ description: Learn how to integrate kluster.ai Verify validator with Guardrails,
 
 [Guardrails](https://www.guardrailsai.com/){target=_blank} is an open-source framework designed to validate, structure, and correct the outputs of large language models (LLMs). It enables developers to define validation rules and constraints, ensuring AI-generated content meets specific quality and accuracy standards while providing mechanisms to handle failures gracefully.
 
-This guide walks you through integrating the [kluster.ai Verify validator](https://github.com/kluster-ai/verify-guardrails-validator){target=_blank} with Guardrails to detect and prevent hallucinations and ensure AI-generated content meets your quality standards.
+This guide walks you through integrating the [kluster.ai Verify validator](https://github.com/kluster-ai/verify-guardrails-validator){target=_blank} with Guardrails to detect and prevent hallucinations, ensuring AI-generated content meets your quality standards.
 
 ## Prerequisites
 
 Before starting, ensure you have the following prerequisites:
 
 --8<-- 'text/kluster-api-onboarding.md'
-- **Guardrails installed**: Install Guardrails with `pip install guardrails-ai>=0.4.0`. The kluster.ai validator also requires `requests>=2.25.0`
+- **Guardrails installed**: Install Guardrails with `pip install "guardrails-ai>=0.4.0"`. The kluster.ai validator also requires `requests>=2.25.0`.
 
 ## Install from Guardrails Hub
 
@@ -26,7 +26,7 @@ guardrails hub install hub://kluster/verify
 
 ## Validate AI-generated content
 
-After installation, you can use the validator to detect hallucinations in AI-generated content. The validator can work in two modes: without context for general knowledge verification, or with context for RAG applications.
+After installation, you can use the validator to detect hallucinations in AI-generated content. The validator can work in two modes: without context for general knowledge verification or with context for RAG applications.
 
 ### Validation without context
 
@@ -50,7 +50,7 @@ print(f"✅ Validation passed: {result.validation_passed}")
 print(f"📝 Call ID: {result.call_id}")
 print(f"💬 Validated output: {result.validated_output}")
 
-# Test 2: Intentionally provide wrong answer to test validation
+# Test 2: Intentionally provide a wrong answer to test the validation
 try:
     result = guard.validate(
         "The capital of France is London.",  # Wrong answer for testing
@@ -72,7 +72,7 @@ London is the capital of England, not France, making the response factually inco
 
 ### Validation with context
 
-For RAG applications, provide context to verify that responses accurately reflect the source documents. The context should contain the actual text from your reference documents:
+For RAG applications, you can provide context to verify that responses accurately reflect the source documents. The context should contain the actual text from your reference documents:
 
 ```python
 from guardrails import Guard
@@ -120,6 +120,6 @@ The `ValidationOutcome` object returned by Guardrails provides rich information 
 - **`validated_output`**: Output after validation and potential fixes
 - **`validation_summaries`**: List of validation summaries from the process
 - **`error`**: Error message if validation failed (None if successful)
-- **`reask`**: Contains reask message if validation needs retry (None if successful)
+- **`reask`**: A message prompting re-validation if necessary (None if successful)
 
 For more detailed examples and advanced usage, check out the [reliability check tutorial](/tutorials/klusterai-api/reliability-check/){target=_blank}.
