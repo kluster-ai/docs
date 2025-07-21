@@ -3470,7 +3470,7 @@ It's easy to integrate kluster Verify with OpenAI Agents SDK—when configuring 
 
   - **Base URL**: Use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint.
   - **API key**: Replace with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-started/get-api-key/).
-  - **Select your model**: Choose a model with tool support from [kluster.ai's models](https://platform.kluster.ai/models){target=_blank} (filter by "Tool Support").
+  - **Select your model**: Choose a model with tool support from [kluster.ai's models](https://platform.kluster.ai/models){target=_blank} (filter by **Tool Support**).
   - **MCP server**: Configure the MCP server URL and token for kluster Verify's reliability checking.
 
 ```python
