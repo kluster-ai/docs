@@ -9108,7 +9108,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinatio
       "source": [
         "## How kluster Verify Works Under the Hood\n",
         "\n",
-        "1. **Inputs**: You send at least two fields:\n",
+        "1. **Inputs**:\n",
         "   * `prompt`: The original user request.\n",
         "   * `output`: The LLM’s response to be checked.\n",
         "   * *(Optional)* `context`: A set of ground‑truth docs (URLs, text, PDFs, etc.) that Verify **only** reads in this sandbox.\n",
@@ -9130,7 +9130,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinatio
         "## Prerequisites\n",
         "\n",
         "- **kluster.ai account**: Sign up at <https://platform.kluster.ai/signup>.\n",
-        "- A **kluster.ai api key**: Create one in **api keys** (<https://platform.kluster.ai/apikeys>)."
+        "- **kluster.ai api key**: Create one at <https://platform.kluster.ai/apikeys>."
       ]
     },
     {
