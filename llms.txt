@@ -1095,9 +1095,9 @@ except Exception as e:
 Expected output:
 ```console
 ✅ Validation passed: True
-📝 Call ID: 4995163360
-💬 Validated output: The capital of France is Paris.
-❌ Validation failed: Validation failed for field with errors: Potential hallucination detected: The user asked for the capital of France.
+Call ID: 4995163360
+Validated output: The capital of France is Paris.
+Validation failed: Validation failed for field with errors: Potential hallucination detected: The user asked for the capital of France.
 The correct capital of France is Paris, not London.
 London is the capital of England, not France, making the response factually incorrect.
 ```
@@ -1126,9 +1126,9 @@ result = guard.validate(  # Returns ValidationOutcome object
 )
 
 # Display comprehensive validation results
-print(f"✅ Validation passed: {result.validation_passed}")
-print(f"📝 Call ID: {result.call_id}")
-print(f"📄 Raw LLM output: {result.raw_llm_output}")
+print(f"Validation passed: {result.validation_passed}")
+print(f"Call ID: {result.call_id}")
+print(f"Raw LLM output: {result.raw_llm_output}")
 print(f"✨ Validated output: {result.validated_output}")
 ```
 
