@@ -113,5 +113,5 @@ This example shows how to use the service with the chat completion endpoint via 
 
 ## Next steps
 
-- Learn how to use the [Verify API](/get-started/verify/reliability/verify-api/){target=\_blank} for simpler verification scenarios
+- Learn how to use the [Verify API](/get-started/reliability-check/verify-api/){target=\_blank} for simpler verification scenarios
 - Review the complete [API documentation](/api-reference/reference/#/http/api-endpoints/realtime/v1-verify-reliability-post){target=\_blank} for detailed endpoint specifications

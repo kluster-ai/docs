@@ -80,7 +80,7 @@ Verify offers multiple ways to perform reliability checks, each designed for dif
 
     Verify the reliability and accuracy of an answer to a specific question via a dedicated API endpoint.
 
-    [:octicons-arrow-right-24: Visit the guide](/get-started/verify/reliability/verify-api/){target=\_blank}
+    [:octicons-arrow-right-24: Visit the guide](/get-started/reliability-check/verify-api/){target=\_blank}
 
 -   <span class="badge guide">Guide</span> Chat completion endpoint
 
@@ -88,7 +88,7 @@ Verify offers multiple ways to perform reliability checks, each designed for dif
 
     Validate responses in full conversation via the chat completions API using OpenAI libraries.
 
-    [:octicons-arrow-right-24: Visit the guide](/get-started/verify/reliability/chat-completion/){target=\_blank}
+    [:octicons-arrow-right-24: Visit the guide](/get-started/reliability-check/chat-completion/){target=\_blank}
 
 -   <span class="badge integration">Integration</span> __Workflow Integrations__
 
@@ -96,12 +96,12 @@ Verify offers multiple ways to perform reliability checks, each designed for dif
 
     Download ready-to-use workflows for Dify, n8n, and other platforms using direct API integration.
 
-    [:octicons-arrow-right-24: Get workflows](/get-started/verify/reliability/workflow-integrations/){target=\_blank}
+    [:octicons-arrow-right-24: Get workflows](/get-started/reliability-check/workflow-integrations/){target=\_blank}
 
 </div>
 
 ## Additional resources
 
-- **Workflow Integrations**: Download [ready-to-use workflows for Dify, n8n](/get-started/verify/reliability/workflow-integrations/){target=\_blank}.
+- **Workflow Integrations**: Download [ready-to-use workflows for Dify, n8n](/get-started/reliability-check/workflow-integrations/){target=\_blank}.
 - **Tutorial**: Explore the [Verify tutorial](/tutorials/klusterai-api/reliability-check){target=\_blank} with code examples.
 
