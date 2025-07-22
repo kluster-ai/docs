@@ -89,9 +89,9 @@ async def main():
 asyncio.run(main())
 ```
 
-That's all needed to start with OpenAI Agents SDK and kluster Verify! Next, this guide will explore building an interactive chatbot that showcases kluster Verify's hallucination detection and real-time verification capabilities.
+That's all you need to start with OpenAI Agents SDK and kluster Verify! Next, this guide will explore building an interactive chatbot that showcases kluster Verify's hallucination detection and real-time verification capabilities.
 
-Only models with **tool support** can use MCP verification. To find compatible options, filter by "Tool Support" on the [platform models page](https://platform.kluster.ai/models){target=_blank}.
+Only models with tool support can use MCP verification. To find compatible options, filter by **Tool Support** on the [platform models page](https://platform.kluster.ai/models){target=_blank}.
 
 For self-hosted MCP, use `http://localhost:3001/stream` along with the kluster.ai API key.
 
