@@ -1,0 +1,7 @@
+title: Reliability check
+nav:
+  - 'Overview': overview.md
+  - 'Reliability check API': api/verify-api.md
+  - 'OpenAI Compatibility': openai-compatibility/chat-completion.md
+  - 'Integrations': integrations/workflow-integrations.md
+

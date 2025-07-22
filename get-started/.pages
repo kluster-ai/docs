@@ -1,8 +1,9 @@
-title: Get started
+title: Verify
 hide: false
 nav:
+  - 'Overview': overview.md
   - 'Get an API key': get-api-key.md
-  - 'OpenAI compatibility': openai-compatibility.md
-  - 'Integrations': integrations
-  - verify
+  - 'Get started': quickstart
+  - 'Reliability check': reliability-check
+  - 'Code check': code-check
   - mcp
