@@ -336,7 +336,7 @@ That's it! You've successfully integrated OpenAI Agents SDK with kluster Verify,
 
 ## Next steps
 
-- Explore [kluster Verify's reliability checking](/verify/reliability/overview/) for all verification capabilities.
+- Explore [kluster Verify's reliability checking](/verify/reliability-check/overview/) for all verification capabilities.
 - Try the [Verify API tutorial](/tutorials/klusterai-api/reliability-check) with detailed code examples.
 - Learn about [tool filtering](https://openai.github.io/openai-agents-python/mcp/#tool-filtering){target=_blank} to control tool access.
 - Check the [OpenAI Agents docs](https://openai.github.io/openai-agents-python/){target=_blank} for advanced features.
