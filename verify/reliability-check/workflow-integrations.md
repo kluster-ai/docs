@@ -22,7 +22,7 @@ By using [Dify](https://dify.ai/){target=\_blank}, you can build AI applications
 
 This workflow seamlessly integrates Verify into your Dify chatbots and agents, ensuring every response is validated for accuracy and trustworthiness before reaching your users.
 
-![Dify workflow for kluster verify](/images/verify/verify/dify_workflow.webp)
+![Dify workflow for kluster verify](/images/verify/reliability-check/workflows/dify_workflow.webp)
 
 **Configure kluster.ai as a Model Provider** 
 
@@ -56,7 +56,7 @@ Add verification checkpoints to your [n8n](https://n8n.io/){target=\_blank} auto
 
 This workflow validates AI-generated content against your source documents, tools, or real-time data, perfect for ensuring accuracy in automated content generation and data processing workflows.
 
-![n8n workflow for kluster verify](/images/verify/verify/n8n_workflow.webp)
+![n8n workflow for kluster verify](/images/verify/reliability-check/workflows/n8n_workflow.webp)
 
 **Set Up API Credentials**
 
