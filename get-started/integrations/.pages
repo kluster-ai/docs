@@ -1,13 +1,3 @@
 title: Integrations
 hide: false
-nav:
-  - 'CrewAI': crewai.md
-  - 'eliza': eliza.md
-  - 'Immersive Translate': immersive-translate.md
-  - 'LangChain': langchain.md
-  - 'LiteLLM': litellm.md
-  - 'Llama OCR': llama-ocr.md
-  - 'Msty': msty.md
-  - 'PydanticAI': pydantic.md
-  - 'SillyTavern': sillytavern.md
-  - 'TypingMind': typingmind.md
+nav: []
