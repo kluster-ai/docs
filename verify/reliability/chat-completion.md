@@ -34,81 +34,13 @@ This example shows how to use the service with the chat completion endpoint via 
 === "Python"
 
     ```python
-    from os import environ
-    from openai import OpenAI
-    from getpass import getpass
-
-    # Get API key from user input
-    api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
-    
-    print(f"📤 Sending a Reliability request to kluster.ai...\n")
-
-    # Initialize OpenAI client pointing to kluster.ai API
-    client = OpenAI(
-        api_key=api_key,
-        base_url="https://api.kluster.ai/v1"
-    )
-
-    # Create chat completion request
-    completion = client.chat.completions.create(
-        model="klusterai/verify-reliability", # Note special model
-        messages = [
-        {
-            "role": "system",
-            "content": "You are a knowledgeable assistant that provides accurate medical information."
-        },
-        {
-            "role": "user",
-            "content": "Does vitamin C cure the common cold?"
-        },
-        {
-            "role": "assistant",
-            "content": "Yes, taking large doses of vitamin C has been scientifically proven to cure the common cold within 24 hours."
-        }
-    ]
-    )
-
-    # Extract the reliability verification response
-    text_response = completion.choices[0].message.content  
-
-    # Print response to console
-    print(text_response)
-    
+    --8<-- 'code/verify/reliability/python-example.py'
     ```
 
 === "CLI"
 
     ```bash
-    #!/bin/bash
-
-    # Check if API_KEY is set and not empty
-    if [[ -z "$API_KEY" ]]; then
-        echo -e "\nError: API_KEY environment variable is not set.\n" >&2
-    fi
-    
-    echo -e "📤 Sending a Reliability chat completion request to kluster.ai...\n"
-    
-    # Submit real-time request
-    curl https://api.kluster.ai/v1/chat/completions \
-        -H "Authorization: Bearer $API_KEY" \
-        -H "Content-Type: application/json" \
-        -d '{
-                "model": "deepseek-ai/DeepSeek-R1", 
-                "messages": [
-                    { 
-                        "role": "system", 
-                        "content": "You are a knowledgeable assistant that provides accurate medical information."
-                    },
-                    { 
-                        "role": "user", 
-                        "content": "Does vitamin C cure the common cold?"
-                    },
-                    { 
-                        "role": "assistant", 
-                        "content": "Yes, taking large doses of vitamin C has been scientifically proven to cure the common cold within 24 hours."
-                    }
-                ]
-            }'
+    --8<-- 'code/verify/reliability/bash-example.sh'
     ```
 
 ## Next steps
