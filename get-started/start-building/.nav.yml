@@ -1,6 +1,0 @@
-title: Start building
-hide: false
-nav:
-  - 'Initial setup': setup.md
-  - 'Real-time inferences': real-time.md
-  - 'Batch inferences': batch.md

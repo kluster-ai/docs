@@ -1,0 +1,8 @@
+title: Verify
+hide: false
+nav:
+  - 'Overview': overview.md
+  - 'Get an API key': get-api-key.md
+  - 'Get started': quickstart
+  - 'Reliability': reliability
+  - mcp
