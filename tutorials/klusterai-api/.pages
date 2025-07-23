@@ -2,3 +2,5 @@ title: Use cases
 hide: false
 nav:
   - 'Reliability check': 'reliability-check.ipynb'
+  - 'Combat hallucinations': 'combat-hallucinations.ipynb'
+EOF < /dev/null
