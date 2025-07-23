@@ -1,3 +1,0 @@
-# Code Check
-
-Coming soon.

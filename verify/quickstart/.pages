@@ -1,4 +1,3 @@
 title: Quickstart guides
 nav:
   - 'Reliability check': reliability-check.md
-  - 'Code check': code-check.md

@@ -5,5 +5,4 @@ nav:
   - 'Get an API key': get-api-key.md
   - 'Get started': quickstart
   - 'Reliability check': reliability-check
-  - 'Code check': code-check
   - mcp
