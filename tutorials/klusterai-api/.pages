@@ -1,17 +1,5 @@
-title: Use cases
+title: Verify reliability
 hide: false
 nav:
-  - text-classification
-  - 'Sentiment analysis': sentiment-analysis-api.ipynb
-  - 'Keyword extraction': keyword-extraction-api.ipynb
-  - 'Multiple batch predictions': multiple-tasks-batch-api.ipynb
-  - 'Evaluating LLMs with labeled data': model-comparison.ipynb
-  - 'LLM as a judge': llm-as-a-judge.ipynb
-  - 'Fine-tuning': finetuning-sent-analysis.ipynb
-  - 'Image analysis': image-analysis.ipynb
-  - 'Effective prompt engineering': effective-prompt-engineering.ipynb
-  - 'Uploading large files': 'uploads-api.ipynb'
-  - 'Integrating tools': 'integrating-tools.ipynb'
-  - 'Reliability check': 'reliability-check.ipynb'
-  - 'Retrieval-augmented generation': 'rag.ipynb'
+  - 'Reliability': 'reliability.ipynb'
   - 'Combat hallucinations': 'combat-hallucinations.ipynb'

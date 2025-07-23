@@ -1,0 +1,4 @@
+title: SDK integrations
+hide: true
+nav:
+  - 'OpenAI Agents SDK': openai-agents.md

@@ -1,5 +1,0 @@
-cat << EOF > my_batch_request.jsonl
-    {"custom_id": "request-1", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "deepseek-ai/DeepSeek-V3-0324", "messages": [{"role": "system", "content": "You are an experienced cook."}, {"role": "user", "content": "What is the ultimate breakfast sandwich?"}],"max_completion_tokens":1000}}
-    {"custom_id": "request-2", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "Qwen/Qwen3-235B-A22B-FP8", "messages": [{"role": "system", "content": "You are a maths tutor."}, {"role": "user", "content": "Explain the Pythagorean theorem."}],"max_completion_tokens":1000}}
-    {"custom_id": "request-3", "method": "POST", "url": "/v1/chat/completions", "body": {"model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8", "messages": [{"role": "user", "content": [{"type": "text", "text": "Who can park in the area?"}, {"type": "image_url", "image_url": {"url": "https://github.com/kluster-ai/klusterai-cookbook/blob/main/images/parking-image.jpeg?raw=true"}}]}],"max_completion_tokens":1000}}
-EOF
