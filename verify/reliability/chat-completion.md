@@ -3,15 +3,15 @@ title: Chat completion Verify API
 description: Validate full chat conversations for reliability using the kluster.ai chat completion endpoint. Analyze context and detect misinformation.
 ---
 
-# Reliability check via chat completion
+# Reliability via chat completion
 
-Developers can access the reliability check feature via the regular chat completion endpoint. This allows you to validate responses in full conversation histories using the same format as the standard chat completions API. This approach enables verification of reliability within the complete context of a conversation.
+Developers can access Reliability via the regular chat completion endpoint. This allows you to validate responses in full conversation histories using the same format as the standard chat completions API. This approach enables verification of reliability within the complete context of a conversation.
 
 This guide provides a quick example of how the chat completion endpoint can be used for reliability checks.
 
 ## Prerequisites
 
-Before getting started with reliability verification, ensure the following requirements are met:
+Before getting started with Reliability, ensure the following requirements are met:
 
 --8<-- 'text/kluster-api-onboarding.md'
 - **A virtual Python environment**: (Optional) Recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
@@ -27,7 +27,7 @@ You can access the reliability verification service in two flexible OpenAI compa
 - **OpenAI compatible endpoint**: Use the OpenAI API `/v1/chat/completions` pointing to kluster.ai.
 - **OpenAI SDK**: Configure kluster.ai with [OpenAI libraries](/verify/openai-compatibility/#configuring-openai-to-use-klusterais-api){target=\_blank}. Next, the `chat.completions.create` endpoint.
 
-## Reliability checks via chat completions
+## Reliability via chat completions
 
 This example shows how to use the service with the chat completion endpoint via the OpenAI `/v1/chat/completions` endpoint and OpenAI libraries, using the specialized `klusterai/verify-reliability` model to enable Verify reliability check.
 
@@ -41,7 +41,7 @@ This example shows how to use the service with the chat completion endpoint via 
     # Get API key from user input
     api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
     
-    print(f"📤 Sending a reliability check request to kluster.ai...\n")
+    print(f"📤 Sending a Reliability request to kluster.ai...\n")
 
     # Initialize OpenAI client pointing to kluster.ai API
     client = OpenAI(
@@ -86,7 +86,7 @@ This example shows how to use the service with the chat completion endpoint via 
         echo -e "\nError: API_KEY environment variable is not set.\n" >&2
     fi
     
-    echo -e "📤 Sending a chat completion request to kluster.ai...\n"
+    echo -e "📤 Sending a Reliability chat completion request to kluster.ai...\n"
     
     # Submit real-time request
     curl https://api.kluster.ai/v1/chat/completions \
@@ -113,5 +113,5 @@ This example shows how to use the service with the chat completion endpoint via 
 
 ## Next steps
 
-- Learn how to use the [Verify API](/verify/reliability-check/verify-api/){target=\_blank} for simpler verification scenarios
+- Learn how to use the [Verify API](/verify/reliability/verify-api/){target=\_blank} for simpler verification scenarios
 - Review the complete [API documentation](/api-reference/reference/#/http/api-endpoints/realtime/v1-verify-reliability-post){target=\_blank} for detailed endpoint specifications

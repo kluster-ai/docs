@@ -1,5 +1,5 @@
 title: Use cases
 hide: false
 nav:
-  - 'Reliability check': 'reliability-check.ipynb'
+  - 'Reliability': 'reliability.ipynb'
   - 'Combat hallucinations': 'combat-hallucinations.ipynb'

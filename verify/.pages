@@ -4,5 +4,5 @@ nav:
   - 'Overview': overview.md
   - 'Get an API key': get-api-key.md
   - 'Get started': quickstart
-  - 'Reliability check': reliability-check
+  - 'Reliability': reliability
   - mcp

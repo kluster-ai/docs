@@ -3,15 +3,15 @@ title: Verify API endpoint
 description: Validate the reliability of question-answer pairs using kluster.ai API, with or without context, to detect hallucinations and ensure response accuracy.
 ---
 
-#  Reliability check via the Verify API
+#  Reliability via the Verify API
 
 The `verify/reliability` endpoint allows you to validate whether an answer to a specific question contains unreliable information. This approach is ideal for verifying individual responses against the provided context (when the `context` parameter is included) or general knowledge (when no context is provided).
 
-This guide provides a quick example of how use the `verify/reliability` endpoint for reliability check.
+This guide provides a quick example of how use the `verify/reliability` endpoint for reliability verification.
 
 ## Prerequisites
 
-Before getting started with reliability verification, ensure the following requirements are met:
+Before getting started with Reliability, ensure the following requirements are met:
 
 --8<-- 'text/kluster-api-onboarding.md'
 
@@ -41,7 +41,7 @@ The API returns a JSON object with the following structure:
 
 ## How to use the Verify API
 
-The reliability check feature operates in two distinct modes depending on whether you provide context with your request:
+Reliability operates in two distinct modes depending on whether you provide context with your request:
 
 - **General knowledge verification**: When no context is provided, the service verifies answers against general knowledge and external sources.
 - **Context validation mode**: When context is provided, the service only validates answers against the specified context.
@@ -60,7 +60,7 @@ This example checks whether an answer contains unreliable information. As no con
     # Get API key from user input
     api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
-    print(f"📤 Sending a reliability check request to kluster.ai...\n")
+    print(f"📤 Sending a Reliability request to kluster.ai...\n")
 
     # Set up request data
     url = "https://api.kluster.ai/v1/verify/reliability"
@@ -103,7 +103,7 @@ This example checks whether an answer contains unreliable information. As no con
         echo -e "\nError: API_KEY environment variable is not set.\n" >&2
     fi
     
-    echo -e "📤 Sending a reliability check request to kluster.ai...\n"
+    echo -e "📤 Sending a Reliability request to kluster.ai...\n"
     
     # Submit reliability verification request
     response=$(curl --location 'https://api.kluster.ai/v1/verify/reliability' \
@@ -152,7 +152,7 @@ This example checks whether an answer is correct based on the provided context.
     # Get API key from user input
     api_key = environ.get("API_KEY") or getpass("Enter your kluster.ai API key: ")
 
-    print(f"📤 Sending a reliability check request with context to kluster.ai...\n")
+    print(f"📤 Sending a Reliability request with context to kluster.ai...\n")
 
     # Set up request data
     url = "https://api.kluster.ai/v1/verify/reliability"
@@ -197,7 +197,7 @@ This example checks whether an answer is correct based on the provided context.
         echo -e "\nError: API_KEY environment variable is not set.\n" >&2
     fi
 
-    echo -e "📤 Sending a reliability check request with context to kluster.ai...\n"
+    echo -e "📤 Sending a Reliability request with context to kluster.ai...\n"
 
 
     # Submit reliability verification request
@@ -238,5 +238,5 @@ This example checks whether an answer is correct based on the provided context.
 
 ## Next steps
 
-- Learn how to use [Chat completion reliability verification](/verify/reliability-check/chat-completion/){target=\_blank} for evaluating entire conversation histories.
+- Learn how to use [Chat completion reliability verification](/verify/reliability/chat-completion/){target=\_blank} for evaluating entire conversation histories.
 - Review the complete [API documentation](/api-reference/reference/#/http/api-endpoints/realtime/v1-verify-reliability-post){target=\_blank} for detailed endpoint specifications.

@@ -5,7 +5,7 @@ description: Integrate OpenAI Agents SDK with kluster Verify to create AI agents
 
 # Integrate OpenAI Agents SDK with kluster Verify
 
-[OpenAI Agents SDK](https://openai.github.io/openai-agents-python/){target=_blank} provides a powerful framework for building AI agents that can use tools, maintain context, and interact with external services. By integrating with [kluster Verify](/verify/overview/){target=_blank}, you can create agents that not only generate responses using [kluster.ai's](https://www.kluster.ai/){target=_blank} language models but also perform real-time reliability checks to detect hallucinations and validate factual claims with internet-sourced verification.
+[OpenAI Agents SDK](https://openai.github.io/openai-agents-python/){target=_blank} provides a powerful framework for building AI agents that can use tools, maintain context, and interact with external services. By integrating with [kluster Verify](/verify/overview/){target=_blank}, you can create agents that not only generate responses using [kluster.ai's](https://www.kluster.ai/){target=_blank} language models but also perform real-time reliability verification to detect hallucinations and validate factual claims with internet-sourced verification.
 
 This guide demonstrates how to integrate the `Agent` and `Runner` classes from the OpenAI Agents SDK with kluster.ai's API and MCP server, and then walks through building an interactive chatbot that utilizes kluster Verify's hallucination detection capabilities.
 
@@ -29,7 +29,7 @@ It's easy to integrate kluster Verify with OpenAI Agents SDK—when configuring 
   - **Base URL**: Use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint.
   - **API key**: Replace with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/verify/get-api-key/).
   - **Select your model**: Choose a model with tool support from [kluster.ai's models](https://platform.kluster.ai/models){target=_blank} (filter by **Tool Support**).
-  - **MCP server**: Configure the MCP server URL and token for kluster Verify's reliability checking.
+  - **MCP server**: Configure the MCP server URL and token for kluster Verify's Reliability service.
 
 ```python
 from agents import (
@@ -252,7 +252,7 @@ asyncio.run(main())
             name="KlusterVerifyAgent",
             instructions="""You are a helpful assistant. Answer questions directly and accurately. 
 
-    IMPORTANT: Always use kluster Verify's reliability check for factual claims.
+    IMPORTANT: Always use kluster Verify's Reliability for factual claims.
     When verification shows is_hallucination=true, acknowledge the correction.
 
     Include Verify's explanations and search results when provided.""",
@@ -332,11 +332,11 @@ Expected output:
     <span data-ty>👋 Goodbye!</span>
 </div>
 
-That's it! You've successfully integrated OpenAI Agents SDK with kluster Verify, and your configured agent is ready to leverage real-time hallucination detection and reliability checking. For more information about the capabilities of OpenAI Agents SDK, be sure to check out the [OpenAI Agents docs](https://openai.github.io/openai-agents-python/){target=_blank}.
+That's it! You've successfully integrated OpenAI Agents SDK with kluster Verify, and your configured agent is ready to leverage real-time hallucination detection and Reliability. For more information about the capabilities of OpenAI Agents SDK, be sure to check out the [OpenAI Agents docs](https://openai.github.io/openai-agents-python/){target=_blank}.
 
 ## Next steps
 
-- Explore [kluster Verify's reliability checking](/verify/reliability-check/overview/) for all verification capabilities.
-- Try the [Verify API tutorial](/tutorials/klusterai-api/reliability-check) with detailed code examples.
+- Explore [kluster Verify's Reliability](/verify/reliability/overview/) for all verification capabilities.
+- Try the [Verify API tutorial](/tutorials/klusterai-api/reliability) with detailed code examples.
 - Learn about [tool filtering](https://openai.github.io/openai-agents-python/mcp/#tool-filtering){target=_blank} to control tool access.
 - Check the [OpenAI Agents docs](https://openai.github.io/openai-agents-python/){target=_blank} for advanced features.

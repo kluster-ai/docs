@@ -65,4 +65,4 @@ To delete an API key, take the following steps:
 
 ## Next steps
 
-Now that you have your API key, you can start integrating kluster.ai's Verify services into your applications. Refer to our [Getting Started](/verify/quickstart/reliability-check/){target=\_blank} guide for detailed instructions on using the API.
+Now that you have your API key, you can start integrating kluster.ai's Verify services into your applications. Refer to our [Getting Started](/verify/quickstart/reliability/){target=\_blank} guide for detailed instructions on using the API.

@@ -5,14 +5,14 @@ description: Easily integrate Verify into Dify, n8n, and more with ready-made wo
 
 # Workflow integrations
 
-You can integrate the Verify reliability check feature into your favorite automation platforms with ready-to-use workflow templates. These pre-configured workflows connect directly to the kluster.ai API, allowing you to add AI verification capabilities to your existing processes in minutes.
+You can integrate Verify's Reliability feature into your favorite automation platforms with ready-to-use workflow templates. These pre-configured workflows connect directly to the kluster.ai API, allowing you to add AI verification capabilities to your existing processes in minutes.
 
 ## Prerequisites
 
 Before getting started with the workflow integrations, ensure the following requirements are met:
 
 --8<-- 'text/kluster-api-onboarding.md'
-- **Workflow platform**: Set up [Dify](https://dify.ai/){target=\_blank}, [n8n](https://n8n.io/){target=\_blank}, or your preferred automation tool
+- **Workflow platform**: Set up [Dify](https://dify.ai/){target=\_blank}, [n8n](https://n8n.io/){target=\_blank}, or your preferred automation tool.
 
 ## Available Workflows
 
@@ -22,7 +22,7 @@ By using [Dify](https://dify.ai/){target=\_blank}, you can build AI applications
 
 This workflow seamlessly integrates Verify into your Dify chatbots and agents, ensuring every response is validated for accuracy and trustworthiness before reaching your users.
 
-![Dify workflow for kluster verify](/images/verify/reliability-check/workflows/dify_workflow.webp)
+![Dify workflow for kluster verify](/images/verify/reliability/workflows/dify_workflow.webp)
 
 **Configure kluster.ai as a Model Provider** 
 
@@ -56,7 +56,7 @@ Add verification checkpoints to your [n8n](https://n8n.io/){target=\_blank} auto
 
 This workflow validates AI-generated content against your source documents, tools, or real-time data, perfect for ensuring accuracy in automated content generation and data processing workflows.
 
-![n8n workflow for kluster verify](/images/verify/reliability-check/workflows/n8n_workflow.webp)
+![n8n workflow for kluster verify](/images/verify/reliability/workflows/n8n_workflow.webp)
 
 **Set Up API Credentials**
 
@@ -87,5 +87,5 @@ The workflow includes pre-configured HTTP nodes that connect to the `/v1/verify/
 Ready to build more reliable AI applications?
 
 - **Explore the API**: Check the [complete API reference](/api-reference/reference/#/http/api-endpoints/realtime/v1-verify-reliability-post){target=\_blank} for advanced configuration options.
-- **Learn verification methods**: Dive into the [Verify API endpoint](/verify/reliability-check/verify-api/){target=\_blank} for detailed implementation patterns.
-- **Try the tutorial**: Follow the [hands-on reliability check tutorial](/tutorials/klusterai-api/reliability-check/){target=\_blank} with code examples.
+- **Learn verification methods**: Dive into the [Verify API endpoint](/verify/reliability/verify-api/){target=\_blank} for detailed implementation patterns.
+- **Try the tutorial**: Follow the [hands-on Reliability tutorial](/tutorials/klusterai-api/reliability/){target=\_blank} with code examples.

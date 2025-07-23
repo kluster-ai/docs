@@ -1,17 +1,17 @@
 ---
-title: Reliability check by Verify
-description: Learn how to use kluster.ai reliability check and prevent unreliable content in your applications using kluster.ai's specialized Verify.
+title: Reliability by Verify
+description: Learn how to use kluster.ai reliability verification and prevent unreliable content in your applications using kluster.ai's specialized Verify.
 ---
 
-# Reliability check by Verify
+# Reliability by Verify
 
-Reliability check is one of the features offered by Verify, and it is able to identify when AI responses contain fabricated or inaccurate information.
+Reliability is one of the features offered by Verify, and it is able to identify when AI responses contain fabricated or inaccurate information.
 
 With this specialized service, you can gauge the reliability of AI-generated content and build more trustworthy applications.
 
-The service can evaluate the AI response based on a given context, which makes it great for RAG applications. Without providing a specific context, the service can also be used as a real-time reliability verification service.
+The service can evaluate the AI response based on a given context, which makes it great for RAG applications. Without providing a specific context, the service can also be used as a real-time Reliability service.
 
-## How reliability check works
+## How Reliability works
 
 The service evaluates the truthfulness of an answer to a question by:
 
@@ -41,7 +41,7 @@ For example, for the following prompt:
 ...
 ```
 
-The reliability check response would return:
+The Reliability response would return:
 
 ```json
 {
@@ -58,9 +58,9 @@ The reliability check response would return:
 }
 ```
 
-## When to use reliability checking
+## When to use Reliability
 
-The reliability check service is ideal for scenarios where you need:
+The Reliability service is ideal for scenarios where you need:
 
 - **Model evaluation**: Easily integrate the service to compare models output quality.
 - **RAG applications**: Verify that generated responses accurately reflect the provided reference documents rather than introducing fabricated information.
@@ -68,9 +68,9 @@ The reliability check service is ideal for scenarios where you need:
 - **Content moderation**: Automatically flag potentially misleading information before it reaches end users.
 - **Regulatory compliance**: Ensure AI-generated content meets accuracy requirements.
 
-## How to integrate reliability checks
+## How to integrate Reliability
 
-Verify offers multiple ways to perform reliability checks, each designed for different use cases:
+Verify offers multiple ways to use Reliability, each designed for different use cases:
 
 <div class="grid cards" markdown>
 
@@ -80,7 +80,7 @@ Verify offers multiple ways to perform reliability checks, each designed for dif
 
     Verify the reliability and accuracy of an answer to a specific question via a dedicated API endpoint.
 
-    [:octicons-arrow-right-24: Visit the guide](/verify/reliability-check/verify-api/){target=\_blank}
+    [:octicons-arrow-right-24: Visit the guide](/verify/reliability/verify-api/){target=\_blank}
 
 -   <span class="badge guide">Guide</span> Chat completion endpoint
 
@@ -88,7 +88,7 @@ Verify offers multiple ways to perform reliability checks, each designed for dif
 
     Validate responses in full conversation via the chat completions API using OpenAI libraries.
 
-    [:octicons-arrow-right-24: Visit the guide](/verify/reliability-check/chat-completion/){target=\_blank}
+    [:octicons-arrow-right-24: Visit the guide](/verify/reliability/chat-completion/){target=\_blank}
 
 -   <span class="badge integration">Integration</span> __Workflow Integrations__
 
@@ -96,12 +96,12 @@ Verify offers multiple ways to perform reliability checks, each designed for dif
 
     Download ready-to-use workflows for Dify, n8n, and other platforms using direct API integration.
 
-    [:octicons-arrow-right-24: Get workflows](/verify/reliability-check/workflow-integrations/){target=\_blank}
+    [:octicons-arrow-right-24: Get workflows](/verify/reliability/workflow-integrations/){target=\_blank}
 
 </div>
 
 ## Additional resources
 
-- **Workflow Integrations**: Download [ready-to-use workflows for Dify, n8n](/verify/reliability-check/workflow-integrations/){target=\_blank}.
-- **Tutorial**: Explore the [Verify tutorial](/tutorials/klusterai-api/reliability-check){target=\_blank} with code examples.
+- **Workflow Integrations**: Download [ready-to-use workflows for Dify, n8n](/verify/reliability/workflow-integrations/){target=\_blank}.
+- **Tutorial**: Explore the [Verify tutorial](/tutorials/klusterai-api/reliability){target=\_blank} with code examples.
 
