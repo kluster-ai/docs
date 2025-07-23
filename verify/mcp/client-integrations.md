@@ -118,12 +118,6 @@ Before integrating with any client, ensure you have the required credentials:
 <!-- Commenting this for safekeeping -->
 <!--See [Tools reference](/verify/mcp/tools/){target=\_blank} for parameters and examples.-->
 
-## SDK integrations
-
-Looking to integrate MCP tools into your own applications? Check out the SDK integration guides:
-
-- **[OpenAI Agents SDK](/verify/mcp/integrations/openai-agents/)**: Build Python agents with built-in verification capabilities using OpenAI's Agents framework.
-
 ## Next steps
 
 - [Complete setup guide](/verify/mcp/get-started/) with usage examples.
