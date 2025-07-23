@@ -1968,7 +1968,7 @@ Your MCP endpoint is now active. Copy your API key and save it securely. The pla
 ## Next steps
 
 - **Explore the API**: Learn about [API usage and integration patterns](/verify/mcp/cloud/api/).
-- **View tutorials**: Follow the [reliability check tutorial](/tutorials/klusterai-api/reliability-check/).
+- **View tutorials**: Follow the [reliability check tutorial](/tutorials/klusterai-api/reliability/).
 - **Check pricing**: Review [MCP usage pricing](https://kluster.ai/pricing){target=\_blank}.
 --- END CONTENT ---
 
@@ -2101,7 +2101,7 @@ This verifies the response against the actual document content.
 
 - **Explore integrations**: Check [Client integrations](/verify/mcp/integrations/) for other platforms.
 
-- **Try the tutorial**: Follow the [Reliability check notebook](/tutorials/klusterai-api/reliability-check/) with code examples.
+- **Try the tutorial**: Follow the [Reliability check notebook](/tutorials/klusterai-api/reliability/) with code examples.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/verify/mcp/overview/
@@ -3163,7 +3163,7 @@ Verify offers multiple ways to use Reliability, each designed for different use 
 ## Additional resources
 
 - **Workflow Integrations**: Download [ready-to-use workflows for Dify, n8n](/verify/reliability/workflow-integrations/){target=\_blank}.
-- **Tutorial**: Explore the [Verify tutorial](/tutorials/klusterai-api/reliability){target=\_blank} with code examples.
+- **Tutorial**: Explore the [Verify tutorial](/tutorials/klusterai-api/reliability/){target=\_blank} with code examples.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/verify/reliability/verify-api/
