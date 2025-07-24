@@ -1855,7 +1855,7 @@ The response includes verification results nested in JSON-RPC format. <!--See [T
 
 ## Next steps
 
-- [Client integrations](/verify/mcp/integrations/) to configure your AI clients.
+- [Client integrations](/verify/mcp/client-integrations/) to configure your AI clients.
 <!-- Commenting this for safekeeping -->
 <!-- - [Tools reference](/verify/mcp/tools/) for complete tool documentation.-->
 --- END CONTENT ---
@@ -2637,7 +2637,7 @@ An example can be seen below:
 
 ## Next steps
 
-- **Set up integrations**: Configure [client applications](/verify/mcp/integrations/) to use these tools.
+- **Set up integrations**: Configure [client applications](/verify/mcp/client-integrations/) to use these tools.
 - **Deploy locally**: Set up a [self-hosted MCP server](/verify/mcp/self-hosted/) for local development.
 - **Use cloud version**: Enable [Cloud MCP](/verify/mcp/cloud/platform/) for managed deployment.
 --- END CONTENT ---
