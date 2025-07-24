@@ -56,7 +56,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinatio
       "id": "581c9428",
       "metadata": {},
       "source": [
-        "Large language models occasionally invent facts (“hallucinations”). **[Verify Reliability](https://docs.kluster.ai/get-started/verify/reliability/overview/)** is a drop‑in fact‑checker that scores any LLM response for reliability, either with one click inside the [kluster Playground](https://platform.kluster.ai/playground) or via a simple API call.\n",
+        "Large language models occasionally invent facts (“hallucinations”). **[Verify Reliability](https://docs.kluster.ai/verify/reliability/overview/)** is a drop‑in fact‑checker that scores any LLM response for reliability, either with one click inside the [kluster Playground](https://platform.kluster.ai/playground) or via a simple API call.\n",
         "\n",
         "This notebook shows you how to:\n",
         "1. Call the `POST /v1/verify/reliability` endpoint to fact‑check model output programmatically.\n",
@@ -1855,7 +1855,7 @@ The response includes verification results nested in JSON-RPC format. <!--See [T
 
 ## Next steps
 
-- [Client integrations](/verify/mcp/integrations/) to configure your AI clients.
+- [Client integrations](/verify/mcp/client-integrations/) to configure your AI clients.
 <!-- Commenting this for safekeeping -->
 <!-- - [Tools reference](/verify/mcp/tools/) for complete tool documentation.-->
 --- END CONTENT ---
@@ -2018,7 +2018,7 @@ This verifies the response against the actual document content.
 
 ## Alternative setup options
 
-- **Other clients**: Want to use VS Code, Cursor, or Claude Code? Check the [Client integrations](/verify/mcp/integrations/){target=\_blank} guide for configuration examples.
+- **Other clients**: Want to use VS Code, Cursor, or Claude Code? Check the [Client integrations](/verify/mcp/client-integrations/){target=\_blank} guide for configuration examples.
 
 - **Self-hosted**: Prefer to run MCP locally? Set up the [self-hosted MCP server](/verify/mcp/self-hosted/){target=\_blank} for local development with full control.
 
@@ -2026,7 +2026,7 @@ This verifies the response against the actual document content.
 
 ## Next steps
 
-- **Explore integrations**: Check [Client integrations](/verify/mcp/integrations/) for other platforms.
+- **Explore integrations**: Check [Client integrations](/verify/mcp/client-integrations/) for other platforms.
 
 - **Try the tutorial**: Follow the [Reliability check notebook](/tutorials/klusterai-api/reliability/) with code examples.
 --- END CONTENT ---
@@ -2507,7 +2507,7 @@ The server will start on `http://localhost:3001` with the MCP endpoint at `/stre
 
 ## Client integration
 
-Once your self-hosted server is running, configure your AI clients using the [Client integrations](/verify/mcp/integrations/){target=\_blank} guide.
+Once your self-hosted server is running, configure your AI clients using the [Client integrations](/verify/mcp/client-integrations/){target=\_blank} guide.
 
 Use these connection details:
 
@@ -2525,7 +2525,7 @@ Your self-hosted deployment provides the same verification tools as Cloud MCP:
 
 ## Next steps
 
-- **Configure clients**: Follow the [Client integrations](/verify/mcp/integrations/) guide for VS Code, Claude Desktop, and other platforms.
+- **Configure clients**: Follow the [Client integrations](/verify/mcp/client-integrations/) guide for VS Code, Claude Desktop, and other platforms.
 <!-- Commenting this for safekeeping -->
 <!--- **Learn the tools**: See [Tools reference](/verify/mcp/tools/) for detailed examples.-->
 - **Try Cloud MCP**: Consider [Cloud MCP](/verify/mcp/cloud/platform/) for managed cloud deployment.
@@ -2637,7 +2637,7 @@ An example can be seen below:
 
 ## Next steps
 
-- **Set up integrations**: Configure [client applications](/verify/mcp/integrations/) to use these tools.
+- **Set up integrations**: Configure [client applications](/verify/mcp/client-integrations/) to use these tools.
 - **Deploy locally**: Set up a [self-hosted MCP server](/verify/mcp/self-hosted/) for local development.
 - **Use cloud version**: Enable [Cloud MCP](/verify/mcp/cloud/platform/) for managed deployment.
 --- END CONTENT ---

@@ -102,6 +102,6 @@ An example can be seen below:
 
 ## Next steps
 
-- **Set up integrations**: Configure [client applications](/verify/mcp/integrations/) to use these tools.
+- **Set up integrations**: Configure [client applications](/verify/mcp/client-integrations/) to use these tools.
 - **Deploy locally**: Set up a [self-hosted MCP server](/verify/mcp/self-hosted/) for local development.
 - **Use cloud version**: Enable [Cloud MCP](/verify/mcp/cloud/platform/) for managed deployment.
