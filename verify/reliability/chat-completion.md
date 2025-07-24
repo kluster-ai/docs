@@ -29,7 +29,7 @@ You can access the reliability verification service in two flexible OpenAI compa
 
 ## Reliability via chat completions
 
-This example shows how to use the service with the chat completion endpoint via the OpenAI `/v1/chat/completions` endpoint and OpenAI libraries, using the specialized `klusterai/verify-reliability` model to enable Verify reliability check.
+This example shows how to use the service with the chat completion endpoint via the OpenAI `/v1/chat/completions` endpoint and OpenAI libraries, using the specialized `klusterai/verify-reliability` model to enable Verify Reliability check.
 
 === "Python"
 

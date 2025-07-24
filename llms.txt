@@ -7,7 +7,6 @@ Documentation: https://docs.kluster.ai/
 Doc-Page: https://docs.kluster.ai/api-reference/reference/
 Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinations/
 Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/reliability/
-Doc-Page: https://docs.kluster.ai/verify/get-api-key/
 Doc-Page: https://docs.kluster.ai/verify/mcp/client-integrations/
 Doc-Page: https://docs.kluster.ai/verify/mcp/cloud/api/
 Doc-Page: https://docs.kluster.ai/verify/mcp/cloud/platform/
@@ -47,7 +46,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinatio
       "id": "76f1454d",
       "metadata": {},
       "source": [
-        "# Combat Hallucinations with **kluster Verify**\n",
+        "# Combat Hallucinations with **Verify Reliability**\n",
         "\n",
         "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/examples/combat-hallucinations.ipynb)"
       ]
@@ -57,11 +56,11 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinatio
       "id": "581c9428",
       "metadata": {},
       "source": [
-        "Large language models occasionally invent facts (“hallucinations”). **[kluster Verify](https://docs.kluster.ai/get-started/verify/reliability/overview/)** is a drop‑in fact‑checker that scores any LLM response for reliability, either with one click inside the [kluster Playground](https://platform.kluster.ai/playground) or via a simple API call.\n",
+        "Large language models occasionally invent facts (“hallucinations”). **[Verify Reliability](https://docs.kluster.ai/get-started/verify/reliability/overview/)** is a drop‑in fact‑checker that scores any LLM response for reliability, either with one click inside the [kluster Playground](https://platform.kluster.ai/playground) or via a simple API call.\n",
         "\n",
         "This notebook shows you how to:\n",
         "1. Call the `POST /v1/verify/reliability` endpoint to fact‑check model output programmatically.\n",
-        "2. Interpret the JSON response returned by kluster Verify.\n",
+        "2. Interpret the JSON response returned by Verify Reliability.\n",
         "3. Apply best‑practice guardrails in your applications.\n",
         "\n",
         "> **Note** – We use *mistral‑small‑2506* as the demo model to generate the example prompt responses. Performance varies by model and prompt, so feel free to experiment."
@@ -72,7 +71,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinatio
       "id": "08080c97",
       "metadata": {},
       "source": [
-        "## How kluster Verify Works Under the Hood\n",
+        "## How Verify Reliability Works Under the Hood\n",
         "\n",
         "1. **Inputs**:\n",
         "   * `prompt`: The original user request.\n",
@@ -185,7 +184,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinatio
       "source": [
         "### Verify via API\n",
         "\n",
-        "In the next cell we pass the prompt and model output to the kluster Verify API, along with a flag requesting the search results it used. kluster Verify then returns a verdict, a short explanation, and the supporting sources."
+        "In the next cell we pass the prompt and model output to the Verify Reliability API, along with a flag requesting the search results it used. Verify Reliability then returns a verdict, a short explanation, and the supporting sources."
       ]
     },
     {
@@ -224,7 +223,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinatio
       "source": [
         "## Example 2 – The Fictional *Tokyo Green Pact*\n",
         "\n",
-        "There is no treaty called the **Tokyo Green Pact** that has been signed by the G20. By requesting its binding provisions and penalties, we again corner the model into making things up, which kluster Verify should flag."
+        "There is no treaty called the **Tokyo Green Pact** that has been signed by the G20. By requesting its binding provisions and penalties, we again corner the model into making things up, which Verify Reliability should flag."
       ]
     },
     {
@@ -291,7 +290,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinatio
       "source": [
         "## Summary\n",
         "\n",
-        "Whether you prefer the Playground’s one-click Verify button or the /v1/verify/reliability API, you now have a turnkey way to validate any LLM response. Since kluster Verify pairs its verdict with an evidence-backed score and live source links, you can log proof, set automated “regen” or escalation thresholds, and keep hallucinations from ever reaching production users."
+        "Whether you prefer the Playground’s one-click Verify button or the /v1/verify/reliability API, you now have a turnkey way to validate any LLM response. Since Verify Reliability pairs its verdict with an evidence-backed score and live source links, you can log proof, set automated “regen” or escalation thresholds, and keep hallucinations from ever reaching production users."
       ]
     }
   ],
@@ -329,7 +328,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/reliability.ipynb/
    "metadata": {
     "id": "b17a77d9"
    },
-   "source": "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/examples/reliability.ipynb)"
+   "source": "[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kluster-ai/klusterai-cookbook/blob/main/examples/reliability-check.ipynb)"
   },
   {
    "cell_type": "markdown",
@@ -337,7 +336,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/reliability.ipynb/
    "metadata": {
     "id": "1176978c-51e6-4f4a-8972-63a20f00a70c"
    },
-   "source": "## Introduction\n\nReliability issues in AI occur when models generate information that appears plausible but is unreliable or unsupported by the provided context. This poses significant risks in production applications, particularly in domains where accuracy is critical.\n\nThis tutorial demonstrates how to use <a href=\"/get-started/verify/reliability/overview/\" target=\"_blank\">Verify</a> to identify and prevent reliability issues in your applications. We'll explore available methods: a dedicated API endpoint and via chat completions.\n\nThe service can evaluate AI responses based on provided context (perfect for RAG applications) or perform real-time verification against general knowledge. By following this tutorial, you'll learn how to:\n\n- Verify reliability in individual Q&A pairs.\n- Compare general knowledge verification vs. context validation modes.\n- Validate responses in full conversation histories."
+   "source": "## Introduction\n\nReliability issues in AI occur when models generate information that appears plausible but is unreliable or unsupported by the provided context. This poses significant risks in production applications, particularly in domains where accuracy is critical.\n\nThis tutorial demonstrates how to use <a href=\"https://docs.kluster.ai/verify/overview/\" target=\"_blank\">Verify</a> to identify and prevent reliability issues in your applications. We'll explore available methods: a dedicated API endpoint and via chat completions.\n\nThe service can evaluate AI responses based on provided context (perfect for RAG applications) or perform real-time verification against general knowledge. By following this tutorial, you'll learn how to:\n\n- Verify Reliability in individual Q&A pairs.\n- Compare general knowledge verification vs. context validation modes.\n- Validate responses in full conversation histories."
   },
   {
    "cell_type": "markdown",
@@ -362,7 +361,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/reliability.ipynb/
     "  platform</a> if you don't have one\n",
     "  - **A kluster.ai API key**: after signing in, go to the <a href=\"https://platform.kluster.ai/apikeys\" \n",
     "  target=\"_blank\">**API Keys**</a> section and create a new key. For detailed instructions, check out the <a \n",
-    "  href=\"/get-started/get-api-key/\" target=\"_blank\">Get an API key</a> guide"
+    "  href=\"https://docs.kluster.ai/get-api-key/\" target=\"_blank\">Get an API key</a> guide"
    ]
   },
   {
@@ -1300,7 +1299,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/reliability.ipynb/
    "id": "d56fa810",
    "metadata": {},
    "source": [
-    "Now, by comparing these two answers, we can test the Verify reliability check response:"
+    "Now, by comparing these two answers, we can test the Verify Reliability check response:"
    ]
   },
   {
@@ -1578,78 +1577,6 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/reliability.ipynb/
 }
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/verify/get-api-key/
---- BEGIN CONTENT ---
----
-title: Get a kluster.ai API key
-description: Follow step-by-step instructions to generate and manage API keys, enabling secure access to kluster's services and seamless integration with your applications.
----
-
-# Generate your kluster.ai API key
-
-The API key is a unique identifier that authenticates requests associated with your account. You must have at least one API key to access [kluster.ai](https://www.kluster.ai/){target=\_blank}'s services.
-
-This guide will help you obtain an API key, the first step to leveraging kluster.ai's powerful and cost-effective AI capabilities.
-
-## Create an account
-
-If you haven't already created an account with kluster.ai, visit the [registration page](https://platform.kluster.ai/signup){target=\_blank} and take the following steps:
-
-1. Enter your full name.
-2. Provide a valid email address.
-3. Create a secure password.
-4. Click the **Sign up** button.
-
-![Signup Page](/images/verify/get-api-key/get-api-key-1.webp)
-
-## Generate a new API key
-
-After you've signed up or logged into the platform through the [login page](https://platform.kluster.ai/login){target=\_blank}, take the following steps:
-
-1. Select **API Keys** on the left-hand side menu.
-2. In the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section, click the **Issue New API Key** button.
-
-    ![Issue New API Key](/images/verify/get-api-key/get-api-key-2.webp)
-
-3. Enter a descriptive name for your API key in the popup, then click **Create Key**.
-
-    ![Generate API Key](/images/verify/get-api-key/get-api-key-3.webp)
-
-## Copy and secure your API key
-
-1. Once generated, your API key will be displayed.
-2. Copy the key and store it in a secure location, such as a password manager.
-
-    !!! warning "Warning"
-        For security reasons, you won't be able to view the key again. If lost, you will need to generate a new one.
-
-![Copy API key](/images/verify/get-api-key/get-api-key-4.webp)
-
-!!! abstract "Security tips"
-    - **Keep it secret**: Do not share your API key publicly or commit it to version control systems.
-    - **Use environment variables**: Store your API key in environment variables instead of hardcoding them.
-    - **Regenerate if compromised**: If you suspect your API key has been exposed, regenerate it immediately from the **API Keys** section.
-
-## Managing your API keys
-
-The **API Key Management** section allows you to efficiently manage your kluster.ai API keys. You can create, view, and delete API keys by navigating to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section. Your API keys will be listed in the **API Key Management** section.
-
-To delete an API key, take the following steps:
-
-1. Locate the API key you wish to delete in the list.
-2. Click the trash bin icon ( :octicons-trash-24: ) in the **Actions** column.
-3. Confirm the deletion when prompted.
-
-![Delete API key](/images/verify/get-api-key/get-api-key-5.webp)
-
-!!! warning "Warning"
-    Once deleted, the API key cannot be used again and you must generate a new one if needed.
-
-## Next steps
-
-Now that you have your API key, you can start integrating kluster.ai's Verify services into your applications. Refer to our [Getting Started](/verify/quickstart/reliability/){target=\_blank} guide for detailed instructions on using the API.
---- END CONTENT ---
-
 Doc-Content: https://docs.kluster.ai/verify/mcp/client-integrations/
 --- BEGIN CONTENT ---
 ---
@@ -1669,7 +1596,7 @@ Connect any compatible client to [kluster.ai's](https://www.kluster.ai/){target=
 Before integrating with any client, ensure you have the required credentials:
       
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
 - **MCP token** (for some clients): Follow the [platform guide](/verify/mcp/cloud/platform/){target=\_blank} to enable MCP and obtain your token.
 
 !!! info "Which credential do I need?"
@@ -1687,7 +1614,7 @@ Before integrating with any client, ensure you have the required credentials:
 
         ![](/images/verify/mcp/integrations/integrations-3.webp){ style="width:80%;" }
 
-    3. **Add your API key**: When prompted, enter your kluster.ai API key (follow the [Get an API key guide](/verify/get-api-key/){target=\_blank} to obtain one).
+    3. **Add your API key**: When prompted, enter your kluster.ai API key (follow the [Get an API key guide](/get-api-key/){target=\_blank} to obtain one).
 
         ![](/images/verify/mcp/integrations/integrations-4.webp){ style="width:80%;" }
 
@@ -1790,7 +1717,7 @@ Before integrating with any client, ensure you have the required credentials:
 
 Looking to integrate MCP tools into your own applications? Check out the SDK integration guides:
 
-- **[OpenAI Agents SDK](/verify/mcp/integrations/openai-agents/)**: Build Python agents with built-in verification capabilities using OpenAI's Agents framework.
+- **[OpenAI Agents SDK](/verify/mcp/sdk-integrations/openai-agents/)**: Build Python agents with built-in verification capabilities using OpenAI's Agents framework.
 
 ## Next steps
 
@@ -1814,7 +1741,7 @@ Manage your Cloud MCP endpoint using API calls. This guide covers checking statu
 Before getting started with MCP via API, ensure you have:
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
 
 ## Manage your MCP endpoint
 
@@ -1949,7 +1876,7 @@ This guide shows how to enable MCP through the platform UI and quickly integrate
 ## Prerequisites
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 
@@ -1990,7 +1917,7 @@ Cloud MCP provides managed verification endpoints with no infrastructure to main
 Before getting started, ensure you have:
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
 - **[Claude desktop](https://claude.ai/download){target=\_blank}** for testing the integration.
 
 ## Enable MCP 
@@ -2197,7 +2124,7 @@ This guide demonstrates how to integrate the `Agent` and `Runner` classes fr
 ## Prerequisites
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
 - **Python 3.9+**: Make sure pip is also installed.
 - **[A Python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=_blank}**: This is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial.
 - **OpenAI Agents SDK packages installed**: Use the following command to install the [`openai-agents` packages](https://github.com/openai/openai-agents-python){target=_blank}.
@@ -2213,7 +2140,7 @@ This guide demonstrates how to integrate the `Agent` and `Runner` classes fr
 It's easy to integrate kluster Verify with OpenAI Agents SDK—when configuring the agent, point your `AsyncOpenAI` instance to the correct base URL and configure the following settings:
 
   - **Base URL**: Use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint.
-  - **API key**: Replace with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/verify/get-api-key/).
+  - **API key**: Replace with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-api-key/).
   - **Select your model**: Choose a model with tool support from [kluster.ai's models](https://platform.kluster.ai/models){target=_blank} (filter by **Tool Support**).
   - **MCP server**: Configure the MCP server URL and token for kluster Verify's Reliability service.
 
@@ -2490,7 +2417,7 @@ asyncio.run(main())
     python reliable_agent.py
     ```
 
-2. Enter your kluster.ai API key when prompted. If you don't have one yet, refer to the [Get an API key guide](/verify/get-api-key/){target=\_blank}.
+2. Enter your kluster.ai API key when prompted. If you don't have one yet, refer to the [Get an API key guide](/get-api-key/){target=\_blank}.
 
 Expected output:
 
@@ -2544,7 +2471,7 @@ Deploy [kluster.ai's](https://www.kluster.ai/){target=\_blank} MCP server locall
 Before deploying the self-hosted MCP server, ensure you have:
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
 - **A runtime environment**: You can use either [Docker Desktop](https://www.docker.com/products/docker-desktop/){target=\_blank} or [Node.js 18+](https://nodejs.org/){target=\_blank}.
 - **[Git](https://git-scm.com/){target=\_blank}**: For cloning the repository.
 
@@ -2738,7 +2665,7 @@ Developers can use the OpenAI libraries with kluster.ai with no changes. To star
     pip install "openai>={{ libraries.openai_api.min_version }}"
     ```
 
-To start using kluster.ai with OpenAI's client libraries, set your [API key](/get-started/get-api-key/){target=\_blank} and change the base URL to `https://api.kluster.ai/v1`:
+To start using kluster.ai with OpenAI's client libraries, set your [API key](/get-api-key/){target=\_blank} and change the base URL to `https://api.kluster.ai/v1`:
 
 === "Python"
 
@@ -2873,7 +2800,7 @@ This guide will walk you through setting up the Reliability service, demonstrate
 Before getting started, ensure you have:
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
 
 ## Integration options
 
@@ -2952,7 +2879,7 @@ This guide provides a quick example of how the chat completion endpoint can be u
 Before getting started with Reliability, ensure the following requirements are met:
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
 - **A virtual Python environment**: (Optional) Recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
 - **Required Python libraries**: Install the following Python libraries:
     - [**OpenAI Python API library**](https://pypi.org/project/openai/){target=\_blank}: to access the `openai` module
@@ -2968,7 +2895,7 @@ You can access the reliability verification service in two flexible OpenAI compa
 
 ## Reliability via chat completions
 
-This example shows how to use the service with the chat completion endpoint via the OpenAI `/v1/chat/completions` endpoint and OpenAI libraries, using the specialized `klusterai/verify-reliability` model to enable Verify reliability check.
+This example shows how to use the service with the chat completion endpoint via the OpenAI `/v1/chat/completions` endpoint and OpenAI libraries, using the specialized `klusterai/verify-reliability` model to enable Verify Reliability check.
 
 === "Python"
 
@@ -3184,7 +3111,7 @@ This guide provides a quick example of how use the `verify/reliability` endpoint
 Before getting started with Reliability, ensure the following requirements are met:
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
 
 ## Endpoint parameters
 
@@ -3429,7 +3356,7 @@ You can integrate Verify's Reliability feature into your favorite automation pla
 Before getting started with the workflow integrations, ensure the following requirements are met:
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
 - **Workflow platform**: Set up [Dify](https://dify.ai/){target=\_blank}, [n8n](https://n8n.io/){target=\_blank}, or your preferred automation tool.
 
 ## Available Workflows

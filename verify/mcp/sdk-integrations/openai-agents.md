@@ -27,7 +27,7 @@ This guide demonstrates how to integrate the `Agent` and `Runner` classes fr
 It's easy to integrate kluster Verify with OpenAI Agents SDK—when configuring the agent, point your `AsyncOpenAI` instance to the correct base URL and configure the following settings:
 
   - **Base URL**: Use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint.
-  - **API key**: Replace with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/verify/get-api-key/).
+  - **API key**: Replace with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-api-key/).
   - **Select your model**: Choose a model with tool support from [kluster.ai's models](https://platform.kluster.ai/models){target=_blank} (filter by **Tool Support**).
   - **MCP server**: Configure the MCP server URL and token for kluster Verify's Reliability service.
 
@@ -304,7 +304,7 @@ asyncio.run(main())
     python reliable_agent.py
     ```
 
-2. Enter your kluster.ai API key when prompted. If you don't have one yet, refer to the [Get an API key guide](/verify/get-api-key/){target=\_blank}.
+2. Enter your kluster.ai API key when prompted. If you don't have one yet, refer to the [Get an API key guide](/get-api-key/){target=\_blank}.
 
 Expected output:
 
