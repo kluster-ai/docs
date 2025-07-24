@@ -1,6 +1,6 @@
 ---
 title: Home
-description: Explore how to use kluster.ai to run and tune large AI models on a distributed compute grid sourced by GPU providers from all around the globe.
+description: Explore documentation and resources for kluster.ai, the trust layer for AI–detecting hallucinations, validating outputs, and ensuring reliable responses.
 template: home.html
 hide:
   - navigation
