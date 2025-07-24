@@ -2507,7 +2507,7 @@ The server will start on `http://localhost:3001` with the MCP endpoint at `/stre
 
 ## Client integration
 
-Once your self-hosted server is running, configure your AI clients using the [Client integrations](/verify/mcp/integrations/){target=\_blank} guide.
+Once your self-hosted server is running, configure your AI clients using the [Client integrations](/verify/mcp/client-integrations/){target=\_blank} guide.
 
 Use these connection details:
 
@@ -2525,7 +2525,7 @@ Your self-hosted deployment provides the same verification tools as Cloud MCP:
 
 ## Next steps
 
-- **Configure clients**: Follow the [Client integrations](/verify/mcp/integrations/) guide for VS Code, Claude Desktop, and other platforms.
+- **Configure clients**: Follow the [Client integrations](/verify/mcp/client-integrations/) guide for VS Code, Claude Desktop, and other platforms.
 <!-- Commenting this for safekeeping -->
 <!--- **Learn the tools**: See [Tools reference](/verify/mcp/tools/) for detailed examples.-->
 - **Try Cloud MCP**: Consider [Cloud MCP](/verify/mcp/cloud/platform/) for managed cloud deployment.
