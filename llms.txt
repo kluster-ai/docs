@@ -336,7 +336,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/reliability.ipynb/
    "metadata": {
     "id": "1176978c-51e6-4f4a-8972-63a20f00a70c"
    },
-   "source": "## Introduction\n\nReliability issues in AI occur when models generate information that appears plausible but is unreliable or unsupported by the provided context. This poses significant risks in production applications, particularly in domains where accuracy is critical.\n\nThis tutorial demonstrates how to use <a href=\"https://docs.kluster.ai/verify/overview/\" target=\"_blank\">Verify</a> to identify and prevent reliability issues in your applications. We'll explore available methods: a dedicated API endpoint and via chat completions.\n\nThe service can evaluate AI responses based on provided context (perfect for RAG applications) or perform real-time verification against general knowledge. By following this tutorial, you'll learn how to:\n\n- Verify reliability in individual Q&A pairs.\n- Compare general knowledge verification vs. context validation modes.\n- Validate responses in full conversation histories."
+   "source": "## Introduction\n\nReliability issues in AI occur when models generate information that appears plausible but is unreliable or unsupported by the provided context. This poses significant risks in production applications, particularly in domains where accuracy is critical.\n\nThis tutorial demonstrates how to use <a href=\"https://docs.kluster.ai/verify/overview/\" target=\"_blank\">Verify</a> to identify and prevent reliability issues in your applications. We'll explore available methods: a dedicated API endpoint and via chat completions.\n\nThe service can evaluate AI responses based on provided context (perfect for RAG applications) or perform real-time verification against general knowledge. By following this tutorial, you'll learn how to:\n\n- Verify Reliability in individual Q&A pairs.\n- Compare general knowledge verification vs. context validation modes.\n- Validate responses in full conversation histories."
   },
   {
    "cell_type": "markdown",
@@ -1299,7 +1299,7 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/reliability.ipynb/
    "id": "d56fa810",
    "metadata": {},
    "source": [
-    "Now, by comparing these two answers, we can test the Verify reliability check response:"
+    "Now, by comparing these two answers, we can test the Verify Reliability check response:"
    ]
   },
   {
@@ -2895,7 +2895,7 @@ You can access the reliability verification service in two flexible OpenAI compa
 
 ## Reliability via chat completions
 
-This example shows how to use the service with the chat completion endpoint via the OpenAI `/v1/chat/completions` endpoint and OpenAI libraries, using the specialized `klusterai/verify-reliability` model to enable Verify reliability check.
+This example shows how to use the service with the chat completion endpoint via the OpenAI `/v1/chat/completions` endpoint and OpenAI libraries, using the specialized `klusterai/verify-reliability` model to enable Verify Reliability check.
 
 === "Python"
 
