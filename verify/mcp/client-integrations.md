@@ -32,7 +32,7 @@ Before integrating with any client, ensure you have the required credentials:
 
         ![](/images/verify/mcp/integrations/integrations-3.webp){ style="width:80%;" }
 
-    3. **Add your API key**: When prompted, enter your kluster.ai API key (follow the [Get an API key guide](/verify/get-api-key/){target=\_blank} to obtain one).
+    3. **Add your API key**: When prompted, enter your kluster.ai API key (follow the [Get an API key guide](/get-api-key/){target=\_blank} to obtain one).
 
         ![](/images/verify/mcp/integrations/integrations-4.webp){ style="width:80%;" }
 

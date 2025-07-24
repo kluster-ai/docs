@@ -19,7 +19,7 @@ Developers can use the OpenAI libraries with kluster.ai with no changes. To star
     pip install "openai>={{ libraries.openai_api.min_version }}"
     ```
 
-To start using kluster.ai with OpenAI's client libraries, set your [API key](/verify/get-api-key/){target=\_blank} and change the base URL to `https://api.kluster.ai/v1`:
+To start using kluster.ai with OpenAI's client libraries, set your [API key](/get-api-key/){target=\_blank} and change the base URL to `https://api.kluster.ai/v1`:
 
 === "Python"
 
