@@ -101,7 +101,7 @@ This verifies the response against the actual document content.
 
 ## Alternative setup options
 
-- **Other clients**: Want to use VS Code, Cursor, or Claude Code? Check the [Client integrations](/verify/mcp/integrations/){target=\_blank} guide for configuration examples.
+- **Other clients**: Want to use VS Code, Cursor, or Claude Code? Check the [Client integrations](/verify/mcp/client-integrations/){target=\_blank} guide for configuration examples.
 
 - **Self-hosted**: Prefer to run MCP locally? Set up the [self-hosted MCP server](/verify/mcp/self-hosted/){target=\_blank} for local development with full control.
 
@@ -109,6 +109,6 @@ This verifies the response against the actual document content.
 
 ## Next steps
 
-- **Explore integrations**: Check [Client integrations](/verify/mcp/integrations/) for other platforms.
+- **Explore integrations**: Check [Client integrations](/verify/mcp/client-integrations/) for other platforms.
 
 - **Try the tutorial**: Follow the [Reliability check notebook](/tutorials/klusterai-api/reliability/) with code examples.

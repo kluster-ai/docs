@@ -125,6 +125,6 @@ The response includes verification results nested in JSON-RPC format. <!--See [T
 
 ## Next steps
 
-- [Client integrations](/verify/mcp/integrations/) to configure your AI clients.
+- [Client integrations](/verify/mcp/client-integrations/) to configure your AI clients.
 <!-- Commenting this for safekeeping -->
 <!-- - [Tools reference](/verify/mcp/tools/) for complete tool documentation.-->
