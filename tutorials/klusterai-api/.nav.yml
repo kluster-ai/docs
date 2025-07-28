@@ -1,0 +1,5 @@
+title: Verify Reliability
+hide: false
+nav:
+  - 'Reliability': 'reliability.ipynb'
+  - 'Combat hallucinations': 'combat-hallucinations.ipynb'

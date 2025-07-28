@@ -1,6 +1,0 @@
-title: Fine-tuning
-hide: false
-nav:
-  - 'Overview': overview.md
-  - 'Via the platform': platform.md
-  - 'Via the API': api.md

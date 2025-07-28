@@ -1,2 +1,0 @@
-- **`verify`**: Validates prompt and response pairs against reliable sources.
-- **`verify_document`**: Verifies prompt and response pairs in relation to uploaded documents.
