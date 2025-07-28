@@ -1,4 +1,4 @@
-//used to copy the llms-full.txt file to the clipboard in the footer
+// Used to copy the llms-full.txt file to the clipboard in the footer
 document.addEventListener('DOMContentLoaded', () => {
   document
     .querySelector('.llms-copy-button')
