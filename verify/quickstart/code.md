@@ -20,7 +20,7 @@ The fastest way to get started is with our one-click installation:
 - Click "[Install MCP](https://platform.kluster.ai/verify-code){target=_blank}" to automatically install both the extension and MCP server, or
 - Use the quick install button below:
 
-![Add to Cursor button](/images/verify/code/quick-start/quick-start.webp)
+![Quick start installation button for Code verification](/images/verify/code/quick-start/quick-start.webp)
 
 This will automatically install the Cursor extension and configure the MCP server for you.
 

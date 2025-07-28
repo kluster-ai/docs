@@ -103,7 +103,7 @@ All Code verification tools return the same response structure:
 
 You can customize the Code verification behavior through the settings page in your IDE. This allows you to tailor the verification process to your specific needs, such as configuring severity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
 
-![Code verification settings](/images/verify/code/configuration-settings.webp)
+![Screenshot of Code verification settings interface showing severity levels and enabled tools configuration options](/images/verify/code/configuration-settings.webp)
 
 ### Severity Settings
 
