@@ -57,7 +57,7 @@ Developers can integrate Verify products into applications where AI output quali
 
     Validate LLM outputs for accuracy and prevent hallucinations in your AI applications.
 
-    [:octicons-arrow-right-24: Explore Reliability](/verify/reliability/overview/){target=\_blank}
+    [:octicons-arrow-right-24: Explore Reliability](/verify/reliability/overview/){target=_blank}
 
 -   <span class="badge product">Product</span> __Code__
 
@@ -65,6 +65,6 @@ Developers can integrate Verify products into applications where AI output quali
 
     Detect bugs and security issues in AI-generated code before they reach production.
 
-    [:octicons-arrow-right-24: Explore Code](/verify/code/overview/){target=\_blank}
+    [:octicons-arrow-right-24: Explore Code](/verify/code/overview/){target=_blank}
 
 </div>

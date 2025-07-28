@@ -60,7 +60,7 @@ The Reliability response would return:
 
 ## Performance benchmarks
 
-Reliability has been benchmarked against other solutions on [HaluEval](https://github.com/RUCAIBox/HaluEval){target=\_blank} and [HaluBench](https://huggingface.co/datasets/PatronusAI/HaluBench){target=\_blank} datasets (over 25,000 samples) for hallucination detection accuracy.
+Reliability has been benchmarked against other solutions on [HaluEval](https://github.com/RUCAIBox/HaluEval){target=_blank} and [HaluBench](https://huggingface.co/datasets/PatronusAI/HaluBench){target=_blank} datasets (over 25,000 samples) for hallucination detection accuracy.
 
 - **Non-RAG Scenarios (Context-Free):**
     - Compared against CleanLab TLM (GPT 4o-mini, medium quality, optimized threshold).
@@ -94,7 +94,7 @@ Verify offers multiple ways to use Reliability, each designed for different use 
 
     Verify the reliability and accuracy of an answer to a specific question via a dedicated API endpoint.
 
-    [:octicons-arrow-right-24: Visit the guide](/verify/reliability/verify-api/){target=\_blank}
+    [:octicons-arrow-right-24: Visit the guide](/verify/reliability/verify-api/){target=_blank}
 
 -   <span class="badge guide">Guide</span> Chat completion endpoint
 
@@ -102,7 +102,7 @@ Verify offers multiple ways to use Reliability, each designed for different use 
 
     Validate responses in full conversation via the chat completions API using OpenAI libraries.
 
-    [:octicons-arrow-right-24: Visit the guide](/verify/reliability/chat-completion/){target=\_blank}
+    [:octicons-arrow-right-24: Visit the guide](/verify/reliability/chat-completion/){target=_blank}
 
 -   <span class="badge integration">Integration</span> __Workflow Integrations__
 
@@ -110,12 +110,12 @@ Verify offers multiple ways to use Reliability, each designed for different use 
 
     Download ready-to-use workflows for Dify, n8n, and other platforms using direct API integration.
 
-    [:octicons-arrow-right-24: Get workflows](/verify/reliability/workflow-integrations/){target=\_blank}
+    [:octicons-arrow-right-24: Get workflows](/verify/reliability/workflow-integrations/){target=_blank}
 
 </div>
 
 ## Additional resources
 
-- **Workflow Integrations**: Download [ready-to-use workflows for Dify, n8n](/verify/reliability/workflow-integrations/){target=\_blank}.
-- **Tutorial**: Explore the [Verify tutorial](/tutorials/klusterai-api/reliability/){target=\_blank} with code examples.
+- **Workflow Integrations**: Download [ready-to-use workflows for Dify, n8n](/verify/reliability/workflow-integrations/){target=_blank}.
+- **Tutorial**: Explore the [Verify tutorial](/tutorials/klusterai-api/reliability/){target=_blank} with code examples.
 
