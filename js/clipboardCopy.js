@@ -5,8 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .addEventListener('click', async (event) => {
       try {
         const response = await fetch(
-          // TODO update URL for production
-          'http://127.0.0.1:8000/llms-full.txt'
+          'https://docs.kluster.ai/llms-full.txt'
         );
         const text = await response.text();
         await navigator.clipboard.writeText(text);
