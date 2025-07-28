@@ -15,10 +15,10 @@ The service works seamlessly with AI coding assistants in your IDE, analyzing co
 
 The service evaluates AI-generated code by:
 
-1. Analyzing the code changes in diff format
-2. Understanding the user's original request
-3. Detecting various types of issues (bugs, security vulnerabilities, performance problems)
-4. Providing detailed explanations and actionable fixes
+1. Analyzing the code changes in diff format.
+2. Understanding the user's original request.
+3. Detecting various types of issues (bugs, security vulnerabilities, performance problems).
+4. Providing detailed explanations and actionable fixes.
 
 The service evaluates code to identify issues, with the following fields:
 

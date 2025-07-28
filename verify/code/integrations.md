@@ -1,25 +1,23 @@
 ---
 title: Integrations
-description: Set up kluster.ai Code verification in Cursor and Claude Code using MCP.
+description: Set up kluster.ai Code verification in your IDE using the Model Context Protocol (MCP). Get one-click installation for Cursor or manual configuration for Claude Code and other MCP-compatible clients.
 ---
 
 # Integrations
 
-Code verification integrates seamlessly with your favorite IDEs through MCP. Setup takes less than a minute with one-click installation.
+The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code verification service is designed to integrate directly into your IDE workflow, providing real-time code analysis as you develop. By leveraging the Model Context Protocol (MCP), Code verification works seamlessly with AI coding assistants to catch issues before they reach your codebase.
 
-## Why integration is simple
-
-- **One-click install** - Add Code verification to Cursor with a single click from the platform
-- **Auto-configuration** - MCP server setup happens automatically during installation
-- **Instant activation** - Start catching bugs immediately, no restart required
-- **Zero config** - Works out of the box with sensible defaults
+For Cursor users, we offer a one-click installation process that handles all the setup automatically. See our [Code Quick Start guide](/verify/quickstart/code/) for the fastest way to get started.
 
 ## Supported IDEs
 
-- **Cursor**: Full MCP support with Code verification tools
-- **Claude Code**: Native integration with Code verification
+Code verification works with any MCP-compatible client, including:
 
-## MCP Configuration
+- **Cursor**: One-click installation with automatic MCP server setup (most popular).
+- **Claude Code**: Manual MCP configuration required.
+- **Any MCP-compatible IDE**: Manual configuration using the MCP server details below.
+
+## MCP configuration
 
 Add the following to your MCP configuration file:
 
@@ -39,33 +37,50 @@ Add the following to your MCP configuration file:
 }
 ```
 
-## Setup Instructions
+## Setup instructions
 
-### Cursor
+=== "Cursor"
 
-1. Open Cursor settings
-2. Navigate to MCP configuration
-3. Add the Code MCP server configuration
-4. Restart Cursor to load the tools
+    **One-click installation (recommended)**
+    
+    For the fastest setup, use our one-click installation process described in the [Code Quick Start guide](/verify/quickstart/code/).
+    
+    **Manual configuration**
+    
+    If you prefer manual setup:
+    
+    1. Open Cursor settings.
+    2. Navigate to MCP configuration.
+    3. Add the Code MCP server configuration shown above.
+    4. Restart Cursor to load the tools.
 
-### Claude Code
+=== "Claude Code"
 
-1. Create or edit `.claude/mcp.json` in your project
-2. Add the Code MCP server configuration
-3. The tools will be available immediately
+    1. Create or edit `.claude/mcp.json` in your project.
+    2. Add the Code MCP server configuration shown above.
+    3. Restart claude code, tools will be available immediately.
 
-## Available Tools
+=== "Other MCP Clients"
+
+    For any other MCP-compatible IDE or client:
+    
+    1. Locate your MCP configuration file (varies by client).
+    2. Add the Code MCP server configuration shown above.
+    3. Restart your IDE if required by the client.
+    4. The tools should now be available in your AI assistant.
+
+## Available tools
 
 Once configured, you'll have access to:
 
-- `kluster_bug_check_tool` - Detect bugs and quality issues
-- `kluster_frameworks_check_tool` - Validate dependencies
+- `kluster_bug_check_tool` - Detect bugs and quality issues.
+- `kluster_packages_check_tool` - Validate dependencies.
 
-## Getting Your API Key
+## Getting your API Key
 
 To use Code verification, you'll need a kluster.ai API key:
 
-1. Visit [kluster.ai](https://kluster.ai)
-2. Sign up or log in to your account
-3. Navigate to API Keys section
-4. Generate a new key for Code verification
+1. Visit [kluster.ai](https://kluster.ai).
+2. Sign up or log in to your account.
+3. Navigate to API Keys section.
+4. Generate a new key for Code verification.
