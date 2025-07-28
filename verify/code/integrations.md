@@ -9,6 +9,12 @@ The [kluster.ai](https://www.kluster.ai/){target=_blank} Code verification servi
 
 For Cursor users, we offer a one-click installation process that handles all the setup automatically. See our [Code Quick Start guide](/verify/quickstart/code/){target=_blank} for the fastest way to get started.
 
+## Prerequisites
+
+Before getting started, ensure you have:
+
+--8<-- 'text/kluster-api-onboarding.md'
+
 ## Supported IDEs
 
 Code verification works with any MCP-compatible client, including:
@@ -76,11 +82,5 @@ Once configured, you'll have access to:
 - `kluster_bug_check_tool` - Detect bugs and quality issues.
 - `kluster_packages_check_tool` - Validate dependencies.
 
-## Getting your API Key
+For detailed information about each tool, see our [Tools reference](/verify/code/tools/){target=_blank}.
 
-To use Code verification, you'll need a kluster.ai API key:
-
-1. Visit [kluster.ai](https://kluster.ai){target=_blank}.
-2. Sign up or log in to your account.
-3. Navigate to API Keys section.
-4. Generate a new key for Code verification.

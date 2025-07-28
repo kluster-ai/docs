@@ -1,9 +1,9 @@
 ---
 title: Code Quick Start
-description: Get started with kluster.ai Code verification in minutes using Cursor or Claude Code.
+description: Set up kluster.ai Code verification in your IDE within minutes. Automatically scan AI-generated code for logic errors, security vulnerabilities, and performance issues in real-time. Integrate seamlessly with Cursor, Claude Code, and other AI coding assistants to maintain code quality while preserving development speed.
 ---
 
-# Code Quick Start
+# Code quick start
 
 Modern developers increasingly rely on AI coding assistants to accelerate development, but this speed comes with risks. Generated code may contain logic errors, security flaws, or performance issues that compromise application quality and security.
 
@@ -11,21 +11,18 @@ The [kluster.ai](https://www.kluster.ai/){target=_blank} Code verification servi
 
 This guide will walk you through installing Code verification in Cursor.
 
-## Get Started in Minutes
+## Get started in minutes
 
-### Install the Cursor Extension
+### One-Click Setup (Recommended)
 
-- Open Cursor and navigate to Extensions (Cmd+Shift+X on Mac, Ctrl+Shift+X on Windows/Linux).
-- Search for "kluster.ai Verify Code" and install it.
+The fastest way to get started is with our one-click installation:
 
-### Connect the MCP server
-
-Complete the setup by installing the Model Context Protocol (MCP) server:
-
-- Click "[Install MCP](https://platform.kluster.ai/verify-code){target=_blank}" when prompted in your IDE, or
+- Click "[Install MCP](https://platform.kluster.ai/verify-code){target=_blank}" to automatically install both the extension and MCP server, or
 - Use the quick install button below:
 
 ![Add to Cursor button](/images/verify/code/quick-start/quick-start.webp)
+
+This will automatically install the Cursor extension and configure the MCP server for you.
 
 !!! tip "Manual Setup"
     For manual setup instructions, please see our [integration guides](/verify/code/integrations/){target=_blank}.
