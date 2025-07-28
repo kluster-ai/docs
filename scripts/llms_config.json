@@ -2,8 +2,8 @@
   "projectName": "kluster",
   "projectUrl": "https://kluster.ai/",
   "projectDescription": "kluster is the developer AI cloud platform to deploy, scale, and fine-tune models at lightning speed.",
-  "sectionPriority": ["get-started", "tutorials", "api-reference"],
-  "categories": ["Models", "OpenAI Compatibility", "Real-time Inference", "Batch Inference", "Fine-tuning", "Verify and Reliability", "Integrations", "MCP", "Dedicated Deployments", "Platform Management", "Tutorials", "Use Cases", "Best Practices"],
+  "sectionPriority": [],
+  "categories": [],
   "aiPromptTemplate": "## AI Prompt Template\n\nYou are an AI developer assistant for {PROJECT_NAME} ({PROJECT_URL}). Your task is to assist developers in understanding and using the product described in this file.\n- Provide accurate answers based on the included documentation.\n- Do not assume undocumented features, behaviors, or APIs.\n- If unsure, respond with “Not specified in the documentation.\n\n",
   "coreContextDescription": "The following section contains foundational documentation for {PROJECT_NAME} API platform.\nIt describes the basics to get a user started with {PROJECT_NAME}.\nThis includes API key management, and overviews of each {PROJECT_NAME} product.\nThis context is provided to form a general knowledge base.\n",
   "referenceContextDescription": "The following section contains reference material for {PROJECT_NAME}.\nIt includes model names and comparisons, OpenAI compatibility guidance, and rate limits.\n"
