@@ -7,6 +7,10 @@ description: Learn how to use kluster.ai code verification to detect bugs and se
 
 Code is one of the features offered by Verify, providing specialized tools to identify bugs in AI-generated code and verify the security of frameworks and libraries.
 
+With Code verification, you can ship AI-generated code confidently, knowing potential issues are caught before they reach production.
+
+The service works seamlessly with AI coding assistants in your IDE, analyzing code changes in real-time as they're generated.
+
 ## How Code works
 
 The service evaluates AI-generated code by:
@@ -22,6 +26,16 @@ The service evaluates code to identify issues, with the following fields:
 - `issues`: Array of detected problems with type, severity, and priority
 - `explanation`: Summary of all issues found
 - `agent_todo_list`: Prioritized list of fixes to apply
+
+## Configuration options
+
+Code verification offers flexible configuration to match your development workflow:
+
+- **Severity settings** - Configure minimum severity level for reporting (Low to Critical)
+- **Bug check types** - Select which issue types to check: Semantic, Security, Quality, Intent, Knowledge, Logical, Performance
+- **Enabled tools** - Choose which MCP tools are active (Bug Check Tool, Packages Check Tool)
+
+These settings can be configured directly in your IDE integration.
 
 ## When to use Code
 
@@ -55,3 +69,8 @@ Code is currently available through MCP (Model Context Protocol) integrations:
     [:octicons-arrow-right-24: Setup guide](/verify/code/integrations/){target=\_blank}
 
 </div>
+
+## Additional resources
+
+- **Quick Start**: Get [Code verification running in minutes](/verify/quickstart/code/){target=\_blank}.
+- **MCP Tools**: Explore the [detailed tools reference](/verify/code/tools/){target=\_blank}.

@@ -5,7 +5,14 @@ description: Set up kluster.ai Code verification in Cursor and Claude Code using
 
 # Integrations
 
-Code verification is available through MCP (Model Context Protocol) in supported IDEs.
+Code verification integrates seamlessly with your favorite IDEs through MCP. Setup takes less than a minute with one-click installation.
+
+## Why integration is simple
+
+- **One-click install** - Add Code verification to Cursor with a single click from the platform
+- **Auto-configuration** - MCP server setup happens automatically during installation
+- **Instant activation** - Start catching bugs immediately, no restart required
+- **Zero config** - Works out of the box with sensible defaults
 
 ## Supported IDEs
 

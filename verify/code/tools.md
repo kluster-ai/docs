@@ -107,6 +107,32 @@ All Code verification tools return the same response structure:
 }
 ```
 
+## Configuration Settings
+
+You can customize Code verification behavior through the settings page:
+
+![Code verification settings](/images/verify/code/configuration-settings.webp)
+
+### Severity Settings
+Configure the minimum severity level for issue reporting:
+- **Low, Medium, High, Critical** - Set your threshold based on team needs
+- Recommended: Medium level balances protection with performance
+
+### Bug Check Types
+Select which types of issues to check for:
+- **Semantic** - Logic and code structure issues
+- **Security** - Potential vulnerabilities
+- **Quality** - Code quality and maintainability
+- **Intent** - Alignment with user requests
+- **Knowledge** - Best practices violations
+- **Logical** - Logic errors
+- **Performance** - Performance concerns
+
+### Enabled Tools
+Choose which MCP tools are active:
+- **Bug Check Tool** - For code quality verification
+- **Packages Check Tool** - For dependency security (shown as "Frameworks Check Tool" in docs)
+
 ## Next steps
 
 - **Set up integrations**: Configure [IDE integrations](/verify/code/integrations/) to use these tools.
