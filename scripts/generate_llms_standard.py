@@ -72,10 +72,7 @@ def build_index_section(files):
     for file in files:
         relative_path = os.path.relpath(file, docs_dir)
 
-        # Skip .snippets from the index
-        if '.snippets' in relative_path.split(os.sep):
-            continue
-
+        # Read file content before extracting metadata frontmatter
         with open(file, 'r', encoding='utf-8') as f:
             content = f.read()
 
@@ -86,21 +83,25 @@ def build_index_section(files):
                 metadata_yaml = yaml.safe_load(metadata_match.group(1))
                 title = metadata_yaml.get('title', 'Untitled')
                 description = metadata_yaml.get('description', 'No description available.')
-                # categories = metadata_yaml.get('categories', 'No categories available.')
+                categories = metadata_yaml.get('categories', 'No categories available.')
             except yaml.YAMLError:
                 title = 'Untitled'
                 description = 'No description available.'
-                # categories = 'No categories available.'
+                categories = 'No categories available.'
         else:
             title = 'Untitled'
             description = 'No description available.'
-            # categories = 'No categories available.'
+            categories = 'No categories available.'
+
+        # Skip .snippets from the index
+        if '.snippets' in relative_path.split(os.sep):
+            continue
 
         # Use the raw GitHub URL directly with the .md/.mdx file intact
         rel_path = os.path.relpath(file, docs_dir)
         raw_url = f"{raw_base_url}/{rel_path.replace(os.sep, '/')}"
-        # add back -({categories}) after title once categories are available
-        section += f"[{title}]({raw_url})\n"
+        
+        section += f"[{title}]({categories}): ({raw_url}) ({description})\n"
     return section
 
 # Parse snippet paths to extract file and line ranges if available.
@@ -151,17 +152,24 @@ def fetch_local_snippet(snippet_ref, snippet_directory):
     return snippet_content.strip()
 
 def fetch_remote_snippet(snippet_ref, yaml_data):
-    
-    # Match URL with optional line range (start:end)
-    match = re.match(r'^(https?://[^:]+)(?::(\d+))?(?::(\d+))?$', snippet_ref)
+
+    # Match URL with optional line range. Cases:
+    # - http://example.com:1:3 (this means extract lines 1 to 3)
+    # - http://example.com::1 (this means extract until line 1)
+    # - http://example.com (no line range specified, fetch entire content)
+    match = re.match(r'^(https?://[^\s:]+)(?::(\d*))?(?::(\d*))?$', snippet_ref)
 
     if not match:
         print(f"Invalid snippet reference format: {snippet_ref}")
         return f"Invalid snippet reference: {snippet_ref}"
 
     url = match.group(1)
-    line_start = int(match.group(2)) if match.group(2) else None
-    line_end = int(match.group(3)) if match.group(3) else None
+    line_start = match.group(2)
+    line_end = match.group(3)
+
+    line_start = int(line_start) if line_start and line_start.isdigit() else None
+    line_end = int(line_end) if line_end and line_end.isdigit() else None
+
 
     url = resolve_placeholders(url, yaml_data) # resolve any template placeholders using the yaml_data
 
@@ -176,9 +184,12 @@ def fetch_remote_snippet(snippet_ref, yaml_data):
         snippet_content = response.text        
 
         # Extract specific lines if requested
-        if line_start is not None and line_end is not None:
+        if line_start is not None or line_end is not None:
             lines = snippet_content.split('\n')
-            snippet_content = '\n'.join(lines[line_start-1:line_end])
+            # Python slice: start is inclusive, end is exclusive
+            start = (line_start - 1) if line_start else 0
+            end = line_end if line_end else len(lines)
+            snippet_content = '\n'.join(lines[start:end])
 
         return snippet_content.strip()
     except requests.RequestException as e:
@@ -208,7 +219,7 @@ def get_value_from_path(data, path):
         value = value[key]
     return value
 
-def build_content_section(files,yaml_dir):
+def build_content_section(files, yaml_dir):
     section = "\n## Full content for each doc page\n\n"
 
     for file in files:
@@ -271,21 +282,21 @@ def generate_llms_structure_txt(files):
                 metadata_yaml = yaml.safe_load(metadata_match.group(1))
                 title = metadata_yaml.get('title', 'Untitled')
                 description = metadata_yaml.get('description', 'No description available.')
-                # categories = metadata_yaml.get('categories', 'No categories available.')
+                categories = metadata_yaml.get('categories', 'No categories available.')
             except yaml.YAMLError:
                 title = 'Untitled'
                 description = 'No description available.'
-                # categories = 'No categories available.'
+                categories = 'No categories available.'
         else:
             title = 'Untitled'
             description = 'No description available.'
-            # categories = 'No categories available.'
+            categories = 'No categories available.'
 
         # Use the raw GitHub URL directly with the .md/.mdx file intact
         rel_path = os.path.relpath(file, docs_dir)
         doc_url = f"{raw_base_url}/{rel_path.replace(os.sep, '/')}"
-        # add back -({categories}) after title once categories are available
-        structure_lines.append(f"- [{title}]({doc_url}): {description}")
+
+        structure_lines.append(f"- [{title}] ({categories}) ({doc_url}): {description}")
 
     # Write output file
     with open(structure_output, 'w', encoding='utf-8') as f:
@@ -306,7 +317,7 @@ def generate_standard_llms():
     # Add the index of pages
     llms_content += build_index_section(files)
 
-    # Add the full content 
+    # Add the full content
     llms_content += build_content_section(files, yaml_file)
 
     # Write to llms-full.txt
