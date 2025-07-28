@@ -5,22 +5,22 @@ description: Reference guide for kluster.ai's Code verification MCP tools - veri
 
 # Tools reference
 
-The kluster.ai Code MCP server provides two verification tools for checking AI-generated code quality and security. These tools enable real-time code verification directly within your IDE through MCP integration.
+The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code MCP server provides two verification tools for checking AI-generated code quality and security. These tools enable real-time code verification directly within your IDE through MCP integration.
 
 This page documents the tool parameters and response formats you'll see when using these tools in Cursor, Claude Code, or any MCP-compatible client.
 
 ## Tool overview
 
-The following tools are available through the kluster.ai Code MCP server:
+The kluster.ai Code MCP server offers two tools:
 
-| Tool | Purpose | Best For |
-|:---|:---|:---|
-| `kluster_bug_check_tool` | Verify code quality and detect bugs | Logic errors, security issues, performance problems |
-| `kluster_frameworks_check_tool` | Verify frameworks and dependencies | Package security, outdated libraries, license compliance |
+- **`kluster_bug_check_tool`**: Verifies code quality and detects bugs, including logic errors, security issues, and performance problems.
+- **`kluster_packages_check_tool`**: Validates the security and compliance of packages and dependencies in your code.
 
-### Bug Check Tool
+Both tools share the same set of parameters.
 
-The bug check tool analyzes AI-generated code to detect bugs, security vulnerabilities, and quality issues.
+### Parameters
+
+These tools analyze AI-generated code and its dependencies to detect bugs, security vulnerabilities, and other quality issues.
 
 ???+ interface "Parameters"
 
@@ -40,14 +40,6 @@ The bug check tool analyzes AI-generated code to detect bugs, security vulnerabi
 
     Full absolute paths of modified files separated by `;`.
 
-### Frameworks Check Tool  
-
-The frameworks check tool validates the security and compliance of packages and dependencies in your code.
-
-???+ interface "Parameters"
-
-    Uses the same parameters as Bug Check Tool.
-
 ## Response fields
 
 All Code verification tools return the same response structure:
@@ -55,12 +47,12 @@ All Code verification tools return the same response structure:
 - **`isCodeCorrect`**: Boolean indicating if the code has issues.
 - **`explanation`**: Summary of all issues found.
 - **`issues`**: Array of detected problems with:
-  - `type`: Issue category (intent, semantic, knowledge, performance, quality, logical, security)
-  - `severity`: Impact level (critical, high, medium, low)
-  - `priority`: Execution priority (P0-P5)
-  - `description`: Brief issue summary
-  - `explanation`: Detailed issue explanation
-  - `actions`: Recommended fixes
+  - `type`: Issue category (intent, semantic, knowledge, performance, quality, logical, security).
+  - `severity`: Impact level (critical, high, medium, low).
+  - `priority`: Execution priority (P0-P5).
+  - `description`: Brief issue summary.
+  - `explanation`: Detailed issue explanation.
+  - `actions`: Recommended fixes.
 - **`priority_instructions`**: Execution rules for addressing issues.
 - **`agent_todo_list`**: Prioritized list of fixes to apply.
 
@@ -78,11 +70,11 @@ All Code verification tools return the same response structure:
 
 ## Priority system
 
-- **P0-P1**: Intent issues (highest priority) - code doesn't match request
-- **P2**: Critical severity - must fix immediately  
-- **P3**: High severity - should fix soon
-- **P4**: Medium severity - nice to fix
-- **P5**: Low severity - optional improvements
+- **P0-P1**: Intent issues (highest priority) - code doesn't match request.
+- **P2**: Critical severity - must fix immediately.
+- **P3**: High severity - should fix soon.
+- **P4**: Medium severity - nice to fix.
+- **P5**: Low severity - optional improvements.
 
 ## Response example
 
@@ -107,31 +99,25 @@ All Code verification tools return the same response structure:
 }
 ```
 
-## Configuration Settings
+## Configuration settings
 
-You can customize Code verification behavior through the settings page:
+You can customize the Code verification behavior through the settings page in your IDE. This allows you to tailor the verification process to your specific needs, such as configuring severity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
 
 ![Code verification settings](/images/verify/code/configuration-settings.webp)
 
 ### Severity Settings
-Configure the minimum severity level for issue reporting:
-- **Low, Medium, High, Critical** - Set your threshold based on team needs
-- Recommended: Medium level balances protection with performance
 
-### Bug Check Types
-Select which types of issues to check for:
-- **Semantic** - Logic and code structure issues
-- **Security** - Potential vulnerabilities
-- **Quality** - Code quality and maintainability
-- **Intent** - Alignment with user requests
-- **Knowledge** - Best practices violations
-- **Logical** - Logic errors
-- **Performance** - Performance concerns
+Configure the minimum severity level for issue reporting:
+
+- **Low, Medium, High, Critical** - Set your threshold based on team needs.
+- The ideal setting depends on your use case. For example, a `Medium` level is a good starting point, but you might want to set it to `High` or `Critical` for production code.
 
 ### Enabled Tools
+
 Choose which MCP tools are active:
-- **Bug Check Tool** - For code quality verification
-- **Packages Check Tool** - For dependency security (shown as "Frameworks Check Tool" in docs)
+
+- **Bug Check Tool** - For code quality verification.
+- **Packages Check Tool** - For dependency security.
 
 ## Next steps
 

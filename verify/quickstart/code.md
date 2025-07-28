@@ -13,33 +13,24 @@ This guide will walk you through installing Code verification in Cursor, demonst
 
 ## Get Started in Minutes
 
-### 1. Install the Cursor Extension
+### Install the Cursor Extension
 
-- Open Cursor and navigate to Extensions (Cmd+Shift+X on Mac, Ctrl+Shift+X on Windows/Linux)
-- Search for "kluster.ai Verify Code" and install it
+- Open Cursor and navigate to Extensions (Cmd+Shift+X on Mac, Ctrl+Shift+X on Windows/Linux).
+- Search for "kluster.ai Verify Code" and install it.
 
-### 2. Connect the MCP Server
+### Connect the MCP server
 
 Complete the setup by installing the Model Context Protocol (MCP) server:
 
-- Click "Install MCP" when prompted in your IDE, or
+- Click "[Install MCP](https://platform.kluster.ai/verify-code){target=\_blank}" when prompted in your IDE, or
 - Use the quick install button below:
 
 ![Add to Cursor button](/images/verify/code/quick-start/quick-start.webp)
 
-### 3. Enjoy shipping better code
-
-That's it! Verify Code now protects your development workflow in real-time, catching security issues, bugs, and quality problems before they reach your codebase.
-
-## What happens next
-
-Once installed, Code verification works automatically:
-
-- **Generate code** with your AI assistant
-- **Get instant feedback** on potential issues
-- **Fix problems** before committing
+!!! tip "Manual Setup"
+    For manual setup instructions, please see our [integration guides](/verify/code/integrations/).
 
 ## Next Steps
 
-- [Learn about the tools](/verify/code/tools/) for detailed reference
-- [View integration guides](/verify/code/integrations/) for advanced setup
+- [Learn about the tools](/verify/code/tools/) for detailed reference.
+- [View integration guides](/verify/code/integrations/) for advanced setup.
