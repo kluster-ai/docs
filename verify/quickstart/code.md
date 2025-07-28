@@ -9,7 +9,7 @@ Modern developers increasingly rely on AI coding assistants to accelerate develo
 
 The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code verification service integrates directly into your development workflow, automatically scanning AI-generated code in real-time. It catches potential issues instantly within your IDE, allowing you to ship code confidently while maintaining the speed benefits of AI-assisted development.
 
-This guide will walk you through installing Code verification in Cursor, demonstrate how it works, and show you the configuration options available.
+This guide will walk you through installing Code verification in Cursor.
 
 ## Get Started in Minutes
 
