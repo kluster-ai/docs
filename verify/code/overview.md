@@ -31,9 +31,9 @@ The service evaluates code to identify issues, with the following fields:
 
 Code verification offers flexible configuration to match your development workflow:
 
-- **Severity settings** - Configure minimum severity level for reporting (Low to Critical)
-- **Bug check types** - Select which issue types to check: Semantic, Security, Quality, Intent, Knowledge, Logical, Performance
-- **Enabled tools** - Choose which MCP tools are active (Bug Check Tool, Packages Check Tool)
+- **Severity settings** - Configure minimum severity level for reporting (Low to Critical).
+- **Bug check types** - Select which issue types to check: Semantic, Security, Quality, Intent, Knowledge, Logical, Performance.
+- **Enabled tools** - Choose which MCP tools are active (bug check tool, packages check tool).
 
 These settings can be configured directly in your IDE integration.
 
@@ -41,10 +41,10 @@ These settings can be configured directly in your IDE integration.
 
 The Code service is ideal for scenarios where you need:
 
-- **AI code validation**: Verify AI-generated code before production use
-- **Security scanning**: Detect potential vulnerabilities in generated code
-- **Quality assurance**: Ensure code follows best practices
-- **Dependency checking**: Validate that new packages are secure and up-to-date
+- **AI code validation**: Verify AI-generated code before production use.
+- **Security scanning**: Detect potential vulnerabilities in generated code.
+- **Quality assurance**: Ensure code follows best practices.
+- **Dependency checking**: Validate that new packages are secure and up-to-date.
 
 ## How to integrate Code
 
@@ -58,7 +58,7 @@ Code is currently available through MCP (Model Context Protocol) integrations:
 
     Use Code verification tools directly in your IDE through MCP integration.
 
-    [:octicons-arrow-right-24: View tools reference](/verify/code/tools/){target=\_blank}
+    [:octicons-arrow-right-24: View tools reference](/verify/code/tools/) {target=\_blank}
 
 -   <span class="badge integration">Integration</span> __Integrations__
 
@@ -66,11 +66,11 @@ Code is currently available through MCP (Model Context Protocol) integrations:
 
     Set up Code verification in Cursor or Claude Code using MCP.
 
-    [:octicons-arrow-right-24: Setup guide](/verify/code/integrations/){target=\_blank}
+    [:octicons-arrow-right-24: Setup guide](/verify/code/integrations/) {target=\_blank}
 
 </div>
 
 ## Additional resources
 
-- **Quick Start**: Get [Code verification running in minutes](/verify/quickstart/code/){target=\_blank}.
-- **MCP Tools**: Explore the [detailed tools reference](/verify/code/tools/){target=\_blank}.
+- **Quick Start**: Get [Code verification running in minutes](/verify/quickstart/code/) {target=\_blank}.
+- **MCP Tools**: Explore the [detailed tools reference](/verify/code/tools/) {target=\_blank}.

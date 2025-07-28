@@ -5,9 +5,9 @@ description: Set up kluster.ai Code verification in your IDE using the Model Con
 
 # Integrations
 
-The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code verification service is designed to integrate directly into your IDE workflow, providing real-time code analysis as you develop. By leveraging the Model Context Protocol (MCP), Code verification works seamlessly with AI coding assistants to catch issues before they reach your codebase.
+The [kluster.ai](https://www.kluster.ai/) {target=\_blank} Code verification service is designed to integrate directly into your IDE workflow, providing real-time code analysis as you develop. By leveraging the Model Context Protocol (MCP), Code verification works seamlessly with AI coding assistants to catch issues before they reach your codebase.
 
-For Cursor users, we offer a one-click installation process that handles all the setup automatically. See our [Code Quick Start guide](/verify/quickstart/code/) for the fastest way to get started.
+For Cursor users, we offer a one-click installation process that handles all the setup automatically. See our [Code Quick Start guide](/verify/quickstart/code/) {target=\_blank} for the fastest way to get started.
 
 ## Supported IDEs
 
@@ -43,7 +43,7 @@ Add the following to your MCP configuration file:
 
     **One-click installation (recommended)**
     
-    For the fastest setup, use our one-click installation process described in the [Code Quick Start guide](/verify/quickstart/code/).
+    For the fastest setup, use our one-click installation process described in the [Code Quick Start guide](/verify/quickstart/code/) {target=\_blank}.
     
     **Manual configuration**
     
@@ -58,7 +58,7 @@ Add the following to your MCP configuration file:
 
     1. Create or edit `.claude/mcp.json` in your project.
     2. Add the Code MCP server configuration shown above.
-    3. Restart claude code, tools will be available immediately.
+    3. Restart Claude Code, tools will be available immediately.
 
 === "Other MCP Clients"
 
@@ -80,7 +80,7 @@ Once configured, you'll have access to:
 
 To use Code verification, you'll need a kluster.ai API key:
 
-1. Visit [kluster.ai](https://kluster.ai).
+1. Visit [kluster.ai](https://kluster.ai) {target=\_blank}.
 2. Sign up or log in to your account.
 3. Navigate to API Keys section.
 4. Generate a new key for Code verification.

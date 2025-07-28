@@ -5,7 +5,7 @@ description: Reference guide for kluster.ai's Code verification MCP tools - veri
 
 # Tools reference
 
-The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code MCP server provides two verification tools for checking AI-generated code quality and security. These tools enable real-time code verification directly within your IDE through MCP integration.
+The [kluster.ai](https://www.kluster.ai/) {target=\_blank} Code MCP server provides two verification tools for checking AI-generated code quality and security. These tools enable real-time code verification directly within your IDE through MCP integration.
 
 This page documents the tool parameters and response formats you'll see when using these tools in Cursor, Claude Code, or any MCP-compatible client.
 
@@ -59,7 +59,7 @@ All Code verification tools return the same response structure:
 ## Issue types
 
 | Type | Description | Example |
-|:---|:---|:---|
+|:---:|:---:|:---:|
 | `intent` | Code doesn't match user request | User asked for sorting, got filtering |
 | `semantic` | Logic errors | Missing error handling |
 | `knowledge` | Best practice violations | Not following conventions |
@@ -121,5 +121,5 @@ Choose which MCP tools are active:
 
 ## Next steps
 
-- **Set up integrations**: Configure [IDE integrations](/verify/code/integrations/) to use these tools.
-- **Quick start**: Follow the [quickstart guide](/verify/quickstart/code/) for immediate setup.
+- **Set up integrations**: Configure [IDE integrations](/verify/code/integrations/) {target=\_blank} to use these tools.
+- **Quick start**: Follow the [quickstart guide](/verify/quickstart/code/) {target=\_blank} for immediate setup.
