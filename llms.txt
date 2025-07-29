@@ -3069,7 +3069,7 @@ Verify offers multiple ways to use Reliability, each designed for different use 
 
     [:octicons-arrow-right-24: Visit the guide](/verify/reliability/verify-api/){target=\_blank}
 
--   <span class="badge guide">Guide</span> Chat completion endpoint
+-   <span class="badge guide">Guide</span> __Chat completion endpoint__
 
     ---
 
