@@ -1,6 +1,6 @@
 ---
 title: Code Quick Start
-description: Set up kluster.ai Code verification in your IDE within minutes. Automatically scan AI-generated code for logic errors, security vulnerabilities, and performance issues in real-time. Integrate seamlessly with Cursor, Claude Code, and other AI coding assistants to maintain code quality while preserving development speed.
+description: Set up kluster.ai Code verification in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
 ---
 
 # Code quick start
