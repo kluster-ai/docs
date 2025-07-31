@@ -119,14 +119,14 @@ Add the following to your MCP configuration file:
 
     4. Paste the content of the MCP Config with your API key.
         
-      ![MCP Servers Settings](/images/verify/code/integrations/kilo/step-1.webp)
+      ![MCP Servers Settings](/images/verify/code/integrations/kilo/kilo-integration-1.webp)
     
     Then you should wiew installed **Kluster-Verify-Code-MCP** server with both tools enabled:
 
        - `kluster_bug_check_tool` - For code security and quality verification
        - `kluster_frameworks_check_tool` - For dependency validation
     
-    ![Kluster MCP Tools](/images/verify/code/integrations/kilo/step-2.webp)
+    ![Kluster MCP Tools](/images/verify/code/integrations/kilo/kilo-integration-2.webp)
 
 === "Claude Code"
 
