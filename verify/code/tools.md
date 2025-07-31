@@ -72,6 +72,8 @@ Code verification categorizes detected issues into seven distinct types, each ta
 
 ## Priority system
 
+Code verification assigns priority levels to detected issues, helping you focus on the most critical problems first. The system automatically prioritizes based on issue type and severity.
+
 - **P0-P1**: Intent issues (highest priority) - code doesn't match request.
 - **P2**: Critical severity - must fix immediately.
 - **P3**: High severity - should fix soon.
