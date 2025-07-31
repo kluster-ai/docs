@@ -31,4 +31,4 @@ This will automatically install Code Verify MCP server in Cursor for you.
 ## Next Steps
 
 - [Learn about the tools](/verify/code/tools/){target=\_blank} for detailed reference.
-- [View integration guides](/verify/code/integrations/){target=_blank} for advanced setup.
+- [View integration guides](/verify/code/integrations/){target=\_blank} for advanced setup.
