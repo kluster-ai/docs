@@ -56,7 +56,9 @@ All Code verification tools return the same response structure:
 - **`priority_instructions`**: Execution rules for addressing issues.
 - **`agent_todo_list`**: Prioritized list of fixes to apply.
 
-## Issue types
+## Bug check types
+
+Code verification categorizes detected issues into seven distinct types, each targeting specific aspects of code quality and correctness. You have full control over which bug types to check for through simple on/off toggles.
 
 | Type | Description | Example |
 |:---:|:---:|:---:|
