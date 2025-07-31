@@ -83,23 +83,23 @@ Code verification assigns priority levels to detected issues, helping you focus 
 ## Response example
 
 ```json
-{
-  "isCodeCorrect": false,
-  "explanation": "Found 3 issues. 1 critical issue needs immediate attention.",
-  "issues": [
-    {
-      "type": "security",
-      "severity": "critical",
-      "priority": "P2",
-      "description": "SQL injection vulnerability",
-      "explanation": "User input is directly concatenated into SQL query without sanitization.",
-      "actions": "Use parameterized queries or prepared statements."
-    }
-  ],
-  "priority_instructions": "Fix P2 issues before deploying code.",
-  "agent_todo_list": [
-    "P2.1: Fix SQL injection vulnerability by using parameterized queries"
-  ]
+{  
+    "isCodeCorrect": false,  
+    "explanation": "Found 3 issues. 1 critical issue needs immediate attention.",  
+    "issues": [  
+        {  
+            "type": "security",  
+            "severity": "critical",  
+            "priority": "P2",  
+            "description": "SQL injection vulnerability",  
+            "explanation": "User input is directly concatenated into SQL query without sanitization.",  
+            "actions": "Use parameterized queries or prepared statements."  
+        }  
+    ],  
+    "priority_instructions": "Fix P2 issues before deploying code.",  
+    "agent_todo_list": [  
+        "P2.1: Fix SQL injection vulnerability by using parameterized queries"  
+    ]  
 }
 ```
 

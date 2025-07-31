@@ -32,19 +32,19 @@ Code verification works with any MCP-compatible client, including:
 Add the following to your MCP configuration file:
 
 ```json
-{
-  "mcpServers": {
-    "Kluster-Verify-Code-MCP": {
-      "command": "npx",
-      "args": [
-        "@klusterai/kluster-verify-code-mcp@latest"
-      ],
-      "env": {
-        "KLUSTER_API_KEY": "your-api-key-here"
-      }
-    }
-  }
-}
+{  
+    "mcpServers": {  
+        "Kluster-Verify-Code-MCP": {  
+            "command": "npx",  
+            "args": [  
+                "@klusterai/kluster-verify-code-mcp@latest"  
+            ],  
+            "env": {  
+                "KLUSTER_API_KEY": "your-api-key-here"  
+            }  
+        }  
+    }  
+}  
 ```
 
 ## Setup instructions
