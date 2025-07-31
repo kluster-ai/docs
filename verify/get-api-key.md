@@ -48,7 +48,7 @@ After you've signed up or logged into the platform through the [login page](http
     - **Use environment variables**: Store your API key in environment variables instead of hardcoding them.
     - **Regenerate if compromised**: If you suspect your API key has been exposed, regenerate it immediately from the **API Keys** section.
 
-## Managing your API keys
+## Manage your API keys
 
 The **API Key Management** section allows you to efficiently manage your kluster.ai API keys. You can create, view, and delete API keys by navigating to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section. Your API keys will be listed in the **API Key Management** section.
 

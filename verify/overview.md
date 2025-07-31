@@ -27,7 +27,7 @@ Verify offers one specialized product, designed to address specific AI validatio
 - **[Code](/verify/code/overview/)**: A specialized verification service for AI-generated code that identifies bugs, security vulnerabilities, and quality issues. It analyzes code changes in diff format and provides detailed explanations with actionable fixes.
 
 
-## Target applications & use cases
+## Target applications and use cases
 
 Developers can integrate Verify products into applications where AI output quality is paramount:
 
@@ -47,23 +47,23 @@ Developers can integrate Verify products into applications where AI output quali
 - Development workflow automation.
 - Code quality assurance systems.
 
-## Choose your Verify path
+## Next steps
 
 <div class="grid cards" markdown>
 
--   <span class="badge product">Product</span> __Code__
+-   <span class="badge learn">Learn</span> __Code__
 
     ---
 
-    Detect bugs and security issues in AI-generated code before they reach production.
+    Learn how Code works to detect bugs and security issues in AI-generated code before they reach production.
 
-    [:octicons-arrow-right-24: Explore Reliability](/verify/reliability/overview/)
+    [:octicons-arrow-right-24: Explore Verify for Code](/verify/code/overview/)
 
--   <span class="badge product">Integrations</span> __Cursor__
+-   <span class="badge guide">Guide</span> __Cursor__
 
     ---
 
-    Learn how you can easily plug Verify Code into Cursor for real-time code analysis as you develop.
+    Enable real-time code analysis during development by setting up Verify Code with Cursor.
 
     [:octicons-arrow-right-24: Code with Cursor](/verify/code/integrations#setup-instructions)
 

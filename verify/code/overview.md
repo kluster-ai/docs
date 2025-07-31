@@ -5,7 +5,7 @@ description: Learn how to use kluster.ai code verification to detect bugs and se
 
 # Code by Verify
 
-Code is one of the features offered by [Verify](/verify/overview/), providing specialized tools to identify bugs in AI-generated code and verify the security of frameworks and libraries.
+Code is one of the features offered by [Verify](/verify/overview/){target=\_blank}, providing specialized tools to identify bugs in AI-generated code and verify the security of frameworks and libraries.
 
 With Code verification, you can ship AI-generated code confidently, knowing potential issues are caught before they reach production.
 
@@ -22,7 +22,7 @@ The service evaluates AI-generated code by:
 
 The service evaluates code to identify issues, with the following fields:
 
-- **`isCodeCorrect=true/false`**: Indicates whether the code has issues.
+- **`isCodeCorrect`**: Indicates whether the code has issues.
 - **`issues`**: Array of detected problems with type, severity, and priority.
 - **`explanation`**: Summary of all issues found.
 - **`agent_todo_list`**: Prioritized list of fixes to apply.
@@ -31,9 +31,9 @@ The service evaluates code to identify issues, with the following fields:
 
 Code verification offers flexible configuration to match your development workflow:
 
-- **Severity settings** - Configure minimum severity level for reporting (Low to Critical).
-- **Bug check types** - Select which issue types to check: Semantic, Security, Quality, Intent, Knowledge, Logical, Performance.
-- **Enabled tools** - Choose which MCP tools are active (bug check tool, packages check tool).
+- **Severity settings**: Configure minimum severity level for reporting (Low to Critical).
+- **Bug check types**: Select which issue types to check: Semantic, Security, Quality, Intent, Knowledge, Logical, Performance.
+- **Enabled tools**: Choose which MCP tools are active (bug check tool, packages check tool).
 
 These settings can be configured directly in your IDE integration.
 
@@ -58,18 +58,18 @@ Code is currently available through MCP (Model Context Protocol) integrations:
 
     Use Code verification tools directly in your IDE through MCP integration.
 
-    [:octicons-arrow-right-24: View tools reference](/verify/code/tools/){target=\_blank}
+    [:octicons-arrow-right-24: View tools reference](/verify/code/tools/)
 
--   <span class="badge integration">Integration</span> __Integrations__
+-   <span class="badge guide">Guide</span> __Integrations__
 
     ---
 
-    Set up Code verification in Cursor or Claude Code using MCP.
+    Integrate Code verification with any MCP-compatible IDE, including Cursor and Claude code.
 
-    [:octicons-arrow-right-24: Setup guide](/verify/code/integrations/){target=\_blank}
+    [:octicons-arrow-right-24: Setup guide](/verify/code/integrations/)
 
 </div>
 
 ## Additional resources
 
-- **Quick Start**: Get [Code verification running in minutes](/verify/quickstart/code/){target=\_blank}.
+- **[Get started](/verify/code/quickstart/)**: Get Code verification running in minutes.
