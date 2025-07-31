@@ -1,6 +1,6 @@
 ---
 title: Integrations
-description: Set up kluster.ai Code verification in your IDE using the Model Context Protocol (MCP). Get one-click installation for Cursor or manual configuration for Claude Code and other MCP-compatible clients.
+description: Set up kluster.ai code checks in your IDE via MCP. One-click install for Cursor, or manually configure Claude Code & other MCP-compatible tools.
 ---
 
 # Integrations
