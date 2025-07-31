@@ -1,5 +1,5 @@
 ---
-title: Code by Verify
+title: Code Verification Using Verify
 description: Learn how to use kluster.ai code verification to detect bugs and security issues in AI-generated code using kluster.ai's specialized Verify.
 ---
 
@@ -22,10 +22,10 @@ The service evaluates AI-generated code by:
 
 The service evaluates code to identify issues, with the following fields:
 
-- `isCodeCorrect=true/false`: Indicates whether the code has issues.
+- **`isCodeCorrect=true/false`**: Indicates whether the code has issues.
 - `issues`: Array of detected problems with type, severity, and priority.
-- `explanation`: Summary of all issues found.
-- `agent_todo_list`: Prioritized list of fixes to apply.
+- **`explanation`**: Summary of all issues found.
+- **`agent_todo_list`**: Prioritized list of fixes to apply.
 
 ## Configuration options
 

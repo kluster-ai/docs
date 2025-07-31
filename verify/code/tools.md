@@ -1,5 +1,5 @@
 ---
-title: Code tools reference
+title: Code MCP Tools for Verify 
 description: Learn how kluster.ai Code MCP tools work: parameters, response formats, issue categories, and settings for real-time code verification.
 ---
 
@@ -116,7 +116,7 @@ Configure the minimum severity level for issue reporting:
 - **Low, Medium, High, Critical**: Set your threshold based on team needs.
 - The ideal setting depends on your use case. For example, a `Medium` level is a good starting point, but you might want to set it to `High` or `Critical` for production code.
 
-### Enabled Tools
+### Enabled tools
 
 Choose which MCP tools are active:
 
