@@ -52,7 +52,7 @@ All Code verification tools return the same response structure:
   - **`priority`**: Execution priority (P0-P5).
   - **`description`**: Brief issue summary.
   - **`explanation`**: Detailed issue explanation.
-  - `actions`: Recommended fixes.
+  - **`actions`**: Recommended fixes.
 - **`priority_instructions`**: Execution rules for addressing issues.
 - **`agent_todo_list`**: Prioritized list of fixes to apply.
 
