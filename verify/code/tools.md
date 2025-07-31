@@ -109,17 +109,17 @@ You can customize the Code verification behavior through the settings page in yo
 
 Configure the minimum severity level for issue reporting:
 
-- **Low, Medium, High, Critical** - Set your threshold based on team needs.
+- **Low, Medium, High, Critical**: Set your threshold based on team needs.
 - The ideal setting depends on your use case. For example, a `Medium` level is a good starting point, but you might want to set it to `High` or `Critical` for production code.
 
 ### Enabled Tools
 
 Choose which MCP tools are active:
 
-- **Bug Check Tool** - For code quality verification.
-- **Packages Check Tool** - For dependency security.
+- **Bug Check Tool**: For code quality verification.
+- **Packages Check Tool**: For dependency security.
 
 ## Next steps
 
-- **Set up integrations**: Configure [IDE integrations](/verify/code/integrations/){target=_blank} to use these tools.
-- **Quick start**: Follow the [quickstart guide](/verify/quickstart/code/){target=_blank} for immediate setup.
+- **Set up integrations**: Configure [IDE integrations](/verify/code/integrations/){target=\_blank} to use these tools.
+- **Quick start**: Follow the [quickstart guide](/verify/quickstart/code/){target=\_blank} for immediate setup.
