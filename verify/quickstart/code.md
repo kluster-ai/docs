@@ -17,12 +17,13 @@ This guide will walk you through installing Code verification in Cursor.
 
 The fastest way to get started is with our one-click installation:
 
-- Click "[Install MCP](https://platform.kluster.ai/verify-code){target=_blank}" to automatically install both the extension and MCP server, or
-- Use the quick install button below:
+- Install [Cursor](https://cursor.com/downloads){target=_blank} from their website if you dont have it yet.
+
+- Click [**Add to Cursor**](https://platform.kluster.ai/verify-code){target=_blank} to automatically install both the extension and MCP server.
 
 ![Quick start installation button for Code verification](/images/verify/code/quick-start/quick-start.webp)
 
-This will automatically install the Cursor extension and configure the MCP server for you.
+This will automatically install Code Verify MCP server in Cursor for you.
 
 !!! tip "Manual Setup"
     For manual setup instructions, please see our [integration guides](/verify/code/integrations/){target=_blank}.
