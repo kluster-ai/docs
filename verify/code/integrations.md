@@ -49,7 +49,7 @@ Add the following to your MCP configuration file:
 
     **One-click installation (recommended)**
     
-    For the fastest setup, use our one-click installation process described in the [Code Quick Start guide](/verify/quickstart/code/){target=_blank}.
+    For the fastest setup, use our one-click installation process described in the [Code Quick Start guide](/verify/quickstart/code/){target=\_blank}.
     
     **Manual configuration**
     
@@ -82,5 +82,5 @@ Once configured, you'll have access to:
 - `kluster_bug_check_tool` - Detect bugs and quality issues.
 - `kluster_packages_check_tool` - Validate dependencies.
 
-For detailed information about each tool, see our [Tools reference](/verify/code/tools/){target=_blank}.
+For detailed information about each tool, see our [Tools reference](/verify/code/tools/){target=\_blank}.
 
