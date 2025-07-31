@@ -58,6 +58,20 @@ The Reliability response would return:
 }
 ```
 
+## Performance benchmarks
+
+Reliability has been benchmarked against other solutions on [HaluEval](https://github.com/RUCAIBox/HaluEval){target=\_blank} and [HaluBench](https://huggingface.co/datasets/PatronusAI/HaluBench){target=\_blank} datasets (over 25,000 samples) for hallucination detection accuracy.
+
+- **Non-RAG Scenarios (Context-Free):**
+    - Compared against CleanLab TLM (GPT 4o-mini, medium quality, optimized threshold).
+    - Results: Reliability showed 11% higher overall accuracy, a 2.8% higher median F1 score (72.3% vs. 69.5%), and higher precision (fewer false positives). Response times are comparable (sub-10 seconds).
+- **RAG Validation (Context-Provided):**
+    - Compared against Patronus AI's Lynx (70B) and CleanLab TLM.
+    - Results: On RAGTruth (factual consistency), Reliability significantly outperformed Lynx 70B and CleanLab TLM. On DROP (numerical/logical reasoning), Reliability showed competitive performance against Lynx and outperformed CleanLab TLM.
+    - Note: Lynx was trained on the training sets of DROP and RAGTruth, highlighting Reliability's generalization capabilities to unseen data configurations.
+
+These results indicate Reliability's effectiveness in diverse hallucination detection scenarios relevant to production AI systems.
+
 ## When to use Reliability
 
 The Reliability service is ideal for scenarios where you need:

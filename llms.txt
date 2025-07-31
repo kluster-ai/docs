@@ -7,6 +7,9 @@ Documentation: https://docs.kluster.ai/
 Doc-Page: https://docs.kluster.ai/api-reference/reference/
 Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/combat-hallucinations/
 Doc-Page: https://docs.kluster.ai/tutorials/klusterai-api/reliability/
+Doc-Page: https://docs.kluster.ai/verify/code/integrations/
+Doc-Page: https://docs.kluster.ai/verify/code/overview/
+Doc-Page: https://docs.kluster.ai/verify/code/tools/
 Doc-Page: https://docs.kluster.ai/verify/mcp/client-integrations/
 Doc-Page: https://docs.kluster.ai/verify/mcp/cloud/api/
 Doc-Page: https://docs.kluster.ai/verify/mcp/cloud/platform/
@@ -17,6 +20,7 @@ Doc-Page: https://docs.kluster.ai/verify/mcp/self-hosted/
 Doc-Page: https://docs.kluster.ai/verify/mcp/tools/
 Doc-Page: https://docs.kluster.ai/verify/openai-compatibility/
 Doc-Page: https://docs.kluster.ai/verify/overview/
+Doc-Page: https://docs.kluster.ai/verify/quickstart/code/
 Doc-Page: https://docs.kluster.ai/verify/quickstart/reliability/
 Doc-Page: https://docs.kluster.ai/verify/reliability/chat-completion/
 Doc-Page: https://docs.kluster.ai/verify/reliability/overview/
@@ -1577,6 +1581,410 @@ Doc-Content: https://docs.kluster.ai/tutorials/klusterai-api/reliability.ipynb/
 }
 --- END CONTENT ---
 
+Doc-Content: https://docs.kluster.ai/verify/code/integrations/
+--- BEGIN CONTENT ---
+---
+title: Integrations for Code Verify
+description: Set up kluster.ai code checks in your IDE via MCP. One-click install for Cursor, or manually configure Claude Code & other MCP-compatible tools.
+---
+
+# Integrations
+
+The [kluster.ai](https://www.kluster.ai/){target=_blank} Code verification service is designed to integrate directly into your IDE workflow, providing real-time code analysis as you develop. By leveraging MCP, Code verification works seamlessly with AI coding assistants to catch issues before they reach your codebase.
+
+For Cursor users, a one-click installation process is available that handles all setup automatically. See the [Code Quick Start guide](/verify/quickstart/code/){target=_blank} for the fastest way to get started.
+
+## Prerequisites
+
+Before getting started, ensure you have:
+
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
+
+## Supported IDEs
+
+Code verification works with any MCP-compatible client, including:
+
+- **Cursor**: One-click installation with automatic MCP server setup (most popular).
+- **Windsurf**: AI coding assistant with Cascade and MCP integration.
+- **Kilo Code**: AI coding assistant with streamlined MCP configuration.
+- **Claude Code**: Manual MCP configuration via `.claude/mcp.json`.
+- **Cline**: Open-source AI coding agent for VS Code with MCP marketplace.
+- **Roo Code**: AI-powered dev team extension with dual configuration support.
+- **Any MCP-compatible IDE**: Manual configuration using the MCP server details below.
+
+## MCP configuration
+
+Add the following to your MCP configuration file:
+
+```json
+{  
+    "mcpServers": {  
+        "Kluster-Verify-Code-MCP": {  
+            "command": "npx",  
+            "args": [  
+                "@klusterai/kluster-verify-code-mcp@latest"  
+            ],  
+            "env": {  
+                "KLUSTER_API_KEY": "your-api-key-here"  
+            }  
+        }  
+    }  
+}  
+```
+
+## Setup instructions
+
+=== "Cursor"
+
+    One-click installation (recommended):
+    
+    For the fastest setup, use our one-click installation process described in the [Code Quick Start guide](/verify/quickstart/code/){target=\_blank}.
+    
+    Manual configuration:
+    
+    1. Open **Cursor Settings** by clicking the gear icon on the top right corner.
+    
+    2. Navigate to **Tools & Integrations** in the left sidebar.
+    
+    3. Under **MCP Tools**, click **Add Custom MCP**.
+    
+        ![Cursor Settings - Tools & Integrations](/images/verify/code/integrations/cursor/cursor-integration-1.webp)
+    
+    4. This opens the `mcp.json` configuration file. Add the Kluster MCP server configuration:
+    
+        ![MCP Configuration File](/images/verify/code/integrations/cursor/cursor-integration-2.webp)
+    
+    5. Save the configuration file and return to Settings.
+    
+    6. The **Kluster-Verify-Code-MCP** server will now appear with both tools enabled:
+
+        - **`kluster_bug_check_tool`**: For code security and quality verification.
+        - **`kluster_frameworks_check_tool`**: For dependency validation.
+      
+        ![Active MCP Tools](/images/verify/code/integrations/cursor/cursor-integration-3.webp)
+
+=== "Windsurf"
+
+    1. Open Settings by clicking the gear icon or using the command palette.
+
+    2. Click **Windsurf Settings**.
+    
+        ![Windsurf Settings](/images/verify/code/integrations/windsurf/windsurf-integration-1.webp)
+    
+    3. Navigate to **Cascade** in the left sidebar. 
+    
+    4. Select **Manage MCPs** to to access the MCP configuration.
+    
+        ![Cascade MCP Settings](/images/verify/code/integrations/windsurf/windsurf-integration-2.webp)
+        
+    5. Click **View raw config** to access the MCP configuration file.
+    
+        ![Manage MCP Servers](/images/verify/code/integrations/windsurf/windsurf-integration-3.webp)
+
+    6. Add the Kluster MCP configuration to your `mcp_config.json`:
+    
+        ![MCP Configuration](/images/verify/code/integrations/windsurf/windsurf-integration-4.webp)
+    
+    7. Save the configuration and refresh. 
+      
+      The Kluster-Verify-Code-MCP will appear with both tools enabled:
+      
+       - **`kluster_bug_check_tool`**: For code security and quality verification.
+       - **`kluster_frameworks_check_tool`**: For dependency validation.
+    
+        ![Active MCP Tools](/images/verify/code/integrations/windsurf/windsurf-integration-5.webp)
+
+=== "Kilo Code"
+
+    1. Open Settings and navigate to **MCP Servers**.
+    
+    2. Select the **Installed** tab.
+
+    3. Click **Edit Project MCP** to open the MCP configuration.
+
+    4. Paste the content of the MCP Config with your API key.
+        
+      ![MCP Servers Settings](/images/verify/code/integrations/kilo/kilo-integration-1.webp)
+    
+    Then you should wiew installed **Kluster-Verify-Code-MCP** server with both tools enabled:
+
+       - **`kluster_bug_check_tool`**: For code security and quality verification.
+       - **`kluster_frameworks_check_tool`**: For dependency validation.
+    
+    ![Kluster MCP Tools](/images/verify/code/integrations/kilo/kilo-integration-2.webp)
+
+=== "Claude Code"
+
+    1. Create or edit `.claude/mcp.json` in your project.
+    2. Add the Code MCP server configuration shown above with your API key.
+    3. Restart Claude Code, tools will be available immediately.
+    4. Run the command `/mcp` to check the status of the tools. 
+
+    ![MCP Code Verify installed in claude code](/images/verify/code/integrations/claudecode/claudecode-integration-1.webp)
+
+=== "Cline"
+
+    1. Click **MCP Servers** in the left sidebar.
+    
+    2. Select **Installed** tab.
+    
+    3. Click on **Configure MCP Servers** which will open `cline_mcp_settings.json` configuration file. Add the Kluster MCP server configuration:
+
+        ![Cline MCP Settings](/images/verify/code/integrations/cline/cline-integration-1.webp)
+    
+    4. Save the configuration.
+
+         ![MCP Configuration File](/images/verify/code/integrations/cline/cline-integration-2.webp)
+    
+    5. The **Kluster-Verify-Code-MCP** server will now appear with both tools enabled:
+
+        - `kluster_bug_check_tool`: For code security and quality verification.
+        - `kluster_frameworks_check_tool`: For dependency validation.
+
+=== "Roo Code"
+
+    1. Open Roo Code and click on **MCP Servers** in the left sidebar.
+    
+    2. Click **Edit Project MCP** to open the MCP configuration for your project.
+    
+        ![MCP Servers Menu](/images/verify/code/integrations/roocode/roocode-integration-1.webp)
+    
+    3. The configuration file will open at `.roo/mcp_settings.json`. Add the Kluster MCP server configuration shown above.
+    
+    4. Save the file. The **Kluster-Verify-Code-MCP** server will appear with both tools enabled:
+
+        - `kluster_bug_check_tool`: For code security and quality verification.
+        - `kluster_frameworks_check_tool`: For dependency validation.
+    
+        ![Active MCP Tools](/images/verify/code/integrations/roocode/roocode-integration-2.webp)    
+
+=== "Other MCP Clients"
+
+    For any other MCP-compatible IDE or client:
+    
+    1. Locate your MCP configuration file (varies by client).
+    2. Add the Code MCP server configuration shown above.
+    3. Restart your IDE if required by the client.
+    4. The tools should now be available in your AI assistant.
+
+## Available tools
+
+For detailed information about each tool, see our [Tools reference](/verify/code/tools/){target=\_blank}.
+--- END CONTENT ---
+
+Doc-Content: https://docs.kluster.ai/verify/code/overview/
+--- BEGIN CONTENT ---
+---
+title: Code Verification Using Verify
+description: Learn how to use kluster.ai code verification to detect bugs and security issues in AI-generated code using kluster.ai's specialized Verify.
+---
+
+# Code by Verify
+
+Code is one of the features offered by [Verify](/verify/overview/), providing specialized tools to identify bugs in AI-generated code and verify the security of frameworks and libraries.
+
+With Code verification, you can ship AI-generated code confidently, knowing potential issues are caught before they reach production.
+
+The service works seamlessly with AI coding assistants in your IDE, analyzing code changes in real-time as they're generated.
+
+## How Code works
+
+The service evaluates AI-generated code by:
+
+1. Analyzing the code changes in diff format.
+2. Understanding the user's original request.
+3. Detecting various types of issues (bugs, security vulnerabilities, performance problems).
+4. Providing detailed explanations and actionable fixes.
+
+The service evaluates code to identify issues, with the following fields:
+
+- **`isCodeCorrect=true/false`**: Indicates whether the code has issues.
+- **`issues`**: Array of detected problems with type, severity, and priority.
+- **`explanation`**: Summary of all issues found.
+- **`agent_todo_list`**: Prioritized list of fixes to apply.
+
+## Configuration options
+
+Code verification offers flexible configuration to match your development workflow:
+
+- **Severity settings** - Configure minimum severity level for reporting (Low to Critical).
+- **Bug check types** - Select which issue types to check: Semantic, Security, Quality, Intent, Knowledge, Logical, Performance.
+- **Enabled tools** - Choose which MCP tools are active (bug check tool, packages check tool).
+
+These settings can be configured directly in your IDE integration.
+
+## When to use Code
+
+The Code service is ideal for scenarios where you need:
+
+- **AI code validation**: Verify AI-generated code before production use.
+- **Security scanning**: Detect potential vulnerabilities in generated code.
+- **Quality assurance**: Ensure code follows best practices.
+- **Dependency checking**: Validate that new packages are secure and up-to-date.
+
+## How to integrate Code
+
+Code is currently available through MCP (Model Context Protocol) integrations:
+
+<div class="grid cards" markdown>
+
+-   <span class="badge guide">Guide</span> __Tools__
+
+    ---
+
+    Use Code verification tools directly in your IDE through MCP integration.
+
+    [:octicons-arrow-right-24: View tools reference](/verify/code/tools/){target=\_blank}
+
+-   <span class="badge integration">Integration</span> __Integrations__
+
+    ---
+
+    Set up Code verification in Cursor or Claude Code using MCP.
+
+    [:octicons-arrow-right-24: Setup guide](/verify/code/integrations/){target=\_blank}
+
+</div>
+
+## Additional resources
+
+- **Quick Start**: Get [Code verification running in minutes](/verify/quickstart/code/){target=\_blank}.
+--- END CONTENT ---
+
+Doc-Content: https://docs.kluster.ai/verify/code/tools/
+--- BEGIN CONTENT ---
+---
+title: Code MCP Tools for Verify 
+description: Learn how kluster.ai Code MCP tools work: parameters, response formats, issue categories, and settings for real-time code verification.
+---
+
+# Tools reference
+
+The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code MCP server provides two verification tools for checking AI-generated code quality and security. These tools enable real-time code verification directly within your IDE through MCP integration.
+
+This page documents the tool parameters and response formats you'll see when using these tools in Cursor, Claude Code, or any MCP-compatible client.
+
+## Tool overview
+
+The kluster.ai Code MCP server offers two tools:
+
+- **`kluster_bug_check_tool`**: Verifies code quality and detects bugs, including logic errors, security issues, and performance problems.
+- **`kluster_packages_check_tool`**: Validates the security and compliance of packages and dependencies in your code.
+
+Both tools share the same set of parameters.
+
+### Parameters
+
+These tools analyze AI-generated code and its dependencies to detect bugs, security vulnerabilities, and other quality issues.
+
+???+ interface "Parameters"
+
+    `code_diff` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+    Unified diff format showing the actual code changes.
+
+    ---
+
+    `user_requests` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+    Chronological sequence of user messages with current request marked as `>>> CURRENT REQUEST:`.
+
+    ---
+
+    `modified_files_path` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+    Full absolute paths of modified files separated by `;`.
+
+## Response fields
+
+All Code verification tools return the same response structure:
+
+- **`isCodeCorrect`**: Boolean indicating if the code has issues.
+- **`explanation`**: Summary of all issues found.
+- **`issues`**: Array of detected problems with:
+  - **`type`**: Issue category (intent, semantic, knowledge, performance, quality, logical, security).
+  - **`severity`**: Impact level (critical, high, medium, low).
+  - **`priority`**: Execution priority (P0-P5).
+  - **`description`**: Brief issue summary.
+  - **`explanation`**: Detailed issue explanation.
+  - **`actions`**: Recommended fixes.
+- **`priority_instructions`**: Execution rules for addressing issues.
+- **`agent_todo_list`**: Prioritized list of fixes to apply.
+
+## Bug check types
+
+Code verification categorizes detected issues into seven distinct types, each targeting specific aspects of code quality and correctness. You have full control over which bug types to check for through simple on/off toggles.
+
+| Type | Description | Example |
+|:---:|:---:|:---:|
+| `intent` | Code doesn't match user request | User asked for sorting, got filtering |
+| `semantic` | Logic errors | Missing error handling |
+| `knowledge` | Best practice violations | Not following conventions |
+| `performance` | Performance issues | Inefficient algorithms |
+| `quality` | Code quality problems | Poor naming, complexity |
+| `logical` | Logic errors | Off-by-one errors |
+| `security` | Security vulnerabilities | SQL injection risks |
+
+## Priority system
+
+Code verification assigns priority levels to detected issues, helping you focus on the most critical problems first. The system automatically prioritizes based on issue type and severity.
+
+- **P0-P1**: Intent issues (highest priority) - code doesn't match request.
+- **P2**: Critical severity - must fix immediately.
+- **P3**: High severity - should fix soon.
+- **P4**: Medium severity - nice to fix.
+- **P5**: Low severity - optional improvements.
+
+## Response example
+
+```json
+{  
+    "isCodeCorrect": false,  
+    "explanation": "Found 3 issues. 1 critical issue needs immediate attention.",  
+    "issues": [  
+        {  
+            "type": "security",  
+            "severity": "critical",  
+            "priority": "P2",  
+            "description": "SQL injection vulnerability",  
+            "explanation": "User input is directly concatenated into SQL query without sanitization.",  
+            "actions": "Use parameterized queries or prepared statements."  
+        }  
+    ],  
+    "priority_instructions": "Fix P2 issues before deploying code.",  
+    "agent_todo_list": [  
+        "P2.1: Fix SQL injection vulnerability by using parameterized queries"  
+    ]  
+}
+```
+
+## Configuration settings
+
+You can customize the Code verification behavior through the settings page in your IDE. This allows you to tailor the verification process to your specific needs, such as configuring severity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
+
+![Screenshot of Code verification settings interface showing severity levels and enabled tools configuration options](/images/verify/code/configuration-settings.webp)
+
+### Severity settings
+
+Configure the minimum severity level for issue reporting:
+
+- **Low, Medium, High, Critical**: Set your threshold based on team needs.
+- The ideal setting depends on your use case. For example, a `Medium` level is a good starting point, but you might want to set it to `High` or `Critical` for production code.
+
+### Enabled tools
+
+Choose which MCP tools are active:
+
+- **Bug Check Tool**: For code quality verification.
+- **Packages Check Tool**: For dependency security.
+
+## Next steps
+
+- **Set up integrations**: Configure [IDE integrations](/verify/code/integrations/){target=\_blank} to use these tools.
+- **Quick start**: Follow the [quickstart guide](/verify/quickstart/code/){target=\_blank} for immediate setup.
+--- END CONTENT ---
+
 Doc-Content: https://docs.kluster.ai/verify/mcp/client-integrations/
 --- BEGIN CONTENT ---
 ---
@@ -2747,37 +3155,92 @@ This page provides an overview of the Verify service.
 
 ## How Verify works
 
-The Verify service functions as an intelligent agent. It assesses LLM output reliability based on three key inputs provided in the API call:
+Verify offers two specialized products, each designed to address specific AI validation needs:
 
-1.  **`prompt`**: The original input or question provided to the LLM. This gives context to the user's intent.
-2.  **`output`**: The response generated by the LLM that requires validation.
-3.  **`context` (Optional)**: Any source material or documents provided to the LLM (e.g., in RAG scenarios) against which the output's claims should be verified.
+- **[Reliability](/verify/reliability/overview/)**: An intelligent verification service that validates LLM outputs in real-time. It assesses output reliability based on prompts, outputs, and optional context, leveraging real-time internet access to validate claims against up-to-date public information.
 
-Verify analyzes these inputs and can leverage **real time internet access** to validating claims against up-to-date public information, extending its capabilities beyond static knowledge bases.
+- **[Code](/verify/code/overview/)**: A specialized verification service for AI-generated code that identifies bugs, security vulnerabilities, and quality issues. It analyzes code changes in diff format and provides detailed explanations with actionable fixes.
 
-## Performance benchmarks
-
-Verify has been benchmarked against other solutions on [HaluEval](https://github.com/RUCAIBox/HaluEval){target=\_blank} and [HaluBench](https://huggingface.co/datasets/PatronusAI/HaluBench){target=\_blank} datasets (over 25,000 samples).
-
-- **Non-RAG Scenarios (Context-Free):**
-    - Compared against CleanLab TLM (GPT 4o-mini, medium quality, optimized threshold).
-    - Results: Verify showed 11% higher overall accuracy, a 2.8% higher median F1 score (72.3% vs. 69.5%), and higher precision (fewer false positives). Response times are comparable (sub-10 seconds).
-- **RAG Validation (Context-Provided):**
-    - Compared against Patronus AI's Lynx (70B) and CleanLab TLM.
-    - Results: On RAGTruth (factual consistency), Verify significantly outperformed Lynx 70B and CleanLab TLM. On DROP (numerical/logical reasoning), Verify showed competitive performance against Lynx and outperformed CleanLab TLM.
-    - Note: Lynx was trained on the training sets of DROP and RAGTruth, highlighting Verify's generalization capabilities to unseen data configurations.
-
-These results indicate Verify's effectiveness in diverse scenarios relevant to production AI systems.
 
 ## Target applications & use cases
 
-Developers can integrate Verify into applications where LLM output accuracy is paramount:
+Developers can integrate Verify products into applications where AI output quality is paramount:
+
+**For Reliability:**
 
 - Automated content generation pipelines.
 - Customer-facing chatbots and virtual assistants.
 - Question-answering systems over private or public data (RAG).
 - AI-driven data extraction and summarization tools.
 - Internal workflow automation involving LLM-generated text.
+
+**For Code:**
+
+- AI coding assistants and IDE integrations.
+- Automated code review pipelines.
+- CI/CD security scanning for AI-generated code.
+- Development workflow automation.
+- Code quality assurance systems.
+
+## Choose your Verify product
+
+<div class="grid cards" markdown>
+
+-   <span class="badge product">Product</span> __Reliability__
+
+    ---
+
+    Validate LLM outputs for accuracy and prevent hallucinations in your AI applications.
+
+    [:octicons-arrow-right-24: Explore Reliability](/verify/reliability/overview/){target=\_blank}
+
+-   <span class="badge product">Product</span> __Code__
+
+    ---
+
+    Detect bugs and security issues in AI-generated code before they reach production.
+
+    [:octicons-arrow-right-24: Explore Code](/verify/code/overview/){target=\_blank}
+
+</div>
+--- END CONTENT ---
+
+Doc-Content: https://docs.kluster.ai/verify/quickstart/code/
+--- BEGIN CONTENT ---
+---
+title: Quick Start with Code Verify
+description: Set up kluster.ai Code verification in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
+---
+
+# Code quick start
+
+Modern developers increasingly rely on AI coding assistants to accelerate development, but this speed comes with risks. Generated code may contain logic errors, security flaws, or performance issues that compromise application quality and security.
+
+The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code verification service integrates directly into your development workflow, automatically scanning AI-generated code in real-time. It catches potential issues instantly within your IDE, allowing you to ship code confidently while maintaining the speed benefits of AI-assisted development.
+
+This guide will walk you through installing Code verification in Cursor.
+
+## Get started in minutes
+
+### One-click Setup (Recommended)
+
+The fastest way to get started is with our one-click installation:
+
+1. Install [Cursor](https://cursor.com/downloads){target=_blank} from their website if you don't have it yet.
+
+2. Click [**Add to Cursor**](https://platform.kluster.ai/verify-code){target=_blank} to automatically install both the extension and MCP server.
+
+![Quick start installation button for Code verification](/images/verify/code/quick-start/quick-start.webp)
+
+This will automatically install Code Verify MCP server in Cursor for you.
+
+!!! tip "Manual Setup"
+    For manual setup instructions, please see our [integration guides](/verify/code/integrations/){target=\_blank}.
+
+## Next steps
+
+- [Learn about the tools](/verify/code/tools/){target=\_blank} for detailed reference.
+- [View integration guides](/verify/code/integrations/){target=\_blank} for advanced setup.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/verify/quickstart/reliability/
@@ -3044,6 +3507,20 @@ The Reliability response would return:
   "search_results": []
 }
 ```
+
+## Performance benchmarks
+
+Reliability has been benchmarked against other solutions on [HaluEval](https://github.com/RUCAIBox/HaluEval){target=\_blank} and [HaluBench](https://huggingface.co/datasets/PatronusAI/HaluBench){target=\_blank} datasets (over 25,000 samples) for hallucination detection accuracy.
+
+- **Non-RAG Scenarios (Context-Free):**
+    - Compared against CleanLab TLM (GPT 4o-mini, medium quality, optimized threshold).
+    - Results: Reliability showed 11% higher overall accuracy, a 2.8% higher median F1 score (72.3% vs. 69.5%), and higher precision (fewer false positives). Response times are comparable (sub-10 seconds).
+- **RAG Validation (Context-Provided):**
+    - Compared against Patronus AI's Lynx (70B) and CleanLab TLM.
+    - Results: On RAGTruth (factual consistency), Reliability significantly outperformed Lynx 70B and CleanLab TLM. On DROP (numerical/logical reasoning), Reliability showed competitive performance against Lynx and outperformed CleanLab TLM.
+    - Note: Lynx was trained on the training sets of DROP and RAGTruth, highlighting Reliability's generalization capabilities to unseen data configurations.
+
+These results indicate Reliability's effectiveness in diverse hallucination detection scenarios relevant to production AI systems.
 
 ## When to use Reliability
 
