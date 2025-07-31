@@ -20,9 +20,9 @@ This page provides an overview of the Verify service.
 
 ## How Verify works
 
-Verify offers two specialized products, each designed to address specific AI validation needs:
+Verify offers one specialized product, designed to address specific AI validation needs:
 
-- **[Reliability](/verify/reliability/overview/)**: An intelligent verification service that validates LLM outputs in real-time. It assesses output reliability based on prompts, outputs, and optional context, leveraging real-time internet access to validate claims against up-to-date public information.
+<!-- - **[Reliability](/verify/reliability/overview/)**: An intelligent verification service that validates LLM outputs in real-time. It assesses output reliability based on prompts, outputs, and optional context, leveraging real-time internet access to validate claims against up-to-date public information. -->
 
 - **[Code](/verify/code/overview/)**: A specialized verification service for AI-generated code that identifies bugs, security vulnerabilities, and quality issues. It analyzes code changes in diff format and provides detailed explanations with actionable fixes.
 
@@ -31,13 +31,13 @@ Verify offers two specialized products, each designed to address specific AI val
 
 Developers can integrate Verify products into applications where AI output quality is paramount:
 
-**For Reliability:**
+<!-- **For Reliability:**
 
 - Automated content generation pipelines.
 - Customer-facing chatbots and virtual assistants.
 - Question-answering systems over private or public data (RAG).
 - AI-driven data extraction and summarization tools.
-- Internal workflow automation involving LLM-generated text.
+- Internal workflow automation involving LLM-generated text. -->
 
 **For Code:**
 
@@ -47,17 +47,9 @@ Developers can integrate Verify products into applications where AI output quali
 - Development workflow automation.
 - Code quality assurance systems.
 
-## Choose your Verify product
+## Choose your Verify path
 
 <div class="grid cards" markdown>
-
--   <span class="badge product">Product</span> __Reliability__
-
-    ---
-
-    Validate LLM outputs for accuracy and prevent hallucinations in your AI applications.
-
-    [:octicons-arrow-right-24: Explore Reliability](/verify/reliability/overview/){target=\_blank}
 
 -   <span class="badge product">Product</span> __Code__
 
@@ -65,6 +57,14 @@ Developers can integrate Verify products into applications where AI output quali
 
     Detect bugs and security issues in AI-generated code before they reach production.
 
-    [:octicons-arrow-right-24: Explore Code](/verify/code/overview/){target=\_blank}
+    [:octicons-arrow-right-24: Explore Reliability](/verify/reliability/overview/)
+
+-   <span class="badge product">Integrations</span> __Cursor__
+
+    ---
+
+    Learn how you can easily plug Verify Code into Cursor for real-time code analysis as you develop.
+
+    [:octicons-arrow-right-24: Code with Cursor](/verify/code/integrations#setup-instructions)
 
 </div>

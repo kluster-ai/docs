@@ -1,9 +1,9 @@
 ---
-title: Quick Start with Code Verify
+title: Get started with Verify Code
 description: Set up kluster.ai Code verification in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
 ---
 
-# Code quick start
+# Get started with Verify Code
 
 Modern developers increasingly rely on AI coding assistants to accelerate development, but this speed comes with risks. Generated code may contain logic errors, security flaws, or performance issues that compromise application quality and security.
 

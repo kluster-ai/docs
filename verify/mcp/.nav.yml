@@ -1,4 +1,5 @@
 title: MCP
+hide: true
 nav:
   - 'Overview': overview.md
   - 'Get started': get-started.md

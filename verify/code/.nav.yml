@@ -1,4 +1,5 @@
 nav:
-  - 'Overview': overview.md
+  - 'Introduction': overview.md
+  - 'Get started': quickstart.md
   - 'Integrations': integrations.md
   - 'Tools': tools.md
