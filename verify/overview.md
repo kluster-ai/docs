@@ -22,9 +22,9 @@ This page provides an overview of the Verify service.
 
 Verify offers two specialized products, each designed to address specific AI validation needs:
 
-- **Reliability**: An intelligent verification service that validates LLM outputs in real-time. It assesses output reliability based on prompts, outputs, and optional context, leveraging real-time internet access to validate claims against up-to-date public information.
+- **[Reliability](/verify/reliability/overview/)**: An intelligent verification service that validates LLM outputs in real-time. It assesses output reliability based on prompts, outputs, and optional context, leveraging real-time internet access to validate claims against up-to-date public information.
 
-- **Code**: A specialized verification service for AI-generated code that identifies bugs, security vulnerabilities, and quality issues. It analyzes code changes in diff format and provides detailed explanations with actionable fixes.
+- **[Code](/verify/code/overview/)**: A specialized verification service for AI-generated code that identifies bugs, security vulnerabilities, and quality issues. It analyzes code changes in diff format and provides detailed explanations with actionable fixes.
 
 
 ## Target applications & use cases
