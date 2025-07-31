@@ -5,7 +5,7 @@ description: Learn how to use kluster.ai code verification to detect bugs and se
 
 # Code by Verify
 
-Code is one of the features offered by Verify, providing specialized tools to identify bugs in AI-generated code and verify the security of frameworks and libraries.
+Code is one of the features offered by [Verify](/verify/overview/), providing specialized tools to identify bugs in AI-generated code and verify the security of frameworks and libraries.
 
 With Code verification, you can ship AI-generated code confidently, knowing potential issues are caught before they reach production.
 
