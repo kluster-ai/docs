@@ -1,4 +1,5 @@
 title: Reliability
+hide: true
 nav:
   - 'Overview': overview.md
   - 'Verify API': verify-api.md

@@ -19,7 +19,7 @@ Developers can use the OpenAI libraries with kluster.ai with no changes. To star
     pip install "openai>={{ libraries.openai_api.min_version }}"
     ```
 
-To start using kluster.ai with OpenAI's client libraries, set your [API key](/get-api-key/){target=\_blank} and change the base URL to `https://api.kluster.ai/v1`:
+To start using kluster.ai with OpenAI's client libraries, set your [API key](/verify/get-api-key/){target=\_blank} and change the base URL to `https://api.kluster.ai/v1`:
 
 === "Python"
 
@@ -38,7 +38,7 @@ While kluster.ai's API is largely compatible with OpenAI's, the following sectio
 
 ### Chat completions parameters
 
-When creating a chat completion via the [`POST https://api.kluster.ai/v1/chat/completions` endpoint](/api-reference/reference/#/http/api-endpoints/realtime/v1-chat-completions-post){target=\_blank}, the following request parameters are not supported:
+When creating a chat completion via the `POST https://api.kluster.ai/v1/chat/completions` endpoint, the following request parameters are not supported:
 
 - `messages[].name`: Attribute in `system`, `user`, and `assistant` type message objects.
 - `messages[].refusal`: Attribute in `assistant` type message objects.
@@ -68,7 +68,7 @@ For more information on these parameters, refer to [OpenAI's API documentation o
 
 ### Chat completion object
 
-The following fields of the [chat completion object](/api-reference/reference/#/http/models/structures/v1-chat-completions-request){target=\_blank} are not supported:
+The following fields of the chat completion object are not supported:
 
 - `system_fingerprint`
 - `usage.completion_tokens_details`
