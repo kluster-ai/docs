@@ -1,5 +1,5 @@
 ---
-title: Code Quick Start
+title: Quick Start with Code Verify
 description: Set up kluster.ai Code verification in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
 ---
 
@@ -13,13 +13,13 @@ This guide will walk you through installing Code verification in Cursor.
 
 ## Get started in minutes
 
-### One-Click Setup (Recommended)
+### One-click Setup (Recommended)
 
 The fastest way to get started is with our one-click installation:
 
-- Install [Cursor](https://cursor.com/downloads){target=_blank} from their website if you dont have it yet.
+1. Install [Cursor](https://cursor.com/downloads){target=_blank} from their website if you don't have it yet.
 
-- Click [**Add to Cursor**](https://platform.kluster.ai/verify-code){target=_blank} to automatically install both the extension and MCP server.
+2. Click [**Add to Cursor**](https://platform.kluster.ai/verify-code){target=_blank} to automatically install both the extension and MCP server.
 
 ![Quick start installation button for Code verification](/images/verify/code/quick-start/quick-start.webp)
 
@@ -28,7 +28,7 @@ This will automatically install Code Verify MCP server in Cursor for you.
 !!! tip "Manual Setup"
     For manual setup instructions, please see our [integration guides](/verify/code/integrations/){target=\_blank}.
 
-## Next Steps
+## Next steps
 
 - [Learn about the tools](/verify/code/tools/){target=\_blank} for detailed reference.
 - [View integration guides](/verify/code/integrations/){target=\_blank} for advanced setup.

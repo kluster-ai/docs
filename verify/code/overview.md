@@ -23,7 +23,7 @@ The service evaluates AI-generated code by:
 The service evaluates code to identify issues, with the following fields:
 
 - **`isCodeCorrect=true/false`**: Indicates whether the code has issues.
-- `issues`: Array of detected problems with type, severity, and priority.
+- **`issues`**: Array of detected problems with type, severity, and priority.
 - **`explanation`**: Summary of all issues found.
 - **`agent_todo_list`**: Prioritized list of fixes to apply.
 

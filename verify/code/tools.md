@@ -109,7 +109,7 @@ You can customize the Code verification behavior through the settings page in yo
 
 ![Screenshot of Code verification settings interface showing severity levels and enabled tools configuration options](/images/verify/code/configuration-settings.webp)
 
-### Severity Settings
+### Severity settings
 
 Configure the minimum severity level for issue reporting:
 
