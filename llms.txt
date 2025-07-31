@@ -1717,8 +1717,11 @@ Add the following to your MCP configuration file:
 === "Claude Code"
 
     1. Create or edit `.claude/mcp.json` in your project.
-    2. Add the Code MCP server configuration shown above.
+    2. Add the Code MCP server configuration shown above with your API key.
     3. Restart Claude Code, tools will be available immediately.
+    4. Run the command `/mcp` to check the status of the tools. 
+
+    ![MCP Code Verify installed in claude code](/images/verify/code/integrations/claudecode/claudecode-integration-1.webp)
 
 === "Cline"
 
