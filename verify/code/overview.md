@@ -73,4 +73,3 @@ Code is currently available through MCP (Model Context Protocol) integrations:
 ## Additional resources
 
 - **Quick Start**: Get [Code verification running in minutes](/verify/quickstart/code/){target=\_blank}.
-- **MCP Tools**: Explore the [detailed tools reference](/verify/code/tools/){target=_blank}.
