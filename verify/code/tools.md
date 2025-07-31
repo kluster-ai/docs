@@ -1,11 +1,11 @@
 ---
 title: Code tools reference
-description: Reference guide for kluster.ai's Code verification MCP tools - verify AI-generated code quality and framework security with detailed parameters and response formats.
+description: Learn how kluster.ai Code MCP tools work: parameters, response formats, issue categories, and settings for real-time code verification.
 ---
 
 # Tools reference
 
-The [kluster.ai](https://www.kluster.ai/){target=_blank} Code MCP server provides two verification tools for checking AI-generated code quality and security. These tools enable real-time code verification directly within your IDE through MCP integration.
+The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code MCP server provides two verification tools for checking AI-generated code quality and security. These tools enable real-time code verification directly within your IDE through MCP integration.
 
 This page documents the tool parameters and response formats you'll see when using these tools in Cursor, Claude Code, or any MCP-compatible client.
 
@@ -47,11 +47,11 @@ All Code verification tools return the same response structure:
 - **`isCodeCorrect`**: Boolean indicating if the code has issues.
 - **`explanation`**: Summary of all issues found.
 - **`issues`**: Array of detected problems with:
-  - `type`: Issue category (intent, semantic, knowledge, performance, quality, logical, security).
-  - `severity`: Impact level (critical, high, medium, low).
-  - `priority`: Execution priority (P0-P5).
-  - `description`: Brief issue summary.
-  - `explanation`: Detailed issue explanation.
+  - **`type`**: Issue category (intent, semantic, knowledge, performance, quality, logical, security).
+  - **`severity`**: Impact level (critical, high, medium, low).
+  - **`priority`**: Execution priority (P0-P5).
+  - **`description`**: Brief issue summary.
+  - **`explanation`**: Detailed issue explanation.
   - `actions`: Recommended fixes.
 - **`priority_instructions`**: Execution rules for addressing issues.
 - **`agent_todo_list`**: Prioritized list of fixes to apply.
