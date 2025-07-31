@@ -69,4 +69,3 @@ Same verification tools running on your infrastructure with full control. Deploy
 
 - **MCP protocol**: [Official MCP documentation](https://modelcontextprotocol.io/docs){target=\_blank}.
 - **Verify service**: [Complete reliability verification guide](/verify/reliability/overview).
-- **API reference**: [kluster.ai API documentation](/api-reference/reference/).

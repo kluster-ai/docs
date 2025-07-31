@@ -7,7 +7,7 @@ description: Set up kluster.ai code checks in your IDE via MCP. One-click instal
 
 The [kluster.ai](https://www.kluster.ai/){target=_blank} Code verification service is designed to integrate directly into your IDE workflow, providing real-time code analysis as you develop. By leveraging MCP, Code verification works seamlessly with AI coding assistants to catch issues before they reach your codebase.
 
-For Cursor users, a one-click installation process is available that handles all setup automatically. See the [Code Quick Start guide](/verify/quickstart/code/){target=_blank} for the fastest way to get started.
+For Cursor users, a one-click installation process is available that handles all setup automatically. See the [Code Quick Start guide](/verify/code/quickstart/){target=_blank} for the fastest way to get started.
 
 ## Prerequisites
 
@@ -53,7 +53,7 @@ Add the following to your MCP configuration file:
 
     One-click installation (recommended):
     
-    For the fastest setup, use our one-click installation process described in the [Get started with Verify Code](/verify/quickstart/code/){target=\_blank} guide.
+    For the fastest setup, use our one-click installation process described in the [Get started with Verify Code](/verify/code/quickstart/){target=\_blank} guide.
     
     Manual configuration:
     
