@@ -58,7 +58,7 @@ Code is currently available through MCP (Model Context Protocol) integrations:
 
     Use Code verification tools directly in your IDE through MCP integration.
 
-    [:octicons-arrow-right-24: View tools reference](/verify/code/tools/){target=_blank}
+    [:octicons-arrow-right-24: View tools reference](/verify/code/tools/){target=\_blank}
 
 -   <span class="badge integration">Integration</span> __Integrations__
 
@@ -66,11 +66,11 @@ Code is currently available through MCP (Model Context Protocol) integrations:
 
     Set up Code verification in Cursor or Claude Code using MCP.
 
-    [:octicons-arrow-right-24: Setup guide](/verify/code/integrations/){target=_blank}
+    [:octicons-arrow-right-24: Setup guide](/verify/code/integrations/){target=\_blank}
 
 </div>
 
 ## Additional resources
 
-- **Quick Start**: Get [Code verification running in minutes](/verify/quickstart/code/){target=_blank}.
+- **Quick Start**: Get [Code verification running in minutes](/verify/quickstart/code/){target=\_blank}.
 - **MCP Tools**: Explore the [detailed tools reference](/verify/code/tools/){target=_blank}.
