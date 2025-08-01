@@ -9,8 +9,8 @@ The [kluster.ai](https://www.kluster.ai/){target=_blank} Code MCP server provide
 
 It includes:
 
-- **`kluster_bug_check_tool`**: Verifies code quality and detects bugs, including logic errors, security issues, and performance problems.
-- **`kluster_packages_check_tool`**: Validates the security and compliance of packages and dependencies in your code.
+- **`kluster_code_review_auto`**: Verifies code quality and detects bugs, including logic errors, security issues, and performance problems.
+- **`kluster_dependency_validator`**: Validates the security and compliance of packages and dependencies in your code.
 
 These tools share the same set of parameters. This page documents those parameters and the response formats you'll see when using these tools in Cursor, Claude Code, or any MCP-compatible client.
 

@@ -73,7 +73,7 @@ Add the following to your MCP configuration file:
     
     The **Kluster-Verify-Code-MCP** server will now appear with both tools enabled:
 
-    - **`kluster_bug_check_tool`**: For code security and quality verification.
+    - **`kluster_code_review_auto`**: For code security and quality verification.
     - **`kluster_frameworks_check_tool`**: For dependency validation.
       
     ![Active MCP Tools](/images/verify/code/integrations/cursor/cursor-integration-3.webp)
@@ -104,7 +104,7 @@ Add the following to your MCP configuration file:
       
     The **Kluster-Verify-Code-MCP** will appear with both tools enabled:
       
-    - **`kluster_bug_check_tool`**: For code security and quality verification.
+    - **`kluster_code_review_auto`**: For code security and quality verification.
     - **`kluster_frameworks_check_tool`**: For dependency validation.
     
     ![Active MCP Tools](/images/verify/code/integrations/windsurf/windsurf-integration-5.webp)
@@ -123,7 +123,7 @@ Add the following to your MCP configuration file:
     
     Then you should see the installed **Kluster-Verify-Code-MCP** server with both tools enabled:
 
-       - **`kluster_bug_check_tool`**: For code security and quality verification.
+       - **`kluster_code_review_auto`**: For code security and quality verification.
        - **`kluster_frameworks_check_tool`**: For dependency validation.
     
     ![Kluster MCP Tools](/images/verify/code/integrations/kilo/kilo-integration-2.webp)
@@ -151,7 +151,7 @@ Add the following to your MCP configuration file:
     
     The **Kluster-Verify-Code-MCP** server will now appear with both tools enabled:
 
-    - **`kluster_bug_check_tool`**: For code security and quality verification.
+    - **`kluster_code_review_auto`**: For code security and quality verification.
     - **`kluster_frameworks_check_tool`**: For dependency validation.
 
     ![MCP Configuration File](/images/verify/code/integrations/cline/cline-integration-2.webp)
@@ -170,7 +170,7 @@ Add the following to your MCP configuration file:
     
     The **Kluster-Verify-Code-MCP** server will appear with both tools enabled:
 
-    - `kluster_bug_check_tool`: For code security and quality verification.
+    - `kluster_code_review_auto`: For code security and quality verification.
     - `kluster_frameworks_check_tool`: For dependency validation.
     
     ![Active MCP Tools](/images/verify/code/integrations/roocode/roocode-integration-2.webp)    
