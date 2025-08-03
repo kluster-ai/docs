@@ -3,3 +3,5 @@ nav:
   - 'Get started': quickstart.md
   - 'Integrations': integrations.md
   - 'Tools': tools.md
+  - 'Testing': testing.md
+  
