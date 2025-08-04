@@ -118,7 +118,9 @@ export async function POST(req: NextRequest) {
 }
 ```
 
-**Verify Code caught**:
+Verify Code provided the following response:
+
+---
 
 ![Verify Code alert showing breaking changes detected in login API route](/images/verify/code/tutorials/cursor/tutorial-cursor-2.webp){ width="75%" }
 
@@ -132,9 +134,8 @@ export async function POST(req: NextRequest) {
 
 ### Security vulnerabilities
 
-**What happened**: AI created signup endpoint without input validation.
+What happened? AI created a signup endpoint without input validation.
 
-**AI generated**:
 ```typescript
 // src/app/api/auth/signup/route.ts - Step 5 attempt
 export async function POST(request: NextRequest) {
@@ -145,7 +146,9 @@ export async function POST(request: NextRequest) {
 }
 ```
 
-**Verify Code caught**:
+Verify Code provided the following response:
+
+---
 
 **P3 - Security (High)**: Lack of input validation for signup data.
 
@@ -176,7 +179,7 @@ export async function POST(request: NextRequest) {
 
 ### Architecture regression
 
-**What happened**: AI reverted Firebase authentication back to localStorage approach.
+What happened? AI reverted Firebase authentication to the `localStorage` approach.
 
 **AI generated**:
 ```typescript
