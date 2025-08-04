@@ -1,10 +1,49 @@
 {
-  "projectName": "kluster",
-  "projectUrl": "https://kluster.ai/",
-  "projectDescription": "kluster is the developer AI cloud platform to deploy, scale, and fine-tune models at lightning speed.",
-  "sectionPriority": [],
-  "categories": [],
-  "aiPromptTemplate": "## AI Prompt Template\n\nYou are an AI developer assistant for {PROJECT_NAME} ({PROJECT_URL}). Your task is to assist developers in understanding and using the product described in this file.\n- Provide accurate answers based on the included documentation.\n- Do not assume undocumented features, behaviors, or APIs.\n- If unsure, respond with “Not specified in the documentation.\n\n",
-  "coreContextDescription": "The following section contains foundational documentation for {PROJECT_NAME} API platform.\nIt describes the basics to get a user started with {PROJECT_NAME}.\nThis includes API key management, and overviews of each {PROJECT_NAME} product.\nThis context is provided to form a general knowledge base.\n",
-  "referenceContextDescription": "The following section contains reference material for {PROJECT_NAME}.\nIt includes model names and comparisons, OpenAI compatibility guidance, and rate limits.\n"
+  "project_name": "kluster.ai",
+  "project_url": "https://www.kluster.ai/",
+  "summary": "kluster.ai provides the technology to verify and trust AI responses in real time. Developers can validate outputs, detect hallucinations, and ensure response reliability across any model, with minimal integration effort.",
+  "github": {
+    "org": "kluster-ai",
+    "repo": "docs",
+    "branch": "main",
+    "docs_path": "."
+  },
+  "source_repos": [
+    {
+      "name": "kluster.ai cookbook",
+      "url": "https://github.com/kluster-ai/klusterai-cookbook",
+      "description": "This repository is a collection of guides and examples designed to help developers unlock the full potential of kluster.ai."
+    },
+    {
+      "name": "Verify Guardrail Validator",
+      "url": "https://github.com/kluster-ai/verify-guardrails-validator",
+      "description": "This validator detects hallucinations in AI-generated content using kluster.ai's Verify API. The service can evaluate the AI response based on a given context, which makes it great for RAG applications. Without providing a specific context, the service can also be used as a real-time reliability verification service. Verify is able to identify when AI responses contain fabricated or inaccurate information."
+    },
+    {
+      "name": "Self-hosted MCP",
+      "url": "https://github.com/kluster-ai/verify-mcp",
+      "description": "kluster.ai's HTTP Streamable MCP self-hosted server. Deploy locally with two powerful tools: verify for fact-checking a prompt from a user and response from the agent, and verify_document for document validation."
+    }
+  ],
+  "optional_resources": [
+    {
+      "title": "kluster.ai Cloud MCP",
+      "url": "https://platform.kluster.ai/mcp",
+      "description": "The kluster.ai Cloud MCP is a managed service that provides instant setup without deployment."
+    }
+  ],
+  "skip_basenames": [
+    "README.md",
+    "index.md",
+    ".CONTRIBUTING.md",
+    "pull-request-template.md",
+    "cookie-policy.md",
+    "LICENSE.md"
+  ],
+  "skip_parts": [
+    ".snippets",
+    ".github",
+    "node_modules",
+    "venv"
+  ]
 }
