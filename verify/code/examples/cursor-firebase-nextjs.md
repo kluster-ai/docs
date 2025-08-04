@@ -21,13 +21,13 @@ For manual setup or other IDEs, see our [integration guides](/verify/code/integr
 
 ## Next.js e-commerce
 
-We built a buy-sell e-commerce platform where users post articles for purchase. The app initially used localStorage for user authentication, but we decided to **migrate to Firebase** for better security and user management.
+We built a buy-sell e-commerce platform where users post articles for purchase. The app initially used `localStorage` for user authentication, but we decided to **migrate to Firebase** for better security and user management.
 
 We used **Gemini 2.5 Flash** (Cursor's standard free model) in **agentic mode** to handle the migration while Verify Code monitored the changes.
 
 ## The prompt and AI's plan
 
-**Our prompt**: _"Implement a real user login with firebase"_ + firebase default app setting file.
+Our prompt was to _implement a real user login with Firebase_ + Firebase default app setting file.
 
 ![Cursor showing e-commerce app and AI's Firebase implementation plan](/images/verify/code/examples/cursor/example-cursor-1.webp)
 
@@ -40,7 +40,7 @@ The AI responded confidently with a detailed 5-step plan:
 5. **Update Signup API route**: Handle Firebase in `src/app/api/auth/signup/route.ts`.
 
 
-## Plan vs. Implementation Outcomes
+## Plan vs. implementation outcomes
 
 The AI's 5-step implementation plan achieved just 20% success rate, with four critical failures.
 
@@ -62,7 +62,6 @@ The AI made four key mistakes along the way, escalating from simple import issue
 
 What happened? AI created Firebase config but missed the actual authentication setup.
 
-**AI generated**:
 ```typescript
 // src/lib/firebase.ts - Step 1 attempt
 import { initializeApp } from "firebase/app";
@@ -73,7 +72,9 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app); // ❌ No auth setup
 ```
 
-**Verify Code caught**:
+Verify Code provided the following response:
+
+---
 
 **P1 - Intent (High)**: AI did not implement the actual user login functionality as requested.
 
@@ -98,9 +99,8 @@ export { app, auth, analytics }; // ✅ Export auth
 
 ### Breaking changes
 
-**What happened**: AI removed working Firebase login logic from the API route.
+What happened? AI removed the working Firebase login logic from the API route.
 
-**AI generated**:
 ```typescript
 // src/app/api/auth/login/route.ts - Working version
 export async function POST(req: NextRequest) {
@@ -117,13 +117,13 @@ export async function POST(req: NextRequest) {
 }
 ```
 
-**Verify Code caught**:
-
-The screenshot shows Cursor's interface with Verify Code's alert panel displaying a critical P1 Intent violation. The alert clearly identifies that the AI removed working Firebase authentication logic from the login API route, replacing functional code with a placeholder response.
+The screenshot below shows Cursor's interface with Verify Code's alert panel displaying a critical P1 Intent violation. The alert clearly identifies that the AI removed working Firebase authentication logic from the login API route, replacing functional code with a placeholder response.
 
 ![Verify Code alert showing breaking changes detected in login API route](/images/verify/code/examples/cursor/example-cursor-2.webp){ width="75%" }
 
-**Verify Code's response**:
+Verify Code provided the following response:
+
+---
 
 **P1 - Intent (High)**: AI removed Firebase login implementation instead of maintaining it.
 
@@ -135,9 +135,8 @@ The screenshot shows Cursor's interface with Verify Code's alert panel displayin
 
 ### Security vulnerabilities
 
-**What happened**: AI created signup endpoint without input validation.
+What happened? AI created a signup endpoint without input validation.
 
-**AI generated**:
 ```typescript
 // src/app/api/auth/signup/route.ts - Step 5 attempt
 export async function POST(request: NextRequest) {
@@ -148,13 +147,16 @@ export async function POST(request: NextRequest) {
 }
 ```
 
-**Verify Code caught**:
+Verify Code provided the following response:
+
+---
 
 **P3 - Security (High)**: Lack of input validation for signup data.
 
 **Why this matters**: Malformed data could crash the server, invalid emails cause Firebase errors, weak passwords accepted.
 
 **Correct approach**:
+
 ```typescript
 import { SignupSchema } from '@/lib/validation';
 
@@ -179,9 +181,8 @@ export async function POST(request: NextRequest) {
 
 ### Architecture regression
 
-**What happened**: AI reverted Firebase authentication back to localStorage approach.
+What happened? AI reverted the Firebase authentication logic back to the `localStorage` approach.
 
-**AI generated**:
 ```typescript
 // src/contexts/AuthContext.tsx - Correct Firebase approach
 const login = async (email: string, password: string) => {
@@ -205,11 +206,14 @@ const login = async (email: string, password: string) => {
 };
 ```
 
-**Verify Code caught**:
-
-The screenshot displays Cursor with Verify Code's alert highlighting a P1 Intent violation. The alert detects that the AI has regressed the authentication architecture by reverting from the Firebase implementation back to the original localStorage and API-based approach, undoing the intended migration.
+The screenshot below displays Cursor with Verify Code's alert highlighting a P1 Intent violation. The alert detects that the AI has regressed the authentication architecture by reverting from the Firebase implementation back to the original localStorage and API-based approach, undoing the intended migration.
 
 ![Verify Code alert showing architecture regression from Firebase back to localStorage](/images/verify/code/examples/cursor/example-cursor-3.webp){ width="75%" }
+
+
+Verify Code provided the following response:
+
+---
 
 **P1 - Intent (High)**: AI reverted Firebase authentication implementation back to using localStorage and API calls.
 
@@ -226,7 +230,7 @@ const login = async (email: string, password: string) => {
 
 ---
 
-## The results
+## Summary of results
 
 Verify Code caught **four critical issues** across a "simple" five-step plan:
 
@@ -235,21 +239,19 @@ Verify Code caught **four critical issues** across a "simple" five-step plan:
 3. **Security vulnerabilities** - Step five ignored input validation.
 4. **Architecture regression** - Step three went backwards.
 
-### Successful implementation achieved
+By following Verify Code's guidance at each step, Gemini 2.5 Flash completed the Firebase migration. Users can now register and authenticate properly.
 
-By following Verify Code's guidance at each step, Gemini 2.5 Flash successfully completed the Firebase migration. Users can now register and authenticate properly.
-
-**Firebase console showing the code@verify.com user creation:**
+The following image shows the Firebase console showing the `code@verify.com` user creation:
 
 ![Firebase Authentication console showing successfully created users](/images/verify/code/examples/cursor/example-cursor-4.webp)
 
-**Successful login in the e-commerce app and Firebase user created:**
+Users can now successfully login into the e-commerce app and Firebase user created:
 
 ![E-commerce app showing successful login with code@verify.com user](/images/verify/code/examples/cursor/example-cursor-5.webp)
 
-The migration from localStorage to Firebase authentication was completed without the typical debugging cycles. [Verify Code](/verify/code/) caught each issue in real-time, allowing us to fix problems immediately rather than discovering them during testing.
+The migration from `localStorage` to Firebase authentication was completed without the typical debugging cycles. [Verify Code](/verify/code/) caught each issue in real-time, allowing us to fix problems immediately rather than discovering them during testing.
 
-## Key takeaway
+## Key takeaways
 
 Even with clear prompts and detailed plans, AI execution can go wrong. Verify Code acts as your safety net, catching issues before they compound into debugging nightmares.
 
