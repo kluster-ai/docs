@@ -7,7 +7,6 @@ Documentation: https://docs.kluster.ai/
 Doc-Page: https://docs.kluster.ai/.api-reference/reference/
 Doc-Page: https://docs.kluster.ai/.tutorials/klusterai-api/combat-hallucinations/
 Doc-Page: https://docs.kluster.ai/.tutorials/klusterai-api/reliability/
-Doc-Page: https://docs.kluster.ai/scripts/.pytest_cache/README/
 Doc-Page: https://docs.kluster.ai/verify/code/examples/cursor/
 Doc-Page: https://docs.kluster.ai/verify/code/integrations/
 Doc-Page: https://docs.kluster.ai/verify/code/overview/
@@ -1583,18 +1582,6 @@ Doc-Content: https://docs.kluster.ai/.tutorials/klusterai-api/reliability.ipynb/
  "nbformat": 4,
  "nbformat_minor": 5
 }
---- END CONTENT ---
-
-Doc-Content: https://docs.kluster.ai/scripts/.pytest_cache/README/
---- BEGIN CONTENT ---
-# pytest cache directory #
-
-This directory contains data from the pytest's cache plugin,
-which provides the `--lf` and `--ff` options, as well as the `cache` fixture.
-
-**Do not** commit this to version control.
-
-See [the docs](https://docs.pytest.org/en/stable/how-to/cache.html) for more information.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/verify/code/examples/cursor/
