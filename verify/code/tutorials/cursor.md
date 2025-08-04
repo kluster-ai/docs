@@ -5,7 +5,7 @@ description: See how Verify Code catches critical issues in real-time while migr
 
 # Cursor: Firebase authentication
 
-Learn how Verify Code acts as your safety net when using Cursor AI to write code. This tutorial demonstrates a real migration from localStorage to Firebase authentication in a buy-sell e-commerce platform, showcasing the 4 critical issues Verify Code caught.
+Learn how Verify Code acts as your safety net when using Cursor AI to write code. This tutorial demonstrates a real migration from localStorage to Firebase authentication in a buy-sell e-commerce platform, showcasing how AI plans can go wrong and the 4 critical issues Verify Code caught.
 
 ## Prerequisites
 
@@ -19,33 +19,59 @@ Getting Verify Code working in Cursor takes just one click. Visit our [quickstar
 
 For manual setup or other IDEs, see our [integration guides](/verify/code/integrations/).
 
-## The migration project
+## Nextjs e-commerce
 
-We built a buy-sell e-commerce platform where users post articles for purchase. The app initially used localStorage for user authentication, but we decided to migrate to Firebase for better security and user management.
+We built a buy-sell e-commerce platform where users post articles for purchase. The app initially used localStorage for user authentication, but we decided to **migrate to Firebase** for better security and user management.
 
 We used **Gemini 2.5 Flash** (Cursor's standard free model) in **agentic mode** to handle the migration while Verify Code monitored the changes.
 
-{Screenshot-HERE-Cursor-with-VerifyCode-Active}
+## The prompt and AI's plan
 
-## The AI mistake loop
+**Our prompt**: _"Implement a real user login with firebase"_ + firebase default app setting file.
 
-Without Verify Code, this migration would have been painful. The AI went through **6+ correction cycles**, constantly reverting changes and breaking the same code repeatedly. Each cycle followed the pattern: mistake → apology → "fix" → new mistake → repeat.
+![Cursor showing e-commerce app and AI's Firebase implementation plan](/images/verify/code/tutorials/cursor/tutorial-cursor-1.webp)
 
-Verify Code breaks this cycle by catching issues immediately.
+The AI responded confidently with a detailed 6-step plan:
 
-## Issue 1: Incomplete implementation
+1. **Create Firebase Initialization File** - Set up `src/lib/firebase.ts`
+2. **Install Firebase** - Add the npm package  
+3. **Update Authentication Context** - Modify `src/contexts/AuthContext.tsx`
+4. **Update Login API Route** - Handle Firebase in `src/app/api/auth/login/route.ts`
+5. **Update Signup API Route** - Handle Firebase in `src/app/api/auth/signup/route.ts`
+6. **Update Login and Signup Pages** - Verify integration works
 
-**What happened**: Asked Cursor AI to implement Firebase login functionality.
+Sounds straightforward, right? Here's what actually happened.
+
+## When AI plans meet reality
+
+The AI's 6-step plan achieved just 17% success rate, with 4 critical failures and 1 endless correction loop.
+
+**1. Firebase initialization** → ❌ **Issue 1: Incomplete implementation**  
+**2. Install Firebase** → ✅ **Success**  
+**3. Update AuthContext** → ❌ **Issue 4: Architecture regression**  
+**4. Update login API** → ❌ **Issue 2: Breaking changes**  
+**5. Update signup API** → ❌ **Issue 3: Security vulnerabilities**  
+**6. Verify integration** → ❌ **Stuck in correction loops**
+
+The AI got confused between steps 3-4, couldn't decide between direct Firebase calls vs API routes, kept reverting working code, and made **6+ correction attempts** before we stopped it.
+
+Without Verify Code, this would have been a debugging nightmare. With it, each issue was caught immediately.
+
+## Caught by Verify Code
+
+### Incomplete implementation
+
+**What happened**: AI created Firebase config but missed the actual authentication setup.
 
 **AI's incomplete code**:
 ```typescript
-// src/lib/firebase.ts
+// src/lib/firebase.ts - Step 1 attempt
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = { /* config */ };
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const analytics = getAnalytics(app); // ❌ No auth setup
 ```
 
 **Verify Code alert**:
@@ -53,32 +79,32 @@ const analytics = getAnalytics(app);
 
 **P1 - Intent (High)**: AI did not implement the actual user login functionality as requested.
 
-**Developer impact**: Running the app would cause runtime errors when trying to authenticate users - the `auth` object simply doesn't exist.
+**Developer impact**: Running the app would cause runtime errors when trying to authenticate - the `auth` object simply doesn't exist.
 
 **Fixed with Verify Code guidance**:
 ```typescript
-// src/lib/firebase.ts
+// src/lib/firebase.ts - Corrected
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth } from "firebase/auth"; // Added
+import { getAuth } from "firebase/auth"; // ✅ Added
 
 const firebaseConfig = { /* config */ };
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const auth = getAuth(app); // Initialize auth
+const auth = getAuth(app); // ✅ Initialize auth
 
-export { app, auth, analytics }; // Export auth
+export { app, auth, analytics }; // ✅ Export auth
 ```
 
 ---
 
-## Issue 2: Breaking changes  
+### Breaking changes
 
-**What happened**: AI removed working Firebase login logic from API route.
+**What happened**: AI removed working Firebase login logic, then got confused about the architecture.
 
 **Original working code**:
 ```typescript
-// src/app/api/auth/login/route.ts
+// src/app/api/auth/login/route.ts - Working version
 export async function POST(req: NextRequest) {
   const { email, password } = await req.json();
   const userCredential = await signInWithEmailAndPassword(auth, email, password);
@@ -88,8 +114,9 @@ export async function POST(req: NextRequest) {
 
 **AI's breaking change**:
 ```typescript
+// AI's "fix" - Step 4 attempt
 export async function POST(req: NextRequest) {
-  return NextResponse.json({ message: "Not used for direct login" });
+  return NextResponse.json({ message: "Not used for direct login" }); // ❌ Removed logic
 }
 ```
 
@@ -98,20 +125,22 @@ export async function POST(req: NextRequest) {
 
 **P1 - Intent (High)**: AI removed Firebase login implementation instead of maintaining it.
 
-**Developer impact**: Login endpoint would return a useless message instead of actually authenticating users. All login attempts would fail silently.
+**Developer impact**: Login endpoint returns useless message instead of authenticating users. All login attempts fail silently.
+
+**The correction loop begins**: AI then spent 3+ attempts trying to decide whether login should happen in AuthContext or API routes, constantly switching approaches.
 
 ---
 
-## Issue 3: Security vulnerabilities
+### Security vulnerabilities
 
-**What happened**: AI created signup endpoint without input validation.
+**What happened**: During Step 5, AI created signup endpoint without input validation.
 
 **AI's insecure code**:
 ```typescript
-// src/app/api/auth/signup/route.ts
+// src/app/api/auth/signup/route.ts - Step 5 attempt
 export async function POST(request: NextRequest) {
   const body = await request.json();
-  const { email, password, name } = body; // No validation!
+  const { email, password, name } = body; // ❌ No validation!
   
   const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 }
@@ -122,7 +151,7 @@ export async function POST(request: NextRequest) {
 
 **P3 - Security (High)**: Lack of input validation for signup data.
 
-**Developer impact**: Malformed data could crash the server, invalid emails would cause Firebase errors, and weak passwords could be accepted.
+**Developer impact**: Malformed data could crash the server, invalid emails cause Firebase errors, weak passwords accepted.
 
 **Secure implementation**:
 ```typescript
@@ -131,7 +160,7 @@ import { SignupSchema } from '@/lib/validation';
 export async function POST(request: NextRequest) {
   const body = await request.json();
   
-  // Validate input
+  // ✅ Validate input
   const validationResult = SignupSchema.safeParse(body);
   if (!validationResult.success) {
     return NextResponse.json({
@@ -147,29 +176,29 @@ export async function POST(request: NextRequest) {
 
 ---
 
-## Issue 4: Architecture regression
+### Architecture regression
 
-**What happened**: AI reverted Firebase authentication back to localStorage and API calls.
+**What happened**: AI got confused during Step 3 and reverted Firebase back to localStorage approach.
 
-**Correct Firebase implementation**:
+**What AI should have implemented** (Step 3 goal):
 ```typescript
-// src/contexts/AuthContext.tsx
+// src/contexts/AuthContext.tsx - Correct Firebase approach
 const login = async (email: string, password: string) => {
   const userCredential = await signInWithEmailAndPassword(auth, email, password);
   return !!userCredential.user;
 };
 ```
 
-**AI's regression**:
+**AI's regression** (Step 3 actual):
 ```typescript
-// AI reverted to localStorage approach
+// AI reverted to original localStorage approach
 const [user, setUser] = useState(() => {
-  const savedUser = localStorage.getItem('user'); // Wrong approach!
+  const savedUser = localStorage.getItem('user'); // ❌ Back to localStorage!
   return savedUser ? JSON.parse(savedUser) : null;
 });
 
 const login = async (email: string, password: string) => {
-  const response = await fetch('/api/auth/login', {
+  const response = await fetch('/api/auth/login', { // ❌ API calls instead of Firebase
     method: 'POST',
     body: JSON.stringify({ email, password })
   });
@@ -181,23 +210,53 @@ const login = async (email: string, password: string) => {
 
 **P1 - Intent (High)**: AI reverted Firebase authentication implementation back to using localStorage and API calls.
 
-**Developer impact**: Lost all Firebase benefits like real-time auth state, secure token management, and cross-device sessions. Back to the original localStorage problems we were trying to solve.
+**Developer impact**: Lost all Firebase benefits like real-time auth state, secure token management, and cross-device sessions. Back to the original problems we were trying to solve.
+
+**The confusion deepens**: This triggered the AI to question its entire approach, leading to multiple "I apologize for the confusion" cycles.
 
 ---
 
+## The correction loop nightmare
+
+After these failures, the AI entered a painful cycle:
+
+1. **"I apologize for the repeated errors and inconsistencies..."**
+2. **"I will correct this by reverting the changes..."**  
+3. **"I apologize again for the misunderstanding..."**
+4. **"My updated plan to address the issues is..."**
+5. **Repeat 6+ times**
+
+Each cycle broke more things while trying to fix others. The AI couldn't decide on a consistent architecture and kept switching between:
+- Direct Firebase in AuthContext vs API routes
+- localStorage vs Firebase state management  
+- Client-side vs server-side authentication
+
+**Without Verify Code**: Developer spends hours debugging AI confusion  
+**With Verify Code**: Issues caught at each step, preventing the cascade
+
 ## The results
 
-Verify Code caught **4 critical issues** that would have caused:
+Verify Code caught **4 critical issues** across a "simple" 6-step plan:
 
-1. **Incomplete implementation** - Runtime authentication errors
-2. **Breaking changes** - Non-functional login endpoint  
-3. **Security vulnerabilities** - Unvalidated user input
-4. **Architecture regression** - Lost Firebase benefits
+1. **Incomplete implementation** - Step 1 missed core functionality
+2. **Breaking changes** - Step 4 deleted working code  
+3. **Security vulnerabilities** - Step 5 ignored input validation
+4. **Architecture regression** - Step 3 went backwards
+
+### Successful implementation achieved
+
+By following Verify Code's guidance at each step, we successfully completed the Firebase migration. Users can now register and authenticate properly, as shown in the Firebase console:
+
+![Firebase Authentication console showing successfully created users](/images/verify/code/tutorials/cursor/firebase-users-success.webp)
+
+The migration from localStorage to Firebase authentication was completed without the typical debugging cycles. [Verify Code](/verify/code/) caught each issue in real-time, allowing us to fix problems immediately rather than discovering them during testing.
 
 **Time saved**: Hours of debugging and testing cycles prevented. No more AI mistake loops.
 
 ## Key takeaway
 
-AI accelerates development, but Verify Code ensures quality. Without it, you're stuck in cycles of AI mistakes, apologies, and corrections. With it, issues are caught instantly so you can maintain both speed and reliability.
+Even with clear prompts and detailed plans, AI execution can go wrong. Verify Code acts as your safety net, catching issues before they compound into debugging nightmares.
+
+The more complex the task, the more valuable this real-time verification becomes.
 
 **Learn more**: Explore our [tools reference](/verify/code/tools/) to understand all issue types and priority levels that Verify Code monitors.
