@@ -53,7 +53,7 @@ The AI's 6-step plan achieved just 17% success rate, with 4 critical failures an
 **5. Update signup API** → ❌ **Issue 3: Security vulnerabilities**  
 **6. Verify integration** → ❌ **Stuck in correction loops**
 
-The AI got confused between steps 3-4, couldn't decide between direct Firebase calls vs API routes, kept reverting working code, and made **6+ correction attempts** before we stopped it.
+The AI got confused between steps 3-4, couldn't decide between direct Firebase calls vs API routes, kept reverting working code, and made **6+ correction attempts** throughout the implementation.
 
 Without Verify Code, this would have been a debugging nightmare. With it, each issue was caught immediately.
 
@@ -121,11 +121,12 @@ export async function POST(req: NextRequest) {
 ```
 
 **Verify Code alert**:
-{Screenshot-HERE-Breaking-Changes-Alert}
+
+![Verify Code alert showing breaking changes detected in login API route](/images/verify/code/tutorials/cursor/tutorial-cursor-2.webp){ width="75%" }
 
 **P1 - Intent (High)**: AI removed Firebase login implementation instead of maintaining it.
 
-**Developer impact**: Login endpoint returns useless message instead of authenticating users. All login attempts fail silently.
+**Developer impact**: AI replaced working authentication logic with a non-functional placeholder response, breaking the API contract.
 
 **The correction loop begins**: AI then spent 3+ attempts trying to decide whether login should happen in AuthContext or API routes, constantly switching approaches.
 
@@ -147,7 +148,6 @@ export async function POST(request: NextRequest) {
 ```
 
 **Verify Code alert**:
-{Screenshot-HERE-Security-Vulnerability-Alert}
 
 **P3 - Security (High)**: Lack of input validation for signup data.
 
@@ -206,7 +206,8 @@ const login = async (email: string, password: string) => {
 ```
 
 **Verify Code alert**:
-{Screenshot-HERE-Architecture-Regression-Alert}
+
+![Verify Code alert showing architecture regression from Firebase back to localStorage](/images/verify/code/tutorials/cursor/tutorial-cursor-3.webp){ width="75%" }
 
 **P1 - Intent (High)**: AI reverted Firebase authentication implementation back to using localStorage and API calls.
 
