@@ -225,7 +225,7 @@ const login = async (email: string, password: string) => {
 
 ---
 
-## The results
+## Summary of results
 
 Verify Code caught **four critical issues** across a "simple" five-step plan:
 
@@ -234,21 +234,20 @@ Verify Code caught **four critical issues** across a "simple" five-step plan:
 3. **Security vulnerabilities** - Step five ignored input validation.
 4. **Architecture regression** - Step three went backwards.
 
-### Successful implementation achieved
 
-By following Verify Code's guidance at each step, Gemini 2.5 Flash successfully completed the Firebase migration. Users can now register and authenticate properly.
+By following Verify Code's guidance at each step, Gemini 2.5 Flash completed the Firebase migration. Users can now register and authenticate properly.
 
-**Firebase console showing the code@verify.com user creation:**
+The following image shows theFirebase console showing the code@verify.com user creation:
 
 ![Firebase Authentication console showing successfully created users](/images/verify/code/tutorials/cursor/tutorial-cursor-4.webp)
 
-**Successful login in the e-commerce app and Firebase user created:**
+Users can now successfully login in the e-commerce app and Firebase user created:
 
 ![E-commerce app showing successful login with code@verify.com user](/images/verify/code/tutorials/cursor/tutorial-cursor-5.webp)
 
-The migration from localStorage to Firebase authentication was completed without the typical debugging cycles. [Verify Code](/verify/code/) caught each issue in real-time, allowing us to fix problems immediately rather than discovering them during testing.
+The migration from `localStorage` to Firebase authentication was completed without the typical debugging cycles. [Verify Code](/verify/code/) caught each issue in real-time, allowing us to fix problems immediately rather than discovering them during testing.
 
-## Key takeaway
+## Key takeaways
 
 Even with clear prompts and detailed plans, AI execution can go wrong. Verify Code acts as your safety net, catching issues before they compound into debugging nightmares.
 
