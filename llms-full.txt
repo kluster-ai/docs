@@ -6,8 +6,12 @@ kluster.ai. kluster.ai provides the technology to verify and trust AI responses 
 Documentation: https://www.kluster.ai/
 
 ## List of doc pages:
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/api-reference/reference.md
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/get-api-key.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/.api-reference/reference.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/code/integrations.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/code/overview.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/code/quickstart.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/code/tools.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/get-api-key.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/mcp/client-integrations.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/mcp/cloud/api.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/mcp/cloud/platform.md
@@ -26,7 +30,7 @@ Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/reliabil
 
 ## Full content for each doc page
 
-Doc-Content: https://www.kluster.ai/api-reference/referenc/
+Doc-Content: https://www.kluster.ai/.api-reference/referenc/
 --- BEGIN CONTENT ---
 ---
 title: API reference
@@ -38,7 +42,446 @@ template: portal.html
 ---
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/get-api-key/
+Doc-Content: https://www.kluster.ai/verify/code/integrations/
+--- BEGIN CONTENT ---
+---
+title: Integrations for Code Verify
+description: Set up kluster.ai code checks in your IDE via MCP. One-click install for Cursor, or manually configure Claude Code & other MCP-compatible tools.
+---
+
+# Integrations
+
+The [kluster.ai](https://www.kluster.ai/){target=_blank} Code verification service is designed to integrate directly into your IDE workflow, providing real-time code analysis as you develop. By leveraging MCP, Code verification works seamlessly with AI coding assistants to catch issues before they reach your codebase.
+
+For Cursor users, a one-click installation process is available that handles all setup automatically. See the [Code Quick Start guide](/verify/code/quickstart/){target=_blank} for the fastest way to get started.
+
+## Prerequisites
+
+Before getting started, ensure you have:
+
+-- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
+
+## Supported IDEs
+
+Code verification works with any MCP-compatible client, including:
+
+- **Cursor**: One-click installation with automatic MCP server setup (most popular).
+- **Windsurf**: AI coding assistant with Cascade and MCP integration.
+- **Kilo Code**: AI coding assistant with streamlined MCP configuration.
+- **Claude Code**: Manual MCP configuration via `.claude/mcp.json`.
+- **Cline**: Open-source AI coding agent for VS Code with MCP marketplace.
+- **Roo Code**: AI-powered dev team extension with dual configuration support.
+- **Any MCP-compatible IDE**: Manual configuration using the MCP server details below.
+
+## MCP configuration
+
+Add the following to your MCP configuration file:
+
+```json
+{  
+    "mcpServers": {  
+        "Kluster-Verify-Code-MCP": {  
+            "command": "npx",  
+            "args": [  
+                "@klusterai/kluster-verify-code-mcp@latest"  
+            ],  
+            "env": {  
+                "KLUSTER_API_KEY": "your-api-key-here"  
+            }  
+        }  
+    }  
+}  
+```
+
+## Setup instructions
+
+=== "Cursor"
+
+    One-click installation (recommended):
+    
+    For the fastest setup, use our one-click installation process described in the [Get started with Verify Code](/verify/code/quickstart/){target=\_blank} guide.
+    
+    Manual configuration:
+    
+    1. Open **Cursor Settings** by clicking the gear icon on the top right corner.
+    
+    2. Navigate to **Tools & Integrations** in the left sidebar.
+    
+    3. Under **MCP Tools**, click **Add Custom MCP**.
+    
+        ![Cursor Settings - Tools & Integrations](/images/verify/code/integrations/cursor/cursor-integration-1.webp)
+    
+    4. This opens the `mcp.json` configuration file. Add the `Kluster-Verify-Code-MCP` server configuration:
+    
+        ![MCP Configuration File](/images/verify/code/integrations/cursor/cursor-integration-2.webp)
+    
+    5. Save the configuration file and return to **Cursor Settings**.
+    
+    The **Kluster-Verify-Code-MCP** server will now appear with both tools enabled:
+
+    - **`kluster_code_review_auto`**: For code security and quality verification.
+    - **`kluster_frameworks_check_tool`**: For dependency validation.
+      
+    ![Active MCP Tools](/images/verify/code/integrations/cursor/cursor-integration-3.webp)
+
+=== "Windsurf"
+
+    1. Open Settings by clicking the gear icon or using the command palette.
+
+    2. Click **Windsurf Settings**.
+    
+        ![Windsurf Settings](/images/verify/code/integrations/windsurf/windsurf-integration-1.webp)
+    
+    3. Navigate to **Cascade** in the left sidebar. 
+    
+    4. Select **Manage MCPs** to access the MCP configuration.
+    
+        ![Cascade MCP Settings](/images/verify/code/integrations/windsurf/windsurf-integration-2.webp)
+        
+    5. Click **View raw config** to access the MCP configuration file.
+    
+        ![Manage MCP Servers](/images/verify/code/integrations/windsurf/windsurf-integration-3.webp)
+
+    6. Add the `Kluster-Verify-Code-MCP` configuration to your `mcp_config.json`:
+    
+        ![MCP Configuration](/images/verify/code/integrations/windsurf/windsurf-integration-4.webp)
+    
+    7. Save the configuration and refresh. 
+      
+    The **Kluster-Verify-Code-MCP** will appear with both tools enabled:
+      
+    - **`kluster_code_review_auto`**: For code security and quality verification.
+    - **`kluster_frameworks_check_tool`**: For dependency validation.
+    
+    ![Active MCP Tools](/images/verify/code/integrations/windsurf/windsurf-integration-5.webp)
+
+=== "Kilo Code"
+
+    1. Open Settings and navigate to **MCP Servers**.
+    
+    2. Select the **Installed** tab.
+
+    3. Click **Edit Project MCP** to open the MCP configuration.
+
+    4. Paste the content of the MCP config shown above with your API key.
+        
+      ![MCP Servers Settings](/images/verify/code/integrations/kilo/kilo-integration-1.webp)
+    
+    Then you should see the installed **Kluster-Verify-Code-MCP** server with both tools enabled:
+
+       - **`kluster_code_review_auto`**: For code security and quality verification.
+       - **`kluster_frameworks_check_tool`**: For dependency validation.
+    
+    ![Kluster MCP Tools](/images/verify/code/integrations/kilo/kilo-integration-2.webp)
+
+=== "Claude Code"
+
+    1. Create or edit `.claude/mcp.json` in your project.
+    2. Add the Code MCP server configuration shown above with your API key.
+    3. Restart Claude Code and the tools will be available immediately.
+    4. Run the command `/mcp` to check the status of the tools. 
+
+    ![MCP Code Verify installed in claude code](/images/verify/code/integrations/claudecode/claudecode-integration-1.webp)
+
+=== "Cline"
+
+    1. Open Cline and click **MCP Servers** in the left sidebar.
+    
+    2. Select the **Installed** tab.
+    
+    3. Click on **Configure MCP Servers**, which will open the `cline_mcp_settings.json` configuration file. Add the `Kluster-Verify-Code-MCP` server configuration.
+
+        ![Cline MCP Settings](/images/verify/code/integrations/cline/cline-integration-1.webp)
+    
+    4. Save the configuration.
+    
+    The **Kluster-Verify-Code-MCP** server will now appear with both tools enabled:
+
+    - **`kluster_code_review_auto`**: For code security and quality verification.
+    - **`kluster_frameworks_check_tool`**: For dependency validation.
+
+    ![MCP Configuration File](/images/verify/code/integrations/cline/cline-integration-2.webp)
+
+=== "Roo Code"
+
+    1. Open Roo Code and click on **MCP Servers** in the left sidebar.
+    
+    2. Click **Edit Project MCP** to open the MCP configuration for your project.
+    
+        ![MCP Servers Menu](/images/verify/code/integrations/roocode/roocode-integration-1.webp)
+    
+    3. The configuration file will open at `.roo/mcp_settings.json`. Add the `Kluster-Verify-Code-MCP` server configuration shown above.
+    
+    4. Save the file.
+    
+    The **Kluster-Verify-Code-MCP** server will appear with both tools enabled:
+
+    - `kluster_code_review_auto`: For code security and quality verification.
+    - `kluster_frameworks_check_tool`: For dependency validation.
+    
+    ![Active MCP Tools](/images/verify/code/integrations/roocode/roocode-integration-2.webp)    
+
+=== "Other MCP Clients"
+
+    For any other MCP-compatible IDE or client:
+    
+    1. Locate your MCP configuration file (varies by client).
+    2. Add the Code MCP server configuration shown above.
+    3. Restart your IDE if required by the client.
+    4. The tools should now be available in your AI assistant.
+
+## Available tools
+
+For detailed information about each tool, see our [Tools reference](/verify/code/tools/).
+--- END CONTENT ---
+
+Doc-Content: https://www.kluster.ai/verify/code/overview/
+--- BEGIN CONTENT ---
+---
+title: Code Verification Using Verify
+description: Learn how to use kluster.ai code verification to detect bugs and security issues in AI-generated code using kluster.ai's specialized Verify.
+---
+
+# Code by Verify
+
+Code is one of the features offered by [Verify](/verify/overview/){target=\_blank}, providing specialized tools to identify bugs in AI-generated code and verify the security of frameworks and libraries.
+
+With Code verification, you can ship AI-generated code confidently, knowing potential issues are caught before they reach production.
+
+The service works seamlessly with AI coding assistants in your IDE, analyzing code changes in real-time as they're generated.
+
+## How Code works
+
+The service evaluates AI-generated code by:
+
+1. Analyzing the code changes in diff format.
+2. Understanding the user's original request.
+3. Detecting various types of issues (bugs, security vulnerabilities, performance problems).
+4. Providing detailed explanations and actionable fixes.
+
+The service evaluates code to identify issues, with the following fields:
+
+- **`isCodeCorrect`**: Indicates whether the code has issues.
+- **`issues`**: Array of detected problems with type, severity, and priority.
+- **`explanation`**: Summary of all issues found.
+- **`agent_todo_list`**: Prioritized list of fixes to apply.
+
+## Configuration options
+
+Code verification offers flexible configuration to match your development workflow:
+
+- **Severity settings**: Configure minimum severity level for reporting (Low to Critical).
+- **Bug check types**: Select which issue types to check: Semantic, Security, Quality, Intent, Knowledge, Logical, Performance.
+- **Enabled tools**: Choose which MCP tools are active (bug check tool, packages check tool).
+
+These settings can be configured directly in your IDE integration.
+
+## When to use Code
+
+The Code service is ideal for scenarios where you need:
+
+- **AI code validation**: Verify AI-generated code before production use.
+- **Security scanning**: Detect potential vulnerabilities in generated code.
+- **Quality assurance**: Ensure code follows best practices.
+- **Dependency checking**: Validate that new packages are secure and up-to-date.
+
+## How to integrate Code
+
+Code is currently available through MCP (Model Context Protocol) integrations:
+
+<div class="grid cards" markdown>
+
+-   <span class="badge guide">Guide</span> __Tools__
+
+    ---
+
+    Use Code verification tools directly in your IDE through MCP integration.
+
+    [:octicons-arrow-right-24: View tools reference](/verify/code/tools/)
+
+-   <span class="badge guide">Guide</span> __Integrations__
+
+    ---
+
+    Integrate Code verification with any MCP-compatible IDE, including Cursor and Claude code.
+
+    [:octicons-arrow-right-24: Setup guide](/verify/code/integrations/)
+
+</div>
+
+## Additional resources
+
+- **[Get started](/verify/code/quickstart/)**: Get Code verification running in minutes.
+--- END CONTENT ---
+
+Doc-Content: https://www.kluster.ai/verify/code/quickstart/
+--- BEGIN CONTENT ---
+---
+title: Get started with Verify Code
+description: Set up kluster.ai Code verification in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
+---
+
+# Get started with Verify Code
+
+Modern developers increasingly rely on AI coding assistants to accelerate development, but this speed comes with risks. Generated code may contain logic errors, security flaws, or performance issues that compromise application quality and security.
+
+The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code verification service integrates directly into your development workflow, automatically scanning AI-generated code in real-time. It catches potential issues instantly within your IDE, allowing you to ship code confidently while maintaining the speed benefits of AI-assisted development.
+
+This guide will walk you through installing Code verification in Cursor.
+
+## Get started in minutes
+
+### One-click setup (recommended)
+
+The fastest way to get started is with our one-click installation:
+
+1. Install [Cursor](https://cursor.com/downloads){target=_blank} from their website if you don't have it yet.
+
+2. Click [**Add to Cursor**](https://platform.kluster.ai/verify-code){target=_blank} to automatically install both the extension and MCP server.
+
+![Quick start installation button for Code verification](/images/verify/code/quickstart/quickstart-1.webp)
+
+This will automatically install Code Verify MCP server in Cursor for you.
+
+!!! tip "Manual Setup"
+    For manual setup instructions, please see our [integration guides](/verify/code/integrations/){target=\_blank}.
+
+## Next steps
+
+- [Learn about the tools](/verify/code/tools/) for detailed reference.
+- [View integration guides](/verify/code/integrations/) for advanced setup.
+--- END CONTENT ---
+
+Doc-Content: https://www.kluster.ai/verify/code/tools/
+--- BEGIN CONTENT ---
+---
+title: Code MCP Tools for Verify 
+description: Learn how kluster.ai Code MCP tools work: parameters, response formats, issue categories, and settings for real-time code verification.
+---
+
+# Tools reference
+
+The [kluster.ai](https://www.kluster.ai/){target=_blank} Code MCP server provides verification tools for checking AI-generated code quality and security. These tools enable real-time code verification directly within your IDE through MCP integration.
+
+It includes:
+
+- **`kluster_code_review_auto`**: Verifies code quality and detects bugs, including logic errors, security issues, and performance problems.
+- **`kluster_dependency_validator`**: Validates the security and compliance of packages and dependencies in your code.
+
+These tools share the same set of parameters. This page documents those parameters and the response formats you'll see when using these tools in Cursor, Claude Code, or any MCP-compatible client.
+
+## Parameters
+
+These tools analyze AI-generated code and its dependencies to detect bugs, security vulnerabilities, and other quality issues.
+
+???+ interface "Parameters"
+
+    `code_diff` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+    Unified diff format showing the actual code changes.
+
+    ---
+
+    `user_requests` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+    Chronological sequence of user messages with current request marked as `>>> CURRENT REQUEST:`.
+
+    ---
+
+    `modified_files_path` ++"string"++ <span class="required" markdown>++"required"++</span>
+
+    Full absolute paths of modified files separated by `;`.
+
+## Response fields
+
+All Code verification tools return the same response structure:
+
+- **`isCodeCorrect`**: Boolean indicating if the code has issues.
+- **`explanation`**: Summary of all issues found.
+- **`issues`**: Array of detected problems with:
+  - **`type`**: Issue category (intent, semantic, knowledge, performance, quality, logical, security).
+  - **`severity`**: Impact level (critical, high, medium, low).
+  - **`priority`**: Execution priority (P0-P5).
+  - **`description`**: Brief issue summary.
+  - **`explanation`**: Detailed issue explanation.
+  - **`actions`**: Recommended fixes.
+- **`priority_instructions`**: Execution rules for addressing issues.
+- **`agent_todo_list`**: Prioritized list of fixes to apply.
+
+### Example response
+
+```json
+{  
+    "isCodeCorrect": false,  
+    "explanation": "Found 3 issues. 1 critical issue needs immediate attention.",  
+    "issues": [  
+        {  
+            "type": "security",  
+            "severity": "critical",  
+            "priority": "P2",  
+            "description": "SQL injection vulnerability",  
+            "explanation": "User input is directly concatenated into SQL query without sanitization.",  
+            "actions": "Use parameterized queries or prepared statements."  
+        }  
+    ],  
+    "priority_instructions": "Fix P2 issues before deploying code.",  
+    "agent_todo_list": [  
+        "P2.1: Fix SQL injection vulnerability by using parameterized queries"  
+    ]  
+}
+```
+
+## Bug check types
+
+Code verification categorizes detected issues into seven distinct types, each targeting specific aspects of code quality and correctness. You have full control over which bug types to check for through simple on/off toggles.
+
+|     Type      |           Description           |                Example                |
+|:-------------:|:-------------------------------:|:-------------------------------------:|
+|   `intent`    | Code doesn't match user request | User asked for sorting, got filtering |
+|  `semantic`   |          Logic errors           |        Missing error handling         |
+|  `knowledge`  |    Best practice violations     |       Not following conventions       |
+| `performance` |       Performance issues        |        Inefficient algorithms         |
+|   `quality`   |      Code quality problems      |        Poor naming, complexity        |
+|   `logical`   |          Logic errors           |           Off-by-one errors           |
+|  `security`   |    Security vulnerabilities     |          SQL injection risks          |
+
+## Priority system
+
+Code verification assigns priority levels to detected issues, helping you focus on the most critical problems first. The system automatically prioritizes based on issue type and severity.
+
+- **P0-P1**: Intent issues (highest priority) - code doesn't match request.
+- **P2**: Critical severity - must fix immediately.
+- **P3**: High severity - should fix soon.
+- **P4**: Medium severity - nice to fix.
+- **P5**: Low severity - optional improvements.
+
+## Configuration settings
+
+You can customize the Code verification behavior through the settings page in your IDE. This allows you to tailor the verification process to your specific needs, such as configuring severity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
+
+![Screenshot of Code verification settings interface showing severity levels and enabled tools configuration options.](/images/verify/code/tools/tools-1.webp)
+
+### Severity settings
+
+Configure the minimum severity level for issue reporting. Set your threshold based on your team's needs: **Low**, **Medium**, **High**, **Critical**.
+
+The ideal setting depends on your use case. For example, a **High** level is a good starting point, but you might want to set it to **Medium** for production code.
+
+### Enabled tools
+
+Choose which MCP tools are active:
+
+- **Bug Check Tool**: For code quality verification.
+- **Packages Check Tool**: For dependency security.
+
+## Next steps
+
+- **[Set up integrations](/verify/code/integrations/)**: Configure IDE integrations to use these tools.
+- **[Get started](/verify/code/quickstart/)**: Follow the quickstart guide for immediate setup.
+--- END CONTENT ---
+
+Doc-Content: https://www.kluster.ai/verify/get-api-key/
 --- BEGIN CONTENT ---
 ---
 title: Get a kluster.ai API key
@@ -90,7 +533,7 @@ After you've signed up or logged into the platform through the [login page](http
     - **Use environment variables**: Store your API key in environment variables instead of hardcoding them.
     - **Regenerate if compromised**: If you suspect your API key has been exposed, regenerate it immediately from the **API Keys** section.
 
-## Managing your API keys
+## Manage your API keys
 
 The **API Key Management** section allows you to efficiently manage your kluster.ai API keys. You can create, view, and delete API keys by navigating to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section. Your API keys will be listed in the **API Key Management** section.
 
@@ -107,7 +550,7 @@ To delete an API key, take the following steps:
 
 ## Next steps
 
-Now that you have your API key, you can start integrating kluster.ai's Verify services into your applications. Refer to our [Getting Started](/verify/quickstart/reliability/){target=\_blank} guide for detailed instructions on using the API.
+Now that you have your API key, you can start integrating kluster.ai's Verify services into your applications. Refer to our [Getting Started](/verify/code/quickstart/) guide for detailed instructions on using the API.
 --- END CONTENT ---
 
 Doc-Content: https://www.kluster.ai/verify/mcp/client-integrations/
@@ -129,7 +572,7 @@ Connect any compatible client to [kluster.ai's](https://www.kluster.ai/){target=
 Before integrating with any client, ensure you have the required credentials:
       
 -- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
 - **MCP token** (for some clients): Follow the [platform guide](/verify/mcp/cloud/platform/){target=\_blank} to enable MCP and obtain your token.
 
 !!! info "Which credential do I need?"
@@ -147,7 +590,7 @@ Before integrating with any client, ensure you have the required credentials:
 
         ![](/images/verify/mcp/integrations/integrations-3.webp){ style="width:80%;" }
 
-    3. **Add your API key**: When prompted, enter your kluster.ai API key (follow the [Get an API key guide](/get-api-key/){target=\_blank} to obtain one).
+    3. **Add your API key**: When prompted, enter your kluster.ai API key (follow the [Get an API key guide](/verify/get-api-key/){target=\_blank} to obtain one).
 
         ![](/images/verify/mcp/integrations/integrations-4.webp){ style="width:80%;" }
 
@@ -275,7 +718,7 @@ Manage your Cloud MCP endpoint using API calls. This guide covers checking statu
 Before getting started with MCP via API, ensure you have:
 
 -- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
 
 ## Manage your MCP endpoint
 
@@ -408,7 +851,7 @@ This guide shows how to enable MCP through the platform UI and quickly integrate
 ## Prerequisites
 
 -- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 
@@ -427,7 +870,6 @@ Your MCP endpoint is now active. Copy your API key and save it securely. The pla
 ## Next steps
 
 - **Explore the API**: Learn about [API usage and integration patterns](/verify/mcp/cloud/api/).
-- **View tutorials**: Follow the [reliability check tutorial](/tutorials/klusterai-api/reliability/).
 - **Check pricing**: Review [MCP usage pricing](https://kluster.ai/pricing){target=\_blank}.
 --- END CONTENT ---
 
@@ -449,7 +891,7 @@ Cloud MCP provides managed verification endpoints with no infrastructure to main
 Before getting started, ensure you have:
 
 -- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
 - **[Claude desktop](https://claude.ai/download){target=\_blank}** for testing the integration.
 
 ## Enable MCP 
@@ -560,8 +1002,6 @@ This verifies the response against the actual document content.
 ## Next steps
 
 - **Explore integrations**: Check [Client integrations](/verify/mcp/client-integrations/) for other platforms.
-
-- **Try the tutorial**: Follow the [Reliability check notebook](/tutorials/klusterai-api/reliability/) with code examples.
 --- END CONTENT ---
 
 Doc-Content: https://www.kluster.ai/verify/mcp/overview/
@@ -639,7 +1079,6 @@ Same verification tools running on your infrastructure with full control. Deploy
 
 - **MCP protocol**: [Official MCP documentation](https://modelcontextprotocol.io/docs){target=\_blank}.
 - **Verify service**: [Complete reliability verification guide](/verify/reliability/overview).
-- **API reference**: [kluster.ai API documentation](/api-reference/reference/).
 --- END CONTENT ---
 
 Doc-Content: https://www.kluster.ai/verify/mcp/sdk-integrations/openai-agents/
@@ -658,7 +1097,7 @@ This guide demonstrates how to integrate the `Agent` and `Runner` classes fr
 ## Prerequisites
 
 -- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
 - **Python 3.9+**: Make sure pip is also installed.
 - **[A Python virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=_blank}**: This is optional but recommended. Ensure that you enter the Python virtual environment before following along with this tutorial.
 - **OpenAI Agents SDK packages installed**: Use the following command to install the [`openai-agents` packages](https://github.com/openai/openai-agents-python){target=_blank}.
@@ -674,7 +1113,7 @@ This guide demonstrates how to integrate the `Agent` and `Runner` classes fr
 It's easy to integrate kluster Verify with OpenAI Agents SDK—when configuring the agent, point your `AsyncOpenAI` instance to the correct base URL and configure the following settings:
 
   - **Base URL**: Use `https://api.kluster.ai/v1` to send requests to the kluster.ai endpoint.
-  - **API key**: Replace with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/get-api-key/).
+  - **API key**: Replace with your kluster.ai API key. If you don't have one yet, refer to the [Get an API key guide](/verify/get-api-key/).
   - **Select your model**: Choose a model with tool support from [kluster.ai's models](https://platform.kluster.ai/models){target=_blank} (filter by **Tool Support**).
   - **MCP server**: Configure the MCP server URL and token for kluster Verify's Reliability service.
 
@@ -951,7 +1390,7 @@ asyncio.run(main())
     python reliable_agent.py
     ```
 
-2. Enter your kluster.ai API key when prompted. If you don't have one yet, refer to the [Get an API key guide](/get-api-key/){target=\_blank}.
+2. Enter your kluster.ai API key when prompted. If you don't have one yet, refer to the [Get an API key guide](/verify/get-api-key/){target=\_blank}.
 
 Expected output:
 
@@ -984,7 +1423,6 @@ That's it! You've successfully integrated OpenAI Agents SDK with kluster Verify,
 ## Next steps
 
 - Explore [kluster Verify's Reliability](/verify/reliability/overview/) for all verification capabilities.
-- Try the [Verify API tutorial](/tutorials/klusterai-api/reliability) with detailed code examples.
 - Learn about [tool filtering](https://openai.github.io/openai-agents-python/mcp/#tool-filtering){target=_blank} to control tool access.
 - Check the [OpenAI Agents docs](https://openai.github.io/openai-agents-python/){target=_blank} for advanced features.
 --- END CONTENT ---
@@ -1005,7 +1443,7 @@ Deploy [kluster.ai's](https://www.kluster.ai/){target=\_blank} MCP server locall
 Before deploying the self-hosted MCP server, ensure you have:
 
 -- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
 - **A runtime environment**: You can use either [Docker Desktop](https://www.docker.com/products/docker-desktop/){target=\_blank} or [Node.js 18+](https://nodejs.org/){target=\_blank}.
 - **[Git](https://git-scm.com/){target=\_blank}**: For cloning the repository.
 
@@ -1200,7 +1638,7 @@ Developers can use the OpenAI libraries with kluster.ai with no changes. To star
     pip install "openai>=1.0.0"
     ```
 
-To start using kluster.ai with OpenAI's client libraries, set your [API key](/get-api-key/){target=\_blank} and change the base URL to `https://api.kluster.ai/v1`:
+To start using kluster.ai with OpenAI's client libraries, set your [API key](/verify/get-api-key/){target=\_blank} and change the base URL to `https://api.kluster.ai/v1`:
 
 === "Python"
 
@@ -1219,7 +1657,7 @@ While kluster.ai's API is largely compatible with OpenAI's, the following sectio
 
 ### Chat completions parameters
 
-When creating a chat completion via the [`POST https://api.kluster.ai/v1/chat/completions` endpoint](/api-reference/reference/#/http/api-endpoints/realtime/v1-chat-completions-post){target=\_blank}, the following request parameters are not supported:
+When creating a chat completion via the `POST https://api.kluster.ai/v1/chat/completions` endpoint, the following request parameters are not supported:
 
 - `messages[].name`: Attribute in `system`, `user`, and `assistant` type message objects.
 - `messages[].refusal`: Attribute in `assistant` type message objects.
@@ -1249,7 +1687,7 @@ For more information on these parameters, refer to [OpenAI's API documentation o
 
 ### Chat completion object
 
-The following fields of the [chat completion object](/api-reference/reference/#/http/models/structures/v1-chat-completions-request){target=\_blank} are not supported:
+The following fields of the chat completion object are not supported:
 
 - `system_fingerprint`
 - `usage.completion_tokens_details`
@@ -1282,37 +1720,48 @@ This page provides an overview of the Verify service.
 
 ## How Verify works
 
-The Verify service functions as an intelligent agent. It assesses LLM output reliability based on three key inputs provided in the API call:
+Verify offers one specialized product, designed to address specific AI validation needs:
 
-1.  **`prompt`**: The original input or question provided to the LLM. This gives context to the user's intent.
-2.  **`output`**: The response generated by the LLM that requires validation.
-3.  **`context` (Optional)**: Any source material or documents provided to the LLM (e.g., in RAG scenarios) against which the output's claims should be verified.
 
-Verify analyzes these inputs and can leverage **real time internet access** to validating claims against up-to-date public information, extending its capabilities beyond static knowledge bases.
 
-## Performance benchmarks
+- **[Code](/verify/code/overview/)**: A specialized verification service for AI-generated code that identifies bugs, security vulnerabilities, and quality issues. It analyzes code changes in diff format and provides detailed explanations with actionable fixes.
 
-Verify has been benchmarked against other solutions on [HaluEval](https://github.com/RUCAIBox/HaluEval){target=\_blank} and [HaluBench](https://huggingface.co/datasets/PatronusAI/HaluBench){target=\_blank} datasets (over 25,000 samples).
 
-- **Non-RAG Scenarios (Context-Free):**
-    - Compared against CleanLab TLM (GPT 4o-mini, medium quality, optimized threshold).
-    - Results: Verify showed 11% higher overall accuracy, a 2.8% higher median F1 score (72.3% vs. 69.5%), and higher precision (fewer false positives). Response times are comparable (sub-10 seconds).
-- **RAG Validation (Context-Provided):**
-    - Compared against Patronus AI's Lynx (70B) and CleanLab TLM.
-    - Results: On RAGTruth (factual consistency), Verify significantly outperformed Lynx 70B and CleanLab TLM. On DROP (numerical/logical reasoning), Verify showed competitive performance against Lynx and outperformed CleanLab TLM.
-    - Note: Lynx was trained on the training sets of DROP and RAGTruth, highlighting Verify's generalization capabilities to unseen data configurations.
+## Target applications and use cases
 
-These results indicate Verify's effectiveness in diverse scenarios relevant to production AI systems.
+Developers can integrate Verify products into applications where AI output quality is paramount:
 
-## Target applications & use cases
 
-Developers can integrate Verify into applications where LLM output accuracy is paramount:
 
-- Automated content generation pipelines.
-- Customer-facing chatbots and virtual assistants.
-- Question-answering systems over private or public data (RAG).
-- AI-driven data extraction and summarization tools.
-- Internal workflow automation involving LLM-generated text.
+**For Code:**
+
+- AI coding assistants and IDE integrations.
+- Automated code review pipelines.
+- CI/CD security scanning for AI-generated code.
+- Development workflow automation.
+- Code quality assurance systems.
+
+## Next steps
+
+<div class="grid cards" markdown>
+
+-   <span class="badge learn">Learn</span> __Code__
+
+    ---
+
+    Learn how Code works to detect bugs and security issues in AI-generated code before they reach production.
+
+    [:octicons-arrow-right-24: Explore Verify for Code](/verify/code/overview/)
+
+-   <span class="badge guide">Guide</span> __Cursor__
+
+    ---
+
+    Enable real-time code analysis during development by setting up Verify Code with Cursor.
+
+    [:octicons-arrow-right-24: Code with Cursor](/verify/code/integrations#setup-instructions)
+
+</div>
 --- END CONTENT ---
 
 Doc-Content: https://www.kluster.ai/verify/quickstart/reliability/
@@ -1335,7 +1784,7 @@ This guide will walk you through setting up the Reliability service, demonstrate
 Before getting started, ensure you have:
 
 -- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
 
 ## Integration options
 
@@ -1414,7 +1863,7 @@ This guide provides a quick example of how the chat completion endpoint can be u
 Before getting started with Reliability, ensure the following requirements are met:
 
 -- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
 - **A virtual Python environment**: (Optional) Recommended for developers using Python. It helps isolate Python installations in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/){target=\_blank} to reduce the risk of environment or package conflicts between your projects
 - **Required Python libraries**: Install the following Python libraries:
     - [**OpenAI Python API library**](https://pypi.org/project/openai/){target=\_blank}: to access the `openai` module
@@ -1516,7 +1965,6 @@ print(text_response)
 ## Next steps
 
 - Learn how to use the [Verify API](/verify/reliability/verify-api/){target=\_blank} for simpler verification scenarios
-- Review the complete [API documentation](/api-reference/reference/#/http/api-endpoints/realtime/v1-verify-reliability-post){target=\_blank} for detailed endpoint specifications
 --- END CONTENT ---
 
 Doc-Content: https://www.kluster.ai/verify/reliability/overview/
@@ -1581,6 +2029,20 @@ The Reliability response would return:
 }
 ```
 
+## Performance benchmarks
+
+Reliability has been benchmarked against other solutions on [HaluEval](https://github.com/RUCAIBox/HaluEval){target=\_blank} and [HaluBench](https://huggingface.co/datasets/PatronusAI/HaluBench){target=\_blank} datasets (over 25,000 samples) for hallucination detection accuracy.
+
+- **Non-RAG Scenarios (Context-Free):**
+    - Compared against CleanLab TLM (GPT 4o-mini, medium quality, optimized threshold).
+    - Results: Reliability showed 11% higher overall accuracy, a 2.8% higher median F1 score (72.3% vs. 69.5%), and higher precision (fewer false positives). Response times are comparable (sub-10 seconds).
+- **RAG Validation (Context-Provided):**
+    - Compared against Patronus AI's Lynx (70B) and CleanLab TLM.
+    - Results: On RAGTruth (factual consistency), Reliability significantly outperformed Lynx 70B and CleanLab TLM. On DROP (numerical/logical reasoning), Reliability showed competitive performance against Lynx and outperformed CleanLab TLM.
+    - Note: Lynx was trained on the training sets of DROP and RAGTruth, highlighting Reliability's generalization capabilities to unseen data configurations.
+
+These results indicate Reliability's effectiveness in diverse hallucination detection scenarios relevant to production AI systems.
+
 ## When to use Reliability
 
 The Reliability service is ideal for scenarios where you need:
@@ -1605,7 +2067,7 @@ Verify offers multiple ways to use Reliability, each designed for different use 
 
     [:octicons-arrow-right-24: Visit the guide](/verify/reliability/verify-api/){target=\_blank}
 
--   <span class="badge guide">Guide</span> Chat completion endpoint
+-   <span class="badge guide">Guide</span> __Chat completion endpoint__
 
     ---
 
@@ -1626,7 +2088,6 @@ Verify offers multiple ways to use Reliability, each designed for different use 
 ## Additional resources
 
 - **Workflow Integrations**: Download [ready-to-use workflows for Dify, n8n](/verify/reliability/workflow-integrations/){target=\_blank}.
-- **Tutorial**: Explore the [Verify tutorial](/tutorials/klusterai-api/reliability/){target=\_blank} with code examples.
 --- END CONTENT ---
 
 Doc-Content: https://www.kluster.ai/verify/reliability/verify-ap/
@@ -1647,7 +2108,7 @@ This guide provides a quick example of how use the `verify/reliability` endpoint
 Before getting started with Reliability, ensure the following requirements are met:
 
 -- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
 
 ## Endpoint parameters
 
@@ -1873,7 +2334,6 @@ This example checks whether an answer is correct based on the provided context.
 ## Next steps
 
 - Learn how to use [Chat completion reliability verification](/verify/reliability/chat-completion/){target=\_blank} for evaluating entire conversation histories.
-- Review the complete [API documentation](/api-reference/reference/#/http/api-endpoints/realtime/v1-verify-reliability-post){target=\_blank} for detailed endpoint specifications.
 --- END CONTENT ---
 
 Doc-Content: https://www.kluster.ai/verify/reliability/workflow-integrations/
@@ -1892,7 +2352,7 @@ You can integrate Verify's Reliability feature into your favorite automation pla
 Before getting started with the workflow integrations, ensure the following requirements are met:
 
 -- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/get-api-key/){target=\_blank} guide.
+- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
 - **Workflow platform**: Set up [Dify](https://dify.ai/){target=\_blank}, [n8n](https://n8n.io/){target=\_blank}, or your preferred automation tool.
 
 ## Available Workflows
@@ -1967,8 +2427,6 @@ The workflow includes pre-configured HTTP nodes that connect to the `/v1/verify/
 
 Ready to build more reliable AI applications?
 
-- **Explore the API**: Check the [complete API reference](/api-reference/reference/#/http/api-endpoints/realtime/v1-verify-reliability-post){target=\_blank} for advanced configuration options.
 - **Learn verification methods**: Dive into the [Verify API endpoint](/verify/reliability/verify-api/){target=\_blank} for detailed implementation patterns.
-- **Try the tutorial**: Follow the [hands-on Reliability tutorial](/tutorials/klusterai-api/reliability/){target=\_blank} with code examples.
 --- END CONTENT ---
 
