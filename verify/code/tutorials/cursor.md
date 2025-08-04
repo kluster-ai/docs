@@ -1,5 +1,5 @@
 ---
-title: Cursor: Firebase authentication 
+title: Cursor: Firebase Authentication with Next.js
 description: See how Verify Code catches critical issues in real-time while migrating from localStorage to Firebase authentication
 ---
 
@@ -33,11 +33,11 @@ We used **Gemini 2.5 Flash** (Cursor's standard free model) in **agentic mode** 
 
 The AI responded confidently with a detailed 5-step plan:
 
-1. **Create Firebase Initialization File** - Set up `src/lib/firebase.ts`
-2. **Install Firebase** - Add the npm package  
-3. **Update Authentication Context** - Modify `src/contexts/AuthContext.tsx`
-4. **Update Login API Route** - Handle Firebase in `src/app/api/auth/login/route.ts`
-5. **Update Signup API Route** - Handle Firebase in `src/app/api/auth/signup/route.ts`
+1. **Create Firebase Initialization File**: Set up `src/lib/firebase.ts`.
+2. **Install Firebase**: Add the npm package.
+3. **Update Authentication Context**: Modify `src/contexts/AuthContext.tsx`.
+4. **Update Login API Route**: Handle Firebase in `src/app/api/auth/login/route.ts`.
+5. **Update Signup API Route**: Handle Firebase in `src/app/api/auth/signup/route.ts`.
 
 Sounds straightforward, right? Here's what actually happened.
 
@@ -45,11 +45,13 @@ Sounds straightforward, right? Here's what actually happened.
 
 The AI's 5-step implementation plan achieved just 20% success rate, with four critical failures.
 
-**1. Firebase initialization** → ❌ **Issue 1: Incomplete implementation**.  
-**2. Install Firebase** → ✅ **Success**.  
-**3. Update AuthContext** → ❌ **Issue 4: Architecture regression**.  
-**4. Update login API** → ❌ **Issue 2: Breaking changes**.  
-**5. Update signup API** → ❌ **Issue 3: Security vulnerabilities**.
+| Step | Task | Result |
+|------|------|--------|
+| 1 | Firebase initialization | ❌ Failed - Incomplete implementation |
+| 2 | Install Firebase | ✅ Success |
+| 3 | Update AuthContext | ❌ Failed - Architecture regression |
+| 4 | Update login API | ❌ Failed - Breaking changes |
+| 5 | Update signup API | ❌ Failed - Security vulnerabilities |
 
 The AI got confused between steps 3-4, couldn't decide between direct Firebase calls vs API routes, kept reverting working code, and made **six or more correction attempts** throughout the implementation.
 
