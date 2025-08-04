@@ -33,11 +33,11 @@ We used **Gemini 2.5 Flash** (Cursor's standard free model) in **agentic mode** 
 
 The AI responded confidently with a detailed 5-step plan:
 
-1. **Create Firebase Initialization File**: Set up `src/lib/firebase.ts`.
+1. **Create Firebase initialization file**: Set up `src/lib/firebase.ts`.
 2. **Install Firebase**: Add the npm package.
-3. **Update Authentication Context**: Modify `src/contexts/AuthContext.tsx`.
-4. **Update Login API Route**: Handle Firebase in `src/app/api/auth/login/route.ts`.
-5. **Update Signup API Route**: Handle Firebase in `src/app/api/auth/signup/route.ts`.
+3. **Update authentication context**: Modify `src/contexts/AuthContext.tsx`.
+4. **Update Login API route**: Handle Firebase in `src/app/api/auth/login/route.ts`.
+5. **Update Signup API route**: Handle Firebase in `src/app/api/auth/signup/route.ts`.
 
 Sounds straightforward, right? Here's what actually happened.
 
@@ -61,7 +61,7 @@ The AI made four key mistakes along the way, escalating from simple import issue
 
 ### Incomplete implementation
 
-**What happened**: AI created Firebase config but missed the actual authentication setup.
+What happened? AI created Firebase config but missed the actual authentication setup.
 
 **AI generated**:
 ```typescript
