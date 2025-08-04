@@ -11,7 +11,7 @@ Learn how [Verify Code](/verify/code/) acts as your safety net when using Cursor
 
 --8<-- 'text/kluster-api-onboarding.md'
 
-- [Cursor IDE installed](https://cursor.com/downloads){target=\_blank}
+- [Cursor IDE installed](https://cursor.com/downloads){target="_blank"}
 
 ## Setup
 
@@ -53,7 +53,7 @@ The AI's 5-step implementation plan achieved just 20% success rate, with four cr
 | 4 | Update login API | ❌ Failed - Breaking changes |
 | 5 | Update signup API | ❌ Failed - Security vulnerabilities |
 
-The AI got confused between steps 3-4, couldn't decide between direct Firebase calls vs API routes, kept reverting working code, and made **six or more correction attempts** throughout the implementation.
+The AI got confused between steps 3-4, couldn't decide between direct Firebase calls vs API routes, kept reverting working code, and made **multiple correction attempts** throughout the implementation.
 
 ## Key issues caught by Verify Code
 
