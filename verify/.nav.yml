@@ -2,7 +2,5 @@ title: Verify
 hide: false
 nav:
   - 'Overview': overview.md
-  - 'Get an API key': /get-api-key/
-  - 'Get started': quickstart
-  - 'Reliability': reliability
-  - mcp
+  - 'Get an API key': get-api-key.md
+  - 'Code': code

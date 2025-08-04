@@ -110,5 +110,3 @@ This verifies the response against the actual document content.
 ## Next steps
 
 - **Explore integrations**: Check [Client integrations](/verify/mcp/client-integrations/) for other platforms.
-
-- **Try the tutorial**: Follow the [Reliability check notebook](/tutorials/klusterai-api/reliability/) with code examples.

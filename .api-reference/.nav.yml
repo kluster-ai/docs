@@ -1,4 +1,4 @@
 title: API reference
-hide: false
+hide: true
 nav:
  - 'Reference': reference.md
