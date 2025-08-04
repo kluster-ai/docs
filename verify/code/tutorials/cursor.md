@@ -181,7 +181,6 @@ export async function POST(request: NextRequest) {
 
 What happened? AI reverted Firebase authentication to the `localStorage` approach.
 
-**AI generated**:
 ```typescript
 // src/contexts/AuthContext.tsx - Correct Firebase approach
 const login = async (email: string, password: string) => {
@@ -205,7 +204,9 @@ const login = async (email: string, password: string) => {
 };
 ```
 
-**Verify Code caught**:
+Verify Code provided the following response:
+
+---
 
 ![Verify Code alert showing architecture regression from Firebase back to localStorage](/images/verify/code/tutorials/cursor/tutorial-cursor-3.webp){ width="75%" }
 
