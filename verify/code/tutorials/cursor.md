@@ -21,13 +21,13 @@ For manual setup or other IDEs, see our [integration guides](/verify/code/integr
 
 ## Next.js e-commerce
 
-We built a buy-sell e-commerce platform where users post articles for purchase. The app initially used localStorage for user authentication, but we decided to **migrate to Firebase** for better security and user management.
+We built a buy-sell e-commerce platform where users post articles for purchase. The app initially used `localStorage` for user authentication, but we decided to migrate to Firebase for better security and user management.
 
 We used **Gemini 2.5 Flash** (Cursor's standard free model) in **agentic mode** to handle the migration while Verify Code monitored the changes.
 
 ## The prompt and AI's plan
 
-**Our prompt**: _"Implement a real user login with firebase"_ + firebase default app setting file.
+Our prompt was to _implement a real user login with Firebase_ + Firebase default app setting file.
 
 ![Cursor showing e-commerce app and AI's Firebase implementation plan](/images/verify/code/tutorials/cursor/tutorial-cursor-1.webp)
 
@@ -63,7 +63,6 @@ The AI made four key mistakes along the way, escalating from simple import issue
 
 What happened? AI created Firebase config but missed the actual authentication setup.
 
-**AI generated**:
 ```typescript
 // src/lib/firebase.ts - Step 1 attempt
 import { initializeApp } from "firebase/app";
@@ -74,7 +73,9 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app); // ❌ No auth setup
 ```
 
-**Verify Code caught**:
+Verify Code provided the following response:
+
+---
 
 **P1 - Intent (High)**: AI did not implement the actual user login functionality as requested.
 
@@ -99,9 +100,8 @@ export { app, auth, analytics }; // ✅ Export auth
 
 ### Breaking changes
 
-**What happened**: AI removed working Firebase login logic from the API route.
+What happened? AI removed the working Firebase login logic from the API route.
 
-**AI generated**:
 ```typescript
 // src/app/api/auth/login/route.ts - Working version
 export async function POST(req: NextRequest) {
