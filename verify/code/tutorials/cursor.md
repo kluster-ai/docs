@@ -217,24 +217,6 @@ const login = async (email: string, password: string) => {
 
 ---
 
-## The correction loop nightmare
-
-After these failures, the AI entered a painful cycle:
-
-1. **"I apologize for the repeated errors and inconsistencies..."**
-2. **"I will correct this by reverting the changes..."**  
-3. **"I apologize again for the misunderstanding..."**
-4. **"My updated plan to address the issues is..."**
-5. **Repeat 6+ times**
-
-Each cycle broke more things while trying to fix others. The AI couldn't decide on a consistent architecture and kept switching between:
-- Direct Firebase in AuthContext vs API routes
-- localStorage vs Firebase state management  
-- Client-side vs server-side authentication
-
-**Without Verify Code**: Developer spends hours debugging AI confusion  
-**With Verify Code**: Issues caught at each step, preventing the cascade
-
 ## The results
 
 Verify Code caught **4 critical issues** across a "simple" 6-step plan:
@@ -246,9 +228,15 @@ Verify Code caught **4 critical issues** across a "simple" 6-step plan:
 
 ### Successful implementation achieved
 
-By following Verify Code's guidance at each step, we successfully completed the Firebase migration. Users can now register and authenticate properly, as shown in the Firebase console:
+By following Verify Code's guidance at each step, we successfully completed the Firebase migration. Users can now register and authenticate properly.
 
-![Firebase Authentication console showing successfully created users](/images/verify/code/tutorials/cursor/firebase-users-success.webp)
+**Firebase console showing the code@verify.com user created:**
+
+![Firebase Authentication console showing successfully created users](/images/verify/code/tutorials/cursor/tutorial-cursor-4.webp)
+
+**Successful login in the e-commerce app:**
+
+![E-commerce app showing successful login with code@verify.com user](/images/verify/code/tutorials/cursor/tutorial-cursor-5.webp)
 
 The migration from localStorage to Firebase authentication was completed without the typical debugging cycles. [Verify Code](/verify/code/) caught each issue in real-time, allowing us to fix problems immediately rather than discovering them during testing.
 
