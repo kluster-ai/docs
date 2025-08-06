@@ -3,10 +3,9 @@ kluster.ai. kluster.ai provides the technology to verify and trust AI responses 
 
 ## Generated automatically. Do not edit directly.
 
-Documentation: https://www.kluster.ai/
+Documentation: https://docs.kluster.ai
 
 ## List of doc pages:
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/.api-reference/reference.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/code/integrations.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/code/overview.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/code/quickstart.md
@@ -30,19 +29,7 @@ Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/reliabil
 
 ## Full content for each doc page
 
-Doc-Content: https://www.kluster.ai/.api-reference/referenc/
---- BEGIN CONTENT ---
----
-title: API reference
-description: The kluster.ai API reference includes endpoints, available methods, required parameters, and response format information for kluster.ai's OpenAI-compatible API.
-hide:
-- nav
-- footer
-template: portal.html
----
---- END CONTENT ---
-
-Doc-Content: https://www.kluster.ai/verify/code/integrations/
+Doc-Content: https://docs.kluster.aiverify/code/integrations/
 --- BEGIN CONTENT ---
 ---
 title: Integrations for Code Verify
@@ -236,7 +223,7 @@ Add the following to your MCP configuration file:
 For detailed information about each tool, see our [Tools reference](/verify/code/tools/).
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/verify/code/overview/
+Doc-Content: https://docs.kluster.aiverify/code/overview/
 --- BEGIN CONTENT ---
 ---
 title: Code Verification Using Verify
@@ -315,7 +302,7 @@ Code is currently available through MCP (Model Context Protocol) integrations:
 - **[Get started](/verify/code/quickstart/)**: Get Code verification running in minutes.
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/verify/code/quickstart/
+Doc-Content: https://docs.kluster.aiverify/code/quickstart/
 --- BEGIN CONTENT ---
 ---
 title: Get started with Verify Code
@@ -353,7 +340,7 @@ This will automatically install Code Verify MCP server in Cursor for you.
 - [View integration guides](/verify/code/integrations/) for advanced setup.
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/verify/code/tools/
+Doc-Content: https://docs.kluster.aiverify/code/tools/
 --- BEGIN CONTENT ---
 ---
 title: Code MCP Tools for Verify 
@@ -481,7 +468,7 @@ Choose which MCP tools are active:
 - **[Get started](/verify/code/quickstart/)**: Follow the quickstart guide for immediate setup.
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/verify/get-api-key/
+Doc-Content: https://docs.kluster.aiverify/get-api-key/
 --- BEGIN CONTENT ---
 ---
 title: Get a kluster.ai API key
@@ -553,7 +540,7 @@ To delete an API key, take the following steps:
 Now that you have your API key, you can start integrating kluster.ai's Verify services into your applications. Refer to our [Getting Started](/verify/code/quickstart/) guide for detailed instructions on using the API.
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/verify/mcp/client-integrations/
+Doc-Content: https://docs.kluster.aiverify/mcp/client-integrations/
 --- BEGIN CONTENT ---
 ---
 title: MCP client integrations
@@ -702,7 +689,7 @@ Looking to integrate MCP tools into your own applications? Check out the SDK int
 - [Self-hosted deployment](/verify/mcp/self-hosted/) for local development.
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/verify/mcp/cloud/ap/
+Doc-Content: https://docs.kluster.aiverify/mcp/cloud/ap/
 --- BEGIN CONTENT ---
 ---
 title: Cloud MCP API usage
@@ -835,7 +822,7 @@ The response includes verification results nested in JSON-RPC format.
 - [Client integrations](/verify/mcp/client-integrations/) to configure your AI clients.
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/verify/mcp/cloud/platform/
+Doc-Content: https://docs.kluster.aiverify/mcp/cloud/platform/
 --- BEGIN CONTENT ---
 ---
 title: Cloud MCP platform management
@@ -873,7 +860,7 @@ Your MCP endpoint is now active. Copy your API key and save it securely. The pla
 - **Check pricing**: Review [MCP usage pricing](https://kluster.ai/pricing){target=\_blank}.
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/verify/mcp/get-start/
+Doc-Content: https://docs.kluster.aiverify/mcp/get-start/
 --- BEGIN CONTENT ---
 ---
 title: Get started with MCP
@@ -1004,7 +991,7 @@ This verifies the response against the actual document content.
 - **Explore integrations**: Check [Client integrations](/verify/mcp/client-integrations/) for other platforms.
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/verify/mcp/overview/
+Doc-Content: https://docs.kluster.aiverify/mcp/overview/
 --- BEGIN CONTENT ---
 ---
 title: MCP integration overview
@@ -1081,7 +1068,7 @@ Same verification tools running on your infrastructure with full control. Deploy
 - **Verify service**: [Complete reliability verification guide](/verify/reliability/overview).
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/verify/mcp/sdk-integrations/openai-agents/
+Doc-Content: https://docs.kluster.aiverify/mcp/sdk-integrations/openai-agents/
 --- BEGIN CONTENT ---
 ---
 title: Integrate OpenAI Agents SDK with kluster Verify
@@ -1427,7 +1414,7 @@ That's it! You've successfully integrated OpenAI Agents SDK with kluster Verify,
 - Check the [OpenAI Agents docs](https://openai.github.io/openai-agents-python/){target=_blank} for advanced features.
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/verify/mcp/self-host/
+Doc-Content: https://docs.kluster.aiverify/mcp/self-host/
 --- BEGIN CONTENT ---
 ---
 title: Self-hosted MCP
@@ -1504,7 +1491,7 @@ Your self-hosted deployment provides the same verification tools as Cloud MCP:
 - **Try Cloud MCP**: Consider [Cloud MCP](/verify/mcp/cloud/platform/) for managed cloud deployment.
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/verify/mcp/tools/
+Doc-Content: https://docs.kluster.aiverify/mcp/tools/
 --- BEGIN CONTENT ---
 ---
 title: MCP tools reference
@@ -1615,7 +1602,7 @@ An example can be seen below:
 - **Use cloud version**: Enable [Cloud MCP](/verify/mcp/cloud/platform/) for managed deployment.
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/verify/openai-compatibility/
+Doc-Content: https://docs.kluster.aiverify/openai-compatibility/
 --- BEGIN CONTENT ---
 ---
 title: Compatibility with OpenAI client libraries
@@ -1696,7 +1683,7 @@ The following fields of the chat completion object are not supported:
 For more information on these parameters, refer to [OpenAI's API documentation on the chat completion object](https://platform.openai.com/docs/api-reference/chat/object){target=_blank}.
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/verify/overview/
+Doc-Content: https://docs.kluster.aiverify/overview/
 --- BEGIN CONTENT ---
 ---
 title: Overview of Verify
@@ -1764,7 +1751,7 @@ Developers can integrate Verify products into applications where AI output quali
 </div>
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/verify/quickstart/reliability/
+Doc-Content: https://docs.kluster.aiverify/quickstart/reliability/
 --- BEGIN CONTENT ---
 ---
 title: Reliability quick start
@@ -1845,7 +1832,7 @@ The API returns:
 - Explore [workflow integrations](/verify/reliability/workflow-integrations/) for Dify and n8n.
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/verify/reliability/chat-completio/
+Doc-Content: https://docs.kluster.aiverify/reliability/chat-completio/
 --- BEGIN CONTENT ---
 ---
 title: Chat completion Verify API
@@ -1967,7 +1954,7 @@ print(text_response)
 - Learn how to use the [Verify API](/verify/reliability/verify-api/){target=\_blank} for simpler verification scenarios
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/verify/reliability/overview/
+Doc-Content: https://docs.kluster.aiverify/reliability/overview/
 --- BEGIN CONTENT ---
 ---
 title: Reliability by Verify
@@ -2090,7 +2077,7 @@ Verify offers multiple ways to use Reliability, each designed for different use 
 - **Workflow Integrations**: Download [ready-to-use workflows for Dify, n8n](/verify/reliability/workflow-integrations/){target=\_blank}.
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/verify/reliability/verify-ap/
+Doc-Content: https://docs.kluster.aiverify/reliability/verify-ap/
 --- BEGIN CONTENT ---
 ---
 title: Verify API endpoint
@@ -2336,7 +2323,7 @@ This example checks whether an answer is correct based on the provided context.
 - Learn how to use [Chat completion reliability verification](/verify/reliability/chat-completion/){target=\_blank} for evaluating entire conversation histories.
 --- END CONTENT ---
 
-Doc-Content: https://www.kluster.ai/verify/reliability/workflow-integrations/
+Doc-Content: https://docs.kluster.aiverify/reliability/workflow-integrations/
 --- BEGIN CONTENT ---
 ---
 title: Workflow Integrations

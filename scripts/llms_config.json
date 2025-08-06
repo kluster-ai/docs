@@ -1,6 +1,6 @@
 {
   "project_name": "kluster.ai",
-  "project_url": "https://www.kluster.ai/",
+  "project_url": "https://docs.kluster.ai",
   "summary": "kluster.ai provides the technology to verify and trust AI responses in real time. Developers can validate outputs, detect hallucinations, and ensure response reliability across any model, with minimal integration effort.",
   "github": {
     "org": "kluster-ai",
@@ -44,6 +44,7 @@
     ".snippets",
     ".github",
     "node_modules",
-    "venv"
+    "venv",
+    ".api-reference"
   ]
 }

@@ -10,7 +10,7 @@ This file is intended for AI models and developers. Use it to:
 - Explore optional resources (see Optional)
 
 ## Metadata
-- Documentation pages: 21
+- Documentation pages: 20
 - Source repositories: 3
 - Optional resources: 1
 
@@ -19,7 +19,6 @@ This section lists documentation pages. Each entry includes the page title, a di
 - [Overview of Verify](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/overview.md): Learn more about the Verify service, a trust layer for AI stacks that provides a set of features to validate LLM outputs in real-time.
 - [Get a kluster.ai API key](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/get-api-key.md): Follow step-by-step instructions to generate and manage API keys, enabling secure access to kluster's services and seamless integration with your applications.
 - [Compatibility with OpenAI client libraries](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/openai-compatibility.md): Learn how kluster.ai is fully compatible with OpenAI client libraries, enabling seamless integration with your existing applications.
-- [API reference](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/.api-reference/reference.md): The kluster.ai API reference includes endpoints, available methods, required parameters, and response format information for kluster.ai's OpenAI-compatible API.
 - [Code Verification Using Verify](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/code/overview.md): Learn how to use kluster.ai code verification to detect bugs and security issues in AI-generated code using kluster.ai's specialized Verify.
 - [Integrations for Code Verify](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/code/integrations.md): Set up kluster.ai code checks in your IDE via MCP. One-click install for Cursor, or manually configure Claude Code & other MCP-compatible tools.
 - [Get started with Verify Code](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/code/quickstart.md): Set up kluster.ai Code verification in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
