@@ -18,18 +18,6 @@
       "name": "Verify Guardrail Validator",
       "url": "https://github.com/kluster-ai/verify-guardrails-validator",
       "description": "This validator detects hallucinations in AI-generated content using kluster.ai's Verify API. The service can evaluate the AI response based on a given context, which makes it great for RAG applications. Without providing a specific context, the service can also be used as a real-time reliability verification service. Verify is able to identify when AI responses contain fabricated or inaccurate information."
-    },
-    {
-      "name": "Self-hosted MCP",
-      "url": "https://github.com/kluster-ai/verify-mcp",
-      "description": "kluster.ai's HTTP Streamable MCP self-hosted server. Deploy locally with two powerful tools: verify for fact-checking a prompt from a user and response from the agent, and verify_document for document validation."
-    }
-  ],
-  "optional_resources": [
-    {
-      "title": "kluster.ai Cloud MCP",
-      "url": "https://platform.kluster.ai/mcp",
-      "description": "The kluster.ai Cloud MCP is a managed service that provides instant setup without deployment."
     }
   ],
   "skip_basenames": [
@@ -45,6 +33,7 @@
     ".github",
     "node_modules",
     "venv",
-    ".api-reference"
+    ".api-reference",
+    "mcp"
   ]
 }

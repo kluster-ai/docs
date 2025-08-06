@@ -10,9 +10,9 @@ This file is intended for AI models and developers. Use it to:
 - Explore optional resources (see Optional)
 
 ## Metadata
-- Documentation pages: 20
+- Documentation pages: 12
 - Source repositories: 3
-- Optional resources: 1
+- Optional resources: 0
 
 ## Docs
 This section lists documentation pages. Each entry includes the page title, a direct link to the raw Markdown file, and a short description. Use this section to answer questions about core functionality, architecture, and features. If a question is about how or why something works, check here first.
@@ -23,19 +23,11 @@ This section lists documentation pages. Each entry includes the page title, a di
 - [Integrations for Code Verify](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/code/integrations.md): Set up kluster.ai code checks in your IDE via MCP. One-click install for Cursor, or manually configure Claude Code & other MCP-compatible tools.
 - [Get started with Verify Code](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/code/quickstart.md): Set up kluster.ai Code verification in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
 - [tools](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/code/tools.md): No description available.
-- [MCP client integrations](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/mcp/client-integrations.md): Connect Claude desktop, VS Code, Cursor, and Claude Code to kluster.ai verification tools with ready-to-use configuration examples.
-- [MCP integration overview](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/mcp/overview.md): Connect AI apps to kluster.ai services using MCP for seamless development workflow integration with verification tools and automated reliability checking.
-- [Get started with MCP](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/mcp/get-started.md): Get kluster.ai verification tools integrated into Claude desktop in five minutes using Cloud MCP. No setup required, just enable and connect.
-- [Self-hosted MCP](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/mcp/self-hosted.md): Deploy kluster.ai's MCP server locally using Docker or Node.js for development and testing with full control over your infrastructure.
-- [MCP tools reference](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/mcp/tools.md): Reference guide for kluster.ai's MCP verification tools - verify claims and documents with detailed parameters and response formats.
 - [Reliability quick start](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/quickstart/reliability.md): Get started with kluster.ai's reliability verification in under 5 minutes. Detect hallucinations and validate AI responses with a simple API call.
 - [Verify API endpoint](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/reliability/verify-api.md): Validate the reliability of question-answer pairs using kluster.ai API, with or without context, to detect hallucinations and ensure response accuracy.
 - [Reliability by Verify](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/reliability/overview.md): Learn how to use kluster.ai reliability verification and prevent unreliable content in your applications using kluster.ai's specialized Verify.
 - [Workflow Integrations](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/reliability/workflow-integrations.md): Easily integrate Verify into Dify, n8n, and more with ready-made workflows to automate AI response validation via API in minutes.
 - [Chat completion Verify API](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/reliability/chat-completion.md): Validate full chat conversations for reliability using the kluster.ai chat completion endpoint. Analyze context and detect misinformation.
-- [Integrate OpenAI Agents SDK with kluster Verify](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/mcp/sdk-integrations/openai-agents.md): Integrate OpenAI Agents SDK with kluster Verify to create AI agents that detect hallucinations and validate facts with real-time verification.
-- [Cloud MCP API usage](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/mcp/cloud/api.md): Complete guide to using kluster.ai's Cloud MCP API with JSON-RPC requests. How to check it's status, enable, disable and test it.
-- [Cloud MCP platform management](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/mcp/cloud/platform.md): Enable and manage kluster.ai's Cloud MCP endpoints through the platform UI with one-click setup and visual client examples.
 
 ## Source Code Repos
 Frequently used source code repositories essential for working with this project. Each entry includes the repository name, GitHub URL, and a short description of what the repo contains or enables. These repositories contain the source code referenced by these docs. Use them for API references, code examples, or implementation details.
@@ -43,6 +35,3 @@ Frequently used source code repositories essential for working with this project
 - [Verify Guardrail Validator](https://github.com/kluster-ai/verify-guardrails-validator): This validator detects hallucinations in AI-generated content using kluster.ai's Verify API. The service can evaluate the AI response based on a given context, which makes it great for RAG applications. Without providing a specific context, the service can also be used as a real-time reliability verification service. Verify is able to identify when AI responses contain fabricated or inaccurate information.
 - [Self-hosted MCP](https://github.com/kluster-ai/verify-mcp): kluster.ai's HTTP Streamable MCP self-hosted server. Deploy locally with two powerful tools: verify for fact-checking a prompt from a user and response from the agent, and verify_document for document validation.
 
-## Optional
-Additional resources:
-- [kluster.ai Cloud MCP](https://platform.kluster.ai/mcp): The kluster.ai Cloud MCP is a managed service that provides instant setup without deployment.
