@@ -10,8 +10,8 @@ This file is intended for AI models and developers. Use it to:
 - Explore optional resources (see Optional)
 
 ## Metadata
-- Documentation pages: 12
-- Source repositories: 3
+- Documentation pages: 13
+- Source repositories: 2
 - Optional resources: 0
 
 ## Docs
@@ -28,10 +28,10 @@ This section lists documentation pages. Each entry includes the page title, a di
 - [Reliability by Verify](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/reliability/overview.md): Learn how to use kluster.ai reliability verification and prevent unreliable content in your applications using kluster.ai's specialized Verify.
 - [Workflow Integrations](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/reliability/workflow-integrations.md): Easily integrate Verify into Dify, n8n, and more with ready-made workflows to automate AI response validation via API in minutes.
 - [Chat completion Verify API](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/reliability/chat-completion.md): Validate full chat conversations for reliability using the kluster.ai chat completion endpoint. Analyze context and detect misinformation.
+- [cursor-firebase-nextjs](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/code/examples/cursor-firebase-nextjs.md): No description available.
 
 ## Source Code Repos
 Frequently used source code repositories essential for working with this project. Each entry includes the repository name, GitHub URL, and a short description of what the repo contains or enables. These repositories contain the source code referenced by these docs. Use them for API references, code examples, or implementation details.
 - [kluster.ai cookbook](https://github.com/kluster-ai/klusterai-cookbook): This repository is a collection of guides and examples designed to help developers unlock the full potential of kluster.ai.
 - [Verify Guardrail Validator](https://github.com/kluster-ai/verify-guardrails-validator): This validator detects hallucinations in AI-generated content using kluster.ai's Verify API. The service can evaluate the AI response based on a given context, which makes it great for RAG applications. Without providing a specific context, the service can also be used as a real-time reliability verification service. Verify is able to identify when AI responses contain fabricated or inaccurate information.
-- [Self-hosted MCP](https://github.com/kluster-ai/verify-mcp): kluster.ai's HTTP Streamable MCP self-hosted server. Deploy locally with two powerful tools: verify for fact-checking a prompt from a user and response from the agent, and verify_document for document validation.
 
