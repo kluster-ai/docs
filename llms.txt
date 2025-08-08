@@ -7,7 +7,6 @@ Documentation: https://docs.kluster.ai/
 Doc-Page: https://docs.kluster.ai/.api-reference/reference/
 Doc-Page: https://docs.kluster.ai/.tutorials/klusterai-api/combat-hallucinations/
 Doc-Page: https://docs.kluster.ai/.tutorials/klusterai-api/reliability/
-Doc-Page: https://docs.kluster.ai/scripts/.pytest_cache/README/
 Doc-Page: https://docs.kluster.ai/verify/code/examples/cursor-firebase-nextjs/
 Doc-Page: https://docs.kluster.ai/verify/code/integrations/
 Doc-Page: https://docs.kluster.ai/verify/code/overview/
