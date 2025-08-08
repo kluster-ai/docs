@@ -138,7 +138,7 @@ Add the following to your MCP configuration file:
     
     ![VS Code MCP Configuration](/images/verify/code/integrations/vscode/vscode-integration-1.webp)
     
-    Once `mcp.json`is saved, to verify the successfull instalation of the server:
+    Once `mcp.json` is saved, to verify the successful installation of the server:
 
     1. Click on the tools icon in the bottom right corner.
         
