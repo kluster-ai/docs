@@ -21,6 +21,7 @@ Code verification works with any MCP-compatible client, including:
 
 - **Cursor**: One-click installation with automatic MCP server setup (most popular).
 - **Windsurf**: AI coding assistant with Cascade and MCP integration.
+- **VS Code**: Manual MCP configuration via `.vscode/mcp.json`.
 - **Kilo Code**: AI coding assistant with streamlined MCP configuration.
 - **Claude Code**: Manual MCP configuration via `.claude/mcp.json`.
 - **Cline**: Open-source AI coding agent for VS Code with MCP marketplace.
@@ -74,7 +75,7 @@ Add the following to your MCP configuration file:
     The **Kluster-Verify-Code-MCP** server will now appear with both tools enabled:
 
     - **`kluster_code_review_auto`**: For code security and quality verification.
-    - **`kluster_frameworks_check_tool`**: For dependency validation.
+    - **`kluster_dependency_validator`**: For dependency validation.
       
     ![Active MCP Tools](/images/verify/code/integrations/cursor/cursor-integration-3.webp)
 
@@ -105,9 +106,50 @@ Add the following to your MCP configuration file:
     The **Kluster-Verify-Code-MCP** will appear with both tools enabled:
       
     - **`kluster_code_review_auto`**: For code security and quality verification.
-    - **`kluster_frameworks_check_tool`**: For dependency validation.
+    - **`kluster_dependency_validator`**: For dependency validation.
     
     ![Active MCP Tools](/images/verify/code/integrations/windsurf/windsurf-integration-5.webp)
+
+=== "VS Code"
+
+    1. Create a `.vscode` folder in your project root if it doesn't exist.
+    
+    2. Create a `mcp.json` file inside the `.vscode` folder.
+    
+    3. Add the following configuration:
+    
+    ```json
+    {
+      "servers": {
+        "Kluster-Verify-Code": {
+          "type": "stdio",
+          "command": "npx",
+          "args": [
+            "-y",
+            "@klusterai/kluster-verify-code-mcp@latest"
+          ],
+          "env": {
+            "KLUSTER_API_KEY": "YOUR_API_KEY"
+          }
+        }
+      }
+    }
+    ```
+    
+    ![VS Code MCP Configuration](/images/verify/code/integrations/vscode/vscode-integration-1.webp)
+    
+    Once `mcp.json`is saved, to verify the successfull instalation of the server:
+
+    1. Click on the tools icon in the bottom right corner.
+        
+    2. Select the `Kluster-Verify-Code` MCP server from the list. 
+    
+    The **Kluster-Verify-Code** MCP Server will provide both tools:
+    
+    - **`kluster_code_review_auto`**: For code security and quality verification.
+    - **`kluster_dependency_validator`**: For dependency validation.
+    
+    ![VS Code Configure Tools showing MCP Server](/images/verify/code/integrations/vscode/vscode-integration-2.webp)
 
 === "Kilo Code"
 
@@ -124,7 +166,7 @@ Add the following to your MCP configuration file:
     Then you should see the installed **Kluster-Verify-Code-MCP** server with both tools enabled:
 
        - **`kluster_code_review_auto`**: For code security and quality verification.
-       - **`kluster_frameworks_check_tool`**: For dependency validation.
+       - **`kluster_dependency_validator`**: For dependency validation.
     
     ![Kluster MCP Tools](/images/verify/code/integrations/kilo/kilo-integration-2.webp)
 
@@ -152,7 +194,7 @@ Add the following to your MCP configuration file:
     The **Kluster-Verify-Code-MCP** server will now appear with both tools enabled:
 
     - **`kluster_code_review_auto`**: For code security and quality verification.
-    - **`kluster_frameworks_check_tool`**: For dependency validation.
+    - **`kluster_dependency_validator`**: For dependency validation.
 
     ![MCP Configuration File](/images/verify/code/integrations/cline/cline-integration-2.webp)
 
@@ -170,8 +212,8 @@ Add the following to your MCP configuration file:
     
     The **Kluster-Verify-Code-MCP** server will appear with both tools enabled:
 
-    - `kluster_code_review_auto`: For code security and quality verification.
-    - `kluster_frameworks_check_tool`: For dependency validation.
+    - **`kluster_code_review_auto`**: For code security and quality verification.
+    - **`kluster_dependency_validator`**: For dependency validation.
     
     ![Active MCP Tools](/images/verify/code/integrations/roocode/roocode-integration-2.webp)    
 
