@@ -44,6 +44,10 @@ def get_all_markdown_files(directory):
         if 'node_modules' in root.split(os.sep):
             continue
 
+        # Skip '.pytest_cache'
+        if '.pytest_cache' in root.split(os.sep):
+            continue
+
         for file in files:
             if file.endswith(('.md', '.mdx','.ipynb')):
                 results.append(os.path.join(root, file))
