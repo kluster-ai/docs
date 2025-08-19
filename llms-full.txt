@@ -22,7 +22,7 @@ Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/reliabil
 
 ## Full content for each doc page
 
-Doc-Content: https://docs.kluster.aiverify/code/examples/cursor-firebase-nextjs/
+Doc-Content: https://docs.kluster.ai/verify/code/examples/cursor-firebase-nextjs/
 --- BEGIN CONTENT ---
 ---
 title: Cursor: Firebase Authentication with Next.js
@@ -287,7 +287,7 @@ The more complex the task, the more valuable this real-time verification becomes
 **Learn more**: Explore our [tools reference](/verify/code/tools/) to understand all issue types and priority levels that Verify Code monitors.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.aiverify/code/integrations/
+Doc-Content: https://docs.kluster.ai/verify/code/integrations/
 --- BEGIN CONTENT ---
 ---
 title: Integrations for Code Verify
@@ -523,7 +523,7 @@ Add the following to your MCP configuration file:
 For detailed information about each tool, see our [Tools reference](/verify/code/tools/).
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.aiverify/code/overview/
+Doc-Content: https://docs.kluster.ai/verify/code/overview/
 --- BEGIN CONTENT ---
 ---
 title: Code Verification Using Verify
@@ -602,7 +602,7 @@ Code is currently available through MCP (Model Context Protocol) integrations:
 - **[Get started](/verify/code/quickstart/)**: Get Code verification running in minutes.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.aiverify/code/quickstart/
+Doc-Content: https://docs.kluster.ai/verify/code/quickstart/
 --- BEGIN CONTENT ---
 ---
 title: Get started with Verify Code
@@ -640,7 +640,7 @@ This will automatically install Code Verify MCP server in Cursor for you.
 - [View integration guides](/verify/code/integrations/) for advanced setup.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.aiverify/code/tools/
+Doc-Content: https://docs.kluster.ai/verify/code/tools/
 --- BEGIN CONTENT ---
 ---
 title: Code MCP Tools for Verify 
@@ -768,7 +768,7 @@ Choose which MCP tools are active:
 - **[Get started](/verify/code/quickstart/)**: Follow the quickstart guide for immediate setup.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.aiverify/get-api-key/
+Doc-Content: https://docs.kluster.ai/verify/get-api-key/
 --- BEGIN CONTENT ---
 ---
 title: Get a kluster.ai API key
@@ -840,7 +840,7 @@ To delete an API key, take the following steps:
 Now that you have your API key, you can start integrating kluster.ai's Verify services into your applications. Refer to our [Getting Started](/verify/code/quickstart/) guide for detailed instructions on using the API.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.aiverify/openai-compatibility/
+Doc-Content: https://docs.kluster.ai/verify/openai-compatibility/
 --- BEGIN CONTENT ---
 ---
 title: Compatibility with OpenAI client libraries
@@ -921,7 +921,7 @@ The following fields of the chat completion object are not supported:
 For more information on these parameters, refer to [OpenAI's API documentation on the chat completion object](https://platform.openai.com/docs/api-reference/chat/object){target=_blank}.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.aiverify/overview/
+Doc-Content: https://docs.kluster.ai/verify/overview/
 --- BEGIN CONTENT ---
 ---
 title: Overview of Verify
@@ -989,7 +989,7 @@ Developers can integrate Verify products into applications where AI output quali
 </div>
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.aiverify/quickstart/reliability/
+Doc-Content: https://docs.kluster.ai/verify/quickstart/reliability/
 --- BEGIN CONTENT ---
 ---
 title: Reliability quick start
@@ -1070,7 +1070,7 @@ The API returns:
 - Explore [workflow integrations](/verify/reliability/workflow-integrations/) for Dify and n8n.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.aiverify/reliability/chat-completio/
+Doc-Content: https://docs.kluster.ai/verify/reliability/chat-completio/
 --- BEGIN CONTENT ---
 ---
 title: Chat completion Verify API
@@ -1192,7 +1192,7 @@ print(text_response)
 - Learn how to use the [Verify API](/verify/reliability/verify-api/){target=\_blank} for simpler verification scenarios
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.aiverify/reliability/overview/
+Doc-Content: https://docs.kluster.ai/verify/reliability/overview/
 --- BEGIN CONTENT ---
 ---
 title: Reliability by Verify
@@ -1315,7 +1315,7 @@ Verify offers multiple ways to use Reliability, each designed for different use 
 - **Workflow Integrations**: Download [ready-to-use workflows for Dify, n8n](/verify/reliability/workflow-integrations/){target=\_blank}.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.aiverify/reliability/verify-ap/
+Doc-Content: https://docs.kluster.ai/verify/reliability/verify-ap/
 --- BEGIN CONTENT ---
 ---
 title: Verify API endpoint
@@ -1561,7 +1561,7 @@ This example checks whether an answer is correct based on the provided context.
 - Learn how to use [Chat completion reliability verification](/verify/reliability/chat-completion/){target=\_blank} for evaluating entire conversation histories.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.aiverify/reliability/workflow-integrations/
+Doc-Content: https://docs.kluster.ai/verify/reliability/workflow-integrations/
 --- BEGIN CONTENT ---
 ---
 title: Workflow Integrations

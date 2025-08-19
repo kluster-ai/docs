@@ -127,7 +127,7 @@ def build_content_section(files, docs_url, docs_dir, snippet_dir, variables):
             continue
 
         doc_url_path = re.sub(r'\.(md|mdx)$', '', relative_path)
-        doc_url = f"{docs_url}{doc_url_path}".rstrip('/index')
+        doc_url = f"{docs_url}/{doc_url_path}".rstrip('/index')
 
         with open(file, 'r', encoding='utf-8') as file_content:
             content = file_content.read()
