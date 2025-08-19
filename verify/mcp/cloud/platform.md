@@ -30,4 +30,3 @@ Your MCP endpoint is now active. Copy your API key and save it securely. The pla
 ## Next steps
 
 - **Explore the API**: Learn about [API usage and integration patterns](/verify/mcp/cloud/api/).
-- **Check pricing**: Review [MCP usage pricing](https://kluster.ai/pricing){target=\_blank}.
