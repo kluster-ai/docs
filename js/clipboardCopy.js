@@ -2,14 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
   document
     .querySelector('.full-llms')
     .addEventListener('click', async (event) => {
+      const copiedToClipboard = document.querySelector('.md-dialog');
       try {
         const response = await fetch(
           'https://docs.kluster.ai/llms-full.txt',
         );
         const text = await response.text();
         await navigator.clipboard.writeText(text);
-
-        const copiedToClipboard = document.querySelector('.md-dialog');
+        
         if (copiedToClipboard) {
           copiedToClipboard.classList.add('md-dialog--active');
 
