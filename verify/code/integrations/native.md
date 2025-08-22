@@ -79,7 +79,7 @@ Before getting started, ensure you have:
     1. Select the **Tools** button on the bottom right corner in the Copilot chat window.
     2. Scroll down the list and **Kluster-Verify-Code-MCP** should appear with both tools enabled
 
-        ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-7.webp)
+        ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-6.webp)
 
 === "Claude Code"
 
