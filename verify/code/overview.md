@@ -11,14 +11,17 @@ With Code verification, you can ship AI-generated code confidently, knowing pote
 
 The service works seamlessly with AI coding assistants in your IDE, analyzing code changes in real-time as they're generated.
 
-## How Code works
+## How it works
 
-The service evaluates AI-generated code by:
+- **Real-time code review**: Monitors AI-generated code as it's written.
 
-1. Analyzing the code changes in diff format.
-2. Understanding the user's original request.
-3. Detecting various types of issues (bugs, security vulnerabilities, performance problems).
-4. Providing detailed explanations and actionable fixes.
+- **Comprehensive issue detection**: Analyzes 7 issue types - Semantic, Intent, Logical, Security, Knowledge, Performance, and Quality.
+
+- **Customizable severity levels**: Configure detection sensitivity from Low to Critical based on your needs.
+
+- **Dual analysis tools**: Real-time Code Review + Dependency Analysis for complete coverage.
+
+- **Automatic correction**: AI incorporates feedback to fix issues immediately.
 
 The service evaluates code to identify issues, with the following fields:
 

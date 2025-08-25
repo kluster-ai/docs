@@ -47,11 +47,11 @@ The [kluster.ai](https://www.kluster.ai/){target=_blank} Verify Code service int
 
 Regardless of your integration type, Verify Code operates the same way:
 
-1. **Monitors code generation** - Watches as AI assistants generate code
-2. **Analyzes changes** - Evaluates code diffs in real-time
-3. **Detects issues** - Identifies bugs, security flaws, and quality problems
-4. **Provides fixes** - Suggests specific corrections with priority levels
-5. **Enables auto-fix** - AI incorporates feedback to fix issues immediately
+1. **Monitors code generation** - Watches as AI assistants generate code.
+2. **Analyzes changes** - Evaluates code diffs in real-time.
+3. **Detects issues** - Identifies bugs, security flaws, and quality problems.
+4. **Provides fixes** - Suggests specific corrections with priority levels.
+5. **Enables auto-fix** - AI incorporates feedback to fix issues immediately.
 
 ## Not sure which to choose?
 
@@ -64,8 +64,8 @@ Regardless of your integration type, Verify Code operates the same way:
 
 Both integration types provide access to the same verification tools:
 
-- **`kluster_code_review_auto`**: For code security and quality verification
-- **`kluster_dependency_validator`**: For dependency validation
+- **`kluster_code_review_auto`**: For code security and quality verification.
+- **`kluster_dependency_validator`**: For dependency validation.
 
 Learn more about these tools in our [Tools reference](/verify/code/tools/).
 

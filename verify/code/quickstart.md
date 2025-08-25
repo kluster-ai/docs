@@ -25,23 +25,23 @@ Choose your preferred IDE to get started with kluster.ai Verify Code in under 30
 
     ---
 
-    Install kluster.ai directly in Cursor with one click
+    Click here to add Verify Code into Cursor.
 
-    --8<-- 'text/install-buttons.md'
+    --8<-- 'text/install-button-cursor.md'
 
 -   ![VS Code Logo](/images/verify/code/integrations/vscode/vscode-logo.png){ width="96" height="96"  } __VS Code__
 
     ---
 
-    Install kluster.ai directly in VS Code with one click
+    Click here to add Verify Code into VS Code.
 
-    --8<-- 'text/install-buttons-vscode.md'
+    --8<-- 'text/install-button-vscode.md'
 
 -   ![Claude Code Logo](/images/verify/code/integrations/claudecode/claude-logo.png){ width="96" height="96" } __Claude Code__
 
     ---
 
-    Copy and run this install command in your terminal
+    Copy and paste this into your terminal.
 
     --8<-- 'text/install-command-claude.md'
 
@@ -50,15 +50,8 @@ Choose your preferred IDE to get started with kluster.ai Verify Code in under 30
 !!! tip "Other IDEs"
     For Windsurf, Cline, Roo Code, and other MCP-compatible IDEs, see our [integration guides](/verify/code/integrations/mcp/){target=\_blank}.
 
-## How it works
-
-1. **Real-time monitoring**: Verify Code watches as AI generates code
-2. **Instant analysis**: Detects bugs, security issues, and best practice violations
-3. **Actionable feedback**: Provides specific fixes with priority levels
-4. **Automatic correction**: AI incorporates feedback to fix issues immediately
-
 ## Next steps
 
-- **[View all integrations](/verify/code/integrations/)**: Set up Verify Code in your preferred IDE
-- **[Learn about the tools](/verify/code/tools/)**: Understand issue types and priority levels
-- **[See real examples](/verify/code/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study
+- **[View all integrations](/verify/code/integrations/)**: Set up Verify Code in your preferred IDE.
+- **[Learn about the tools](/verify/code/tools/)**: Understand issue types and priority levels.
+- **[See real examples](/verify/code/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
