@@ -8,6 +8,7 @@
     "branch": "main",
     "docs_path": "."
   },
+  "output_path": "llms.txt",
   "source_repos": [
     {
       "name": "kluster.ai cookbook",
