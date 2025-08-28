@@ -291,7 +291,7 @@ The more complex the task, the more valuable this real-time verification becomes
 Doc-Content: https://docs.kluster.ai/verify/code/integrations/mcp/
 --- BEGIN CONTENT ---
 ---
-title: MCP Compatible IDEs
+title: MCP Compatible IDEs for Verify Code
 description: Manual setup guide for Windsurf, Cline, Roo Code, Kilo Code and other MCP-compatible IDEs to use kluster.ai Verify Code.
 ---
 
@@ -340,7 +340,7 @@ Add the following to your IDE's MCP configuration file:
     
     1. Open Settings by clicking the gear icon or using the command palette.
     
-    2. Click **Windsurf Settings**
+    2. Click **Windsurf Settings**.
     
     3. Navigate to **Cascade** in the left sidebar.
     
@@ -453,7 +453,7 @@ Add the following to your IDE's MCP configuration file:
 Doc-Content: https://docs.kluster.ai/verify/code/integrations/nativ/
 --- BEGIN CONTENT ---
 ---
-title: Native IDE Integration
+title: Native IDEs Integration for Verify Code
 description: One-click installation for Cursor, VS Code, and Claude Code with enhanced Verify Code features and custom extensions.
 ---
 
@@ -474,7 +474,7 @@ Before getting started, ensure you have:
     
     1. Click **Add to Cursor** button below.
         
-         -[:octicons-arrow-right-24: Add to Cursor](cursor:extension/klusterai.kluster-verify-code){target=_blank .md-button .md-button--primary}
+         -[Add to Cursor](cursor:extension/klusterai.kluster-verify-code){target=\_blank .md-button .md-button--primary}
     
     2. Cursor will open and prompt for extension installation.
     
@@ -504,7 +504,7 @@ Before getting started, ensure you have:
    
     1. Click **Add to VS Code** button below: 
         
-         -[:octicons-arrow-right-24: Add to VS Code](vscode:extension/klusterai.kluster-verify-code){target=_blank .md-button .md-button--primary}
+         -[Add to VS Code](vscode:extension/klusterai.kluster-verify-code){target=\_blank .md-button .md-button--primary}
     
     2. VS Code will open with the extension installation.
     
@@ -524,7 +524,7 @@ Before getting started, ensure you have:
 
         ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-2.webp)
           
-    3. Click **Open Visual Studio Code**
+    3. Click **Open Visual Studio Code**.
 
         ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-3.webp)
 
@@ -560,24 +560,68 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
     - Set up your API key.
     - Enable both verification tools.
 
-    ![MCP Code Verify installed in Claude Code](/images/verify/code/integrations/claudecode/claudecode-integration-1.webp)
+    -<div id="termynal-1" data-termynal>
+  <span data-ty="input">curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s YOUR_API_KEY</span>
+  <span data-ty>Installing Kluster.ai server...</span>
+  <span data-ty>✅ Installation complete!</span>
+  <span data-ty>Restart Claude Code to apply the new rules</span>
+  <span data-ty>Happy {K}oding ;)</span>
+</div>
       
     Once installed, verify the setup:
     
     1. Run the `/mcp` command in Claude Code.
 
-        ![MCP Code Verify installed in Claude Code](/images/verify/code/integrations/claudecode/claudecode-integration-2.webp)
+        -<div id="termynal-2" data-termynal>
+  <span data-ty>✨ Welcome to Claude Code!</span>
+  <span data-ty>/help for help, /status for your current setup</span>
+  <span data-ty>cwd: /Users/franzuzz/code/demos/claude-code/mcp-demo</span>
+  <span data-ty></span>
+  <span data-ty>Tips for getting started:</span>
+  <span data-ty>Ask Claude to create a new app or clone a repository</span>
+  <span data-ty>Use Claude to help with file analysis, editing, bash commands and git</span>
+  <span data-ty>Be as specific as you would with another engineer for the best results</span>
+  <span data-ty>✔ Run /terminal-setup to set up terminal integration</span>
+  <span data-ty></span>
+  <span data-ty>Manage MCP servers</span>
+  <span data-ty>  1. kluster-verify ✔ connected • Enter to view details</span>
+  <span data-ty></span>
+  <span data-ty>MCP Config locations (by scope):</span>
+  <span data-ty> • User config: /Users/franzuzz/.claude.json</span>
+  <span data-ty> • Project config (shared via .mcp.json):</span>
+  <span data-ty>   /Users/franzuzz/code/demos/claude-code/mcp-demo/.mcp.json (file does not exist)</span>
+  <span data-ty> • Local config (private to this project):</span>
+  <span data-ty>   /Users/franzuzz/.claude.json [project: /Users/franzuzz/code/demos/claude-code/mcp-demo]</span>
+  <span data-ty></span>
+  <span data-ty>For help configuring MCP servers, see:</span>
+  <span data-ty>https://docs.anthropic.com/en/docs/claude-code/mcp</span>
+</div>
 
     2. Select kluster-verify in the MCP menu list and press enter to **View tools**.
 
-        ![MCP Code Verify installed in Claude Code](/images/verify/code/integrations/claudecode/claudecode-integration-3.webp)
+        -<div id="termynal-3" data-termynal>
+  <span data-ty>Kluster-verify MCP Server</span>
+  <span data-ty>Status: ✔ connected</span>
+  <span data-ty>Command: npx</span>
+  <span data-ty>Args: -y @klusterai/kluster-verify-code-mcp@latest</span>
+  <span data-ty>Config location: /Users/franzuzz/.claude.json</span>
+  <span data-ty>Capabilities: tools</span>
+  <span data-ty>Tools: 3 tools</span>
+  <span data-ty></span>
+  <span data-ty>  1. View tools</span>
+  <span data-ty>  2. Reconnect</span>
+</div>
 
     3. You should see tools for **kluster-verify** listed with:
         - `kluster_code_review_auto`
         - `kluster_dependency_validator`
-    
-        ![MCP Code Verify installed in Claude Code](/images/verify/code/integrations/claudecode/claudecode-integration-4.webp)
 
+        -<div id="termynal-4" data-termynal>
+  <span data-ty>Tools for kluster-verify (3 tools)</span>
+  <span data-ty>  1. kluster_code_review_auto</span>
+  <span data-ty>  2. kluster_dependency_validator</span>
+  <span data-ty>  3. kluster_code_review_manual</span>
+</div>
 
 ## Next steps
 
@@ -693,36 +737,39 @@ Choose your preferred IDE to get started with kluster.ai Verify Code in under 30
 
 <div class="grid cards" markdown>
 
--   ![Cursor Logo](/images/verify/code/integrations/cursor/cursor-logo1.webp){ width="96" height="96 } __Cursor__
+-   :cursor-icons8-cursor-ai: __Cursor__
 
     ---
 
-    Click here to add Verify Code into Cursor.
+    Install the extension directly from the Cursor marketplace.
 
-    -[:octicons-arrow-right-24: Add to Cursor](cursor:extension/klusterai.kluster-verify-code){target=_blank .md-button .md-button--primary}
+    [:octicons-arrow-right-24: Add to Cursor](cursor:extension/klusterai.kluster-verify-code){target=\_blank}
 
--   ![VS Code Logo](/images/verify/code/integrations/vscode/vscode-logo.png){ width="96" height="96"  } __VS Code__
-
-    ---
-
-    Click here to add Verify Code into VS Code.
-
-    -[:octicons-arrow-right-24: Add to VS Code](vscode:extension/klusterai.kluster-verify-code){target=_blank .md-button .md-button--primary}
-
--   ![Claude Code Logo](/images/verify/code/integrations/claudecode/claude-logo.png){ width="96" height="96" } __Claude Code__
+-   :material-microsoft-visual-studio-code: __VS Code__
 
     ---
 
-    Copy and paste this into your terminal.
+    Install the extension directly from the VS Code marketplace.
 
-    -```bash
-curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s YOUR_API_KEY
-```
+    [:octicons-arrow-right-24: Add to VS Code](vscode:extension/klusterai.kluster-verify-code){target=\_blank}
+
+-   :simple-claude: __Claude Code__
+
+    ---
+
+    Quick setup through your terminal.
+
+    [:octicons-arrow-right-24: Install Claude Code](/verify/code/integrations/native/#__tabbed_1_3){target=\_blank}
+
+-   :octicons-code-24: __Other IDEs__
+
+    ---
+
+     For Windsurf, Cline, Roo Code, and other MCP-compatible IDEs
+
+    [:octicons-arrow-right-24: See our integration guides](/verify/code/integrations/mcp/){target=\_blank}.    
 
 </div>
-
-!!! tip "Other IDEs"
-    For Windsurf, Cline, Roo Code, and other MCP-compatible IDEs, see our [integration guides](/verify/code/integrations/mcp/){target=\_blank}.
 
 ## Next steps
 
