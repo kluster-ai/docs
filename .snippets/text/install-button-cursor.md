@@ -1,1 +1,1 @@
-[:octicons-arrow-right-24: Add to Cursor](cursor:extension/klusterai.kluster-verify-code){target=_blank .md-button .md-button--primary}
+[Add to Cursor](cursor:extension/klusterai.kluster-verify-code){target=\_blank .md-button .md-button--primary}
