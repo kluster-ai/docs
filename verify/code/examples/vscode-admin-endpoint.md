@@ -71,10 +71,10 @@ app.delete('/admin/reset-database', async (req, res) => {
 
 The line `process.env.ADMIN_KEY || 'admin123'` creates a catastrophic security hole:
 
-1. **Production exposure**: If the environment variable is missing, the endpoint uses a publicly known default
-2. **Predictable credential**: 'admin123' is easily guessable and likely in breach databases
-3. **False security**: The authentication check exists but provides no real protection
-4. **Public documentation**: The default key is exposed in logs and potentially Swagger
+1. **Production exposure**: If the environment variable is missing, the endpoint uses a publicly known default.
+2. **Predictable credential**: 'admin123' is easily guessable and likely in breach databases.
+3. **False security**: The authentication check exists but provides no real protection.
+4. **Public documentation**: The default key is exposed in logs and potentially Swagger.
 
 ## Verify Code catches the vulnerability
 
@@ -84,56 +84,48 @@ Verify Code immediately identified the critical security flaw:
 
 ---
 
-**P2 - Security (Critical)**: Hardcoded default admin key in server-side code.
+**P2 - Security (Critical)**: Hardcoded default admin key in the server-side code.
 
-**Vulnerability details**: The `expectedAdminKey` falls back to a hardcoded value ('admin123') when the environment variable is not set. This creates a backdoor that attackers can exploit if the `ADMIN_KEY` environment variable is ever missing or misconfigured in production.
+**Why this matters**: The `expectedAdminKey` falls back to a hardcoded default value ('admin123') when the environment variable is not set. If the `ADMIN_KEY` environment variable is ever missing or misconfigured in production, the system defaults to a publicly known, hardcoded key that attackers could easily discover.
 
-**Attack scenario**: An attacker could:
-1. Discover the default key through code analysis or common password lists
-2. Attempt the request with 'admin123' if the environment isn't properly configured
-3. Successfully delete the entire production database
-
-**Required fix**: Remove the hardcoded fallback and implement proper environment validation.
+**Required fix**: Remove the hardcoded default value. Change from `process.env.ADMIN_KEY || 'admin123'` to `process.env.ADMIN_KEY`. Add validation to ensure the environment variable is set, logging a critical error if missing.
 
 ---
+
+Beyond the immediate security fix, Verify Code also recommended strengthening the admin endpoint with additional layers of protection: implementing multi-factor authentication (MFA) or role-based access control (RBAC), adding rate limiting to prevent brute-force attacks, and setting up comprehensive audit logging for all access attempts. These security recommendations can be customized in your [configuration settings](/verify/code/tools/#configuration-settings) to match your team's specific security requirements.
 
 ## The secure implementation
 
 Following Verify Code's guidance, here's the corrected implementation:
 
 ```javascript
-// server.js - Secure implementation
-app.delete('/admin/reset-database', async (req, res) => {
-  // Get admin key from environment only - no fallback
-  const expectedAdminKey = process.env.ADMIN_KEY;
-  
-  // Fail safely if not configured
-  if (!expectedAdminKey) {
-    return res.status(503).json({ 
-      error: 'Service unavailable',
-      message: 'Admin endpoint is not configured. Please set ADMIN_KEY environment variable.'
-    });
-  }
-  
-  const adminKey = req.headers['x-admin-key'] || req.query.adminKey;
-  
-  if (!adminKey || adminKey !== expectedAdminKey) {
-    return res.status(401).json({ 
-      error: 'Unauthorized',
-      message: 'Invalid or missing admin key'
-    });
-  }
-  // ... rest of implementation with audit logging
-});
+// Before - VULNERABLE
+// const expectedAdminKey = process.env.ADMIN_KEY || 'admin123'; // ❌ Hardcoded fallback
+
+// After - SECURE
+const expectedAdminKey = process.env.ADMIN_KEY;
+
+if (!expectedAdminKey) {
+  console.error('CRITICAL SECURITY ERROR: ADMIN_KEY environment variable is not set');
+  return res.status(503).json({ 
+    error: 'Service unavailable: Admin endpoint not configured'
+  });
+}
+
+const adminKey = req.headers['x-admin-key'] || req.query.adminKey;
+
+if (!adminKey || adminKey !== expectedAdminKey) {
+  return res.status(401).json({ 
+    error: 'Unauthorized: Invalid or missing admin key'
+  });
+}
 ```
 
-### Key security improvements
+### The fix
 
-1. **No hardcoded fallback**: Removed the `|| 'admin123'` fallback completely
-2. **Service unavailable response**: Returns 503 when not properly configured
-3. **Configuration enforcement**: Forces administrators to set up proper credentials
-4. **Audit logging**: Tracks admin actions for security monitoring
-5. **Clear error messages**: Guides proper configuration without exposing details
+1. **Removed hardcoded fallback**: The `|| 'admin123'` fallback is completely eliminated.
+2. **Fail-safe validation**: Returns 503 when environment variable is missing.
+3. **No backdoor access**: Without proper environment configuration, the endpoint is inaccessible.
 
 
 
@@ -144,10 +136,10 @@ app.delete('/admin/reset-database', async (req, res) => {
 
 Verify Code prevented a critical security vulnerability from reaching production:
 
-1. **Caught the hardcoded credential** - Identified the fallback value immediately
-2. **Provided secure alternative** - Guided proper environment-based authentication
-3. **Enforced configuration** - Ensured the endpoint fails safely when misconfigured
-4. **Improved security posture** - Added audit logging and proper error handling
+1. **Caught the hardcoded credential** - Identified the fallback value immediately.
+2. **Provided secure alternative** - Guided proper environment-based authentication.
+3. **Enforced configuration** - Ensured the endpoint fails safely when misconfigured.
+4. **Improved security posture** - Added audit logging and proper error handling.
 
 Without Verify Code, this vulnerability could have:
 - Exposed production databases to deletion.
