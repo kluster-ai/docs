@@ -1,5 +1,5 @@
 ---
-title: Native IDE Integration
+title: Native IDEs Integration for Verify Code
 description: One-click installation for Cursor, VS Code, and Claude Code with enhanced Verify Code features and custom extensions.
 ---
 
@@ -69,7 +69,7 @@ Before getting started, ensure you have:
 
         ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-2.webp)
           
-    3. Click **Open Visual Studio Code**
+    3. Click **Open Visual Studio Code**.
 
         ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-3.webp)
 
@@ -103,24 +103,23 @@ Before getting started, ensure you have:
     - Set up your API key.
     - Enable both verification tools.
 
-    ![MCP Code Verify installed in Claude Code](/images/verify/code/integrations/claudecode/claudecode-integration-1.webp)
+    --8<-- 'code/verify/integrations/claudecode/integration-1.md'
       
     Once installed, verify the setup:
     
     1. Run the `/mcp` command in Claude Code.
 
-        ![MCP Code Verify installed in Claude Code](/images/verify/code/integrations/claudecode/claudecode-integration-2.webp)
+        --8<-- 'code/verify/integrations/claudecode/integration-2.md'
 
     2. Select kluster-verify in the MCP menu list and press enter to **View tools**.
 
-        ![MCP Code Verify installed in Claude Code](/images/verify/code/integrations/claudecode/claudecode-integration-3.webp)
+        --8<-- 'code/verify/integrations/claudecode/integration-3.md'
 
     3. You should see tools for **kluster-verify** listed with:
         - `kluster_code_review_auto`
         - `kluster_dependency_validator`
-    
-        ![MCP Code Verify installed in Claude Code](/images/verify/code/integrations/claudecode/claudecode-integration-4.webp)
 
+        --8<-- 'code/verify/integrations/claudecode/integration-4.md'
 
 ## Next steps
 

@@ -21,34 +21,39 @@ Choose your preferred IDE to get started with kluster.ai Verify Code in under 30
 
 <div class="grid cards" markdown>
 
--   ![Cursor Logo](/images/verify/code/integrations/cursor/cursor-logo1.webp){ width="96" height="96 } __Cursor__
+-   :cursor-icons8-cursor-ai: __Cursor__
 
     ---
 
-    Click here to add Verify Code into Cursor.
+    Install the extension directly from the Cursor marketplace.
 
-    --8<-- 'text/install-button-cursor.md'
+    [:octicons-arrow-right-24: Add to Cursor](cursor:extension/klusterai.kluster-verify-code){target=\_blank}
 
--   ![VS Code Logo](/images/verify/code/integrations/vscode/vscode-logo.png){ width="96" height="96"  } __VS Code__
-
-    ---
-
-    Click here to add Verify Code into VS Code.
-
-    --8<-- 'text/install-button-vscode.md'
-
--   ![Claude Code Logo](/images/verify/code/integrations/claudecode/claude-logo.png){ width="96" height="96" } __Claude Code__
+-   :material-microsoft-visual-studio-code: __VS Code__
 
     ---
 
-    Copy and paste this into your terminal.
+    Install the extension directly from the VS Code marketplace.
 
-    --8<-- 'text/install-command-claude.md'
+    [:octicons-arrow-right-24: Add to VS Code](vscode:extension/klusterai.kluster-verify-code){target=\_blank}
+
+-   :simple-claude: __Claude Code__
+
+    ---
+
+    Quick setup through your terminal.
+
+    [:octicons-arrow-right-24: Install Claude Code](/verify/code/integrations/native/#__tabbed_1_3){target=\_blank}
+
+-   :octicons-code-24: __Other IDEs__
+
+    ---
+
+     For Windsurf, Cline, Roo Code, and other MCP-compatible IDEs
+
+    [:octicons-arrow-right-24: See our integration guides](/verify/code/integrations/mcp/){target=\_blank}.    
 
 </div>
-
-!!! tip "Other IDEs"
-    For Windsurf, Cline, Roo Code, and other MCP-compatible IDEs, see our [integration guides](/verify/code/integrations/mcp/){target=\_blank}.
 
 ## Next steps
 

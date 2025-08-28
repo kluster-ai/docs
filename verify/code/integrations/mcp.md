@@ -1,5 +1,5 @@
 ---
-title: MCP Compatible IDEs
+title: MCP Compatible IDEs for Verify Code
 description: Manual setup guide for Windsurf, Cline, Roo Code, Kilo Code and other MCP-compatible IDEs to use kluster.ai Verify Code.
 ---
 
@@ -47,7 +47,7 @@ Add the following to your IDE's MCP configuration file:
     
     1. Open Settings by clicking the gear icon or using the command palette.
     
-    2. Click **Windsurf Settings**
+    2. Click **Windsurf Settings**.
     
     3. Navigate to **Cascade** in the left sidebar.
     
