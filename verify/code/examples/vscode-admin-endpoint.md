@@ -16,15 +16,15 @@ Discover how [Verify Code](/verify/code/) catches critical security flaws when u
 
 ## Setup
 
-Getting Verify Code working in VS Code takes just one click. Visit our [quickstart guide](/verify/code/quickstart/) and click **Add to VS Code** for automatic installation.
+Getting Verify Code working in VS Code takes just one click. Visit the [Verify Code quickstart guide](/verify/code/quickstart/) and click **Add to VS Code** for automatic installation.
 
 For manual setup, other IDEs, or to install directly in VS Code, see our [VS Code integration guide](/verify/code/integrations/native/#vs-code).
 
 ## Express API with product management
 
-We built an Express API for managing a product catalog with full CRUD operations. The API uses a `DataManager` class for persistence and includes Swagger documentation for easy testing. Everything works perfectly until we need a way to reset the database for testing and emergency scenarios.
+This Express API manages a product catalog with full CRUD operations. The API uses a `DataManager` class for persistence and includes Swagger documentation for easy testing. Everything works perfectly until the team needs a way to reset the database for testing and emergency scenarios.
 
-We decided to add an **admin endpoint** to delete all products - a seemingly simple task that AI turned into a security nightmare.
+The team decided to add an **admin endpoint** to delete all products - a seemingly simple task that AI turned into a security nightmare.
 
 ## The prompt and AI's response
 
@@ -150,20 +150,20 @@ Verify Code prevented a critical security vulnerability from reaching production
 4. **Improved security posture** - Added audit logging and proper error handling
 
 Without Verify Code, this vulnerability could have:
-- Exposed production databases to deletion
-- Created compliance violations
-- Led to data loss incidents
-- Required emergency patches
+- Exposed production databases to deletion.
+- Created compliance violations.
+- Led to data loss incidents.
+- Required emergency patches.
 
 ## Key takeaways
 
 Admin endpoints require special security attention that AI often misses:
 
-- **Never use hardcoded fallbacks** for authentication credentials
-- **Fail safely** when configuration is missing
-- **Validate environment** at startup
-- **Log admin actions** for audit trails
-- **Test all scenarios** including misconfiguration
+- **Never use hardcoded fallbacks** for authentication credentials.
+- **Fail safely** when configuration is missing.
+- **Validate environment** at startup.
+- **Log admin actions** for audit trails.
+- **Test all scenarios** including misconfiguration.
 
 [Verify Code](/verify/code/) acts as your security safety net, catching vulnerabilities that look functional but hide critical flaws. The more powerful the operation, the more critical this protection becomes.
 
