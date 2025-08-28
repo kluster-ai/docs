@@ -9,26 +9,49 @@ Modern developers increasingly rely on AI coding assistants to accelerate develo
 
 The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code verification service integrates directly into your development workflow, automatically scanning AI-generated code in real-time. It catches potential issues instantly within your IDE, allowing you to ship code confidently while maintaining the speed benefits of AI-assisted development.
 
-This guide will walk you through installing Code verification in Cursor.
+## Prerequisites
 
-## Get started in minutes
+Before getting started, ensure you have:
 
-### One-click setup (recommended)
+--8<-- 'text/kluster-api-onboarding.md'
 
-The fastest way to get started is with our one-click installation:
+## Installation
 
-1. Install [Cursor](https://cursor.com/downloads){target=_blank} from their website if you don't have it yet.
+Choose your preferred IDE to get started with kluster.ai Verify Code in under 30 seconds.
 
-2. Click [**Add to Cursor**](https://platform.kluster.ai/verify-code){target=_blank} to automatically install both the extension and MCP server.
+<div class="grid cards" markdown>
 
-![Quick start installation button for Code verification](/images/verify/code/quickstart/quickstart-1.webp)
+-   ![Cursor Logo](/images/verify/code/integrations/cursor/cursor-logo1.webp){ width="96" height="96 } __Cursor__
 
-This will automatically install Code Verify MCP server in Cursor for you.
+    ---
 
-!!! tip "Manual Setup"
-    For manual setup instructions, please see our [integration guides](/verify/code/integrations/){target=\_blank}.
+    Click here to add Verify Code into Cursor.
+
+    --8<-- 'text/install-button-cursor.md'
+
+-   ![VS Code Logo](/images/verify/code/integrations/vscode/vscode-logo.png){ width="96" height="96"  } __VS Code__
+
+    ---
+
+    Click here to add Verify Code into VS Code.
+
+    --8<-- 'text/install-button-vscode.md'
+
+-   ![Claude Code Logo](/images/verify/code/integrations/claudecode/claude-logo.png){ width="96" height="96" } __Claude Code__
+
+    ---
+
+    Copy and paste this into your terminal.
+
+    --8<-- 'text/install-command-claude.md'
+
+</div>
+
+!!! tip "Other IDEs"
+    For Windsurf, Cline, Roo Code, and other MCP-compatible IDEs, see our [integration guides](/verify/code/integrations/mcp/){target=\_blank}.
 
 ## Next steps
 
-- [Learn about the tools](/verify/code/tools/) for detailed reference.
-- [View integration guides](/verify/code/integrations/) for advanced setup.
+- **[View all integrations](/verify/code/integrations/)**: Set up Verify Code in your preferred IDE.
+- **[Learn about the tools](/verify/code/tools/)**: Understand issue types and priority levels.
+- **[See real examples](/verify/code/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.

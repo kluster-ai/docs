@@ -1,6 +1,6 @@
 nav:
   - 'Introduction': overview.md
   - 'Get started': quickstart.md
-  - 'Integrations': integrations.md
+  - 'Integrations': integrations
   - 'Tools': tools.md
   - 'Examples': examples
