@@ -8,7 +8,7 @@ description: Manual setup guide for Windsurf, Cline, Roo Code, Kilo Code, and ot
 Configure [kluster.ai](https://www.kluster.ai/){target=\_blank} Verify Code in any MCP-compatible IDE with manual setup. While these IDEs don't have native kluster.ai extensions, they provide full verification capabilities through the standard MCP protocol.
 
 !!! tip "Consider Native IDEs"
-    For the best experience, consider using [Cursor, VS Code, or Claude Code](/verify/code/integrations/native/) which offer enhanced features and one-click installation.
+    For the best experience, consider using [Cursor, VS Code, or Claude Code](/verify/integrations/ide/) which offer enhanced features and one-click installation.
 
 ## Prerequisites
 
