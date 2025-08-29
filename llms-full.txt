@@ -711,6 +711,7 @@ Verify Code prevented a critical security vulnerability from reaching production
 4. **Improved security posture** - Added audit logging and proper error handling.
 
 Without Verify Code, this vulnerability could have:
+
 - Exposed production databases to deletion.
 - Created compliance violations.
 - Led to data loss incidents.
