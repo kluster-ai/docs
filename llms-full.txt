@@ -290,7 +290,7 @@ description: Learn how Verify Code prevents critical security vulnerabilities wh
 
 # VS Code: Secure Admin Endpoints
 
-Discover how [Verify Code](/verify/code/) catches critical security flaws when using VS Code with GitHub Copilot Chat to create admin endpoints. This tutorial demonstrates a real scenario where AI introduces a production-breaking security vulnerability while implementing a database reset endpoint.
+Discover how [Verify Code](/verify/) catches critical security flaws when using VS Code with GitHub Copilot Chat to create admin endpoints. This tutorial demonstrates a real scenario where AI introduces a production-breaking security vulnerability while implementing a database reset endpoint.
 
 ## Prerequisites
 
