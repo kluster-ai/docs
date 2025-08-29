@@ -1,6 +1,10 @@
-title: Verify
+title: Verify Code
 hide: false
 nav:
-  - 'Overview': overview.md
+  - 'Overview': index.md
   - 'Get an API key': get-api-key.md
-  - 'Code': code
+  - 'Get started': quickstart.md
+  - 'Tools reference': tools.md
+  - 'Integrations': integrations
+  - 'Examples': examples
+
