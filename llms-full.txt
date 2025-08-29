@@ -535,15 +535,15 @@ Before getting started, ensure you have:
     
     3. Click **Install** to add the extension into Cursor.
 
-        ![Active MCP Tools in Cursor](/images/verify/code/integrations/cursor/cursor-integration-1.webp)
+        ![Extension Installation Prompt in Cursor](/images/verify/code/integrations/cursor/cursor-integration-1.webp)
     
     4. Now that the extension is active, click on **Install** on the bottom left corner to install the MCP tools.
 
-        ![Active MCP Tools in Cursor](/images/verify/code/integrations/cursor/cursor-integration-2.webp)
+        ![MCP Tools Installation Button in Cursor](/images/verify/code/integrations/cursor/cursor-integration-2.webp)
     
     5. To finish the setup, click on **Install** to confirm the MCP settings. 
 
-        ![Active MCP Tools in Cursor](/images/verify/code/integrations/cursor/cursor-integration-3.webp)
+        ![MCP Settings Confirmation in Cursor](/images/verify/code/integrations/cursor/cursor-integration-3.webp)
 
     Once installed, you can verify the setup:
 
@@ -566,38 +566,41 @@ Before getting started, ensure you have:
     
     3. Click **Install** to get the extension.
 
-        ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-0.webp)
+        ![Install Extension](/images/verify/code/integrations/vscode/vscode-integration-0.webp)
 
     4. Select **Trust Publisher & Install**.
 
-        ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-1.webp)
+        ![Trust publisher](/images/verify/code/integrations/vscode/vscode-integration-1.webp)
 
     Now that the extension is installed, you need to login with your kluster.ai account:
        
-    1. Click on **Login** in the bottom right corner.
-       
+    1. Click on **Sign in** in the bottom right corner.
+       ![Sign In](/images/verify/code/integrations/vscode/vscode-integration-2.webp)
+
     2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account. 
 
-        ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-2.webp)
+        ![Open Pop-up](/images/verify/code/integrations/vscode/vscode-integration-3.webp)
           
     3. Click **Open Visual Studio Code**.
 
-        ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-3.webp)
+        ![Open Visual Studio Code](/images/verify/code/integrations/vscode/vscode-integration-4.webp)
 
     4. Click **Open** to install the MCP with your kluster.ai API key.
         
-        ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-4.webp)
+        ![Open and Install MCP](/images/verify/code/integrations/vscode/vscode-integration-5.webp)
 
     5. To complete the setup, click **Install** to accept the MCP configuration for Verify Code. 
     
-         ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-5.webp)
+         ![Install MCP ](/images/verify/code/integrations/vscode/vscode-integration-6.webp)
+    6. Press **Trust** to Install the MCP server.
+    ![MCP Server Trust Installation in VS Code](/images/verify/code/integrations/vscode/vscode-integration-7.webp)
         
     Once installed, verify the setup:
     
     1. Open a Copilot chat window and select the **Tools** button on the bottom right corner.
     2. Scroll down the list and **Kluster-Verify-Code-MCP** should appear. Make sure both tools enabled.
 
-        ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-6.webp)
+        ![Active MCP Tools in VS Code](/images/verify/code/integrations/vscode/vscode-integration-8.webp)
 
 === "Claude Code"
 
