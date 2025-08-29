@@ -1,4 +1,5 @@
 <div id="termynal" data-termynal>
+  <span data-ty="input">franzuzz@MacBook-Pro-de-Jean mcp-demo % claude</span>
   <span data-ty>✨ Welcome to Claude Code!</span>
   <span data-ty>/help for help, /status for your current setup</span>
   <span data-ty>cwd: /Users/franzuzz/code/demos/claude-code/mcp-demo</span>
@@ -9,6 +10,8 @@
   <span data-ty>Be as specific as you would with another engineer for the best results</span>
   <span data-ty>✔ Run /terminal-setup to set up terminal integration</span>
   <span data-ty></span>
+
+  <span data-ty="input">/mcp</span>
   <span data-ty>Manage MCP servers</span>
   <span data-ty>  1. kluster-verify ✔ connected • Enter to view details</span>
   <span data-ty></span>
