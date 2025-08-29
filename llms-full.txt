@@ -421,30 +421,33 @@ Before getting started, ensure you have:
 
     Now that the extension is installed, you need to login with your kluster.ai account:
        
-    1. Click on **Login** in the bottom right corner.
-       
+    1. Click on **Sign in** in the bottom right corner.
+       ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-2.webp)
+
     2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account. 
 
-        ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-2.webp)
+        ![Pop up](/images/verify/code/integrations/vscode/vscode-integration-3.webp)
           
     3. Click **Open Visual Studio Code**.
 
-        ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-3.webp)
+        ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-4.webp)
 
     4. Click **Open** to install the MCP with your kluster.ai API key.
         
-        ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-4.webp)
+        ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-5.webp)
 
     5. To complete the setup, click **Install** to accept the MCP configuration for Verify Code. 
     
-         ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-5.webp)
+         ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-6.webp)
+    6. Press **Trust** to Install the MCP server.
+    ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-7.webp)
         
     Once installed, verify the setup:
     
     1. Open a Copilot chat window and select the **Tools** button on the bottom right corner.
     2. Scroll down the list and **Kluster-Verify-Code-MCP** should appear. Make sure both tools enabled.
 
-        ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-6.webp)
+        ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-8.webp)
 
 === "Claude Code"
 
