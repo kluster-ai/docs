@@ -10,7 +10,7 @@ This file is intended for AI models and developers. Use it to:
 - Explore optional resources (see Optional)
 
 ## Metadata
-- Documentation pages: 9
+- Documentation pages: 7
 - Source repositories: 2
 - Optional resources: 0
 
@@ -19,8 +19,6 @@ This section lists documentation pages. Each entry includes the page title, a di
 - [Get a kluster.ai API key](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/get-api-key.md): Follow step-by-step instructions to generate and manage API keys, enabling secure access to kluster's services and seamless integration with your applications.
 - [Get started with Verify Code](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/quickstart.md): Set up kluster.ai Code verification in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
 - [tools](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/tools.md): No description available.
-- [MCP Compatible IDEs](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/code/integrations/mcp.md): Manual setup guide for Windsurf, Cline, Roo Code, Kilo Code and other MCP-compatible IDEs to use kluster.ai Verify Code.
-- [Native IDE Integration](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/code/integrations/native.md): One-click installation for Cursor, VS Code, and Claude Code with enhanced Verify Code features and custom extensions.
 - [MCP-compatible IDEs for Verify Code](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/integrations/mcp.md): Manual setup guide for Windsurf, Cline, Roo Code, Kilo Code, and other MCP-compatible IDEs to use kluster.ai Verify Code.
 - [Native IDEs Integration for Verify Code](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/integrations/ide.md): One-click installation for Cursor, VS Code, and Claude Code with enhanced Verify Code features and custom extensions.
 - [cursor-firebase-nextjs](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/examples/cursor-firebase-nextjs.md): No description available.
