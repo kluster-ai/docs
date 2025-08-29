@@ -82,7 +82,7 @@ Verify Code immediately identified the critical security flaw:
 
 ---
 
-Beyond the immediate security fix, Verify Code also recommended strengthening the admin endpoint with additional layers of protection: implementing multi-factor authentication (MFA) or role-based access control (RBAC), adding rate limiting to prevent brute-force attacks, and setting up comprehensive audit logging for all access attempts. These security recommendations can be customized in your [configuration settings](/verify/code/tools/#configuration-settings) to match your team's specific security requirements.
+Beyond the immediate security fix, Verify Code also recommended strengthening the admin endpoint with additional layers of protection: implementing multi-factor authentication (MFA) or role-based access control (RBAC), adding rate limiting to prevent brute-force attacks, and setting up comprehensive audit logging for all access attempts. These security recommendations can be customized in your [configuration settings](/verify/tools/#configuration-settings) to match your team's specific security requirements.
 
 ## The secure implementation
 

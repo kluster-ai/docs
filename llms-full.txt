@@ -302,9 +302,9 @@ Discover how [Verify Code](/verify/code/) catches critical security flaws when u
 
 ## Setup
 
-Getting Verify Code working in VS Code takes just one click. Visit the [Verify Code quickstart guide](/verify/code/quickstart/) and click **Add to VS Code** for automatic installation.
+Getting Verify Code working in VS Code takes just one click. Visit the [Verify Code quickstart guide](/verify/quickstart/) and click **Add to VS Code** for automatic installation.
 
-For manual setup, other IDEs, or to install directly in VS Code, see our [VS Code integration guide](/verify/code/integrations/native/#vs-code).
+For manual setup, other IDEs, or to install directly in VS Code, see our [VS Code integration guide](/verify/integrations/ide/#__tabbed_1_2).
 
 ## Express API with product management
 
@@ -368,7 +368,7 @@ Verify Code immediately identified the critical security flaw:
 
 ---
 
-Beyond the immediate security fix, Verify Code also recommended strengthening the admin endpoint with additional layers of protection: implementing multi-factor authentication (MFA) or role-based access control (RBAC), adding rate limiting to prevent brute-force attacks, and setting up comprehensive audit logging for all access attempts. These security recommendations can be customized in your [configuration settings](/verify/code/tools/#configuration-settings) to match your team's specific security requirements.
+Beyond the immediate security fix, Verify Code also recommended strengthening the admin endpoint with additional layers of protection: implementing multi-factor authentication (MFA) or role-based access control (RBAC), adding rate limiting to prevent brute-force attacks, and setting up comprehensive audit logging for all access attempts. These security recommendations can be customized in your [configuration settings](/verify/tools/#configuration-settings) to match your team's specific security requirements.
 
 ## The secure implementation
 
