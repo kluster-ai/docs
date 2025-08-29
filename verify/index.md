@@ -98,3 +98,4 @@ Verify Code is available as a native extension for IDEs such as Cursor, VS Code 
 ## Additional resources
 
 - **[Get started](/verify/quickstart/)**: Run Verify Code in minutes.
+- **[See real examples](/verify/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
