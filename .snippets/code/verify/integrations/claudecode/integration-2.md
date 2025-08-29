@@ -1,4 +1,6 @@
 <div id="termynal" data-termynal>
+  <span data-ty="input">claude /mcp</span>
+  <span data-ty></span>
   <span data-ty>✨ Welcome to Claude Code!</span>
   <span data-ty>/help for help, /status for your current setup</span>
   <span data-ty>cwd: /Users/franzuzz/code/demos/claude-code/mcp-demo</span>

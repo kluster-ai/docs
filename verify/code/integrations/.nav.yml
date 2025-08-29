@@ -1,4 +1,0 @@
-nav:
-  - 'Overview': index.md
-  - 'Native IDEs': native.md
-  - 'MCP-compatible': mcp.md
