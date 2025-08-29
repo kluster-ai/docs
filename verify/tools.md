@@ -120,5 +120,5 @@ Choose which MCP tools are active:
 
 ## Next steps
 
-- **[Set up integrations](/verify/code/integrations/)**: Configure IDE integrations to use these tools.
-- **[Get started](/verify/code/quickstart/)**: Follow the quickstart guide for immediate setup.
+- **[Set up integrations](/verify/integrations/ide)**: Configure Cursor, VS Code and Claude Code to use these tools.
+- **[Get started](/verify/quickstart/)**: Follow the quickstart guide for immediate setup.
