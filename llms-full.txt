@@ -291,13 +291,13 @@ The more complex the task, the more valuable this real-time verification becomes
 Doc-Content: https://docs.kluster.ai/verify/code/integrations/mcp/
 --- BEGIN CONTENT ---
 ---
-title: MCP Compatible IDEs for Verify Code
-description: Manual setup guide for Windsurf, Cline, Roo Code, Kilo Code and other MCP-compatible IDEs to use kluster.ai Verify Code.
+title: MCP-compatible IDEs for Verify Code
+description: Manual setup guide for Windsurf, Cline, Roo Code, Kilo Code, and other MCP-compatible IDEs to use kluster.ai Verify Code.
 ---
 
-# MCP compatible IDEs
+# MCP-compatible IDEs
 
-Configure kluster.ai Verify Code in any MCP-compatible IDE with manual setup. While these IDEs don't have native Kluster extensions, they provide full verification capabilities through the standard MCP protocol.
+Configure [kluster.ai](https://www.kluster.ai/){target=\_blank} Verify Code in any MCP-compatible IDE with manual setup. While these IDEs don't have native kluster.ai extensions, they provide full verification capabilities through the standard MCP protocol.
 
 !!! tip "Consider Native IDEs"
     For the best experience, consider using [Cursor, VS Code, or Claude Code](/verify/code/integrations/native/) which offer enhanced features and one-click installation.
@@ -338,7 +338,7 @@ Add the following to your IDE's MCP configuration file:
 
     **Configuration steps**
     
-    1. Open Settings by clicking the gear icon or using the command palette.
+    1. Open **Settings** by clicking the gear icon or using the command palette.
     
     2. Click **Windsurf Settings**.
     
@@ -356,8 +356,8 @@ Add the following to your IDE's MCP configuration file:
     
     The **Kluster-Verify-Code-MCP** will appear with both tools enabled:
 
-    - `kluster_code_review_auto`: For code security and quality verification.
-    - `kluster_dependency_validator`: For dependency validation.
+    - **`kluster_code_review_auto`**: For code security and quality verification.
+    - **`kluster_dependency_validator`**: For dependency validation.
     
     ![Active MCP Tools in Windsurf](/images/verify/code/integrations/windsurf/windsurf-integration-5.webp)
 
@@ -365,7 +365,7 @@ Add the following to your IDE's MCP configuration file:
 
     **Configuration steps**
     
-    1. Open Settings and navigate to **MCP Servers**.
+    1. Open **Settings** and navigate to **MCP Servers**.
     
     2. Select the **Installed** tab.
     
@@ -379,8 +379,8 @@ Add the following to your IDE's MCP configuration file:
     
     You should see the **Kluster-Verify-Code-MCP** server with both tools enabled:
 
-    - `kluster_code_review_auto`: For code security and quality verification.
-    - `kluster_dependency_validator`: For dependency validation.
+    - **`kluster_code_review_auto`**: For code security and quality verification.
+    - **`kluster_dependency_validator`**: For dependency validation.
     
     ![Kluster MCP Tools in Kilo Code](/images/verify/code/integrations/kilo/kilo-integration-2.webp)
 
@@ -402,8 +402,8 @@ Add the following to your IDE's MCP configuration file:
     
     The **Kluster-Verify-Code-MCP** server will appear with both tools enabled:
 
-    - `kluster_code_review_auto`: For code security and quality verification.
-    - `kluster_dependency_validator`: For dependency validation.
+    - **`kluster_code_review_auto`**: For code security and quality verification.
+    - **`kluster_dependency_validator`**: For dependency validation.
     
     ![MCP Configuration in Cline](/images/verify/code/integrations/cline/cline-integration-2.webp)
 
@@ -425,8 +425,8 @@ Add the following to your IDE's MCP configuration file:
     
     The **Kluster-Verify-Code-MCP** server will appear with both tools enabled:
 
-    - `kluster_code_review_auto`: For code security and quality verification.
-    - `kluster_dependency_validator`: For dependency validation.
+    - **`kluster_code_review_auto`**: For code security and quality verification.
+    - **`kluster_dependency_validator`**: For dependency validation.
     
     ![Active MCP Tools in Roo Code](/images/verify/code/integrations/roocode/roocode-integration-2.webp)
 
@@ -440,7 +440,8 @@ Add the following to your IDE's MCP configuration file:
     2. Add the Kluster MCP configuration shown above.
     3. Replace `your-api-key-here` with your actual API key.
     4. Save and restart your IDE if required.
-    5. The tools should now be available in your AI assistant.
+    
+    The tools should now be available in your AI assistant.
     
 
 ## Next steps
@@ -472,7 +473,7 @@ Before getting started, ensure you have:
 
 === "Cursor"
     
-    1. Click **Add to Cursor** button below.
+    1. Click the **Add to Cursor** button below.
         
          -[Add to Cursor](cursor:extension/klusterai.kluster-verify-code){target=\_blank .md-button .md-button--primary}
     
@@ -482,7 +483,7 @@ Before getting started, ensure you have:
 
         ![Active MCP Tools in Cursor](/images/verify/code/integrations/cursor/cursor-integration-1.webp)
     
-    4. Now that the extension is active. Click on **Install** MCP on the bottom left corner.
+    4. Now that the extension is active, click on **Install** on the bottom left corner to install the MCP tools.
 
         ![Active MCP Tools in Cursor](/images/verify/code/integrations/cursor/cursor-integration-2.webp)
     
@@ -492,21 +493,22 @@ Before getting started, ensure you have:
 
     Once installed, you can verify the setup:
 
-    1. Open **Cursor Settings** (gear icon → Settings).
+    1. Open **Cursor Settings**. You can use the gear icon in the top right corner to do so.
     2. Navigate to **Tools & Integrations** → **MCP Tools**.
     3. You should see **Kluster-Verify-Code-MCP** with both tools enabled:
-        - `kluster_code_review_auto`: For code security and quality verification.
-        - `kluster_dependency_validator`: For dependency validation.
+
+        - **`kluster_code_review_auto`**: For code security and quality verification.
+        - **`kluster_dependency_validator`**: For dependency validation.
 
         ![Active MCP Tools in Cursor](/images/verify/code/integrations/cursor/cursor-integration-4.webp)
 
 === "VS Code"
    
-    1. Click **Add to VS Code** button below: 
+    1. Click the **Add to VS Code** button below: 
         
          -[Add to VS Code](vscode:extension/klusterai.kluster-verify-code){target=\_blank .md-button .md-button--primary}
     
-    2. VS Code will open with the extension installation.
+    2. VS Code will open and display the extension.
     
     3. Click **Install** to get the extension.
 
@@ -516,11 +518,11 @@ Before getting started, ensure you have:
 
         ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-1.webp)
 
-    Now the extension is installed, we need to login with our kluster.ai account:
+    Now that the extension is installed, you need to login with your kluster.ai account:
        
-    1. Click on **Login** on the bottom right corner.
+    1. Click on **Login** in the bottom right corner.
        
-    2. Choose **Open**. A browser pop up window will take you to your kluster.ai account. 
+    2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account. 
 
         ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-2.webp)
           
@@ -528,18 +530,18 @@ Before getting started, ensure you have:
 
         ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-3.webp)
 
-    4. To complete the setup now click on **Open**. This will install the MCP with your kluster.ai API key.  
+    4. Click **Open** to install the MCP with your kluster.ai API key.
         
         ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-4.webp)
 
-    5. For the last step, click on Install to accept the MCP configuration for Verify Code. 
+    5. To complete the setup, click **Install** to accept the MCP configuration for Verify Code. 
     
          ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-5.webp)
         
     Once installed, verify the setup:
     
-    1. Select the **Tools** button on the bottom right corner in the Copilot chat window.
-    2. Scroll down the list and **Kluster-Verify-Code-MCP** should appear with both tools enabled.
+    1. Open a Copilot chat window and select the **Tools** button on the bottom right corner.
+    2. Scroll down the list and **Kluster-Verify-Code-MCP** should appear. Make sure both tools enabled.
 
         ![Active MCP Tools in Cursor](/images/verify/code/integrations/vscode/vscode-integration-6.webp)
 
@@ -547,7 +549,7 @@ Before getting started, ensure you have:
 
     **Terminal installation**
     
-    Copy and paste this command on your terminal. Replace `your-api-key-here` with your actual API key from the [kluster.ai platform](https://platform.kluster.ai){target=_blank}.
+    Copy and paste this command in your terminal. Replace `your-api-key-here` with your actual API key from the [kluster.ai platform](https://platform.kluster.ai){target=_blank}.
     
     -```bash
 curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s YOUR_API_KEY
@@ -560,8 +562,8 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
     - Set up your API key.
     - Enable both verification tools.
 
-    -<div id="termynal-1" data-termynal>
-  <span data-ty="input">curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s YOUR_API_KEY</span>
+    -<div id="termynal" data-termynal>
+  <span data-ty="input">franzuzz@MacBook-Pro-de-Jean mcp-demo % curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s YOUR_API_KEY</span>
   <span data-ty>Installing Kluster.ai server...</span>
   <span data-ty>✅ Installation complete!</span>
   <span data-ty>Restart Claude Code to apply the new rules</span>
@@ -572,7 +574,8 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
     
     1. Run the `/mcp` command in Claude Code.
 
-        -<div id="termynal-2" data-termynal>
+        -<div id="termynal" data-termynal>
+  <span data-ty="input">franzuzz@MacBook-Pro-de-Jean mcp-demo % claude</span>
   <span data-ty>✨ Welcome to Claude Code!</span>
   <span data-ty>/help for help, /status for your current setup</span>
   <span data-ty>cwd: /Users/franzuzz/code/demos/claude-code/mcp-demo</span>
@@ -583,6 +586,8 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
   <span data-ty>Be as specific as you would with another engineer for the best results</span>
   <span data-ty>✔ Run /terminal-setup to set up terminal integration</span>
   <span data-ty></span>
+
+  <span data-ty="input">/mcp</span>
   <span data-ty>Manage MCP servers</span>
   <span data-ty>  1. kluster-verify ✔ connected • Enter to view details</span>
   <span data-ty></span>
@@ -597,9 +602,9 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
   <span data-ty>https://docs.anthropic.com/en/docs/claude-code/mcp</span>
 </div>
 
-    2. Select kluster-verify in the MCP menu list and press enter to **View tools**.
+    2. Select **kluster-verify** in the MCP menu list and press enter to **View tools**.
 
-        -<div id="termynal-3" data-termynal>
+        -<div id="termynal" data-termynal>
   <span data-ty>Kluster-verify MCP Server</span>
   <span data-ty>Status: ✔ connected</span>
   <span data-ty>Command: npx</span>
@@ -612,11 +617,11 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
   <span data-ty>  2. Reconnect</span>
 </div>
 
-    3. You should see tools for **kluster-verify** listed with:
+    3. You should see tools for **kluster-verify** listed, including:
         - `kluster_code_review_auto`
         - `kluster_dependency_validator`
 
-        -<div id="termynal-4" data-termynal>
+        -<div id="termynal" data-termynal>
   <span data-ty>Tools for kluster-verify (3 tools)</span>
   <span data-ty>  1. kluster_code_review_auto</span>
   <span data-ty>  2. kluster_dependency_validator</span>
@@ -625,7 +630,7 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
 
 ## Next steps
 
-- **[Learn about the tools](/verify/code/tools/)**: Understand issue  types and priorities.
+- **[Learn about the tools](/verify/code/tools/)**: Understand issue types and priorities.
 - **[View examples](/verify/code/examples/cursor-firebase-nextjs/)**: See real-world case studies.
 --- END CONTENT ---
 
@@ -644,7 +649,7 @@ With Code verification, you can ship AI-generated code confidently, knowing pote
 
 The service works seamlessly with AI coding assistants in your IDE, analyzing code changes in real-time as they're generated.
 
-## How it works
+## Key features
 
 - **Real-time code review**: Monitors AI-generated code as it's written.
 
@@ -765,9 +770,9 @@ Choose your preferred IDE to get started with kluster.ai Verify Code in under 30
 
     ---
 
-     For Windsurf, Cline, Roo Code, and other MCP-compatible IDEs
+     Instructions for setting up Windsurf, Cline, Roo Code, and other MCP-compatible IDEs.
 
-    [:octicons-arrow-right-24: See our integration guides](/verify/code/integrations/mcp/){target=\_blank}.    
+    [:octicons-arrow-right-24: See integration guides](/verify/code/integrations/mcp/){target=\_blank}
 
 </div>
 
