@@ -727,9 +727,9 @@ Admin endpoints require special security attention that AI often misses:
 - **Log admin actions** for audit trails.
 - **Test all scenarios** including misconfiguration.
 
-[Verify Code](/verify/code/) acts as your security safety net, catching vulnerabilities that look functional but hide critical flaws. The more powerful the operation, the more critical this protection becomes.
+[Verify Code](/verify/) acts as your security safety net, catching vulnerabilities that look functional but hide critical flaws. The more powerful the operation, the more critical this protection becomes.
 
-**Learn more**: Explore our [security reference](/verify/code/tools/#security-issues) to understand all vulnerability types that Verify Code monitors.
+**Learn more**: Explore our [security reference](/verify/tools/#bug-check-types) to understand all vulnerability types that Verify Code monitors.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/verify/get-api-key/
@@ -1342,7 +1342,7 @@ Choose which MCP tools are active:
 
 ## Next steps
 
-- **[Set up integrations](/verify/code/integrations/)**: Configure IDE integrations to use these tools.
-- **[Get started](/verify/code/quickstart/)**: Follow the quickstart guide for immediate setup.
+- **[Set up integrations](/verify/integrations/ide/)**: Configure IDE integrations to use these tools.
+- **[Get started](/verify/quickstart/)**: Follow the quickstart guide for immediate setup.
 --- END CONTENT ---
 

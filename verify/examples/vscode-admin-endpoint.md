@@ -142,6 +142,6 @@ Admin endpoints require special security attention that AI often misses:
 - **Log admin actions** for audit trails.
 - **Test all scenarios** including misconfiguration.
 
-[Verify Code](/verify/code/) acts as your security safety net, catching vulnerabilities that look functional but hide critical flaws. The more powerful the operation, the more critical this protection becomes.
+[Verify Code](/verify/) acts as your security safety net, catching vulnerabilities that look functional but hide critical flaws. The more powerful the operation, the more critical this protection becomes.
 
-**Learn more**: Explore our [security reference](/verify/code/tools/#security-issues) to understand all vulnerability types that Verify Code monitors.
+**Learn more**: Explore our [security reference](/verify/tools/#bug-check-types) to understand all vulnerability types that Verify Code monitors.
