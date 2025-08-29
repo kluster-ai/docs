@@ -1,0 +1,33 @@
+# kluster.ai
+
+> kluster.ai provides the technology to verify and trust AI responses in real time. Developers can validate outputs, detect hallucinations, and ensure response reliability across any model, with minimal integration effort.
+
+## How to Use This File
+
+This file is intended for AI models and developers. Use it to:
+- Understand project architecture and follow builder guides (see Docs)
+- Access source code (see Source Code Repos)
+- Explore optional resources (see Optional)
+
+## Metadata
+- Documentation pages: 9
+- Source repositories: 2
+- Optional resources: 0
+
+## Docs
+This section lists documentation pages. Each entry includes the page title, a direct link to the raw Markdown file, and a short description. Use this section to answer questions about core functionality, architecture, and features. If a question is about how or why something works, check here first.
+- [Get a kluster.ai API key](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/get-api-key.md): Follow step-by-step instructions to generate and manage API keys, enabling secure access to kluster's services and seamless integration with your applications.
+- [Get started with Verify Code](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/quickstart.md): Set up kluster.ai Code verification in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
+- [tools](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/tools.md): No description available.
+- [MCP Compatible IDEs](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/code/integrations/mcp.md): Manual setup guide for Windsurf, Cline, Roo Code, Kilo Code and other MCP-compatible IDEs to use kluster.ai Verify Code.
+- [Native IDE Integration](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/code/integrations/native.md): One-click installation for Cursor, VS Code, and Claude Code with enhanced Verify Code features and custom extensions.
+- [MCP-compatible IDEs for Verify Code](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/integrations/mcp.md): Manual setup guide for Windsurf, Cline, Roo Code, Kilo Code, and other MCP-compatible IDEs to use kluster.ai Verify Code.
+- [Native IDEs Integration for Verify Code](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/integrations/ide.md): One-click installation for Cursor, VS Code, and Claude Code with enhanced Verify Code features and custom extensions.
+- [cursor-firebase-nextjs](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/examples/cursor-firebase-nextjs.md): No description available.
+- [vscode-admin-endpoint](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/examples/vscode-admin-endpoint.md): No description available.
+
+## Source Code Repos
+Frequently used source code repositories essential for working with this project. Each entry includes the repository name, GitHub URL, and a short description of what the repo contains or enables. These repositories contain the source code referenced by these docs. Use them for API references, code examples, or implementation details.
+- [kluster.ai cookbook](https://github.com/kluster-ai/klusterai-cookbook): This repository is a collection of guides and examples designed to help developers unlock the full potential of kluster.ai.
+- [Verify Guardrail Validator](https://github.com/kluster-ai/verify-guardrails-validator): This validator detects hallucinations in AI-generated content using kluster.ai's Verify API. The service can evaluate the AI response based on a given context, which makes it great for RAG applications. Without providing a specific context, the service can also be used as a real-time reliability verification service. Verify is able to identify when AI responses contain fabricated or inaccurate information.
+
