@@ -464,7 +464,7 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
     - Enable both verification tools.
 
     -<div id="termynal" data-termynal>
-  <span data-ty="input">curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s YOUR_API_KEY</span>
+  <span data-ty="input">franzuzz@MacBook-Pro-de-Jean mcp-demo % curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s YOUR_API_KEY</span>
   <span data-ty>Installing Kluster.ai server...</span>
   <span data-ty>✅ Installation complete!</span>
   <span data-ty>Restart Claude Code to apply the new rules</span>
@@ -488,6 +488,8 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
   <span data-ty>Be as specific as you would with another engineer for the best results</span>
   <span data-ty>✔ Run /terminal-setup to set up terminal integration</span>
   <span data-ty></span>
+
+  <span data-ty="input">/mcp</span>
   <span data-ty>Manage MCP servers</span>
   <span data-ty>  1. kluster-verify ✔ connected • Enter to view details</span>
   <span data-ty></span>
