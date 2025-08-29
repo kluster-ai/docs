@@ -97,4 +97,4 @@ Verify Code is available as a native extension for IDEs such as Cursor, VS Code 
 
 ## Additional resources
 
-- **[Get started](/verify/code/quickstart/)**: Run Verify Code in minutes.
+- **[Get started](/verify/quickstart/)**: Run Verify Code in minutes.
