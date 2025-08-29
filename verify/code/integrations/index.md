@@ -23,7 +23,7 @@ The [kluster.ai](https://www.kluster.ai/){target=\_blank} Verify Code service in
     - VS Code  
     - Claude Code
     
-    [:octicons-arrow-right-24: Setup Native IDEs](/verify/code/integrations/native/){target=\_blank}
+    [:octicons-arrow-right-24: Set up Native IDEs](/verify/code/integrations/native/){target=\_blank}
 
 -   __MCP compatible__
 
@@ -39,12 +39,12 @@ The [kluster.ai](https://www.kluster.ai/){target=\_blank} Verify Code service in
     - Kilo Code
     - Other MCP clients
     
-    [:octicons-arrow-right-24: Setup MCP IDEs](/verify/code/integrations/mcp/){target=\_blank}
+    [:octicons-arrow-right-24: Set up MCP IDEs](/verify/code/integrations/mcp/){target=\_blank}
 
 </div>
 
 !!! tip "Not sure which to choose?"
-    If you're using **Cursor**, **VS Code**, or **Claude Code**, always choose the [Native IDE integration](/verify/code/integrations/native/){target=\_blank} for the best experience.
+    If you're using Cursor, VS Code, or Claude Code, choose the [Native IDE integration](/verify/code/integrations/native/){target=\_blank} for the best experience.
     For all other IDEs, use the [MCP compatible setup](/verify/code/integrations/mcp/){target=\_blank}.
 
 ## How it works
@@ -64,4 +64,4 @@ Both integration types provide access to the same verification tools:
 - **`kluster_code_review_auto`**: For code security and quality verification.
 - **`kluster_dependency_validator`**: For dependency validation.
 
-Learn more about these tools in our [Tools reference](/verify/code/tools/){target=\_blank}.
+Learn more about these tools in the [Tools reference](/verify/code/tools/){target=\_blank} page.

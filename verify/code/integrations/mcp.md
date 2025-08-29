@@ -1,11 +1,11 @@
 ---
-title: MCP Compatible IDEs for Verify Code
-description: Manual setup guide for Windsurf, Cline, Roo Code, Kilo Code and other MCP-compatible IDEs to use kluster.ai Verify Code.
+title: MCP-compatible IDEs for Verify Code
+description: Manual setup guide for Windsurf, Cline, Roo Code, Kilo Code, and other MCP-compatible IDEs to use kluster.ai Verify Code.
 ---
 
-# MCP compatible IDEs
+# MCP-compatible IDEs
 
-Configure kluster.ai Verify Code in any MCP-compatible IDE with manual setup. While these IDEs don't have native Kluster extensions, they provide full verification capabilities through the standard MCP protocol.
+Configure [kluster.ai](https://www.kluster.ai/){target=\_blank} Verify Code in any MCP-compatible IDE with manual setup. While these IDEs don't have native kluster.ai extensions, they provide full verification capabilities through the standard MCP protocol.
 
 !!! tip "Consider Native IDEs"
     For the best experience, consider using [Cursor, VS Code, or Claude Code](/verify/code/integrations/native/) which offer enhanced features and one-click installation.
@@ -45,7 +45,7 @@ Add the following to your IDE's MCP configuration file:
 
     **Configuration steps**
     
-    1. Open Settings by clicking the gear icon or using the command palette.
+    1. Open **Settings** by clicking the gear icon or using the command palette.
     
     2. Click **Windsurf Settings**.
     
@@ -63,8 +63,8 @@ Add the following to your IDE's MCP configuration file:
     
     The **Kluster-Verify-Code-MCP** will appear with both tools enabled:
 
-    - `kluster_code_review_auto`: For code security and quality verification.
-    - `kluster_dependency_validator`: For dependency validation.
+    - **`kluster_code_review_auto`**: For code security and quality verification.
+    - **`kluster_dependency_validator`**: For dependency validation.
     
     ![Active MCP Tools in Windsurf](/images/verify/code/integrations/windsurf/windsurf-integration-5.webp)
 
@@ -72,7 +72,7 @@ Add the following to your IDE's MCP configuration file:
 
     **Configuration steps**
     
-    1. Open Settings and navigate to **MCP Servers**.
+    1. Open **Settings** and navigate to **MCP Servers**.
     
     2. Select the **Installed** tab.
     
@@ -86,8 +86,8 @@ Add the following to your IDE's MCP configuration file:
     
     You should see the **Kluster-Verify-Code-MCP** server with both tools enabled:
 
-    - `kluster_code_review_auto`: For code security and quality verification.
-    - `kluster_dependency_validator`: For dependency validation.
+    - **`kluster_code_review_auto`**: For code security and quality verification.
+    - **`kluster_dependency_validator`**: For dependency validation.
     
     ![Kluster MCP Tools in Kilo Code](/images/verify/code/integrations/kilo/kilo-integration-2.webp)
 
@@ -109,8 +109,8 @@ Add the following to your IDE's MCP configuration file:
     
     The **Kluster-Verify-Code-MCP** server will appear with both tools enabled:
 
-    - `kluster_code_review_auto`: For code security and quality verification.
-    - `kluster_dependency_validator`: For dependency validation.
+    - **`kluster_code_review_auto`**: For code security and quality verification.
+    - **`kluster_dependency_validator`**: For dependency validation.
     
     ![MCP Configuration in Cline](/images/verify/code/integrations/cline/cline-integration-2.webp)
 
@@ -132,8 +132,8 @@ Add the following to your IDE's MCP configuration file:
     
     The **Kluster-Verify-Code-MCP** server will appear with both tools enabled:
 
-    - `kluster_code_review_auto`: For code security and quality verification.
-    - `kluster_dependency_validator`: For dependency validation.
+    - **`kluster_code_review_auto`**: For code security and quality verification.
+    - **`kluster_dependency_validator`**: For dependency validation.
     
     ![Active MCP Tools in Roo Code](/images/verify/code/integrations/roocode/roocode-integration-2.webp)
 
@@ -147,7 +147,8 @@ Add the following to your IDE's MCP configuration file:
     2. Add the Kluster MCP configuration shown above.
     3. Replace `your-api-key-here` with your actual API key.
     4. Save and restart your IDE if required.
-    5. The tools should now be available in your AI assistant.
+    
+    The tools should now be available in your AI assistant.
     
 
 ## Next steps

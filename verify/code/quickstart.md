@@ -49,9 +49,9 @@ Choose your preferred IDE to get started with kluster.ai Verify Code in under 30
 
     ---
 
-     For Windsurf, Cline, Roo Code, and other MCP-compatible IDEs
+     Instructions for setting up Windsurf, Cline, Roo Code, and other MCP-compatible IDEs.
 
-    [:octicons-arrow-right-24: See our integration guides](/verify/code/integrations/mcp/){target=\_blank}.    
+    [:octicons-arrow-right-24: See integration guides](/verify/code/integrations/mcp/){target=\_blank}
 
 </div>
 

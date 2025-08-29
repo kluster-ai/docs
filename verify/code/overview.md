@@ -11,7 +11,7 @@ With Code verification, you can ship AI-generated code confidently, knowing pote
 
 The service works seamlessly with AI coding assistants in your IDE, analyzing code changes in real-time as they're generated.
 
-## How it works
+## Key features
 
 - **Real-time code review**: Monitors AI-generated code as it's written.
 
