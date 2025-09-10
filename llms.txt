@@ -10,7 +10,7 @@ This file is intended for AI models and developers. Use it to:
 - Explore optional resources (see Optional)
 
 ## Metadata
-- Documentation pages: 6
+- Documentation pages: 7
 - Source repositories: 2
 - Optional resources: 0
 
@@ -22,6 +22,7 @@ This section lists documentation pages. Each entry includes the page title, a di
 - [MCP-compatible IDEs for Verify Code](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/integrations/mcp.md): Manual setup guide for Windsurf, Cline, Roo Code, Kilo Code, and other MCP-compatible IDEs to use kluster.ai Verify Code.
 - [Native IDEs Integration for Verify Code](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/integrations/ide.md): One-click installation for Cursor, VS Code, and Claude Code with enhanced Verify Code features and custom extensions.
 - [cursor-firebase-nextjs](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/examples/cursor-firebase-nextjs.md): No description available.
+- [vscode-admin-endpoint](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/examples/vscode-admin-endpoint.md): No description available.
 
 ## Source Code Repos
 Frequently used source code repositories essential for working with this project. Each entry includes the repository name, GitHub URL, and a short description of what the repo contains or enables. These repositories contain the source code referenced by these docs. Use them for API references, code examples, or implementation details.
