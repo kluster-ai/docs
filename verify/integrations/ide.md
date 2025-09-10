@@ -26,14 +26,6 @@ Before getting started, ensure you have:
     3. Click **Install** to add the extension into Cursor.
 
         ![Extension Installation Prompt in Cursor](/images/verify/code/integrations/cursor/cursor-integration-1.webp)
-    
-    4. Now that the extension is active, click on **Install** on the bottom left corner to install the MCP tools.
-
-        ![MCP Tools Installation Button in Cursor](/images/verify/code/integrations/cursor/cursor-integration-2.webp)
-    
-    5. To finish the setup, click on **Install** to confirm the MCP settings. 
-
-        ![MCP Settings Confirmation in Cursor](/images/verify/code/integrations/cursor/cursor-integration-3.webp)
 
     Once installed, you can verify the setup:
 
@@ -43,7 +35,7 @@ Before getting started, ensure you have:
 
         --8<-- 'text/verify/code-tools.md'
 
-        ![Active MCP Tools in Cursor](/images/verify/code/integrations/cursor/cursor-integration-4.webp)
+        ![Active MCP Tools in Cursor](/images/verify/code/integrations/cursor/cursor-integration-2.webp)
 
 === "VS Code"
    
