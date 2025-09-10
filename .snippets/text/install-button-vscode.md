@@ -1,1 +1,1 @@
-[Add to VS Code](vscode:extension/klusterai.kluster-verify-code){target=\_blank .md-button .md-button--primary}
+[:octicons-arrow-right-24: Add to VS Code](vscode:extension/klusterai.kluster-verify-code){target=_blank .md-button .md-button--primary}
