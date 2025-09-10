@@ -72,7 +72,7 @@ Before getting started, ensure you have:
 
     5. To complete the setup, click **Install** to accept the MCP configuration for Verify Code. 
     
-         ![Install MCP ](/images/verify/code/integrations/vscode/vscode-integration-6.webp)
+         ![Install MCP](/images/verify/code/integrations/vscode/vscode-integration-6.webp)
     6. Press **Trust** to Install the MCP server.
     ![MCP Server Trust Installation in VS Code](/images/verify/code/integrations/vscode/vscode-integration-7.webp)
         
