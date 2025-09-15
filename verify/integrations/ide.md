@@ -26,24 +26,16 @@ Before getting started, ensure you have:
     3. Click **Install** to add the extension into Cursor.
 
         ![Extension Installation Prompt in Cursor](/images/verify/code/integrations/cursor/cursor-integration-1.webp)
-    
-    4. Now that the extension is active, click on **Install** on the bottom left corner to install the MCP tools.
-
-        ![MCP Tools Installation Button in Cursor](/images/verify/code/integrations/cursor/cursor-integration-2.webp)
-    
-    5. To finish the setup, click on **Install** to confirm the MCP settings. 
-
-        ![MCP Settings Confirmation in Cursor](/images/verify/code/integrations/cursor/cursor-integration-3.webp)
 
     Once installed, you can verify the setup:
 
     1. Open **Cursor Settings**. You can use the gear icon in the top right corner to do so.
     2. Navigate to **Tools & Integrations** → **MCP Tools**.
-    3. You should see **Kluster-Verify-Code-MCP** with both tools enabled:
+    3. You should see **extension-Kluster-Verify-Code** with all tools enabled:
 
         --8<-- 'text/verify/code-tools.md'
 
-        ![Active MCP Tools in Cursor](/images/verify/code/integrations/cursor/cursor-integration-4.webp)
+        ![Active MCP Tools in Cursor](/images/verify/code/integrations/cursor/cursor-integration-2.webp)
 
 === "VS Code"
    
@@ -80,7 +72,7 @@ Before getting started, ensure you have:
 
     5. To complete the setup, click **Install** to accept the MCP configuration for Verify Code. 
     
-         ![Install MCP ](/images/verify/code/integrations/vscode/vscode-integration-6.webp)
+         ![Install MCP](/images/verify/code/integrations/vscode/vscode-integration-6.webp)
     6. Press **Trust** to Install the MCP server.
     ![MCP Server Trust Installation in VS Code](/images/verify/code/integrations/vscode/vscode-integration-7.webp)
         

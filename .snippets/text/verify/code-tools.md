@@ -1,2 +1,3 @@
-- **`kluster_code_review_auto`**: For code security and quality verification.
-- **`kluster_dependency_validator`**: For dependency validation.
+- **`kluster_code_review_auto`**: Automatic code security, quality, and compliance verification.
+- **`kluster_dependency_validator`**: Dependency health and risk validation.
+- **`kluster_code_review_manual`**: On-demand, user-requested per-file verification (security, quality, compliance).
