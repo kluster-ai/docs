@@ -31,7 +31,7 @@ Before getting started, ensure you have:
 
     1. Open **Cursor Settings**. You can use the gear icon in the top right corner to do so.
     2. Navigate to **Tools & Integrations** → **MCP Tools**.
-    3. You should see **Kluster-Verify-Code-MCP** with both tools enabled:
+    3. You should see **extension-Kluster-Verify-Code** with all tools enabled:
 
         --8<-- 'text/verify/code-tools.md'
 
