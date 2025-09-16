@@ -20,7 +20,7 @@ You can create manual rules to enforce your team's coding standards or connect G
 
     ![Connect to GitHub](../../images/verify/code/rules/rules-1.webp)
 
-3. **Add review rules**: Click **Add review rule** to create custom rules.
+3. Click **Add review rule** to create custom rules.
 
     ![Add review rule button](../../images/verify/code/rules/rules-2.webp)
 
