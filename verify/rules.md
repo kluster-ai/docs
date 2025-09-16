@@ -11,6 +11,9 @@ Rules are project-specific development practices, guidelines, and common pattern
 
 You can create manual rules to enforce your team's coding standards or connect GitHub to automatically extract patterns from your repositories. Rules can be applied globally or to specific projects.
 
+!!! info "Extraction Rate Limit"
+    Rule extraction from repositories is limited to once per hour. Wait 60 minutes between extraction requests.
+
 1. **Access the platform**: Navigate to [Custom Code Review Rules](https://platform.kluster.ai/custom-code-review-rules){target=\_blank}.
 
 2. **Connect GitHub** (Optional): Click **Connect to GitHub** to enable project-specific rules. You will be redirected to GitHub to authorize the connection.
