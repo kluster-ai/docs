@@ -1,6 +1,6 @@
 # Rules
 
-Rules are project-specific development practices, guidelines, and common patterns  that help maintain code quality. When you use [kluster.ai](https://kluster.ai){target=\_blank} Verify Code, these rules automatically check newly generated code to ensure it follows your team's established patterns.
+Rules are project-specific development practices, guidelines, and common patterns that help maintain code quality. When you use [kluster.ai](https://kluster.ai){target=\_blank} Verify Code, these rules automatically check newly generated code to ensure it follows your team's established patterns.
 
 ## Rule Types
 
