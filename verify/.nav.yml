@@ -5,7 +5,7 @@ nav:
   - 'Get an API key': get-api-key.md
   - 'Get started': quickstart.md
   - 'Tools reference': tools.md
-  - 'Rules': rules.md
+  - 'rules': rules.md
   - 'Integrations': integrations
   - 'Examples': examples
 

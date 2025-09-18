@@ -1,20 +1,20 @@
-# Rules
+# rules
 
-Rules are project-specific development practices, guidelines, and common patterns that help maintain code quality. When you use [kluster.ai](https://kluster.ai){target=\_blank} Verify Code, these rules automatically check newly generated code to ensure it follows your team's established patterns.
+Rules are project-specific development practices, guidelines, and common patterns that help maintain code quality. When you use [kluster.ai](https://kluster.ai){target=_blank} Verify code, these rules automatically check newly generated code to ensure it follows your team's established patterns.
 
 ## Rule Types
 
-- **Manual Rules**: Custom rules you create based on your team's specific requirements and coding standards.
-- **Learned Rules**: Automatically extracted from your GitHub repositories, continuously updated to reflect your codebase patterns.
+- **Manual rules**: Custom rules you create based on your team's specific requirements and coding standards.
+- **Learned rules**: Automatically extracted from your GitHub repositories, continuously updated to reflect your codebase patterns.
 
-## Setup instructions
+## Set up instructions
 
 You can create manual rules to enforce your team's coding standards or connect GitHub to automatically extract patterns from your repositories. Rules can be applied globally or to specific projects.
 
-!!! info "Extraction Rate Limit"
+!!! info "Extraction rate limit"
     Rule extraction from repositories is limited to once per hour. Wait 60 minutes between extraction requests.
 
-1. **Access the platform**: Navigate to [Custom Code Review Rules](https://platform.kluster.ai/custom-code-review-rules){target=\_blank}.
+1. **Access the platform**: Navigate to [Custom Code Review Rules](https://platform.kluster.ai/custom-code-review-rules){target=_blank}.
 
 2. **Connect GitHub** (Optional): Click **Connect to GitHub** to enable project-specific rules. You will be redirected to GitHub to authorize the connection.
 
@@ -34,5 +34,5 @@ You can create manual rules to enforce your team's coding standards or connect G
 
 ## Next steps
 
-- **[View all integrations](/verify/integrations/)**: Set up Verify Code in your preferred IDE.
+- [View all integrations](/verify/integrations/): Set up Verify code in your preferred IDE.
 - **[See real examples](/verify/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
