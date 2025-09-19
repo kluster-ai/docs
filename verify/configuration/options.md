@@ -9,14 +9,14 @@ You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Verif
 
 ![Code Review Options interface showing three numbered sections: Severity Settings, Code Review Scope, and Enabled Tools](/images/verify/code/configuration/configuration-1.webp)
 
-## 1. Severity settings
+## 1. Sensitivity settings
 
 Configure the minimum severity level for the Real-time Code Review tool's issue reporting. Set your threshold based on your team's needs:
 
-- `Low`: Maximum sensitivity. Detects even the smallest potential issues.
-- `Medium`: High sensitivity. Suitable for projects requiring strong security and high code quality.
-- `High`: Recommended level. Balances strong protection against LLM and security issues with performance.
-- `Critical`: Minimal checks. Focuses only on critical issues for faster iteration and a smoother coding experience.
+- `Low`: Detects even the smallest potential issues.
+- `Medium`: Suitable for projects requiring strong security and high code quality.
+- `High`: (Recommended) Balances strong protection against LLM hallucination and security issues with performance.
+- `Critical`: Focuses only on critical issues for faster iteration and smoother coding experience.
 
 The ideal setting depends on your use case. For example, a **High** level is a good starting point, but you might want to set it to **Medium** for production code.
 
