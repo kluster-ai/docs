@@ -35,10 +35,10 @@ You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Verif
 
 Configure the minimum severity level for the Real-time Code Review tool's issue reporting. Set your threshold based on your team's needs:
 
-- `Critical`: Breaking errors and security vulnerabilities
-- `High`: Functional bugs and logic errors
-- `Medium`: Code quality and performance issues
-- `Low`: Style suggestions and minor improvements
+- `Low`: Maximum sensitivity. Detects even the smallest potential issues.
+- `Medium`: High sensitivity. Suitable for projects requiring strong security and high code quality.
+- `High`: Recommended level. Balances strong protection against LLM and security issues with performance.
+- `Critical`: Minimal checks. Focuses only on critical issues for faster iteration and a smoother coding experience.
 
 The ideal setting depends on your use case. For example, a **High** level is a good starting point, but you might want to set it to **Medium** for production code.
 
