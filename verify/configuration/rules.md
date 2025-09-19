@@ -1,6 +1,6 @@
 # Custom rules
 
-Rules are project-specific development practices, guidelines, and common patterns that help maintain code quality. When you use [kluster.ai](https://kluster.ai){target=_blank} Verify code, these rules automatically check newly generated code to ensure it follows your team's established patterns.
+Rules define practices, guidelines, and patterns that maintain code quality for your projects. When connected to GitHub, each repository becomes a project with its own learned rules. You can also create manual rules that apply globally or to specific projects. [kluster.ai](https://kluster.ai){target=_blank} Verify code automatically checks newly generated code against these rules.
 
 ## Rule Types
 
@@ -16,7 +16,7 @@ You can create manual rules to enforce your team's coding standards or connect G
 
 1. **Access the platform**: Navigate to [Custom Code Review Rules](https://platform.kluster.ai/custom-code-review-rules){target=_blank}.
 
-2. **Connect GitHub** (Optional): Click **Connect to GitHub** to enable project-specific rules. You will be redirected to GitHub to authorize the connection.
+2. **Connect GitHub** (Optional): Connect your GitHub account to enable project-specific rules. In this context, each GitHub repository is treated as a 'project' - Verify code learns patterns from each repository and applies those specific rules when reviewing code for that project.
 
     ![Connect to GitHub](../../images/verify/code/configuration/rules/rules-1.webp)
 

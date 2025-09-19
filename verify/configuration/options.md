@@ -11,7 +11,12 @@ You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Verif
 
 ## 1. Severity settings
 
-Configure the minimum severity level for the Real-time Code Review tool's issue reporting. Set your threshold based on your team's needs: **Low**, **Medium**, **High**, **Critical**.
+Configure the minimum severity level for the Real-time Code Review tool's issue reporting. Set your threshold based on your team's needs:
+
+- `Critical`: Breaking errors and security vulnerabilities
+- `High`: Functional bugs and logic errors
+- `Medium`: Code quality and performance issues
+- `Low`: Style suggestions and minor improvements
 
 The ideal setting depends on your use case. For example, a **High** level is a good starting point, but you might want to set it to **Medium** for production code.
 
@@ -33,8 +38,8 @@ Select which types of issues the Real-time Code Review tool detects during code 
 
 Control which verification tools run in your development environment. Enable or disable each tool based on your project's specific needs and workflow.
 
-- **Real-time Code Review**: For code quality verification.
-- **Dependency Analysis**: For package and dependency security.
+- `Real-time Code Review`: For code quality verification.
+- `Dependency Analysis`: For package and dependency security.
 
 ## Next steps
 
