@@ -33,7 +33,7 @@ The service responds with the following fields:
 
 - **Real-time code review**: Monitors AI-generated code as it’s written.
 - **Comprehensive issue detection**: Analyzes 7 issue types — *Semantic, Intent, Logical, Security, Knowledge, Performance,* and *Quality*.
-- **Customizable severity levels**: Configure detection sensitivity from *Low* to *Critical*.
+- **Customizable sensitivity levels**: Configure detection sensitivity from *Low* to *Critical*.
 - **Dual analysis tools**: Real-time **Code Review** and **Dependency Analysis** for complete coverage.
 - **Automatic correction**: AI incorporates feedback to fix issues immediately.
 
@@ -41,7 +41,7 @@ The service responds with the following fields:
 
 Tailor Verify Code to your workflow:
 
-- **Severity settings**: Set minimum severity to report (*Low → Critical*).
+- **Sensitivity settings**: Set minimum sensitivity to report (*Low → Critical*).
 - **Bug check types**: Select which issue types to check: *Semantic, Security, Quality, Intent, Knowledge, Logical, Performance*.
 - **Enabled tools**: Choose which MCP tools are active (bug check tool, packages check tool).
 
