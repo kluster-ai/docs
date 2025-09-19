@@ -1,17 +1,17 @@
 ---
 title: Options
-description: Configure kluster.ai Verify code settings including severity levels, bug types, and enabled tools for AI-generated code verification.
+description: Configure kluster.ai Verify code settings including sensitivity levels, bug types, and enabled tools for AI-generated code verification.
 ---
 
 # Options
 
-You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Verify code behavior through the platform settings or directly in your IDE. This allows you to tailor the verification process to your specific needs, such as configuring severity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
+You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Verify code behavior through the platform settings or directly in your IDE. This allows you to tailor the verification process to your specific needs, such as configuring sensitivity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
 
-![Code Review Options interface showing three numbered sections: Severity Settings, Code Review Scope, and Enabled Tools](/images/verify/code/configuration/configuration-1.webp)
+![Code Review Options interface showing three numbered sections: Sensitivity Settings, Code Review Scope, and Enabled Tools](/images/verify/code/configuration/configuration-1.webp)
 
 ## 1. Sensitivity settings
 
-Configure the minimum severity level for the Real-time Code Review tool's issue reporting. Set your threshold based on your team's needs:
+Configure the minimum sensitivity level for the Real-time Code Review tool's issue reporting. Set your threshold based on your team's needs:
 
 - `Low`: Detects even the smallest potential issues.
 - `Medium`: Suitable for projects requiring strong security and high code quality.
