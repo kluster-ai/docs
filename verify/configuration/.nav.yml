@@ -2,5 +2,5 @@ title: Configuration
 hide: false
 nav:
   - 'Overview': index.md
-  - 'Options': options.md
+  - 'Settings': options.md
   - 'Custom rules': rules.md
