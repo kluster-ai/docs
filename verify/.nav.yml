@@ -4,8 +4,8 @@ nav:
   - 'Overview': index.md
   - 'Get an API key': get-api-key.md
   - 'Get started': quickstart.md
+  - 'Configuration': configuration
   - 'Tools reference': tools.md
-  - 'rules': rules.md
   - 'Integrations': integrations
   - 'Examples': examples
 

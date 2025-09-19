@@ -6,16 +6,106 @@ kluster.ai. kluster.ai provides the technology to verify and trust AI responses 
 Documentation: https://docs.kluster.ai
 
 ## List of doc pages:
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/configuration/options.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/configuration/rules.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/examples/cursor-firebase-nextjs.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/examples/vscode-admin-endpoint.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/get-api-key.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/integrations/ide.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/integrations/mcp.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/quickstart.md
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/rules.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/tools.md
 
 ## Full content for each doc page
+
+Doc-Content: https://docs.kluster.ai/verify/configuration/options/
+--- BEGIN CONTENT ---
+---
+title: Options
+description: Configure kluster.ai Verify code settings including severity levels, bug types, and enabled tools for AI-generated code verification.
+---
+
+# Options
+
+You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Verify code behavior through the platform settings or directly in your IDE. This allows you to tailor the verification process to your specific needs, such as configuring severity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
+
+![Code Review Options interface showing three numbered sections: Severity Settings, Code Review Scope, and Enabled Tools](/images/verify/code/configuration/configuration-1.webp)
+
+## 1. Severity settings
+
+Configure the minimum severity level for the Real-time Code Review tool's issue reporting. Set your threshold based on your team's needs: **Low**, **Medium**, **High**, **Critical**.
+
+The ideal setting depends on your use case. For example, a **High** level is a good starting point, but you might want to set it to **Medium** for production code.
+
+## 2. Code review scope
+
+Select which types of issues the Real-time Code Review tool detects during code analysis. You have full control over which bug types to check for through simple on/off toggles.
+
+|     Type      |           Description           |                Example                |
+|:-------------:|:-------------------------------:|:-------------------------------------:|
+|   `intent`    | Code doesn't match user request | User asked for sorting, got filtering |
+|  `semantic`   |          Logic errors           |        Missing error handling         |
+|  `knowledge`  |    Best practice violations     |       Not following conventions       |
+| `performance` |       Performance issues        |        Inefficient algorithms         |
+|   `quality`   |      Code quality problems      |        Poor naming, complexity        |
+|   `logical`   |          Logic errors           |           Off-by-one errors           |
+|  `security`   |    Security vulnerabilities     |          SQL injection risks          |
+
+## 3. Enabled tools
+
+Control which verification tools run in your development environment. Enable or disable each tool based on your project's specific needs and workflow.
+
+- **Real-time Code Review**: For code quality verification.
+- **Dependency Analysis**: For package and dependency security.
+
+## Next steps
+
+- [Create custom rules](/verify/configuration/rules/): Add project-specific development standards.
+- [View tools reference](/verify/tools/): Understand the technical API details.
+- [Set up integrations](/verify/integrations/ide/): Configure IDE integrations.
+--- END CONTENT ---
+
+Doc-Content: https://docs.kluster.ai/verify/configuration/rules/
+--- BEGIN CONTENT ---
+# Custom rules
+
+Rules are project-specific development practices, guidelines, and common patterns that help maintain code quality. When you use [kluster.ai](https://kluster.ai){target=_blank} Verify code, these rules automatically check newly generated code to ensure it follows your team's established patterns.
+
+## Rule Types
+
+- **Manual rules**: Custom rules you create based on your team's specific requirements and coding standards.
+- **Learned rules**: Automatically extracted from your GitHub repositories, continuously updated to reflect your codebase patterns.
+
+## Set up instructions
+
+You can create manual rules to enforce your team's coding standards or connect GitHub to automatically extract patterns from your repositories. Rules can be applied globally or to specific projects.
+
+!!! info "Extraction rate limit"
+    Rule extraction from repositories is limited to once per hour. Wait 60 minutes between extraction requests.
+
+1. **Access the platform**: Navigate to [Custom Code Review Rules](https://platform.kluster.ai/custom-code-review-rules){target=_blank}.
+
+2. **Connect GitHub** (Optional): Click **Connect to GitHub** to enable project-specific rules. You will be redirected to GitHub to authorize the connection.
+
+    ![Connect to GitHub](../../images/verify/code/configuration/rules/rules-1.webp)
+
+3. Click **Add review rule** to create custom rules.
+
+    ![Add review rule button](../../images/verify/code/configuration/rules/rules-2.webp)
+
+4. **Configure rule scope**: Enter your rule and select the scope:
+    - **All**: Rules apply globally to all your coding sessions.
+    - **Project-specific**: Select a repository from the dropdown (requires GitHub connection).
+
+5. Click **Save & Add Another** to add multiple rules or **Save** to finish.
+
+    ![Add code review rule dialog](../../images/verify/code/configuration/rules/rules-3.webp)
+
+## Next steps
+
+- [View all integrations](/verify/integrations/): Set up Verify code in your preferred IDE.
+- **[See real examples](/verify/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
+--- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/verify/examples/cursor-firebase-nextjs/
 --- BEGIN CONTENT ---
@@ -917,48 +1007,6 @@ Choose your preferred IDE to get started with kluster.ai Verify Code in under 30
 - **[See real examples](/verify/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/verify/rules/
---- BEGIN CONTENT ---
-# rules
-
-Rules are project-specific development practices, guidelines, and common patterns that help maintain code quality. When you use [kluster.ai](https://kluster.ai){target=_blank} Verify code, these rules automatically check newly generated code to ensure it follows your team's established patterns.
-
-## Rule Types
-
-- **Manual rules**: Custom rules you create based on your team's specific requirements and coding standards.
-- **Learned rules**: Automatically extracted from your GitHub repositories, continuously updated to reflect your codebase patterns.
-
-## Set up instructions
-
-You can create manual rules to enforce your team's coding standards or connect GitHub to automatically extract patterns from your repositories. Rules can be applied globally or to specific projects.
-
-!!! info "Extraction rate limit"
-    Rule extraction from repositories is limited to once per hour. Wait 60 minutes between extraction requests.
-
-1. **Access the platform**: Navigate to [Custom Code Review Rules](https://platform.kluster.ai/custom-code-review-rules){target=_blank}.
-
-2. **Connect GitHub** (Optional): Click **Connect to GitHub** to enable project-specific rules. You will be redirected to GitHub to authorize the connection.
-
-    ![Connect to GitHub](../../images/verify/code/rules/rules-1.webp)
-
-3. Click **Add review rule** to create custom rules.
-
-    ![Add review rule button](../../images/verify/code/rules/rules-2.webp)
-
-4. **Configure rule scope**: Enter your rule and select the scope:
-    - **All**: Rules apply globally to all your coding sessions.
-    - **Project-specific**: Select a repository from the dropdown (requires GitHub connection).
-
-5. Click **Save & Add Another** to add multiple rules or **Save** to finish.
-
-    ![Add code review rule dialog](../../images/verify/code/rules/rules-3.webp)
-
-## Next steps
-
-- [View all integrations](/verify/integrations/): Set up Verify code in your preferred IDE.
-- **[See real examples](/verify/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
---- END CONTENT ---
-
 Doc-Content: https://docs.kluster.ai/verify/tools/
 --- BEGIN CONTENT ---
 ---
@@ -1038,20 +1086,6 @@ All Code verification tools return the same response structure:
 }
 ```
 
-## Bug check types
-
-Code verification categorizes detected issues into seven distinct types, each targeting specific aspects of code quality and correctness. You have full control over which bug types to check for through simple on/off toggles.
-
-|     Type      |           Description           |                Example                |
-|:-------------:|:-------------------------------:|:-------------------------------------:|
-|   `intent`    | Code doesn't match user request | User asked for sorting, got filtering |
-|  `semantic`   |          Logic errors           |        Missing error handling         |
-|  `knowledge`  |    Best practice violations     |       Not following conventions       |
-| `performance` |       Performance issues        |        Inefficient algorithms         |
-|   `quality`   |      Code quality problems      |        Poor naming, complexity        |
-|   `logical`   |          Logic errors           |           Off-by-one errors           |
-|  `security`   |    Security vulnerabilities     |          SQL injection risks          |
-
 ## Priority system
 
 Code verification assigns priority levels to detected issues, helping you focus on the most critical problems first. The system automatically prioritizes based on issue type and severity.
@@ -1062,27 +1096,10 @@ Code verification assigns priority levels to detected issues, helping you focus 
 - **P4**: Medium severity - nice to fix.
 - **P5**: Low severity - optional improvements.
 
-## Configuration settings
-
-You can customize the Code verification behavior through the settings page in your IDE. This allows you to tailor the verification process to your specific needs, such as configuring severity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
-
-![Screenshot of Code verification settings interface showing severity levels and enabled tools configuration options.](/images/verify/code/tools/tools-1.webp)
-
-### Severity settings
-
-Configure the minimum severity level for issue reporting. Set your threshold based on your team's needs: **Low**, **Medium**, **High**, **Critical**.
-
-The ideal setting depends on your use case. For example, a **High** level is a good starting point, but you might want to set it to **Medium** for production code.
-
-### Enabled tools
-
-Choose which MCP tools are active:
-
-- **Bug Check Tool**: For code quality verification.
-- **Packages Check Tool**: For dependency security.
 
 ## Next steps
 
+- **[Configure settings](/verify/configuration/)**: Customize verification behavior for your needs.
 - **[Set up integrations](/verify/integrations/ide/)**: Configure IDE integrations to use these tools.
 - **[Get started](/verify/quickstart/)**: Follow the quickstart guide for immediate setup.
 --- END CONTENT ---

@@ -75,20 +75,6 @@ All Code verification tools return the same response structure:
 }
 ```
 
-## Bug check types
-
-Code verification categorizes detected issues into seven distinct types, each targeting specific aspects of code quality and correctness. You have full control over which bug types to check for through simple on/off toggles.
-
-|     Type      |           Description           |                Example                |
-|:-------------:|:-------------------------------:|:-------------------------------------:|
-|   `intent`    | Code doesn't match user request | User asked for sorting, got filtering |
-|  `semantic`   |          Logic errors           |        Missing error handling         |
-|  `knowledge`  |    Best practice violations     |       Not following conventions       |
-| `performance` |       Performance issues        |        Inefficient algorithms         |
-|   `quality`   |      Code quality problems      |        Poor naming, complexity        |
-|   `logical`   |          Logic errors           |           Off-by-one errors           |
-|  `security`   |    Security vulnerabilities     |          SQL injection risks          |
-
 ## Priority system
 
 Code verification assigns priority levels to detected issues, helping you focus on the most critical problems first. The system automatically prioritizes based on issue type and severity.
@@ -99,26 +85,9 @@ Code verification assigns priority levels to detected issues, helping you focus 
 - **P4**: Medium severity - nice to fix.
 - **P5**: Low severity - optional improvements.
 
-## Configuration settings
-
-You can customize the Code verification behavior through the settings page in your IDE. This allows you to tailor the verification process to your specific needs, such as configuring severity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
-
-![Screenshot of Code verification settings interface showing severity levels and enabled tools configuration options.](/images/verify/code/tools/tools-1.webp)
-
-### Severity settings
-
-Configure the minimum severity level for issue reporting. Set your threshold based on your team's needs: **Low**, **Medium**, **High**, **Critical**.
-
-The ideal setting depends on your use case. For example, a **High** level is a good starting point, but you might want to set it to **Medium** for production code.
-
-### Enabled tools
-
-Choose which MCP tools are active:
-
-- **Bug Check Tool**: For code quality verification.
-- **Packages Check Tool**: For dependency security.
 
 ## Next steps
 
+- **[Configure settings](/verify/configuration/)**: Customize verification behavior for your needs.
 - **[Set up integrations](/verify/integrations/ide/)**: Configure IDE integrations to use these tools.
 - **[Get started](/verify/quickstart/)**: Follow the quickstart guide for immediate setup.
