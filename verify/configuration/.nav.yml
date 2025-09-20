@@ -1,0 +1,5 @@
+title: Configuration
+hide: false
+nav:
+  - 'Options': options.md
+  - 'Custom rules': rules.md
