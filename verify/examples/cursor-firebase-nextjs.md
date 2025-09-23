@@ -17,7 +17,7 @@ Learn how [Verify Code](/verify/) acts as your safety net when using Cursor AI t
 
 Getting Verify Code working in Cursor takes just one click. Visit our [quickstart guide](/verify/quickstart/) and click **Add to Cursor** for automatic installation.
 
-For manual setup or other IDEs, see our [MCP-compatible integration guides](/verify/integrations/mcp/).
+For other IDEs, see our [MCP-compatible integration guides](/verify/quickstart/).
 
 ## Next.js e-commerce
 

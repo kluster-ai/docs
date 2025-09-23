@@ -10,9 +10,6 @@ Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/configur
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/configuration/rules.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/examples/cursor-firebase-nextjs.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/examples/vscode-admin-endpoint.md
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/get-api-key.md
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/integrations/ide.md
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/integrations/mcp.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/quickstart.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/tools.md
 
@@ -67,7 +64,7 @@ Control which verification tools run in your development environment. Enable or 
 
 - [Create custom rules](/verify/configuration/rules/): Add project-specific development standards.
 - [View tools reference](/verify/tools/): Understand the technical API details.
-- [Set up integrations](/verify/integrations/ide/): Configure IDE integrations.
+- [Set up integrations](/verify/quickstart/): Configure IDE integrations.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/verify/configuration/rules/
@@ -108,7 +105,7 @@ You can create manual rules to enforce your team's coding standards or connect G
 
 ## Next steps
 
-- [View all integrations](/verify/integrations/): Set up Verify code in your preferred IDE.
+- [View all integrations](/verify/quickstart/): Set up Verify code in your preferred IDE.
 - **[See real examples](/verify/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
 --- END CONTENT ---
 
@@ -126,7 +123,8 @@ Learn how [Verify Code](/verify/) acts as your safety net when using Cursor AI t
 ## Prerequisites
 
 -- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
+
+As kluster.ai services work via MCP, the API key is created and configured for you when setting up the relevant extensions.
 
 - [Cursor IDE installed](https://cursor.com/downloads){target="_blank"}
 
@@ -134,7 +132,7 @@ Learn how [Verify Code](/verify/) acts as your safety net when using Cursor AI t
 
 Getting Verify Code working in Cursor takes just one click. Visit our [quickstart guide](/verify/quickstart/) and click **Add to Cursor** for automatic installation.
 
-For manual setup or other IDEs, see our [MCP-compatible integration guides](/verify/integrations/mcp/).
+For other IDEs, see our [MCP-compatible integration guides](/verify/quickstart/).
 
 ## Next.js e-commerce
 
@@ -391,16 +389,15 @@ Discover how [Verify Code](/verify/) catches critical security flaws when using 
 ## Prerequisites
 
 -- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
+
+As kluster.ai services work via MCP, the API key is created and configured for you when setting up the relevant extensions.
 
 - [VS Code installed](https://code.visualstudio.com/download){target="_blank"}
 - [GitHub Copilot Chat extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat){target="_blank"}
 
 ## Setup
 
-Getting Verify Code working in VS Code takes just one click. Visit the [Verify Code quickstart guide](/verify/quickstart/) and click **Add to VS Code** for automatic installation.
-
-For manual setup, other IDEs, or to install directly in VS Code, see our [VS Code integration guide](/verify/integrations/ide/#__tabbed_1_2).
+Getting Verify Code working in VS Code takes just one click. Visit the [Verify Code quickstart guide](/verify/quickstart/#__tabbed_1_2) and click **Add to VS Code** for automatic installation.
 
 ## Express API with product management
 
@@ -529,95 +526,26 @@ Admin endpoints require special security attention that AI often misses:
 **Learn more**: Explore our [security reference](/verify/tools/#bug-check-types) to understand all vulnerability types that Verify Code monitors.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/verify/get-api-key/
+Doc-Content: https://docs.kluster.ai/verify/quickstart/
 --- BEGIN CONTENT ---
 ---
-title: Get a kluster.ai API key
-description: Follow step-by-step instructions to generate and manage API keys, enabling secure access to kluster's services and seamless integration with your applications.
+title: Get started with Verify Code
+description: Set up kluster.ai Code verification in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
 ---
 
-# Generate your kluster.ai API key
+# Get started with Verify Code
 
-The API key is a unique identifier that authenticates requests associated with your account. You must have at least one API key to access [kluster.ai](https://www.kluster.ai/){target=\_blank}'s services.
+Modern developers increasingly rely on AI coding assistants to accelerate development, but this speed comes with risks. Generated code may contain logic errors, security flaws, or performance issues that compromise application quality and security.
 
-This guide will help you obtain an API key, the first step to leveraging kluster.ai's powerful and cost-effective AI capabilities.
-
-## Create an account
-
-If you haven't already created an account with kluster.ai, visit the [registration page](https://platform.kluster.ai/signup){target=\_blank} and take the following steps:
-
-1. Enter your full name.
-2. Provide a valid email address.
-3. Create a secure password.
-4. Click the **Sign up** button.
-
-![Signup Page](/images/get-api-key/get-api-key-1.webp)
-
-## Generate a new API key
-
-After you've signed up or logged into the platform through the [login page](https://platform.kluster.ai/login){target=\_blank}, take the following steps:
-
-1. Select **API Keys** on the left-hand side menu.
-2. In the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section, click the **Issue New API Key** button.
-
-    ![Issue New API Key](/images/get-api-key/get-api-key-2.webp)
-
-3. Enter a descriptive name for your API key in the popup, then click **Create Key**.
-
-    ![Generate API Key](/images/get-api-key/get-api-key-3.webp)
-
-## Copy and secure your API key
-
-1. Once generated, your API key will be displayed.
-2. Copy the key and store it in a secure location, such as a password manager.
-
-    !!! warning "Warning"
-        For security reasons, you won't be able to view the key again. If lost, you will need to generate a new one.
-
-![Copy API key](/images/get-api-key/get-api-key-4.webp)
-
-!!! abstract "Security tips"
-    - **Keep it secret**: Do not share your API key publicly or commit it to version control systems.
-    - **Use environment variables**: Store your API key in environment variables instead of hardcoding them.
-    - **Regenerate if compromised**: If you suspect your API key has been exposed, regenerate it immediately from the **API Keys** section.
-
-## Manage your API keys
-
-The **API Key Management** section allows you to efficiently manage your kluster.ai API keys. You can create, view, and delete API keys by navigating to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section. Your API keys will be listed in the **API Key Management** section.
-
-To delete an API key, take the following steps:
-
-1. Locate the API key you wish to delete in the list.
-2. Click the trash bin icon ( :octicons-trash-24: ) in the **Actions** column.
-3. Confirm the deletion when prompted.
-
-![Delete API key](/images/get-api-key/get-api-key-5.webp)
-
-!!! warning "Warning"
-    Once deleted, the API key cannot be used again and you must generate a new one if needed.
-
-## Next steps
-
-Now that you have your API key, you can start integrating kluster.ai's Verify services into your applications. Refer to our [Getting Started](/verify/quickstart/) guide for detailed instructions on using the API.
---- END CONTENT ---
-
-Doc-Content: https://docs.kluster.ai/verify/integrations/
---- BEGIN CONTENT ---
----
-title: Native IDEs Integration for Verify Code
-description: One-click installation for Cursor, VS Code, and Claude Code with enhanced Verify Code features and custom extensions.
----
-
-# Native IDE integration
-
-Get the best Verify Code experience with native IDE integrations. These IDEs offer one-click installation, custom extensions, and enhanced AI behavior for seamless code verification.
+The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code verification service integrates directly into your development workflow, automatically scanning AI-generated code in real-time. It catches potential issues instantly within your IDE, allowing you to ship code confidently while maintaining the speed benefits of AI-assisted development.
 
 ## Prerequisites
 
 Before getting started, ensure you have:
 
 -- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
+
+As kluster.ai services work via MCP, the API key is created and configured for you when setting up the relevant extensions.
 
 ## Setup instructions
 
@@ -661,7 +589,7 @@ Before getting started, ensure you have:
 
         ![Trust publisher](/images/verify/code/integrations/vscode/vscode-integration-1.webp)
 
-    Now that the extension is installed, you need to login with your kluster.ai account:
+    Now that the extension is installed, you need to log in with your kluster.ai account:
        
     1. Click on **Sign in** in the bottom right corner.
        ![Sign In](/images/verify/code/integrations/vscode/vscode-integration-2.webp)
@@ -695,7 +623,9 @@ Before getting started, ensure you have:
 
     **Terminal installation**
     
-    Copy and paste this command in your terminal. Replace `your-api-key-here` with your actual API key from the [kluster.ai platform](https://platform.kluster.ai){target=_blank}.
+    Visit the [kluster.ai platform get started page](https://platform.kluster.ai){target=\_blank} and copy the Claude Code configuration snippet. This will include your API key.
+
+    The command is similar to:
     
     -```bash
 curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s YOUR_API_KEY
@@ -779,237 +709,8 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
 
 ## Next steps
 
-- **[Learn about the tools](/verify/tools/)**: Understand issue types and priorities.
-- **[View examples](/verify/examples/cursor-firebase-nextjs/)**: See real-world case studies.
---- END CONTENT ---
-
-Doc-Content: https://docs.kluster.ai/verify/integrations/mcp/
---- BEGIN CONTENT ---
----
-title: MCP-compatible IDEs for Verify Code
-description: Manual setup guide for Windsurf, Cline, Roo Code, Kilo Code, and other MCP-compatible IDEs to use kluster.ai Verify Code.
----
-
-# MCP-compatible IDEs
-
-Configure [kluster.ai](https://www.kluster.ai/){target=\_blank} Verify Code in any MCP-compatible IDE with manual setup. While these IDEs don't have native kluster.ai extensions, they provide full verification capabilities through the standard MCP protocol.
-
-!!! tip "Consider Native IDEs"
-    For the best experience, consider using [Cursor, VS Code, or Claude Code](/verify/integrations/ide/) which offer enhanced features and one-click installation.
-
-## Prerequisites
-
-Before getting started, ensure you have:
-
--- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
-
-## MCP configuration
-
-Add the following to your IDE's MCP configuration file:
-
-```json
-{  
-    "mcpServers": {  
-        "Kluster-Verify-Code-MCP": {  
-            "command": "npx",  
-            "args": [  
-                "@klusterai/kluster-verify-code-mcp@latest"  
-            ],  
-            "env": {  
-                "KLUSTER_API_KEY": "your-api-key-here"  
-            }  
-        }  
-    }  
-}  
-```
-
-!!! warning "API Key Required"
-    Replace `your-api-key-here` with your actual API key from the [kluster.ai platform](https://platform.kluster.ai){target=_blank}.
-
-## Setup by IDE
-
-=== "Windsurf"
-
-    **Configuration steps**
-    
-    1. Open **Settings** by clicking the gear icon or using the command palette.
-    
-    2. Click **Windsurf Settings**.
-    
-    3. Navigate to **Cascade** in the left sidebar.
-    
-    4. Select **Manage MCPs** to access the MCP configuration.
-    
-    5. Click **View raw config** to open `mcp_config.json`.
-    
-    6. Add the Kluster MCP configuration shown above.
-    
-    7. Save the configuration and refresh.
-    
-    **Verification**
-    
-    The **Kluster-Verify-Code-MCP** will appear with both tools enabled:
-
-    - **`kluster_code_review_auto`**: For code security and quality verification.
-    - **`kluster_dependency_validator`**: For dependency validation.
-    
-    ![Active MCP Tools in Windsurf](/images/verify/code/integrations/windsurf/windsurf-integration-5.webp)
-
-=== "Kilo Code"
-
-    **Configuration steps**
-    
-    1. Open **Settings** and navigate to **MCP Servers**.
-    
-    2. Select the **Installed** tab.
-    
-    3. Click **Edit Project MCP** to open the MCP configuration.
-    
-    4. Add the Kluster MCP configuration shown above with your API key.
-    
-    5. Save and restart Kilo Code.
-    
-    **Verification**
-    
-    You should see the **Kluster-Verify-Code-MCP** server with both tools enabled:
-
-    - **`kluster_code_review_auto`**: For code security and quality verification.
-    - **`kluster_dependency_validator`**: For dependency validation.
-    
-    ![Kluster MCP Tools in Kilo Code](/images/verify/code/integrations/kilo/kilo-integration-2.webp)
-
-=== "Cline"
-
-    **Configuration steps**
-    
-    1. Open Cline and click **MCP Servers** in the left sidebar.
-    
-    2. Select the **Installed** tab.
-    
-    3. Click **Configure MCP Servers** to open `cline_mcp_settings.json`.
-    
-    4. Add the Kluster MCP configuration shown above.
-    
-    5. Save the configuration.
-    
-    **Verification**
-    
-    The **Kluster-Verify-Code-MCP** server will appear with both tools enabled:
-
-    - **`kluster_code_review_auto`**: For code security and quality verification.
-    - **`kluster_dependency_validator`**: For dependency validation.
-    
-    ![MCP Configuration in Cline](/images/verify/code/integrations/cline/cline-integration-2.webp)
-
-=== "Roo Code"
-
-    **Configuration steps**
-    
-    1. Open Roo Code and click **MCP Servers** in the left sidebar.
-    
-    2. Click **Edit Project MCP** to open the MCP configuration.
-    
-    3. The configuration file will open at `.roo/mcp_settings.json`.
-    
-    4. Add the Kluster MCP configuration shown above.
-    
-    5. Save the file.
-    
-    **Verification**
-    
-    The **Kluster-Verify-Code-MCP** server will appear with both tools enabled:
-
-    - **`kluster_code_review_auto`**: For code security and quality verification.
-    - **`kluster_dependency_validator`**: For dependency validation.
-    
-    ![Active MCP Tools in Roo Code](/images/verify/code/integrations/roocode/roocode-integration-2.webp)
-
-=== "Other IDEs"
-
-    **Generic MCP setup**
-    
-    For any other MCP-compatible IDE:
-    
-    1. Locate your IDE's MCP configuration file.
-    2. Add the Kluster MCP configuration shown above.
-    3. Replace `your-api-key-here` with your actual API key.
-    4. Save and restart your IDE if required.
-    
-    The tools should now be available in your AI assistant.
-    
-## Next steps
-
-- **[Learn about the tools](/verify/tools/)**: Understand what each tool does.
-- **[See examples](/verify/examples/cursor-firebase-nextjs/)**: Walk through real-world scenarios.
-- **[Check one click installs IDEs](/verify/integrations/ide/)**: Explore IDEs with enhanced integration.
---- END CONTENT ---
-
-Doc-Content: https://docs.kluster.ai/verify/quickstart/
---- BEGIN CONTENT ---
----
-title: Get started with Verify Code
-description: Set up kluster.ai Code verification in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
----
-
-# Get started with Verify Code
-
-Modern developers increasingly rely on AI coding assistants to accelerate development, but this speed comes with risks. Generated code may contain logic errors, security flaws, or performance issues that compromise application quality and security.
-
-The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code verification service integrates directly into your development workflow, automatically scanning AI-generated code in real-time. It catches potential issues instantly within your IDE, allowing you to ship code confidently while maintaining the speed benefits of AI-assisted development.
-
-## Prerequisites
-
-Before getting started, ensure you have:
-
--- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
-
-## Installation
-
-Choose your preferred IDE to get started with kluster.ai Verify Code in under 30 seconds.
-
-<div class="grid cards" markdown>
-
--   :cursor-icons8-cursor-ai: __Cursor__
-
-    ---
-
-    Install the extension directly from the Cursor marketplace.
-
-    [:octicons-arrow-right-24: Add to Cursor](/verify/integrations/ide/#__tabbed_1_1){target=\_blank}
-
--   :material-microsoft-visual-studio-code: __VS Code__
-
-    ---
-
-    Install the extension directly from the VS Code marketplace.
-
-    [:octicons-arrow-right-24: Add to VS Code](/verify/integrations/ide/#__tabbed_1_2){target=\_blank}
-
--   :simple-claude: __Claude Code__
-
-    ---
-
-    Run a simple script in your terminal to set up Verify Code quickly.
-
-    [:octicons-arrow-right-24: Install Claude Code](/verify/integrations/ide/#__tabbed_1_3){target=\_blank}
-
--   :octicons-code-24: __Other MCP-compatible IDEs__
-
-    ---
-
-     Instructions for setting up Windsurf, Cline, Roo Code, and other MCP-compatible IDEs.
-
-    [:octicons-arrow-right-24: See integration guides](/verify/integrations/mcp/){target=\_blank}
-
-</div>
-
-## Next steps
-
-- **[View all integrations](/verify/integrations/)**: Set up Verify Code in your preferred IDE.
-- **[Learn about the tools](/verify/tools/)**: Understand issue types and priority levels.
-- **[See real examples](/verify/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
+- **[Cursor example](/verify/examples/cursor-firebase-nextjs/)**: See a real-world case study using Cursor.
+- **[VS-Code example](/verify/examples/vscode-admin-endpoint/)**: See a real-world case study using VS-Code.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/verify/tools/
@@ -1105,7 +806,7 @@ Code verification assigns priority levels to detected issues, helping you focus 
 ## Next steps
 
 - **[Configure settings](/verify/configuration/)**: Customize verification behavior for your needs.
-- **[Set up integrations](/verify/integrations/ide/)**: Configure IDE integrations to use these tools.
+- **[Set up integrations](/verify/quickstart/)**: Configure IDE integrations to use these tools.
 - **[Get started](/verify/quickstart/)**: Follow the quickstart guide for immediate setup.
 --- END CONTENT ---
 
