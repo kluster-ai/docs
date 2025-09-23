@@ -55,7 +55,7 @@ Before getting started, ensure you have:
 
         ![Trust publisher](/images/verify/code/integrations/vscode/vscode-integration-1.webp)
 
-    Now that the extension is installed, you need to login with your kluster.ai account:
+    Now that the extension is installed, you need to log in with your kluster.ai account:
        
     1. Click on **Sign in** in the bottom right corner.
        ![Sign In](/images/verify/code/integrations/vscode/vscode-integration-2.webp)
