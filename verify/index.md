@@ -76,14 +76,6 @@ Verify Code is available as a native extension for IDEs such as Cursor, VS Code 
 
     [:octicons-arrow-right-24: Code with Cursor](/verify/integrations/ide#setup-instructions)
 
--   <span class="badge guide">Guide</span> __Other MCP-compatible IDEs__
-
-    ---
-
-    Integrate Verify Code with other MCP-compatible IDEs, including Windsurf and Kilo Code.
-
-    [:octicons-arrow-right-24: Setup guide](/verify/integrations/mcp#setup-by-ide)
-
 -   <span class="badge guide">Guide</span> __Tools reference__
 
     ---

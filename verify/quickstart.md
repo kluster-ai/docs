@@ -39,14 +39,6 @@ Choose your preferred IDE to get started with kluster.ai Verify Code in under 30
 
     [:octicons-arrow-right-24: Install Claude Code](/verify/integrations/ide/#__tabbed_1_3){target=\_blank}
 
--   :octicons-code-24: __Other MCP-compatible IDEs__
-
-    ---
-
-     Instructions for setting up Windsurf, Cline, Roo Code, and other MCP-compatible IDEs.
-
-    [:octicons-arrow-right-24: See integration guides](/verify/integrations/mcp/){target=\_blank}
-
 </div>
 
 ## Next steps

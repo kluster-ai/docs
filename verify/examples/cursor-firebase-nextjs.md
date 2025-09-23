@@ -15,8 +15,6 @@ Learn how [Verify Code](/verify/) acts as your safety net when using Cursor AI t
 
 Getting Verify Code working in Cursor takes just one click. Visit our [quickstart guide](/verify/quickstart/) and click **Add to Cursor** for automatic installation.
 
-For manual setup or other IDEs, see our [MCP-compatible integration guides](/verify/integrations/mcp/).
-
 ## Next.js e-commerce
 
 We built a buy-sell e-commerce platform where users post articles for purchase. The app initially used `localStorage` for user authentication, but we decided to **migrate to Firebase** for better security and user management.

@@ -5,6 +5,6 @@ nav:
   - 'Get started': quickstart.md
   - 'Configuration': configuration
   - 'Tools reference': tools.md
-  - 'Integrations': integrations
+  - 'Integrations': integrations.md
   - 'Examples': examples
 
