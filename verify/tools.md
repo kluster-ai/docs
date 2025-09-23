@@ -89,5 +89,5 @@ Code verification assigns priority levels to detected issues, helping you focus 
 ## Next steps
 
 - **[Configure settings](/verify/configuration/)**: Customize verification behavior for your needs.
-- **[Set up integrations](/verify/integrations/ide/)**: Configure IDE integrations to use these tools.
+- **[Set up integrations](/verify/quickstart/)**: Configure IDE integrations to use these tools.
 - **[Get started](/verify/quickstart/)**: Follow the quickstart guide for immediate setup.

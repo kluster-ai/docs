@@ -16,9 +16,7 @@ Discover how [Verify Code](/verify/) catches critical security flaws when using 
 
 ## Setup
 
-Getting Verify Code working in VS Code takes just one click. Visit the [Verify Code quickstart guide](/verify/quickstart/) and click **Add to VS Code** for automatic installation.
-
-For manual setup, other IDEs, or to install directly in VS Code, see our [VS Code integration guide](/verify/integrations/ide/#__tabbed_1_2).
+Getting Verify Code working in VS Code takes just one click. Visit the [Verify Code quickstart guide](/verify/quickstart/#__tabbed_1_2) and click **Add to VS Code** for automatic installation.
 
 ## Express API with product management
 

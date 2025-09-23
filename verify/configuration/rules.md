@@ -34,5 +34,5 @@ You can create manual rules to enforce your team's coding standards or connect G
 
 ## Next steps
 
-- [View all integrations](/verify/integrations/): Set up Verify code in your preferred IDE.
+- [View all integrations](/verify/quickstart/): Set up Verify code in your preferred IDE.
 - **[See real examples](/verify/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.

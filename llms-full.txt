@@ -64,7 +64,7 @@ Control which verification tools run in your development environment. Enable or 
 
 - [Create custom rules](/verify/configuration/rules/): Add project-specific development standards.
 - [View tools reference](/verify/tools/): Understand the technical API details.
-- [Set up integrations](/verify/integrations/ide/): Configure IDE integrations.
+- [Set up integrations](/verify/configuration/options/): Configure IDE integrations.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/verify/configuration/rules/
@@ -105,7 +105,7 @@ You can create manual rules to enforce your team's coding standards or connect G
 
 ## Next steps
 
-- [View all integrations](/verify/integrations/): Set up Verify code in your preferred IDE.
+- [View all integrations](/verify/quickstart/): Set up Verify code in your preferred IDE.
 - **[See real examples](/verify/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
 --- END CONTENT ---
 
@@ -132,7 +132,7 @@ As kluster.ai services work via MCP, the API key is created and configure for yo
 
 Getting Verify Code working in Cursor takes just one click. Visit our [quickstart guide](/verify/quickstart/) and click **Add to Cursor** for automatic installation.
 
-For manual setup or other IDEs, see our [MCP-compatible integration guides](/verify/integrations/mcp/).
+For other IDEs, see our [MCP-compatible integration guides](/verify/quickstart/).
 
 ## Next.js e-commerce
 
@@ -397,9 +397,7 @@ As kluster.ai services work via MCP, the API key is created and configure for yo
 
 ## Setup
 
-Getting Verify Code working in VS Code takes just one click. Visit the [Verify Code quickstart guide](/verify/quickstart/) and click **Add to VS Code** for automatic installation.
-
-For manual setup, other IDEs, or to install directly in VS Code, see our [VS Code integration guide](/verify/integrations/ide/#__tabbed_1_2).
+Getting Verify Code working in VS Code takes just one click. Visit the [Verify Code quickstart guide](/verify/quickstart/#__tabbed_1_2) and click **Add to VS Code** for automatic installation.
 
 ## Express API with product management
 
@@ -625,10 +623,12 @@ As kluster.ai services work via MCP, the API key is created and configure for yo
 
     **Terminal installation**
     
-    Copy and paste this command in your terminal. Replace `your-api-key-here` with your actual API key from the [kluster.ai platform](https://platform.kluster.ai){target=_blank}.
+    Visit the [kluster.ai platform get started page](https://platform.kluster.ai){target=\_blank} and copy the Claude Code configuration snippet. This will include your API key.
+
+    The command is similar to:
     
     -```bash
-curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s YOUR_API_KEY
+curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s YOUR_API_KET
 ```
     
     This command will:
@@ -806,7 +806,7 @@ Code verification assigns priority levels to detected issues, helping you focus 
 ## Next steps
 
 - **[Configure settings](/verify/configuration/)**: Customize verification behavior for your needs.
-- **[Set up integrations](/verify/integrations/ide/)**: Configure IDE integrations to use these tools.
+- **[Set up integrations](/verify/quickstart/)**: Configure IDE integrations to use these tools.
 - **[Get started](/verify/quickstart/)**: Follow the quickstart guide for immediate setup.
 --- END CONTENT ---
 

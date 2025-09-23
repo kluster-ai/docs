@@ -45,4 +45,4 @@ Control which verification tools run in your development environment. Enable or 
 
 - [Create custom rules](/verify/configuration/rules/): Add project-specific development standards.
 - [View tools reference](/verify/tools/): Understand the technical API details.
-- [Set up integrations](/verify/integrations/ide/): Configure IDE integrations.
+- [Set up integrations](/verify/configuration/options/): Configure IDE integrations.
