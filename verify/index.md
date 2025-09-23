@@ -77,7 +77,7 @@ Verify Code is available as a native extension for IDEs such as Cursor, VS Code 
     [:octicons-arrow-right-24: Add to Cursor](/verify/quickstart/#__tabbed_1_1){target=\_blank}
 
 -   :material-microsoft-visual-studio-code: __VS Code__
-F
+
     ---
 
     Install the extension directly from the VS Code marketplace.
