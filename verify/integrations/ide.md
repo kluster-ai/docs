@@ -7,12 +7,6 @@ description: One-click installation for Cursor, VS Code, and Claude Code with en
 
 Get the best Verify Code experience with native IDE integrations. These IDEs offer one-click installation, custom extensions, and enhanced AI behavior for seamless code verification.
 
-## Prerequisites
-
-Before getting started, ensure you have:
-
---8<-- 'text/kluster-api-onboarding.md'
-
 ## Setup instructions
 
 === "Cursor"

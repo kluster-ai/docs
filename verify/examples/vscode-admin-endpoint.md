@@ -9,8 +9,6 @@ Discover how [Verify Code](/verify/) catches critical security flaws when using 
 
 ## Prerequisites
 
---8<-- 'text/kluster-api-onboarding.md'
-
 - [VS Code installed](https://code.visualstudio.com/download){target="_blank"}
 - [GitHub Copilot Chat extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat){target="_blank"}
 

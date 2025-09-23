@@ -125,9 +125,6 @@ Learn how [Verify Code](/verify/) acts as your safety net when using Cursor AI t
 
 ## Prerequisites
 
--- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
-
 - [Cursor IDE installed](https://cursor.com/downloads){target="_blank"}
 
 ## Setup
@@ -390,9 +387,6 @@ Discover how [Verify Code](/verify/) catches critical security flaws when using 
 
 ## Prerequisites
 
--- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
-
 - [VS Code installed](https://code.visualstudio.com/download){target="_blank"}
 - [GitHub Copilot Chat extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat){target="_blank"}
 
@@ -612,13 +606,6 @@ description: One-click installation for Cursor, VS Code, and Claude Code with en
 
 Get the best Verify Code experience with native IDE integrations. These IDEs offer one-click installation, custom extensions, and enhanced AI behavior for seamless code verification.
 
-## Prerequisites
-
-Before getting started, ensure you have:
-
--- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
-
 ## Setup instructions
 
 === "Cursor"
@@ -797,13 +784,6 @@ Configure [kluster.ai](https://www.kluster.ai/){target=\_blank} Verify Code in a
 !!! tip "Consider Native IDEs"
     For the best experience, consider using [Cursor, VS Code, or Claude Code](/verify/integrations/ide/) which offer enhanced features and one-click installation.
 
-## Prerequisites
-
-Before getting started, ensure you have:
-
--- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
-
 ## MCP configuration
 
 Add the following to your IDE's MCP configuration file:
@@ -957,13 +937,6 @@ description: Set up kluster.ai Code verification in minutes. Scan AI-generated c
 Modern developers increasingly rely on AI coding assistants to accelerate development, but this speed comes with risks. Generated code may contain logic errors, security flaws, or performance issues that compromise application quality and security.
 
 The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code verification service integrates directly into your development workflow, automatically scanning AI-generated code in real-time. It catches potential issues instantly within your IDE, allowing you to ship code confidently while maintaining the speed benefits of AI-assisted development.
-
-## Prerequisites
-
-Before getting started, ensure you have:
-
--- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A kluster.ai API key**: After signing in, go to the [**API Keys**](https://platform.kluster.ai/apikeys){target=\_blank} section and create a new key. For detailed instructions, check out the [Get an API key](/verify/get-api-key/){target=\_blank} guide.
 
 ## Installation
 

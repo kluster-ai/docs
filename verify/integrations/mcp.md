@@ -10,12 +10,6 @@ Configure [kluster.ai](https://www.kluster.ai/){target=\_blank} Verify Code in a
 !!! tip "Consider Native IDEs"
     For the best experience, consider using [Cursor, VS Code, or Claude Code](/verify/integrations/ide/) which offer enhanced features and one-click installation.
 
-## Prerequisites
-
-Before getting started, ensure you have:
-
---8<-- 'text/kluster-api-onboarding.md'
-
 ## MCP configuration
 
 Add the following to your IDE's MCP configuration file:

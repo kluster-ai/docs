@@ -9,8 +9,6 @@ Learn how [Verify Code](/verify/) acts as your safety net when using Cursor AI t
 
 ## Prerequisites
 
---8<-- 'text/kluster-api-onboarding.md'
-
 - [Cursor IDE installed](https://cursor.com/downloads){target="_blank"}
 
 ## Setup

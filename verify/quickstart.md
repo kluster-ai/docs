@@ -9,12 +9,6 @@ Modern developers increasingly rely on AI coding assistants to accelerate develo
 
 The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code verification service integrates directly into your development workflow, automatically scanning AI-generated code in real-time. It catches potential issues instantly within your IDE, allowing you to ship code confidently while maintaining the speed benefits of AI-assisted development.
 
-## Prerequisites
-
-Before getting started, ensure you have:
-
---8<-- 'text/kluster-api-onboarding.md'
-
 ## Installation
 
 Choose your preferred IDE to get started with kluster.ai Verify Code in under 30 seconds.
