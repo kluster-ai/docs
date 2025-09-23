@@ -64,7 +64,7 @@ Control which verification tools run in your development environment. Enable or 
 
 - [Create custom rules](/verify/configuration/rules/): Add project-specific development standards.
 - [View tools reference](/verify/tools/): Understand the technical API details.
-- [Set up integrations](/verify/configuration/options/): Configure IDE integrations.
+- [Set up integrations](/verify/quickstart/): Configure IDE integrations.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/verify/configuration/rules/
@@ -124,7 +124,7 @@ Learn how [Verify Code](/verify/) acts as your safety net when using Cursor AI t
 
 -- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 
-As kluster.ai services work via MCP, the API key is created and configure for you when setting up the relevant extensions.
+As kluster.ai services work via MCP, the API key is created and configured for you when setting up the relevant extensions.
 
 - [Cursor IDE installed](https://cursor.com/downloads){target="_blank"}
 
@@ -390,7 +390,7 @@ Discover how [Verify Code](/verify/) catches critical security flaws when using 
 
 -- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 
-As kluster.ai services work via MCP, the API key is created and configure for you when setting up the relevant extensions.
+As kluster.ai services work via MCP, the API key is created and configured for you when setting up the relevant extensions.
 
 - [VS Code installed](https://code.visualstudio.com/download){target="_blank"}
 - [GitHub Copilot Chat extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat){target="_blank"}
@@ -545,7 +545,7 @@ Before getting started, ensure you have:
 
 -- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 
-As kluster.ai services work via MCP, the API key is created and configure for you when setting up the relevant extensions.
+As kluster.ai services work via MCP, the API key is created and configured for you when setting up the relevant extensions.
 
 ## Setup instructions
 
@@ -589,7 +589,7 @@ As kluster.ai services work via MCP, the API key is created and configure for yo
 
         ![Trust publisher](/images/verify/code/integrations/vscode/vscode-integration-1.webp)
 
-    Now that the extension is installed, you need to login with your kluster.ai account:
+    Now that the extension is installed, you need to log in with your kluster.ai account:
        
     1. Click on **Sign in** in the bottom right corner.
        ![Sign In](/images/verify/code/integrations/vscode/vscode-integration-2.webp)
@@ -628,7 +628,7 @@ As kluster.ai services work via MCP, the API key is created and configure for yo
     The command is similar to:
     
     -```bash
-curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s YOUR_API_KET
+curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s YOUR_API_KEY
 ```
     
     This command will:
