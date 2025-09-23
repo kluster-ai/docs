@@ -62,36 +62,35 @@ These settings can be configured directly in your IDE integration.
 - **Quality assurance**: Enforce best practices automatically.
 - **Dependency checking**: Validate that new packages are secure and up-to-date.
 
-## Integrations
+## Setup instructions
 
-Verify Code is available as a native extension for IDEs such as Cursor, VS Code and Claude Code, and through MCP-compatible IDEs such as Windsurf, Kilo Code and others.
+Verify Code is available as a native extension for IDEs such as Cursor, VS Code and Claude Code. Choose your preferred IDE to get started with kluster.ai Verify Code in under 30 seconds:
 
 <div class="grid cards" markdown>
 
--   <span class="badge guide">Guide</span> __Cursor, VS Code and Claude Code__
+-   :cursor-icons8-cursor-ai: __Cursor__
 
     ---
 
-    Enable real-time analysis during development by setting up Verify Code with Cursor, VS Code and Claude Code.
+    Install the extension directly from the Cursor marketplace.
 
-    [:octicons-arrow-right-24: Code with Cursor](/verify/integrations/ide#setup-instructions)
+    [:octicons-arrow-right-24: Add to Cursor](/verify/integrations/ide/#__tabbed_1_1){target=\_blank}
 
--   <span class="badge guide">Guide</span> __Other MCP-compatible IDEs__
-
-    ---
-
-    Integrate Verify Code with other MCP-compatible IDEs, including Windsurf and Kilo Code.
-
-    [:octicons-arrow-right-24: Setup guide](/verify/integrations/mcp#setup-by-ide)
-
--   <span class="badge guide">Guide</span> __Tools reference__
+-   :material-microsoft-visual-studio-code: __VS Code__
 
     ---
 
-    Use Verify Code tools directly in your IDE via MCP.
+    Install the extension directly from the VS Code marketplace.
 
-    [:octicons-arrow-right-24: View tools reference](/verify/tools/)
+    [:octicons-arrow-right-24: Add to VS Code](/verify/integrations/ide/#__tabbed_1_2){target=\_blank}
 
+-   :simple-claude: __Claude Code__
+
+    ---
+
+    Run a simple script in your terminal to set up Verify Code quickly.
+
+    [:octicons-arrow-right-24: Install Claude Code](/verify/integrations/ide/#__tabbed_1_3){target=\_blank}
 
 </div>
 
