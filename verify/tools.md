@@ -95,7 +95,7 @@ All Code verification tools return the same response structure:
 ```json
 {
     "isCodeCorrect": false,
-    "explanation": "Found 1 issue. 1 critical issue need immediate attention.\n\nTODO:\n1. [CRITICAL] The implementation introduces a critical SQL injection vulnerability.",
+    "explanation": "Found 1 issue. 1 critical issue needs immediate attention.\n\nTODO:\n1. [CRITICAL] The implementation introduces a critical SQL injection vulnerability.",
     "issues": [
         {
             "type": "intent",
