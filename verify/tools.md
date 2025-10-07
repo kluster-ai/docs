@@ -17,7 +17,7 @@ This page documents the parameters and response formats you'll see when using th
 
 ## Parameters
 
-=== "Auto Review & Dependency Validator"
+=== "Auto Review and Dependency Validator"
 
     These tools analyze AI-generated code and dependencies to detect bugs, security vulnerabilities, and other quality issues.
 
@@ -101,7 +101,7 @@ All Code verification tools return the same response structure:
             "type": "intent",
             "severity": "critical",
             "priority": "P0",
-            "description": "The implementation introduces a critical SQL injection vulnerability, which is an unacceptable and dangerous side effect.",
+            "description": "The implementation introduces a critical SQL injection vulnerability, which is an unacceptable security risk.",
             "explanation": "The code constructs an SQL query using string concatenation with user input, which is the classic pattern for SQL injection. A function designed for database interaction should use parameterized queries.",
             "actions": "Use parameterized queries or prepared statements to safely handle user input. For example: db.query('SELECT * FROM users WHERE id = ?', [userId])"
         }
