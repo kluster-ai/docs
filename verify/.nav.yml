@@ -3,7 +3,7 @@ hide: false
 nav:
   - 'Overview': index.md
   - 'Get started': quickstart.md
-  - 'Configuration': configuration
   - 'Tools reference': tools.md
+  - 'Configuration': configuration
   - 'Examples': examples
 
