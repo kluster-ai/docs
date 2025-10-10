@@ -9,9 +9,9 @@ The [kluster.ai](https://www.kluster.ai/){target=_blank} Code MCP server provide
 
 It includes:
 
-- **`kluster_code_review_auto`**: Automatically verifies code quality and detects bugs, including logic errors, security issues, and performance problems. Triggers automatically when code is generated or modified.
-- **`kluster_dependency_validator`**: Validates the security and compliance of packages and dependencies. Triggers automatically before package installations or when package files are updated.
-- **`kluster_code_review_manual`**: Manually verifies specific files when explicitly requested by the user (e.g., "verify this file", "check for bugs").
+- **`kluster_code_review_auto`**: Automatically verifies code quality and detects bugs, including logic errors, security issues, and performance problems. Triggers automatically when code is generated or modified. Best for real-time verification during active coding sessions, analyzing changes in context of the full conversation and related files.
+- **`kluster_dependency_validator`**: Validates the security and compliance of packages and dependencies. Triggers automatically before package installations or when package files are updated. Best for preventing vulnerable or non-compliant third-party libraries from entering your codebase before installation.
+- **`kluster_code_review_manual`**: Manually verifies specific files when explicitly requested by the user (e.g., "verify this file", "check for bugs"). Best for auditing existing code, reviewing specific modules, or getting fix recommendations for individual files.
 
 This page documents the parameters and response formats you'll see when using these tools in Cursor, Claude Code, or any MCP-compatible client.
 
@@ -25,13 +25,13 @@ This page documents the parameters and response formats you'll see when using th
 
         `code_diff` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-        Unified diff format showing the actual code changes. In MCP environments, this is often auto-extracted from the IDE history.
+        Unified diff format showing the actual changes (additions and subtractions) made to files. Use standard diff format with `--- filename` and `+++ filename` headers, followed by `@@ line numbers @@`, and `+` for additions, `-` for deletions. In MCP environments, this is often auto-extracted from IDE history.
 
         ---
 
         `user_requests` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-        Chronological sequence of user messages with current request marked as `>>> CURRENT REQUEST:`. In MCP environments, this is often auto-extracted from the conversation history.
+        A chronological sequence of all user messages and requests in this conversation thread, with the current request (that triggered this assistant turn) clearly marked. Format: Previous requests as numbered list, then current request marked with `>>> CURRENT REQUEST: [request text]`. In MCP environments, this is often auto-extracted from conversation history.
 
         ---
 
@@ -53,7 +53,7 @@ This page documents the parameters and response formats you'll see when using th
 
         `user_requests` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-        Chronological sequence of user messages with current request marked as `>>> CURRENT REQUEST:`.
+        Chronological sequence of user messages with current request marked as `>>> CURRENT REQUEST:`. Unlike auto review, this parameter is NOT auto-extracted in MCP environments and must be explicitly provided.
 
         ---
 
