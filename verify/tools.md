@@ -31,7 +31,7 @@ This page documents the parameters and response formats you'll see when using th
 
         `user_requests` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-        Chronological sequence of user messages with current request marked as `>>> CURRENT REQUEST:`. In MCP environments, this is often auto-extracted from conversation history.
+        Chronological sequence of user messages with current request marked as `>>> CURRENT REQUEST:`. In MCP environments, this is often auto-extracted from the conversation history.
 
         ---
 
