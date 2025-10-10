@@ -25,7 +25,7 @@ This page documents the parameters and response formats you'll see when using th
 
         `code_diff` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-        Unified diff format showing the actual code changes. In MCP environments, this is often auto-extracted from IDE history.
+        Unified diff format showing the actual code changes. In MCP environments, this is often auto-extracted from the IDE history.
 
         ---
 
