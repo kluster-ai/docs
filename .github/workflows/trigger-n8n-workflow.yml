@@ -263,7 +263,7 @@ jobs:
           echo "—— Skipped upstream (for visibility) ——"
           echo "$OBJ" | jq -r '.skipped_comments // [] | .[] | "\(.file_path // "-")#L\(.line_number // "-"): \(.reason // "-")"'
 
-          echo "✅ Done. Suggestions posted: $posted"
+          echo "✅ Done. Suggestions posted."
 
       - name: Post verification comments
         env:
