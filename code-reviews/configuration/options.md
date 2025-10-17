@@ -1,13 +1,13 @@
 ---
 title: Options
-description: Configure kluster.ai Verify code settings including sensitivity levels, bug types, and enabled tools for AI-generated code verification.
+description: Configure kluster.ai Code reviews settings including sensitivity levels, bug types, and enabled tools for AI-generated code reviews.
 ---
 
 # Options
 
-You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Verify code behavior through the platform settings or directly in your IDE. This allows you to tailor the verification process to your specific needs, such as configuring sensitivity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
+You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Code reviews behavior through the platform settings or directly in your IDE. This allows you to tailor the review process to your specific needs, such as configuring sensitivity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
 
-![Code Review Options interface showing three numbered sections: Sensitivity Settings, Code Review Scope, and Enabled Tools](/images/verify/code/configuration/configuration-1.webp)
+![Code Review Options interface showing three numbered sections: Sensitivity Settings, Code Review Scope, and Enabled Tools](/images/code-reviews/code/configuration/configuration-1.webp)
 
 ## 1. Sensitivity settings
 
@@ -36,9 +36,9 @@ Select which types of issues the Real-time Code Review tool detects during code 
 
 ## 3. Enabled tools
 
-Control which verification tools run in your development environment. Enable or disable each tool based on your project's specific needs and workflow.
+Control which review tools run in your development environment. Enable or disable each tool based on your project's specific needs and workflow.
 
-- `Real-time Code Review`: For code quality verification.
+- `Real-time Code Review`: For code quality reviews.
 - `Dependency Analysis`: For package and dependency security.
 
 ## Next steps

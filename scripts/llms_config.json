@@ -18,7 +18,7 @@
     {
       "name": "Verify Guardrail Validator",
       "url": "https://github.com/kluster-ai/verify-guardrails-validator",
-      "description": "This validator detects hallucinations in AI-generated content using kluster.ai's Verify API. The service can evaluate the AI response based on a given context, which makes it great for RAG applications. Without providing a specific context, the service can also be used as a real-time reliability verification service. Verify is able to identify when AI responses contain fabricated or inaccurate information."
+      "description": "This validator detects hallucinations in AI-generated content using kluster.ai's Code Reviews. The service can evaluate the AI response based on a given context, which makes it great for RAG applications. Without providing a specific context, the service can also be used as a real-time reliability verification service. Verify is able to identify when AI responses contain fabricated or inaccurate information."
     }
   ],
   "skip_basenames": [

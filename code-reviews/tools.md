@@ -1,17 +1,17 @@
 ---
-title: Code MCP Tools for Verify 
-description: Learn how kluster.ai Code MCP tools work: parameters, response formats, issue categories, and settings for real-time code verification.
+title: Code MCP Tools for Code Reviews 
+description: Learn how kluster.ai Code MCP tools work: parameters, response formats, issue categories, and settings for real-time code reviews.
 ---
 
 # Tools reference
 
-The [kluster.ai](https://www.kluster.ai/){target=_blank} Code MCP server provides verification tools for checking AI-generated code quality and security. These tools enable real-time code verification directly within your IDE through MCP integration.
+The [kluster.ai](https://www.kluster.ai/){target=_blank} Code MCP server provides review tools for checking AI-generated code quality and security. These tools enable real-time code reviews directly within your IDE through MCP integration.
 
 It includes:
 
-- **`kluster_code_review_auto`**: Automatically verifies code quality and detects bugs, including logic errors, security issues, and performance problems. Triggers automatically when code is generated or modified. Best for real-time verification during active coding sessions, analyzing changes in context of the full conversation and related files.
+- **`kluster_code_review_auto`**: Automatically reviews code quality and detects bugs, including logic errors, security issues, and performance problems. Triggers automatically when code is generated or modified. Best for real-time reviews during active coding sessions, analyzing changes in context of the full conversation and related files.
 - **`kluster_dependency_validator`**: Validates the security and compliance of packages and dependencies. Triggers automatically before package installations or when package files are updated. Best for preventing vulnerable or non-compliant third-party libraries from entering your codebase before installation.
-- **`kluster_code_review_manual`**: Manually verifies specific files when explicitly requested by the user (e.g., "verify this file", "check for bugs"). Best for auditing existing code, reviewing specific modules, or getting fix recommendations for individual files.
+- **`kluster_code_review_manual`**: Manually reviews specific files when explicitly requested by the user (e.g., "review this file", "check for bugs"). Best for auditing existing code, reviewing specific modules, or getting fix recommendations for individual files.
 
 This page documents the parameters and response formats you'll see when using these tools in Cursor, Claude Code, or any MCP-compatible client.
 
@@ -43,7 +43,7 @@ This page documents the parameters and response formats you'll see when using th
 
         `chat_id` ++"string"++ <span class="optional" markdown>++"optional"++</span>
 
-        Session identifier returned by previous tool calls. Used to maintain context across multiple verification requests.
+        Session identifier returned by previous tool calls. Used to maintain context across multiple review requests.
 
 === "Manual Review"
 
@@ -59,8 +59,8 @@ This page documents the parameters and response formats you'll see when using th
 
         `modified_file_path` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-        Full absolute path of the single file to verify. This tool can only check one file per call.
-
+        Full absolute path of the single file to review. This tool can only check one file per call.
+        
         ---
 
         `need_fixes` ++"boolean"++ <span class="required" markdown>++"required"++</span>
@@ -71,11 +71,11 @@ This page documents the parameters and response formats you'll see when using th
 
         `chat_id` ++"string"++ <span class="optional" markdown>++"optional"++</span>
 
-        Session identifier returned by previous tool calls. Used to maintain context across multiple verification requests.
+        Session identifier returned by previous tool calls. Used to maintain context across multiple review requests.
 
 ## Response fields
 
-All Code verification tools return the same response structure:
+All Code review tools return the same response structure:
 
 - **`isCodeCorrect`**: Boolean indicating if the code has issues.
 - **`explanation`**: Summary of all issues found.
@@ -119,7 +119,7 @@ All Code verification tools return the same response structure:
 
 ## Priority system
 
-Code verification assigns priority levels to detected issues, helping you focus on the most critical problems first. The system automatically prioritizes based on issue type and severity.
+Code review assigns priority levels to detected issues, helping you focus on the most critical problems first. The system automatically prioritizes based on issue type and severity.
 
 - **P0-P1**: Intent issues (highest priority) - code doesn't match request.
 - **P2**: Critical severity - must fix immediately.
@@ -130,6 +130,6 @@ Code verification assigns priority levels to detected issues, helping you focus 
 
 ## Next steps
 
-- **[Configure settings](/verify/configuration/)**: Customize verification behavior for your needs.
+- **[Configure settings](/verify/configuration/)**: Customize review behavior for your needs.
 - **[Set up integrations](/verify/quickstart/)**: Configure IDE integrations to use these tools.
 - **[Get started](/verify/quickstart/)**: Follow the quickstart guide for immediate setup.
