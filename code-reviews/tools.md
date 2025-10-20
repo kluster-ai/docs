@@ -75,7 +75,7 @@ This page documents the parameters and response formats you'll see when using th
 
 ## Response fields
 
-All Code review tools return the same response structure:
+All code review tools return the same response structure:
 
 - **`isCodeCorrect`**: Boolean indicating if the code has issues.
 - **`explanation`**: Summary of all issues found.

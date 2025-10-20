@@ -1,11 +1,11 @@
 ---
 title: Options
-description: Configure kluster.ai Code reviews settings including sensitivity levels, bug types, and enabled tools for AI-generated code reviews.
+description: Configure kluster.ai Code Reviews settings including sensitivity levels, bug types, and enabled tools for AI-generated code reviews.
 ---
 
 # Options
 
-You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Code reviews behavior through the platform settings or directly in your IDE. This allows you to tailor the review process to your specific needs, such as configuring sensitivity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
+You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Code Reviews behavior through the platform settings or directly in your IDE. This allows you to tailor the review process to your specific needs, such as configuring sensitivity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
 
 ![Code Review Options interface showing three numbered sections: Sensitivity Settings, Code Review Scope, and Enabled Tools](/images/code-reviews/code/configuration/configuration-1.webp)
 
