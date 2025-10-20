@@ -62,9 +62,9 @@ Control which review tools run in your development environment. Enable or disabl
 
 ## Next steps
 
-- [Create custom rules](/verify/configuration/rules/): Add project-specific development standards.
-- [View tools reference](/verify/tools/): Understand the technical API details.
-- [Set up integrations](/verify/quickstart/): Configure IDE integrations.
+- [Create custom rules](/code-reviews/configuration/rules/): Add project-specific development standards.
+- [View tools reference](/code-reviews/tools/): Understand the technical API details.
+- [Set up integrations](/code-reviews/quickstart/): Configure IDE integrations.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/code-reviews/configuration/rules/
@@ -105,8 +105,8 @@ You can create manual rules to enforce your team's coding standards or connect G
 
 ## Next steps
 
-- [View all integrations](/verify/quickstart/): Set up Code reviews in your preferred IDE.
-- **[See real examples](/verify/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
+- [View all integrations](/code-reviews/quickstart/): Set up Code reviews in your preferred IDE.
+- **[See real examples](/code-reviews/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/code-reviews/examples/cursor-firebase-nextjs/
@@ -847,8 +847,8 @@ Code review assigns priority levels to detected issues, helping you focus on the
 
 ## Next steps
 
-- **[Configure settings](/verify/configuration/)**: Customize review behavior for your needs.
-- **[Set up integrations](/verify/quickstart/)**: Configure IDE integrations to use these tools.
-- **[Get started](/verify/quickstart/)**: Follow the quickstart guide for immediate setup.
+- **[Configure settings](/code-reviews/configuration/)**: Customize review behavior for your needs.
+- **[Set up integrations](/code-reviews/quickstart/)**: Configure IDE integrations to use these tools.
+- **[Get started](/code-reviews/quickstart/)**: Follow the quickstart guide for immediate setup.
 --- END CONTENT ---
 

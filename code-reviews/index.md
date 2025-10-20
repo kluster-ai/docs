@@ -74,7 +74,7 @@ Code Reviews is available as a native extension for IDEs such as Cursor, VS Code
 
     Install the extension directly from the Cursor marketplace.
 
-    [:octicons-arrow-right-24: Add to Cursor](/verify/quickstart/#__tabbed_1_1){target=\_blank}
+    [:octicons-arrow-right-24: Add to Cursor](/code-reviews/quickstart/#__tabbed_1_1){target=\_blank}
 
 -   :material-microsoft-visual-studio-code: __VS Code__
 
@@ -82,7 +82,7 @@ Code Reviews is available as a native extension for IDEs such as Cursor, VS Code
 
     Install the extension directly from the VS Code marketplace.
 
-    [:octicons-arrow-right-24: Add to VS Code](/verify/quickstart/#__tabbed_1_2){target=\_blank}
+    [:octicons-arrow-right-24: Add to VS Code](/code-reviews/quickstart/#__tabbed_1_2){target=\_blank}
 
 -   :simple-claude: __Claude Code__
 
@@ -90,11 +90,11 @@ Code Reviews is available as a native extension for IDEs such as Cursor, VS Code
 
     Run a simple script in your terminal to set up Code Reviews quickly.
 
-    [:octicons-arrow-right-24: Install Claude Code](/verify/quickstart/#__tabbed_1_3){target=\_blank}
+    [:octicons-arrow-right-24: Install Claude Code](/code-reviews/quickstart/#__tabbed_1_3){target=\_blank}
 
 </div>
 
 ## Additional resources
 
-- **[Get started](/verify/quickstart/)**: Run Code Reviews in minutes.
-- **[See real examples](/verify/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
+- **[Get started](/code-reviews/quickstart/)**: Run Code Reviews in minutes.
+- **[See real examples](/code-reviews/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
