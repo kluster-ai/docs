@@ -636,7 +636,7 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
     - Download the kluster.ai MCP server.
     - Configure Claude Code settings.
     - Set up your API key.
-    - Enable both verification tools.
+    - Enable both review tools.
 
     -<div id="termynal" data-termynal>
   <span data-ty="input">franzuzz@MacBook-Pro-de-Jean mcp-demo % curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s YOUR_API_KEY</span>
@@ -709,8 +709,8 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
 
 ## Next steps
 
-- **[Cursor example](/verify/examples/cursor-firebase-nextjs/)**: See a real-world case study using Cursor.
-- **[VS-Code example](/verify/examples/vscode-admin-endpoint/)**: See a real-world case study using VS-Code.
+- **[Cursor example](/code-reviews/examples/cursor-firebase-nextjs/)**: See a real-world case study using Cursor.
+- **[VS-Code example](/code-reviews/examples/vscode-admin-endpoint/)**: See a real-world case study using VS-Code.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/code-reviews/tools/
