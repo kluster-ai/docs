@@ -100,7 +100,7 @@ Before getting started, ensure you have:
     - Download the kluster.ai MCP server.
     - Configure Claude Code settings.
     - Set up your API key.
-    - Enable both verification tools.
+    - Enable both review tools.
 
     --8<-- 'code/code-reviews/integrations/claudecode/integration-1.md'
       
@@ -122,5 +122,5 @@ Before getting started, ensure you have:
 
 ## Next steps
 
-- **[Cursor example](/verify/examples/cursor-firebase-nextjs/)**: See a real-world case study using Cursor.
-- **[VS-Code example](/verify/examples/vscode-admin-endpoint/)**: See a real-world case study using VS-Code.
+- **[Cursor example](/code-reviews/examples/cursor-firebase-nextjs/)**: See a real-world case study using Cursor.
+- **[VS-Code example](/code-reviews/examples/vscode-admin-endpoint/)**: See a real-world case study using VS-Code.
