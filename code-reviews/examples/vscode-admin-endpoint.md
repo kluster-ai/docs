@@ -1,11 +1,11 @@
 ---
 title: VS Code: Secure Admin Endpoints with Express
-description: Learn how Verify Code prevents critical security vulnerabilities when AI creates admin endpoints with hardcoded credentials
+description: Learn how Code Reviews prevents critical security vulnerabilities when AI creates admin endpoints with hardcoded credentials
 ---
 
 # VS Code: Secure Admin Endpoints
 
-Discover how [Verify Code](/verify/) catches critical security flaws when using VS Code with GitHub Copilot Chat to create admin endpoints. This tutorial demonstrates a real scenario where AI introduces a production-breaking security vulnerability while implementing a database reset endpoint.
+Discover how [Code Reviews](/code-reviews/) catches critical security flaws when using VS Code with GitHub Copilot Chat to create admin endpoints. This tutorial demonstrates a real scenario where AI introduces a production-breaking security vulnerability while implementing a database reset endpoint.
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ Discover how [Verify Code](/verify/) catches critical security flaws when using 
 
 ## Setup
 
-Getting Verify Code working in VS Code takes just one click. Visit the [Verify Code quickstart guide](/verify/quickstart/#__tabbed_1_2) and click **Add to VS Code** for automatic installation.
+Getting Code Reviews working in VS Code takes just one click. Visit the [Code Reviews quickstart guide](/code-reviews/quickstart/#__tabbed_1_2) and click **Add to VS Code** for automatic installation.
 
 ## Express API with product management
 
@@ -28,7 +28,7 @@ The team decided to add an **admin endpoint** to delete all products - a seeming
 
 Our prompt was straightforward: _"Add an admin endpoint to delete all products from the database."_
 
-![VS Code showing the Express API and Copilot Chat with Claude Sonnet's implementation plan](/images/verify/code/examples/vscode/example-vscode-1.webp)
+![VS Code showing the Express API and Copilot Chat with Claude Sonnet's implementation plan](/images/code-reviews/code/examples/vscode/example-vscode-1.webp)
 
 GitHub Copilot Chat (powered by Claude Sonnet) responded confidently with a 4-step implementation plan:
 
@@ -64,11 +64,11 @@ app.delete('/admin/reset-database', async (req, res) => {
 
 The line `process.env.ADMIN_KEY || 'admin123'` creates a catastrophic security hole. If the environment variable is missing, the endpoint uses a publicly known default. This means 'admin123' becomes a backdoor key that works in production if the environment isn't properly configured - turning a simple misconfiguration into a database deletion vulnerability.
 
-## Verify Code catches the vulnerability
+## Code Reviews catches the vulnerability
 
-![VS Code with Verify Code alert showing P2 Critical security issue for hardcoded admin credentials](/images/verify/code/examples/vscode/example-vscode-2.webp)
+![VS Code with Code Reviews alert showing P2 Critical security issue for hardcoded admin credentials](/images/code-reviews/code/examples/vscode/example-vscode-2.webp)
 
-Verify Code immediately identified the critical security flaw:
+Code Reviews immediately identified the critical security flaw:
 
 ---
 
@@ -80,11 +80,11 @@ Verify Code immediately identified the critical security flaw:
 
 ---
 
-Beyond the immediate security fix, Verify Code also recommended strengthening the admin endpoint with additional layers of protection: implementing multi-factor authentication (MFA) or role-based access control (RBAC), adding rate limiting to prevent brute-force attacks, and setting up comprehensive audit logging for all access attempts. These security recommendations can be customized in your [configuration settings](/verify/tools/#configuration-settings) to match your team's specific security requirements.
+Beyond the immediate security fix, Code Reviews also recommended strengthening the admin endpoint with additional layers of protection: implementing multi-factor authentication (MFA) or role-based access control (RBAC), adding rate limiting to prevent brute-force attacks, and setting up comprehensive audit logging for all access attempts. These security recommendations can be customized in your [configuration settings](/code-reviews/tools/#configuration-settings) to match your team's specific security requirements.
 
 ## The secure implementation
 
-Following Verify Code's guidance, the solution eliminates the backdoor by removing `|| 'admin123'` entirely. The secure implementation validates that `process.env.ADMIN_KEY` exists and returns a 503 Service Unavailable if it's missing.
+Following Code Reviews's guidance, the solution eliminates the backdoor by removing `|| 'admin123'` entirely. The secure implementation validates that `process.env.ADMIN_KEY` exists and returns a 503 Service Unavailable if it's missing.
 
 ```javascript
 // Before - VULNERABLE
@@ -114,16 +114,16 @@ if (!adminKey || adminKey !== expectedAdminKey) {
 
 ## Summary of results
 
-![VS Code showing the successfully implemented secure admin endpoint with proper authentication](/images/verify/code/examples/vscode/example-vscode-3.webp)
+![VS Code showing the successfully implemented secure admin endpoint with proper authentication](/images/code-reviews/code/examples/vscode/example-vscode-3.webp)
 
-Verify Code prevented a critical security vulnerability from reaching production:
+Code Reviews prevented a critical security vulnerability from reaching production:
 
 1. **Caught the hardcoded credential** - Identified the fallback value immediately.
 2. **Provided secure alternative** - Guided proper environment-based authentication.
 3. **Enforced configuration** - Ensured the endpoint fails safely when misconfigured.
 4. **Improved security posture** - Added audit logging and proper error handling.
 
-Without Verify Code, this vulnerability could have:
+Without Code Reviews, this vulnerability could have:
 
 - Exposed production databases to deletion.
 - Created compliance violations.
@@ -140,6 +140,6 @@ Admin endpoints require special security attention that AI often misses:
 - **Log admin actions** for audit trails.
 - **Test all scenarios** including misconfiguration.
 
-[Verify Code](/verify/) acts as your security safety net, catching vulnerabilities that look functional but hide critical flaws. The more powerful the operation, the more critical this protection becomes.
+[Code Reviews](/code-reviews/) acts as your security safety net, catching vulnerabilities that look functional but hide critical flaws. The more powerful the operation, the more critical this protection becomes.
 
-**Learn more**: Explore our [security reference](/verify/tools/#bug-check-types) to understand all vulnerability types that Verify Code monitors.
+**Learn more**: Explore our [security reference](/code-reviews/tools/#bug-check-types) to understand all vulnerability types that Code Reviews monitors.

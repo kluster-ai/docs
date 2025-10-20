@@ -16,15 +16,15 @@ This file is intended for AI models and developers. Use it to:
 
 ## Docs
 This section lists documentation pages. Each entry includes the page title, a direct link to the raw Markdown file, and a short description. Use this section to answer questions about core functionality, architecture, and features. If a question is about how or why something works, check here first.
-- [Get started with Verify Code](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/quickstart.md): Set up kluster.ai Code verification in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
-- [tools](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/tools.md): No description available.
-- [Options](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/configuration/options.md): Configure kluster.ai Verify code settings including sensitivity levels, bug types, and enabled tools for AI-generated code verification.
-- [rules](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/configuration/rules.md): No description available.
-- [cursor-firebase-nextjs](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/examples/cursor-firebase-nextjs.md): No description available.
-- [vscode-admin-endpoint](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/verify/examples/vscode-admin-endpoint.md): No description available.
+- [Get started with Code Reviews](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/quickstart.md): Set up kluster.ai Code Reviews in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
+- [tools](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/tools.md): No description available.
+- [Options](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/configuration/options.md): Configure kluster.ai Code Reviews settings including sensitivity levels, bug types, and enabled tools for AI-generated code reviews.
+- [rules](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/configuration/rules.md): No description available.
+- [cursor-firebase-nextjs](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/examples/cursor-firebase-nextjs.md): No description available.
+- [vscode-admin-endpoint](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/examples/vscode-admin-endpoint.md): No description available.
 
 ## Source Code Repos
 Frequently used source code repositories essential for working with this project. Each entry includes the repository name, GitHub URL, and a short description of what the repo contains or enables. These repositories contain the source code referenced by these docs. Use them for API references, code examples, or implementation details.
 - [kluster.ai cookbook](https://github.com/kluster-ai/klusterai-cookbook): This repository is a collection of guides and examples designed to help developers unlock the full potential of kluster.ai.
-- [Verify Guardrail Validator](https://github.com/kluster-ai/verify-guardrails-validator): This validator detects hallucinations in AI-generated content using kluster.ai's Verify API. The service can evaluate the AI response based on a given context, which makes it great for RAG applications. Without providing a specific context, the service can also be used as a real-time reliability verification service. Verify is able to identify when AI responses contain fabricated or inaccurate information.
+- [Verify Guardrail Validator](https://github.com/kluster-ai/verify-guardrails-validator): This validator detects hallucinations in AI-generated content using kluster.ai's Code Reviews. The service can evaluate the AI response based on a given context, which makes it great for RAG applications. Without providing a specific context, the service can also be used as a real-time reliability verification service. Verify is able to identify when AI responses contain fabricated or inaccurate information.
 

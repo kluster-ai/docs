@@ -6,27 +6,27 @@ kluster.ai. kluster.ai provides the technology to verify and trust AI responses 
 Documentation: https://docs.kluster.ai
 
 ## List of doc pages:
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/configuration/options.md
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/configuration/rules.md
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/examples/cursor-firebase-nextjs.md
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/examples/vscode-admin-endpoint.md
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/quickstart.md
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/verify/tools.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/configuration/options.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/configuration/rules.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/examples/cursor-firebase-nextjs.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/examples/vscode-admin-endpoint.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/quickstart.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/tools.md
 
 ## Full content for each doc page
 
-Doc-Content: https://docs.kluster.ai/verify/configuration/options/
+Doc-Content: https://docs.kluster.ai/code-reviews/configuration/options/
 --- BEGIN CONTENT ---
 ---
 title: Options
-description: Configure kluster.ai Verify code settings including sensitivity levels, bug types, and enabled tools for AI-generated code verification.
+description: Configure kluster.ai Code Reviews settings including sensitivity levels, bug types, and enabled tools for AI-generated code reviews.
 ---
 
 # Options
 
-You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Verify code behavior through the platform settings or directly in your IDE. This allows you to tailor the verification process to your specific needs, such as configuring sensitivity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
+You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Code Reviews behavior through the platform settings or directly in your IDE. This allows you to tailor the review process to your specific needs, such as configuring sensitivity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
 
-![Code Review Options interface showing three numbered sections: Sensitivity Settings, Code Review Scope, and Enabled Tools](/images/verify/code/configuration/configuration-1.webp)
+![Code Review Options interface showing three numbered sections: Sensitivity Settings, Code Review Scope, and Enabled Tools](/images/code-reviews/code/configuration/configuration-1.webp)
 
 ## 1. Sensitivity settings
 
@@ -55,25 +55,25 @@ Select which types of issues the Real-time Code Review tool detects during code 
 
 ## 3. Enabled tools
 
-Control which verification tools run in your development environment. Enable or disable each tool based on your project's specific needs and workflow.
+Control which review tools run in your development environment. Enable or disable each tool based on your project's specific needs and workflow.
 
-- `Real-time Code Review`: For code quality verification.
+- `Real-time Code Review`: For code quality reviews.
 - `Dependency Analysis`: For package and dependency security.
 
 ## Next steps
 
-- [Create custom rules](/verify/configuration/rules/): Add project-specific development standards.
-- [View tools reference](/verify/tools/): Understand the technical API details.
-- [Set up integrations](/verify/quickstart/): Configure IDE integrations.
+- [Create custom rules](/code-reviews/configuration/rules/): Add project-specific development standards.
+- [View tools reference](/code-reviews/tools/): Understand the technical API details.
+- [Set up integrations](/code-reviews/quickstart/): Configure IDE integrations.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/verify/configuration/rules/
+Doc-Content: https://docs.kluster.ai/code-reviews/configuration/rules/
 --- BEGIN CONTENT ---
 # Custom rules
 
-Rules define practices, guidelines, and patterns that maintain code quality for your projects. When connected to GitHub, each repository becomes a project with its own learned rules. You can also create manual rules that apply globally or to specific projects. [kluster.ai](https://kluster.ai){target=_blank} Verify code automatically checks newly generated code against these rules.
+Rules define practices, guidelines, and patterns that maintain code quality for your projects. When connected to GitHub, each repository becomes a project with its own learned rules. You can also create manual rules that apply globally or to specific projects. [kluster.ai](https://kluster.ai){target=_blank} Code Reviews automatically checks newly generated code against these rules.
 
-## Rule Types
+## Rule types
 
 - **Manual rules**: Custom rules you create based on your team's specific requirements and coding standards.
 - **Learned rules**: Automatically extracted from your GitHub repositories, continuously updated to reflect your codebase patterns.
@@ -87,13 +87,13 @@ You can create manual rules to enforce your team's coding standards or connect G
 
 1. **Access the platform**: Navigate to [Custom Code Review Rules](https://platform.kluster.ai/custom-code-review-rules){target=_blank}.
 
-2. **Connect GitHub** (Optional): Connect your GitHub account to enable project-specific rules. In this context, each GitHub repository is treated as a 'project' - Verify code learns patterns from each repository and applies those specific rules when reviewing code for that project.
+2. **Connect GitHub** (Optional): Connect your GitHub account to enable project-specific rules. In this context, each GitHub repository is treated as a 'project' - Code Reviews learns patterns from each repository and applies those specific rules when reviewing code for that project.
 
-    ![Connect to GitHub](../../images/verify/code/configuration/rules/rules-1.webp)
+    ![Connect to GitHub](/images/code-reviews/code/configuration/rules/rules-1.webp)
 
 3. Click **Add review rule** to create custom rules.
 
-    ![Add review rule button](../../images/verify/code/configuration/rules/rules-2.webp)
+    ![Add review rule button](/images/code-reviews/code/configuration/rules/rules-2.webp)
 
 4. **Configure rule scope**: Enter your rule and select the scope:
     - **All**: Rules apply globally to all your coding sessions.
@@ -101,24 +101,24 @@ You can create manual rules to enforce your team's coding standards or connect G
 
 5. Click **Save & Add Another** to add multiple rules or **Save** to finish.
 
-    ![Add code review rule dialog](../../images/verify/code/configuration/rules/rules-3.webp)
+    ![Add code review rule dialog](/images/code-reviews/code/configuration/rules/rules-3.webp)
 
 ## Next steps
 
-- [View all integrations](/verify/quickstart/): Set up Verify code in your preferred IDE.
-- **[See real examples](/verify/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
+- **[View all integrations](/code-reviews/quickstart/)**: Set up Code Reviews in your preferred IDE.
+- **[See real examples](/code-reviews/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/verify/examples/cursor-firebase-nextjs/
+Doc-Content: https://docs.kluster.ai/code-reviews/examples/cursor-firebase-nextjs/
 --- BEGIN CONTENT ---
 ---
 title: Cursor: Firebase Authentication with Next.js
-description: See how Verify Code catches critical issues in real-time while migrating from localStorage to Firebase authentication
+description: See how Code Reviews catches critical issues in real-time while migrating from localStorage to Firebase authentication
 ---
 
 # Cursor: Firebase authentication
 
-Learn how [Verify Code](/verify/) acts as your safety net when using Cursor AI to write code. This tutorial demonstrates a real migration from localStorage to Firebase authentication in a buy-sell e-commerce platform, showcasing how AI plans can go wrong and the four critical issues Verify Code caught.
+Learn how [Code Reviews](/code-reviews/) acts as your safety net when using Cursor AI to write code. This tutorial demonstrates a real migration from localStorage to Firebase authentication in a buy-sell e-commerce platform, showcasing how AI plans can go wrong and the four critical issues Code Reviews caught.
 
 ## Prerequisites
 
@@ -130,21 +130,21 @@ As kluster.ai services work via MCP, the API key is created and configured for y
 
 ## Setup
 
-Getting Verify Code working in Cursor takes just one click. Visit our [quickstart guide](/verify/quickstart/) and click **Add to Cursor** for automatic installation.
+Getting Code Reviews working in Cursor takes just one click. Visit our [quickstart guide](/code-reviews/quickstart/) and click **Add to Cursor** for automatic installation.
 
-For other IDEs, see our [MCP-compatible integration guides](/verify/quickstart/).
+For other IDEs, see our [MCP-compatible integration guides](/code-reviews/quickstart/).
 
 ## Next.js e-commerce
 
 We built a buy-sell e-commerce platform where users post articles for purchase. The app initially used `localStorage` for user authentication, but we decided to **migrate to Firebase** for better security and user management.
 
-We used **Gemini 2.5 Flash** (Cursor's standard free model) in **agentic mode** to handle the migration while Verify Code monitored the changes.
+We used **Gemini 2.5 Flash** (Cursor's standard free model) in **agentic mode** to handle the migration while Code Reviews monitored the changes.
 
 ## The prompt and AI's plan
 
 Our prompt was to _implement a real user login with Firebase_ + Firebase default app setting file.
 
-![Cursor showing e-commerce app and AI's Firebase implementation plan](/images/verify/code/examples/cursor/example-cursor-1.webp)
+![Cursor showing e-commerce app and AI's Firebase implementation plan](/images/code-reviews/code/examples/cursor/example-cursor-1.webp)
 
 The AI responded confidently with a detailed 5-step plan:
 
@@ -169,7 +169,7 @@ The AI's 5-step implementation plan achieved just 20% success rate, with four cr
 
 The AI got confused between steps 3-4, couldn't decide between direct Firebase calls vs API routes, kept reverting working code, and made **multiple correction attempts** throughout the implementation.
 
-## Key issues caught by Verify Code
+## Key issues caught by Code Reviews
 
 The AI made four key mistakes along the way, escalating from simple import issues to reverting the entire Firebase implementation. Below, we examine each catch.
 
@@ -187,7 +187,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app); // ❌ No auth setup
 ```
 
-Verify Code provided the following response:
+Code Reviews provided the following response:
 
 ---
 
@@ -232,11 +232,11 @@ export async function POST(req: NextRequest) {
 }
 ```
 
-The screenshot below shows Cursor's interface with Verify Code's alert panel displaying a critical P1 Intent violation. The alert clearly identifies that the AI removed working Firebase authentication logic from the login API route, replacing functional code with a placeholder response.
+The screenshot below shows Cursor's interface with Code Reviews's alert panel displaying a critical P1 Intent violation. The alert clearly identifies that the AI removed working Firebase authentication logic from the login API route, replacing functional code with a placeholder response.
 
-![Verify Code alert showing breaking changes detected in login API route](/images/verify/code/examples/cursor/example-cursor-2.webp){ width="75%" }
+![Code Reviews alert showing breaking changes detected in login API route](/images/code-reviews/code/examples/cursor/example-cursor-2.webp){ width="75%" }
 
-Verify Code provided the following response:
+Code Reviews provided the following response:
 
 ---
 
@@ -262,7 +262,7 @@ export async function POST(request: NextRequest) {
 }
 ```
 
-Verify Code provided the following response:
+Code Reviews provided the following response:
 
 ---
 
@@ -321,12 +321,12 @@ const login = async (email: string, password: string) => {
 };
 ```
 
-The screenshot below displays Cursor with Verify Code's alert highlighting a P1 Intent violation. The alert detects that the AI has regressed the authentication architecture by reverting from the Firebase implementation back to the original localStorage and API-based approach, undoing the intended migration.
+The screenshot below displays Cursor with Code Reviews's alert highlighting a P1 Intent violation. The alert detects that the AI has regressed the authentication architecture by reverting from the Firebase implementation back to the original localStorage and API-based approach, undoing the intended migration.
 
-![Verify Code alert showing architecture regression from Firebase back to localStorage](/images/verify/code/examples/cursor/example-cursor-3.webp){ width="75%" }
+![Code Reviews alert showing architecture regression from Firebase back to localStorage](/images/code-reviews/code/examples/cursor/example-cursor-3.webp){ width="75%" }
 
 
-Verify Code provided the following response:
+Code Reviews provided the following response:
 
 ---
 
@@ -347,44 +347,44 @@ const login = async (email: string, password: string) => {
 
 ## Summary of results
 
-Verify Code caught **four critical issues** across a "simple" five-step plan:
+Code Reviews caught **four critical issues** across a "simple" five-step plan:
 
 1. **Incomplete implementation** - Step one missed core functionality.
 2. **Breaking changes** - Step four deleted working code.
 3. **Security vulnerabilities** - Step five ignored input validation.
 4. **Architecture regression** - Step three went backwards.
 
-By following Verify Code's guidance at each step, Gemini 2.5 Flash completed the Firebase migration. Users can now register and authenticate properly.
+By following Code Reviews's guidance at each step, Gemini 2.5 Flash completed the Firebase migration. Users can now register and authenticate properly.
 
 The following image shows the Firebase console showing the `code@verify.com` user creation:
 
-![Firebase Authentication console showing successfully created users](/images/verify/code/examples/cursor/example-cursor-4.webp)
+![Firebase Authentication console showing successfully created users](/images/code-reviews/code/examples/cursor/example-cursor-4.webp)
 
 Users can now successfully login into the e-commerce app and Firebase user created:
 
-![E-commerce app showing successful login with code@verify.com user](/images/verify/code/examples/cursor/example-cursor-5.webp)
+![E-commerce app showing successful login with code@verify.com user](/images/code-reviews/code/examples/cursor/example-cursor-5.webp)
 
-The migration from `localStorage` to Firebase authentication was completed without the typical debugging cycles. [Verify Code](/verify/) caught each issue in real-time, allowing us to fix problems immediately rather than discovering them during testing.
+The migration from `localStorage` to Firebase authentication was completed without the typical debugging cycles. [Code Reviews](/code-reviews/) caught each issue in real-time, allowing us to fix problems immediately rather than discovering them during testing.
 
 ## Key takeaways
 
-Even with clear prompts and detailed plans, AI execution can go wrong. Verify Code acts as your safety net, catching issues before they compound into debugging nightmares.
+Even with clear prompts and detailed plans, AI execution can go wrong. Code Reviews acts as your safety net, catching issues before they compound into debugging nightmares.
 
 The more complex the task, the more valuable this real-time verification becomes.
 
-**Learn more**: Explore our [tools reference](/verify/tools/) to understand all issue types and priority levels that Verify Code monitors.
+**Learn more**: Explore our [tools reference](/code-reviews/tools/) to understand all issue types and priority levels that Code Reviews monitors.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/verify/examples/vscode-admin-endpoint/
+Doc-Content: https://docs.kluster.ai/code-reviews/examples/vscode-admin-endpoint/
 --- BEGIN CONTENT ---
 ---
 title: VS Code: Secure Admin Endpoints with Express
-description: Learn how Verify Code prevents critical security vulnerabilities when AI creates admin endpoints with hardcoded credentials
+description: Learn how Code Reviews prevents critical security vulnerabilities when AI creates admin endpoints with hardcoded credentials
 ---
 
 # VS Code: Secure Admin Endpoints
 
-Discover how [Verify Code](/verify/) catches critical security flaws when using VS Code with GitHub Copilot Chat to create admin endpoints. This tutorial demonstrates a real scenario where AI introduces a production-breaking security vulnerability while implementing a database reset endpoint.
+Discover how [Code Reviews](/code-reviews/) catches critical security flaws when using VS Code with GitHub Copilot Chat to create admin endpoints. This tutorial demonstrates a real scenario where AI introduces a production-breaking security vulnerability while implementing a database reset endpoint.
 
 ## Prerequisites
 
@@ -397,7 +397,7 @@ As kluster.ai services work via MCP, the API key is created and configured for y
 
 ## Setup
 
-Getting Verify Code working in VS Code takes just one click. Visit the [Verify Code quickstart guide](/verify/quickstart/#__tabbed_1_2) and click **Add to VS Code** for automatic installation.
+Getting Code Reviews working in VS Code takes just one click. Visit the [Code Reviews quickstart guide](/code-reviews/quickstart/#__tabbed_1_2) and click **Add to VS Code** for automatic installation.
 
 ## Express API with product management
 
@@ -409,7 +409,7 @@ The team decided to add an **admin endpoint** to delete all products - a seeming
 
 Our prompt was straightforward: _"Add an admin endpoint to delete all products from the database."_
 
-![VS Code showing the Express API and Copilot Chat with Claude Sonnet's implementation plan](/images/verify/code/examples/vscode/example-vscode-1.webp)
+![VS Code showing the Express API and Copilot Chat with Claude Sonnet's implementation plan](/images/code-reviews/code/examples/vscode/example-vscode-1.webp)
 
 GitHub Copilot Chat (powered by Claude Sonnet) responded confidently with a 4-step implementation plan:
 
@@ -445,11 +445,11 @@ app.delete('/admin/reset-database', async (req, res) => {
 
 The line `process.env.ADMIN_KEY || 'admin123'` creates a catastrophic security hole. If the environment variable is missing, the endpoint uses a publicly known default. This means 'admin123' becomes a backdoor key that works in production if the environment isn't properly configured - turning a simple misconfiguration into a database deletion vulnerability.
 
-## Verify Code catches the vulnerability
+## Code Reviews catches the vulnerability
 
-![VS Code with Verify Code alert showing P2 Critical security issue for hardcoded admin credentials](/images/verify/code/examples/vscode/example-vscode-2.webp)
+![VS Code with Code Reviews alert showing P2 Critical security issue for hardcoded admin credentials](/images/code-reviews/code/examples/vscode/example-vscode-2.webp)
 
-Verify Code immediately identified the critical security flaw:
+Code Reviews immediately identified the critical security flaw:
 
 ---
 
@@ -461,11 +461,11 @@ Verify Code immediately identified the critical security flaw:
 
 ---
 
-Beyond the immediate security fix, Verify Code also recommended strengthening the admin endpoint with additional layers of protection: implementing multi-factor authentication (MFA) or role-based access control (RBAC), adding rate limiting to prevent brute-force attacks, and setting up comprehensive audit logging for all access attempts. These security recommendations can be customized in your [configuration settings](/verify/tools/#configuration-settings) to match your team's specific security requirements.
+Beyond the immediate security fix, Code Reviews also recommended strengthening the admin endpoint with additional layers of protection: implementing multi-factor authentication (MFA) or role-based access control (RBAC), adding rate limiting to prevent brute-force attacks, and setting up comprehensive audit logging for all access attempts. These security recommendations can be customized in your [configuration settings](/code-reviews/tools/#configuration-settings) to match your team's specific security requirements.
 
 ## The secure implementation
 
-Following Verify Code's guidance, the solution eliminates the backdoor by removing `|| 'admin123'` entirely. The secure implementation validates that `process.env.ADMIN_KEY` exists and returns a 503 Service Unavailable if it's missing.
+Following Code Reviews's guidance, the solution eliminates the backdoor by removing `|| 'admin123'` entirely. The secure implementation validates that `process.env.ADMIN_KEY` exists and returns a 503 Service Unavailable if it's missing.
 
 ```javascript
 // Before - VULNERABLE
@@ -495,16 +495,16 @@ if (!adminKey || adminKey !== expectedAdminKey) {
 
 ## Summary of results
 
-![VS Code showing the successfully implemented secure admin endpoint with proper authentication](/images/verify/code/examples/vscode/example-vscode-3.webp)
+![VS Code showing the successfully implemented secure admin endpoint with proper authentication](/images/code-reviews/code/examples/vscode/example-vscode-3.webp)
 
-Verify Code prevented a critical security vulnerability from reaching production:
+Code Reviews prevented a critical security vulnerability from reaching production:
 
 1. **Caught the hardcoded credential** - Identified the fallback value immediately.
 2. **Provided secure alternative** - Guided proper environment-based authentication.
 3. **Enforced configuration** - Ensured the endpoint fails safely when misconfigured.
 4. **Improved security posture** - Added audit logging and proper error handling.
 
-Without Verify Code, this vulnerability could have:
+Without Code Reviews, this vulnerability could have:
 
 - Exposed production databases to deletion.
 - Created compliance violations.
@@ -521,23 +521,23 @@ Admin endpoints require special security attention that AI often misses:
 - **Log admin actions** for audit trails.
 - **Test all scenarios** including misconfiguration.
 
-[Verify Code](/verify/) acts as your security safety net, catching vulnerabilities that look functional but hide critical flaws. The more powerful the operation, the more critical this protection becomes.
+[Code Reviews](/code-reviews/) acts as your security safety net, catching vulnerabilities that look functional but hide critical flaws. The more powerful the operation, the more critical this protection becomes.
 
-**Learn more**: Explore our [security reference](/verify/tools/#bug-check-types) to understand all vulnerability types that Verify Code monitors.
+**Learn more**: Explore our [security reference](/code-reviews/tools/#bug-check-types) to understand all vulnerability types that Code Reviews monitors.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/verify/quickstart/
+Doc-Content: https://docs.kluster.ai/code-reviews/quickstart/
 --- BEGIN CONTENT ---
 ---
-title: Get started with Verify Code
-description: Set up kluster.ai Code verification in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
+title: Get started with Code Reviews
+description: Set up kluster.ai Code Reviews in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
 ---
 
-# Get started with Verify Code
+# Get started with Code Reviews
 
 Modern developers increasingly rely on AI coding assistants to accelerate development, but this speed comes with risks. Generated code may contain logic errors, security flaws, or performance issues that compromise application quality and security.
 
-The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code verification service integrates directly into your development workflow, automatically scanning AI-generated code in real-time. It catches potential issues instantly within your IDE, allowing you to ship code confidently while maintaining the speed benefits of AI-assisted development.
+The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code Reviews service integrates directly into your development workflow, automatically scanning AI-generated code in real-time. It catches potential issues instantly within your IDE, allowing you to ship code confidently while maintaining the speed benefits of AI-assisted development.
 
 ## Prerequisites
 
@@ -559,19 +559,19 @@ As kluster.ai services work via MCP, the API key is created and configured for y
     
     3. Click **Install** to add the extension into Cursor.
 
-        ![Extension Installation Prompt in Cursor](/images/verify/code/integrations/cursor/cursor-integration-1.webp)
+        ![Extension Installation Prompt in Cursor](/images/code-reviews/code/integrations/cursor/cursor-integration-1.webp)
 
     Once installed, you can verify the setup:
 
     1. Open **Cursor Settings**. You can use the gear icon in the top right corner to do so.
     2. Navigate to **Tools & Integrations** → **MCP Tools**.
-    3. You should see **extension-Kluster-Verify-Code** with all tools enabled:
+    3. You should see **extension-Kluster-Code-Reviews** with all tools enabled:
 
         -- **`kluster_code_review_auto`**: Automatic code security, quality, and compliance verification.
 - **`kluster_dependency_validator`**: Dependency health and risk validation.
 - **`kluster_code_review_manual`**: On-demand, user-requested per-file verification (security, quality, compliance).
 
-        ![Active MCP Tools in Cursor](/images/verify/code/integrations/cursor/cursor-integration-2.webp)
+        ![Active MCP Tools in Cursor](/images/code-reviews/code/integrations/cursor/cursor-integration-2.webp)
 
 === "VS Code"
    
@@ -583,41 +583,41 @@ As kluster.ai services work via MCP, the API key is created and configured for y
     
     3. Click **Install** to get the extension.
 
-        ![Install Extension](/images/verify/code/integrations/vscode/vscode-integration-0.webp)
+        ![Install Extension](/images/code-reviews/code/integrations/vscode/vscode-integration-0.webp)
 
     4. Select **Trust Publisher & Install**.
 
-        ![Trust publisher](/images/verify/code/integrations/vscode/vscode-integration-1.webp)
+        ![Trust publisher](/images/code-reviews/code/integrations/vscode/vscode-integration-1.webp)
 
     Now that the extension is installed, you need to log in with your kluster.ai account:
        
     1. Click on **Sign in** in the bottom right corner.
-       ![Sign In](/images/verify/code/integrations/vscode/vscode-integration-2.webp)
+       ![Sign In](/images/code-reviews/code/integrations/vscode/vscode-integration-2.webp)
 
     2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account. 
 
-        ![Open Pop-up](/images/verify/code/integrations/vscode/vscode-integration-3.webp)
+        ![Open Pop-up](/images/code-reviews/code/integrations/vscode/vscode-integration-3.webp)
           
     3. Click **Open Visual Studio Code**.
 
-        ![Open Visual Studio Code](/images/verify/code/integrations/vscode/vscode-integration-4.webp)
+        ![Open Visual Studio Code](/images/code-reviews/code/integrations/vscode/vscode-integration-4.webp)
 
-    4. Click **Open** to install the MCP with your kluster.ai API key.
+    4. Click **Open** to install the MCP with your kluster.ai API key.
         
-        ![Open and Install MCP](/images/verify/code/integrations/vscode/vscode-integration-5.webp)
+        ![Open and Install MCP](/images/code-reviews/code/integrations/vscode/vscode-integration-5.webp)
 
-    5. To complete the setup, click **Install** to accept the MCP configuration for Verify Code. 
+    5. To complete the setup, click **Install** to accept the MCP configuration for Code Reviews. 
     
-         ![Install MCP](/images/verify/code/integrations/vscode/vscode-integration-6.webp)
+         ![Install MCP](/images/code-reviews/code/integrations/vscode/vscode-integration-6.webp)
     6. Press **Trust** to Install the MCP server.
-    ![MCP Server Trust Installation in VS Code](/images/verify/code/integrations/vscode/vscode-integration-7.webp)
+    ![MCP Server Trust Installation in VS Code](/images/code-reviews/code/integrations/vscode/vscode-integration-7.webp)
         
     Once installed, verify the setup:
     
     1. Open a Copilot chat window and select the **Tools** button on the bottom right corner.
-    2. Scroll down the list and **Kluster-Verify-Code-MCP** should appear. Make sure both tools enabled.
+    2. Scroll down the list and **Kluster-Code-Reviews-MCP** should appear. Make sure both tools enabled.
 
-        ![Active MCP Tools in VS Code](/images/verify/code/integrations/vscode/vscode-integration-8.webp)
+        ![Active MCP Tools in VS Code](/images/code-reviews/code/integrations/vscode/vscode-integration-8.webp)
 
 === "Claude Code"
 
@@ -636,7 +636,7 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
     - Download the kluster.ai MCP server.
     - Configure Claude Code settings.
     - Set up your API key.
-    - Enable both verification tools.
+    - Enable both review tools.
 
     -<div id="termynal" data-termynal>
   <span data-ty="input">franzuzz@MacBook-Pro-de-Jean mcp-demo % curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s YOUR_API_KEY</span>
@@ -679,7 +679,7 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
   <span data-ty>https://docs.anthropic.com/en/docs/claude-code/mcp</span>
 </div>
 
-    2. Select **kluster-verify** in the MCP menu list and press enter to **View tools**.
+    2. Select **kluster-code-reviews** in the MCP menu list and press enter to **View tools**.
 
         -<div id="termynal" data-termynal>
   <span data-ty>Kluster-verify MCP Server</span>
@@ -694,7 +694,7 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
   <span data-ty>  2. Reconnect</span>
 </div>
 
-    3. Select **View tools** to see the tools for **kluster-verify** listed, including:
+    3. Select **View tools** to see the tools for **kluster-code-reviews** listed, including:
         
         -- **`kluster_code_review_auto`**: Automatic code security, quality, and compliance verification.
 - **`kluster_dependency_validator`**: Dependency health and risk validation.
@@ -709,26 +709,26 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
 
 ## Next steps
 
-- **[Cursor example](/verify/examples/cursor-firebase-nextjs/)**: See a real-world case study using Cursor.
-- **[VS-Code example](/verify/examples/vscode-admin-endpoint/)**: See a real-world case study using VS-Code.
+- **[Cursor example](/code-reviews/examples/cursor-firebase-nextjs/)**: See a real-world case study using Cursor.
+- **[VS-Code example](/code-reviews/examples/vscode-admin-endpoint/)**: See a real-world case study using VS-Code.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/verify/tools/
+Doc-Content: https://docs.kluster.ai/code-reviews/tools/
 --- BEGIN CONTENT ---
 ---
-title: Code MCP Tools for Verify 
-description: Learn how kluster.ai Code MCP tools work: parameters, response formats, issue categories, and settings for real-time code verification.
+title: Code MCP Tools for Code Reviews 
+description: Learn how kluster.ai Code MCP tools work: parameters, response formats, issue categories, and settings for real-time code reviews.
 ---
 
 # Tools reference
 
-The [kluster.ai](https://www.kluster.ai/){target=_blank} Code MCP server provides verification tools for checking AI-generated code quality and security. These tools enable real-time code verification directly within your IDE through MCP integration.
+The [kluster.ai](https://www.kluster.ai/){target=_blank} Code MCP server provides review tools for checking AI-generated code quality and security. These tools enable real-time code reviews directly within your IDE through MCP integration.
 
 It includes:
 
-- **`kluster_code_review_auto`**: Automatically verifies code quality and detects bugs, including logic errors, security issues, and performance problems. Triggers automatically when code is generated or modified. Best for real-time verification during active coding sessions, analyzing changes in context of the full conversation and related files.
+- **`kluster_code_review_auto`**: Automatically reviews code quality and detects bugs, including logic errors, security issues, and performance problems. Triggers automatically when code is generated or modified. Best for real-time reviews during active coding sessions, analyzing changes in context of the full conversation and related files.
 - **`kluster_dependency_validator`**: Validates the security and compliance of packages and dependencies. Triggers automatically before package installations or when package files are updated. Best for preventing vulnerable or non-compliant third-party libraries from entering your codebase before installation.
-- **`kluster_code_review_manual`**: Manually verifies specific files when explicitly requested by the user (e.g., "verify this file", "check for bugs"). Best for auditing existing code, reviewing specific modules, or getting fix recommendations for individual files.
+- **`kluster_code_review_manual`**: Manually reviews specific files when explicitly requested by the user (e.g., "review this file", "check for bugs"). Best for auditing existing code, reviewing specific modules, or getting fix recommendations for individual files.
 
 This page documents the parameters and response formats you'll see when using these tools in Cursor, Claude Code, or any MCP-compatible client.
 
@@ -760,7 +760,7 @@ This page documents the parameters and response formats you'll see when using th
 
         `chat_id` ++"string"++ <span class="optional" markdown>++"optional"++</span>
 
-        Session identifier returned by previous tool calls. Used to maintain context across multiple verification requests.
+        Session identifier returned by previous tool calls. Used to maintain context across multiple review requests.
 
 === "Manual Review"
 
@@ -776,8 +776,8 @@ This page documents the parameters and response formats you'll see when using th
 
         `modified_file_path` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-        Full absolute path of the single file to verify. This tool can only check one file per call.
-
+        Full absolute path of the single file to review. This tool can only check one file per call.
+        
         ---
 
         `need_fixes` ++"boolean"++ <span class="required" markdown>++"required"++</span>
@@ -788,11 +788,11 @@ This page documents the parameters and response formats you'll see when using th
 
         `chat_id` ++"string"++ <span class="optional" markdown>++"optional"++</span>
 
-        Session identifier returned by previous tool calls. Used to maintain context across multiple verification requests.
+        Session identifier returned by previous tool calls. Used to maintain context across multiple review requests.
 
 ## Response fields
 
-All Code verification tools return the same response structure:
+All code review tools return the same response structure:
 
 - **`isCodeCorrect`**: Boolean indicating if the code has issues.
 - **`explanation`**: Summary of all issues found.
@@ -836,7 +836,7 @@ All Code verification tools return the same response structure:
 
 ## Priority system
 
-Code verification assigns priority levels to detected issues, helping you focus on the most critical problems first. The system automatically prioritizes based on issue type and severity.
+Code review assigns priority levels to detected issues, helping you focus on the most critical problems first. The system automatically prioritizes based on issue type and severity.
 
 - **P0-P1**: Intent issues (highest priority) - code doesn't match request.
 - **P2**: Critical severity - must fix immediately.
@@ -847,8 +847,8 @@ Code verification assigns priority levels to detected issues, helping you focus 
 
 ## Next steps
 
-- **[Configure settings](/verify/configuration/)**: Customize verification behavior for your needs.
-- **[Set up integrations](/verify/quickstart/)**: Configure IDE integrations to use these tools.
-- **[Get started](/verify/quickstart/)**: Follow the quickstart guide for immediate setup.
+- **[Configure settings](/code-reviews/configuration/)**: Customize review behavior for your needs.
+- **[Set up integrations](/code-reviews/quickstart/)**: Configure IDE integrations to use these tools.
+- **[Get started](/code-reviews/quickstart/)**: Follow the quickstart guide for immediate setup.
 --- END CONTENT ---
 

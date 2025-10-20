@@ -1,9 +1,9 @@
 ---
-title: Verify Code — Overview
-description: Learn how to use kluster.ai’s Verify Code to validate AI-generated code in real time—detecting bugs, security issues, and quality problems so you can ship safely.
+title: Code Reviews — Overview
+description: Learn how to use kluster.ai's Code Reviews to validate AI-generated code in real time—detecting bugs, security issues, and quality problems so you can ship safely.
 ---
 
-# Verify Code
+# Code Reviews
 
 LLMs can produce non-factual or irrelevant output (hallucinations). In software development, that translates into risky code changes and extra engineering overhead:
 
@@ -12,15 +12,15 @@ LLMs can produce non-factual or irrelevant output (hallucinations). In software 
 - Potential for cascading failures in chained AI operations.
 - Manual review cycles that slow development and deployment.
 
-**Verify Code** is part of kluster.ai trust layer, and its goal is to validate AI-generated code in real time so you can deploy AI at scale where accuracy and security matter most.
+**Code Reviews** is part of kluster.ai trust layer, and its goal is to validate AI-generated code in real time so you can deploy AI at scale where accuracy and security matter most.
 
-With Verify Code, you can ship confidently: potential issues are surfaced (and can be auto-corrected) before they reach production. The service works seamlessly with AI coding assistants in your IDE (Cursor, VS Code, Claude Code and others), analyzing diffs as code is generated.
+With Code Reviews, you can ship confidently: potential issues are surfaced (and can be auto-corrected) before they reach production. The service works seamlessly with AI coding assistants in your IDE (Cursor, VS Code, Claude Code and others), analyzing diffs as code is generated.
 
-## How Verify Code works
+## How Code Reviews works
 
-Verify Code analyzes AI-generated code (typically in diff format) and returns a structured assessment with actionable fixes. It combines the following MCP tools:
+Code Reviews analyzes AI-generated code (typically in diff format) and returns a structured assessment with actionable fixes. It combines the following MCP tools:
 
---8<-- 'text/verify/code-tools.md'
+--8<-- 'text/code-reviews/code-tools.md'
 
 The service responds with the following fields:
 
@@ -39,7 +39,7 @@ The service responds with the following fields:
 
 ## Configuration options
 
-Tailor Verify Code to your workflow:
+Tailor Code Reviews to your workflow:
 
 - **Sensitivity settings**: Set minimum sensitivity to report (*Low → Critical*).
 - **Bug check types**: Select which issue types to check: *Semantic, Security, Quality, Intent, Knowledge, Logical, Performance*.
@@ -55,16 +55,16 @@ These settings can be configured directly in your IDE integration.
 - Development workflow automation.
 - Code quality assurance systems.
 
-## When to use Verify Code
+## When to use Code Reviews
 
-- **AI code validation**: Verify AI-generated code before production use.
+- **AI code validation**: Review AI-generated code before production use.
 - **Security scanning**: Detect potential vulnerabilities early.
 - **Quality assurance**: Enforce best practices automatically.
 - **Dependency checking**: Validate that new packages are secure and up-to-date.
 
 ## Setup instructions
 
-Verify Code is available as a native extension for IDEs such as Cursor, VS Code and Claude Code. Choose your preferred IDE to get started with kluster.ai Verify Code in under 30 seconds:
+Code Reviews is available as a native extension for IDEs such as Cursor, VS Code and Claude Code. Choose your preferred IDE to get started with kluster.ai Code Reviews in under 30 seconds:
 
 <div class="grid cards" markdown>
 
@@ -74,7 +74,7 @@ Verify Code is available as a native extension for IDEs such as Cursor, VS Code 
 
     Install the extension directly from the Cursor marketplace.
 
-    [:octicons-arrow-right-24: Add to Cursor](/verify/quickstart/#__tabbed_1_1){target=\_blank}
+    [:octicons-arrow-right-24: Add to Cursor](/code-reviews/quickstart/#__tabbed_1_1){target=\_blank}
 
 -   :material-microsoft-visual-studio-code: __VS Code__
 
@@ -82,19 +82,19 @@ Verify Code is available as a native extension for IDEs such as Cursor, VS Code 
 
     Install the extension directly from the VS Code marketplace.
 
-    [:octicons-arrow-right-24: Add to VS Code](/verify/quickstart/#__tabbed_1_2){target=\_blank}
+    [:octicons-arrow-right-24: Add to VS Code](/code-reviews/quickstart/#__tabbed_1_2){target=\_blank}
 
 -   :simple-claude: __Claude Code__
 
     ---
 
-    Run a simple script in your terminal to set up Verify Code quickly.
+    Run a simple script in your terminal to set up Code Reviews quickly.
 
-    [:octicons-arrow-right-24: Install Claude Code](/verify/quickstart/#__tabbed_1_3){target=\_blank}
+    [:octicons-arrow-right-24: Install Claude Code](/code-reviews/quickstart/#__tabbed_1_3){target=\_blank}
 
 </div>
 
 ## Additional resources
 
-- **[Get started](/verify/quickstart/)**: Run Verify Code in minutes.
-- **[See real examples](/verify/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
+- **[Get started](/code-reviews/quickstart/)**: Run Code Reviews in minutes.
+- **[See real examples](/code-reviews/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
