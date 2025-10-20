@@ -1,6 +1,6 @@
 ---
 title: Get started with Code Reviews
-description: Set up kluster.ai Code reviews in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
+description: Set up kluster.ai Code Reviews in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
 ---
 
 # Get started with Code Reviews
