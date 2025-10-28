@@ -89,7 +89,7 @@ Before getting started, ensure you have:
 
     **Terminal installation**
     
-    Log in to the [kluster.ai platform get started page](https://platform.kluster.ai){target=\_blank}, and copy the Claude Code configuration snippet. This will include your API key.
+    Log in to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank}, and copy the Claude Code configuration snippet. This will include your API key.
 
     The command is similar to:
     
