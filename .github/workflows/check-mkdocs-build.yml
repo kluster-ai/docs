@@ -1,48 +1,15 @@
-name: CheckMkDocsBuild
+name: PR Docs Build
+
 on:
-  # Trigger the workflow on a pull request targeting the main branch
-  pull_request_target:
-    branches:
-      - main
+  pull_request:
+
+permissions:
+  contents: read
 
 jobs:
-  build-docs-site:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.10.12'
-
-      - name: Allow to move dotfiles
-        run: |
-          # move also dotfiles with *
-          shopt -s dotglob
-
-      - name: Clone Kluster MKDocs
-        run: |
-          # clone mkdocs repo locally
-          git clone https://${{ secrets.KLUSTER_MKDOCS_READ }}@github.com/papermoonio/kluster-mkdocs.git
-
-      - name: Move kluster-docs contents to mkdocs repository
-        run: |
-          mkdir kluster-mkdocs/kluster-docs
-          find . -mindepth 1 -maxdepth 1 ! -name 'kluster-mkdocs' -exec mv {} kluster-mkdocs/kluster-docs/ \;
-
-      - name: Install pip requirements
-        run: |
-          cd kluster-mkdocs
-          # upgrade pip
-          pip3 install --upgrade pip setuptools==65.7.0
-          pip3 install mistune==3.0.2 # temporary pin until https://github.com/lepture/mistune/issues/403 is resolved.
-          # install dependencies quietly
-          pip3 install -r requirements.txt &> /dev/null && echo "Dependencies installed" || echo "Error while installing dependencies"
-
-      - name: Build mkdocs
-        run: |
-          cd kluster-mkdocs
-          # change destination build folder in mkdocs YAML to local site/
-          sed -i 's/site_dir.*/site_dir: site/' mkdocs.yml
-          # build project
-          python3 -m mkdocs build
+  build-docs:
+    uses: papermoonio/workflows/.github/workflows/core-pr-mkdocs-build.yml@main
+    with:
+      mkdocs_repo: papermoonio/kluster-mkdocs
+      docs_repo: kluster-ai/docs
+      docs_checkout: kluster-docs
