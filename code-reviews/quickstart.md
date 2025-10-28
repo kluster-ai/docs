@@ -137,7 +137,7 @@ Before getting started, ensure you have:
     - Download the kluster.ai MCP server.
     - Configure Codex CLI settings.
     - Set up your API key.
-    - Enable all review tools (auto, manual, and dependency check)
+    - Enable all review tools (auto, manual, and dependency check).
 
     --8<-- 'code/code-reviews/integrations/codex/integration-1.md'
 
