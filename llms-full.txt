@@ -573,7 +573,7 @@ As kluster.ai services work via MCP, the API key is created and configured for y
 
         ![Active MCP Tools in Cursor](/images/code-reviews/code/integrations/cursor/cursor-integration-2.webp)
 
-=== "VS Code"
+=== "VS Code / Codex VS Code"
    
     1. Click the **Add to VS Code** button below: 
         
@@ -623,7 +623,7 @@ As kluster.ai services work via MCP, the API key is created and configured for y
 
     **Terminal installation**
     
-    Visit the [kluster.ai platform get started page](https://platform.kluster.ai){target=\_blank} and copy the Claude Code configuration snippet. This will include your API key.
+    Log in to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank}, and copy the Claude Code configuration snippet. This will include your API key.
 
     The command is similar to:
     
@@ -706,6 +706,74 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
   <span data-ty>  2. kluster_dependency_validator</span>
   <span data-ty>  3. kluster_code_review_manual</span>
 </div>
+
+=== "Codex CLI"
+
+    **Terminal installation**
+
+    Log in to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank}, and copy the Codex CLI configuration snippet. This will include your API key.
+
+    Run this command to install and configure kluster.ai for Codex CLI:
+
+    ```bash
+    npx -y @klusterai/ide-installer YOUR_API_KEY codex
+    ```
+
+    This command will:
+
+    - Download the kluster.ai MCP server.
+    - Configure Codex CLI settings.
+    - Set up your API key.
+    - Enable all review tools (auto, manual, and dependency check).
+
+    -<div id="termynal" data-termynal>
+  <span data-ty="input">npx -y @klusterai/ide-installer YOUR_API_KEY codex</span>
+  <span data-ty>🔧 Installing Kluster.ai server...</span>
+  <span data-ty>✅ Installation complete!</span>
+  <span data-ty>Restart Codex CLI to apply the new rules</span>
+  <span data-ty>Happy {k}oding ;)</span>
+</div>
+
+
+
+    You can verify successful installation with the following command:
+
+    ```bash
+    codex /tools
+    ```
+
+    -<div id="termynal" data-termynal>
+  <span data-ty="input">codex /tools</span>
+  <span data-ty>╭───────────────────────────────────────────╮</span>
+  <span data-ty>│ >_ OpenAI Codex (v0.50.0)                 │</span>
+  <span data-ty>│                                           │</span>
+  <span data-ty>│ model:     gpt-5-codex   /model to change │</span>
+  <span data-ty>│ directory: ~/workspace/codex              │</span>
+  <span data-ty>╰───────────────────────────────────────────╯</span>
+
+  <span data-ty>› /tools</span>
+
+  <span data-ty>• Available tools right now:</span>
+
+  <span data-ty>  - shell: run terminal commands via execvp (use ["bash","-lc", "..."] and set</span>
+  <span data-ty>    workdir).</span>
+  <span data-ty>  - list_mcp_resources, list_mcp_resource_templates, read_mcp_resource: browse/</span>
+  <span data-ty>    read context shared by MCP servers.</span>
+  <span data-ty>  - update_plan: maintain a task plan (skip for very simple tasks, never single-</span>
+  <span data-ty>    step).</span>
+  <span data-ty>  - apply_patch: edit files via unified diff patches.</span>
+  <span data-ty>  - view_image: attach a local image into the conversation.</span>
+  <span data-ty>  - Kluster verification tools (mandatory after any code change):</span>
+  <span data-ty>      - mcp__kluster-verify__kluster_code_review_auto</span>
+  <span data-ty>      - mcp__kluster-verify__kluster_code_review_manual (manual review when</span>
+  <span data-ty>        explicitly requested)</span>
+  <span data-ty>      - mcp__kluster-verify__kluster_dependency_check (before dependency</span>
+  <span data-ty>        operations)</span>
+</div>
+
+
+
+    Upon successful installation, all kluster review tools will appear in the tools list, including auto, manual, and dependency check.
 
 ## Next steps
 

@@ -39,7 +39,7 @@ Before getting started, ensure you have:
 
         ![Active MCP Tools in Cursor](/images/code-reviews/code/integrations/cursor/cursor-integration-2.webp)
 
-=== "VS Code"
+=== "VS Code / Codex VS Code"
    
     1. Click the **Add to VS Code** button below: 
         
@@ -89,7 +89,7 @@ Before getting started, ensure you have:
 
     **Terminal installation**
     
-    Visit the [kluster.ai platform get started page](https://platform.kluster.ai){target=\_blank} and copy the Claude Code configuration snippet. This will include your API key.
+    Log in to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank}, and copy the Claude Code configuration snippet. This will include your API key.
 
     The command is similar to:
     
@@ -119,6 +119,37 @@ Before getting started, ensure you have:
         --8<-- 'text/code-reviews/code-tools.md'
 
         --8<-- 'code/code-reviews/integrations/claudecode/integration-4.md'
+
+=== "Codex CLI"
+
+    **Terminal installation**
+
+    Log in to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank}, and copy the Codex CLI configuration snippet. This will include your API key.
+
+    Run this command to install and configure kluster.ai for Codex CLI:
+
+    ```bash
+    npx -y @klusterai/ide-installer YOUR_API_KEY codex
+    ```
+
+    This command will:
+
+    - Download the kluster.ai MCP server.
+    - Configure Codex CLI settings.
+    - Set up your API key.
+    - Enable all review tools (auto, manual, and dependency check).
+
+    --8<-- 'code/code-reviews/integrations/codex/integration-1.md'
+
+    You can verify successful installation with the following command:
+
+    ```bash
+    codex /tools
+    ```
+
+    --8<-- 'code/code-reviews/integrations/codex/integration-2.md'
+
+    Upon successful installation, all kluster review tools will appear in the tools list, including auto, manual, and dependency check.
 
 ## Next steps
 
