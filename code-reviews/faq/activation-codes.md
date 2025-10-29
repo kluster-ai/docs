@@ -18,17 +18,17 @@ Before redeeming an activation code, ensure you have:
 
 Follow these steps to redeem your activation code:
 
-1. Log in to your [kluster.ai account](https://platform.kluster.ai){target=_blank}. After logging in, you'll receive 50 free code reviews under the trial plan.
+1. Log in to your [kluster.ai account](https://platform.kluster.ai){target=_blank}. First-time users receive 50 free code reviews under the trial plan.
 
 2. Click the **upgrade** button in the top right corner of the platform.
 
     ![Upgrade button on kluster.ai platform](/images/code-reviews/code/faq/activation-codes/activation-code-1.webp)
 
-3. On the plans page, choose the subscription plan you want. Make sure your activation code matches the plan you select.
+3. On the plans page, choose the subscription plan you want. Make sure your activation code matches the plan you select, then click **Subscribe**.
 
     ![kluster.ai subscription plans](/images/code-reviews/code/faq/activation-codes/activation-code-2.webp)
 
-    After selecting a plan, you'll be redirected to the Stripe checkout page.
+    You'll be redirected to the Stripe checkout page.
 
 4. On the Stripe checkout page, click the **Add promotion code** section and paste your activation code.
 
@@ -46,13 +46,9 @@ Follow these steps to redeem your activation code:
 
 If your activation code doesn't work:
 
-- Verify the code matches your selected plan (Starter, Team, or Enterprise).
+- Verify the code matches your selected plan. Activation codes are plan-specific (Starter, Team, or Enterprise).
 - Check that the code hasn't expired.
 - Ensure you haven't already used this code on your account.
-
-### Plan mismatch
-
-Activation codes are plan-specific. If you receive an error, confirm your code is valid for the plan you selected.
 
 ## Need help?
 
