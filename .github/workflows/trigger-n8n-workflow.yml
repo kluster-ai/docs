@@ -17,6 +17,7 @@ permissions:
 jobs:
   gather-and-send:
     # Manual dispatch is allowed, but we verify the actor has write access before continuing.
+    # Pull request runs still skip forks to avoid leaking secrets.
     if: ${{ github.event_name == 'workflow_dispatch' || (github.event.pull_request != null && github.event.pull_request.head.repo.fork == false) }}
     runs-on: ubuntu-latest
     environment: n8n-sending
@@ -232,7 +233,7 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
 
-          chunk_size = 8000
+          chunk_size = 8000 
           diff_contents = Path("diff.b64").read_text()
           for start in range(0, len(diff_contents), chunk_size):
               chunk = diff_contents[start:start + chunk_size]
@@ -661,7 +662,7 @@ jobs:
     needs:
       - gather-and-send
       - receive-validate-and-comment
-    if: ${{ always() && (needs.gather-and-send.result == 'failure' || needs.receive-validate-and-comment.result == 'failure') && needs.gather-and-send.outputs.send_executed != 'true' }}
+    if: ${{ always() && ((needs.gather-and-send.result == 'failure' && (needs.gather-and-send.outputs.send_executed != 'true' || needs.gather-and-send.outputs.send_error == 'true')) || needs.receive-validate-and-comment.result == 'failure') }}
     env:
       GATHER_RESULT: ${{ needs.gather-and-send.result }}
       RECEIVE_RESULT: ${{ needs.receive-validate-and-comment.result }}
