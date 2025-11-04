@@ -633,7 +633,7 @@ As kluster.ai services work via MCP, the API key is created and configured for y
 
         ![Active MCP Tools in Cursor](/images/code-reviews/code/integrations/cursor/cursor-integration-2.webp)
 
-=== "VS Code / Codex VS Code"
+=== "VS Code / Codex VS Code / Windsurf"
    
     1. Click the **Add to VS Code** button below: 
         

@@ -39,7 +39,7 @@ Before getting started, ensure you have:
 
         ![Active MCP Tools in Cursor](/images/code-reviews/code/integrations/cursor/cursor-integration-2.webp)
 
-=== "VS Code / Codex VS Code"
+=== "VS Code / Codex VS Code / Windsurf"
    
     1. Click the **Add to VS Code** button below: 
         
