@@ -39,6 +39,8 @@ Before getting started, ensure you have:
 
         ![Active MCP Tools in Cursor](/images/code-reviews/code/integrations/cursor/cursor-integration-2.webp)
 
+    ![Cursor Installation Demo](/images/code-reviews/quick-start/cursor.gif)
+
 === "VS Code / Codex VS Code"
    
     1. Click the **Add to VS Code** button below: 
@@ -84,6 +86,8 @@ Before getting started, ensure you have:
     2. Scroll down the list and **Kluster-Code-Reviews-MCP** should appear. Make sure both tools enabled.
 
         ![Active MCP Tools in VS Code](/images/code-reviews/code/integrations/vscode/vscode-integration-8.webp)
+
+    ![VS Code Installation Demo](/images/code-reviews/quick-start/vs-code.gif)
 
 === "Windsurf"
     
@@ -161,6 +165,8 @@ Before getting started, ensure you have:
 
         --8<-- 'code/code-reviews/integrations/claudecode/integration-4.md'
 
+    ![Claude Code Installation Demo](/images/code-reviews/quick-start/claude.gif)
+
 === "Codex CLI"
 
     **Terminal installation**
@@ -191,6 +197,8 @@ Before getting started, ensure you have:
     --8<-- 'code/code-reviews/integrations/codex/integration-2.md'
 
     Upon successful installation, all kluster review tools will appear in the tools list, including auto, manual, and dependency check.
+
+    ![Codex CLI Installation Demo](/images/code-reviews/quick-start/codex-cli.gif)
 
 ## Next steps
 
