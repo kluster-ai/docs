@@ -10,7 +10,7 @@ This file is intended for AI models and developers. Use it to:
 - Explore optional resources (see Optional)
 
 ## Metadata
-- Documentation pages: 6
+- Documentation pages: 7
 - Source repositories: 2
 - Optional resources: 0
 
@@ -20,6 +20,7 @@ This section lists documentation pages. Each entry includes the page title, a di
 - [tools](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/tools.md): No description available.
 - [Options](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/configuration/options.md): Configure kluster.ai Code Reviews settings including sensitivity levels, bug types, and enabled tools for AI-generated code reviews.
 - [rules](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/configuration/rules.md): No description available.
+- [How to use activation codes](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/faq/activation-codes.md): This guide explains how to redeem activation codes and apply them to your kluster account
 - [cursor-firebase-nextjs](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/examples/cursor-firebase-nextjs.md): No description available.
 - [vscode-admin-endpoint](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/examples/vscode-admin-endpoint.md): No description available.
 
