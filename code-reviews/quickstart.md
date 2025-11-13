@@ -39,8 +39,6 @@ Before getting started, ensure you have:
 
         ![Active MCP Tools in Cursor](/images/code-reviews/code/integrations/cursor/cursor-integration-2.webp)
 
-    ![Cursor Installation Demo](/images/code-reviews/quick-start/cursor.gif)
-
 === "VS Code / Codex VS Code"
    
     1. Click the **Add to VS Code** button below: 
@@ -87,8 +85,6 @@ Before getting started, ensure you have:
 
         ![Active MCP Tools in VS Code](/images/code-reviews/code/integrations/vscode/vscode-integration-8.webp)
 
-    ![VS Code Installation Demo](/images/code-reviews/quick-start/vs-code.gif)
-
 === "Windsurf"
     
     1. Click the **Add to Windsurf** button below.
@@ -109,7 +105,7 @@ Before getting started, ensure you have:
        
     1. Click on **Sign in** in the bottom left corner.
     
-       ![Sign In](/images/code-reviews/code/integrations/windsurf/windsurf-integration-3.webp)
+        ![Sign In](/images/code-reviews/code/integrations/windsurf/windsurf-integration-3.webp)
 
     2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account. 
 
