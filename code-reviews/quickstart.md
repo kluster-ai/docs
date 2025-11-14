@@ -105,7 +105,7 @@ Before getting started, ensure you have:
        
     1. Click on **Sign in** in the bottom left corner.
     
-       ![Sign In](/images/code-reviews/code/integrations/windsurf/windsurf-integration-3.webp)
+        ![Sign In](/images/code-reviews/code/integrations/windsurf/windsurf-integration-3.webp)
 
     2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account. 
 
@@ -161,6 +161,8 @@ Before getting started, ensure you have:
 
         --8<-- 'code/code-reviews/integrations/claudecode/integration-4.md'
 
+    ![Claude Code Installation Demo](/images/code-reviews/quick-start/claude.gif)
+
 === "Codex CLI"
 
     **Terminal installation**
@@ -191,6 +193,8 @@ Before getting started, ensure you have:
     --8<-- 'code/code-reviews/integrations/codex/integration-2.md'
 
     Upon successful installation, all kluster review tools will appear in the tools list, including auto, manual, and dependency check.
+
+    ![Codex CLI Installation Demo](/images/code-reviews/quick-start/codex-cli.gif)
 
 ## Next steps
 

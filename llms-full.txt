@@ -700,7 +700,7 @@ As kluster.ai services work via MCP, the API key is created and configured for y
        
     1. Click on **Sign in** in the bottom left corner.
     
-       ![Sign In](/images/code-reviews/code/integrations/windsurf/windsurf-integration-3.webp)
+        ![Sign In](/images/code-reviews/code/integrations/windsurf/windsurf-integration-3.webp)
 
     2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account. 
 
@@ -809,6 +809,8 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
   <span data-ty>  3. kluster_code_review_manual</span>
 </div>
 
+    ![Claude Code Installation Demo](/images/code-reviews/quick-start/claude.gif)
+
 === "Codex CLI"
 
     **Terminal installation**
@@ -876,6 +878,8 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
 
 
     Upon successful installation, all kluster review tools will appear in the tools list, including auto, manual, and dependency check.
+
+    ![Codex CLI Installation Demo](/images/code-reviews/quick-start/codex-cli.gif)
 
 ## Next steps
 
