@@ -2,7 +2,8 @@ title: Code Reviews
 hide: false
 nav:
   - 'Overview': index.md
-  - 'Get started': quickstart.md
+  - 'Installation': installation.md
+  - 'Quick Start': quickstart.md
   - 'Tools reference': tools.md
   - 'Configuration': configuration
   - 'Examples': examples
