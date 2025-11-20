@@ -1,0 +1,2 @@
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **Installed kluster.ai in your IDE**: Follow the [Installation guide](/code-reviews/installation/) to set it up in your favourite IDE.
