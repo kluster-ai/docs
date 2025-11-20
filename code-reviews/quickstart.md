@@ -72,7 +72,7 @@ Code Reviews also protects you when starting new projects or adding libraries.
 
 1.  **You prompt** - Ask your AI to start a project (e.g., "Scaffold a Next.js app with Auth.js").
 2.  **AI suggests** - The AI lists the necessary dependencies.
-3.  **kluster.ai validates** - The Dependency Validator checks every package for security vulnerabilities and license compliance before you install them.
+3.  **kluster.ai verifies** - The Dependency Validator checks every package for security vulnerabilities and license compliance before you install them.
 
 
 When the AI suggests a package version with a known vulnerability, kluster.ai alerts you immediately, preventing the risk from entering your codebase.
