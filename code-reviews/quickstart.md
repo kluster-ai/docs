@@ -5,8 +5,8 @@ description: Learn how to use Code Reviews in your daily workflow. Trigger revie
 
 # Quick Start
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-bottom: 2rem;">
-    <iframe src="https://youtu.be/-V0VsqgTza8" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+<div class="embed-container">
+    <iframe src="https://youtu.be/-V0VsqgTza8" frameborder="0" allowfullscreen></iframe>
 </div>
 
 **Code Reviews acts as your Trust Layer for AI-generated code.** It sits between your AI assistant and your codebase, verifying every line of generated code in real-time to ensure it's secure, correct, and high-quality.

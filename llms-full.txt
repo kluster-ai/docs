@@ -11,12 +11,13 @@ Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/co
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/examples/cursor-firebase-nextjs.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/examples/vscode-admin-endpoint.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/faq/activation-codes.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/installation.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/quickstart.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/tools.md
 
 ## Full content for each doc page
 
-Doc-Content: https://docs.kluster.ai/code-reviews/configuration/options/
+Doc-Content: https://docs.kluster.ai/code-reviews\configuration\options/
 --- BEGIN CONTENT ---
 ---
 title: Options
@@ -68,7 +69,7 @@ Control which review tools run in your development environment. Enable or disabl
 - [Set up integrations](/code-reviews/quickstart/): Configure IDE integrations.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/configuration/rules/
+Doc-Content: https://docs.kluster.ai/code-reviews\configuration\rules/
 --- BEGIN CONTENT ---
 # Custom rules
 
@@ -110,7 +111,7 @@ You can create manual rules to enforce your team's coding standards or connect G
 - **[See real examples](/code-reviews/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/examples/cursor-firebase-nextjs/
+Doc-Content: https://docs.kluster.ai/code-reviews\examples\cursor-firebase-nextjs/
 --- BEGIN CONTENT ---
 ---
 title: Cursor: Firebase Authentication with Next.js
@@ -376,7 +377,7 @@ The more complex the task, the more valuable this real-time verification becomes
 **Learn more**: Explore our [tools reference](/code-reviews/tools/) to understand all issue types and priority levels that Code Reviews monitors.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/examples/vscode-admin-endpoint/
+Doc-Content: https://docs.kluster.ai/code-reviews\examples\vscode-admin-endpoint/
 --- BEGIN CONTENT ---
 ---
 title: VS Code: Secure Admin Endpoints with Express
@@ -527,7 +528,7 @@ Admin endpoints require special security attention that AI often misses:
 **Learn more**: Explore our [security reference](/code-reviews/tools/#bug-check-types) to understand all vulnerability types that Code Reviews monitors.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/faq/activation-codes/
+Doc-Content: https://docs.kluster.ai/code-reviews\faq\activation-codes/
 --- BEGIN CONTENT ---
 ---
 title: How to use activation codes
@@ -586,7 +587,7 @@ If your activation code doesn't work:
 If you encounter any issues with activation codes, join our [Discord community](https://discord.com/invite/klusterai){target=_blank} for support.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/quickstart/
+Doc-Content: https://docs.kluster.ai/code-reviews\installatio/
 --- BEGIN CONTENT ---
 ---
 title: Get started with Code Reviews
@@ -887,7 +888,98 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
 - **[VS-Code example](/code-reviews/examples/vscode-admin-endpoint/)**: See a real-world case study using VS-Code.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/tools/
+Doc-Content: https://docs.kluster.ai/code-reviews\quickstart/
+--- BEGIN CONTENT ---
+---
+title: Quick Start
+description: Learn how to use Code Reviews in your daily workflow. Trigger reviews automatically or manually, interpret results, and apply fixes.
+---
+
+# Quick Start
+
+<div class="embed-container">
+    <iframe src="https://youtu.be/-V0VsqgTza8" frameborder="0" allowfullscreen></iframe>
+</div>
+
+**Code Reviews acts as your Trust Layer for AI-generated code.** It sits between your AI assistant and your codebase, verifying every line of generated code in real-time to ensure it's secure, correct, and high-quality.
+
+This guide shows you how to integrate Code Reviews into your daily workflow to catch issues before they happen.
+
+## Prerequisites
+
+Before getting started, ensure you have:
+
+-- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **Installed kluster.ai in your IDE**: Follow the [Installation guide](/code-reviews/installation/) to set it up in your favourite IDE.
+
+
+## How Code Reviews Works
+
+Code Reviews provides **three verification tools** that work seamlessly with your AI assistant:
+
+1. **[Auto Review](/code-reviews/tools/#auto-review)** - Automatically verifies every code change in real-time (default)
+2. **[Manual Review](/code-reviews/tools/#manual-review)** - On-demand verification when you ask for it
+3. **[Dependency Analysis](/code-reviews/tools/#dependency-analysis)** - Validates packages before installation
+
+See the **[Tools Reference](/code-reviews/tools/)** for complete documentation on all verification capabilities.
+
+### The two most common use cases
+
+Below, we'll cover the two primary ways you'll use Code Reviews day-to-day:
+
+- **Auto Review** - for verifying generated code automatically
+- **Dependency Analysis** - for validating dependencies during project setup
+
+## Auto Review 
+
+The most powerful way to use Code Reviews is to let it work in the background. You don't need to change how you work—just ask your AI assistant for what you need.
+
+**How it works:**
+
+1.  **You prompt** - Ask your AI assistant to generate code (e.g., "Create a user login endpoint").
+2.  **AI generates** - The AI writes the code.
+3.  **kluster.ai verifies** - Code Reviews automatically analyzes the diff in real-time.
+
+
+In this example, we asked the AI to create an API endpoint. In both cases a critical security error was made, kluster.ai intervenes.
+
+=== "VS Code"
+
+    In VS Code, you'll see the review appear directly in the chat. kluster.ai flags the issue (e.g., "Unprotected API Endpoint") and provides a fix.
+
+    ![VS Code Auto Review - Unprotected API](/images/code-reviews/quick-start/vscode-auto-review.webp)
+
+=== "Claude Code"
+
+    In the terminal, Claude Code displays the review results immediately.
+
+    ![Claude Code Auto Review - Unprotected API](/images/code-reviews/quick-start/claude-auto-review.webp)
+
+!!! tip "Manual Review"
+    You can also trigger a review manually any time by just asking your AI to "review this code".
+
+## Dependency Analysis
+
+Code Reviews also protects you when starting new projects or adding libraries.
+
+**How it works:**
+
+1.  **You prompt** - Ask your AI to start a project (e.g., "Scaffold a Next.js app with Auth.js").
+2.  **AI suggests** - The AI lists the necessary dependencies.
+3.  **kluster.ai validates** - The Dependency Validator checks every package for security vulnerabilities and license compliance before you install them.
+
+
+When the AI suggests a package version with a known vulnerability, kluster.ai alerts you immediately, preventing the risk from entering your codebase.
+
+![Dependency Analysis Example](/images/code-reviews/quick-start/dependency-analysis.webp)
+
+## Next steps
+
+- **[Tools Reference](/code-reviews/tools/)**: Deep dive into all issue types and parameters.
+- **[Examples](/code-reviews/examples/)**: See more real-world scenarios.
+--- END CONTENT ---
+
+Doc-Content: https://docs.kluster.ai/code-reviews\tools/
 --- BEGIN CONTENT ---
 ---
 title: Code MCP Tools for Code Reviews 
@@ -1022,7 +1114,7 @@ Code review assigns priority levels to detected issues, helping you focus on the
 ## Next steps
 
 - **[Configure settings](/code-reviews/configuration/)**: Customize review behavior for your needs.
-- **[Set up integrations](/code-reviews/quickstart/)**: Configure IDE integrations to use these tools.
-- **[Get started](/code-reviews/quickstart/)**: Follow the quickstart guide for immediate setup.
+- **[Set up integrations](/code-reviews/installation/)**: Configure IDE integrations to use these tools.
+- **[Get started](/code-reviews/installation/)**: Follow the quickstart guide for immediate setup.
 --- END CONTENT ---
 
