@@ -64,7 +64,7 @@ In this example, the AI creates an API endpoint but makes a critical security er
 !!! tip "Manual Review"
     You can also trigger a review manually any time by just asking your AI to "review this code".
 
-## Dependency Analysis
+### Dependency Analysis
 
 Code Reviews also protects you when starting new projects or adding libraries.
 
