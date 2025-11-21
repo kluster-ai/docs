@@ -31,7 +31,7 @@ See the **[Tools Reference](/code-reviews/tools/)** for complete documentation o
 
 ### The two most common use cases
 
-Below, we'll cover the two primary ways you'll use Code Reviews day-to-day:
+This section covers the two primary ways you'll use Code Reviews day-to-day:
 
 ## Verify Code Automatically
 - **Dependency Analysis** - for validating dependencies during project setup
