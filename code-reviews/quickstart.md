@@ -25,7 +25,7 @@ Code Reviews provides **three verification tools** that work seamlessly with you
 
 1. **[Auto Review](/code-reviews/tools/#__tabbed_1_1)**: Automatically verifies every code change in real-time (default).
 2. **[Manual Review](/code-reviews/tools/#__tabbed_1_2)**: On-demand verification when you ask for it.
-3. **[Dependency Analysis](/code-reviews/tools/#__tabbed_1_1)** - Validates packages before installation
+3. **[Dependency Analysis](/code-reviews/tools/#__tabbed_1_1)**: Validates packages before installation.
 
 See the **[Tools Reference](/code-reviews/tools/)** for complete documentation on all verification capabilities.
 
