@@ -90,7 +90,7 @@ Code Reviews is available as a native extension for IDEs such as Cursor, VS Code
 
     Run a simple script in your terminal to set up Code Reviews quickly.
 
-    [:octicons-arrow-right-24: Install Claude Code](/code-reviews/installation/#__tabbed_1_3){target=\_blank}
+    [:octicons-arrow-right-24: Install Claude Code](/code-reviews/installation/#__tabbed_1_4){target=\_blank}
 
 </div>
 
