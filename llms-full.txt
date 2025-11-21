@@ -898,7 +898,13 @@ description: Learn how to use Code Reviews in your daily workflow. Trigger revie
 # Quick Start
 
 <div class="embed-container">
-    <iframe src="https://www.youtube.com/embed/-V0VsqgTza8" frameborder="0" allowfullscreen></iframe>
+    <iframe
+        src="https://www.youtube.com/embed/-V0VsqgTza8"
+        title="Instant Code Reviews with kluster.ai"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        loading="lazy">
+    </iframe>
 </div>
 
 **Code Reviews verifies AI-generated code.** It sits between your AI assistant and your codebase, verifying every line of generated code in real-time to ensure security, correctness, and quality.
