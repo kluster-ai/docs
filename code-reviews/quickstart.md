@@ -44,7 +44,7 @@ The most powerful way to use Code Reviews is to let it work in the background. Y
 
 1.  **You prompt**: Ask your AI assistant to generate code (e.g., "Create a user login endpoint").
 2.  **AI generates**: The AI writes the code.
-3.  **kluster.ai verifies** - Code Reviews automatically analyzes the diff in real-time.
+3.  **kluster.ai verifies**: Code Reviews automatically analyzes the diff in real-time.
 
 
 In this example, the AI creates an API endpoint but makes a critical security error that kluster.ai intervenes to fix.
@@ -70,9 +70,9 @@ Code Reviews also protects you when starting new projects or adding libraries.
 
 **How it works:**
 
-1.  **You prompt** - Ask your AI to start a project (e.g., "Scaffold a Next.js app with Auth.js").
-2.  **AI suggests** - The AI lists the necessary dependencies.
-3.  **kluster.ai verifies** - The Dependency Validator checks every package for security vulnerabilities and license compliance before you install them.
+1.  **You prompt**: Ask your AI to start a project (e.g., "Scaffold a Next.js app with Auth.js").
+2.  **AI suggests**: The AI lists the necessary dependencies.
+3.  **kluster.ai verifies**: The Dependency Validator checks every package for security vulnerabilities and license compliance before you install them.
 
 
 When the AI suggests a package version with a known vulnerability, kluster.ai alerts you immediately, preventing the risk from entering your codebase.
