@@ -130,6 +130,6 @@ Code review assigns priority levels to detected issues, helping you focus on the
 
 ## Next steps
 
-- **[Configure settings](/code-reviews/configuration/)**: Customize review behavior for your needs.
-- **[Set up integrations](/code-reviews/quickstart/)**: Configure IDE integrations to use these tools.
-- **[Get started](/code-reviews/quickstart/)**: Follow the quickstart guide for immediate setup.
+- **[Configure settings](/code-reviews/configuration/options/)**: Customize review behavior for your needs.
+- **[Set up integrations](/code-reviews/installation/)**: Configure IDE integrations to use these tools.
+- **[Get started](/code-reviews/installation/)**: Follow the quickstart guide for immediate setup.

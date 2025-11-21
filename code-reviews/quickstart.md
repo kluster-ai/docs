@@ -1,202 +1,85 @@
 ---
-title: Get started with Code Reviews
-description: Set up kluster.ai Code Reviews in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
+title: Quick Start
+description: Learn how to use Code Reviews in your daily workflow. Trigger reviews automatically or manually, interpret results, and apply fixes.
 ---
 
-# Get started with Code Reviews
+# Quick Start
 
-Modern developers increasingly rely on AI coding assistants to accelerate development, but this speed comes with risks. Generated code may contain logic errors, security flaws, or performance issues that compromise application quality and security.
+<div class="embed-container">
+    <iframe
+        src="https://www.youtube.com/embed/-V0VsqgTza8"
+        title="Instant Code Reviews with kluster.ai"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        loading="lazy">
+    </iframe>
+</div>
 
-The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code Reviews service integrates directly into your development workflow, automatically scanning AI-generated code in real-time. It catches potential issues instantly within your IDE, allowing you to ship code confidently while maintaining the speed benefits of AI-assisted development.
+**Code Reviews verifies AI-generated code.** It sits between your AI assistant and your codebase, verifying every line of generated code in real-time to ensure security, correctness, and quality.
+
+This guide shows you how to integrate Code Reviews into your daily workflow to catch issues before they happen.
 
 ## Prerequisites
 
 Before getting started, ensure you have:
 
---8<-- 'text/kluster-api-onboarding.md'
+--8<-- 'text/quickstart-prerequisites.md'
 
-## Setup instructions
+## How Code Reviews Works
 
-=== "Cursor"
-    
-    1. Click the **Add to Cursor** button below.
-        
-         --8<-- 'text/install-button-cursor.md'
-    
-    2. Cursor will open and prompt for extension installation.
-    
-    3. Click **Install** to add the extension into Cursor.
+Code Reviews provides **three verification tools** that work seamlessly with your AI assistant:
 
-        ![Extension Installation Prompt in Cursor](/images/code-reviews/code/integrations/cursor/cursor-integration-1.webp)
+1. **[Auto Review](/code-reviews/tools/#__tabbed_1_1)**: Automatically verifies every code change in real-time (default).
+2. **[Manual Review](/code-reviews/tools/#__tabbed_1_2)**: On-demand verification when you ask for it.
+3. **[Dependency Analysis](/code-reviews/tools/#__tabbed_1_1)**: Validates packages before installation.
 
-    Once installed, you can verify the setup:
+See the **[Tools Reference](/code-reviews/tools/)** for complete documentation on all verification capabilities.
 
-    1. Open **Cursor Settings**. You can use the gear icon in the top right corner to do so.
-    2. Navigate to **Tools & Integrations** → **MCP Tools**.
-    3. You should see **extension-Kluster-Code-Reviews** with all tools enabled:
 
-        --8<-- 'text/code-reviews/code-tools.md'
+### Auto Review 
 
-        ![Active MCP Tools in Cursor](/images/code-reviews/code/integrations/cursor/cursor-integration-2.webp)
+The most powerful way to use Code Reviews is to let it work in the background. You don't need to change how you work—just ask your AI assistant for what you need.
 
-=== "VS Code / Codex VS Code"
-   
-    1. Click the **Add to VS Code** button below: 
-        
-         --8<-- 'text/install-button-vscode.md'
-    
-    2. VS Code will open and display the extension.
-    
-    3. Click **Install** to get the extension.
+**How it works:**
 
-        ![Install Extension](/images/code-reviews/code/integrations/vscode/vscode-integration-0.webp)
+1.  **You prompt**: Ask your AI assistant to generate code (e.g., "Create a user login endpoint").
+2.  **AI generates**: The AI writes the code.
+3.  **kluster.ai verifies**: Code Reviews automatically analyzes the diff in real-time.
 
-    4. Select **Trust Publisher & Install**.
 
-        ![Trust publisher](/images/code-reviews/code/integrations/vscode/vscode-integration-1.webp)
+In this example, the AI creates an API endpoint but makes a critical security error that kluster.ai intervenes to fix.
 
-    Now that the extension is installed, you need to log in with your kluster.ai account:
-       
-    1. Click on **Sign in** in the bottom right corner.
-       ![Sign In](/images/code-reviews/code/integrations/vscode/vscode-integration-2.webp)
+=== "VS Code"
 
-    2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account. 
+    In VS Code, you'll see the review appear directly in the chat. kluster.ai flags the issue (e.g., "Unprotected API Endpoint") and provides a fix.
 
-        ![Open Pop-up](/images/code-reviews/code/integrations/vscode/vscode-integration-3.webp)
-          
-    3. Click **Open Visual Studio Code**.
-
-        ![Open Visual Studio Code](/images/code-reviews/code/integrations/vscode/vscode-integration-4.webp)
-
-    4. Click **Open** to install the MCP with your kluster.ai API key.
-        
-        ![Open and Install MCP](/images/code-reviews/code/integrations/vscode/vscode-integration-5.webp)
-
-    5. To complete the setup, click **Install** to accept the MCP configuration for Code Reviews. 
-    
-         ![Install MCP](/images/code-reviews/code/integrations/vscode/vscode-integration-6.webp)
-    6. Press **Trust** to Install the MCP server.
-    ![MCP Server Trust Installation in VS Code](/images/code-reviews/code/integrations/vscode/vscode-integration-7.webp)
-        
-    Once installed, verify the setup:
-    
-    1. Open a Copilot chat window and select the **Tools** button on the bottom right corner.
-    2. Scroll down the list and **Kluster-Code-Reviews-MCP** should appear. Make sure both tools enabled.
-
-        ![Active MCP Tools in VS Code](/images/code-reviews/code/integrations/vscode/vscode-integration-8.webp)
-
-=== "Windsurf"
-    
-    1. Click the **Add to Windsurf** button below.
-        
-         --8<-- 'text/install-button-windsurf.md'
-    
-    2. Windsurf will open and prompt for extension installation.
-    
-    3. Click **Install** to add the extension into Windsurf.
-
-        ![Extension Installation Prompt in Windsurf](/images/code-reviews/code/integrations/windsurf/windsurf-integration-1.webp)
-
-    4. Select **Trust Publisher & Install**.
-
-        ![Trust publisher](/images/code-reviews/code/integrations/windsurf/windsurf-integration-2.webp)
-
-    Now that the extension is installed, you need to log in with your kluster.ai account:
-       
-    1. Click on **Sign in** in the bottom left corner.
-    
-        ![Sign In](/images/code-reviews/code/integrations/windsurf/windsurf-integration-3.webp)
-
-    2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account. 
-
-        ![Open Pop-up](/images/code-reviews/code/integrations/windsurf/windsurf-integration-4.webp)
-          
-    3. Click **Open Windsurf**.
-
-        ![Open Windsurf](/images/code-reviews/code/integrations/windsurf/windsurf-integration-5.webp)
-
-    4. Click **Open** to install the MCP with your kluster.ai API key.
-        
-        ![Open and Install MCP](/images/code-reviews/code/integrations/windsurf/windsurf-integration-6.webp)
-        
-    Once installed, verify the setup:
-    
-    1. Navigate to **Options** → **Windsurf Settings** → **MCP Servers** → **Open MCP Marketplace**.
-    2. You should see **Kluster-Verify-Code** with all tools enabled.
-
-        ![Active MCP Tools in Windsurf](/images/code-reviews/code/integrations/windsurf/windsurf-integration-7.webp)
+    ![VS Code Auto Review - Unprotected API](/images/code-reviews/quick-start/vscode-auto-review.webp)
 
 === "Claude Code"
 
-    **Terminal installation**
-    
-    Log in to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank}, and copy the Claude Code configuration snippet. This will include your API key.
+    In the terminal, Claude Code displays the review results immediately.
 
-    The command is similar to:
-    
-    --8<-- 'text/install-command-claude.md'
-    
-    This command will:
+    ![Claude Code Auto Review - Unprotected API](/images/code-reviews/quick-start/claude-auto-review.webp)
 
-    - Download the kluster.ai MCP server.
-    - Configure Claude Code settings.
-    - Set up your API key.
-    - Enable both review tools.
+!!! tip "Manual Review"
+    You can also trigger a review manually any time by just asking your AI to "review this code".
 
-    --8<-- 'code/code-reviews/integrations/claudecode/integration-1.md'
-      
-    Once installed, verify the setup:
-    
-    1. Run the `/mcp` command in Claude Code.
+### Dependency Analysis
 
-        --8<-- 'code/code-reviews/integrations/claudecode/integration-2.md'
+Code Reviews also protects you when starting new projects or adding libraries.
 
-    2. Select **kluster-code-reviews** in the MCP menu list and press enter to **View tools**.
+**How it works:**
 
-        --8<-- 'code/code-reviews/integrations/claudecode/integration-3.md'
+1.  **You prompt**: Ask your AI to start a project (e.g., "Scaffold a Next.js app with Auth.js").
+2.  **AI suggests**: The AI lists the necessary dependencies.
+3.  **kluster.ai verifies**: The Dependency Validator checks every package for security vulnerabilities and license compliance before you install them.
 
-    3. Select **View tools** to see the tools for **kluster-code-reviews** listed, including:
-        
-        --8<-- 'text/code-reviews/code-tools.md'
 
-        --8<-- 'code/code-reviews/integrations/claudecode/integration-4.md'
+When the AI suggests a package version with a known vulnerability, kluster.ai alerts you immediately, preventing the risk from entering your codebase.
 
-    ![Claude Code Installation Demo](/images/code-reviews/quick-start/claude.gif)
-
-=== "Codex CLI"
-
-    **Terminal installation**
-
-    Log in to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank}, and copy the Codex CLI configuration snippet. This will include your API key.
-
-    Run this command to install and configure kluster.ai for Codex CLI:
-
-    ```bash
-    npx -y @klusterai/ide-installer YOUR_API_KEY codex
-    ```
-
-    This command will:
-
-    - Download the kluster.ai MCP server.
-    - Configure Codex CLI settings.
-    - Set up your API key.
-    - Enable all review tools (auto, manual, and dependency check).
-
-    --8<-- 'code/code-reviews/integrations/codex/integration-1.md'
-
-    You can verify successful installation with the following command:
-
-    ```bash
-    codex /tools
-    ```
-
-    --8<-- 'code/code-reviews/integrations/codex/integration-2.md'
-
-    Upon successful installation, all kluster review tools will appear in the tools list, including auto, manual, and dependency check.
-
-    ![Codex CLI Installation Demo](/images/code-reviews/quick-start/codex-cli.gif)
+![Dependency Analysis Example](/images/code-reviews/quick-start/dependency-analysis.webp)
 
 ## Next steps
 
-- **[Cursor example](/code-reviews/examples/cursor-firebase-nextjs/)**: See a real-world case study using Cursor.
-- **[VS-Code example](/code-reviews/examples/vscode-admin-endpoint/)**: See a real-world case study using VS-Code.
+- **[Tools Reference](/code-reviews/tools/)**: Deep dive into all issue types and parameters.
+- **[Configuration Options](/code-reviews/configuration/options/)**: Customize Code Reviews behavior for your workflow.
