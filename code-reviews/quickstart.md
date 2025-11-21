@@ -42,7 +42,7 @@ The most powerful way to use Code Reviews is to let it work in the background. Y
 
 **How it works:**
 
-1.  **You prompt** - Ask your AI assistant to generate code (e.g., "Create a user login endpoint").
+1.  **You prompt**: Ask your AI assistant to generate code (e.g., "Create a user login endpoint").
 2.  **AI generates** - The AI writes the code.
 3.  **kluster.ai verifies** - Code Reviews automatically analyzes the diff in real-time.
 
