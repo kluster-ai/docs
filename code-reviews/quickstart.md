@@ -29,7 +29,7 @@ Code Reviews provides **three verification tools** that work seamlessly with you
 
 See the **[Tools Reference](/code-reviews/tools/)** for complete documentation on all verification capabilities.
 
-### The two most common use cases
+### The two most common use cases 
 
 This section covers the two primary ways you'll use Code Reviews day-to-day:
 
