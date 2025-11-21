@@ -36,7 +36,7 @@ This section covers the two primary ways you'll use Code Reviews day-to-day:
 ### Verify Code Automatically
 - **Dependency Analysis** - for validating dependencies during project setup
 
-## Auto Review 
+### Auto Review 
 
 The most powerful way to use Code Reviews is to let it work in the background. You don't need to change how you work—just ask your AI assistant for what you need.
 
