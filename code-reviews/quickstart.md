@@ -33,7 +33,7 @@ See the **[Tools Reference](/code-reviews/tools/)** for complete documentation o
 
 This section covers the two primary ways you'll use Code Reviews day-to-day:
 
-## Verify Code Automatically
+### Verify Code Automatically
 - **Dependency Analysis** - for validating dependencies during project setup
 
 ## Auto Review 
