@@ -47,7 +47,7 @@ The most powerful way to use Code Reviews is to let it work in the background. Y
 3.  **kluster.ai verifies** - Code Reviews automatically analyzes the diff in real-time.
 
 
-In this example, we asked the AI to create an API endpoint. In both cases a critical security error was made, kluster.ai intervenes.
+In this example, the AI creates an API endpoint but makes a critical security error that kluster.ai intervenes to fix.
 
 === "VS Code"
 
