@@ -17,7 +17,7 @@ Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/to
 
 ## Full content for each doc page
 
-Doc-Content: https://docs.kluster.ai/code-reviews/configuration/options/
+Doc-Content: https://docs.kluster.ai/code-reviews\configuration\options/
 --- BEGIN CONTENT ---
 ---
 title: Options
@@ -69,7 +69,7 @@ Control which review tools run in your development environment. Enable or disabl
 - [Set up integrations](/code-reviews/quickstart/): Configure IDE integrations.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/configuration/rules/
+Doc-Content: https://docs.kluster.ai/code-reviews\configuration\rules/
 --- BEGIN CONTENT ---
 # Custom rules
 
@@ -111,7 +111,7 @@ You can create manual rules to enforce your team's coding standards or connect G
 - **[See real examples](/code-reviews/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/examples/cursor-firebase-nextjs/
+Doc-Content: https://docs.kluster.ai/code-reviews\examples\cursor-firebase-nextjs/
 --- BEGIN CONTENT ---
 ---
 title: Cursor: Firebase Authentication with Next.js
@@ -377,7 +377,7 @@ The more complex the task, the more valuable this real-time verification becomes
 **Learn more**: Explore our [tools reference](/code-reviews/tools/) to understand all issue types and priority levels that Code Reviews monitors.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/examples/vscode-admin-endpoint/
+Doc-Content: https://docs.kluster.ai/code-reviews\examples\vscode-admin-endpoint/
 --- BEGIN CONTENT ---
 ---
 title: VS Code: Secure Admin Endpoints with Express
@@ -528,7 +528,7 @@ Admin endpoints require special security attention that AI often misses:
 **Learn more**: Explore our [security reference](/code-reviews/tools/#bug-check-types) to understand all vulnerability types that Code Reviews monitors.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/faq/activation-codes/
+Doc-Content: https://docs.kluster.ai/code-reviews\faq\activation-codes/
 --- BEGIN CONTENT ---
 ---
 title: How to use activation codes
@@ -587,7 +587,7 @@ If your activation code doesn't work:
 If you encounter any issues with activation codes, join our [Discord community](https://discord.com/invite/klusterai){target=_blank} for support.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/installatio/
+Doc-Content: https://docs.kluster.ai/code-reviews\installatio/
 --- BEGIN CONTENT ---
 ---
 title: Get started with Code Reviews
@@ -888,7 +888,7 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
 - **[VS-Code example](/code-reviews/examples/vscode-admin-endpoint/)**: See a real-world case study using VS-Code.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/quickstart/
+Doc-Content: https://docs.kluster.ai/code-reviews\quickstart/
 --- BEGIN CONTENT ---
 ---
 title: Quick Start
@@ -917,27 +917,21 @@ Before getting started, ensure you have:
 
 Code Reviews provides **three verification tools** that work seamlessly with your AI assistant:
 
-1. **[Auto Review](/code-reviews/tools/#__tabbed_1_1)** - Automatically verifies every code change in real-time (default)
-2. **[Manual Review](/code-reviews/tools/#__tabbed_1_2)** - On-demand verification when you ask for it
-3. **[Dependency Analysis](/code-reviews/tools/#__tabbed_1_1)** - Validates packages before installation
+1. **[Auto Review](/code-reviews/tools/#__tabbed_1_1)**: Automatically verifies every code change in real-time (default).
+2. **[Manual Review](/code-reviews/tools/#__tabbed_1_2)**: On-demand verification when you ask for it.
+3. **[Dependency Analysis](/code-reviews/tools/#__tabbed_1_1)**: Validates packages before installation.
 
 See the **[Tools Reference](/code-reviews/tools/)** for complete documentation on all verification capabilities.
 
-### The two most common use cases
 
-This section covers the two primary ways you'll use Code Reviews day-to-day:
-
-## Verify Code Automatically
-- **Dependency Analysis** - for validating dependencies during project setup
-
-## Auto Review 
+### Auto Review 
 
 The most powerful way to use Code Reviews is to let it work in the background. You don't need to change how you work—just ask your AI assistant for what you need.
 
 **How it works:**
 
-1.  **You prompt** - Ask your AI assistant to generate code (e.g., "Create a user login endpoint").
-2.  **AI generates** - The AI writes the code.
+1.  **You prompt**: Ask your AI assistant to generate code (e.g., "Create a user login endpoint").
+2.  **AI generates**: The AI writes the code.
 3.  **kluster.ai verifies** - Code Reviews automatically analyzes the diff in real-time.
 
 
@@ -958,7 +952,7 @@ In this example, the AI creates an API endpoint but makes a critical security er
 !!! tip "Manual Review"
     You can also trigger a review manually any time by just asking your AI to "review this code".
 
-## Dependency Analysis
+### Dependency Analysis
 
 Code Reviews also protects you when starting new projects or adding libraries.
 
@@ -976,10 +970,10 @@ When the AI suggests a package version with a known vulnerability, kluster.ai al
 ## Next steps
 
 - **[Tools Reference](/code-reviews/tools/)**: Deep dive into all issue types and parameters.
-- **[Examples](/code-reviews/examples/)**: See more real-world scenarios.
+- **[Configuration Options](/code-reviews/configuration/options/)**: Customize Code Reviews behavior for your workflow.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/tools/
+Doc-Content: https://docs.kluster.ai/code-reviews\tools/
 --- BEGIN CONTENT ---
 ---
 title: Code MCP Tools for Code Reviews 

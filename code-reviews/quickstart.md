@@ -29,12 +29,6 @@ Code Reviews provides **three verification tools** that work seamlessly with you
 
 See the **[Tools Reference](/code-reviews/tools/)** for complete documentation on all verification capabilities.
 
-### The two most common use cases
-
-This section covers the two primary ways you'll use Code Reviews day-to-day:
-
-### Verify Code Automatically
-- **Dependency Analysis** - for validating dependencies during project setup
 
 ### Auto Review 
 
@@ -82,4 +76,4 @@ When the AI suggests a package version with a known vulnerability, kluster.ai al
 ## Next steps
 
 - **[Tools Reference](/code-reviews/tools/)**: Deep dive into all issue types and parameters.
-- **[Examples](/code-reviews/examples/)**: See more real-world scenarios.
+- **[Configuration Options](/code-reviews/configuration/options/)**: Customize Code Reviews behavior for your workflow.
