@@ -614,7 +614,7 @@ As kluster.ai services work via MCP, the API key is created and configured for y
 
     1. Click the **Add to Antigravity** button below.
 
-         -[:octicons-arrow-right-24: Add to Antigravity](antigravity:extension/klusterai.kluster-verify-code){target=_blank .md-button .md-button--primary}
+         -[:octicons-arrow-right-24: Add to Antigravity](antigravity:extension/klusterai.kluster-verify-code){target=\_blank .md-button .md-button--primary}
 
 
     2. Antigravity will open and prompt for extension installation.
@@ -625,7 +625,7 @@ As kluster.ai services work via MCP, the API key is created and configured for y
 
     Now that the extension is installed, you need to log in with your kluster.ai account:
 
-    1. Click on **Sign in** in the bottom left corner.
+    1. Click **Sign in** in the bottom left corner.
 
         ![Sign In](/images/code-reviews/code/integrations/antigravity/antigravity-integration-2.webp)
 
@@ -644,7 +644,7 @@ As kluster.ai services work via MCP, the API key is created and configured for y
     Once installed, verify the setup:
 
     1. Navigate to **Settings** → **MCP Settings** → **Manage MCP Servers**.
-    2. You should see **Kluster-Verify-Code** with all tools enabled.
+    2. Verify that **Kluster-Verify-Code** appears with all tools enabled.
 
         ![Active MCP Tools in Antigravity](/images/code-reviews/code/integrations/antigravity/antigravity-integration-6.webp)
 

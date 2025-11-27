@@ -31,7 +31,7 @@ Before getting started, ensure you have:
 
     Now that the extension is installed, you need to log in with your kluster.ai account:
 
-    1. Click on **Sign in** in the bottom left corner.
+    1. Click **Sign in** in the bottom left corner.
 
         ![Sign In](/images/code-reviews/code/integrations/antigravity/antigravity-integration-2.webp)
 
@@ -50,7 +50,7 @@ Before getting started, ensure you have:
     Once installed, verify the setup:
 
     1. Navigate to **Settings** → **MCP Settings** → **Manage MCP Servers**.
-    2. You should see **Kluster-Verify-Code** with all tools enabled.
+    2. Verify that **Kluster-Verify-Code** appears with all tools enabled.
 
         ![Active MCP Tools in Antigravity](/images/code-reviews/code/integrations/antigravity/antigravity-integration-6.webp)
 
