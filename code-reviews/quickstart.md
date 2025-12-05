@@ -3,7 +3,7 @@ title: Quick Start
 description: Learn how to use Code Reviews in your daily workflow. Trigger reviews automatically or manually, interpret results, and apply fixes.
 ---
 
-# Quick Start
+# Quick start
 
 **Code Reviews analyzes your code and flags potential issues in real time.** Whether you're using AI-assisted code generation or writing code yourself, problems are caught before they reach production.
 
