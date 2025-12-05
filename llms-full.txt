@@ -935,7 +935,7 @@ description: Learn how to use Code Reviews in your daily workflow. Trigger revie
 
 # Quick Start
 
-**Code Reviews analyzes your code and flags potential issues in real time.** Whether you're using AI-assisted code generation or writing code yourself, problems are caught before they reach production.
+**Code Reviews analyzes your code and flags potential issues in real time.** Whether you're using AI-assisted code generation or writing code yourself, problems are caught before they reach production. 
 
 This guide shows you how to integrate Code Reviews into your workflow—automatically when using AI assistants, or on-demand when you want control.
 
