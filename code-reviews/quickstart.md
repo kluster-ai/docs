@@ -1,5 +1,5 @@
 ---
-title: Quick Start
+title: Quick start
 description: Learn how to use Code Reviews in your daily workflow. Trigger reviews automatically or manually, interpret results, and apply fixes.
 ---
 
@@ -80,7 +80,7 @@ When the AI suggests a package version with a known vulnerability, kluster.ai al
 
 When you write code directly in your editor and want to verify it on your own terms, Code Reviews provides three manual options in your IDE.
 
-#### Code Block Review
+#### Code Block review
 
 Select any code in your editor, right-click, and choose **Review with kluster.ai** (or press `Ctrl+Shift+K`). This is useful for:
 
