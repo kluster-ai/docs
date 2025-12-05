@@ -17,7 +17,7 @@ Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/to
 
 ## Full content for each doc page
 
-Doc-Content: https://docs.kluster.ai/code-reviews\configuration\options/
+Doc-Content: https://docs.kluster.ai/code-reviews/configuration/options/
 --- BEGIN CONTENT ---
 ---
 title: Options
@@ -69,7 +69,7 @@ Control which review tools run in your development environment. Enable or disabl
 - [Set up integrations](/code-reviews/quickstart/): Configure IDE integrations.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\configuration\rules/
+Doc-Content: https://docs.kluster.ai/code-reviews/configuration/rules/
 --- BEGIN CONTENT ---
 # Custom rules
 
@@ -111,7 +111,7 @@ You can create manual rules to enforce your team's coding standards or connect G
 - **[See real examples](/code-reviews/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\examples\cursor-firebase-nextjs/
+Doc-Content: https://docs.kluster.ai/code-reviews/examples/cursor-firebase-nextjs/
 --- BEGIN CONTENT ---
 ---
 title: Cursor: Firebase Authentication with Next.js
@@ -377,7 +377,7 @@ The more complex the task, the more valuable this real-time verification becomes
 **Learn more**: Explore our [tools reference](/code-reviews/tools/) to understand all issue types and priority levels that Code Reviews monitors.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\examples\vscode-admin-endpoint/
+Doc-Content: https://docs.kluster.ai/code-reviews/examples/vscode-admin-endpoint/
 --- BEGIN CONTENT ---
 ---
 title: VS Code: Secure Admin Endpoints with Express
@@ -528,7 +528,7 @@ Admin endpoints require special security attention that AI often misses:
 **Learn more**: Explore our [security reference](/code-reviews/tools/#bug-check-types) to understand all vulnerability types that Code Reviews monitors.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\faq\activation-codes/
+Doc-Content: https://docs.kluster.ai/code-reviews/faq/activation-codes/
 --- BEGIN CONTENT ---
 ---
 title: How to use activation codes
@@ -587,7 +587,7 @@ If your activation code doesn't work:
 If you encounter any issues with activation codes, join our [Discord community](https://discord.com/invite/klusterai){target=_blank} for support.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\installatio/
+Doc-Content: https://docs.kluster.ai/code-reviews/installatio/
 --- BEGIN CONTENT ---
 ---
 title: Get started with Code Reviews
@@ -926,7 +926,7 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
 - **[VS-Code example](/code-reviews/examples/vscode-admin-endpoint/)**: See a real-world case study using VS-Code.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\quickstart/
+Doc-Content: https://docs.kluster.ai/code-reviews/quickstart/
 --- BEGIN CONTENT ---
 ---
 title: Quick Start
@@ -1044,7 +1044,7 @@ After the review completes, kluster.ai displays any issues found. You can click 
 - **[Configuration Options](/code-reviews/configuration/options/)**: Customize Code Reviews behavior for your workflow.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\tools/
+Doc-Content: https://docs.kluster.ai/code-reviews/tools/
 --- BEGIN CONTENT ---
 ---
 title: Code MCP Tools for Code Reviews 
