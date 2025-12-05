@@ -15,9 +15,9 @@ description: Learn how to use Code Reviews in your daily workflow. Trigger revie
     </iframe>
 </div>
 
-**Code Reviews verifies AI-generated code.** It sits between your AI assistant and your codebase, verifying every line of generated code in real-time to ensure security, correctness, and quality.
+**Code Reviews verifies your code for security, quality, and correctness.** Whether you're using AI-assisted code generation or writing code yourself, Code Reviews catches issues before they reach production.
 
-This guide shows you how to integrate Code Reviews into your daily workflow to catch issues before they happen.
+This guide shows you how to integrate Code Reviews into your workflow—automatically when using AI assistants, or on-demand when you want control.
 
 ## Prerequisites
 
@@ -27,13 +27,13 @@ Before getting started, ensure you have:
 
 ## How Code Reviews Works
 
-Code Reviews provides **three verification tools** that work seamlessly with your AI assistant:
+Code Reviews provides multiple ways to verify your code:
 
-1. **[Auto Review](/code-reviews/tools/#__tabbed_1_1)**: Automatically verifies every code change in real-time (default).
-2. **[Manual Review](/code-reviews/tools/#__tabbed_1_2)**: On-demand verification when you ask for it.
-3. **[Dependency Analysis](/code-reviews/tools/#__tabbed_1_1)**: Validates packages before installation.
+1. **[Auto Review](#auto-review)**: Automatic verification after every code change when working with AI assistants.
+2. **[Manual Review](#manual-review)**: On-demand verification you trigger yourself—review selected code, files, or uncommitted changes.
+3. **[Dependency Analysis](#dependency-analysis)**: Validates packages before installation.
 
-See the **[Tools Reference](/code-reviews/tools/)** for complete documentation on all verification capabilities.
+See the **[Tools Reference](/code-reviews/tools/)** for complete MCP tools documentation.
 
 
 ### Auto Review 
@@ -61,9 +61,6 @@ In this example, the AI creates an API endpoint but makes a critical security er
 
     ![Claude Code Auto Review - Unprotected API](/images/code-reviews/quick-start/claude-auto-review.webp)
 
-!!! tip "Manual Review"
-    You can also trigger a review manually any time by just asking your AI to "review this code".
-
 ### Dependency Analysis
 
 Code Reviews also protects you when starting new projects or adding libraries.
@@ -78,6 +75,37 @@ Code Reviews also protects you when starting new projects or adding libraries.
 When the AI suggests a package version with a known vulnerability, kluster.ai alerts you immediately, preventing the risk from entering your codebase.
 
 ![Dependency Analysis Example](/images/code-reviews/quick-start/dependency-analysis.webp)
+
+### Manual Review
+
+When you write code directly in your editor and want to verify it on your own terms, Code Reviews provides three manual options in your IDE.
+
+#### Code Block Review
+
+Select any code in your editor, right-click, and choose **Review with kluster.ai** (or press ++ctrl+shift+k++). This is useful for:
+
+- Verifying a specific function or block you just wrote
+- Checking code during merge conflict resolution
+- Getting a quick security check before moving on
+
+![Right-click to review selected code](/images/code-reviews/quick-start/manual-review-this-code.webp)
+
+#### Review Current File
+
+Open the kluster.ai sidebar and click **Review current file** to verify the entire active file.
+
+#### Review Uncommitted Changes
+
+Click **Review uncommitted changes** in the sidebar to verify all staged and unstaged changes before committing.
+
+![Manual review buttons in the kluster.ai sidebar](/images/code-reviews/quick-start/manual-review-this-code-extension.webp)
+
+After the review completes, kluster.ai displays any issues found. You can click **Fix with AI** to automatically resolve them.
+
+![Review results showing issues found](/images/code-reviews/quick-start/manual-review-this-code-extension-3.webp)
+
+!!! warning "Compatibility"
+    Code block review (right-click context menu) is not yet available in Cursor. The sidebar review buttons work in all VS Code-based IDEs.
 
 ## Next steps
 
