@@ -103,7 +103,7 @@ Open the kluster.ai extension to access the **Instant Review** section in the si
 ![Instant Review section in the kluster.ai sidebar](/images/code-reviews/quick-start/manual-review-this-code-extension.webp)
 
 !!! info "Accessing Instant Review"
-    Instant Review is also available in the **Home** and **Git** tabs. Expand the kluster.ai section if collapsed.
+    You can also access Instant Review from the **Home** and **Git** tabs. Expand the kluster.ai section if collapsed.
 
 After the review completes, kluster.ai displays any issues found. You can click **Fix with AI** to automatically resolve them.
 
