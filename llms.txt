@@ -16,12 +16,12 @@ This file is intended for AI models and developers. Use it to:
 
 ## Docs
 This section lists documentation pages. Each entry includes the page title, a direct link to the raw Markdown file, and a short description. Use this section to answer questions about core functionality, architecture, and features. If a question is about how or why something works, check here first.
-- [Quick Start](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/quickstart.md): Learn how to use Code Reviews in your daily workflow. Trigger reviews automatically or manually, interpret results, and apply fixes.
+- [Quick start](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/quickstart.md): Learn how to use Code Reviews in your daily workflow. Trigger reviews automatically or manually, interpret results, and apply fixes.
 - [Get started with Code Reviews](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/installation.md): Set up kluster.ai Code Reviews in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
 - [tools](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/tools.md): No description available.
 - [Options](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/configuration/options.md): Configure kluster.ai Code Reviews settings including sensitivity levels, bug types, and enabled tools for AI-generated code reviews.
 - [rules](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/configuration/rules.md): No description available.
-- [How to use activation codes](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/faq/activation-codes.md): This guide explains how to redeem activation codes and apply them to your kluster account
+- [How to use activation codes](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/faq/activation-codes.md): Learn how to redeem activation codes on kluster.ai, apply promotional credits to your subscription, and resolve common issues when codes don’t work.
 - [cursor-firebase-nextjs](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/examples/cursor-firebase-nextjs.md): No description available.
 - [vscode-admin-endpoint](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/examples/vscode-admin-endpoint.md): No description available.
 

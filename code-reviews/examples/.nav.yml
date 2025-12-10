@@ -1,3 +1,5 @@
+title: Examples
+hide: false
 nav:
   - 'Cursor: Firebase Authentication with Next.js': cursor-firebase-nextjs.md
   - 'VS Code: Secure Admin Endpoints with Express': vscode-admin-endpoint.md

@@ -1,18 +1,18 @@
 ---
 title: How to use activation codes
-description: This guide explains how to redeem activation codes and apply them to your kluster account
+description: Learn how to redeem activation codes on kluster.ai, apply promotional credits to your subscription, and resolve common issues when codes don’t work.
 ---
 
 # How to use activation codes
 
-Activation codes provide promotional credits for [kluster.ai](https://www.kluster.ai/){target=_blank} plans. This guide explains how to redeem activation codes and apply them to your subscription.
+Activation codes provide promotional credits for [kluster.ai](https://www.kluster.ai/){target=_blank} plans. This guide shows how to redeem a code and apply the credit to your subscription.
 
 ## Prerequisites
 
 Before redeeming an activation code, ensure you have:
 
-- A kluster.ai account. If you don't have one, [create an account](https://platform.kluster.ai/signup){target=_blank}.
-- An activation code that matches the plan you want to subscribe to.
+--8<-- 'text/quickstart-prerequisites.md'
+- **Activation code**: One that matches the plan you want to subscribe to.
 
 ## Redeeming your activation code
 
@@ -42,13 +42,11 @@ Follow these steps to redeem your activation code:
 
 ## Troubleshooting
 
-### Code not working
-
 If your activation code doesn't work:
 
-- Verify the code matches your selected plan. Activation codes are plan-specific (Starter, Team, or Enterprise).
+- Confirm the code corresponds to the plan you selected. Activation codes are plan-specific (Starter, Team, or Enterprise).
 - Check that the code hasn't expired.
-- Ensure you haven't already used this code on your account.
+- Ensure you haven't already used the code on your account.
 
 ## Need help?
 
