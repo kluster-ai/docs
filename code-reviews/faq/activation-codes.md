@@ -1,6 +1,6 @@
 ---
 title: How to use activation codes
-description: Learn how to redeem activation codes on kluster.ai, apply promotional credits to your subscription, and resolve common issues when codes don’t work.
+description: Learn how to redeem activation codes on kluster.ai, apply promotional credits to your subscription, and resolve common issues when codes don't work.
 ---
 
 # How to use activation codes
@@ -50,4 +50,4 @@ If your activation code doesn't work:
 
 ## Need help?
 
-If you encounter any issues with activation codes, join our [Discord community](https://discord.com/invite/klusterai){target=_blank} for support.
+If you encounter any issues with activation codes, join the [Discord community](https://discord.com/invite/klusterai){target=_blank} for support.
