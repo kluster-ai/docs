@@ -81,7 +81,7 @@ Doc-Content: https://docs.kluster.ai/code-reviews/configuration/options/
 --- BEGIN CONTENT ---
 ---
 title: Options
-description: Configure kluster.ai Code Reviews settings including sensitivity levels, bug types, and enabled tools for Code Reviews.
+description: Configure kluster.ai Code Review settings, from sensitivity levels to issue types and enabled tools used to verify code across your workflow.
 ---
 
 # Options
@@ -592,7 +592,7 @@ Doc-Content: https://docs.kluster.ai/code-reviews/faq/
 --- BEGIN CONTENT ---
 ---
 title: Frequently Asked Questions
-description: Common questions about kluster.ai Code Reviews - setup, features, security, and troubleshooting.
+description: Find answers to common questions about kluster.ai Code Review, covering setup, supported IDEs, review modes, security, and troubleshooting topics.
 ---
 
 # Frequently Asked Questions
@@ -600,19 +600,19 @@ description: Common questions about kluster.ai Code Reviews - setup, features, s
 ## General
 
 ??? question "What's the difference between Auto Review and Manual Review?"
-    **Auto Review** triggers automatically when AI generates or modifies code via MCP integration. Works with Claude Code, Codex CLI, Cursor, VS Code, and other AI assistants.
+   - **Auto Review**: Triggers automatically when AI generates or modifies code via MCP integration. Works with Claude Code, Codex CLI, Cursor, VS Code, and other AI assistants.
 
-    **Manual Review** is on-demand, you trigger it yourself by right-clicking code, and using keyboard shortcuts or clicking buttons in the extension. Review any code, whether you wrote it or not.
+   - **Manual Review**: Is on-demand, you trigger it yourself by right-clicking code, and using keyboard shortcuts or clicking buttons in the extension. Review any code, whether you wrote it or not.
 
 ??? question "What IDEs and CLI tools are supported?"
-    **IDE Extensions:** Cursor, VS Code, Windsurf, Antigravity
+    - **IDE Extensions**: Cursor, VS Code, Windsurf, Antigravity
 
-    **CLI Tools:** Claude Code, Codex CLI
+    - **CLI Tools**: Claude Code, Codex CLI
 
     See [Installation](/code-reviews/installation/) for setup instructions.
 
 ??? question "What programming languages are supported?"
-    kluster.ai is language agnostic—it can review code in any programming language, including Python, TypeScript, JavaScript, Java, Go, Rust, C++, C#, Ruby, PHP, and more.
+    kluster.ai is language agnostic and can review code in any programming language, including Python, TypeScript, JavaScript, Java, Go, Rust, C++, C#, Ruby, PHP, and more.
 
 ??? question "Is my code sent to kluster servers?"
     Yes, code diffs are sent to kluster.ai servers for analysis. All communication is end-to-end encrypted with TLS 1.3. The analysis happens in real-time and results are returned immediately.
@@ -627,7 +627,7 @@ description: Common questions about kluster.ai Code Reviews - setup, features, s
     Currently, exclusion rules are configured at the project level through the kluster.ai platform. See [Custom Rules](/code-reviews/configuration/rules/) for setting up project-specific configurations.
 
 ??? question "How can I invite a team member?"
-    Team management is available on Team and Enterprise plans. Log in to the [kluster.ai platform](https://platform.kluster.ai){target=_blank} and navigate to your team settings to invite members.
+    Team management is available on Team and Enterprise plans. Log in to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank} and navigate to your team settings to invite members.
 
 ??? question "How do activation codes work?"
     Activation codes provide promotional credits for kluster.ai plans. See our detailed guide: [How to use activation codes](/code-reviews/activation-codes/).
@@ -646,7 +646,7 @@ description: Common questions about kluster.ai Code Reviews - setup, features, s
 ## Auto Review
 
 ??? question "What triggers an automatic review?"
-    Auto reviews trigger when your AI coding assistant generates or modifies code. This happens automatically - you don't need to do anything. The code diff is sent to kluster.ai, and results appear in your chat or terminal.
+    Auto Review triggers when your AI coding assistant generates or modifies code. This happens automatically, so you do not need to take any action. The code diff is sent to kluster.ai, and the results appear in your chat or terminal.
 
 ??? question "Does kluster.ai apply changes automatically?"
     No. kluster.ai identifies issues and suggests fixes, but doesn't modify your code directly. In Auto Review mode, the AI assistant decides whether to apply them—in most cases, it will automatically incorporate the fixes. In Manual Review mode, you apply fixes yourself using the "Fix with AI" button or manually. Either way, you remain in control.
@@ -661,30 +661,30 @@ description: Common questions about kluster.ai Code Reviews - setup, features, s
     The Dependency Validator automatically checks packages before installation. When your AI assistant suggests adding a dependency, kluster.ai validates it for known vulnerabilities and license compliance before the install command runs.
 
 ??? question "How do I rollback changes made based on kluster.ai feedback?"
-    The changes are made by your AI assistant, not kluster.ai itself. You can revert changes in the file using your IDE's undo functionality, git commands, or simply ask the AI assistant to revert the changes.
+    The changes are made by your AI assistant, not kluster.ai itself. You can revert changes in the file using your IDE undo functionality, Git commands, or simply ask the AI assistant to revert the changes.
 
 ## Manual Review
 
 ??? question "How do I trigger a Manual Review?"
-    Three ways:
+    You can trigger a Manual Review in three ways:
 
     1. **Right-click** selected code → "Review with kluster.ai"
-    2. **Extension sidebar** → Click "Instant Review" dropdown → Choose file or uncommitted changes
-    3. **Hint button** → Appears when you select code (not available in Cursor yet)
+    - Use the extension sidebar. Open the **Instant Review** dropdown and choose a file or uncommitted changes.
+    - Select code and use the **hint** button. This option is not available in Cursor yet.
 
 ??? question "Can I review code I didn't write?"
-    Yes. Manual Review works on any code - your own, AI-generated, or code from colleagues. This is useful for auditing existing codebases or reviewing pull requests.
+    Yes. Manual Review works on any code, including your own code, AI-generated code, or code from colleagues. This is useful for auditing existing codebases or reviewing pull requests.
 
 ??? question "Can I review a specific code block vs whole file?"
-    Yes. Select the code you want to review, then right-click and choose "Review with kluster.ai". You can review anything from a single function to an entire file.
+    Yes. Select the code you want to review, then right-click and choose **Review with kluster.ai**. You can review anything from a single function to an entire file.
 
 ??? question "Can I review uncommitted changes?"
-    Yes. In the kluster.ai extension sidebar, click "Instant Review" and select "Review uncommitted changes". This reviews all staged and unstaged changes across your repository.
+    Yes. In the kluster.ai extension sidebar, click **Instant Review** and select **Review uncommitted changes**. This reviews all staged and unstaged changes across your repository.
 
 ??? question "What's the difference between instant actions and background reviews?"
-    **Instant actions** are on-demand—you click a button or use a shortcut to trigger a review.
+    - **Instant actions**: Are on-demand—you click a button or use a shortcut to trigger a review.
 
-    **Ambient Background Reviews** (Beta, Enterprise plan) automatically review your code for issues and suggestions as you work, without requiring you to trigger anything. Enable it from the "Enabled Tools" section in [Options](/code-reviews/configuration/options/).
+    - **Ambient Background Reviews (Beta, Enterprise plan)**: Automatically review your code for issues and suggestions as you work, without requiring you to trigger anything. Enable it from the "Enabled Tools" section in [Options](/code-reviews/configuration/options/).
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/code-reviews/installatio/
