@@ -5,7 +5,7 @@ description: Learn how kluster.ai Code MCP tools work: parameters, response form
 
 # Tools reference
 
-The [kluster.ai](https://www.kluster.ai/){target=_blank} Code MCP server provides review tools for checking AI-generated code quality and security. These tools enable real-time code reviews directly within your IDE through MCP integration.
+The [kluster.ai](https://www.kluster.ai/){target=_blank} Code MCP server provides review tools for checking code quality and security. These tools enable real-time code reviews directly within your IDE through MCP integration.
 
 It includes:
 
@@ -19,7 +19,7 @@ This page documents the parameters and response formats you'll see when using th
 
 === "Auto Review and Dependency Validator"
 
-    These tools analyze AI-generated code and dependencies to detect bugs, security vulnerabilities, and other quality issues.
+    These tools analyze code changes and dependencies to detect bugs, security vulnerabilities, and other quality issues.
 
     ???+ interface "Parameters"
 

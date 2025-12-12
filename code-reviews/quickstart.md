@@ -19,8 +19,8 @@ Before getting started, ensure you have:
 
 Code Reviews provides multiple ways to verify your code:
 
-1. **[Auto Review](#auto-review)**: Automatic verification after every code change when working with AI assistants.
-2. **[Manual Review](#manual-review)**: On-demand verification you trigger yourself—review selected code, files, or uncommitted changes.
+1. **[Auto Review](#auto-review)**: Automatic verification after code changes when working with AI assistants.
+2. **[Manual Review](#manual-review)**: On-demand verification you trigger yourself—review any code, files, or uncommitted changes.
 3. **[Dependency Analysis](#dependency-analysis)**: Validates packages before installation.
 
 See the **[Tools Reference](/code-reviews/tools/)** for complete MCP tools documentation.

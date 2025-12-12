@@ -1,6 +1,6 @@
 ---
 title: Options
-description: Configure kluster.ai Code Reviews settings including sensitivity levels, bug types, and enabled tools for AI-generated code reviews.
+description: Configure kluster.ai Code Reviews settings including sensitivity levels, bug types, and enabled tools for code reviews.
 ---
 
 # Options
@@ -11,27 +11,27 @@ You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Code 
 
 ## 1. Sensitivity settings
 
-Configure the minimum sensitivity level for the Real-time Code Review tool's issue reporting. Set your threshold based on your team's needs:
+Configure the minimum sensitivity level for Code Reviews issue reporting. Set your threshold based on your team's needs:
 
 - `Low`: Detects even the smallest potential issues.
 - `Medium`: Suitable for projects requiring strong security and high code quality.
-- `High`: (Recommended) Balances strong protection against LLM hallucination and security issues with performance.
+- `High`: (Recommended) Strong protection against security and quality issues while maintaining good performance.
 - `Critical`: Focuses only on critical issues for faster iteration and smoother coding experience.
 
 The ideal setting depends on your use case. For example, a **High** level is a good starting point, but you might want to set it to **Medium** for production code.
 
 ## 2. Code review scope
 
-Select which types of issues the Real-time Code Review tool detects during code analysis. You have full control over which bug types to check for through simple on/off toggles.
+Select which types of issues Code Reviews detects during code analysis. You have full control over which bug types to check for through simple on/off toggles.
 
 |     Type      |           Description           |                Example                |
 |:-------------:|:-------------------------------:|:-------------------------------------:|
 |   `intent`    | Code doesn't match user request | User asked for sorting, got filtering |
-|  `semantic`   |          Logic errors           |        Missing error handling         |
+|  `semantic`   |    Meaning and type errors      |        Wrong variable type used       |
 |  `knowledge`  |    Best practice violations     |       Not following conventions       |
 | `performance` |       Performance issues        |        Inefficient algorithms         |
 |   `quality`   |      Code quality problems      |        Poor naming, complexity        |
-|   `logical`   |          Logic errors           |           Off-by-one errors           |
+|   `logical`   |     Control flow errors         |           Off-by-one errors           |
 |  `security`   |    Security vulnerabilities     |          SQL injection risks          |
 
 ## 3. Enabled tools
