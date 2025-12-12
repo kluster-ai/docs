@@ -20,7 +20,7 @@ Both modes detect the same issue types and return actionable fixes you can apply
 
 ## Key features
 
-- **Flexible review modes**: Auto reviews for AI-assisted workflows, manual reviews for any code you want to check.
+- **Flexible review modes**: Auto Reviews for AI-assisted workflows, Manual Reviews for any code you want to check.
 - **Comprehensive issue detection**: Analyzes 7 issue types — *Semantic, Intent, Logical, Security, Knowledge, Performance,* and *Quality*.
 - **Customizable sensitivity levels**: Configure detection sensitivity from *Low* to *Critical*.
 - **Dual analysis tools**: Real-time **Code Review** and **Dependency Analysis** for complete coverage.
@@ -55,7 +55,7 @@ Code Reviews is available as a native extension for IDEs and CLI tools. Get star
 
     Cursor, VS Code, Windsurf, Antigravity—manual or AI-assisted reviews.
 
-    [:octicons-arrow-right-24: View all IDE's](/code-reviews/installation/#__tabbed_1_2){target=\_blank}
+    [:octicons-arrow-right-24: View all IDEs](/code-reviews/installation/#__tabbed_1_2){target=\_blank}
 
 -   :material-console: __CLI Tools__
     
