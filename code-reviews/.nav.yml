@@ -7,5 +7,6 @@ nav:
   - 'Tools reference': tools.md
   - 'Configuration': configuration
   - 'Examples': examples
-  - 'FAQ': faq
+  - 'FAQ': faq.md
+  - 'How to use activation codes': activation-codes.md
 

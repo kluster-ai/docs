@@ -19,8 +19,8 @@ Before getting started, ensure you have:
 
 Code Reviews provides multiple ways to verify your code:
 
-1. **[Auto Review](#auto-review)**: Automatic verification after every code change when working with AI assistants.
-2. **[Manual Review](#manual-review)**: On-demand verification you trigger yourself—review selected code, files, or uncommitted changes.
+1. **[Auto Review](#auto-review)**: Automatic verification after code changes when working with AI assistants.
+2. **[Manual Review](#manual-review)**: On-demand verification you trigger yourself—review any code, files, or uncommitted changes.
 3. **[Dependency Analysis](#dependency-analysis)**: Validates packages before installation.
 
 See the **[Tools Reference](/code-reviews/tools/)** for complete MCP tools documentation.
@@ -93,14 +93,17 @@ Select any code in your editor, right-click, and choose **Review with kluster.ai
 !!! info "Hint button"
     When you select code, a hint button also appears next to your selection to trigger the review. This hint button is not yet available in Cursor—use the right-click menu or keyboard shortcut instead.
 
-#### Review from the extension
+#### Instant Review
 
-Open the kluster.ai extension to access the **Manual Review** section in the sidebar. You have two options:
+Open the kluster.ai extension to access the **Instant Review** section in the sidebar. Click the dropdown button to choose:
 
 - **Review current file**: Verifies only the file currently open in the editor.
 - **Review uncommitted changes**: Verifies all uncommitted changes across multiple files.
 
-![Manual Review section in the kluster.ai sidebar](/images/code-reviews/quick-start/manual-review-this-code-extension.webp)
+![Instant Review section in the kluster.ai sidebar](/images/code-reviews/quick-start/manual-review-this-code-extension.webp)
+
+!!! info "Accessing Instant Review"
+    You can also access Instant Review from the **Home** and **Git** tabs. Expand the kluster.ai section if collapsed.
 
 After the review completes, kluster.ai displays any issues found. You can click **Fix with AI** to automatically resolve them.
 

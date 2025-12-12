@@ -1,96 +1,69 @@
 ---
 title: Code Reviews — Overview
-description: Learn how to use kluster.ai's Code Reviews to validate AI-generated code in real time—detecting bugs, security issues, and quality problems so you can ship safely.
+description: Learn how to use kluster.ai's Code Reviews to validate your code in real time—detecting bugs, security issues, and quality problems so you can ship safely.
 ---
 
 # Code Reviews
 
-LLMs can produce non-factual or irrelevant output (hallucinations). In software development, that translates into risky code changes and extra engineering overhead:
+Code Reviews analyzes your code for bugs, security vulnerabilities, and quality issues. It works in two modes: automatically when using AI coding assistants, or on-demand when you trigger a Manual Review.
 
-- Difficulty programmatically trusting AI-generated code.
-- Increased complexity in error handling and QA.
-- Potential for cascading failures in chained AI operations.
-- Manual review cycles that slow development and deployment.
-
-**Code Reviews** is part of kluster.ai trust layer, and its goal is to validate AI-generated code in real time so you can deploy AI at scale where accuracy and security matter most.
-
-With Code Reviews, you can ship confidently: potential issues are surfaced (and can be auto-corrected) before they reach production. The service works seamlessly with AI coding assistants in your IDE (Cursor, VS Code, Claude Code and others), analyzing diffs as code is generated.
+The service integrates directly into your IDE or CLI (Cursor, VS Code, Windsurf, Claude Code, and others), analyzing code as you work.
 
 ## How Code Reviews works
 
-Code Reviews analyzes AI-generated code (typically in diff format) and returns a structured assessment with actionable fixes. It combines the following MCP tools:
+Whether you're working with an AI assistant or writing code yourself, Code Reviews adapts to your workflow. It offers two ways to validate your code:
 
---8<-- 'text/code-reviews/code-tools.md'
+- **Auto Review**: Triggers automatically when AI generates or modifies code. Issues are caught and fixed in real-time as you work with your AI assistant.
+- **Manual Review**: On-demand reviews you trigger yourself. Right-click any code, use a shortcut, or review all uncommitted changes at once.
 
-The service responds with the following fields:
-
-- **`isCodeCorrect`**: Indicates whether the code has issues.
-- **`issues`**: Array of detected problems with type, severity, and priority.
-- **`explanation`**: Summary of all issues found.
-- **`agent_todo_list`**: Prioritized list of fixes to apply.
+Both modes detect the same issue types and return actionable fixes you can apply immediately. See the [Quick Start](/code-reviews/quickstart/) to try it out.
 
 ## Key features
 
-- **Real-time code review**: Monitors AI-generated code as it’s written.
+- **Flexible review modes**: Auto Reviews for AI-assisted workflows, Manual Reviews for any code you want to check.
 - **Comprehensive issue detection**: Analyzes 7 issue types — *Semantic, Intent, Logical, Security, Knowledge, Performance,* and *Quality*.
 - **Customizable sensitivity levels**: Configure detection sensitivity from *Low* to *Critical*.
 - **Dual analysis tools**: Real-time **Code Review** and **Dependency Analysis** for complete coverage.
-- **Automatic correction**: AI incorporates feedback to fix issues immediately.
+- **Instant fixes**: Apply suggested fixes with one click, or let your AI assistant handle them automatically.
 
 ## Configuration options
 
-Tailor Code Reviews to your workflow:
+Not all projects have the same requirements. Code Reviews gives you full control over what gets flagged and how sensitive the detection should be:
 
 - **Sensitivity settings**: Set minimum sensitivity to report (*Low → Critical*).
 - **Bug check types**: Select which issue types to check: *Semantic, Security, Quality, Intent, Knowledge, Logical, Performance*.
-- **Enabled tools**: Choose which MCP tools are active (bug check tool, packages check tool).
+- **Enabled tools**: Select which analysis tools to activate: *Real-time Code Review* and *Dependency Analysis*.
 
-These settings can be configured directly in your IDE integration.
-
-## Target applications and use cases
-
-- AI coding assistants and IDE integrations.
-- Automated code review pipelines.
-- CI/CD security scanning for AI-generated code.
-- Development workflow automation.
-- Code quality assurance systems.
+See [Options](/code-reviews/configuration/options/) for full configuration details.
 
 ## When to use Code Reviews
 
-- **AI code validation**: Review AI-generated code before production use.
+- **Code validation**: Review code before production use.
 - **Security scanning**: Detect potential vulnerabilities early.
 - **Quality assurance**: Enforce best practices automatically.
 - **Dependency checking**: Validate that new packages are secure and up-to-date.
 
 ## Setup instructions
 
-Code Reviews is available as a native extension for IDEs such as Cursor, VS Code and Claude Code. Choose your preferred IDE to get started with kluster.ai Code Reviews in under 30 seconds:
+Code Reviews is available as a native extension for IDEs and CLI tools. Get started in under 30 seconds:
 
 <div class="grid cards" markdown>
 
--   :cursor-icons8-cursor-ai: __Cursor__
+-   :material-code-tags: __IDE Extensions__
 
     ---
 
-    Install the extension directly from the Cursor marketplace.
+    Cursor, VS Code, Windsurf, Antigravity—Manual Reviews or Auto Reviews.
 
-    [:octicons-arrow-right-24: Add to Cursor](/code-reviews/installation/#__tabbed_1_1){target=\_blank}
+    [:octicons-arrow-right-24: View all IDEs](/code-reviews/installation/#__tabbed_1_2){target=\_blank}
 
--   :material-microsoft-visual-studio-code: __VS Code__
-
+-   :material-console: __CLI Tools__
+    
     ---
 
-    Install the extension directly from the VS Code marketplace.
+    Claude Code, Codex CLI—AI-assisted reviews only.
 
-    [:octicons-arrow-right-24: Add to VS Code](/code-reviews/installation/#__tabbed_1_2){target=\_blank}
-
--   :simple-claude: __Claude Code__
-
-    ---
-
-    Run a simple script in your terminal to set up Code Reviews quickly.
-
-    [:octicons-arrow-right-24: Install Claude Code](/code-reviews/installation/#__tabbed_1_4){target=\_blank}
+    [:octicons-arrow-right-24: View CLI](/code-reviews/installation/#__tabbed_1_5){target=\_blank}
 
 </div>
 
