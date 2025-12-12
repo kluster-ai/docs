@@ -5,7 +5,7 @@ description: Learn how to use kluster.ai's Code Reviews to validate your code in
 
 # Code Reviews
 
-Code Reviews analyzes your code for bugs, security vulnerabilities, and quality issues. It works in two modes: automatically when using AI coding assistants, or on-demand when you trigger a manual review.
+Code Reviews analyzes your code for bugs, security vulnerabilities, and quality issues. It works in two modes: automatically when using AI coding assistants, or on-demand when you trigger a Manual Review.
 
 The service integrates directly into your IDE or CLI (Cursor, VS Code, Windsurf, Claude Code, and others), analyzing code as you work.
 
@@ -53,7 +53,7 @@ Code Reviews is available as a native extension for IDEs and CLI tools. Get star
 
     ---
 
-    Cursor, VS Code, Windsurf, Antigravity—manual or AI-assisted reviews.
+    Cursor, VS Code, Windsurf, Antigravity—Manual Reviews or Auto Reviews.
 
     [:octicons-arrow-right-24: View all IDEs](/code-reviews/installation/#__tabbed_1_2){target=\_blank}
 

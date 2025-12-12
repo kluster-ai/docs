@@ -58,10 +58,10 @@ description: Common questions about kluster.ai Code Reviews - setup, features, s
     Auto reviews trigger when your AI coding assistant generates or modifies code. This happens automatically - you don't need to do anything. The code diff is sent to kluster.ai, and results appear in your chat or terminal.
 
 ??? question "Does kluster.ai apply changes automatically?"
-    No. kluster.ai identifies issues and suggests fixes, but the AI assistant decides whether to apply them. In most cases, the AI will automatically incorporate the fixes, but you remain in control of accepting or rejecting changes.
+    No. kluster.ai identifies issues and suggests fixes, but doesn't modify your code directly. In Auto Review mode, the AI assistant decides whether to apply them—in most cases, it will automatically incorporate the fixes. In Manual Review mode, you apply fixes yourself using the "Fix with AI" button or manually. Either way, you remain in control.
 
-??? question "Can I disable auto reviews temporarily?"
-    Yes. You can disable auto reviews from [Options](/code-reviews/configuration/options/) in the kluster.ai platform. Alternatively, you can disable the kluster extension in your IDE, or for CLI tools, disable the MCP server.
+??? question "Can I disable Auto Reviews temporarily?"
+    Yes. You can disable Auto Reviews from [Options](/code-reviews/configuration/options/) in the kluster.ai platform. Alternatively, you can disable the kluster.ai extension in your IDE, or for CLI tools, disable the MCP server.
 
 ??? question "Does it work with multi-file edits?"
     Yes. Auto review analyzes diffs across multiple files in a single review, understanding the context of changes that span your codebase.
