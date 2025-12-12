@@ -615,10 +615,7 @@ description: Common questions about kluster.ai Code Reviews - setup, features, s
     kluster.ai is language agnostic—it can review code in any programming language, including Python, TypeScript, JavaScript, Java, Go, Rust, C++, C#, Ruby, PHP, and more.
 
 ??? question "Is my code sent to kluster servers?"
-    Yes, code diffs are sent to kluster.ai servers for analysis. The analysis happens in real-time and results are returned immediately.
-
-??? question "Does kluster.ai store my code?"
-    Yes, code and review results are stored so you can access your review history in the [kluster.ai platform](https://platform.kluster.ai){target=_blank}. See our [Privacy Policy](https://www.kluster.ai/privacy){target=_blank} for details on data handling.
+    Yes, code diffs are sent to kluster.ai servers for analysis. All communication is end-to-end encrypted with TLS 1.3. The analysis happens in real-time and results are returned immediately.
 
 ??? question "Can I use kluster.ai with any AI model?"
     Yes. When using an AI coding assistant, Code Reviews works with any model available in supported IDEs, including Claude, GPT, Gemini, and others.
@@ -643,6 +640,8 @@ description: Common questions about kluster.ai Code Reviews - setup, features, s
 
 ??? question "Do kluster.ai reviews improve over time?"
     Yes. When you connect your GitHub repositories, kluster.ai learns rules from your repo and applies project-specific configurations. See [Custom Rules](/code-reviews/configuration/rules/) for more details.
+
+    We also continuously improve our engine to perform deeper reviews, optimizing for common issues our users encounter. If you have suggestions for improvement, contact us at [support@kluster.ai](mailto:support@kluster.ai).
 
 ## Auto Review
 
@@ -669,7 +668,7 @@ description: Common questions about kluster.ai Code Reviews - setup, features, s
 ??? question "How do I trigger a Manual Review?"
     Three ways:
 
-    1. **Right-click** selected code → "Review with kluster.ai" (or `Ctrl+Shift+K`)
+    1. **Right-click** selected code → "Review with kluster.ai"
     2. **Extension sidebar** → Click "Instant Review" dropdown → Choose file or uncommitted changes
     3. **Hint button** → Appears when you select code (not available in Cursor yet)
 
