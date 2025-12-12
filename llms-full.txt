@@ -6,22 +6,82 @@ kluster.ai. kluster.ai provides the technology to verify and trust AI responses 
 Documentation: https://docs.kluster.ai
 
 ## List of doc pages:
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/activation-codes.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/configuration/options.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/configuration/rules.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/examples/cursor-firebase-nextjs.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/examples/vscode-admin-endpoint.md
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/faq/activation-codes.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/faq.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/installation.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/quickstart.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/tools.md
 
 ## Full content for each doc page
 
+Doc-Content: https://docs.kluster.ai/code-reviews/activation-codes/
+--- BEGIN CONTENT ---
+---
+title: How to use activation codes
+description: This guide explains how to redeem activation codes and apply them to your kluster account
+---
+
+# How to use activation codes
+
+Activation codes provide promotional credits for [kluster.ai](https://www.kluster.ai/){target=_blank} plans. This guide explains how to redeem activation codes and apply them to your subscription.
+
+## Prerequisites
+
+Before redeeming an activation code, ensure you have:
+
+- A kluster.ai account. If you don't have one, [create an account](https://platform.kluster.ai/signup){target=_blank}.
+- An activation code that matches the plan you want to subscribe to.
+
+## Redeeming your activation code
+
+Follow these steps to redeem your activation code:
+
+1. Log in to your [kluster.ai account](https://platform.kluster.ai){target=_blank}. First-time users receive 50 free code reviews under the trial plan.
+
+2. Click the **upgrade** button in the top right corner of the platform.
+
+    ![Upgrade button on kluster.ai platform](/images/code-reviews/code/faq/activation-codes/activation-code-1.webp)
+
+3. On the plans page, choose the subscription plan you want. Make sure your activation code matches the plan you select, then click **Subscribe**.
+
+    ![kluster.ai subscription plans](/images/code-reviews/code/faq/activation-codes/activation-code-2.webp)
+
+    You'll be redirected to the Stripe checkout page.
+
+4. On the Stripe checkout page, click the **Add promotion code** section and paste your activation code.
+
+    ![Stripe checkout with promotion code field](/images/code-reviews/code/faq/activation-codes/activation-code-3.webp)
+
+5. Once you apply the code, Stripe will validate it and show the discount applied. The total due today will reflect the promotional credit.
+
+    ![Activation code applied successfully](/images/code-reviews/code/faq/activation-codes/activation-code-4.webp)
+
+    Complete the checkout process by clicking **Subscribe**. Your promotional credits will be immediately applied to your account.
+
+## Troubleshooting
+
+### Code not working
+
+If your activation code doesn't work:
+
+- Verify the code matches your selected plan. Activation codes are plan-specific (Starter, Team, or Enterprise).
+- Check that the code hasn't expired.
+- Ensure you haven't already used this code on your account.
+
+## Need help?
+
+If you encounter any issues with activation codes, join our [Discord community](https://discord.com/invite/klusterai){target=_blank} for support.
+--- END CONTENT ---
+
 Doc-Content: https://docs.kluster.ai/code-reviews/configuration/options/
 --- BEGIN CONTENT ---
 ---
 title: Options
-description: Configure kluster.ai Code Reviews settings including sensitivity levels, bug types, and enabled tools for AI-generated code reviews.
+description: Configure kluster.ai Code Reviews settings including sensitivity levels, bug types, and enabled tools for code reviews.
 ---
 
 # Options
@@ -32,27 +92,27 @@ You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Code 
 
 ## 1. Sensitivity settings
 
-Configure the minimum sensitivity level for the Real-time Code Review tool's issue reporting. Set your threshold based on your team's needs:
+Configure the minimum sensitivity level for Code Reviews issue reporting. Set your threshold based on your team's needs:
 
 - `Low`: Detects even the smallest potential issues.
 - `Medium`: Suitable for projects requiring strong security and high code quality.
-- `High`: (Recommended) Balances strong protection against LLM hallucination and security issues with performance.
+- `High`: (Recommended) Strong protection against security and quality issues while maintaining good performance.
 - `Critical`: Focuses only on critical issues for faster iteration and smoother coding experience.
 
 The ideal setting depends on your use case. For example, a **High** level is a good starting point, but you might want to set it to **Medium** for production code.
 
 ## 2. Code review scope
 
-Select which types of issues the Real-time Code Review tool detects during code analysis. You have full control over which bug types to check for through simple on/off toggles.
+Select which types of issues Code Reviews detects during code analysis. You have full control over which bug types to check for through simple on/off toggles.
 
 |     Type      |           Description           |                Example                |
 |:-------------:|:-------------------------------:|:-------------------------------------:|
 |   `intent`    | Code doesn't match user request | User asked for sorting, got filtering |
-|  `semantic`   |          Logic errors           |        Missing error handling         |
+|  `semantic`   |    Meaning and type errors      |        Wrong variable type used       |
 |  `knowledge`  |    Best practice violations     |       Not following conventions       |
 | `performance` |       Performance issues        |        Inefficient algorithms         |
 |   `quality`   |      Code quality problems      |        Poor naming, complexity        |
-|   `logical`   |          Logic errors           |           Off-by-one errors           |
+|   `logical`   |     Control flow errors         |           Off-by-one errors           |
 |  `security`   |    Security vulnerabilities     |          SQL injection risks          |
 
 ## 3. Enabled tools
@@ -73,7 +133,7 @@ Doc-Content: https://docs.kluster.ai/code-reviews/configuration/rules/
 --- BEGIN CONTENT ---
 # Custom rules
 
-Rules define practices, guidelines, and patterns that maintain code quality for your projects. When connected to GitHub, each repository becomes a project with its own learned rules. You can also create manual rules that apply globally or to specific projects. [kluster.ai](https://kluster.ai){target=_blank} Code Reviews automatically checks newly generated code against these rules.
+Rules define practices, guidelines, and patterns that maintain code quality for your projects. When connected to GitHub, each repository becomes a project with its own learned rules. You can also create manual rules that apply globally or to specific projects. [kluster.ai](https://kluster.ai){target=_blank} Code Reviews automatically checks code changes against these rules.
 
 ## Rule types
 
@@ -528,77 +588,118 @@ Admin endpoints require special security attention that AI often misses:
 **Learn more**: Explore our [security reference](/code-reviews/tools/#bug-check-types) to understand all vulnerability types that Code Reviews monitors.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/faq/activation-codes/
+Doc-Content: https://docs.kluster.ai/code-reviews/faq/
 --- BEGIN CONTENT ---
 ---
-title: How to use activation codes
-description: This guide explains how to redeem activation codes and apply them to your kluster account
+title: Frequently Asked Questions
+description: Common questions about kluster.ai Code Reviews - setup, features, security, and troubleshooting.
 ---
 
-# How to use activation codes
+# Frequently Asked Questions
 
-Activation codes provide promotional credits for [kluster.ai](https://www.kluster.ai/){target=_blank} plans. This guide explains how to redeem activation codes and apply them to your subscription.
+## General
 
-## Prerequisites
+??? question "What's the difference between Auto Review and Manual Review?"
+    **Auto Review** triggers automatically when AI generates or modifies code via MCP integration. Works with Claude Code, Codex CLI, Cursor, VS Code, and other AI assistants.
 
-Before redeeming an activation code, ensure you have:
+    **Manual Review** is on-demand - you trigger it yourself by right-clicking code, using keyboard shortcuts, or clicking buttons in the extension. Review any code, whether you wrote it or not.
 
-- A kluster.ai account. If you don't have one, [create an account](https://platform.kluster.ai/signup){target=_blank}.
-- An activation code that matches the plan you want to subscribe to.
+??? question "What IDEs and CLI tools are supported?"
+    **IDE Extensions:** Cursor, VS Code, Windsurf, Antigravity
 
-## Redeeming your activation code
+    **CLI Tools:** Claude Code, Codex CLI
 
-Follow these steps to redeem your activation code:
+    See [Installation](/code-reviews/installation/) for setup instructions.
 
-1. Log in to your [kluster.ai account](https://platform.kluster.ai){target=_blank}. First-time users receive 50 free code reviews under the trial plan.
+??? question "What programming languages are supported?"
+    kluster.ai is language agnostic—it can review code in any programming language, including Python, TypeScript, JavaScript, Java, Go, Rust, C++, C#, Ruby, PHP, and more.
 
-2. Click the **upgrade** button in the top right corner of the platform.
+??? question "Is my code sent to kluster servers?"
+    Yes, code diffs are sent to kluster.ai servers for analysis. The analysis happens in real-time and results are returned immediately.
 
-    ![Upgrade button on kluster.ai platform](/images/code-reviews/code/faq/activation-codes/activation-code-1.webp)
+??? question "Does kluster store my code?"
+    Yes, code and review results are stored so you can access your review history in the [kluster.ai platform](https://platform.kluster.ai){target=_blank}. See our [Privacy Policy](https://www.kluster.ai/privacy){target=_blank} for details on data handling.
 
-3. On the plans page, choose the subscription plan you want. Make sure your activation code matches the plan you select, then click **Subscribe**.
+??? question "Can I use kluster with any AI model?"
+    Yes. When using an AI coding assistant, Code Reviews works with any model available in supported IDEs, including Claude, GPT, Gemini, and others.
 
-    ![kluster.ai subscription plans](/images/code-reviews/code/faq/activation-codes/activation-code-2.webp)
+??? question "Can I review a full codebase?"
+    Yes, using Manual Review. You can review individual files, selected code blocks, or all uncommitted changes. For large codebases, we recommend reviewing file-by-file or focusing on changed files.
 
-    You'll be redirected to the Stripe checkout page.
+??? question "Can I exclude files or folders from reviews?"
+    Currently, exclusion rules are configured at the project level through the kluster.ai platform. See [Custom Rules](/code-reviews/configuration/rules/) for setting up project-specific configurations.
 
-4. On the Stripe checkout page, click the **Add promotion code** section and paste your activation code.
+??? question "How can I invite a team member?"
+    Team management is available on Team and Enterprise plans. Log in to the [kluster.ai platform](https://platform.kluster.ai){target=_blank} and navigate to your team settings to invite members.
 
-    ![Stripe checkout with promotion code field](/images/code-reviews/code/faq/activation-codes/activation-code-3.webp)
+??? question "How do activation codes work?"
+    Activation codes provide promotional credits for kluster.ai plans. See our detailed guide: [How to use activation codes](/code-reviews/activation-codes/).
 
-5. Once you apply the code, Stripe will validate it and show the discount applied. The total due today will reflect the promotional credit.
+??? question "How frequently does kluster update its vulnerability detection?"
+    We source vulnerability data from frequently updated public CVE databases. Our vulnerability detection updates as new CVEs are published and ingested by those sources, so coverage improves continuously rather than on a fixed schedule.
 
-    ![Activation code applied successfully](/images/code-reviews/code/faq/activation-codes/activation-code-4.webp)
+??? question "How can I provide feedback about issues detected by kluster?"
+    Each time a code review is done, a feedback option is available from the extension or in the platform. Your feedback helps improve detection accuracy and reduce false positives.
 
-    Complete the checkout process by clicking **Subscribe**. Your promotional credits will be immediately applied to your account.
+??? question "Do kluster reviews improve over time?"
+    Yes. When you connect your GitHub repositories, kluster.ai learns rules from your repo and applies project-specific configurations. See [Custom Rules](/code-reviews/configuration/rules/) for more details.
 
-## Troubleshooting
+## Auto Review
 
-### Code not working
+??? question "What triggers an automatic review?"
+    Auto reviews trigger when your AI coding assistant generates or modifies code. This happens automatically - you don't need to do anything. The code diff is sent to kluster.ai, and results appear in your chat or terminal.
 
-If your activation code doesn't work:
+??? question "Does kluster apply changes automatically?"
+    No. kluster.ai identifies issues and suggests fixes, but the AI assistant decides whether to apply them. In most cases, the AI will automatically incorporate the fixes, but you remain in control of accepting or rejecting changes.
 
-- Verify the code matches your selected plan. Activation codes are plan-specific (Starter, Team, or Enterprise).
-- Check that the code hasn't expired.
-- Ensure you haven't already used this code on your account.
+??? question "Can I disable auto reviews temporarily?"
+    Yes. You can disable auto reviews from [Options](/code-reviews/configuration/options/) in the kluster.ai platform. Alternatively, you can disable the kluster extension in your IDE, or for CLI tools, disable the MCP server.
 
-## Need help?
+??? question "Does it work with multi-file edits?"
+    Yes. Auto review analyzes diffs across multiple files in a single review, understanding the context of changes that span your codebase.
 
-If you encounter any issues with activation codes, join our [Discord community](https://discord.com/invite/klusterai){target=_blank} for support.
+??? question "How does dependency checking work?"
+    The Dependency Validator automatically checks packages before installation. When your AI assistant suggests adding a dependency, kluster.ai validates it for known vulnerabilities and license compliance before the install command runs.
+
+??? question "How do I rollback changes made based on kluster feedback?"
+    The changes are made by your AI assistant, not kluster itself. You can revert changes in the file using your IDE's undo functionality, git commands, or simply ask the AI assistant to revert the changes.
+
+## Manual Review
+
+??? question "How do I trigger a manual review?"
+    Three ways:
+
+    1. **Right-click** selected code → "Review with kluster.ai" (or `Ctrl+Shift+K`)
+    2. **Extension sidebar** → Click "Instant Review" dropdown → Choose file or uncommitted changes
+    3. **Hint button** → Appears when you select code (not available in Cursor yet)
+
+??? question "Can I review code I didn't write?"
+    Yes. Manual Review works on any code - your own, AI-generated, or code from colleagues. This is useful for auditing existing codebases or reviewing pull requests.
+
+??? question "Can I review a specific code block vs whole file?"
+    Yes. Select the code you want to review, then right-click and choose "Review with kluster.ai". You can review anything from a single function to an entire file.
+
+??? question "Can I review uncommitted changes?"
+    Yes. In the kluster.ai extension sidebar, click "Instant Review" and select "Review uncommitted changes". This reviews all staged and unstaged changes across your repository.
+
+??? question "What's the difference between instant actions and background reviews?"
+    **Instant actions** are on-demand—you click a button or use a shortcut to trigger a review.
+
+    **Ambient Background Reviews** (Beta, Enterprise plan) automatically review your code for issues and suggestions as you work, without requiring you to trigger anything. Enable it from the "Enabled Tools" section in [Options](/code-reviews/configuration/options/).
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/code-reviews/installatio/
 --- BEGIN CONTENT ---
 ---
 title: Get started with Code Reviews
-description: Set up kluster.ai Code Reviews in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
+description: Set up kluster.ai Code Reviews in minutes. Scan code for errors, vulnerabilities, and performance issues in Cursor, VS Code, Claude Code, and more.
 ---
 
 # Get started with Code Reviews
 
-Modern developers increasingly rely on AI coding assistants to accelerate development, but this speed comes with risks. Generated code may contain logic errors, security flaws, or performance issues that compromise application quality and security.
+Fast-moving development introduces risk. Code may contain logic errors, security flaws, or performance issues that slip through and reach production.
 
-The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code Reviews service integrates directly into your development workflow, automatically scanning AI-generated code in real-time. It catches potential issues instantly within your IDE, allowing you to ship code confidently while maintaining the speed benefits of AI-assisted development.
+The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code Reviews service integrates directly into your development workflow, scanning code in real-time. It catches potential issues instantly within your IDE, allowing you to ship code confidently.
 
 ## Prerequisites
 
@@ -714,7 +815,7 @@ As kluster.ai services work via MCP, the API key is created and configured for y
     Once installed, verify the setup:
     
     1. Open a Copilot chat window and select the **Tools** button on the bottom right corner.
-    2. Scroll down the list and **Kluster-Code-Reviews-MCP** should appear. Make sure both tools enabled.
+    2. Scroll down the list and **Kluster-Code-Reviews-MCP** should appear. Make sure all tools are enabled.
 
         ![Active MCP Tools in VS Code](/images/code-reviews/code/integrations/vscode/vscode-integration-8.webp)
 
@@ -777,7 +878,7 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
     - Download the kluster.ai MCP server.
     - Configure Claude Code settings.
     - Set up your API key.
-    - Enable both review tools.
+    - Enable all review tools.
 
     -<div id="termynal" data-termynal>
   <span data-ty="input">franzuzz@MacBook-Pro-de-Jean mcp-demo % curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s YOUR_API_KEY</span>
@@ -951,8 +1052,8 @@ Before getting started, ensure you have:
 
 Code Reviews provides multiple ways to verify your code:
 
-1. **[Auto Review](#auto-review)**: Automatic verification after every code change when working with AI assistants.
-2. **[Manual Review](#manual-review)**: On-demand verification you trigger yourself—review selected code, files, or uncommitted changes.
+1. **[Auto Review](#auto-review)**: Automatic verification after code changes when working with AI assistants.
+2. **[Manual Review](#manual-review)**: On-demand verification you trigger yourself—review any code, files, or uncommitted changes.
 3. **[Dependency Analysis](#dependency-analysis)**: Validates packages before installation.
 
 See the **[Tools Reference](/code-reviews/tools/)** for complete MCP tools documentation.
@@ -1056,7 +1157,7 @@ description: Learn how kluster.ai Code MCP tools work: parameters, response form
 
 # Tools reference
 
-The [kluster.ai](https://www.kluster.ai/){target=_blank} Code MCP server provides review tools for checking AI-generated code quality and security. These tools enable real-time code reviews directly within your IDE through MCP integration.
+The [kluster.ai](https://www.kluster.ai/){target=_blank} Code MCP server provides review tools for checking code quality and security. These tools enable real-time code reviews directly within your IDE through MCP integration.
 
 It includes:
 
@@ -1070,7 +1171,7 @@ This page documents the parameters and response formats you'll see when using th
 
 === "Auto Review and Dependency Validator"
 
-    These tools analyze AI-generated code and dependencies to detect bugs, security vulnerabilities, and other quality issues.
+    These tools analyze code changes and dependencies to detect bugs, security vulnerabilities, and other quality issues.
 
     ???+ interface "Parameters"
 

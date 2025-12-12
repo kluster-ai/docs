@@ -50,7 +50,7 @@ description: Common questions about kluster.ai Code Reviews - setup, features, s
     Each time a code review is done, a feedback option is available from the extension or in the platform. Your feedback helps improve detection accuracy and reduce false positives.
 
 ??? question "Do kluster reviews improve over time?"
-    Yes. When you connect your GitHub repositories, kluster.ai learns your codebase patterns and applies project-specific rules. See [Custom Rules](/code-reviews/configuration/rules/) for more details.
+    Yes. When you connect your GitHub repositories, kluster.ai learns rules from your repo and applies project-specific configurations. See [Custom Rules](/code-reviews/configuration/rules/) for more details.
 
 ## Auto Review
 
