@@ -1,6 +1,6 @@
 ---
 title: Options
-description: Configure kluster.ai Code Reviews settings including sensitivity levels, bug types, and enabled tools for Code Reviews.
+description: Configure kluster.ai Code Review settings, from sensitivity levels to issue types and enabled tools used to verify code across your workflow.
 ---
 
 # Options
