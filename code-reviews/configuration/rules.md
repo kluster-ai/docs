@@ -1,36 +1,37 @@
 # Custom rules
 
-Rules define practices, guidelines, and patterns that maintain code quality for your projects. When connected to GitHub, each repository becomes a project with its own learned rules. You can also create manual rules that apply globally or to specific projects. [kluster.ai](https://kluster.ai){target=_blank} Code Reviews automatically checks code changes against these rules.
+Rules define the standards and requirements that help maintain consistent code quality across your projects. They give Code Reviews a clear basis for evaluating new code, ensuring it aligns with your defined criteria. [kluster.ai](https://kluster.ai){target=\_blank} Code Reviews automatically check code changes against these rules.
 
 ## Rule types
 
-- **Manual rules**: Custom rules you create based on your team's specific requirements and coding standards.
+To accommodate different workflows, Code Reviews supports two methods of rules:
+
+- **Manual rules**: Custom rules you create based on specific team requirements and coding standards.
 - **Learned rules**: Automatically extracted from your GitHub repositories, continuously updated to reflect your codebase patterns.
 
 ## Set up instructions
 
-You can create manual rules to enforce your team's coding standards or connect GitHub to automatically extract patterns from your repositories. Rules can be applied globally or to specific projects.
 
 !!! info "Extraction rate limit"
     Rule extraction from repositories is limited to once per hour. Wait 60 minutes between extraction requests.
 
-1. **Access the platform**: Navigate to [Custom Code Review Rules](https://platform.kluster.ai/custom-code-review-rules){target=_blank}.
+1. **Access the platform**: Navigate to [Custom Code Review Rules](https://platform.kluster.ai/custom-code-review-rules){target=\_blank}.
 
 2. **Connect GitHub** (Optional): Connect your GitHub account to enable project-specific rules. In this context, each GitHub repository is treated as a 'project' - Code Reviews learns patterns from each repository and applies those specific rules when reviewing code for that project.
 
-    ![Connect to GitHub](/images/code-reviews/code/configuration/rules/rules-1.webp)
+    ![Connect to GitHub](/images/code-reviews/code/configuration/rules/rules-01.webp)
 
 3. Click **Add review rule** to create custom rules.
 
-    ![Add review rule button](/images/code-reviews/code/configuration/rules/rules-2.webp)
+    ![Add review rule button](/images/code-reviews/code/configuration/rules/rules-02.webp)
 
-4. **Configure rule scope**: Enter your rule and select the scope:
+4. **Configure rule scope** and select one of the following:
     - **All**: Rules apply globally to all your coding sessions.
     - **Project-specific**: Select a repository from the dropdown (requires GitHub connection).
 
 5. Click **Save & Add Another** to add multiple rules or **Save** to finish.
 
-    ![Add code review rule dialog](/images/code-reviews/code/configuration/rules/rules-3.webp)
+    ![Add code review rule dialog](/images/code-reviews/code/configuration/rules/rules-03.webp)
 
 ## Next steps
 
