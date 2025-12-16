@@ -4,7 +4,7 @@ Rules define the standards and requirements that help maintain consistent code q
 
 ## Rule types
 
-To accommodate different workflows, Code Reviews supports two methods of rules:
+To accommodate different workflows, Code Reviews supports two types of rules:
 
 - **Manual rules**: Custom rules you create based on specific team requirements and coding standards.
 - **Learned rules**: Automatically extracted from your GitHub repositories, continuously updated to reflect your codebase patterns.
