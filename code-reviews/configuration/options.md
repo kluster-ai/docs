@@ -11,7 +11,7 @@ You can customize the [kluster.ai](https://www.kluster.ai/){target=\_blank} Code
 
 ## Sensitivity settings
 
-Configure the minimum sensitivity level for the real-time Code Review issue reporting. Set your threshold based based on your team requirements:
+Configure the minimum sensitivity level for the real-time Code Review issue reporting. Set your threshold based on your team requirements:
 
 - **Low**: Detects even the smallest potential issues.
 - **Medium**: Suitable for projects requiring strong security and high code quality.
