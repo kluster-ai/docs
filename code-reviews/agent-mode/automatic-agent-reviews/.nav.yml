@@ -1,0 +1,6 @@
+title: Automatic Agent Reviews
+hide: false
+nav:
+  - 'Overview': index.md
+  - 'Quickstart': quickstart.md
+  - 'Dependency Checks': dependency-checks.md

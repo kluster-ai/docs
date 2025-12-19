@@ -2,11 +2,11 @@ title: Code Reviews
 hide: false
 nav:
   - 'Overview': index.md
-  - 'Installation': installation.md
-  - 'Quick Start': quickstart.md
-  - 'Tools reference': tools.md
+  - 'Review Modes': review-modes.md
+  - 'Get Started': get-started
+  - 'Agent Mode': agent-mode
+  - 'Instant IDE Mode': instant-ide-mode
   - 'Configuration': configuration
-  - 'Examples': examples
   - 'FAQ': faq.md
+  - 'Reference': reference
   - 'How to use activation codes': activation-codes.md
-
