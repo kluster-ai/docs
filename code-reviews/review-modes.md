@@ -1,11 +1,21 @@
 ---
-title: Review Modes
-description: Learn about kluster.ai's two review modes—Agent Mode for AI-assisted workflows and Instant IDE Mode for direct in-editor reviews.
+title: Code Reviews
+description: Learn how to use kluster.ai's Code Reviews to validate your code in real time—detecting bugs, security issues, and quality problems so you can ship safely.
 ---
 
-# Review Modes
+# Code Reviews
 
-Code Reviews offers two distinct modes to fit how you work. Whether you're coding with an AI assistant or reviewing code directly in your editor, kluster.ai adapts to your workflow.
+Code Reviews analyzes your code for bugs, security vulnerabilities, and quality issues. It works in two modes: **Agent Mode** for AI-assisted workflows, and **Instant IDE Mode** for on-demand reviews directly in your editor.
+
+The service integrates directly into your IDE or CLI (Cursor, VS Code, Windsurf, Claude Code, and others), analyzing code as you work.
+
+## Key features
+
+- **Flexible review modes**: Agent Mode for AI-assisted workflows, Instant IDE Mode for direct editor reviews.
+- **Comprehensive issue detection**: Analyzes 7 issue types — *Semantic, Intent, Logical, Security, Knowledge, Performance,* and *Quality*.
+- **Customizable sensitivity**: Configure detection sensitivity from *Low* to *Critical*.
+- **Dual analysis tools**: Real-time Code Review and Dependency Analysis for complete coverage.
+- **Instant fixes**: Apply suggested fixes with one click, or let your AI assistant handle them automatically.
 
 ## Agent Mode
 
@@ -13,84 +23,35 @@ Code Reviews offers two distinct modes to fit how you work. Whether you're codin
 
 Agent Mode works alongside your AI coding assistant. When the AI generates or modifies code, kluster.ai automatically reviews it in real-time. You can also ask your AI to review existing files on demand.
 
-- **Automatic agent reviews**: Triggered automatically when AI generates code
-- **Manual agent reviews**: Triggered when you ask your AI to review existing code
+- **Automatic agent reviews**: Triggered automatically when AI generates code.
+- **Manual agent reviews**: Triggered when you ask your AI to review existing code.
 
-**Supported tools**: Cursor, VS Code, Windsurf, Antigravity, Claude Code, Codex CLI
+**Compatible with**: Cursor, VS Code, Windsurf, Antigravity (IDEs) and Claude Code, Codex CLI (CLIs)
 
-[:octicons-arrow-right-24: Learn about Agent Mode](/code-reviews/agent-mode/)
-
----
+[:octicons-arrow-right-24: Get started with Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)
 
 ## Instant IDE Mode
 
 **For direct, in-editor reviews without AI.**
 
-Instant IDE Mode gives you immediate code reviews through your IDE's interface. Right-click any code, use a keyboard shortcut, or click a button in the extension sidebar—no AI assistant needed.
+Instant IDE Mode is an IDE extension that provides on-demand code reviews—no AI assistant needed. Available features include:
 
-- **Right-click menu**: Select code and review instantly
-- **Keyboard shortcut**: `Ctrl+Shift+K` for quick access
-- **Extension sidebar**: Review current file or all uncommitted changes
+- **Code block review**: Review selected code snippets.
+- **Current file review**: Analyze the file you're working on.
+- **Uncommitted changes review**: Check all modified files before committing.
 
-**Supported IDEs**: Cursor, VS Code, Windsurf, Antigravity
+**Compatible with**: Cursor, VS Code, Windsurf, Antigravity (IDEs only)
 
-[:octicons-arrow-right-24: Learn about Instant IDE Mode](/code-reviews/instant-ide-mode/)
+[:octicons-arrow-right-24: Get started with Instant IDE Mode](/code-reviews/instant-ide-mode/instant-actions/quickstart/)
 
----
+!!! tip "Need help choosing?"
+    See [Pick Your Workflow](/code-reviews/get-started/pick-your-workflow/) for a detailed comparison and decision guide.
 
-## Comparison
 
-| Feature | Agent Mode | Instant IDE Mode |
-|---------|------------|------------------|
-| **How it works** | AI assistant triggers reviews | You trigger reviews directly |
-| **Automatic reviews** | Yes, while AI codes | No |
-| **On-demand reviews** | Yes, ask your AI | Yes, click or shortcut |
-| **IDE extensions** | Yes | Yes |
-| **CLI tools** | Yes (Claude Code, Codex) | No |
-| **Requires AI assistant** | Yes | No |
-
-## Which mode should I use?
-
-**Use Agent Mode if:**
-
-- You code with AI assistants (Cursor, Copilot, Claude Code, etc.)
-- You want automatic reviews as code is generated
-- You prefer asking your AI to review files for you
-
-**Use Instant IDE Mode if:**
-
-- You write code directly without AI assistance
-- You want quick reviews via right-click or keyboard shortcut
-- You need to review uncommitted changes before committing
-
-**Use both!** Most developers use both modes. Agent Mode catches issues during AI-assisted coding, while Instant IDE Mode provides quick checks when you're writing code yourself.
 
 ## Next steps
 
-<div class="grid cards" markdown>
-
--   :material-robot: **Agent Mode**
-
-    ---
-
-    Set up automatic and manual agent reviews with your AI assistant.
-
-    [:octicons-arrow-right-24: Get started](/code-reviews/agent-mode/)
-
--   :material-cursor-default-click: **Instant IDE Mode**
-
-    ---
-
-    Review code directly from your editor interface.
-
-    [:octicons-arrow-right-24: Get started](/code-reviews/instant-ide-mode/)
-
--   :material-download: **Installation**
-
-    ---
-
-    Install kluster.ai in your IDE or CLI tool.
-
-    [:octicons-arrow-right-24: Install now](/code-reviews/get-started/installation/)
-
-</div>
+- **[Installation](/code-reviews/get-started/installation/)**: Install kluster.ai in your IDE or CLI tool.
+- **[Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Set up automatic and manual agent reviews.
+- **[Instant IDE Mode](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Get started with in-editor reviews.
+- **[Pick Your Workflow](/code-reviews/get-started/pick-your-workflow/)**: Compare modes and find the right fit.

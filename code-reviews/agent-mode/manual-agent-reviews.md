@@ -129,9 +129,9 @@ Manual reviews are great for understanding inherited code:
 Review this legacy payment module and explain any problems
 ```
 
-## Supported tools
+## Compatible with
 
-Manual agent reviews work with all Agent Mode supported tools:
+Manual agent reviews work with all Agent Mode compatible platforms:
 
 - **IDE Extensions**: Cursor, VS Code, Windsurf, Antigravity
 - **CLI Tools**: Claude Code, Codex CLI

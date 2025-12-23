@@ -1,7 +1,6 @@
 title: Code Reviews
 hide: false
 nav:
-  - 'Overview': index.md
   - 'Review Modes': review-modes.md
   - 'Get Started': get-started
   - 'Agent Mode': agent-mode

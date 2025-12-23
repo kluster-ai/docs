@@ -60,9 +60,9 @@ Automatic reviews trigger whenever your AI assistant:
 
 The review analyzes the **diff** (what changed), not the entire file, making it fast and focused.
 
-## Supported tools
+## Compatible with
 
-| Tool | Automatic Reviews |
+| Platform | Automatic Reviews |
 |------|-------------------|
 | Cursor | Yes |
 | VS Code (with Copilot) | Yes |

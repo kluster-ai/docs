@@ -42,12 +42,12 @@ Agent Mode integrates with your AI assistant to review code as it's generated. N
 | **Automatic** | AI generates/modifies code | Continuous protection while coding |
 | **Manual** | You ask the AI to review | Audit existing files on demand |
 
-### Supported tools
+### Compatible with
 
 - **IDE extensions**: Cursor, VS Code, Windsurf, Antigravity
 - **CLI tools**: Claude Code, Codex CLI
 
-[:octicons-arrow-right-24: Set up Agent Mode](/code-reviews/agent-mode/)
+[:octicons-arrow-right-24: Set up Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)
 
 ---
 
@@ -78,7 +78,7 @@ Instant IDE Mode provides on-demand reviews through your IDE interface. Select c
 !!! info "CLI tools"
     Instant IDE Mode is not available for CLI tools (Claude Code, Codex CLI). Use Agent Mode instead.
 
-[:octicons-arrow-right-24: Set up Instant IDE Mode](/code-reviews/instant-ide-mode/)
+[:octicons-arrow-right-24: Set up Instant IDE Mode](/code-reviews/instant-ide-mode/instant-actions/quickstart/)
 
 ---
 
@@ -119,7 +119,7 @@ The modes don't conflict—they complement each other. Install kluster.ai once a
 
     Automatic reviews for AI-assisted coding.
 
-    [:octicons-arrow-right-24: Get started](/code-reviews/agent-mode/)
+    [:octicons-arrow-right-24: Get started](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)
 
 -   :material-cursor-default-click: **Instant IDE Mode**
 
@@ -127,6 +127,6 @@ The modes don't conflict—they complement each other. Install kluster.ai once a
 
     Direct reviews from your editor.
 
-    [:octicons-arrow-right-24: Get started](/code-reviews/instant-ide-mode/)
+    [:octicons-arrow-right-24: Get started](/code-reviews/instant-ide-mode/instant-actions/quickstart/)
 
 </div>
