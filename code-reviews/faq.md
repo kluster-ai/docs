@@ -7,17 +7,17 @@ description: Find answers to common questions about kluster.ai Code Review, cove
 
 ## General
 
-??? question "What's the difference between Auto Review and Manual Review?"
-   - **Auto Review**: Triggers automatically when AI generates or modifies code via MCP integration. Works with Claude Code, Codex CLI, Cursor, VS Code, and other AI assistants.
+??? question "What's the difference between Agent Mode and Instant IDE Mode?"
+   - **Agent Mode**: For AI-assisted workflows. Reviews trigger automatically when AI generates code, or when you ask your AI assistant to review existing code. Works with Claude Code, Codex CLI, Cursor, VS Code, and other AI assistants.
 
-   - **Manual Review**: Is on-demand, you trigger it yourself by right-clicking code, and using keyboard shortcuts or clicking buttons in the extension. Review any code, whether you wrote it or not.
+   - **Instant IDE Mode**: Direct editor integration. You trigger reviews yourself by right-clicking code, using keyboard shortcuts, or clicking buttons in the extension sidebar. No AI assistant needed—review any code directly.
 
 ??? question "What IDEs and CLI tools are supported?"
     - **IDE Extensions**: Cursor, VS Code, Windsurf, Antigravity
 
     - **CLI Tools**: Claude Code, Codex CLI
 
-    See [Installation](/code-reviews/installation/) for setup instructions.
+    See [Installation](/code-reviews/get-started/installation/) for setup instructions.
 
 ??? question "What programming languages are supported?"
     kluster.ai is language agnostic and can review code in any programming language, including Python, TypeScript, JavaScript, Java, Go, Rust, C++, C#, Ruby, PHP, and more.
@@ -29,7 +29,7 @@ description: Find answers to common questions about kluster.ai Code Review, cove
     Yes. When using an AI coding assistant, Code Reviews works with any model available in supported IDEs, including Claude, GPT, Gemini, and others.
 
 ??? question "Can I review a full codebase?"
-    Yes, using Manual Review. You can review individual files, selected code blocks, or all uncommitted changes. For large codebases, we recommend reviewing file-by-file or focusing on changed files.
+    Yes, using Instant IDE Mode. You can review individual files, selected code blocks, or all uncommitted changes. For large codebases, we recommend reviewing file-by-file or focusing on changed files.
 
 ??? question "Can I exclude files or folders from reviews?"
     Currently, exclusion rules are configured at the project level through the kluster.ai platform. See [Custom Rules](/code-reviews/configuration/rules/) for setting up project-specific configurations.
@@ -51,19 +51,19 @@ description: Find answers to common questions about kluster.ai Code Review, cove
 
     We also continuously improve our engine to perform deeper reviews, optimizing for common issues our users encounter. If you have suggestions for improvement, contact us at [support@kluster.ai](mailto:support@kluster.ai).
 
-## Auto Review
+## Agent Mode
 
 ??? question "What triggers an automatic review?"
-    Auto Review triggers when your AI coding assistant generates or modifies code. This happens automatically, so you do not need to take any action. The code diff is sent to kluster.ai, and the results appear in your chat or terminal.
+    In Agent Mode, reviews trigger automatically when your AI coding assistant generates or modifies code. This happens without any action from you. The code diff is sent to kluster.ai, and the results appear in your chat or terminal.
 
 ??? question "Does kluster.ai apply changes automatically?"
-    No. kluster.ai identifies issues and suggests fixes, but doesn't modify your code directly. In Auto Review mode, the AI assistant decides whether to apply them—in most cases, it will automatically incorporate the fixes. In Manual Review mode, you apply fixes yourself using the "Fix with AI" button or manually. Either way, you remain in control.
+    No. kluster.ai identifies issues and suggests fixes, but doesn't modify your code directly. In Agent Mode, the AI assistant decides whether to apply them—in most cases, it will automatically incorporate the fixes. In Instant IDE Mode, you apply fixes yourself using the "Fix with AI" button or manually. Either way, you remain in control.
 
-??? question "Can I disable Auto Reviews temporarily?"
-    Yes. You can disable Auto Reviews from [Options](/code-reviews/configuration/options/) in the kluster.ai platform. Alternatively, you can disable the kluster.ai extension in your IDE, or for CLI tools, disable the MCP server.
+??? question "Can I disable automatic reviews temporarily?"
+    Yes. You can disable automatic reviews from [Options](/code-reviews/configuration/options/) in the kluster.ai platform. Alternatively, you can disable the kluster.ai extension in your IDE, or for CLI tools, disable the MCP server.
 
 ??? question "Does it work with multi-file edits?"
-    Yes. Auto review analyzes diffs across multiple files in a single review, understanding the context of changes that span your codebase.
+    Yes. Agent Mode analyzes diffs across multiple files in a single review, understanding the context of changes that span your codebase.
 
 ??? question "How does dependency checking work?"
     The Dependency Validator automatically checks packages before installation. When your AI assistant suggests adding a dependency, kluster.ai validates it for known vulnerabilities and license compliance before the install command runs.
@@ -71,17 +71,17 @@ description: Find answers to common questions about kluster.ai Code Review, cove
 ??? question "How do I rollback changes made based on kluster.ai feedback?"
     The changes are made by your AI assistant, not kluster.ai itself. You can revert changes in the file using your IDE undo functionality, Git commands, or simply ask the AI assistant to revert the changes.
 
-## Manual Review
+## Instant IDE Mode
 
-??? question "How do I trigger a Manual Review?"
-    You can trigger a Manual Review in three ways:
+??? question "How do I trigger an instant review?"
+    You can trigger an instant review in three ways:
 
     1. **Right-click** selected code → "Review with kluster.ai"
-    - Use the extension sidebar. Open the **Instant Review** dropdown and choose a file or uncommitted changes.
-    - Select code and use the **hint** button. This option is not available in Cursor yet.
+    2. Use the extension sidebar. Open the **Instant Review** dropdown and choose a file or uncommitted changes.
+    3. Select code and use the **hint** button. This option is not available in Cursor yet.
 
 ??? question "Can I review code I didn't write?"
-    Yes. Manual Review works on any code, including your own code, AI-generated code, or code from colleagues. This is useful for auditing existing codebases or reviewing pull requests.
+    Yes. Instant IDE Mode works on any code, including your own code, AI-generated code, or code from colleagues. This is useful for auditing existing codebases or reviewing pull requests.
 
 ??? question "Can I review a specific code block vs whole file?"
     Yes. Select the code you want to review, then right-click and choose **Review with kluster.ai**. You can review anything from a single function to an entire file.

@@ -22,21 +22,21 @@ Follow these steps to redeem your activation code:
 
 2. Click the **upgrade** button in the top right corner of the platform.
 
-    ![Upgrade button on kluster.ai platform](/images/code-reviews/code/faq/activation-codes/activation-code-1.webp)
+    ![Upgrade button on kluster.ai platform](/images/code-reviews/activation-codes/activation-code-1.webp)
 
 3. On the plans page, choose the subscription plan you want. Make sure your activation code matches the plan you select, then click **Subscribe**.
 
-    ![kluster.ai subscription plans](/images/code-reviews/code/faq/activation-codes/activation-code-2.webp)
+    ![kluster.ai subscription plans](/images/code-reviews/activation-codes/activation-code-2.webp)
 
     You'll be redirected to the Stripe checkout page.
 
 4. On the Stripe checkout page, click the **Add promotion code** section and paste your activation code.
 
-    ![Stripe checkout with promotion code field](/images/code-reviews/code/faq/activation-codes/activation-code-3.webp)
+    ![Stripe checkout with promotion code field](/images/code-reviews/activation-codes/activation-code-3.webp)
 
 5. Once you apply the code, Stripe will validate it and show the discount applied. The total due today will reflect the promotional credit.
 
-    ![Activation code applied successfully](/images/code-reviews/code/faq/activation-codes/activation-code-4.webp)
+    ![Activation code applied successfully](/images/code-reviews/activation-codes/activation-code-4.webp)
 
     Complete the checkout process by clicking **Subscribe**. Your promotional credits will be immediately applied to your account.
 

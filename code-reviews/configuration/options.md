@@ -7,7 +7,7 @@ description: Configure kluster.ai Code Review settings, from sensitivity levels 
 
 You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Code Reviews behavior through the platform settings or directly in your IDE. This allows you to tailor the review process to your specific needs, such as configuring sensitivity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
 
-![Code Review Options interface showing three numbered sections: Sensitivity Settings, Code Review Scope, and Enabled Tools](/images/code-reviews/code/configuration/configuration-1.webp)
+![Code Review Options interface showing three numbered sections: Sensitivity Settings, Code Review Scope, and Enabled Tools](/images/code-reviews/configuration/configuration-1.webp)
 
 ## 1. Sensitivity settings
 
@@ -44,5 +44,5 @@ Control which review tools run in your development environment. Enable or disabl
 ## Next steps
 
 - [Create custom rules](/code-reviews/configuration/rules/): Add project-specific development standards.
-- [View tools reference](/code-reviews/tools/): Understand the technical API details.
-- [Set up integrations](/code-reviews/quickstart/): Configure IDE integrations.
+- [View MCP tools reference](/code-reviews/reference/mcp-tools/): Understand the technical API details.
+- [Installation guide](/code-reviews/get-started/installation/): Set up Code Reviews in your IDE.

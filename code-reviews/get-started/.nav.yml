@@ -1,0 +1,5 @@
+title: Get Started
+hide: false
+nav:
+  - 'Installation': installation.md
+  - 'Pick your workflow': pick-your-workflow.md
