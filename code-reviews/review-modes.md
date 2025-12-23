@@ -23,6 +23,8 @@ The service integrates directly into your IDE or CLI (Cursor, VS Code, Windsurf,
 
 Agent Mode works alongside your AI coding assistant. When the AI generates or modifies code, kluster.ai automatically reviews it in real-time. You can also ask your AI to review existing files on demand.
 
+**Agent Mode also verifies *intent*—ensuring your AI actually did what you asked**, not just that the code works. This context-aware check is only possible when kluster.ai sees your original prompt.
+
 - **Automatic agent reviews**: Triggered automatically when AI generates code.
 - **Manual agent reviews**: Triggered when you ask your AI to review existing code.
 

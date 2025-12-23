@@ -61,7 +61,7 @@ Use it to review code you wrote yourself, audit files before committing, or chec
 
 If you use Cursor, VS Code, Windsurf, or Antigravity, you get the best of both worlds. Install kluster.ai once and both modes are available—switch seamlessly between AI-assisted coding and manual reviews without changing tools.
 
-Use Agent Mode when pair-programming with AI, switch to Instant IDE Mode when writing code yourself, and run "Review uncommitted changes" before every commit to catch anything missed.
+Use Agent Mode when pair-programming with AI, switch to Instant IDE Mode when writing code yourself, and run **Review uncommitted changes** before every commit to catch anything missed.
 
 ## Next steps
 

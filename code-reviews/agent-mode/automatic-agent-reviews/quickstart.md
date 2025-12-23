@@ -3,9 +3,9 @@ title: Automatic Agent Reviews Quickstart
 description: Get started with automatic code reviews when using AI assistants. See how kluster.ai reviews code in real-time as your AI generates it.
 ---
 
-# Automatic Agent Reviews Quickstart
+# Automatic Agent Reviews quickstart
 
-**Automatic agent reviews analyze your code in real time as your AI assistant generates it.** Problems are caught and fixed before they can cause issues.
+Learn how to use [kluster.ai](https://kluster.ai){target=_blank} with your preferred AI assistant to catch bugs, security flaws, and logic errors instantly—as your AI writes code.
 
 ## Prerequisites
 
@@ -27,8 +27,6 @@ Before getting started, ensure you have:
 
 The most powerful way to use Code Reviews is to let it work in the background. You don't need to change how you work—just ask your AI assistant for what you need.
 
-**How it works:**
-
 1.  **You prompt**: Ask your AI assistant to generate code (e.g., "Create a user login endpoint").
 2.  **AI generates**: The AI writes the code.
 3.  **kluster.ai verifies**: Code Reviews automatically analyzes the diff in real-time.
@@ -48,31 +46,24 @@ In this example, the AI creates an API endpoint but makes a critical security er
 
     ![Claude Code Auto Review - Unprotected API](/images/code-reviews/agent-mode/automatic-agent-reviews/claude-auto-review.webp)
 
-## What triggers automatic reviews
-
-Automatic reviews trigger whenever your AI assistant:
-
-- Creates new files with code
-- Modifies existing code
-- Adds new functions or classes
-- Changes logic in existing functions
-- Updates configuration files
-
-The review analyzes the **diff** (what changed), not the entire file, making it fast and focused.
-
 ## Compatible with
 
-| Platform | Automatic Reviews |
-|------|-------------------|
-| Cursor | Yes |
-| VS Code (with Copilot) | Yes |
-| Windsurf | Yes |
-| Antigravity | Yes |
-| Claude Code | Yes |
-| Codex CLI | Yes |
+- Cursor
+- VS Code (with Copilot)
+- Windsurf
+- Antigravity
+- Claude Code
+- Codex CLI
+
+## Configuration
+
+You can customize how automatic reviews work in your [configuration options](/code-reviews/configuration/options/):
+
+- **Enabled tools**: Toggle Code Review and Dependency Analysis on/off.
+- **Sensitivity**: Adjust how strictly issues are flagged (Low → Critical).
+- **Bug check types**: Select which issue types to check (Security, Logic, Performance, etc.).
 
 ## Next steps
 
-- **[Dependency checks](/code-reviews/agent-mode/automatic-agent-reviews/dependency-checks/)**: Learn about package validation
-- **[Manual agent reviews](/code-reviews/agent-mode/manual-agent-reviews/)**: On-demand reviews for existing code
-- **[Configuration](/code-reviews/configuration/options/)**: Customize review sensitivity
+- **[Dependency checks](/code-reviews/agent-mode/automatic-agent-reviews/dependency-checks/)**: Learn about package validation.
+- **[Manual agent reviews](/code-reviews/agent-mode/manual-agent-reviews/)**: On-demand reviews for existing code.
