@@ -17,9 +17,9 @@ This page documents the parameters and response formats you'll see when using th
 
 ## Parameters
 
-=== "Auto Review and Dependency Validator"
+=== "Automatic Reviews and Dependency Validator"
 
-    These tools analyze code changes and dependencies to detect bugs, security vulnerabilities, and other quality issues.
+    These tools analyze code changes and dependencies to detect bugs, security vulnerabilities, and other quality issues. Used in Agent Mode.
 
     ???+ interface "Parameters"
 
@@ -45,15 +45,15 @@ This page documents the parameters and response formats you'll see when using th
 
         Session identifier returned by previous tool calls. Used to maintain context across multiple review requests.
 
-=== "Manual Review"
+=== "Manual Review Tool"
 
-    The manual review tool is triggered only when explicitly requested by the user.
+    The manual review tool is triggered when explicitly requested. Used in both Agent Mode (when you ask your AI to review code) and Instant IDE Mode (when you use the extension UI).
 
     ???+ interface "Parameters"
 
         `user_requests` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-        Chronological sequence of user messages with current request marked as `>>> CURRENT REQUEST:`. Unlike auto review, this parameter is NOT auto-extracted in MCP environments and must be explicitly provided.
+        Chronological sequence of user messages with current request marked as `>>> CURRENT REQUEST:`. Unlike automatic reviews, this parameter is NOT auto-extracted in MCP environments and must be explicitly provided.
 
         ---
 

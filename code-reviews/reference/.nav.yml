@@ -1,6 +1,5 @@
 title: Reference
 hide: false
 nav:
-  - 'Overview': index.md
   - 'MCP Tools': mcp-tools.md
   - 'Response Schema': response-schema.md

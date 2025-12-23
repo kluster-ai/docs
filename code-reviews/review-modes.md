@@ -73,7 +73,7 @@ Instant IDE Mode gives you immediate code reviews through your IDE's interface. 
 
     ---
 
-    Set up automatic and manual reviews with your AI assistant.
+    Set up automatic and manual agent reviews with your AI assistant.
 
     [:octicons-arrow-right-24: Get started](/code-reviews/agent-mode/)
 

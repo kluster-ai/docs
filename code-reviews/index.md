@@ -5,22 +5,22 @@ description: Learn how to use kluster.ai's Code Reviews to validate your code in
 
 # Code Reviews
 
-Code Reviews analyzes your code for bugs, security vulnerabilities, and quality issues. It works in two modes: automatically when using AI coding assistants, or on-demand when you trigger a Manual Review.
+Code Reviews analyzes your code for bugs, security vulnerabilities, and quality issues. It works in two modes: **Agent Mode** for AI-assisted workflows, and **Instant IDE Mode** for on-demand reviews directly in your editor.
 
 The service integrates directly into your IDE or CLI (Cursor, VS Code, Windsurf, Claude Code, and others), analyzing code as you work.
 
 ## How Code Reviews works
 
-Whether you're working with an AI assistant or writing code yourself, Code Reviews adapts to your workflow. It offers two ways to validate your code:
+Whether you're working with an AI assistant or writing code yourself, Code Reviews adapts to your workflow:
 
-- **Auto Review**: Triggers automatically when AI generates or modifies code. Issues are caught and fixed in real-time as you work with your AI assistant.
-- **Manual Review**: On-demand reviews you trigger yourself. Right-click any code, use a shortcut, or review all uncommitted changes at once.
+- **[Agent Mode](/code-reviews/agent-mode/)**: For AI-assisted coding. Reviews trigger automatically when AI generates code, or on-demand when you ask your AI to review existing code.
+- **[Instant IDE Mode](/code-reviews/instant-ide-mode/)**: For direct editor integration. Right-click any code, use a shortcut, or click a button in the sidebar—no AI assistant needed.
 
-Both modes detect the same issue types and return actionable fixes you can apply immediately. See the [Quick Start](/code-reviews/quickstart/) to try it out.
+Both modes detect the same issue types and return actionable fixes you can apply immediately. See [Review Modes](/code-reviews/review-modes/) to understand which mode fits your workflow.
 
 ## Key features
 
-- **Flexible review modes**: Auto Reviews for AI-assisted workflows, Manual Reviews for any code you want to check.
+- **Flexible review modes**: Agent Mode for AI-assisted workflows, Instant IDE Mode for direct editor reviews.
 - **Comprehensive issue detection**: Analyzes 7 issue types — *Semantic, Intent, Logical, Security, Knowledge, Performance,* and *Quality*.
 - **Customizable sensitivity levels**: Configure detection sensitivity from *Low* to *Critical*.
 - **Dual analysis tools**: Real-time **Code Review** and **Dependency Analysis** for complete coverage.
@@ -53,21 +53,21 @@ Code Reviews is available as a native extension for IDEs and CLI tools. Get star
 
     ---
 
-    Cursor, VS Code, Windsurf, Antigravity—Manual Reviews or Auto Reviews.
+    Cursor, VS Code, Windsurf, Antigravity—Agent Mode and Instant IDE Mode.
 
-    [:octicons-arrow-right-24: View all IDEs](/code-reviews/installation/#__tabbed_1_2){target=\_blank}
+    [:octicons-arrow-right-24: View all IDEs](/code-reviews/get-started/installation/#ide-extensions){target=\_blank}
 
 -   :material-console: __CLI Tools__
-    
+
     ---
 
-    Claude Code, Codex CLI—AI-assisted reviews only.
+    Claude Code, Codex CLI—Agent Mode only.
 
-    [:octicons-arrow-right-24: View CLI](/code-reviews/installation/#__tabbed_1_5){target=\_blank}
+    [:octicons-arrow-right-24: View CLI](/code-reviews/get-started/installation/#cli-tools){target=\_blank}
 
 </div>
 
 ## Additional resources
 
-- **[Get started](/code-reviews/installation/)**: Run Code Reviews in minutes.
-- **[See real examples](/code-reviews/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
+- **[Get started](/code-reviews/get-started/)**: Run Code Reviews in minutes.
+- **[See real examples](/code-reviews/agent-mode/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.

@@ -1,4 +1,4 @@
 title: Instant Actions
 hide: false
 nav:
-  - 'Overview': index.md
+  - 'Quickstart': quickstart.md
