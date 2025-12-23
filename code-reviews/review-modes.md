@@ -45,7 +45,7 @@ Instant IDE Mode is an IDE extension that provides on-demand code reviews—no A
 [:octicons-arrow-right-24: Get started with Instant IDE Mode](/code-reviews/instant-ide-mode/instant-actions/quickstart/)
 
 !!! tip "Need help choosing?"
-    See [Pick Your Workflow](/code-reviews/get-started/pick-your-workflow/) for a detailed comparison and decision guide.
+    See [Pick your workflow](/code-reviews/get-started/pick-your-workflow/) for a detailed comparison and decision guide.
 
 
 
@@ -54,4 +54,4 @@ Instant IDE Mode is an IDE extension that provides on-demand code reviews—no A
 - **[Installation](/code-reviews/get-started/installation/)**: Install kluster.ai in your IDE or CLI tool.
 - **[Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Set up automatic and manual agent reviews.
 - **[Instant IDE Mode](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Get started with in-editor reviews.
-- **[Pick Your Workflow](/code-reviews/get-started/pick-your-workflow/)**: Compare modes and find the right fit.
+- **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Compare modes and find the right fit.

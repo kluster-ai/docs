@@ -40,13 +40,13 @@ In this example, the AI creates an API endpoint but makes a critical security er
 
     In VS Code, you'll see the review appear directly in the chat. kluster.ai flags the issue (e.g., "Unprotected API Endpoint") and provides a fix.
 
-    ![VS Code Auto Review - Unprotected API](/images/code-reviews/quick-start/vscode-auto-review.webp)
+    ![VS Code Auto Review - Unprotected API](/images/code-reviews/agent-mode/automatic-agent-reviews/vscode-auto-review.webp)
 
 === "Claude Code"
 
     In the terminal, Claude Code displays the review results immediately.
 
-    ![Claude Code Auto Review - Unprotected API](/images/code-reviews/quick-start/claude-auto-review.webp)
+    ![Claude Code Auto Review - Unprotected API](/images/code-reviews/agent-mode/automatic-agent-reviews/claude-auto-review.webp)
 
 ## What triggers automatic reviews
 

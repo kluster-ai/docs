@@ -18,7 +18,7 @@ Code Reviews protects you when starting new projects or adding libraries by vali
 
 When the AI suggests a package version with a known vulnerability, kluster.ai alerts you immediately, preventing the risk from entering your codebase.
 
-![Dependency Analysis Example](/images/code-reviews/quick-start/dependency-analysis.webp)
+![Dependency Analysis Example](/images/code-reviews/agent-mode/automatic-agent-reviews/dependency-analysis.webp)
 
 ## What gets checked
 

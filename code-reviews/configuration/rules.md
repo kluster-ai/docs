@@ -18,11 +18,11 @@ You can create manual rules to enforce your team's coding standards or connect G
 
 2. **Connect GitHub** (Optional): Connect your GitHub account to enable project-specific rules. In this context, each GitHub repository is treated as a 'project' - Code Reviews learns patterns from each repository and applies those specific rules when reviewing code for that project.
 
-    ![Connect to GitHub](/images/code-reviews/code/configuration/rules/rules-1.webp)
+    ![Connect to GitHub](/images/code-reviews/configuration/rules/rules-1.webp)
 
 3. Click **Add review rule** to create custom rules.
 
-    ![Add review rule button](/images/code-reviews/code/configuration/rules/rules-2.webp)
+    ![Add review rule button](/images/code-reviews/configuration/rules/rules-2.webp)
 
 4. **Configure rule scope**: Enter your rule and select the scope:
     - **All**: Rules apply globally to all your coding sessions.
@@ -30,7 +30,7 @@ You can create manual rules to enforce your team's coding standards or connect G
 
 5. Click **Save & Add Another** to add multiple rules or **Save** to finish.
 
-    ![Add code review rule dialog](/images/code-reviews/code/configuration/rules/rules-3.webp)
+    ![Add code review rule dialog](/images/code-reviews/configuration/rules/rules-3.webp)
 
 ## Next steps
 

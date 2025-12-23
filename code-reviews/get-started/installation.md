@@ -27,32 +27,32 @@ Before getting started, ensure you have:
 
     3. Click **Install** to add the extension into Antigravity.
 
-        ![Extension Installation Prompt in Antigravity](/images/code-reviews/code/integrations/antigravity/antigravity-integration-1.webp)
+        ![Extension Installation Prompt in Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-1.webp)
 
     Now that the extension is installed, you need to log in with your kluster.ai account:
 
     1. Click **Sign in** in the bottom left corner.
 
-        ![Sign In](/images/code-reviews/code/integrations/antigravity/antigravity-integration-2.webp)
+        ![Sign In](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-2.webp)
 
     2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account.
 
-        ![Open Pop-up](/images/code-reviews/code/integrations/antigravity/antigravity-integration-3.webp)
+        ![Open Pop-up](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-3.webp)
 
     3. Click **Open Antigravity**.
 
-        ![Open Antigravity](/images/code-reviews/code/integrations/antigravity/antigravity-integration-4.webp)
+        ![Open Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-4.webp)
 
     4. Click **Open** to install the MCP with your kluster.ai API key.
 
-        ![Open and Install MCP](/images/code-reviews/code/integrations/antigravity/antigravity-integration-5.webp)
+        ![Open and Install MCP](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-5.webp)
 
     Once installed, verify the setup:
 
     1. Navigate to **Settings** → **MCP Settings** → **Manage MCP Servers**.
     2. Verify that **Kluster-Verify-Code** appears with all tools enabled.
 
-        ![Active MCP Tools in Antigravity](/images/code-reviews/code/integrations/antigravity/antigravity-integration-6.webp)
+        ![Active MCP Tools in Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-6.webp)
 
 === "Cursor"
 
@@ -64,7 +64,7 @@ Before getting started, ensure you have:
 
     3. Click **Install** to add the extension into Cursor.
 
-        ![Extension Installation Prompt in Cursor](/images/code-reviews/code/integrations/cursor/cursor-integration-1.webp)
+        ![Extension Installation Prompt in Cursor](/images/code-reviews/get-started/installation/cursor/cursor-integration-1.webp)
 
     Once installed, you can verify the setup:
 
@@ -74,7 +74,7 @@ Before getting started, ensure you have:
 
         --8<-- 'text/code-reviews/code-tools.md'
 
-        ![Active MCP Tools in Cursor](/images/code-reviews/code/integrations/cursor/cursor-integration-2.webp)
+        ![Active MCP Tools in Cursor](/images/code-reviews/get-started/installation/cursor/cursor-integration-2.webp)
 
 === "VS Code / Codex VS Code"
 
@@ -86,41 +86,41 @@ Before getting started, ensure you have:
 
     3. Click **Install** to get the extension.
 
-        ![Install Extension](/images/code-reviews/code/integrations/vscode/vscode-integration-0.webp)
+        ![Install Extension](/images/code-reviews/get-started/installation/vscode/vscode-integration-0.webp)
 
     4. Select **Trust Publisher & Install**.
 
-        ![Trust publisher](/images/code-reviews/code/integrations/vscode/vscode-integration-1.webp)
+        ![Trust publisher](/images/code-reviews/get-started/installation/vscode/vscode-integration-1.webp)
 
     Now that the extension is installed, you need to log in with your kluster.ai account:
 
     1. Click on **Sign in** in the bottom right corner.
-       ![Sign In](/images/code-reviews/code/integrations/vscode/vscode-integration-2.webp)
+       ![Sign In](/images/code-reviews/get-started/installation/vscode/vscode-integration-2.webp)
 
     2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account.
 
-        ![Open Pop-up](/images/code-reviews/code/integrations/vscode/vscode-integration-3.webp)
+        ![Open Pop-up](/images/code-reviews/get-started/installation/vscode/vscode-integration-3.webp)
 
     3. Click **Open Visual Studio Code**.
 
-        ![Open Visual Studio Code](/images/code-reviews/code/integrations/vscode/vscode-integration-4.webp)
+        ![Open Visual Studio Code](/images/code-reviews/get-started/installation/vscode/vscode-integration-4.webp)
 
     4. Click **Open** to install the MCP with your kluster.ai API key.
 
-        ![Open and Install MCP](/images/code-reviews/code/integrations/vscode/vscode-integration-5.webp)
+        ![Open and Install MCP](/images/code-reviews/get-started/installation/vscode/vscode-integration-5.webp)
 
     5. To complete the setup, click **Install** to accept the MCP configuration for Code Reviews.
 
-         ![Install MCP](/images/code-reviews/code/integrations/vscode/vscode-integration-6.webp)
+         ![Install MCP](/images/code-reviews/get-started/installation/vscode/vscode-integration-6.webp)
     6. Press **Trust** to Install the MCP server.
-    ![MCP Server Trust Installation in VS Code](/images/code-reviews/code/integrations/vscode/vscode-integration-7.webp)
+    ![MCP Server Trust Installation in VS Code](/images/code-reviews/get-started/installation/vscode/vscode-integration-7.webp)
 
     Once installed, verify the setup:
 
     1. Open a Copilot chat window and select the **Tools** button on the bottom right corner.
     2. Scroll down the list and **Kluster-Code-Reviews-MCP** should appear. Make sure all tools are enabled.
 
-        ![Active MCP Tools in VS Code](/images/code-reviews/code/integrations/vscode/vscode-integration-8.webp)
+        ![Active MCP Tools in VS Code](/images/code-reviews/get-started/installation/vscode/vscode-integration-8.webp)
 
 === "Windsurf"
 
@@ -132,36 +132,36 @@ Before getting started, ensure you have:
 
     3. Click **Install** to add the extension into Windsurf.
 
-        ![Extension Installation Prompt in Windsurf](/images/code-reviews/code/integrations/windsurf/windsurf-integration-1.webp)
+        ![Extension Installation Prompt in Windsurf](/images/code-reviews/get-started/installation/windsurf/windsurf-integration-1.webp)
 
     4. Select **Trust Publisher & Install**.
 
-        ![Trust publisher](/images/code-reviews/code/integrations/windsurf/windsurf-integration-2.webp)
+        ![Trust publisher](/images/code-reviews/get-started/installation/windsurf/windsurf-integration-2.webp)
 
     Now that the extension is installed, you need to log in with your kluster.ai account:
 
     1. Click on **Sign in** in the bottom left corner.
 
-        ![Sign In](/images/code-reviews/code/integrations/windsurf/windsurf-integration-3.webp)
+        ![Sign In](/images/code-reviews/get-started/installation/windsurf/windsurf-integration-3.webp)
 
     2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account.
 
-        ![Open Pop-up](/images/code-reviews/code/integrations/windsurf/windsurf-integration-4.webp)
+        ![Open Pop-up](/images/code-reviews/get-started/installation/windsurf/windsurf-integration-4.webp)
 
     3. Click **Open Windsurf**.
 
-        ![Open Windsurf](/images/code-reviews/code/integrations/windsurf/windsurf-integration-5.webp)
+        ![Open Windsurf](/images/code-reviews/get-started/installation/windsurf/windsurf-integration-5.webp)
 
     4. Click **Open** to install the MCP with your kluster.ai API key.
 
-        ![Open and Install MCP](/images/code-reviews/code/integrations/windsurf/windsurf-integration-6.webp)
+        ![Open and Install MCP](/images/code-reviews/get-started/installation/windsurf/windsurf-integration-6.webp)
 
     Once installed, verify the setup:
 
     1. Navigate to **Options** → **Windsurf Settings** → **MCP Servers** → **Open MCP Marketplace**.
     2. You should see **Kluster-Verify-Code** with all tools enabled.
 
-        ![Active MCP Tools in Windsurf](/images/code-reviews/code/integrations/windsurf/windsurf-integration-7.webp)
+        ![Active MCP Tools in Windsurf](/images/code-reviews/get-started/installation/windsurf/windsurf-integration-7.webp)
 
 === "Claude Code"
 
@@ -198,7 +198,7 @@ Before getting started, ensure you have:
 
         --8<-- 'code/code-reviews/integrations/claudecode/integration-4.md'
 
-    ![Claude Code Installation Demo](/images/code-reviews/quick-start/claude.gif)
+    ![Claude Code Installation Demo](/images/code-reviews/get-started/installation/claudecode/claude.gif)
 
 === "Codex CLI"
 
@@ -231,7 +231,7 @@ Before getting started, ensure you have:
 
     Upon successful installation, all kluster review tools will appear in the tools list, including auto, manual, and dependency check.
 
-    ![Codex CLI Installation Demo](/images/code-reviews/quick-start/codex-cli.gif)
+    ![Codex CLI Installation Demo](/images/code-reviews/get-started/installation/codex-cli/codex-cli.gif)
 
 ## Next steps
 
