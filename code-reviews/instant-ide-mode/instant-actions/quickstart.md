@@ -5,7 +5,7 @@ description: Write code, verify on your terms. Three ways to trigger reviews in 
 
 # Instant Actions quickstart
 
-Three ways to trigger reviews in your editor with [kluster.ai](https://kluster.ai){target=_blank}: select code and right-click, click the hint button when it appears, or scan uncommitted changes.
+With [kluster.ai](https://kluster.ai){target=_blank}, you can trigger reviews three ways: right-click any selection, use hint buttons, or scan uncommitted changes.
 
 ## Prerequisites
 
