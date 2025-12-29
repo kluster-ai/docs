@@ -24,7 +24,7 @@ Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/re
 
 ## Full content for each doc page
 
-Doc-Content: https://docs.kluster.ai/code-reviews\activation-codes/
+Doc-Content: https://docs.kluster.ai/code-reviews/activation-codes/
 --- BEGIN CONTENT ---
 ---
 title: How to use activation codes
@@ -83,7 +83,7 @@ If your activation code doesn't work:
 If you encounter any issues with activation codes, join our [Discord community](https://discord.com/invite/klusterai){target=_blank} for support.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\agent-mode\automatic-agent-reviews\dependency-checks/
+Doc-Content: https://docs.kluster.ai/code-reviews/agent-mode/automatic-agent-reviews/dependency-checks/
 --- BEGIN CONTENT ---
 ---
 title: Dependency Checks
@@ -112,7 +112,7 @@ When the AI suggests a package version with a known vulnerability, kluster.ai al
 - **[Configuration](/code-reviews/configuration/options/)**: Customize dependency check behavior.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\agent-mode\automatic-agent-reviews\quickstart/
+Doc-Content: https://docs.kluster.ai/code-reviews/agent-mode/automatic-agent-reviews/quickstart/
 --- BEGIN CONTENT ---
 ---
 title: Automatic Agent Reviews Quickstart
@@ -187,7 +187,7 @@ You can customize how automatic reviews work in your [configuration options](/co
 - **[Manual agent reviews](/code-reviews/agent-mode/manual-agent-reviews/)**: On-demand reviews for existing code.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\agent-mode\examples\cursor-firebase-nextjs/
+Doc-Content: https://docs.kluster.ai/code-reviews/agent-mode/examples/cursor-firebase-nextjs/
 --- BEGIN CONTENT ---
 ---
 title: Cursor: Firebase Authentication with Next.js
@@ -453,7 +453,7 @@ The more complex the task, the more valuable this real-time verification becomes
 **Learn more**: Explore our [MCP tools reference](/code-reviews/reference/mcp-tools/) to understand all issue types and priority levels that Code Reviews monitors.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\agent-mode\examples\vscode-admin-endpoint/
+Doc-Content: https://docs.kluster.ai/code-reviews/agent-mode/examples/vscode-admin-endpoint/
 --- BEGIN CONTENT ---
 ---
 title: VS Code: Secure Admin Endpoints with Express
@@ -604,7 +604,7 @@ Admin endpoints require special security attention that AI often misses:
 **Learn more**: Explore our [MCP tools reference](/code-reviews/reference/mcp-tools/) to understand all vulnerability types that Code Reviews monitors.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\agent-mode\manual-agent-reviews/
+Doc-Content: https://docs.kluster.ai/code-reviews/agent-mode/manual-agent-reviews/
 --- BEGIN CONTENT ---
 ---
 title: Manual Agent Reviews
@@ -630,7 +630,7 @@ Manual agent reviews let you ask your AI assistant to review existing code—not
 - **[Examples](/code-reviews/agent-mode/examples/cursor-firebase-nextjs/)**: See Agent Mode in action.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\configuration\options/
+Doc-Content: https://docs.kluster.ai/code-reviews/configuration/options/
 --- BEGIN CONTENT ---
 ---
 title: Options
@@ -682,7 +682,7 @@ Control which review tools run in your development environment. Enable or disabl
 - [Installation guide](/code-reviews/get-started/installation/): Set up Code Reviews in your IDE.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\configuration\rules/
+Doc-Content: https://docs.kluster.ai/code-reviews/configuration/rules/
 --- BEGIN CONTENT ---
 # Custom rules
 
@@ -724,7 +724,7 @@ You can create manual rules to enforce your team's coding standards or connect G
 - **[See real examples](/code-reviews/agent-mode/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\faq/
+Doc-Content: https://docs.kluster.ai/code-reviews/faq/
 --- BEGIN CONTENT ---
 ---
 title: Frequently Asked Questions
@@ -823,7 +823,7 @@ description: Find answers to common questions about kluster.ai Code Review, cove
     - **Ambient Background Reviews (Beta, Enterprise plan)**: Automatically review your code for issues and suggestions as you work, without requiring you to trigger anything. Enable it from the "Enabled Tools" section in [Options](/code-reviews/configuration/options/).
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\get-started\installatio/
+Doc-Content: https://docs.kluster.ai/code-reviews/get-started/installatio/
 --- BEGIN CONTENT ---
 ---
 title: Get started with Code Reviews
@@ -1163,7 +1163,7 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
 - **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Decide which mode fits your workflow
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\get-started\pick-your-workflow/
+Doc-Content: https://docs.kluster.ai/code-reviews/get-started/pick-your-workflow/
 --- BEGIN CONTENT ---
 ---
 title: Pick your workflow
@@ -1236,7 +1236,7 @@ Use Agent Mode when pair-programming with AI, switch to Instant IDE Mode when wr
 - **[Instant IDE Mode quickstart](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Set up on-demand reviews in your editor.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\instant-ide-mode\instant-actions\quickstart/
+Doc-Content: https://docs.kluster.ai/code-reviews/instant-ide-mode/instant-actions/quickstart/
 --- BEGIN CONTENT ---
 ---
 title: Instant Actions Quickstart
@@ -1321,7 +1321,7 @@ You can customize how instant reviews work in your [configuration options](/code
 - **[Configuration Options](/code-reviews/configuration/options/)**: Customize Code Reviews behavior for your workflow.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\reference\mcp-tools/
+Doc-Content: https://docs.kluster.ai/code-reviews/reference/mcp-tools/
 --- BEGIN CONTENT ---
 ---
 title: MCP Tools Reference
@@ -1409,7 +1409,7 @@ All code review tools return the same response structure. See the [Response Sche
 - **[Installation](/code-reviews/get-started/installation/)**: Set up kluster.ai in your IDE
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\reference\response-schema/
+Doc-Content: https://docs.kluster.ai/code-reviews/reference/response-schema/
 --- BEGIN CONTENT ---
 ---
 title: Response Schema
@@ -1502,7 +1502,7 @@ Code review assigns priority levels to detected issues, helping you focus on the
 - **[Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Learn how reviews work with AI assistants
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews\review-modes/
+Doc-Content: https://docs.kluster.ai/code-reviews/review-modes/
 --- BEGIN CONTENT ---
 ---
 title: Code Reviews
