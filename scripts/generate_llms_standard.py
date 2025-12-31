@@ -173,7 +173,7 @@ def generate_standard_llms():
 
     # Output in repo root, not nested
     output_file = os.path.join(repo_root, "llms-full.txt")
-    with open(output_file, "w", encoding="utf-8") as f:
+    with open(output_file, "w", encoding="utf-8", newline='\n') as f:
         f.write(llms_content)
 
     print(f"llms-full.txt created or updated at: {output_file}")

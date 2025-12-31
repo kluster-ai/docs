@@ -123,7 +123,7 @@ def generate_llms_txt(config_path: str):
     ]
 
     output_path = Path(config.get("output_path", "llms.txt"))
-    with open(output_path, "w", encoding="utf-8") as f:
+    with open(output_path, "w", encoding="utf-8", newline='\n') as f:
         f.write("\n".join(content))
     print(f"✅ llms.txt generated at: {output_path}")
 

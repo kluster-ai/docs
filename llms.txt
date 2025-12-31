@@ -16,14 +16,14 @@ This file is intended for AI models and developers. Use it to:
 
 ## Docs
 This section lists documentation pages. Each entry includes the page title, a direct link to the raw Markdown file, and a short description. Use this section to answer questions about core functionality, architecture, and features. If a question is about how or why something works, check here first.
-- [Quick Start](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/quickstart.md): Learn how to use Code Reviews in your daily workflow. Trigger reviews automatically or manually, interpret results, and apply fixes.
-- [Get started with Code Reviews](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/installation.md): Set up kluster.ai Code Reviews in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
-- [tools](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/tools.md): No description available.
+- [Automatic Agent Reviews Quickstart](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/agent-mode/automatic-agent-reviews/quickstart.md): Learn how to use Code Reviews in your daily workflow. Trigger reviews automatically, interpret results, and apply fixes.
+- [Installation](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/get-started/installation.md): Set up kluster.ai Code Reviews in minutes. Scan AI-generated code for errors, vulnerabilities, and performance issues with Cursor and AI assistants.
+- [MCP Tools](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/reference/mcp-tools.md): Reference documentation for kluster.ai MCP tools.
 - [Options](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/configuration/options.md): Configure kluster.ai Code Reviews settings including sensitivity levels, bug types, and enabled tools for AI-generated code reviews.
 - [rules](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/configuration/rules.md): No description available.
 - [How to use activation codes](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/faq/activation-codes.md): This guide explains how to redeem activation codes and apply them to your kluster account
-- [cursor-firebase-nextjs](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/examples/cursor-firebase-nextjs.md): No description available.
-- [vscode-admin-endpoint](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/examples/vscode-admin-endpoint.md): No description available.
+- [Cursor Firebase Example](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/agent-mode/examples/cursor-firebase-nextjs.md): Example of using kluster.ai with Cursor and Firebase.
+- [VS Code Admin Endpoint Example](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/agent-mode/examples/vscode-admin-endpoint.md): Example of securing an admin endpoint with kluster.ai in VS Code.
 
 ## Source Code Repos
 Frequently used source code repositories essential for working with this project. Each entry includes the repository name, GitHub URL, and a short description of what the repo contains or enables. These repositories contain the source code referenced by these docs. Use them for API references, code examples, or implementation details.

@@ -1,0 +1,5 @@
+title: Reference
+hide: false
+nav:
+  - 'MCP Tools': mcp-tools.md
+  - 'Response Schema': response-schema.md
