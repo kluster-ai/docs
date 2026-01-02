@@ -35,7 +35,7 @@ Yes. When using an AI coding assistant, Code Reviews works with any model availa
 
 Yes, using Manual Review. You can review individual files, selected code blocks, or all uncommitted changes. For large codebases, we recommend reviewing file-by-file or focusing on changed files.
 
-## Can I exclude files or folders from reviews
+## Can I exclude files or folders from reviews?
 
 Currently, exclusion rules are configured at the project level through the kluster.ai platform. See [Custom Rules](/code-reviews/configuration/rules/) for setting up project-specific configurations.
 
