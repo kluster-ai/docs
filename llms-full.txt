@@ -7,14 +7,20 @@ Documentation: https://docs.kluster.ai
 
 ## List of doc pages:
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/activation-codes.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/agent-mode/automatic-agent-reviews/dependency-checks.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/agent-mode/automatic-agent-reviews/quickstart.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/agent-mode/examples/cursor-firebase-nextjs.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/agent-mode/examples/vscode-admin-endpoint.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/agent-mode/manual-agent-reviews.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/configuration/options.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/configuration/rules.md
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/examples/cursor-firebase-nextjs.md
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/examples/vscode-admin-endpoint.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/faq.md
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/installation.md
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/quickstart.md
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/tools.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/get-started/installation.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/get-started/pick-your-workflow.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/instant-ide-mode/instant-actions/quickstart.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/reference/mcp-tools.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/reference/response-schema.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/review-modes.md
 
 ## Full content for each doc page
 
@@ -44,21 +50,21 @@ Follow these steps to redeem your activation code:
 
 2. Click the **upgrade** button in the top right corner of the platform.
 
-    ![Upgrade button on kluster.ai platform](/images/code-reviews/code/faq/activation-codes/activation-code-1.webp)
+    ![Upgrade button on kluster.ai platform](/images/code-reviews/activation-codes/activation-code-1.webp)
 
 3. On the plans page, choose the subscription plan you want. Make sure your activation code matches the plan you select, then click **Subscribe**.
 
-    ![kluster.ai subscription plans](/images/code-reviews/code/faq/activation-codes/activation-code-2.webp)
+    ![kluster.ai subscription plans](/images/code-reviews/activation-codes/activation-code-2.webp)
 
     You'll be redirected to the Stripe checkout page.
 
 4. On the Stripe checkout page, click the **Add promotion code** section and paste your activation code.
 
-    ![Stripe checkout with promotion code field](/images/code-reviews/code/faq/activation-codes/activation-code-3.webp)
+    ![Stripe checkout with promotion code field](/images/code-reviews/activation-codes/activation-code-3.webp)
 
 5. Once you apply the code, Stripe will validate it and show the discount applied. The total due today will reflect the promotional credit.
 
-    ![Activation code applied successfully](/images/code-reviews/code/faq/activation-codes/activation-code-4.webp)
+    ![Activation code applied successfully](/images/code-reviews/activation-codes/activation-code-4.webp)
 
     Complete the checkout process by clicking **Subscribe**. Your promotional credits will be immediately applied to your account.
 
@@ -77,101 +83,111 @@ If your activation code doesn't work:
 If you encounter any issues with activation codes, join our [Discord community](https://discord.com/invite/klusterai){target=_blank} for support.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/configuration/options/
+Doc-Content: https://docs.kluster.ai/code-reviews/agent-mode/automatic-agent-reviews/dependency-checks/
 --- BEGIN CONTENT ---
 ---
-title: Options
-description: Configure kluster.ai Code Review settings, from sensitivity levels to issue types and enabled tools used to verify code across your workflow.
+title: Dependency Checks
+description: Learn how kluster.ai validates packages and dependencies before installation, catching vulnerabilities and license issues automatically.
 ---
 
-# Options
+# Dependency Checks
 
-You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Code Reviews behavior through the platform settings or directly in your IDE. This allows you to tailor the review process to your specific needs, such as configuring sensitivity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
+Code Reviews protects you when starting new projects or adding libraries by validating dependencies before installation.
 
-![Code Review Options interface showing three numbered sections: Sensitivity Settings, Code Review Scope, and Enabled Tools](/images/code-reviews/code/configuration/configuration-1.webp)
+## How dependency checks work
 
-## 1. Sensitivity settings
+1.  **You prompt**: Ask your AI to start a project (e.g., "Scaffold a Next.js app with Auth.js").
+2.  **AI suggests**: The AI lists the necessary dependencies.
+3.  **kluster.ai verifies**: The Dependency Validator checks every package for security vulnerabilities and license compliance before you install them.
 
-Configure the minimum sensitivity level for Code Reviews issue reporting. Set your threshold based on your team's needs:
 
-- `Low`: Detects even the smallest potential issues.
-- `Medium`: Suitable for projects requiring strong security and high code quality.
-- `High`: (Recommended) Strong protection against security and quality issues while maintaining good performance.
-- `Critical`: Focuses only on critical issues for faster iteration and smoother coding experience.
+When the AI suggests a package version with a known vulnerability, kluster.ai alerts you immediately, preventing the risk from entering your codebase.
 
-The ideal setting depends on your use case. For example, a **High** level is a good starting point, but you might want to set it to **Medium** for production code.
+![Dependency Analysis Example](/images/code-reviews/agent-mode/automatic-agent-reviews/dependency-analysis.webp)
 
-## 2. Code review scope
-
-Select which types of issues Code Reviews detects during code analysis. You have full control over which bug types to check for through simple on/off toggles.
-
-|     Type      |           Description           |                Example                |
-|:-------------:|:-------------------------------:|:-------------------------------------:|
-|   `intent`    | Code doesn't match user request | User asked for sorting, got filtering |
-|  `semantic`   |    Meaning and type errors      |        Wrong variable type used       |
-|  `knowledge`  |    Best practice violations     |       Not following conventions       |
-| `performance` |       Performance issues        |        Inefficient algorithms         |
-|   `quality`   |      Code quality problems      |        Poor naming, complexity        |
-|   `logical`   |     Control flow errors         |           Off-by-one errors           |
-|  `security`   |    Security vulnerabilities     |          SQL injection risks          |
-
-## 3. Enabled tools
-
-Control which review tools run in your development environment. Enable or disable each tool based on your project's specific needs and workflow.
-
-- `Real-time Code Review`: For code quality reviews.
-- `Dependency Analysis`: For package and dependency security.
 
 ## Next steps
 
-- [Create custom rules](/code-reviews/configuration/rules/): Add project-specific development standards.
-- [View tools reference](/code-reviews/tools/): Understand the technical API details.
-- [Set up integrations](/code-reviews/quickstart/): Configure IDE integrations.
+- **[Manual agent reviews](/code-reviews/agent-mode/manual-agent-reviews/)**: Review existing code on demand.
+- **[Configuration](/code-reviews/configuration/options/)**: Customize dependency check behavior.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/configuration/rules/
+Doc-Content: https://docs.kluster.ai/code-reviews/agent-mode/automatic-agent-reviews/quickstart/
 --- BEGIN CONTENT ---
-# Custom rules
+---
+title: Automatic Agent Reviews Quickstart
+description: Get started with automatic code reviews when using AI assistants. See how kluster.ai reviews code in real-time as your AI generates it.
+---
 
-Rules define practices, guidelines, and patterns that maintain code quality for your projects. When connected to GitHub, each repository becomes a project with its own learned rules. You can also create manual rules that apply globally or to specific projects. [kluster.ai](https://kluster.ai){target=_blank} Code Reviews automatically checks code changes against these rules.
+# Automatic Agent Reviews quickstart
 
-## Rule types
+Learn how to use [kluster.ai](https://kluster.ai){target=_blank} with your preferred AI assistant to catch bugs, security flaws, and logic errors instantly—as your AI writes code.
 
-- **Manual rules**: Custom rules you create based on your team's specific requirements and coding standards.
-- **Learned rules**: Automatically extracted from your GitHub repositories, continuously updated to reflect your codebase patterns.
+## Prerequisites
 
-## Set up instructions
+Before getting started, ensure you have:
 
-You can create manual rules to enforce your team's coding standards or connect GitHub to automatically extract patterns from your repositories. Rules can be applied globally or to specific projects.
+-- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **kluster.ai installed in your IDE**: Follow the [Installation guide](/code-reviews/get-started/installation/) to set it up in your favourite IDE.
 
-!!! info "Extraction rate limit"
-    Rule extraction from repositories is limited to once per hour. Wait 60 minutes between extraction requests.
 
-1. **Access the platform**: Navigate to [Custom Code Review Rules](https://platform.kluster.ai/custom-code-review-rules){target=_blank}.
+## How automatic reviews work
 
-2. **Connect GitHub** (Optional): Connect your GitHub account to enable project-specific rules. In this context, each GitHub repository is treated as a 'project' - Code Reviews learns patterns from each repository and applies those specific rules when reviewing code for that project.
+<div class="embed-container">
+    <iframe
+        src="https://www.youtube.com/embed/-V0VsqgTza8"
+        title="Instant Code Reviews with kluster.ai"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        loading="lazy">
+    </iframe>
+</div>
 
-    ![Connect to GitHub](/images/code-reviews/code/configuration/rules/rules-1.webp)
+The most powerful way to use Code Reviews is to let it work in the background. You don't need to change how you work—just ask your AI assistant for what you need.
 
-3. Click **Add review rule** to create custom rules.
+1.  **You prompt**: Ask your AI assistant to generate code (e.g., "Create a user login endpoint").
+2.  **AI generates**: The AI writes the code.
+3.  **kluster.ai verifies**: Code Reviews automatically analyzes the diff in real-time.
 
-    ![Add review rule button](/images/code-reviews/code/configuration/rules/rules-2.webp)
 
-4. **Configure rule scope**: Enter your rule and select the scope:
-    - **All**: Rules apply globally to all your coding sessions.
-    - **Project-specific**: Select a repository from the dropdown (requires GitHub connection).
+In this example, the AI creates an API endpoint but makes a critical security error that kluster.ai intervenes to fix.
 
-5. Click **Save & Add Another** to add multiple rules or **Save** to finish.
+=== "VS Code"
 
-    ![Add code review rule dialog](/images/code-reviews/code/configuration/rules/rules-3.webp)
+    In VS Code, you'll see the review appear directly in the chat. kluster.ai flags the issue (e.g., "Unprotected API Endpoint") and provides a fix.
+
+    ![VS Code Auto Review - Unprotected API](/images/code-reviews/agent-mode/automatic-agent-reviews/vscode-auto-review.webp)
+
+=== "Claude Code"
+
+    In the terminal, Claude Code displays the review results immediately.
+
+    ![Claude Code Auto Review - Unprotected API](/images/code-reviews/agent-mode/automatic-agent-reviews/claude-auto-review.webp)
+
+## Compatible with
+
+- Cursor
+- VS Code (with Copilot)
+- Windsurf
+- Antigravity
+- Claude Code
+- Codex CLI
+
+## Configuration
+
+You can customize how automatic reviews work in your [configuration options](/code-reviews/configuration/options/):
+
+- **Enabled tools**: Toggle Code Review and Dependency Analysis on/off.
+- **Sensitivity**: Adjust how strictly issues are flagged (Low → Critical).
+- **Bug check types**: Select which issue types to check (Security, Logic, Performance, etc.).
 
 ## Next steps
 
-- **[View all integrations](/code-reviews/quickstart/)**: Set up Code Reviews in your preferred IDE.
-- **[See real examples](/code-reviews/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
+- **[Dependency checks](/code-reviews/agent-mode/automatic-agent-reviews/dependency-checks/)**: Learn about package validation.
+- **[Manual agent reviews](/code-reviews/agent-mode/manual-agent-reviews/)**: On-demand reviews for existing code.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/examples/cursor-firebase-nextjs/
+Doc-Content: https://docs.kluster.ai/code-reviews/agent-mode/examples/cursor-firebase-nextjs/
 --- BEGIN CONTENT ---
 ---
 title: Cursor: Firebase Authentication with Next.js
@@ -192,9 +208,9 @@ As kluster.ai services work via MCP, the API key is created and configured for y
 
 ## Setup
 
-Getting Code Reviews working in Cursor takes just one click. Visit our [quickstart guide](/code-reviews/quickstart/) and click **Add to Cursor** for automatic installation.
+Getting Code Reviews working in Cursor takes just one click. Visit our [installation guide](/code-reviews/get-started/installation/) and click **Add to Cursor** for automatic installation.
 
-For other IDEs, see our [MCP-compatible integration guides](/code-reviews/quickstart/).
+For other IDEs, see our [installation guide](/code-reviews/get-started/installation/).
 
 ## Next.js e-commerce
 
@@ -206,7 +222,7 @@ We used **Gemini 2.5 Flash** (Cursor's standard free model) in **agentic mode** 
 
 Our prompt was to _implement a real user login with Firebase_ + Firebase default app setting file.
 
-![Cursor showing e-commerce app and AI's Firebase implementation plan](/images/code-reviews/code/examples/cursor/example-cursor-1.webp)
+![Cursor showing e-commerce app and AI's Firebase implementation plan](/images/code-reviews/agent-mode/examples/cursor/example-cursor-1.webp)
 
 The AI responded confidently with a detailed 5-step plan:
 
@@ -296,7 +312,7 @@ export async function POST(req: NextRequest) {
 
 The screenshot below shows Cursor's interface with Code Reviews's alert panel displaying a critical P1 Intent violation. The alert clearly identifies that the AI removed working Firebase authentication logic from the login API route, replacing functional code with a placeholder response.
 
-![Code Reviews alert showing breaking changes detected in login API route](/images/code-reviews/code/examples/cursor/example-cursor-2.webp){ width="75%" }
+![Code Reviews alert showing breaking changes detected in login API route](/images/code-reviews/agent-mode/examples/cursor/example-cursor-2.webp){ width="75%" }
 
 Code Reviews provided the following response:
 
@@ -319,7 +335,7 @@ What happened? AI created a signup endpoint without input validation.
 export async function POST(request: NextRequest) {
   const body = await request.json();
   const { email, password, name } = body; // ❌ No validation!
-  
+
   const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 }
 ```
@@ -339,7 +355,7 @@ import { SignupSchema } from '@/lib/validation';
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
-  
+
   // ✅ Validate input
   const validationResult = SignupSchema.safeParse(body);
   if (!validationResult.success) {
@@ -348,7 +364,7 @@ export async function POST(request: NextRequest) {
       details: validationResult.error.issues
     }, { status: 400 });
   }
-  
+
   const { email, password, name } = validationResult.data;
   const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 }
@@ -385,7 +401,7 @@ const login = async (email: string, password: string) => {
 
 The screenshot below displays Cursor with Code Reviews's alert highlighting a P1 Intent violation. The alert detects that the AI has regressed the authentication architecture by reverting from the Firebase implementation back to the original localStorage and API-based approach, undoing the intended migration.
 
-![Code Reviews alert showing architecture regression from Firebase back to localStorage](/images/code-reviews/code/examples/cursor/example-cursor-3.webp){ width="75%" }
+![Code Reviews alert showing architecture regression from Firebase back to localStorage](/images/code-reviews/agent-mode/examples/cursor/example-cursor-3.webp){ width="75%" }
 
 
 Code Reviews provided the following response:
@@ -420,11 +436,11 @@ By following Code Reviews's guidance at each step, Gemini 2.5 Flash completed th
 
 The following image shows the Firebase console showing the `code@verify.com` user creation:
 
-![Firebase Authentication console showing successfully created users](/images/code-reviews/code/examples/cursor/example-cursor-4.webp)
+![Firebase Authentication console showing successfully created users](/images/code-reviews/agent-mode/examples/cursor/example-cursor-4.webp)
 
 Users can now successfully login into the e-commerce app and Firebase user created:
 
-![E-commerce app showing successful login with code@verify.com user](/images/code-reviews/code/examples/cursor/example-cursor-5.webp)
+![E-commerce app showing successful login with code@verify.com user](/images/code-reviews/agent-mode/examples/cursor/example-cursor-5.webp)
 
 The migration from `localStorage` to Firebase authentication was completed without the typical debugging cycles. [Code Reviews](/code-reviews/) caught each issue in real-time, allowing us to fix problems immediately rather than discovering them during testing.
 
@@ -434,10 +450,10 @@ Even with clear prompts and detailed plans, AI execution can go wrong. Code Revi
 
 The more complex the task, the more valuable this real-time verification becomes.
 
-**Learn more**: Explore our [tools reference](/code-reviews/tools/) to understand all issue types and priority levels that Code Reviews monitors.
+**Learn more**: Explore our [MCP tools reference](/code-reviews/reference/mcp-tools/) to understand all issue types and priority levels that Code Reviews monitors.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/examples/vscode-admin-endpoint/
+Doc-Content: https://docs.kluster.ai/code-reviews/agent-mode/examples/vscode-admin-endpoint/
 --- BEGIN CONTENT ---
 ---
 title: VS Code: Secure Admin Endpoints with Express
@@ -459,7 +475,7 @@ As kluster.ai services work via MCP, the API key is created and configured for y
 
 ## Setup
 
-Getting Code Reviews working in VS Code takes just one click. Visit the [Code Reviews quickstart guide](/code-reviews/quickstart/#__tabbed_1_2) and click **Add to VS Code** for automatic installation.
+Getting Code Reviews working in VS Code takes just one click. Visit the [installation guide](/code-reviews/get-started/installation/) and click **Add to VS Code** for automatic installation.
 
 ## Express API with product management
 
@@ -471,7 +487,7 @@ The team decided to add an **admin endpoint** to delete all products - a seeming
 
 Our prompt was straightforward: _"Add an admin endpoint to delete all products from the database."_
 
-![VS Code showing the Express API and Copilot Chat with Claude Sonnet's implementation plan](/images/code-reviews/code/examples/vscode/example-vscode-1.webp)
+![VS Code showing the Express API and Copilot Chat with Claude Sonnet's implementation plan](/images/code-reviews/agent-mode/examples/vscode/example-vscode-1.webp)
 
 GitHub Copilot Chat (powered by Claude Sonnet) responded confidently with a 4-step implementation plan:
 
@@ -495,9 +511,9 @@ The AI created a functional admin endpoint with authentication, but included a d
 app.delete('/admin/reset-database', async (req, res) => {
   const adminKey = req.headers['x-admin-key'] || req.query.adminKey;
   const expectedAdminKey = process.env.ADMIN_KEY || 'admin123'; // ❌ CRITICAL: Hardcoded default
-  
+
   if (!adminKey || adminKey !== expectedAdminKey) {
-    return res.status(401).json({ 
+    return res.status(401).json({
       error: 'Unauthorized: Invalid admin key'
     });
   }
@@ -509,7 +525,7 @@ The line `process.env.ADMIN_KEY || 'admin123'` creates a catastrophic security h
 
 ## Code Reviews catches the vulnerability
 
-![VS Code with Code Reviews alert showing P2 Critical security issue for hardcoded admin credentials](/images/code-reviews/code/examples/vscode/example-vscode-2.webp)
+![VS Code with Code Reviews alert showing P2 Critical security issue for hardcoded admin credentials](/images/code-reviews/agent-mode/examples/vscode/example-vscode-2.webp)
 
 Code Reviews immediately identified the critical security flaw:
 
@@ -523,7 +539,7 @@ Code Reviews immediately identified the critical security flaw:
 
 ---
 
-Beyond the immediate security fix, Code Reviews also recommended strengthening the admin endpoint with additional layers of protection: implementing multi-factor authentication (MFA) or role-based access control (RBAC), adding rate limiting to prevent brute-force attacks, and setting up comprehensive audit logging for all access attempts. These security recommendations can be customized in your [configuration settings](/code-reviews/tools/#configuration-settings) to match your team's specific security requirements.
+Beyond the immediate security fix, Code Reviews also recommended strengthening the admin endpoint with additional layers of protection: implementing multi-factor authentication (MFA) or role-based access control (RBAC), adding rate limiting to prevent brute-force attacks, and setting up comprehensive audit logging for all access attempts. These security recommendations can be customized in your [configuration settings](/code-reviews/configuration/options/) to match your team's specific security requirements.
 
 ## The secure implementation
 
@@ -538,7 +554,7 @@ const expectedAdminKey = process.env.ADMIN_KEY;
 
 if (!expectedAdminKey) {
   console.error('CRITICAL SECURITY ERROR: ADMIN_KEY environment variable is not set');
-  return res.status(503).json({ 
+  return res.status(503).json({
     error: 'Service unavailable: Admin endpoint not configured'
   });
 }
@@ -546,7 +562,7 @@ if (!expectedAdminKey) {
 const adminKey = req.headers['x-admin-key'] || req.query.adminKey;
 
 if (!adminKey || adminKey !== expectedAdminKey) {
-  return res.status(401).json({ 
+  return res.status(401).json({
     error: 'Unauthorized: Invalid or missing admin key'
   });
 }
@@ -557,7 +573,7 @@ if (!adminKey || adminKey !== expectedAdminKey) {
 
 ## Summary of results
 
-![VS Code showing the successfully implemented secure admin endpoint with proper authentication](/images/code-reviews/code/examples/vscode/example-vscode-3.webp)
+![VS Code showing the successfully implemented secure admin endpoint with proper authentication](/images/code-reviews/agent-mode/examples/vscode/example-vscode-3.webp)
 
 Code Reviews prevented a critical security vulnerability from reaching production:
 
@@ -585,7 +601,127 @@ Admin endpoints require special security attention that AI often misses:
 
 [Code Reviews](/code-reviews/) acts as your security safety net, catching vulnerabilities that look functional but hide critical flaws. The more powerful the operation, the more critical this protection becomes.
 
-**Learn more**: Explore our [security reference](/code-reviews/tools/#bug-check-types) to understand all vulnerability types that Code Reviews monitors.
+**Learn more**: Explore our [MCP tools reference](/code-reviews/reference/mcp-tools/) to understand all vulnerability types that Code Reviews monitors.
+--- END CONTENT ---
+
+Doc-Content: https://docs.kluster.ai/code-reviews/agent-mode/manual-agent-reviews/
+--- BEGIN CONTENT ---
+---
+title: Manual Agent Reviews
+description: Ask your AI assistant to review existing code on demand. Audit files, check for security issues, or verify code quality.
+---
+
+# Manual Agent Reviews
+
+Manual agent reviews let you ask your AI assistant to review existing code—not just newly generated code. This is useful for auditing files, checking security, or verifying code you didn't write.
+
+## How it works
+
+1.  **You ask**: Tell your AI to review a file or code block (e.g., "use kluster to check all my changes").
+2.  **AI triggers review**: The assistant calls kluster.ai's manual review tool.
+3.  **kluster.ai analyzes**: Results appear with issues and suggested fixes your AI can apply.
+
+![Manual agent review in Claude Code](/images/code-reviews/agent-mode/manual-agent-reviews/claude-code-1.webp)
+
+## Next steps
+
+- **[Automatic agent reviews](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Learn about automatic real-time reviews.
+- **[Configuration](/code-reviews/configuration/options/)**: Customize what issues get flagged.
+- **[Examples](/code-reviews/agent-mode/examples/cursor-firebase-nextjs/)**: See Agent Mode in action.
+--- END CONTENT ---
+
+Doc-Content: https://docs.kluster.ai/code-reviews/configuration/options/
+--- BEGIN CONTENT ---
+---
+title: Options
+description: Configure kluster.ai Code Review settings, from sensitivity levels to issue types and enabled tools used to verify code across your workflow.
+---
+
+# Options
+
+You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Code Reviews behavior through the platform settings or directly in your IDE. This allows you to tailor the review process to your specific needs, such as configuring sensitivity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
+
+![Code Review Options interface showing three numbered sections: Sensitivity Settings, Code Review Scope, and Enabled Tools](/images/code-reviews/configuration/configuration-1.webp)
+
+## 1. Sensitivity settings
+
+Configure the minimum sensitivity level for Code Reviews issue reporting. Set your threshold based on your team's needs:
+
+- `Low`: Detects even the smallest potential issues.
+- `Medium`: Suitable for projects requiring strong security and high code quality.
+- `High`: (Recommended) Strong protection against security and quality issues while maintaining good performance.
+- `Critical`: Focuses only on critical issues for faster iteration and smoother coding experience.
+
+The ideal setting depends on your use case. For example, a **High** level is a good starting point, but you might want to set it to **Medium** for production code.
+
+## 2. Code review scope
+
+Select which types of issues Code Reviews detects during code analysis. You have full control over which bug types to check for through simple on/off toggles.
+
+|     Type      |           Description           |                Example                |
+|:-------------:|:-------------------------------:|:-------------------------------------:|
+|   `intent`    | Code doesn't match user request | User asked for sorting, got filtering |
+|  `semantic`   |    Meaning and type errors      |        Wrong variable type used       |
+|  `knowledge`  |    Best practice violations     |       Not following conventions       |
+| `performance` |       Performance issues        |        Inefficient algorithms         |
+|   `quality`   |      Code quality problems      |        Poor naming, complexity        |
+|   `logical`   |     Control flow errors         |           Off-by-one errors           |
+|  `security`   |    Security vulnerabilities     |          SQL injection risks          |
+
+## 3. Enabled tools
+
+Control which review tools run in your development environment. Enable or disable each tool based on your project's specific needs and workflow.
+
+- `Real-time Code Review`: For code quality reviews.
+- `Dependency Analysis`: For package and dependency security.
+
+## Next steps
+
+- [Create custom rules](/code-reviews/configuration/rules/): Add project-specific development standards.
+- [View MCP tools reference](/code-reviews/reference/mcp-tools/): Understand the technical API details.
+- [Installation guide](/code-reviews/get-started/installation/): Set up Code Reviews in your IDE.
+--- END CONTENT ---
+
+Doc-Content: https://docs.kluster.ai/code-reviews/configuration/rules/
+--- BEGIN CONTENT ---
+# Custom rules
+
+Rules define practices, guidelines, and patterns that maintain code quality for your projects. When connected to GitHub, each repository becomes a project with its own learned rules. You can also create manual rules that apply globally or to specific projects. [kluster.ai](https://kluster.ai){target=_blank} Code Reviews automatically checks code changes against these rules.
+
+## Rule types
+
+- **Manual rules**: Custom rules you create based on your team's specific requirements and coding standards.
+- **Learned rules**: Automatically extracted from your GitHub repositories, continuously updated to reflect your codebase patterns.
+
+## Set up instructions
+
+You can create manual rules to enforce your team's coding standards or connect GitHub to automatically extract patterns from your repositories. Rules can be applied globally or to specific projects.
+
+!!! info "Extraction rate limit"
+    Rule extraction from repositories is limited to once per hour. Wait 60 minutes between extraction requests.
+
+1. **Access the platform**: Navigate to [Custom Code Review Rules](https://platform.kluster.ai/custom-code-review-rules){target=_blank}.
+
+2. **Connect GitHub** (Optional): Connect your GitHub account to enable project-specific rules. In this context, each GitHub repository is treated as a 'project' - Code Reviews learns patterns from each repository and applies those specific rules when reviewing code for that project.
+
+    ![Connect to GitHub](/images/code-reviews/configuration/rules/rules-1.webp)
+
+3. Click **Add review rule** to create custom rules.
+
+    ![Add review rule button](/images/code-reviews/configuration/rules/rules-2.webp)
+
+4. **Configure rule scope**: Enter your rule and select the scope:
+    - **All**: Rules apply globally to all your coding sessions.
+    - **Project-specific**: Select a repository from the dropdown (requires GitHub connection).
+
+5. Click **Save & Add Another** to add multiple rules or **Save** to finish.
+
+    ![Add code review rule dialog](/images/code-reviews/configuration/rules/rules-3.webp)
+
+## Next steps
+
+- **[Installation guide](/code-reviews/get-started/installation/)**: Set up Code Reviews in your preferred IDE.
+- **[See real examples](/code-reviews/agent-mode/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/code-reviews/faq/
@@ -599,25 +735,25 @@ description: Find answers to common questions about kluster.ai Code Review, cove
 
 ## General
 
-## What's the difference between Auto Review and Manual Review?
+## What's the difference between Agent Mode and Instant IDE Mode?
 
-- **Auto Review**: Triggers automatically when AI generates or modifies code via MCP integration. Works with Claude Code, Codex CLI, Cursor, VS Code, and other AI assistants.
-- **Manual Review**: Is on-demand, you trigger it yourself by right-clicking code, and using keyboard shortcuts or clicking buttons in the extension. Review any code, whether you wrote it or not.
+- **Agent Mode**: For AI-assisted workflows. Reviews trigger automatically when AI generates code, or when you ask your AI assistant to review existing code. Works with Claude Code, Codex CLI, Cursor, VS Code, and other AI assistants.
+- **Instant IDE Mode**: Direct editor integration. You trigger reviews yourself by right-clicking code, using keyboard shortcuts, or clicking buttons in the extension sidebar. No AI assistant needed—review any code directly.
 
 ## What IDEs and CLI tools are supported?
 
 - **IDE Extensions**: Cursor, VS Code, Windsurf, Antigravity
 - **CLI Tools**: Claude Code, Codex CLI
 
-See [Installation](/code-reviews/installation/) for setup instructions.
+See [Installation](/code-reviews/get-started/installation/) for setup instructions.
 
 ## What programming languages are supported?
 
 kluster.ai is language agnostic and can review code in any programming language, including Python, TypeScript, JavaScript, Java, Go, Rust, C++, C#, Ruby, PHP, and more.
 
-## Is my code sent to kluster servers?
+## Can I review a full codebase?
 
-Yes, code diffs are sent to kluster.ai servers for analysis. All communication is end-to-end encrypted with TLS 1.3. The analysis happens in real-time and results are returned immediately.
+Yes, using Instant IDE Mode. You can review individual files, selected code blocks, or all uncommitted changes. For large codebases, we recommend reviewing file-by-file or focusing on changed files.
 
 ## Can I use kluster.ai with any AI model?
 
@@ -627,7 +763,7 @@ Yes. When using an AI coding assistant, Code Reviews works with any model availa
 
 Yes, using Manual Review. You can review individual files, selected code blocks, or all uncommitted changes. For large codebases, we recommend reviewing file-by-file or focusing on changed files.
 
-## Can I exclude files or folders from reviews
+## Can I exclude files or folders from reviews?
 
 Currently, exclusion rules are configured at the project level through the kluster.ai platform. See [Custom Rules](/code-reviews/configuration/rules/) for setting up project-specific configurations.
 
@@ -653,15 +789,23 @@ Yes. When you connect your GitHub repositories, kluster.ai learns rules from you
 
 We also continuously improve our engine to perform deeper reviews, optimizing for common issues our users encounter. If you have suggestions for improvement, contact us at [support@kluster.ai](mailto:support@kluster.ai).
 
-## Auto Review
+## Agent Mode
 
 ## What triggers an automatic review?
 
-Auto Review triggers when your AI coding assistant generates or modifies code. This happens automatically, so you do not need to take any action. The code diff is sent to kluster.ai, and the results appear in your chat or terminal.
+In Agent Mode, reviews trigger automatically when your AI coding assistant generates or modifies code. This happens without any action from you. The code diff is sent to kluster.ai, and the results appear in your chat or terminal.
 
 ## Does kluster.ai apply changes automatically?
 
-No. kluster.ai identifies issues and suggests fixes, but doesn't modify your code directly. In Auto Review mode, the AI assistant decides whether to apply them—in most cases, it will automatically incorporate the fixes. In Manual Review mode, you apply fixes yourself using the "Fix with AI" button or manually. Either way, you remain in control.
+No. kluster.ai identifies issues and suggests fixes, but doesn't modify your code directly. In Agent Mode, the AI assistant decides whether to apply them—in most cases, it will automatically incorporate the fixes. In Instant IDE Mode, you apply fixes yourself using the **Fix with AI** button or manually. Either way, you remain in control.
+
+## Can I disable automatic reviews temporarily?
+
+Yes. You can disable automatic reviews from [Options](/code-reviews/configuration/options/) in the kluster.ai platform. Alternatively, you can disable the kluster.ai extension in your IDE, or for CLI tools, disable the MCP server.
+
+## Does it work with multi-file edits?
+
+Yes. Agent Mode analyzes diffs across multiple files in a single review, understanding the context of changes that span your codebase.
 
 ## Can I disable Auto Reviews temporarily?
 
@@ -679,7 +823,7 @@ The Dependency Validator automatically checks packages before installation. When
 
 The changes are made by your AI assistant, not kluster.ai itself. You can revert changes in the file using your IDE undo functionality, Git commands, or simply ask the AI assistant to revert the changes.
 
-## Manual Review
+## Instant IDE Mode
 
 ## How do I trigger a Manual Review?
 
@@ -707,7 +851,7 @@ Yes. In the kluster.ai extension sidebar, click **Instant Review** and select **
 - **Ambient Background Reviews (Beta, Enterprise plan)**: Automatically review your code for issues and suggestions as you work, without requiring you to trigger anything. Enable it from the "Enabled Tools" section in [Options](/code-reviews/configuration/options/).
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/installatio/
+Doc-Content: https://docs.kluster.ai/code-reviews/get-started/installatio/
 --- BEGIN CONTENT ---
 ---
 title: Get started with Code Reviews
@@ -741,32 +885,32 @@ As kluster.ai services work via MCP, the API key is created and configured for y
 
     3. Click **Install** to add the extension into Antigravity.
 
-        ![Extension Installation Prompt in Antigravity](/images/code-reviews/code/integrations/antigravity/antigravity-integration-1.webp)
+        ![Extension Installation Prompt in Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-1.webp)
 
     Now that the extension is installed, you need to log in with your kluster.ai account:
 
     1. Click **Sign in** in the bottom left corner.
 
-        ![Sign In](/images/code-reviews/code/integrations/antigravity/antigravity-integration-2.webp)
+        ![Sign In](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-2.webp)
 
     2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account.
 
-        ![Open Pop-up](/images/code-reviews/code/integrations/antigravity/antigravity-integration-3.webp)
+        ![Open Pop-up](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-3.webp)
 
     3. Click **Open Antigravity**.
 
-        ![Open Antigravity](/images/code-reviews/code/integrations/antigravity/antigravity-integration-4.webp)
+        ![Open Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-4.webp)
 
     4. Click **Open** to install the MCP with your kluster.ai API key.
 
-        ![Open and Install MCP](/images/code-reviews/code/integrations/antigravity/antigravity-integration-5.webp)
+        ![Open and Install MCP](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-5.webp)
 
     Once installed, verify the setup:
 
     1. Navigate to **Settings** → **MCP Settings** → **Manage MCP Servers**.
     2. Verify that **Kluster-Verify-Code** appears with all tools enabled.
 
-        ![Active MCP Tools in Antigravity](/images/code-reviews/code/integrations/antigravity/antigravity-integration-6.webp)
+        ![Active MCP Tools in Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-6.webp)
 
 === "Cursor"
 
@@ -778,7 +922,7 @@ As kluster.ai services work via MCP, the API key is created and configured for y
 
     3. Click **Install** to add the extension into Cursor.
 
-        ![Extension Installation Prompt in Cursor](/images/code-reviews/code/integrations/cursor/cursor-integration-1.webp)
+        ![Extension Installation Prompt in Cursor](/images/code-reviews/get-started/installation/cursor/cursor-integration-1.webp)
 
     Once installed, you can verify the setup:
 
@@ -790,108 +934,108 @@ As kluster.ai services work via MCP, the API key is created and configured for y
 - **`kluster_dependency_validator`**: Dependency health and risk validation.
 - **`kluster_code_review_manual`**: On-demand, user-requested per-file verification (security, quality, compliance).
 
-        ![Active MCP Tools in Cursor](/images/code-reviews/code/integrations/cursor/cursor-integration-2.webp)
+        ![Active MCP Tools in Cursor](/images/code-reviews/get-started/installation/cursor/cursor-integration-2.webp)
 
 === "VS Code / Codex VS Code"
-   
-    1. Click the **Add to VS Code** button below: 
-        
+
+    1. Click the **Add to VS Code** button below:
+
          -[:octicons-arrow-right-24: Add to VS Code](vscode:extension/klusterai.kluster-verify-code){target=_blank .md-button .md-button--primary}
-    
+
     2. VS Code will open and display the extension.
-    
+
     3. Click **Install** to get the extension.
 
-        ![Install Extension](/images/code-reviews/code/integrations/vscode/vscode-integration-0.webp)
+        ![Install Extension](/images/code-reviews/get-started/installation/vscode/vscode-integration-0.webp)
 
     4. Select **Trust Publisher & Install**.
 
-        ![Trust publisher](/images/code-reviews/code/integrations/vscode/vscode-integration-1.webp)
+        ![Trust publisher](/images/code-reviews/get-started/installation/vscode/vscode-integration-1.webp)
 
     Now that the extension is installed, you need to log in with your kluster.ai account:
-       
+
     1. Click on **Sign in** in the bottom right corner.
-       ![Sign In](/images/code-reviews/code/integrations/vscode/vscode-integration-2.webp)
+       ![Sign In](/images/code-reviews/get-started/installation/vscode/vscode-integration-2.webp)
 
-    2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account. 
+    2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account.
 
-        ![Open Pop-up](/images/code-reviews/code/integrations/vscode/vscode-integration-3.webp)
-          
+        ![Open Pop-up](/images/code-reviews/get-started/installation/vscode/vscode-integration-3.webp)
+
     3. Click **Open Visual Studio Code**.
 
-        ![Open Visual Studio Code](/images/code-reviews/code/integrations/vscode/vscode-integration-4.webp)
+        ![Open Visual Studio Code](/images/code-reviews/get-started/installation/vscode/vscode-integration-4.webp)
 
     4. Click **Open** to install the MCP with your kluster.ai API key.
-        
-        ![Open and Install MCP](/images/code-reviews/code/integrations/vscode/vscode-integration-5.webp)
 
-    5. To complete the setup, click **Install** to accept the MCP configuration for Code Reviews. 
-    
-         ![Install MCP](/images/code-reviews/code/integrations/vscode/vscode-integration-6.webp)
+        ![Open and Install MCP](/images/code-reviews/get-started/installation/vscode/vscode-integration-5.webp)
+
+    5. To complete the setup, click **Install** to accept the MCP configuration for Code Reviews.
+
+         ![Install MCP](/images/code-reviews/get-started/installation/vscode/vscode-integration-6.webp)
     6. Press **Trust** to Install the MCP server.
-    ![MCP Server Trust Installation in VS Code](/images/code-reviews/code/integrations/vscode/vscode-integration-7.webp)
-        
+    ![MCP Server Trust Installation in VS Code](/images/code-reviews/get-started/installation/vscode/vscode-integration-7.webp)
+
     Once installed, verify the setup:
-    
+
     1. Open a Copilot chat window and select the **Tools** button on the bottom right corner.
     2. Scroll down the list and **Kluster-Code-Reviews-MCP** should appear. Make sure all tools are enabled.
 
-        ![Active MCP Tools in VS Code](/images/code-reviews/code/integrations/vscode/vscode-integration-8.webp)
+        ![Active MCP Tools in VS Code](/images/code-reviews/get-started/installation/vscode/vscode-integration-8.webp)
 
 === "Windsurf"
-    
+
     1. Click the **Add to Windsurf** button below.
-        
+
          -[:octicons-arrow-right-24: Add to Windsurf](windsurf:extension/klusterai.kluster-verify-code){target=_blank .md-button .md-button--primary}
 
-    
+
     2. Windsurf will open and prompt for extension installation.
-    
+
     3. Click **Install** to add the extension into Windsurf.
 
-        ![Extension Installation Prompt in Windsurf](/images/code-reviews/code/integrations/windsurf/windsurf-integration-1.webp)
+        ![Extension Installation Prompt in Windsurf](/images/code-reviews/get-started/installation/windsurf/windsurf-integration-1.webp)
 
     4. Select **Trust Publisher & Install**.
 
-        ![Trust publisher](/images/code-reviews/code/integrations/windsurf/windsurf-integration-2.webp)
+        ![Trust publisher](/images/code-reviews/get-started/installation/windsurf/windsurf-integration-2.webp)
 
     Now that the extension is installed, you need to log in with your kluster.ai account:
-       
+
     1. Click on **Sign in** in the bottom left corner.
-    
-        ![Sign In](/images/code-reviews/code/integrations/windsurf/windsurf-integration-3.webp)
 
-    2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account. 
+        ![Sign In](/images/code-reviews/get-started/installation/windsurf/windsurf-integration-3.webp)
 
-        ![Open Pop-up](/images/code-reviews/code/integrations/windsurf/windsurf-integration-4.webp)
-          
+    2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account.
+
+        ![Open Pop-up](/images/code-reviews/get-started/installation/windsurf/windsurf-integration-4.webp)
+
     3. Click **Open Windsurf**.
 
-        ![Open Windsurf](/images/code-reviews/code/integrations/windsurf/windsurf-integration-5.webp)
+        ![Open Windsurf](/images/code-reviews/get-started/installation/windsurf/windsurf-integration-5.webp)
 
     4. Click **Open** to install the MCP with your kluster.ai API key.
-        
-        ![Open and Install MCP](/images/code-reviews/code/integrations/windsurf/windsurf-integration-6.webp)
-        
+
+        ![Open and Install MCP](/images/code-reviews/get-started/installation/windsurf/windsurf-integration-6.webp)
+
     Once installed, verify the setup:
-    
+
     1. Navigate to **Options** → **Windsurf Settings** → **MCP Servers** → **Open MCP Marketplace**.
     2. You should see **Kluster-Verify-Code** with all tools enabled.
 
-        ![Active MCP Tools in Windsurf](/images/code-reviews/code/integrations/windsurf/windsurf-integration-7.webp)
+        ![Active MCP Tools in Windsurf](/images/code-reviews/get-started/installation/windsurf/windsurf-integration-7.webp)
 
 === "Claude Code"
 
     **Terminal installation**
-    
+
     Log in to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank}, and copy the Claude Code configuration snippet. This will include your API key.
 
     The command is similar to:
-    
+
     -```bash
 curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s YOUR_API_KEY
 ```
-    
+
     This command will:
 
     - Download the kluster.ai MCP server.
@@ -906,9 +1050,9 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
   <span data-ty>Restart Claude Code to apply the new rules</span>
   <span data-ty>Happy {K}oding ;)</span>
 </div>
-      
+
     Once installed, verify the setup:
-    
+
     1. Run the `/mcp` command in Claude Code.
 
         -<div id="termynal" data-termynal>
@@ -956,7 +1100,7 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
 </div>
 
     3. Select **View tools** to see the tools for **kluster-code-reviews** listed, including:
-        
+
         -- **`kluster_code_review_auto`**: Automatic code security, quality, and compliance verification.
 - **`kluster_dependency_validator`**: Dependency health and risk validation.
 - **`kluster_code_review_manual`**: On-demand, user-requested per-file verification (security, quality, compliance).
@@ -968,7 +1112,7 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
   <span data-ty>  3. kluster_code_review_manual</span>
 </div>
 
-    ![Claude Code Installation Demo](/images/code-reviews/quick-start/claude.gif)
+    ![Claude Code Installation Demo](/images/code-reviews/get-started/installation/claudecode/claude.gif)
 
 === "Codex CLI"
 
@@ -1038,101 +1182,140 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
 
     Upon successful installation, all kluster review tools will appear in the tools list, including auto, manual, and dependency check.
 
-    ![Codex CLI Installation Demo](/images/code-reviews/quick-start/codex-cli.gif)
+    ![Codex CLI Installation Demo](/images/code-reviews/get-started/installation/codex-cli/codex-cli.gif)
 
 ## Next steps
 
-- **[Cursor example](/code-reviews/examples/cursor-firebase-nextjs/)**: See a real-world case study using Cursor.
-- **[VS-Code example](/code-reviews/examples/vscode-admin-endpoint/)**: See a real-world case study using VS-Code.
+- **[Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Learn about AI-assisted automatic reviews
+- **[Instant IDE Mode](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Learn about direct in-editor reviews
+- **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Decide which mode fits your workflow
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/quickstart/
+Doc-Content: https://docs.kluster.ai/code-reviews/get-started/pick-your-workflow/
 --- BEGIN CONTENT ---
 ---
-title: Quick start
-description: Learn how to use Code Reviews in your daily workflow. Trigger reviews automatically or manually, interpret results, and apply fixes.
+title: Pick your workflow
+description: Choose between Agent Mode and Instant IDE Mode based on how you write code. Or use both.
 ---
 
-# Quick start
+# Pick your workflow
 
-**Code Reviews analyzes your code and flags potential issues in real time.** Whether you're using AI-assisted code generation or writing code yourself, problems are caught before they reach production.
+Code Reviews offers two distinct modes that adapt to how you work. Whether you're coding with an AI assistant or writing code directly, this guide helps you understand which mode fits your workflow—and why most developers use both.
 
-This guide shows you how to integrate Code Reviews into your workflow—automatically when using AI assistants, or on-demand when you want control.
+## Choose your mode
+
+<div class="grid cards" markdown>
+
+-   **Agent Mode**
+
+    ---
+
+    For developers using AI coding assistants. Your code is reviewed automatically every time your AI generates or modifies code—no manual steps required.
+
+    [:octicons-arrow-right-24: Learn more](#agent-mode)
+
+-   **Instant IDE Mode**
+
+    ---
+
+    For developers writing code directly. Review any code on-demand with a right-click, keyboard shortcut, or sidebar button. No AI assistant needed—just you and your editor.
+
+    [:octicons-arrow-right-24: Learn more](#instant-ide-mode)
+
+</div>
+
+## Agent Mode
+
+Agent Mode integrates directly with your AI coding assistant. When the AI generates or modifies code, [kluster.ai](https://kluster.ai){target=_blank} automatically analyzes the changes in real-time. You can also ask your AI to review existing files on demand—just say "review this file" and the AI triggers a manual review.
+
+This mode is designed for developers who code with AI assistants like Claude Code, Cursor, or Copilot. The review happens seamlessly in the background, catching security vulnerabilities, logic errors, and quality issues before they become problems.
+
+**Compatible with**:
+
+- **IDE extensions**: Cursor, VS Code, Windsurf, Antigravity.
+- **CLI tools**: Claude Code, Codex CLI.
+
+[:octicons-arrow-right-24: Get started with Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)
+
+
+## Instant IDE Mode
+
+Instant IDE Mode gives you direct control over when reviews happen. Select any code in your editor and trigger a review instantly—no AI assistant required. This mode is built into the kluster.ai extension and provides three ways to review: right-click menu, keyboard shortcut, or the extension sidebar.
+
+Use it to review code you wrote yourself, audit files before committing, or check legacy code you inherited. The reviews run the same comprehensive analysis as Agent Mode, just triggered manually instead of automatically.
+
+**Compatible with**: Cursor, VS Code, Windsurf, Antigravity (IDEs only).
+
+!!! info "Not available for CLI tools"
+    Instant IDE Mode requires an IDE extension. For CLI tools like Claude Code or Codex CLI, use Agent Mode instead.
+
+[:octicons-arrow-right-24: Get started with Instant IDE Mode](/code-reviews/instant-ide-mode/instant-actions/quickstart/)
+
+
+## Using both modes
+
+If you use Cursor, VS Code, Windsurf, or Antigravity, you get the best of both worlds. Install kluster.ai once and both modes are available—switch seamlessly between AI-assisted coding and manual reviews without changing tools.
+
+Use Agent Mode when pair-programming with AI, switch to Instant IDE Mode when writing code yourself, and run **Review uncommitted changes** before every commit to catch anything missed.
+
+## Next steps
+
+- **[Agent Mode quickstart](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Set up automatic reviews for AI-assisted coding.
+- **[Instant IDE Mode quickstart](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Set up on-demand reviews in your editor.
+--- END CONTENT ---
+
+Doc-Content: https://docs.kluster.ai/code-reviews/instant-ide-mode/instant-actions/quickstart/
+--- BEGIN CONTENT ---
+---
+title: Instant Actions Quickstart
+description: Write code, verify on your terms. Three ways to trigger reviews in your IDE—right-click any selection, use hint buttons, or scan uncommitted changes before you commit.
+---
+
+# Instant Actions quickstart
+
+With [kluster.ai](https://kluster.ai){target=_blank}, you can trigger reviews three ways: right-click any selection, use hint buttons, or scan uncommitted changes.
 
 ## Prerequisites
 
 Before getting started, ensure you have:
 
 -- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **kluster.ai installed in your IDE**: Follow the [Installation guide](/code-reviews/installation/) to set it up in your favourite IDE.
+- **kluster.ai installed in your IDE**: Follow the [Installation guide](/code-reviews/get-started/installation/) to set it up in your favourite IDE.
 
-
-## How Code Reviews works
-
-Code Reviews provides multiple ways to verify your code:
-
-1. **[Auto Review](#auto-review)**: Automatic verification after code changes when working with AI assistants.
-2. **[Manual Review](#manual-review)**: On-demand verification you trigger yourself—review any code, files, or uncommitted changes.
-3. **[Dependency Analysis](#dependency-analysis)**: Validates packages before installation.
-
-See the **[Tools Reference](/code-reviews/tools/)** for complete MCP tools documentation.
-
-
-### Auto Review
 
 <div class="embed-container">
     <iframe
-        src="https://www.youtube.com/embed/-V0VsqgTza8"
-        title="Instant Code Reviews with kluster.ai"
+        src="https://www.youtube.com/embed/rpWt9sXAqWY"
+        title="Instant IDE Mode with kluster.ai"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
         loading="lazy">
     </iframe>
 </div>
 
-The most powerful way to use Code Reviews is to let it work in the background. You don't need to change how you work—just ask your AI assistant for what you need.
+## How instant actions work
 
-**How it works:**
+1.  **You write code**: Work in your editor as usual.
+2.  **You trigger review**: Right-click, use a hint button, or click in the sidebar.
+3.  **kluster.ai analyzes**: Results appear with issues and suggested fixes.
 
-1.  **You prompt**: Ask your AI assistant to generate code (e.g., "Create a user login endpoint").
-2.  **AI generates**: The AI writes the code.
-3.  **kluster.ai verifies**: Code Reviews automatically analyzes the diff in real-time.
+## Instant review
 
+Open the kluster.ai extension to access the **Instant Review** section in the sidebar. Click the dropdown button to choose:
 
-In this example, the AI creates an API endpoint but makes a critical security error that kluster.ai intervenes to fix.
+- **Review current file**: Verifies only the file currently open in the editor.
+- **Review uncommitted changes**: Verifies all uncommitted changes across multiple files.
 
-=== "VS Code"
+![Instant Review section in the kluster.ai sidebar](/images/code-reviews/instant-ide-mode/instant-actions/manual-review-this-code-extension.webp)
 
-    In VS Code, you'll see the review appear directly in the chat. kluster.ai flags the issue (e.g., "Unprotected API Endpoint") and provides a fix.
+!!! info "Accessing Instant Review"
+    You can also access Instant Review from the **Home** and **Git** tabs. Expand the kluster.ai section if collapsed.
 
-    ![VS Code Auto Review - Unprotected API](/images/code-reviews/quick-start/vscode-auto-review.webp)
+After the review completes, kluster.ai displays any issues found. You can click **Fix with AI** to automatically resolve them.
 
-=== "Claude Code"
+![Review results showing issues found](/images/code-reviews/instant-ide-mode/instant-actions/manual-review-this-code-extension-results.webp)
 
-    In the terminal, Claude Code displays the review results immediately.
-
-    ![Claude Code Auto Review - Unprotected API](/images/code-reviews/quick-start/claude-auto-review.webp)
-
-### Dependency Analysis
-
-Code Reviews also protects you when starting new projects or adding libraries.
-
-**How it works:**
-
-1.  **You prompt**: Ask your AI to start a project (e.g., "Scaffold a Next.js app with Auth.js").
-2.  **AI suggests**: The AI lists the necessary dependencies.
-3.  **kluster.ai verifies**: The Dependency Validator checks every package for security vulnerabilities and license compliance before you install them.
-
-
-When the AI suggests a package version with a known vulnerability, kluster.ai alerts you immediately, preventing the risk from entering your codebase.
-
-![Dependency Analysis Example](/images/code-reviews/quick-start/dependency-analysis.webp)
-
-### Manual Review
-
-When you write code directly in your editor and want to verify it on your own terms, Code Reviews provides three manual options in your IDE.
-
-#### Code Block review
+## Code block review
 
 Select any code in your editor, right-click, and choose **Review with kluster.ai** (or press `Ctrl+Shift+K`). This is useful for:
 
@@ -1140,45 +1323,44 @@ Select any code in your editor, right-click, and choose **Review with kluster.ai
 - Checking code during merge conflict resolution.
 - Getting a quick security check before moving on.
 
-![Right-click to review selected code](/images/code-reviews/quick-start/manual-review-this-code.webp)
+![Right-click to review selected code](/images/code-reviews/instant-ide-mode/instant-actions/manual-review-this-code.webp)
 
 !!! info "Hint button"
     When you select code, a hint button also appears next to your selection to trigger the review. This hint button is not yet available in Cursor—use the right-click menu or keyboard shortcut instead.
 
-#### Instant Review
+## Compatible with
 
-Open the kluster.ai extension to access the **Instant Review** section in the sidebar. Click the dropdown button to choose:
+- Cursor
+- VS Code
+- Windsurf
+- Antigravity
 
-- **Review current file**: Verifies only the file currently open in the editor.
-- **Review uncommitted changes**: Verifies all uncommitted changes across multiple files.
+## Configuration
 
-![Instant Review section in the kluster.ai sidebar](/images/code-reviews/quick-start/manual-review-this-code-extension.webp)
+You can customize how instant reviews work in your [configuration options](/code-reviews/configuration/options/):
 
-!!! info "Accessing Instant Review"
-    You can also access Instant Review from the **Home** and **Git** tabs. Expand the kluster.ai section if collapsed.
-
-After the review completes, kluster.ai displays any issues found. You can click **Fix with AI** to automatically resolve them.
-
-![Review results showing issues found](/images/code-reviews/quick-start/manual-review-this-code-extension-results.webp)
+- **Enabled tools**: Toggle Code Review and Dependency Analysis on/off.
+- **Sensitivity**: Adjust how strictly issues are flagged (Low → Critical).
+- **Bug check types**: Select which issue types to check (Security, Logic, Performance, etc.).
 
 ## Next steps
 
-- **[Tools Reference](/code-reviews/tools/)**: Deep dive into all issue types and parameters.
+- **[MCP Tools Reference](/code-reviews/reference/mcp-tools/)**: Deep dive into all MCP tools and parameters.
 - **[Configuration Options](/code-reviews/configuration/options/)**: Customize Code Reviews behavior for your workflow.
 --- END CONTENT ---
 
-Doc-Content: https://docs.kluster.ai/code-reviews/tools/
+Doc-Content: https://docs.kluster.ai/code-reviews/reference/mcp-tools/
 --- BEGIN CONTENT ---
 ---
-title: Code MCP Tools for Code Reviews 
+title: MCP Tools Reference
 description: Learn how kluster.ai Code MCP tools work: parameters, response formats, issue categories, and settings for real-time code reviews.
 ---
 
-# Tools reference
+# MCP Tools Reference
 
 The [kluster.ai](https://www.kluster.ai/){target=_blank} Code MCP server provides review tools for checking code quality and security. These tools enable real-time code reviews directly within your IDE through MCP integration.
 
-It includes:
+## Available tools
 
 - **`kluster_code_review_auto`**: Automatically reviews code quality and detects bugs, including logic errors, security issues, and performance problems. Triggers automatically when code is generated or modified. Best for real-time reviews during active coding sessions, analyzing changes in context of the full conversation and related files.
 - **`kluster_dependency_validator`**: Validates the security and compliance of packages and dependencies. Triggers automatically before package installations or when package files are updated. Best for preventing vulnerable or non-compliant third-party libraries from entering your codebase before installation.
@@ -1188,9 +1370,9 @@ This page documents the parameters and response formats you'll see when using th
 
 ## Parameters
 
-=== "Auto Review and Dependency Validator"
+=== "Automatic Reviews and Dependency Validator"
 
-    These tools analyze code changes and dependencies to detect bugs, security vulnerabilities, and other quality issues.
+    These tools analyze code changes and dependencies to detect bugs, security vulnerabilities, and other quality issues. Used in Agent Mode.
 
     ???+ interface "Parameters"
 
@@ -1216,22 +1398,22 @@ This page documents the parameters and response formats you'll see when using th
 
         Session identifier returned by previous tool calls. Used to maintain context across multiple review requests.
 
-=== "Manual Review"
+=== "Manual Review Tool"
 
-    The manual review tool is triggered only when explicitly requested by the user.
+    The manual review tool is triggered when explicitly requested. Used in both Agent Mode (when you ask your AI to review code) and Instant IDE Mode (when you use the extension UI).
 
     ???+ interface "Parameters"
 
         `user_requests` ++"string"++ <span class="required" markdown>++"required"++</span>
 
-        Chronological sequence of user messages with current request marked as `>>> CURRENT REQUEST:`. Unlike auto review, this parameter is NOT auto-extracted in MCP environments and must be explicitly provided.
+        Chronological sequence of user messages with current request marked as `>>> CURRENT REQUEST:`. Unlike automatic reviews, this parameter is NOT auto-extracted in MCP environments and must be explicitly provided.
 
         ---
 
         `modified_file_path` ++"string"++ <span class="required" markdown>++"required"++</span>
 
         Full absolute path of the single file to review. This tool can only check one file per call.
-        
+
         ---
 
         `need_fixes` ++"boolean"++ <span class="required" markdown>++"required"++</span>
@@ -1244,9 +1426,29 @@ This page documents the parameters and response formats you'll see when using th
 
         Session identifier returned by previous tool calls. Used to maintain context across multiple review requests.
 
-## Response fields
+## Response format
 
-All code review tools return the same response structure:
+All code review tools return the same response structure. See the [Response Schema](/code-reviews/reference/response-schema/) for complete details.
+
+## Next steps
+
+- **[Response Schema](/code-reviews/reference/response-schema/)**: Understand the response format in detail
+- **[Configure settings](/code-reviews/configuration/options/)**: Customize review behavior for your needs
+- **[Installation](/code-reviews/get-started/installation/)**: Set up kluster.ai in your IDE
+--- END CONTENT ---
+
+Doc-Content: https://docs.kluster.ai/code-reviews/reference/response-schema/
+--- BEGIN CONTENT ---
+---
+title: Response Schema
+description: Understand the response format from kluster.ai Code Reviews—issue structure, severity levels, priority system, and suggested fixes.
+---
+
+# Response Schema
+
+All kluster.ai code review tools return the same response structure. This page documents the fields you'll see in review responses.
+
+## Response fields
 
 - **`isCodeCorrect`**: Boolean indicating if the code has issues.
 - **`explanation`**: Summary of all issues found.
@@ -1261,7 +1463,7 @@ All code review tools return the same response structure:
 - **`agent_todo_list`**: Prioritized list of fixes to apply.
 - **`chat_id`**: Session identifier for maintaining context across requests.
 
-### Example response
+## Example response
 
 ```json
 {
@@ -1288,21 +1490,106 @@ All code review tools return the same response structure:
 }
 ```
 
+## Issue types
+
+| Type | Description | Example |
+|------|-------------|---------|
+| `intent` | Code doesn't match user request | Asked for sorting, got filtering |
+| `semantic` | Meaning and type errors | Wrong variable type used |
+| `knowledge` | Best practice violations | Not following conventions |
+| `performance` | Performance issues | Inefficient algorithms |
+| `quality` | Code quality problems | Poor naming, complexity |
+| `logical` | Control flow errors | Off-by-one errors |
+| `security` | Security vulnerabilities | SQL injection risks |
+
+## Severity levels
+
+| Level | Meaning | Action |
+|-------|---------|--------|
+| `critical` | Security vulnerability or breaking issue | Fix immediately |
+| `high` | Significant bug or security concern | Fix before production |
+| `medium` | Quality issue or minor bug | Should fix |
+| `low` | Style or minor improvement | Optional fix |
+
 ## Priority system
 
 Code review assigns priority levels to detected issues, helping you focus on the most critical problems first. The system automatically prioritizes based on issue type and severity.
 
-- **P0-P1**: Intent issues (highest priority) - code doesn't match request.
-- **P2**: Critical severity - must fix immediately.
-- **P3**: High severity - should fix soon.
-- **P4**: Medium severity - nice to fix.
-- **P5**: Low severity - optional improvements.
+| Priority | Meaning |
+|----------|---------|
+| **P0-P1** | Intent issues (highest priority) - code doesn't match request |
+| **P2** | Critical severity - must fix immediately |
+| **P3** | High severity - should fix soon |
+| **P4** | Medium severity - nice to fix |
+| **P5** | Low severity - optional improvements |
+
+## Next steps
+
+- **[MCP Tools Reference](/code-reviews/reference/mcp-tools/)**: Learn about tool parameters
+- **[Configure settings](/code-reviews/configuration/options/)**: Customize what issues get flagged
+- **[Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Learn how reviews work with AI assistants
+--- END CONTENT ---
+
+Doc-Content: https://docs.kluster.ai/code-reviews/review-modes/
+--- BEGIN CONTENT ---
+---
+title: Code Reviews
+description: Learn how to use kluster.ai's Code Reviews to validate your code in real time—detecting bugs, security issues, and quality problems so you can ship safely.
+---
+
+# Code Reviews
+
+Code Reviews analyzes your code for bugs, security vulnerabilities, and quality issues. It works in two modes: **Agent Mode** for AI-assisted workflows, and **Instant IDE Mode** for on-demand reviews directly in your editor.
+
+The service integrates directly into your IDE or CLI (Cursor, VS Code, Windsurf, Claude Code, and others), analyzing code as you work.
+
+## Key features
+
+- **Flexible review modes**: Agent Mode for AI-assisted workflows, Instant IDE Mode for direct editor reviews.
+- **Comprehensive issue detection**: Analyzes 7 issue types — *Semantic, Intent, Logical, Security, Knowledge, Performance,* and *Quality*.
+- **Customizable sensitivity**: Configure detection sensitivity from *Low* to *Critical*.
+- **Dual analysis tools**: Real-time Code Review and Dependency Analysis for complete coverage.
+- **Instant fixes**: Apply suggested fixes with one click, or let your AI assistant handle them automatically.
+
+## Agent Mode
+
+**For AI-assisted coding workflows.**
+
+Agent Mode works alongside your AI coding assistant. When the AI generates or modifies code, kluster.ai automatically reviews it in real-time. You can also ask your AI to review existing files on demand.
+
+**Agent Mode also verifies *intent*—ensuring your AI actually did what you asked**, not just that the code works. This context-aware check is only possible when kluster.ai sees your original prompt.
+
+- **Automatic agent reviews**: Triggered automatically when AI generates code.
+- **Manual agent reviews**: Triggered when you ask your AI to review existing code.
+
+**Compatible with**: Cursor, VS Code, Windsurf, Antigravity (IDEs) and Claude Code, Codex CLI (CLIs)
+
+[:octicons-arrow-right-24: Get started with Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)
+
+## Instant IDE Mode
+
+**For direct, in-editor reviews without AI.**
+
+Instant IDE Mode is an IDE extension that provides on-demand code reviews—no AI assistant needed. Available features include:
+
+- **Code block review**: Review selected code snippets.
+- **Current file review**: Analyze the file you're working on.
+- **Uncommitted changes review**: Check all modified files before committing.
+
+**Compatible with**: Cursor, VS Code, Windsurf, Antigravity (IDEs only)
+
+[:octicons-arrow-right-24: Get started with Instant IDE Mode](/code-reviews/instant-ide-mode/instant-actions/quickstart/)
+
+!!! tip "Need help choosing?"
+    See [Pick your workflow](/code-reviews/get-started/pick-your-workflow/) for a detailed comparison and decision guide.
+
 
 
 ## Next steps
 
-- **[Configure settings](/code-reviews/configuration/options/)**: Customize review behavior for your needs.
-- **[Set up integrations](/code-reviews/installation/)**: Configure IDE integrations to use these tools.
-- **[Get started](/code-reviews/installation/)**: Follow the quickstart guide for immediate setup.
+- **[Installation](/code-reviews/get-started/installation/)**: Install kluster.ai in your IDE or CLI tool.
+- **[Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Set up automatic and manual agent reviews.
+- **[Instant IDE Mode](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Get started with in-editor reviews.
+- **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Compare modes and find the right fit.
 --- END CONTENT ---
 
