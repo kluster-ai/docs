@@ -21,7 +21,6 @@ Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/in
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/reference/mcp-tools.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/reference/response-schema.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/review-modes.md
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/new-faq-items.md
 
 ## Full content for each doc page
 
@@ -1607,61 +1606,5 @@ Instant IDE Mode is an IDE extension that provides on-demand code reviews—no A
 - **[Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Set up automatic and manual agent reviews.
 - **[Instant IDE Mode](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Get started with in-editor reviews.
 - **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Compare modes and find the right fit.
---- END CONTENT ---
-
-Doc-Content: https://docs.kluster.ai/new-faq-items/
---- BEGIN CONTENT ---
-# New FAQ Items — Fine-tuned Version
-
-## General → Choosing the right mode
-
-### When should I use Agent Mode vs Instant IDE Mode?
-
-- **Agent Mode** - use when coding with an AI assistant. Reviews trigger automatically
-- **Instant IDE Mode** - use when writing code yourself or reviewing existing code. You trigger reviews manually
-
----
-
-### I mostly write code without AI—is kluster.ai useful for me?
-
-Yes. Instant IDE Mode works without any AI assistant. Right-click code or press `Ctrl+Shift+K` to review.
-
----
-
-### When should I run a manual review?
-
-Before pushing. Use **Review uncommitted changes** for staged files, or **Review all branch changes** for everything since you branched.
-
----
-
-### Do the two modes ever conflict or overlap?
-
-No. Agent Mode runs when AI generates code. Instant IDE Mode runs when you trigger it. They work independently.
-
----
-
-## Agent Mode
-
-### How does Agent Mode handle intent verification differently than Instant IDE Mode?
-
-Agent Mode sees your original prompt to the AI, so it can verify the AI did what you asked—not just that the code runs. If you asked for Firebase auth but the AI used localStorage, Agent Mode catches it. Instant IDE Mode cannot check intent because it only sees the code, not your request.
-
----
-
-
-## Instant IDE Mode
-
-### What is the fastest way to check code I just wrote?
-
-Select the code, press `Ctrl+Shift+K` (or right-click → **Review with kluster.ai**). Results appear in seconds with issues and one-click fixes.
-
----
-
-### Can I use kluster.ai for code reviews in pull requests?
-
-Yes. Check out the PR locally and either:
-
-1. Use **Review uncommitted changes** to scan all modifications
-2. Select specific code and review it
 --- END CONTENT ---
 
