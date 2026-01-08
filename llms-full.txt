@@ -759,10 +759,6 @@ Yes, using Instant IDE Mode. You can review individual files, selected code bloc
 
 Yes. When using an AI coding assistant, Code Reviews works with any model available in supported IDEs, including Claude, GPT, Gemini, and others.
 
-### Can I review a full codebase?
-
-Yes, using Manual Review. You can review individual files, selected code blocks, or all uncommitted changes. For large codebases, we recommend reviewing file-by-file or focusing on changed files.
-
 ### Can I exclude files or folders from reviews?
 
 Currently, exclusion rules are configured at the project level through the kluster.ai platform. See [Custom Rules](/code-reviews/configuration/rules/) for setting up project-specific configurations.
@@ -806,14 +802,6 @@ Yes. You can disable automatic reviews from [Options](/code-reviews/configuratio
 ### Does it work with multi-file edits?
 
 Yes. Agent Mode analyzes diffs across multiple files in a single review, understanding the context of changes that span your codebase.
-
-### Can I disable Auto Reviews temporarily?
-
-Yes. You can disable Auto Reviews from [Options](/code-reviews/configuration/options/) in the kluster.ai platform. Alternatively, you can disable the kluster.ai extension in your IDE, or for CLI tools, disable the MCP server.
-
-### Does it work with multi-file edits?
-
-Yes. Auto review analyzes diffs across multiple files in a single review, understanding the context of changes that span your codebase.
 
 ### How does dependency checking work?
 
