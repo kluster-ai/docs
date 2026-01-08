@@ -17,6 +17,8 @@ Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/co
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/faq.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/get-started/installation.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/get-started/pick-your-workflow.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/instant-ide-mode/background-auto-reviews/how-it-works.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/instant-ide-mode/background-auto-reviews/quickstart.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/instant-ide-mode/instant-actions/quickstart.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/reference/mcp-tools.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/reference/response-schema.md
@@ -674,6 +676,7 @@ Control which review tools run in your development environment. Enable or disabl
 
 - `Real-time Code Review`: For code quality reviews.
 - `Dependency Analysis`: For package and dependency security.
+- `Ambient Background Reviews (Beta, Enterprise plan)`: Automatic reviews that run in the background after you pause typing.
 
 ## Next steps
 
@@ -1262,6 +1265,74 @@ Use Agent Mode when pair-programming with AI, switch to Instant IDE Mode when wr
 
 - **[Agent Mode quickstart](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Set up automatic reviews for AI-assisted coding.
 - **[Instant IDE Mode quickstart](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Set up on-demand reviews in your editor.
+--- END CONTENT ---
+
+Doc-Content: https://docs.kluster.ai/code-reviews/instant-ide-mode/background-auto-reviews/how-it-works/
+--- BEGIN CONTENT ---
+---
+title: Background Auto Reviews - How It Works
+description: Understand when background reviews trigger, what changes are included, and how results appear in your IDE.
+---
+
+# Background auto reviews: how it works
+
+Background auto reviews run in the background while you code. The extension periodically checks your diff and resets an idle timer each time it changes. When the timer runs out, [kluster.ai](https://kluster.ai){target=_blank} scans your uncommitted changes and notifies you only if it finds issues.
+
+## What gets reviewed
+
+Background reviews include staged, unstaged, untracked, and unsaved editor changes—basically everything that would show up in `git status` plus your current unsaved work.
+
+Only text files are reviewed. Binary files and common generated files (like `node_modules` or build outputs) are filtered out automatically.
+
+!!! note "Large changesets"
+    If your changes are very large, the review may skip context or fail. Use [Instant Actions](/code-reviews/instant-ide-mode/instant-actions/quickstart/) to review smaller chunks instead.
+
+## Where results appear
+
+Results show up in three places:
+
+- **Inline comments**: Collapsed by default, expand to see details.
+- **Gutter icons**: Visual markers next to flagged lines.
+- **Problems panel**: All issues listed in one place.
+
+Background review results are appended to any existing Instant Actions results—they don't replace them.
+
+## Branch switching
+
+When you switch git branches, kluster.ai resets its tracking state. This prevents stale results from a previous branch showing up in your current work.
+--- END CONTENT ---
+
+Doc-Content: https://docs.kluster.ai/code-reviews/instant-ide-mode/background-auto-reviews/quickstart/
+--- BEGIN CONTENT ---
+---
+title: Background Auto Reviews Quickstart
+description: Enable background auto reviews to automatically scan your uncommitted changes after you stop typing, and get notified only when issues are found.
+---
+
+# Background auto reviews quickstart
+
+Background auto reviews watch your uncommitted changes and run automatically in the background. You do not need to click anything.
+
+## Prerequisites
+
+-- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **kluster.ai installed in your IDE**: Follow the [Installation guide](/code-reviews/get-started/installation/) to set it up in your favourite IDE.
+
+
+## Turn it on
+
+1.  Open [Options](/code-reviews/configuration/options/) in the kluster.ai platform or IDE.
+2.  In **Enabled Tools**, toggle **Ambient Background Reviews (Beta, Enterprise plan)** on.
+3.  Keep coding. Reviews run automatically once enabled.
+
+![Background auto reviews enabled in Options](/images/code-reviews/instant-ide-mode/background-reviews/background-reviews.webp)
+
+
+## Next steps
+
+- **[How it works](/code-reviews/instant-ide-mode/background-auto-reviews/how-it-works/)**: Learn what triggers a review and what gets included.
+- **[Instant Actions quickstart](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Run reviews manually in your editor.
+- **[Configuration options](/code-reviews/configuration/options/)**: Adjust sensitivity and issue types.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/code-reviews/instant-ide-mode/instant-actions/quickstart/

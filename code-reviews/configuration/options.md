@@ -40,6 +40,7 @@ Control which review tools run in your development environment. Enable or disabl
 
 - `Real-time Code Review`: For code quality reviews.
 - `Dependency Analysis`: For package and dependency security.
+- `Ambient Background Reviews (Beta, Enterprise plan)`: Automatic reviews that run in the background after you pause typing.
 
 ## Next steps
 
