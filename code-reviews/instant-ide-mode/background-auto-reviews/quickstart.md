@@ -19,9 +19,6 @@ Background auto reviews watch your uncommitted changes and run automatically in 
 
 ![Background auto reviews enabled in Options](/images/code-reviews/instant-ide-mode/background-reviews/background-reviews.webp)
 
-## Turn it off
-
-Disable the same toggle in **Enabled Tools** to stop background reviews.
 
 ## Next steps
 

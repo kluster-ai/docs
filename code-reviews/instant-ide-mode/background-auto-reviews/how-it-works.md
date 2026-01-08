@@ -1,39 +1,31 @@
 ---
-title: Background Auto Reviews: How It Works
+title: Background Auto Reviews - How It Works
 description: Understand when background reviews trigger, what changes are included, and how results appear in your IDE.
 ---
 
 # Background auto reviews: how it works
 
-Background auto reviews keep a lightweight watch on your workspace and submit a review only after you stop making changes for a short time.
+Background auto reviews run in the background while you code. The extension periodically checks your diff and resets an idle timer each time it changes. When the timer runs out, [kluster.ai](https://kluster.ai){target=_blank} scans your uncommitted changes and notifies you only if it finds issues.
 
-## Change detection and idle timer
+## What gets reviewed
 
-- The extension checks your current diff about every 10 seconds.
-- If the diff changes, the idle timer resets.
-- A review starts after a short idle period (default about 2 minutes, set by your config).
+Background reviews include staged, unstaged, untracked, and unsaved editor changes—basically everything that would show up in `git status` plus your current unsaved work.
 
-## What counts as changes
+Only text files are reviewed. Binary files and common generated files (like `node_modules` or build outputs) are filtered out automatically.
 
-- Staged, unstaged, untracked, and unsaved editor changes are included.
-- Only text files are reviewed. Common non-code and generated files are filtered out.
-- If your changes are very large, the review may skip context or fail. Use Instant Actions to review smaller chunks.
+!!! note "Large changesets"
+    If your changes are very large, the review may skip context or fail. Use [Instant Actions](/code-reviews/instant-ide-mode/instant-actions/quickstart/) to review smaller chunks instead.
 
-## Review lifecycle
+## Where results appear
 
-- Only one background review runs at a time.
-- The last reviewed diff is tracked, so unchanged patches are not re-reviewed.
-- Switching git branches resets the state to avoid stale results.
+Results show up in three places:
 
-## Results and notifications
+- **Inline comments**: Collapsed by default, expand to see details.
+- **Gutter icons**: Visual markers next to flagged lines.
+- **Problems panel**: All issues listed in one place.
 
-- If no issues are found, there is no notification.
-- If issues are found, a warning notification appears and lets you open the results.
-- Results show as inline comments (collapsed by default), gutter icons, and entries in the Problems panel.
-- Auto review results are appended to existing Instant Actions results instead of replacing them.
+Background review results are appended to any existing Instant Actions results—they don't replace them.
 
-## If you are not seeing reviews
+## Branch switching
 
-- Confirm you are signed in and **Ambient Background Reviews (Beta, Enterprise plan)** is enabled.
-- Make sure you have uncommitted changes in a git repo and then pause for a short time.
-- If a review is already running, it will finish before a new one starts.
+When you switch git branches, kluster.ai resets its tracking state. This prevents stale results from a previous branch showing up in your current work.
