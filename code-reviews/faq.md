@@ -14,7 +14,7 @@ description: Find answers to common questions about kluster.ai Code Review, cove
 
 ## I mostly write code without AI—is kluster.ai useful for me?
 
-Yes. Instant IDE Mode is built for this. Right-click any code or press `Ctrl+Shift+K` to trigger a review—no AI assistant needed. See [Instant IDE Mode](/code-reviews/instant-ide-mode/instant-actions/quickstart/) for setup.
+Yes. Instant IDE Mode is built for this. Right-click any code or press `Ctrl+Shift+K` to trigger a review. No AI assistant needed. See [Instant IDE Mode](/code-reviews/instant-ide-mode/instant-actions/quickstart/) for setup.
 
 ## When should I run a manual review?
 
