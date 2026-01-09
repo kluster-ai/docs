@@ -26,8 +26,8 @@ No. Agent Mode runs when AI generates code. Instant IDE Mode runs when you trigg
 
 ### What IDEs and CLI tools are supported?
 
-- **IDE Extensions**: Cursor, VS Code, Windsurf, Antigravity
-- **CLI Tools**: Claude Code, Codex CLI
+- **IDE extensions**: Cursor, VS Code, Windsurf, Antigravity
+- **CLI tools**: Claude Code, Codex CLI
 
 See [Installation](/code-reviews/get-started/installation/) for setup instructions.
 
@@ -116,7 +116,7 @@ Yes. Check out the PR locally and either:
 
 You can trigger a Manual Review in three ways:
 
-1. **Right-click** selected code → "Review with kluster.ai."
+1. **Right-click** selected code → **Review with kluster.ai**.
 2. Use the extension sidebar. Open the **Instant Review** dropdown and choose a file or uncommitted changes.
 3. Select code and use the **hint** button. This option is not available in Cursor yet.
 
