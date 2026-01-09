@@ -9,8 +9,8 @@ description: Find answers to common questions about kluster.ai Code Review, cove
 
 ## When should I use Agent Mode vs Instant IDE Mode?
 
-- **[Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)** - use when coding with an AI assistant. Reviews trigger automatically.
-- **[Instant IDE Mode](/code-reviews/instant-ide-mode/instant-actions/quickstart/)** - use when writing code yourself or reviewing existing code. You trigger reviews manually.
+- **[Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Use this mode when coding with an AI assistant. Reviews trigger automatically.
+- **[Instant IDE Mode](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**:  Use this mode when writing code yourself or reviewing existing code. You trigger reviews manually.
 
 ## I mostly write code without AI—is kluster.ai useful for me?
 
@@ -18,7 +18,7 @@ Yes. Instant IDE Mode is built for this. Right-click any code or press `Ctrl+Shi
 
 ## When should I run a manual review?
 
-Before pushing. Use **Review uncommitted changes** for staged files, or **Review all branch changes** for everything since you branched.
+Run a manual review before pushing changes. Use **Review uncommitted changes** for staged files, or **Review all branch changes** to review all changes made since the branch was created.
 
 ## Do the two modes ever conflict or overlap?
 
@@ -26,8 +26,8 @@ No. Agent Mode runs when AI generates code. Instant IDE Mode runs when you trigg
 
 ## What IDEs and CLI tools are supported?
 
-- **IDE Extensions** - Cursor, VS Code, Windsurf, Antigravity.
-- **CLI Tools** - Claude Code, Codex CLI.
+- **IDE Extensions**: Cursor, VS Code, Windsurf, Antigravity
+- **CLI Tools**: Claude Code, Codex CLI
 
 See [Installation](/code-reviews/get-started/installation/) for setup instructions.
 
