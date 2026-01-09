@@ -135,4 +135,4 @@ Yes. In the kluster.ai extension sidebar, click **Instant Review** and select **
 ### What's the difference between instant actions and background reviews?
 
 - **Instant actions**: On-demand reviews triggered by clicking a button or using a shortcut.
-- **Ambient Background Reviews (Beta, Enterprise plan)**: Automatically review your code for issues and suggestions as you work, without requiring you to trigger anything. Enable it from the **Enabled Tools** section in [Options](/code-reviews/configuration/options/).
+- **Ambient background reviews (Beta, Enterprise plan)**: Automatically review your code for issues and suggestions as you work, without requiring you to trigger anything. Enable it from the **Enabled Tools** section in [Options](/code-reviews/configuration/options/).
