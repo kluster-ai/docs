@@ -1,11 +1,11 @@
 ---
 title: Troubleshoot Your Installation
-description: Solutions for common installation issues with kluster.ai Code Reviews across all supported IDEs and CLI tools.
+description: Resolve common installation errors for kluster.ai Code Reviews across all supported IDEs and CLI tools to ensure seamless code review integration in your development workflow.
 ---
 
 # Troubleshoot Your Installation
 
-If you encounter issues during the [kluster.ai](https://www.kluster.ai/){target=\_blank} Code Reviews installation process, check the following common errors.
+If you encounter issues during the [kluster.ai Code Reviews](https://www.kluster.ai/){target=\_blank} installation process, check the following common errors.
 
 ## Cannot find module './constants'
 
