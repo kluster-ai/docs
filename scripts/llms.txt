@@ -10,13 +10,12 @@ This file is intended for AI models and developers. Use it to:
 - Explore optional resources (see Optional)
 
 ## Metadata
-- Documentation pages: 17
+- Documentation pages: 16
 - Source repositories: 2
 - Optional resources: 0
 
 ## Docs
 This section lists documentation pages. Each entry includes the page title, a direct link to the raw Markdown file, and a short description. Use this section to answer questions about core functionality, architecture, and features. If a question is about how or why something works, check here first.
-- [troubleshooting_mission](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/.fran/troubleshooting_mission.md): No description available.
 - [How to use activation codes](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/activation-codes.md): This guide explains how to redeem activation codes and apply them to your kluster account
 - [Frequently Asked Questions](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/faq.md): Find answers to common questions about kluster.ai Code Review, covering setup, supported IDEs, review modes, security, and troubleshooting topics.
 - [Code Reviews](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/review-modes.md): Learn how to use kluster.ai's Code Reviews to validate your code in real time—detecting bugs, security issues, and quality problems so you can ship safely.

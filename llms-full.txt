@@ -6,7 +6,6 @@ kluster.ai. kluster.ai provides the technology to verify and trust AI responses 
 Documentation: https://docs.kluster.ai
 
 ## List of doc pages:
-Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/.fran/troubleshooting_mission.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/activation-codes.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/agent-mode/automatic-agent-reviews/dependency-checks.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/agent-mode/automatic-agent-reviews/quickstart.md
@@ -25,85 +24,6 @@ Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/re
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/review-modes.md
 
 ## Full content for each doc page
-
-Doc-Content: https://docs.kluster.ai/.fran/troubleshooting_missio/
---- BEGIN CONTENT ---
-# Troubleshooting Section Mission
-
-## Research Summary
-
-### Wormhole Docs Reference
-From [Wormhole's NTT Troubleshooting page](https://wormhole.com/docs/products/token-transfers/native-token-transfers/guides/troubleshoot/), they use a **checklist format** with:
-- **Bolded issue/topic** identifying what to check
-- **Concise explanation** of the problem
-- **Action or reference** to related docs
-
-Positioned as "preventive verification steps" rather than traditional Q&A.
-
-### kluster.ai Docs Context
-- **Product**: Code Reviews - an AI code review service integrating into IDEs (Cursor, VS Code, Windsurf, Antigravity) and CLI tools (Claude Code, Codex CLI)
-- **Current FAQ**: Has sections for General, Agent Mode, and Instant IDE Mode
-- **Navigation**: Uses `awesome-nav` plugin with `.nav.yml` files
-
----
-
-## Decision: Structure
-
-**Rejected approach**: A single general troubleshooting page for all issues.
-
-**Approved approach**: Category-specific troubleshooting, starting with **installation troubleshooting** since install issues (like NPX cache) can happen across multiple tools.
-
-### Final Structure
-
-```
-get-started/
-├── installation.md          (main install page with tabs per IDE)
-├── pick-your-workflow.md
-└── troubleshooting/          (NEW - child folder)
-    └── installation.md       (installation troubleshooting)
-```
-
-### Rationale
-- **Troubleshooting lives under `get-started/`** - makes sense since install issues happen during "getting started"
-- **Can link from the main installation page** - "Having issues? See [Installation Troubleshooting](/code-reviews/get-started/troubleshooting/installation/)"
-- **Scalable** - later can add more troubleshooting pages like `agent-mode.md`, `instant-ide-mode.md` if needed
-- **Clean URL**: `/code-reviews/get-started/troubleshooting/installation/`
-
----
-
-## First Issue to Document
-
-### NPX Cache Corruption
-
-**Source**: Slack conversation with Gonza (2026-01-08)
-
-**Problem**:
-```
-Error: Cannot find module './constants'
-Require stack:
-- /Users/gonza/.npm/_npx/dbbb09087cd63324/node_modules/@klusterai/kluster-verify-code-mcp/dist/index.js
-```
-
-**Affected tools**: Any tool using npx to run the MCP server (Cursor, VS Code, Windsurf, Claude Code, Codex CLI)
-
-**Cause**: Corrupted npx cache
-
-**Solution**:
-```bash
-rm -rf ~/.npm/_npx
-```
-Then restart the IDE/tool.
-
----
-
-## Next Steps
-
-1. Create git branch `fran/troubleshooting` from `fran/update-faq`
-2. Create `get-started/troubleshooting/` folder
-3. Create `installation.md` with NPX cache issue (following Wormhole checklist style)
-4. Update `get-started/.nav.yml` to include troubleshooting
-5. Add link from main `installation.md` to troubleshooting page
---- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/code-reviews/activation-codes/
 --- BEGIN CONTENT ---
