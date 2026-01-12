@@ -6,6 +6,7 @@ kluster.ai. kluster.ai provides the technology to verify and trust AI responses 
 Documentation: https://docs.kluster.ai
 
 ## List of doc pages:
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/.fran/troubleshooting_mission.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/activation-codes.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/agent-mode/automatic-agent-reviews/dependency-checks.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/agent-mode/automatic-agent-reviews/quickstart.md
@@ -17,12 +18,92 @@ Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/co
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/faq.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/get-started/installation.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/get-started/pick-your-workflow.md
+Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/get-started/troubleshooting.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/instant-ide-mode/instant-actions/quickstart.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/reference/mcp-tools.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/reference/response-schema.md
 Doc-Page: https://raw.githubusercontent.com/kluster-ai/docs/main/code-reviews/review-modes.md
 
 ## Full content for each doc page
+
+Doc-Content: https://docs.kluster.ai/.fran/troubleshooting_missio/
+--- BEGIN CONTENT ---
+# Troubleshooting Section Mission
+
+## Research Summary
+
+### Wormhole Docs Reference
+From [Wormhole's NTT Troubleshooting page](https://wormhole.com/docs/products/token-transfers/native-token-transfers/guides/troubleshoot/), they use a **checklist format** with:
+- **Bolded issue/topic** identifying what to check
+- **Concise explanation** of the problem
+- **Action or reference** to related docs
+
+Positioned as "preventive verification steps" rather than traditional Q&A.
+
+### kluster.ai Docs Context
+- **Product**: Code Reviews - an AI code review service integrating into IDEs (Cursor, VS Code, Windsurf, Antigravity) and CLI tools (Claude Code, Codex CLI)
+- **Current FAQ**: Has sections for General, Agent Mode, and Instant IDE Mode
+- **Navigation**: Uses `awesome-nav` plugin with `.nav.yml` files
+
+---
+
+## Decision: Structure
+
+**Rejected approach**: A single general troubleshooting page for all issues.
+
+**Approved approach**: Category-specific troubleshooting, starting with **installation troubleshooting** since install issues (like NPX cache) can happen across multiple tools.
+
+### Final Structure
+
+```
+get-started/
+├── installation.md          (main install page with tabs per IDE)
+├── pick-your-workflow.md
+└── troubleshooting/          (NEW - child folder)
+    └── installation.md       (installation troubleshooting)
+```
+
+### Rationale
+- **Troubleshooting lives under `get-started/`** - makes sense since install issues happen during "getting started"
+- **Can link from the main installation page** - "Having issues? See [Installation Troubleshooting](/code-reviews/get-started/troubleshooting/installation/)"
+- **Scalable** - later can add more troubleshooting pages like `agent-mode.md`, `instant-ide-mode.md` if needed
+- **Clean URL**: `/code-reviews/get-started/troubleshooting/installation/`
+
+---
+
+## First Issue to Document
+
+### NPX Cache Corruption
+
+**Source**: Slack conversation with Gonza (2026-01-08)
+
+**Problem**:
+```
+Error: Cannot find module './constants'
+Require stack:
+- /Users/gonza/.npm/_npx/dbbb09087cd63324/node_modules/@klusterai/kluster-verify-code-mcp/dist/index.js
+```
+
+**Affected tools**: Any tool using npx to run the MCP server (Cursor, VS Code, Windsurf, Claude Code, Codex CLI)
+
+**Cause**: Corrupted npx cache
+
+**Solution**:
+```bash
+rm -rf ~/.npm/_npx
+```
+Then restart the IDE/tool.
+
+---
+
+## Next Steps
+
+1. Create git branch `fran/troubleshooting` from `fran/update-faq`
+2. Create `get-started/troubleshooting/` folder
+3. Create `installation.md` with NPX cache issue (following Wormhole checklist style)
+4. Update `get-started/.nav.yml` to include troubleshooting
+5. Add link from main `installation.md` to troubleshooting page
+--- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/code-reviews/activation-codes/
 --- BEGIN CONTENT ---
@@ -1277,6 +1358,69 @@ Use Agent Mode when pair-programming with AI, switch to Instant IDE Mode when wr
 
 - **[Agent Mode quickstart](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Set up automatic reviews for AI-assisted coding.
 - **[Instant IDE Mode quickstart](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Set up on-demand reviews in your editor.
+--- END CONTENT ---
+
+Doc-Content: https://docs.kluster.ai/code-reviews/get-started/troubleshooting/
+--- BEGIN CONTENT ---
+---
+title: Troubleshoot Your Installation
+description: Solutions for common installation issues with kluster.ai Code Reviews across all supported IDEs and CLI tools.
+---
+
+# Troubleshoot Your Installation
+
+If you encounter issues during the [kluster.ai](https://www.kluster.ai/){target=\_blank} Code Reviews installation process, check the following common errors.
+
+## Cannot find module './constants'
+
+<div id="termynal" data-termynal>
+  <span data-ty>[info] Starting new stdio process with command: npx -y @klusterai/kluster-verify-code-mcp@latest</span>
+  <span data-ty style="color: #ff6b6b;">[error] node:internal/modules/cjs/loader:1247</span>
+  <span data-ty style="color: #ff6b6b;">  throw err;</span>
+  <span data-ty style="color: #ff6b6b;">  ^</span>
+  <span data-ty style="color: #ff6b6b;">Error: Cannot find module './constants'</span>
+  <span data-ty style="color: #ff6b6b;">Require stack:</span>
+  <span data-ty style="color: #ff6b6b;">- /Users/.../.npm/_npx/abc123/node_modules/@klusterai/kluster-verify-code-mcp/dist/index.js</span>
+</div>
+
+This error occurs when npx caches a broken or incomplete package download. Clear the cache and restart your IDE:
+
+=== "macOS / Linux"
+
+    ```bash
+    rm -rf ~/.npm/_npx
+    ```
+
+=== "Windows"
+
+    ```powershell
+    Remove-Item -Recurse -Force "$env:LOCALAPPDATA\npm-cache\_npx"
+    ```
+
+After clearing the cache, restart your IDE or CLI tool.
+
+## Claude Code MCP server shows "failed"
+
+In Claude Code, the MCP server may show `✘ failed` on the first connection attempt. This happens because Claude Code has a 10-second timeout for MCP startup, and the initial npx download can take longer when there's no cache.
+
+Simply restart Claude Code. The second attempt will use the cached package and connect successfully. Run `/mcp` to verify the MCP server is connected:
+
+![Claude Code MCP server status showing connected](/images/code-reviews/get-started/installation/troubleshooting/troubleshooting-1.webp)
+
+## Debugging CLI installation issues
+
+If you're experiencing installation problems, add the `--verbose` flag to the installer command for more detailed output:
+
+```bash
+npx -y @klusterai/ide-installer YOUR_API_KEY claude --verbose
+```
+
+This helps identify where the installation process is failing.
+
+## Next steps
+
+- **[Installation guide](/code-reviews/get-started/installation/)**: Set up Code Reviews in your preferred IDE.
+- **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Decide which review mode fits your workflow.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/code-reviews/instant-ide-mode/instant-actions/quickstart/
