@@ -10,7 +10,7 @@ This file is intended for AI models and developers. Use it to:
 - Explore optional resources (see Optional)
 
 ## Metadata
-- Documentation pages: 8
+- Documentation pages: 15
 - Source repositories: 2
 - Optional resources: 0
 
