@@ -10,21 +10,27 @@ This file is intended for AI models and developers. Use it to:
 - Explore optional resources (see Optional)
 
 ## Metadata
-- Documentation pages: 9
+- Documentation pages: 15
 - Source repositories: 2
 - Optional resources: 0
 
 ## Docs
 This section lists documentation pages. Each entry includes the page title, a direct link to the raw Markdown file, and a short description. Use this section to answer questions about core functionality, architecture, and features. If a question is about how or why something works, check here first.
-- [Quick start](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/quickstart.md): Learn how to use Code Reviews in your daily workflow. Trigger reviews automatically or manually, interpret results, and apply fixes.
+- [Code Reviews](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/review-modes.md): Learn how to use kluster.ai's Code Reviews to validate your code in real time—detecting bugs, security issues, and quality problems so you can ship safely.
 - [Frequently Asked Questions](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/faq.md): Find answers to common questions about kluster.ai Code Review, covering setup, supported IDEs, review modes, security, and troubleshooting topics.
-- [Get started with Code Reviews](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/installation.md): Set up kluster.ai Code Reviews in minutes. Scan code for errors, vulnerabilities, and performance issues in Cursor, VS Code, Claude Code, and more.
 - [How to use activation codes](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/activation-codes.md): This guide explains how to redeem activation codes and apply them to your kluster account
-- [tools](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/tools.md): No description available.
 - [Options](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/configuration/options.md): Configure kluster.ai Code Review settings, from sensitivity levels to issue types and enabled tools used to verify code across your workflow.
 - [rules](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/configuration/rules.md): No description available.
-- [cursor-firebase-nextjs](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/examples/cursor-firebase-nextjs.md): No description available.
-- [vscode-admin-endpoint](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/examples/vscode-admin-endpoint.md): No description available.
+- [Manual Agent Reviews](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/agent-mode/manual-agent-reviews.md): Ask your AI assistant to review existing code on demand. Audit files, check for security issues, or verify code quality.
+- [Response Schema](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/reference/response-schema.md): Understand the response format from kluster.ai Code Reviews—issue structure, severity levels, priority system, and suggested fixes.
+- [mcp-tools](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/reference/mcp-tools.md): No description available.
+- [Pick your workflow](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/get-started/pick-your-workflow.md): Choose between Agent Mode and Instant IDE Mode based on how you write code. Or use both.
+- [Get started with Code Reviews](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/get-started/installation.md): Set up kluster.ai Code Reviews in minutes. Scan code for errors, vulnerabilities, and performance issues in Cursor, VS Code, Claude Code, and more.
+- [Instant Actions Quickstart](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/instant-ide-mode/instant-actions/quickstart.md): Write code, verify on your terms. Three ways to trigger reviews in your IDE—right-click any selection, use hint buttons, or scan uncommitted changes before you commit.
+- [Automatic Agent Reviews Quickstart](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/agent-mode/automatic-agent-reviews/quickstart.md): Get started with automatic code reviews when using AI assistants. See how kluster.ai reviews code in real-time as your AI generates it.
+- [Dependency Checks](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/agent-mode/automatic-agent-reviews/dependency-checks.md): Learn how kluster.ai validates packages and dependencies before installation, catching vulnerabilities and license issues automatically.
+- [cursor-firebase-nextjs](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/agent-mode/examples/cursor-firebase-nextjs.md): No description available.
+- [vscode-admin-endpoint](https://raw.githubusercontent.com/kluster-ai/docs/refs/heads/main/code-reviews/agent-mode/examples/vscode-admin-endpoint.md): No description available.
 
 ## Source Code Repos
 Frequently used source code repositories essential for working with this project. Each entry includes the repository name, GitHub URL, and a short description of what the repo contains or enables. These repositories contain the source code referenced by these docs. Use them for API references, code examples, or implementation details.
