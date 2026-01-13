@@ -5,9 +5,9 @@ description: Configure kluster.ai Code Review settings, from sensitivity levels 
 
 # Options
 
-You can customize the [kluster.ai](https://www.kluster.ai/){target=\_blank} Code Review behavior through the platform settings or directly in your IDE. The Options page is available from the left-hand menu under **Review option**, where you can configure sensitivity levels for issue reporting, select which types of bug checks to perform, and enable or disable specific MCP tools to match your development workflow.
+You can customize the [kluster.ai](https://www.kluster.ai/){target=\_blank} Code Review behavior through the platform settings or directly in your IDE. The options page is available from the left-hand menu under **Review options**, where you can configure sensitivity levels for issue reporting, select which types of bug checks to perform, and enable or disable specific MCP tools to match your development workflow.
 
-![Code Review Options interface](/images/code-reviews/code/configuration/configuration-01.webp)
+![Code Review Options interface](/images/code-reviews/configuration/configuration-01.webp)
 
 ## Sensitivity settings
 
@@ -27,13 +27,13 @@ Select which types of issues real-time Code Review detects during analysis. Each
 
 |     Type      |           Description           |                Example                |
 |:-------------:|:-------------------------------:|:-------------------------------------:|
-|   **intent**    | Code doesn't match user request | User asked for sorting, got filtering |
-|  **semantic**   |    Meaning and type errors      |        Wrong variable type used       |
-|  **knowledge**  |    Best practice violations     |       Not following conventions       |
-| **performance** |       Performance issues        |        Inefficient algorithms         |
-|   **quality**   |      Code quality problems      |        Poor naming, complexity        |
-|   **logical**   |     Control flow errors         |           Off-by-one errors           |
-|  **security**   |    Security vulnerabilities     |          SQL injection risks          |
+|   **Intent**    | Code doesn't match user request | User asked for sorting, got filtering |
+|  **Semantic**   |    Meaning and type errors      |        Wrong variable type used       |
+|  **Knowledge**  |    Best practice violations     |       Not following conventions       |
+| **Performance** |       Performance issues        |        Inefficient algorithms         |
+|   **Quality**   |      Code quality problems      |        Poor naming, complexity        |
+|   **Logical**   |     Control flow errors         |           Off-by-one errors           |
+|  **Security**   |    Security vulnerabilities     |          SQL injection risks          |
 
 ## Enabled tools
 
