@@ -46,5 +46,5 @@ Control which review tools run in your development environment. Enable or disabl
 ## Next steps
 
 - [Create custom rules](/code-reviews/configuration/rules/): Add project-specific development standards.
-- [View tools reference](/code-reviews/tools/): Understand the technical API details.
-- [Set up integrations](/code-reviews/quickstart/): Configure IDE integrations.
+- [View MCP tools reference](/code-reviews/reference/mcp-tools/): Understand the technical API details.
+- [Installation guide](/code-reviews/get-started/installation/): Set up Code Reviews in your IDE.
