@@ -1,9 +1,9 @@
 ---
-title: Troubleshoot Your Installation
+title: Troubleshoot your installation
 description: Resolve common installation errors for kluster.ai Code Reviews across all supported IDEs and CLI tools to ensure seamless code review integration in your development workflow.
 ---
 
-# Troubleshoot Your Installation
+# Troubleshoot your installation
 
 If you encounter issues during the [kluster.ai Code Reviews](https://www.kluster.ai/){target=\_blank} installation process, check the following common errors.
 
