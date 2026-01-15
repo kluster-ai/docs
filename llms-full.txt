@@ -1283,11 +1283,11 @@ Use Agent Mode when pair-programming with AI, switch to Instant IDE Mode when wr
 Doc-Content: https://docs.kluster.ai/code-reviews/get-started/troubleshooting/
 --- BEGIN CONTENT ---
 ---
-title: Troubleshoot Your Installation
+title: Troubleshoot your installation
 description: Resolve common installation errors for kluster.ai Code Reviews across all supported IDEs and CLI tools to ensure seamless code review integration in your development workflow.
 ---
 
-# Troubleshoot Your Installation
+# Troubleshoot your installation
 
 If you encounter issues during the [kluster.ai Code Reviews](https://www.kluster.ai/){target=\_blank} installation process, check the following common errors.
 
