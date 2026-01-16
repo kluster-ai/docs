@@ -5,13 +5,13 @@ description: Configure kluster.ai Code Review settings, from sensitivity levels 
 
 # Options
 
-You can customize the [kluster.ai](https://www.kluster.ai/){target=\_blank} Code Review behavior through the platform settings or directly in your IDE. The options page is available from the left-hand menu under **Review options**, where you can configure sensitivity levels for issue reporting, select which types of bug checks to perform, and enable or disable specific MCP tools to match your development workflow.
+You can customize the [kluster.ai](https://www.kluster.ai/){target=\_blank} Code Review behavior through the platform settings or directly in your IDE. The options page is available in the left-hand menu under **Review options**, where you can configure sensitivity levels for issue reporting, select which types of bug checks to run, and enable or disable specific MCP tools to match your development workflow.
 
 ![Code Review Options interface](/images/code-reviews/configuration/configuration-01.webp)
 
 ## Sensitivity settings
 
-Configure the minimum sensitivity level for the real-time Code Review issue reporting. Set your threshold based on your team requirements:
+Configure the minimum sensitivity level for the real-time Code Review issue reporting. Set your threshold based on your team's requirements:
 
 - **Low**: Detects even the smallest potential issues.
 - **Medium**: Suitable for projects requiring strong security and high code quality.
@@ -37,7 +37,7 @@ Select which types of issues real-time Code Review detects during analysis. Each
 
 ## Enabled tools
 
-Control which review tools run in your development environment. Enable or disable each tool based on the specific needs and workflow of your project.
+Control which review tools run in your development environment. Enable or disable each tool based on your project's specific needs and workflow.
 
 - **Real-time Code Review**: For code quality reviews.
 - **Dependency Analysis**: For package and dependency security.
