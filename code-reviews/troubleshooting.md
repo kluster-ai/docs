@@ -54,3 +54,7 @@ npx -y @klusterai/ide-installer YOUR_API_KEY claude --verbose
 ```
 
 This helps identify where the installation process is failing.
+
+## Need help?
+
+If your issue isn't listed here or you need additional support, join our [Discord community](https://discord.com/invite/klusterai){target=\_blank}.
