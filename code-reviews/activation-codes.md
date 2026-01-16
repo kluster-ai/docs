@@ -12,7 +12,7 @@ Activation codes provide promotional credits for [kluster.ai](https://www.kluste
 Before redeeming an activation code, ensure you have:
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **kluster.ai installed in your IDE**: Follow the [Installation guide](/code-reviews/get-started/installation/) to set it up in your favourite IDE.
+- **kluster.ai installed in your IDE**: Follow the [Installation guide](/code-reviews/get-started/installation/) to set it up in your favorite IDE.
 - **Activation code**: One that matches the plan you want to subscribe to.
 
 ## Redeeming your activation code
