@@ -639,13 +639,13 @@ description: Configure kluster.ai Code Review settings, from sensitivity levels 
 
 # Options
 
-You can customize the [kluster.ai](https://www.kluster.ai/){target=\_blank} Code Review behavior through the platform settings or directly in your IDE. The options page is available from the left-hand menu under **Review options**, where you can configure sensitivity levels for issue reporting, select which types of bug checks to perform, and enable or disable specific MCP tools to match your development workflow.
+You can customize the [kluster.ai](https://www.kluster.ai/){target=\_blank} Code Review behavior through the platform settings or directly in your IDE. The options page is available in the left-hand menu under **Review options**, where you can configure sensitivity levels for issue reporting, select which types of bug checks to run, and enable or disable specific MCP tools to match your development workflow.
 
 ![Code Review Options interface](/images/code-reviews/configuration/configuration-01.webp)
 
 ## Sensitivity settings
 
-Configure the minimum sensitivity level for the real-time Code Review issue reporting. Set your threshold based on your team requirements:
+Configure the minimum sensitivity level for the real-time Code Review issue reporting. Set your threshold based on your team's requirements:
 
 - **Low**: Detects even the smallest potential issues.
 - **Medium**: Suitable for projects requiring strong security and high code quality.
@@ -671,7 +671,7 @@ Select which types of issues real-time Code Review detects during analysis. Each
 
 ## Enabled tools
 
-Control which review tools run in your development environment. Enable or disable each tool based on the specific needs and workflow of your project.
+Control which review tools run in your development environment. Enable or disable each tool based on your project's specific needs and workflow.
 
 - **Real-time Code Review**: For code quality reviews.
 - **Dependency Analysis**: For package and dependency security.
@@ -703,9 +703,9 @@ To accommodate different workflows, Code Reviews supports two types of rules:
 !!! info "Extraction rate limit"
     Rule extraction from repositories is limited to once per hour. Wait 60 minutes between extraction requests.
 
-1. **Access the platform**: Navigate to [Custom Code Review Rules](https://platform.kluster.ai/custom-code-review-rules){target=\_blank}.
+1. Access the platform Navigate by navigating to [Custom Code Review Rules](https://platform.kluster.ai/custom-code-review-rules){target=\_blank}.
 
-2. **Connect GitHub** (Optional): Connect your GitHub account to enable project-specific rules. In this context, each GitHub repository is treated as a 'project' - Code Reviews learns patterns from each repository and applies those specific rules when reviewing code for that project.
+2. Connect your GitHub account (Optional) to enable project-specific rules. In this context, each GitHub repository is treated as a 'project' - Code Reviews learns patterns from each repository and applies those specific rules when reviewing code for that project.
 
     ![Connect to GitHub](/images/code-reviews/configuration/rules/rules-01.webp)
 
