@@ -1,11 +1,10 @@
-title: Code Reviews
-hide: false
 nav:
-  - 'Review Modes': review-modes.md
-  - 'Get Started': get-started
+  - 'Review modes': review-modes.md
+  - 'Get started': get-started
   - 'Agent Mode': agent-mode
   - 'Instant IDE Mode': instant-ide-mode
   - 'Configuration': configuration
   - 'FAQ': faq.md
+  - 'Troubleshooting': troubleshooting.md
   - 'Reference': reference
   - 'How to use activation codes': activation-codes.md
