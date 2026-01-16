@@ -1274,9 +1274,9 @@ title: Background Auto Reviews - How It Works
 description: Understand when background reviews trigger, what changes are included, and how results appear in your IDE.
 ---
 
-# Background auto reviews: how it works
+# Background reviews: how it works
 
-Background auto reviews run in the background while you code. The extension periodically checks your diff and resets an idle timer each time it changes. When the timer runs out, [kluster.ai](https://kluster.ai){target=_blank} scans your uncommitted changes and notifies you only if it finds issues.
+Background reviews run in the background while you code. The extension periodically checks your diff and resets an idle timer each time it changes. When the timer runs out, [kluster.ai](https://kluster.ai){target=_blank} scans your uncommitted changes and notifies you only if it finds issues.
 
 ## What gets reviewed
 
@@ -1309,9 +1309,9 @@ title: Background Auto Reviews Quickstart
 description: Enable background auto reviews to automatically scan your uncommitted changes after you stop typing, and get notified only when issues are found.
 ---
 
-# Background auto reviews quickstart
+# Background reviews quickstart
 
-Background auto reviews watch your uncommitted changes and run automatically in the background. You do not need to click anything.
+Background reviews watch your uncommitted changes and run automatically in the background. You do not need to click anything.
 
 ## Prerequisites
 
@@ -1325,7 +1325,7 @@ Background auto reviews watch your uncommitted changes and run automatically in 
 2.  In **Enabled Tools**, toggle **Ambient Background Reviews (Beta, Enterprise plan)** on.
 3.  Keep coding. Reviews run automatically once enabled.
 
-![Background auto reviews enabled in Options](/images/code-reviews/instant-ide-mode/background-reviews/background-reviews.webp)
+![Background reviews enabled in Options](/images/code-reviews/instant-ide-mode/background-reviews/background-reviews.webp)
 
 
 ## Next steps
