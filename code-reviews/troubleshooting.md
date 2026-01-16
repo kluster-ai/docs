@@ -1,13 +1,15 @@
 ---
-title: Troubleshoot your installation
-description: Resolve common installation errors for kluster.ai Code Reviews across all supported IDEs and CLI tools to ensure seamless code review integration in your development workflow.
+title: Troubleshooting
+description: Solutions for common issues with kluster.ai Code Reviews across all supported IDEs and CLI tools.
 ---
 
-# Troubleshoot your installation
+# Troubleshooting
 
-If you encounter issues during the [kluster.ai Code Reviews](https://www.kluster.ai/){target=\_blank} installation process, check the following common errors.
+If you encounter issues with [kluster.ai Code Reviews](https://www.kluster.ai/){target=\_blank}, check the following common errors.
 
-## Cannot find module './constants'
+## Installation
+
+### Cannot find module './constants'
 
 <div id="termynal" data-termynal>
   <span data-ty>[info] Starting new stdio process with command: npx -y @klusterai/kluster-verify-code-mcp@latest</span>
@@ -35,7 +37,7 @@ This error occurs when npx caches a broken or incomplete package download. Clear
 
 After clearing the cache, restart your IDE or CLI tool.
 
-## Claude Code MCP server shows "failed"
+### Claude Code MCP server shows "failed"
 
 In Claude Code, the MCP server may show `✘ failed` on the first connection attempt. This happens because Claude Code has a 10-second timeout for MCP startup, and the initial npx download can take longer when there's no cache.
 
@@ -43,7 +45,7 @@ Simply restart Claude Code. The second attempt will use the cached package and c
 
 ![Claude Code MCP server status showing connected](/images/code-reviews/get-started/installation/troubleshooting/troubleshooting-1.webp)
 
-## Debugging CLI installation issues
+### Debugging CLI installation issues
 
 If you're experiencing installation problems, add the `--verbose` flag to the installer command for more detailed output:
 
@@ -52,8 +54,3 @@ npx -y @klusterai/ide-installer YOUR_API_KEY claude --verbose
 ```
 
 This helps identify where the installation process is failing.
-
-## Next steps
-
-- **[Installation guide](/code-reviews/get-started/installation/)**: Set up Code Reviews in your preferred IDE.
-- **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Decide which review mode fits your workflow.
