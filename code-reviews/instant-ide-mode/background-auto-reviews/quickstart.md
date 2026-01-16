@@ -3,9 +3,9 @@ title: Background Auto Reviews Quickstart
 description: Enable background auto reviews to automatically scan your uncommitted changes after you stop typing, and get notified only when issues are found.
 ---
 
-# Background auto reviews quickstart
+# Background reviews quickstart
 
-Background auto reviews watch your uncommitted changes and run automatically in the background. You do not need to click anything.
+Background reviews watch your uncommitted changes and run automatically in the background. You do not need to click anything.
 
 ## Prerequisites
 
@@ -17,7 +17,7 @@ Background auto reviews watch your uncommitted changes and run automatically in 
 2.  In **Enabled Tools**, toggle **Ambient Background Reviews (Beta, Enterprise plan)** on.
 3.  Keep coding. Reviews run automatically once enabled.
 
-![Background auto reviews enabled in Options](/images/code-reviews/instant-ide-mode/background-reviews/background-reviews.webp)
+![Background reviews enabled in Options](/images/code-reviews/instant-ide-mode/background-reviews/background-reviews.webp)
 
 
 ## Next steps

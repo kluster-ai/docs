@@ -3,9 +3,9 @@ title: Background Auto Reviews - How It Works
 description: Understand when background reviews trigger, what changes are included, and how results appear in your IDE.
 ---
 
-# Background auto reviews: how it works
+# Background reviews: how it works
 
-Background auto reviews run in the background while you code. The extension periodically checks your diff and resets an idle timer each time it changes. When the timer runs out, [kluster.ai](https://kluster.ai){target=_blank} scans your uncommitted changes and notifies you only if it finds issues.
+Background reviews run in the background while you code. The extension periodically checks your diff and resets an idle timer each time it changes. When the timer runs out, [kluster.ai](https://kluster.ai){target=_blank} scans your uncommitted changes and notifies you only if it finds issues.
 
 ## What gets reviewed
 
