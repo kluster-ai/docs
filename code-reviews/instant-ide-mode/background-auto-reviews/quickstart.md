@@ -23,5 +23,5 @@ Background reviews watch your uncommitted changes and run automatically in the b
 ## Next steps
 
 - **[How it works](/code-reviews/instant-ide-mode/background-auto-reviews/how-it-works/)**: Learn what triggers a review and what gets included.
-- **[Instant Actions quickstart](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Run reviews manually in your editor.
+- **[Manual Reviews quickstart](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Run reviews manually in your editor.
 - **[Configuration options](/code-reviews/configuration/options/)**: Adjust sensitivity and issue types.

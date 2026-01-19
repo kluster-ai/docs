@@ -14,7 +14,7 @@ Background reviews include staged, unstaged, untracked, and unsaved editor chang
 Only text files are reviewed. Binary files and common generated files (like `node_modules` or build outputs) are filtered out automatically.
 
 !!! note "Large changesets"
-    If your changes are very large, the review may skip context or fail. Use [Instant Actions](/code-reviews/instant-ide-mode/instant-actions/quickstart/) to review smaller chunks instead.
+    If your changes are very large, the review may skip context or fail. Use [Manual Reviews](/code-reviews/instant-ide-mode/instant-actions/quickstart/) to review smaller chunks instead.
 
 ## Where results appear
 
@@ -24,7 +24,7 @@ Results show up in three places:
 - **Gutter icons**: Visual markers next to flagged lines.
 - **Problems panel**: All issues listed in one place.
 
-Background review results are appended to any existing Instant Actions results—they don't replace them.
+Background review results are appended to any existing Manual Reviews results—they don't replace them.
 
 ## Branch switching
 

@@ -1,10 +1,10 @@
 title: Code Reviews
 hide: false
 nav:
-  - 'Review Modes': review-modes.md
-  - 'Get Started': get-started
-  - 'Agent Mode': agent-mode
-  - 'Instant IDE Mode': instant-ide-mode
+  - 'Review modes': review-modes.md
+  - 'Get started': get-started
+  - 'Vibe Coding': agent-mode
+  - 'Manual Coding': instant-ide-mode
   - 'Configuration': configuration
   - 'FAQ': faq.md
   - 'Reference': reference

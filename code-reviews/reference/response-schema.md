@@ -86,4 +86,4 @@ Code review assigns priority levels to detected issues, helping you focus on the
 
 - **[MCP Tools Reference](/code-reviews/reference/mcp-tools/)**: Learn about tool parameters
 - **[Configure settings](/code-reviews/configuration/options/)**: Customize what issues get flagged
-- **[Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Learn how reviews work with AI assistants
+- **[Vibe Coding](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Learn how reviews work with AI assistants

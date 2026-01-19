@@ -1,11 +1,11 @@
 ---
-title: Manual Agent Reviews
+title: Manual Reviews
 description: Ask your AI assistant to review existing code on demand. Audit files, check for security issues, or verify code quality.
 ---
 
-# Manual Agent Reviews
+# Manual Reviews
 
-Manual agent reviews let you ask your AI assistant to review existing code—not just newly generated code. This is useful for auditing files, checking security, or verifying code you didn't write.
+Manual Reviews let you ask your AI assistant to review existing code—not just newly generated code. This is useful for auditing files, checking security, or verifying code you didn't write.
 
 ## How it works
 
@@ -17,6 +17,6 @@ Manual agent reviews let you ask your AI assistant to review existing code—not
 
 ## Next steps
 
-- **[Automatic agent reviews](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Learn about automatic real-time reviews.
+- **[Automatic Reviews](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Learn about automatic real-time reviews.
 - **[Configuration](/code-reviews/configuration/options/)**: Customize what issues get flagged.
-- **[Examples](/code-reviews/agent-mode/examples/cursor-firebase-nextjs/)**: See Agent Mode in action.
+- **[Examples](/code-reviews/agent-mode/examples/cursor-firebase-nextjs/)**: See Vibe Coding in action.

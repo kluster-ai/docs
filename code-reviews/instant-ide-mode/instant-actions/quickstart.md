@@ -1,9 +1,9 @@
 ---
-title: Instant Actions Quickstart
+title: Manual Reviews Quickstart
 description: Write code, verify on your terms. Three ways to trigger reviews in your IDE—right-click any selection, use hint buttons, or scan uncommitted changes before you commit.
 ---
 
-# Instant Actions quickstart
+# Manual Reviews quickstart
 
 With [kluster.ai](https://kluster.ai){target=_blank}, you can trigger reviews three ways: right-click any selection, use hint buttons, or scan uncommitted changes.
 
@@ -16,14 +16,14 @@ Before getting started, ensure you have:
 <div class="embed-container">
     <iframe
         src="https://www.youtube.com/embed/rpWt9sXAqWY"
-        title="Instant IDE Mode with kluster.ai"
+        title="Manual Coding with kluster.ai"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
         loading="lazy">
     </iframe>
 </div>
 
-## How instant actions work
+## How Manual Reviews work
 
 1.  **You write code**: Work in your editor as usual.
 2.  **You trigger review**: Right-click, use a hint button, or click in the sidebar.

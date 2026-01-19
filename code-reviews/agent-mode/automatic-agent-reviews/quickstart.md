@@ -1,9 +1,9 @@
 ---
-title: Automatic Agent Reviews Quickstart
+title: Automatic Reviews Quickstart
 description: Get started with automatic code reviews when using AI assistants. See how kluster.ai reviews code in real-time as your AI generates it.
 ---
 
-# Automatic Agent Reviews quickstart
+# Automatic Reviews quickstart
 
 Learn how to use [kluster.ai](https://kluster.ai){target=_blank} with your preferred AI assistant to catch bugs, security flaws, and logic errors instantly—as your AI writes code.
 
@@ -66,4 +66,4 @@ You can customize how automatic reviews work in your [configuration options](/co
 ## Next steps
 
 - **[Dependency checks](/code-reviews/agent-mode/automatic-agent-reviews/dependency-checks/)**: Learn about package validation.
-- **[Manual agent reviews](/code-reviews/agent-mode/manual-agent-reviews/)**: On-demand reviews for existing code.
+- **[Manual Reviews](/code-reviews/agent-mode/manual-agent-reviews/)**: On-demand reviews for existing code.

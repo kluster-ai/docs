@@ -21,5 +21,5 @@ When the AI suggests a package version with a known vulnerability, kluster.ai al
 
 ## Next steps
 
-- **[Manual agent reviews](/code-reviews/agent-mode/manual-agent-reviews/)**: Review existing code on demand.
+- **[Manual Reviews](/code-reviews/agent-mode/manual-agent-reviews/)**: Review existing code on demand.
 - **[Configuration](/code-reviews/configuration/options/)**: Customize dependency check behavior.

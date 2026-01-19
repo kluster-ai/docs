@@ -1,6 +1,6 @@
-title: Agent Mode
+title: Vibe Coding
 hide: false
 nav:
-  - 'Automatic Agent Reviews': automatic-agent-reviews
-  - 'Manual Agent Reviews': manual-agent-reviews.md
+  - 'Automatic Reviews': automatic-agent-reviews
+  - 'Manual Reviews': manual-agent-reviews.md
   - 'Examples': examples

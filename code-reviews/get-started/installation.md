@@ -235,6 +235,6 @@ Before getting started, ensure you have:
 
 ## Next steps
 
-- **[Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Learn about AI-assisted automatic reviews
-- **[Instant IDE Mode](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Learn about direct in-editor reviews
+- **[Vibe Coding](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Learn about AI-assisted automatic reviews
+- **[Manual Coding](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Learn about direct in-editor reviews
 - **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Decide which mode fits your workflow

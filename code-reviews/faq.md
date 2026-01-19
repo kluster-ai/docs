@@ -7,10 +7,10 @@ description: Find answers to common questions about kluster.ai Code Review, cove
 
 ## General
 
-## What's the difference between Agent Mode and Instant IDE Mode?
+## What's the difference between Vibe Coding and Manual Coding?
 
-- **Agent Mode**: For AI-assisted workflows. Reviews trigger automatically when AI generates code, or when you ask your AI assistant to review existing code. Works with Claude Code, Codex CLI, Cursor, VS Code, and other AI assistants.
-- **Instant IDE Mode**: Direct editor integration. You trigger reviews yourself by right-clicking code, using keyboard shortcuts, or clicking buttons in the extension sidebar. No AI assistant needed—review any code directly.
+- **Vibe Coding**: For AI-assisted workflows. Reviews trigger automatically when AI generates code, or when you ask your AI assistant to review existing code. Works with Claude Code, Codex CLI, Cursor, VS Code, and other AI assistants.
+- **Manual Coding**: Direct editor integration. You trigger reviews yourself by right-clicking code, using keyboard shortcuts, or clicking buttons in the extension sidebar. No AI assistant needed—review any code directly.
 
 ## What IDEs and CLI tools are supported?
 
@@ -25,7 +25,7 @@ kluster.ai is language agnostic and can review code in any programming language,
 
 ## Can I review a full codebase?
 
-Yes, using Instant IDE Mode. You can review individual files, selected code blocks, or all uncommitted changes. For large codebases, we recommend reviewing file-by-file or focusing on changed files.
+Yes, using Manual Coding. You can review individual files, selected code blocks, or all uncommitted changes. For large codebases, we recommend reviewing file-by-file or focusing on changed files.
 
 ## Can I use kluster.ai with any AI model?
 
@@ -61,15 +61,15 @@ Yes. When you connect your GitHub repositories, kluster.ai learns rules from you
 
 We also continuously improve our engine to perform deeper reviews, optimizing for common issues our users encounter. If you have suggestions for improvement, contact us at [support@kluster.ai](mailto:support@kluster.ai).
 
-## Agent Mode
+## Vibe Coding
 
 ## What triggers an automatic review?
 
-In Agent Mode, reviews trigger automatically when your AI coding assistant generates or modifies code. This happens without any action from you. The code diff is sent to kluster.ai, and the results appear in your chat or terminal.
+In Vibe Coding, reviews trigger automatically when your AI coding assistant generates or modifies code. This happens without any action from you. The code diff is sent to kluster.ai, and the results appear in your chat or terminal.
 
 ## Does kluster.ai apply changes automatically?
 
-No. kluster.ai identifies issues and suggests fixes, but doesn't modify your code directly. In Agent Mode, the AI assistant decides whether to apply them—in most cases, it will automatically incorporate the fixes. In Instant IDE Mode, you apply fixes yourself using the **Fix with AI** button or manually. Either way, you remain in control.
+No. kluster.ai identifies issues and suggests fixes, but doesn't modify your code directly. In Vibe Coding, the AI assistant decides whether to apply them—in most cases, it will automatically incorporate the fixes. In Manual Coding, you apply fixes yourself using the **Fix with AI** button or manually. Either way, you remain in control.
 
 ## Can I disable automatic reviews temporarily?
 
@@ -77,7 +77,7 @@ Yes. You can disable automatic reviews from [Options](/code-reviews/configuratio
 
 ## Does it work with multi-file edits?
 
-Yes. Agent Mode analyzes diffs across multiple files in a single review, understanding the context of changes that span your codebase.
+Yes. Vibe Coding analyzes diffs across multiple files in a single review, understanding the context of changes that span your codebase.
 
 ## Can I disable Auto Reviews temporarily?
 
@@ -95,7 +95,7 @@ The Dependency Validator automatically checks packages before installation. When
 
 The changes are made by your AI assistant, not kluster.ai itself. You can revert changes in the file using your IDE undo functionality, Git commands, or simply ask the AI assistant to revert the changes.
 
-## Instant IDE Mode
+## Manual Coding
 
 ## How do I trigger a Manual Review?
 
@@ -117,7 +117,7 @@ Yes. Select the code you want to review, then right-click and choose **Review wi
 
 Yes. In the kluster.ai extension sidebar, click **Instant Review** and select **Review uncommitted changes**. This reviews all staged and unstaged changes across your repository.
 
-## What's the difference between instant actions and background reviews?
+## What's the difference between Manual Reviews and Background Auto Reviews?
 
-- **Instant actions**: Are on-demand—you click a button or use a shortcut to trigger a review.
-- **Ambient Background Reviews (Beta, Enterprise plan)**: Automatically review your code for issues and suggestions as you work, without requiring you to trigger anything. Enable it from the "Enabled Tools" section in [Options](/code-reviews/configuration/options/).
+- **Manual Reviews**: Are on-demand—you click a button or use a shortcut to trigger a review.
+- **Background Auto Reviews (Beta, Enterprise plan)**: Automatically review your code for issues and suggestions as you work, without requiring you to trigger anything. Enable it from the "Enabled Tools" section in [Options](/code-reviews/configuration/options/).

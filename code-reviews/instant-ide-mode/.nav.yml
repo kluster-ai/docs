@@ -1,5 +1,5 @@
-title: Instant IDE Mode
+title: Manual Coding
 hide: false
 nav:
-  - 'Instant Actions': instant-actions
-  - 'Background reviews': background-auto-reviews
+  - 'Manual Reviews': instant-actions
+  - 'Background Auto Reviews': background-auto-reviews
