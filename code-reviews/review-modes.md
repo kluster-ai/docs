@@ -5,38 +5,23 @@ description: Learn how to use kluster.ai's Code Reviews to validate your code in
 
 # Code Reviews
 
-Code Reviews analyzes your code for bugs, security vulnerabilities, and quality issues. It works in two modes: **Vibe Coding** for AI-assisted workflows, and **Manual Coding** for on-demand reviews directly in your editor.
+Code Reviews analyzes your code for bugs, security vulnerabilities, and quality issues. It works for both **human-written code** and **AI-generated code**, with review modes tailored to each workflow.
 
 The service integrates directly into your IDE or CLI (Cursor, VS Code, Windsurf, Claude Code, and others), analyzing code as you work.
 
 ## Key features
 
-- **Flexible review modes**: Vibe Coding for AI-assisted workflows, Manual Coding for direct editor reviews.
+- **Flexible review modes**: Reviews for human-written code and AI-generated code.
 - **Comprehensive issue detection**: Analyzes 7 issue types — *Semantic, Intent, Logical, Security, Knowledge, Performance,* and *Quality*.
 - **Customizable sensitivity**: Configure detection sensitivity from *Low* to *Critical*.
 - **Dual analysis tools**: Real-time Code Review and Dependency Analysis for complete coverage.
 - **Instant fixes**: Apply suggested fixes with one click, or let your AI assistant handle them automatically.
 
-## Vibe Coding
-
-**For AI-assisted coding workflows.**
-
-Vibe Coding works alongside your AI coding assistant. When the AI generates or modifies code, kluster.ai automatically reviews it in real-time. You can also ask your AI to review existing files on demand.
-
-**Vibe Coding also verifies *intent*—ensuring your AI actually did what you asked**, not just that the code works. This context-aware check is only possible when kluster.ai sees your original prompt.
-
-- **Automatic Reviews**: Triggered automatically when AI generates code.
-- **Manual Reviews**: Triggered when you ask your AI to review existing code.
-
-**Compatible with**: Cursor, VS Code, Windsurf, Antigravity (IDEs) and Claude Code, Codex CLI (CLIs)
-
-[:octicons-arrow-right-24: Get started with Vibe Coding](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)
-
-## Manual Coding
+## Human-written code
 
 **For direct, in-editor reviews without AI.**
 
-Manual Coding is an IDE extension that provides on-demand code reviews—no AI assistant needed. Available features include:
+Review code you write yourself with on-demand reviews—no AI assistant needed. Available features include:
 
 - **Code block review**: Review selected code snippets.
 - **Current file review**: Analyze the file you're working on.
@@ -44,7 +29,22 @@ Manual Coding is an IDE extension that provides on-demand code reviews—no AI a
 
 **Compatible with**: Cursor, VS Code, Windsurf, Antigravity (IDEs only)
 
-[:octicons-arrow-right-24: Get started with Manual Coding](/code-reviews/instant-ide-mode/instant-actions/quickstart/)
+[:octicons-arrow-right-24: Get started with human-written code reviews](/code-reviews/instant-ide-mode/instant-actions/quickstart/)
+
+## AI-generated code
+
+**For AI-assisted coding workflows.**
+
+When your AI coding assistant generates or modifies code, kluster.ai automatically reviews it in real-time. You can also ask your AI to review existing files on demand.
+
+**AI-generated code reviews also verify *intent*—ensuring your AI actually did what you asked**, not just that the code works. This context-aware check is only possible when kluster.ai sees your original prompt.
+
+- **Automatic reviews**: Triggered automatically when AI generates code.
+- **On-demand reviews**: Triggered when you ask your AI to review existing code.
+
+**Compatible with**: Cursor, VS Code, Windsurf, Antigravity (IDEs) and Claude Code, Codex CLI (CLIs)
+
+[:octicons-arrow-right-24: Get started with AI-generated code reviews](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)
 
 !!! tip "Need help choosing?"
     See [Pick your workflow](/code-reviews/get-started/pick-your-workflow/) for a detailed comparison and decision guide.
@@ -54,6 +54,6 @@ Manual Coding is an IDE extension that provides on-demand code reviews—no AI a
 ## Next steps
 
 - **[Installation](/code-reviews/get-started/installation/)**: Install kluster.ai in your IDE or CLI tool.
-- **[Vibe Coding](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Set up automatic and manual reviews.
-- **[Manual Coding](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Get started with in-editor reviews.
+- **[Human-written code](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Get started with in-editor reviews.
+- **[AI-generated code](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Set up automatic and on-demand reviews.
 - **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Compare modes and find the right fit.

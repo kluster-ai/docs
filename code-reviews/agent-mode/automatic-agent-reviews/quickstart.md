@@ -66,4 +66,4 @@ You can customize how automatic reviews work in your [configuration options](/co
 ## Next steps
 
 - **[Dependency checks](/code-reviews/agent-mode/automatic-agent-reviews/dependency-checks/)**: Learn about package validation.
-- **[Manual Reviews](/code-reviews/agent-mode/manual-agent-reviews/)**: On-demand reviews for existing code.
+- **[On-demand reviews](/code-reviews/agent-mode/manual-agent-reviews/)**: Review existing code on demand.

@@ -1,6 +1,6 @@
-title: Vibe Coding
+title: AI-generated code
 hide: false
 nav:
-  - 'Automatic Reviews': automatic-agent-reviews
-  - 'Manual Reviews': manual-agent-reviews.md
+  - 'Automatic reviews': automatic-agent-reviews
+  - 'On-demand reviews': manual-agent-reviews.md
   - 'Examples': examples

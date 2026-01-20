@@ -110,18 +110,18 @@ When the AI suggests a package version with a known vulnerability, kluster.ai al
 
 ## Next steps
 
-- **[Manual agent reviews](/code-reviews/agent-mode/manual-agent-reviews/)**: Review existing code on demand.
+- **[On-demand reviews](/code-reviews/agent-mode/manual-agent-reviews/)**: Review existing code on demand.
 - **[Configuration](/code-reviews/configuration/options/)**: Customize dependency check behavior.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/code-reviews/agent-mode/automatic-agent-reviews/quickstart/
 --- BEGIN CONTENT ---
 ---
-title: Automatic Agent Reviews Quickstart
+title: Automatic Reviews Quickstart
 description: Get started with automatic code reviews when using AI assistants. See how kluster.ai reviews code in real-time as your AI generates it.
 ---
 
-# Automatic Agent Reviews quickstart
+# Automatic Reviews quickstart
 
 Learn how to use [kluster.ai](https://kluster.ai){target=_blank} with your preferred AI assistant to catch bugs, security flaws, and logic errors instantly—as your AI writes code.
 
@@ -186,7 +186,7 @@ You can customize how automatic reviews work in your [configuration options](/co
 ## Next steps
 
 - **[Dependency checks](/code-reviews/agent-mode/automatic-agent-reviews/dependency-checks/)**: Learn about package validation.
-- **[Manual agent reviews](/code-reviews/agent-mode/manual-agent-reviews/)**: On-demand reviews for existing code.
+- **[On-demand reviews](/code-reviews/agent-mode/manual-agent-reviews/)**: Review existing code on demand.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/code-reviews/agent-mode/examples/cursor-firebase-nextjs/
@@ -609,13 +609,13 @@ Admin endpoints require special security attention that AI often misses:
 Doc-Content: https://docs.kluster.ai/code-reviews/agent-mode/manual-agent-reviews/
 --- BEGIN CONTENT ---
 ---
-title: Manual Agent Reviews
+title: On-demand reviews
 description: Ask your AI assistant to review existing code on demand. Audit files, check for security issues, or verify code quality.
 ---
 
-# Manual Agent Reviews
+# On-demand reviews
 
-Manual agent reviews let you ask your AI assistant to review existing code—not just newly generated code. This is useful for auditing files, checking security, or verifying code you didn't write.
+On-demand reviews let you ask your AI assistant to review existing code—not just newly generated code. This is useful for auditing files, checking security, or verifying code you didn't write.
 
 ## How it works
 
@@ -623,13 +623,13 @@ Manual agent reviews let you ask your AI assistant to review existing code—not
 2.  **AI triggers review**: The assistant calls kluster.ai's manual review tool.
 3.  **kluster.ai analyzes**: Results appear with issues and suggested fixes your AI can apply.
 
-![Manual agent review in Claude Code](/images/code-reviews/agent-mode/manual-agent-reviews/claude-code-1.webp)
+![On-demand review in Claude Code](/images/code-reviews/agent-mode/manual-agent-reviews/claude-code-1.webp)
 
 ## Next steps
 
-- **[Automatic agent reviews](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Learn about automatic real-time reviews.
+- **[Automatic reviews](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Learn about automatic real-time reviews.
 - **[Configuration](/code-reviews/configuration/options/)**: Customize what issues get flagged.
-- **[Examples](/code-reviews/agent-mode/examples/cursor-firebase-nextjs/)**: See Agent Mode in action.
+- **[Examples](/code-reviews/agent-mode/examples/cursor-firebase-nextjs/)**: See AI-generated code reviews in action.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/code-reviews/configuration/options/
@@ -738,10 +738,10 @@ description: Find answers to common questions about kluster.ai Code Review, cove
 
 ## General
 
-## What's the difference between Agent Mode and Instant IDE Mode?
+## What's the difference between human-written code and AI-generated code reviews?
 
-- **Agent Mode**: For AI-assisted workflows. Reviews trigger automatically when AI generates code, or when you ask your AI assistant to review existing code. Works with Claude Code, Codex CLI, Cursor, VS Code, and other AI assistants.
-- **Instant IDE Mode**: Direct editor integration. You trigger reviews yourself by right-clicking code, using keyboard shortcuts, or clicking buttons in the extension sidebar. No AI assistant needed—review any code directly.
+- **Human-written code**: Direct editor integration. You trigger reviews yourself by right-clicking code, using keyboard shortcuts, or clicking buttons in the extension sidebar. No AI assistant needed—review any code directly.
+- **AI-generated code**: For AI-assisted workflows. Reviews trigger automatically when AI generates code, or when you ask your AI assistant to review existing code. Works with Claude Code, Codex CLI, Cursor, VS Code, and other AI assistants.
 
 ## What IDEs and CLI tools are supported?
 
@@ -756,7 +756,7 @@ kluster.ai is language agnostic and can review code in any programming language,
 
 ## Can I review a full codebase?
 
-Yes, using Instant IDE Mode. You can review individual files, selected code blocks, or all uncommitted changes. For large codebases, we recommend reviewing file-by-file or focusing on changed files.
+Yes, using on-demand reviews for human-written code. You can review individual files, selected code blocks, or all uncommitted changes. For large codebases, we recommend reviewing file-by-file or focusing on changed files.
 
 ## Can I use kluster.ai with any AI model?
 
@@ -792,15 +792,15 @@ Yes. When you connect your GitHub repositories, kluster.ai learns rules from you
 
 We also continuously improve our engine to perform deeper reviews, optimizing for common issues our users encounter. If you have suggestions for improvement, contact us at [support@kluster.ai](mailto:support@kluster.ai).
 
-## Agent Mode
+## AI-generated code
 
 ## What triggers an automatic review?
 
-In Agent Mode, reviews trigger automatically when your AI coding assistant generates or modifies code. This happens without any action from you. The code diff is sent to kluster.ai, and the results appear in your chat or terminal.
+For AI-generated code, reviews trigger automatically when your AI coding assistant generates or modifies code. This happens without any action from you. The code diff is sent to kluster.ai, and the results appear in your chat or terminal.
 
 ## Does kluster.ai apply changes automatically?
 
-No. kluster.ai identifies issues and suggests fixes, but doesn't modify your code directly. In Agent Mode, the AI assistant decides whether to apply them—in most cases, it will automatically incorporate the fixes. In Instant IDE Mode, you apply fixes yourself using the **Fix with AI** button or manually. Either way, you remain in control.
+No. kluster.ai identifies issues and suggests fixes, but doesn't modify your code directly. For AI-generated code, the AI assistant decides whether to apply them—in most cases, it will automatically incorporate the fixes. For human-written code, you apply fixes yourself using the **Fix with AI** button or manually. Either way, you remain in control.
 
 ## Can I disable automatic reviews temporarily?
 
@@ -808,7 +808,7 @@ Yes. You can disable automatic reviews from [Options](/code-reviews/configuratio
 
 ## Does it work with multi-file edits?
 
-Yes. Agent Mode analyzes diffs across multiple files in a single review, understanding the context of changes that span your codebase.
+Yes. AI-generated code reviews analyze diffs across multiple files in a single review, understanding the context of changes that span your codebase.
 
 ## Can I disable Auto Reviews temporarily?
 
@@ -826,11 +826,11 @@ The Dependency Validator automatically checks packages before installation. When
 
 The changes are made by your AI assistant, not kluster.ai itself. You can revert changes in the file using your IDE undo functionality, Git commands, or simply ask the AI assistant to revert the changes.
 
-## Instant IDE Mode
+## Human-written code
 
-## How do I trigger a Manual Review?
+## How do I trigger an on-demand review?
 
-You can trigger a Manual Review in three ways:
+You can trigger an on-demand review in three ways:
 
 1. **Right-click** selected code → "Review with kluster.ai"
 2. Use the extension sidebar. Open the **Instant Review** dropdown and choose a file or uncommitted changes.
@@ -838,7 +838,7 @@ You can trigger a Manual Review in three ways:
 
 ## Can I review code I didn't write?
 
-Yes. Manual Review works on any code, including your own code, AI-generated code, or code from colleagues. This is useful for auditing existing codebases or reviewing pull requests.
+Yes. On-demand reviews work on any code, including your own code, AI-generated code, or code from colleagues. This is useful for auditing existing codebases or reviewing pull requests.
 
 ## Can I review a specific code block vs whole file?
 
@@ -848,10 +848,10 @@ Yes. Select the code you want to review, then right-click and choose **Review wi
 
 Yes. In the kluster.ai extension sidebar, click **Instant Review** and select **Review uncommitted changes**. This reviews all staged and unstaged changes across your repository.
 
-## What's the difference between instant actions and background reviews?
+## What's the difference between on-demand reviews and background auto reviews?
 
-- **Instant actions**: Are on-demand—you click a button or use a shortcut to trigger a review.
-- **Ambient Background Reviews (Beta, Enterprise plan)**: Automatically review your code for issues and suggestions as you work, without requiring you to trigger anything. Enable it from the "Enabled Tools" section in [Options](/code-reviews/configuration/options/).
+- **On-demand reviews**: You click a button or use a shortcut to trigger a review.
+- **Background auto reviews (Beta, Enterprise plan)**: Automatically review your code for issues and suggestions as you work, without requiring you to trigger anything. Enable it from the "Enabled Tools" section in [Options](/code-reviews/configuration/options/).
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/code-reviews/get-started/installatio/
@@ -1189,8 +1189,8 @@ curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s
 
 ## Next steps
 
-- **[Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Learn about AI-assisted automatic reviews
-- **[Instant IDE Mode](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Learn about direct in-editor reviews
+- **[Human-written code](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Learn about on-demand reviews in your editor
+- **[AI-generated code](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Learn about automatic reviews for AI-assisted coding
 - **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Decide which mode fits your workflow
 --- END CONTENT ---
 
@@ -1198,7 +1198,7 @@ Doc-Content: https://docs.kluster.ai/code-reviews/get-started/pick-your-workflow
 --- BEGIN CONTENT ---
 ---
 title: Pick your workflow
-description: Choose between Agent Mode and Instant IDE Mode based on how you write code. Or use both.
+description: Choose between human-written code and AI-generated code reviews based on how you write code. Or use both.
 ---
 
 # Pick your workflow
@@ -1209,27 +1209,41 @@ Code Reviews offers two distinct modes that adapt to how you work. Whether you'r
 
 <div class="grid cards" markdown>
 
--   **Agent Mode**
-
-    ---
-
-    For developers using AI coding assistants. Your code is reviewed automatically every time your AI generates or modifies code—no manual steps required.
-
-    [:octicons-arrow-right-24: Learn more](#agent-mode)
-
--   **Instant IDE Mode**
+-   **Human-written code**
 
     ---
 
     For developers writing code directly. Review any code on-demand with a right-click, keyboard shortcut, or sidebar button. No AI assistant needed—just you and your editor.
 
-    [:octicons-arrow-right-24: Learn more](#instant-ide-mode)
+    [:octicons-arrow-right-24: Learn more](#human-written-code)
+
+-   **AI-generated code**
+
+    ---
+
+    For developers using AI coding assistants. Your code is reviewed automatically every time your AI generates or modifies code—no manual steps required.
+
+    [:octicons-arrow-right-24: Learn more](#ai-generated-code)
 
 </div>
 
-## Agent Mode
+## Human-written code
 
-Agent Mode integrates directly with your AI coding assistant. When the AI generates or modifies code, [kluster.ai](https://kluster.ai){target=_blank} automatically analyzes the changes in real-time. You can also ask your AI to review existing files on demand—just say "review this file" and the AI triggers a manual review.
+Human-written code reviews give you direct control over when reviews happen. Select any code in your editor and trigger a review instantly—no AI assistant required. This mode is built into the kluster.ai extension and provides three ways to review: right-click menu, keyboard shortcut, or the extension sidebar.
+
+Use it to review code you wrote yourself, audit files before committing, or check legacy code you inherited. The reviews run the same comprehensive analysis as AI-generated code reviews, just triggered manually instead of automatically.
+
+**Compatible with**: Cursor, VS Code, Windsurf, Antigravity (IDEs only).
+
+!!! info "Not available for CLI tools"
+    Human-written code reviews require an IDE extension. For CLI tools like Claude Code or Codex CLI, use AI-generated code reviews instead.
+
+[:octicons-arrow-right-24: Get started with human-written code reviews](/code-reviews/instant-ide-mode/instant-actions/quickstart/)
+
+
+## AI-generated code
+
+AI-generated code reviews integrate directly with your AI coding assistant. When the AI generates or modifies code, [kluster.ai](https://kluster.ai){target=_blank} automatically analyzes the changes in real-time. You can also ask your AI to review existing files on demand—just say "review this file" and the AI triggers an on-demand review.
 
 This mode is designed for developers who code with AI assistants like Claude Code, Cursor, or Copilot. The review happens seamlessly in the background, catching security vulnerabilities, logic errors, and quality issues before they become problems.
 
@@ -1238,33 +1252,19 @@ This mode is designed for developers who code with AI assistants like Claude Cod
 - **IDE extensions**: Cursor, VS Code, Windsurf, Antigravity.
 - **CLI tools**: Claude Code, Codex CLI.
 
-[:octicons-arrow-right-24: Get started with Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)
-
-
-## Instant IDE Mode
-
-Instant IDE Mode gives you direct control over when reviews happen. Select any code in your editor and trigger a review instantly—no AI assistant required. This mode is built into the kluster.ai extension and provides three ways to review: right-click menu, keyboard shortcut, or the extension sidebar.
-
-Use it to review code you wrote yourself, audit files before committing, or check legacy code you inherited. The reviews run the same comprehensive analysis as Agent Mode, just triggered manually instead of automatically.
-
-**Compatible with**: Cursor, VS Code, Windsurf, Antigravity (IDEs only).
-
-!!! info "Not available for CLI tools"
-    Instant IDE Mode requires an IDE extension. For CLI tools like Claude Code or Codex CLI, use Agent Mode instead.
-
-[:octicons-arrow-right-24: Get started with Instant IDE Mode](/code-reviews/instant-ide-mode/instant-actions/quickstart/)
+[:octicons-arrow-right-24: Get started with AI-generated code reviews](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)
 
 
 ## Using both modes
 
 If you use Cursor, VS Code, Windsurf, or Antigravity, you get the best of both worlds. Install kluster.ai once and both modes are available—switch seamlessly between AI-assisted coding and manual reviews without changing tools.
 
-Use Agent Mode when pair-programming with AI, switch to Instant IDE Mode when writing code yourself, and run **Review uncommitted changes** before every commit to catch anything missed.
+Use AI-generated code reviews when pair-programming with AI, switch to human-written code reviews when writing code yourself, and run **Review uncommitted changes** before every commit to catch anything missed.
 
 ## Next steps
 
-- **[Agent Mode quickstart](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Set up automatic reviews for AI-assisted coding.
-- **[Instant IDE Mode quickstart](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Set up on-demand reviews in your editor.
+- **[Human-written code quickstart](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Set up on-demand reviews in your editor.
+- **[AI-generated code quickstart](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Set up automatic reviews for AI-assisted coding.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/code-reviews/instant-ide-mode/background-auto-reviews/how-it-works/
@@ -1285,7 +1285,7 @@ Background reviews include staged, unstaged, untracked, and unsaved editor chang
 Only text files are reviewed. Binary files and common generated files (like `node_modules` or build outputs) are filtered out automatically.
 
 !!! note "Large changesets"
-    If your changes are very large, the review may skip context or fail. Use [Instant Actions](/code-reviews/instant-ide-mode/instant-actions/quickstart/) to review smaller chunks instead.
+    If your changes are very large, the review may skip context or fail. Use [on-demand reviews](/code-reviews/instant-ide-mode/instant-actions/quickstart/) to review smaller chunks instead.
 
 ## Where results appear
 
@@ -1295,7 +1295,7 @@ Results show up in three places:
 - **Gutter icons**: Visual markers next to flagged lines.
 - **Problems panel**: All issues listed in one place.
 
-Background review results are appended to any existing Instant Actions results—they don't replace them.
+Background review results are appended to any existing on-demand reviews results—they don't replace them.
 
 ## Branch switching
 
@@ -1331,18 +1331,18 @@ Background reviews watch your uncommitted changes and run automatically in the b
 ## Next steps
 
 - **[How it works](/code-reviews/instant-ide-mode/background-auto-reviews/how-it-works/)**: Learn what triggers a review and what gets included.
-- **[Instant Actions quickstart](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Run reviews manually in your editor.
+- **[On-demand reviews quickstart](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Run reviews manually in your editor.
 - **[Configuration options](/code-reviews/configuration/options/)**: Adjust sensitivity and issue types.
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/code-reviews/instant-ide-mode/instant-actions/quickstart/
 --- BEGIN CONTENT ---
 ---
-title: Instant Actions Quickstart
+title: On-demand reviews quickstart
 description: Write code, verify on your terms. Three ways to trigger reviews in your IDE—right-click any selection, use hint buttons, or scan uncommitted changes before you commit.
 ---
 
-# Instant Actions quickstart
+# On-demand reviews quickstart
 
 With [kluster.ai](https://kluster.ai){target=_blank}, you can trigger reviews three ways: right-click any selection, use hint buttons, or scan uncommitted changes.
 
@@ -1357,14 +1357,14 @@ Before getting started, ensure you have:
 <div class="embed-container">
     <iframe
         src="https://www.youtube.com/embed/rpWt9sXAqWY"
-        title="Instant IDE Mode with kluster.ai"
+        title="Human-written code reviews with kluster.ai"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
         loading="lazy">
     </iframe>
 </div>
 
-## How instant actions work
+## How on-demand reviews work
 
 1.  **You write code**: Work in your editor as usual.
 2.  **You trigger review**: Right-click, use a hint button, or click in the sidebar.
@@ -1408,7 +1408,7 @@ Select any code in your editor, right-click, and choose **Review with kluster.ai
 
 ## Configuration
 
-You can customize how instant reviews work in your [configuration options](/code-reviews/configuration/options/):
+You can customize how on-demand reviews work in your [configuration options](/code-reviews/configuration/options/):
 
 - **Enabled tools**: Toggle Code Review and Dependency Analysis on/off.
 - **Sensitivity**: Adjust how strictly issues are flagged (Low → Critical).
@@ -1443,7 +1443,7 @@ This page documents the parameters and response formats you'll see when using th
 
 === "Automatic Reviews and Dependency Validator"
 
-    These tools analyze code changes and dependencies to detect bugs, security vulnerabilities, and other quality issues. Used in Agent Mode.
+    These tools analyze code changes and dependencies to detect bugs, security vulnerabilities, and other quality issues. Used for AI-generated code.
 
     ???+ interface "Parameters"
 
@@ -1469,9 +1469,9 @@ This page documents the parameters and response formats you'll see when using th
 
         Session identifier returned by previous tool calls. Used to maintain context across multiple review requests.
 
-=== "Manual Review Tool"
+=== "On-demand Review Tool"
 
-    The manual review tool is triggered when explicitly requested. Used in both Agent Mode (when you ask your AI to review code) and Instant IDE Mode (when you use the extension UI).
+    The on-demand review tool is triggered when explicitly requested. Used for both AI-generated code (when you ask your AI to review code) and human-written code (when you use the extension UI).
 
     ???+ interface "Parameters"
 
@@ -1598,7 +1598,7 @@ Code review assigns priority levels to detected issues, helping you focus on the
 
 - **[MCP Tools Reference](/code-reviews/reference/mcp-tools/)**: Learn about tool parameters
 - **[Configure settings](/code-reviews/configuration/options/)**: Customize what issues get flagged
-- **[Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Learn how reviews work with AI assistants
+- **[AI-generated code](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Learn how reviews work with AI assistants
 --- END CONTENT ---
 
 Doc-Content: https://docs.kluster.ai/code-reviews/review-modes/
@@ -1610,38 +1610,23 @@ description: Learn how to use kluster.ai's Code Reviews to validate your code in
 
 # Code Reviews
 
-Code Reviews analyzes your code for bugs, security vulnerabilities, and quality issues. It works in two modes: **Agent Mode** for AI-assisted workflows, and **Instant IDE Mode** for on-demand reviews directly in your editor.
+Code Reviews analyzes your code for bugs, security vulnerabilities, and quality issues. It works for both **human-written code** and **AI-generated code**, with review modes tailored to each workflow.
 
 The service integrates directly into your IDE or CLI (Cursor, VS Code, Windsurf, Claude Code, and others), analyzing code as you work.
 
 ## Key features
 
-- **Flexible review modes**: Agent Mode for AI-assisted workflows, Instant IDE Mode for direct editor reviews.
+- **Flexible review modes**: Reviews for human-written code and AI-generated code.
 - **Comprehensive issue detection**: Analyzes 7 issue types — *Semantic, Intent, Logical, Security, Knowledge, Performance,* and *Quality*.
 - **Customizable sensitivity**: Configure detection sensitivity from *Low* to *Critical*.
 - **Dual analysis tools**: Real-time Code Review and Dependency Analysis for complete coverage.
 - **Instant fixes**: Apply suggested fixes with one click, or let your AI assistant handle them automatically.
 
-## Agent Mode
-
-**For AI-assisted coding workflows.**
-
-Agent Mode works alongside your AI coding assistant. When the AI generates or modifies code, kluster.ai automatically reviews it in real-time. You can also ask your AI to review existing files on demand.
-
-**Agent Mode also verifies *intent*—ensuring your AI actually did what you asked**, not just that the code works. This context-aware check is only possible when kluster.ai sees your original prompt.
-
-- **Automatic agent reviews**: Triggered automatically when AI generates code.
-- **Manual agent reviews**: Triggered when you ask your AI to review existing code.
-
-**Compatible with**: Cursor, VS Code, Windsurf, Antigravity (IDEs) and Claude Code, Codex CLI (CLIs)
-
-[:octicons-arrow-right-24: Get started with Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)
-
-## Instant IDE Mode
+## Human-written code
 
 **For direct, in-editor reviews without AI.**
 
-Instant IDE Mode is an IDE extension that provides on-demand code reviews—no AI assistant needed. Available features include:
+Review code you write yourself with on-demand reviews—no AI assistant needed. Available features include:
 
 - **Code block review**: Review selected code snippets.
 - **Current file review**: Analyze the file you're working on.
@@ -1649,7 +1634,22 @@ Instant IDE Mode is an IDE extension that provides on-demand code reviews—no A
 
 **Compatible with**: Cursor, VS Code, Windsurf, Antigravity (IDEs only)
 
-[:octicons-arrow-right-24: Get started with Instant IDE Mode](/code-reviews/instant-ide-mode/instant-actions/quickstart/)
+[:octicons-arrow-right-24: Get started with human-written code reviews](/code-reviews/instant-ide-mode/instant-actions/quickstart/)
+
+## AI-generated code
+
+**For AI-assisted coding workflows.**
+
+When your AI coding assistant generates or modifies code, kluster.ai automatically reviews it in real-time. You can also ask your AI to review existing files on demand.
+
+**AI-generated code reviews also verify *intent*—ensuring your AI actually did what you asked**, not just that the code works. This context-aware check is only possible when kluster.ai sees your original prompt.
+
+- **Automatic reviews**: Triggered automatically when AI generates code.
+- **On-demand reviews**: Triggered when you ask your AI to review existing code.
+
+**Compatible with**: Cursor, VS Code, Windsurf, Antigravity (IDEs) and Claude Code, Codex CLI (CLIs)
+
+[:octicons-arrow-right-24: Get started with AI-generated code reviews](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)
 
 !!! tip "Need help choosing?"
     See [Pick your workflow](/code-reviews/get-started/pick-your-workflow/) for a detailed comparison and decision guide.
@@ -1659,8 +1659,8 @@ Instant IDE Mode is an IDE extension that provides on-demand code reviews—no A
 ## Next steps
 
 - **[Installation](/code-reviews/get-started/installation/)**: Install kluster.ai in your IDE or CLI tool.
-- **[Agent Mode](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Set up automatic and manual agent reviews.
-- **[Instant IDE Mode](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Get started with in-editor reviews.
+- **[Human-written code](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Get started with in-editor reviews.
+- **[AI-generated code](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Set up automatic and on-demand reviews.
 - **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Compare modes and find the right fit.
 --- END CONTENT ---
 

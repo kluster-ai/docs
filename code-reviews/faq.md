@@ -7,10 +7,10 @@ description: Find answers to common questions about kluster.ai Code Review, cove
 
 ## General
 
-## What's the difference between Vibe Coding and Manual Coding?
+## What's the difference between human-written code and AI-generated code reviews?
 
-- **Vibe Coding**: For AI-assisted workflows. Reviews trigger automatically when AI generates code, or when you ask your AI assistant to review existing code. Works with Claude Code, Codex CLI, Cursor, VS Code, and other AI assistants.
-- **Manual Coding**: Direct editor integration. You trigger reviews yourself by right-clicking code, using keyboard shortcuts, or clicking buttons in the extension sidebar. No AI assistant needed—review any code directly.
+- **Human-written code**: Direct editor integration. You trigger reviews yourself by right-clicking code, using keyboard shortcuts, or clicking buttons in the extension sidebar. No AI assistant needed—review any code directly.
+- **AI-generated code**: For AI-assisted workflows. Reviews trigger automatically when AI generates code, or when you ask your AI assistant to review existing code. Works with Claude Code, Codex CLI, Cursor, VS Code, and other AI assistants.
 
 ## What IDEs and CLI tools are supported?
 
@@ -25,7 +25,7 @@ kluster.ai is language agnostic and can review code in any programming language,
 
 ## Can I review a full codebase?
 
-Yes, using Manual Coding. You can review individual files, selected code blocks, or all uncommitted changes. For large codebases, we recommend reviewing file-by-file or focusing on changed files.
+Yes, using on-demand reviews for human-written code. You can review individual files, selected code blocks, or all uncommitted changes. For large codebases, we recommend reviewing file-by-file or focusing on changed files.
 
 ## Can I use kluster.ai with any AI model?
 
@@ -61,15 +61,15 @@ Yes. When you connect your GitHub repositories, kluster.ai learns rules from you
 
 We also continuously improve our engine to perform deeper reviews, optimizing for common issues our users encounter. If you have suggestions for improvement, contact us at [support@kluster.ai](mailto:support@kluster.ai).
 
-## Vibe Coding
+## AI-generated code
 
 ## What triggers an automatic review?
 
-In Vibe Coding, reviews trigger automatically when your AI coding assistant generates or modifies code. This happens without any action from you. The code diff is sent to kluster.ai, and the results appear in your chat or terminal.
+For AI-generated code, reviews trigger automatically when your AI coding assistant generates or modifies code. This happens without any action from you. The code diff is sent to kluster.ai, and the results appear in your chat or terminal.
 
 ## Does kluster.ai apply changes automatically?
 
-No. kluster.ai identifies issues and suggests fixes, but doesn't modify your code directly. In Vibe Coding, the AI assistant decides whether to apply them—in most cases, it will automatically incorporate the fixes. In Manual Coding, you apply fixes yourself using the **Fix with AI** button or manually. Either way, you remain in control.
+No. kluster.ai identifies issues and suggests fixes, but doesn't modify your code directly. For AI-generated code, the AI assistant decides whether to apply them—in most cases, it will automatically incorporate the fixes. For human-written code, you apply fixes yourself using the **Fix with AI** button or manually. Either way, you remain in control.
 
 ## Can I disable automatic reviews temporarily?
 
@@ -77,7 +77,7 @@ Yes. You can disable automatic reviews from [Options](/code-reviews/configuratio
 
 ## Does it work with multi-file edits?
 
-Yes. Vibe Coding analyzes diffs across multiple files in a single review, understanding the context of changes that span your codebase.
+Yes. AI-generated code reviews analyze diffs across multiple files in a single review, understanding the context of changes that span your codebase.
 
 ## Can I disable Auto Reviews temporarily?
 
@@ -95,11 +95,11 @@ The Dependency Validator automatically checks packages before installation. When
 
 The changes are made by your AI assistant, not kluster.ai itself. You can revert changes in the file using your IDE undo functionality, Git commands, or simply ask the AI assistant to revert the changes.
 
-## Manual Coding
+## Human-written code
 
-## How do I trigger a Manual Review?
+## How do I trigger an on-demand review?
 
-You can trigger a Manual Review in three ways:
+You can trigger an on-demand review in three ways:
 
 1. **Right-click** selected code → "Review with kluster.ai"
 2. Use the extension sidebar. Open the **Instant Review** dropdown and choose a file or uncommitted changes.
@@ -107,7 +107,7 @@ You can trigger a Manual Review in three ways:
 
 ## Can I review code I didn't write?
 
-Yes. Manual Review works on any code, including your own code, AI-generated code, or code from colleagues. This is useful for auditing existing codebases or reviewing pull requests.
+Yes. On-demand reviews work on any code, including your own code, AI-generated code, or code from colleagues. This is useful for auditing existing codebases or reviewing pull requests.
 
 ## Can I review a specific code block vs whole file?
 
@@ -117,7 +117,7 @@ Yes. Select the code you want to review, then right-click and choose **Review wi
 
 Yes. In the kluster.ai extension sidebar, click **Instant Review** and select **Review uncommitted changes**. This reviews all staged and unstaged changes across your repository.
 
-## What's the difference between Manual Reviews and Background Auto Reviews?
+## What's the difference between on-demand reviews and background auto reviews?
 
-- **Manual Reviews**: Are on-demand—you click a button or use a shortcut to trigger a review.
-- **Background Auto Reviews (Beta, Enterprise plan)**: Automatically review your code for issues and suggestions as you work, without requiring you to trigger anything. Enable it from the "Enabled Tools" section in [Options](/code-reviews/configuration/options/).
+- **On-demand reviews**: You click a button or use a shortcut to trigger a review.
+- **Background auto reviews (Beta, Enterprise plan)**: Automatically review your code for issues and suggestions as you work, without requiring you to trigger anything. Enable it from the "Enabled Tools" section in [Options](/code-reviews/configuration/options/).
