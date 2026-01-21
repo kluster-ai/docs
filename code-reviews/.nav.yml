@@ -1,5 +1,3 @@
-title: Code Reviews
-hide: false
 nav:
   - 'Review modes': review-modes.md
   - 'Get started': get-started
@@ -7,5 +5,6 @@ nav:
   - 'AI-generated code': agent-mode
   - 'Configuration': configuration
   - 'FAQ': faq.md
+  - 'Troubleshooting': troubleshooting.md
   - 'Reference': reference
   - 'How to use activation codes': activation-codes.md

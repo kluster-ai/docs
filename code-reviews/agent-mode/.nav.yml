@@ -1,5 +1,4 @@
 title: AI-generated code
-hide: false
 nav:
   - 'Automatic reviews': automatic-agent-reviews
   - 'On-demand reviews': manual-agent-reviews.md

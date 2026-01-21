@@ -7,55 +7,63 @@ description: Find answers to common questions about kluster.ai Code Review, cove
 
 ## General
 
-## What's the difference between human-written code and AI-generated code reviews?
+### What's the difference between human-written code and AI-generated code reviews?
 
 - **Human-written code**: Direct editor integration. You trigger reviews yourself by right-clicking code, using keyboard shortcuts, or clicking buttons in the extension sidebar. No AI assistant needed—review any code directly.
 - **AI-generated code**: For AI-assisted workflows. Reviews trigger automatically when AI generates code, or when you ask your AI assistant to review existing code. Works with Claude Code, Codex CLI, Cursor, VS Code, and other AI assistants.
 
-## What IDEs and CLI tools are supported?
+### I mostly write code without AI—is kluster.ai useful for me?
 
-- **IDE Extensions**: Cursor, VS Code, Windsurf, Antigravity
-- **CLI Tools**: Claude Code, Codex CLI
+Yes. Human-written code reviews are built for this. Right-click any code or press `Ctrl+Shift+K` to trigger a review. No AI assistant needed. See [Human-written code quickstart](/code-reviews/instant-ide-mode/instant-actions/quickstart/) for setup.
+
+### When should I run an on-demand review?
+
+Run an on-demand review before pushing changes. Use **Review uncommitted changes** for staged files, or **Review all branch changes** to review all changes made since the branch was created.
+
+### Do the two modes ever conflict or overlap?
+
+No. AI-generated code reviews run when AI generates code. Human-written code reviews run when you trigger them. They work independently.
+
+### What IDEs and CLI tools are supported?
+
+- **IDE extensions**: Cursor, VS Code, Windsurf, Antigravity
+- **CLI tools**: Claude Code, Codex CLI
 
 See [Installation](/code-reviews/get-started/installation/) for setup instructions.
 
-## What programming languages are supported?
+### What programming languages are supported?
 
 kluster.ai is language agnostic and can review code in any programming language, including Python, TypeScript, JavaScript, Java, Go, Rust, C++, C#, Ruby, PHP, and more.
 
-## Can I review a full codebase?
+### Can I review a full codebase?
 
-Yes, using on-demand reviews for human-written code. You can review individual files, selected code blocks, or all uncommitted changes. For large codebases, we recommend reviewing file-by-file or focusing on changed files.
+Yes, using [on-demand reviews for human-written code](/code-reviews/instant-ide-mode/instant-actions/quickstart/). You can review individual files, selected code blocks, or all uncommitted changes. For large codebases, we recommend reviewing file-by-file or focusing on changed files.
 
-## Can I use kluster.ai with any AI model?
+### Can I use kluster.ai with any AI model?
 
 Yes. When using an AI coding assistant, Code Reviews works with any model available in supported IDEs, including Claude, GPT, Gemini, and others.
 
-## Can I review a full codebase?
-
-Yes, using Manual Review. You can review individual files, selected code blocks, or all uncommitted changes. For large codebases, we recommend reviewing file-by-file or focusing on changed files.
-
-## Can I exclude files or folders from reviews?
+### Can I exclude files or folders from reviews?
 
 Currently, exclusion rules are configured at the project level through the kluster.ai platform. See [Custom Rules](/code-reviews/configuration/rules/) for setting up project-specific configurations.
 
-## How can I invite a team member?
+### How can I invite a team member?
 
 Team management is available on Team and Enterprise plans. Log in to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank} and navigate to your team settings to invite members.
 
-## How do activation codes work?
+### How do activation codes work?
 
 Activation codes provide promotional credits for kluster.ai plans. See our detailed guide: [How to use activation codes](/code-reviews/activation-codes/).
 
-## How frequently does kluster.ai update its vulnerability detection?
+### How frequently does kluster.ai update its vulnerability detection?
 
-We source vulnerability data from frequently updated public CVE databases. Our vulnerability detection updates as new CVEs are published and ingested by those sources, so coverage improves continuously rather than on a fixed schedule.
+kluster.ai sources vulnerability data from public CVE databases that are continuously updated. Detection coverage improves as new CVEs are published and ingested, rather than following a fixed update schedule.
 
-## How can I provide feedback about issues detected by kluster.ai?
+### How can I provide feedback about issues detected by kluster.ai?
 
 Each time a code review is done, a feedback option is available from the extension or in the platform. Your feedback helps improve detection accuracy and reduce false positives.
 
-## Do kluster.ai reviews improve over time?
+### Do kluster.ai reviews improve over time?
 
 Yes. When you connect your GitHub repositories, kluster.ai learns rules from your repo and applies project-specific configurations. See [Custom Rules](/code-reviews/configuration/rules/) for more details.
 
@@ -63,61 +71,68 @@ We also continuously improve our engine to perform deeper reviews, optimizing fo
 
 ## AI-generated code
 
-## What triggers an automatic review?
+### What triggers an automatic review?
 
 For AI-generated code, reviews trigger automatically when your AI coding assistant generates or modifies code. This happens without any action from you. The code diff is sent to kluster.ai, and the results appear in your chat or terminal.
 
-## Does kluster.ai apply changes automatically?
+### How does AI-generated code review handle intent verification differently than human-written code review?
+
+AI-generated code reviews see your original prompt to the AI, so they can verify the AI did what you asked—not just that the code runs. If you asked for Firebase auth but the AI used localStorage, the review catches it. Human-written code reviews cannot check intent because they only see the code, not your request. See [this example](/code-reviews/agent-mode/examples/cursor-firebase-nextjs/) for a real case.
+
+### Does kluster.ai apply changes automatically?
 
 No. kluster.ai identifies issues and suggests fixes, but doesn't modify your code directly. For AI-generated code, the AI assistant decides whether to apply them—in most cases, it will automatically incorporate the fixes. For human-written code, you apply fixes yourself using the **Fix with AI** button or manually. Either way, you remain in control.
 
-## Can I disable automatic reviews temporarily?
+### Can I disable automatic reviews temporarily?
 
 Yes. You can disable automatic reviews from [Options](/code-reviews/configuration/options/) in the kluster.ai platform. Alternatively, you can disable the kluster.ai extension in your IDE, or for CLI tools, disable the MCP server.
 
-## Does it work with multi-file edits?
+### Does it work with multi-file edits?
 
 Yes. AI-generated code reviews analyze diffs across multiple files in a single review, understanding the context of changes that span your codebase.
 
-## Can I disable Auto Reviews temporarily?
+### How does dependency checking work?
 
-Yes. You can disable Auto Reviews from [Options](/code-reviews/configuration/options/) in the kluster.ai platform. Alternatively, you can disable the kluster.ai extension in your IDE, or for CLI tools, disable the MCP server.
+The Dependency Validator automatically checks packages before installation. When your AI assistant suggests adding a dependency, kluster.ai validates it for known vulnerabilities before the install command runs.
 
-## Does it work with multi-file edits?
-
-Yes. Auto review analyzes diffs across multiple files in a single review, understanding the context of changes that span your codebase.
-
-## How does dependency checking work?
-
-The Dependency Validator automatically checks packages before installation. When your AI assistant suggests adding a dependency, kluster.ai validates it for known vulnerabilities and license compliance before the install command runs.
-
-## How do I rollback changes made based on kluster.ai feedback?
+### How do I rollback changes made based on kluster.ai feedback?
 
 The changes are made by your AI assistant, not kluster.ai itself. You can revert changes in the file using your IDE undo functionality, Git commands, or simply ask the AI assistant to revert the changes.
 
 ## Human-written code
 
-## How do I trigger an on-demand review?
+### What is the fastest way to check code I just wrote?
+
+Select the code, press **Ctrl+Shift+K** (or right-click → **Review with kluster.ai**). Results appear in seconds with issues and one-click fixes.
+
+### Can I use kluster.ai for code reviews in pull requests?
+
+Yes. Check out the PR locally and either:
+
+1. Use **Review uncommitted changes** to scan all modifications.
+2. Select specific code and review it.
+
+### How do I trigger an on-demand review?
 
 You can trigger an on-demand review in three ways:
 
-1. **Right-click** selected code → "Review with kluster.ai"
+1. **Right-click** selected code → **Review with kluster.ai**.
 2. Use the extension sidebar. Open the **Instant Review** dropdown and choose a file or uncommitted changes.
 3. Select code and use the **hint** button. This option is not available in Cursor yet.
 
-## Can I review code I didn't write?
+### Can I review code I didn't write?
 
 Yes. On-demand reviews work on any code, including your own code, AI-generated code, or code from colleagues. This is useful for auditing existing codebases or reviewing pull requests.
 
-## Can I review a specific code block vs whole file?
+### Can I review a specific code block vs whole file?
 
 Yes. Select the code you want to review, then right-click and choose **Review with kluster.ai**. You can review anything from a single function to an entire file.
 
-## Can I review uncommitted changes?
+### Can I review uncommitted changes?
 
 Yes. In the kluster.ai extension sidebar, click **Instant Review** and select **Review uncommitted changes**. This reviews all staged and unstaged changes across your repository.
 
-## What's the difference between on-demand reviews and background auto reviews?
+### What's the difference between on-demand reviews and background auto reviews?
 
 - **On-demand reviews**: You click a button or use a shortcut to trigger a review.
-- **Background auto reviews (Beta, Enterprise plan)**: Automatically review your code for issues and suggestions as you work, without requiring you to trigger anything. Enable it from the "Enabled Tools" section in [Options](/code-reviews/configuration/options/).
+- **Background auto reviews (Beta, Enterprise plan)**: Automatically review your code for issues and suggestions as you work, without requiring you to trigger anything. Enable it from the **Enabled Tools** section in [Options](/code-reviews/configuration/options/).
