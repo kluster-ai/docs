@@ -38,13 +38,13 @@ In this example, the AI creates an API endpoint but makes a critical security er
 
     In VS Code, you'll see the review appear directly in the chat. kluster.ai flags the issue (e.g., "Unprotected API Endpoint") and provides a fix.
 
-    ![VS Code Auto Review - Unprotected API](/images/code-reviews/agent-mode/automatic-agent-reviews/vscode-auto-review.webp)
+    ![VS Code Auto Review - Unprotected API](/images/code-reviews/ai-generated-code/automatic-reviews/vscode-auto-review.webp)
 
 === "Claude Code"
 
     In the terminal, Claude Code displays the review results immediately.
 
-    ![Claude Code Auto Review - Unprotected API](/images/code-reviews/agent-mode/automatic-agent-reviews/claude-auto-review.webp)
+    ![Claude Code Auto Review - Unprotected API](/images/code-reviews/ai-generated-code/automatic-reviews/claude-auto-review.webp)
 
 ## Compatible with
 
@@ -65,5 +65,5 @@ You can customize how automatic reviews work in your [configuration options](/co
 
 ## Next steps
 
-- **[Dependency checks](/code-reviews/agent-mode/automatic-agent-reviews/dependency-checks/)**: Learn about package validation.
-- **[On-demand reviews](/code-reviews/agent-mode/manual-agent-reviews/)**: Review existing code on demand.
+- **[Dependency checks](/code-reviews/ai-generated-code/automatic-reviews/dependency-checks/)**: Learn about package validation.
+- **[On-demand reviews](/code-reviews/ai-generated-code/on-demand-reviews/)**: Review existing code on demand.

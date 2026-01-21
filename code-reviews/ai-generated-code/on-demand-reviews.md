@@ -13,10 +13,10 @@ On-demand reviews let you ask your AI assistant to review existing code—not ju
 2.  **AI triggers review**: The assistant calls kluster.ai's manual review tool.
 3.  **kluster.ai analyzes**: Results appear with issues and suggested fixes your AI can apply.
 
-![On-demand review in Claude Code](/images/code-reviews/agent-mode/manual-agent-reviews/claude-code-1.webp)
+![On-demand review in Claude Code](/images/code-reviews/ai-generated-code/on-demand-reviews/claude-code-1.webp)
 
 ## Next steps
 
-- **[Automatic reviews](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Learn about automatic real-time reviews.
+- **[Automatic reviews](/code-reviews/ai-generated-code/automatic-reviews/quickstart/)**: Learn about automatic real-time reviews.
 - **[Configuration](/code-reviews/configuration/options/)**: Customize what issues get flagged.
-- **[Examples](/code-reviews/agent-mode/examples/cursor-firebase-nextjs/)**: See AI-generated code reviews in action.
+- **[Examples](/code-reviews/ai-generated-code/examples/cursor-firebase-nextjs/)**: See AI-generated code reviews in action.

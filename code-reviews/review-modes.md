@@ -29,7 +29,7 @@ Review code you write yourself with on-demand reviews—no AI assistant needed. 
 
 **Compatible with**: Cursor, VS Code, Windsurf, Antigravity (IDEs only)
 
-[:octicons-arrow-right-24: Get started with human-written code reviews](/code-reviews/instant-ide-mode/instant-actions/quickstart/)
+[:octicons-arrow-right-24: Get started with human-written code reviews](/code-reviews/human-written-code/on-demand-reviews/quickstart/)
 
 ## AI-generated code
 
@@ -44,7 +44,7 @@ When your AI coding assistant generates or modifies code, kluster.ai automatical
 
 **Compatible with**: Cursor, VS Code, Windsurf, Antigravity (IDEs) and Claude Code, Codex CLI (CLIs)
 
-[:octicons-arrow-right-24: Get started with AI-generated code reviews](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)
+[:octicons-arrow-right-24: Get started with AI-generated code reviews](/code-reviews/ai-generated-code/automatic-reviews/quickstart/)
 
 !!! tip "Need help choosing?"
     See [Pick your workflow](/code-reviews/get-started/pick-your-workflow/) for a detailed comparison and decision guide.
@@ -54,6 +54,6 @@ When your AI coding assistant generates or modifies code, kluster.ai automatical
 ## Next steps
 
 - **[Installation](/code-reviews/get-started/installation/)**: Install kluster.ai in your IDE or CLI tool.
-- **[Human-written code](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Get started with in-editor reviews.
-- **[AI-generated code](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Set up automatic and on-demand reviews.
+- **[Human-written code](/code-reviews/human-written-code/on-demand-reviews/quickstart/)**: Get started with in-editor reviews.
+- **[AI-generated code](/code-reviews/ai-generated-code/automatic-reviews/quickstart/)**: Set up automatic and on-demand reviews.
 - **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Compare modes and find the right fit.

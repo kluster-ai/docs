@@ -40,7 +40,7 @@ Use it to review code you wrote yourself, audit files before committing, or chec
 !!! info "Not available for CLI tools"
     Human-written code reviews require an IDE extension. For CLI tools like Claude Code or Codex CLI, use AI-generated code reviews instead.
 
-[:octicons-arrow-right-24: Get started with human-written code reviews](/code-reviews/instant-ide-mode/instant-actions/quickstart/)
+[:octicons-arrow-right-24: Get started with human-written code reviews](/code-reviews/human-written-code/on-demand-reviews/quickstart/)
 
 
 ## AI-generated code
@@ -54,7 +54,7 @@ This mode is designed for developers who code with AI assistants like Claude Cod
 - **IDE extensions**: Cursor, VS Code, Windsurf, Antigravity.
 - **CLI tools**: Claude Code, Codex CLI.
 
-[:octicons-arrow-right-24: Get started with AI-generated code reviews](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)
+[:octicons-arrow-right-24: Get started with AI-generated code reviews](/code-reviews/ai-generated-code/automatic-reviews/quickstart/)
 
 
 ## Using both modes
@@ -65,5 +65,5 @@ Use AI-generated code reviews when pair-programming with AI, switch to human-wri
 
 ## Next steps
 
-- **[Human-written code quickstart](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Set up on-demand reviews in your editor.
-- **[AI-generated code quickstart](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Set up automatic reviews for AI-assisted coding.
+- **[Human-written code quickstart](/code-reviews/human-written-code/on-demand-reviews/quickstart/)**: Set up on-demand reviews in your editor.
+- **[AI-generated code quickstart](/code-reviews/ai-generated-code/automatic-reviews/quickstart/)**: Set up automatic reviews for AI-assisted coding.

@@ -35,4 +35,4 @@ You can create manual rules to enforce your team's coding standards or connect G
 ## Next steps
 
 - **[Installation guide](/code-reviews/get-started/installation/)**: Set up Code Reviews in your preferred IDE.
-- **[See real examples](/code-reviews/agent-mode/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
+- **[See real examples](/code-reviews/ai-generated-code/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.

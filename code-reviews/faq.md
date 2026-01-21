@@ -14,7 +14,7 @@ description: Find answers to common questions about kluster.ai Code Review, cove
 
 ### I mostly write code without AI—is kluster.ai useful for me?
 
-Yes. Human-written code reviews are built for this. Right-click any code or press `Ctrl+Shift+K` to trigger a review. No AI assistant needed. See [Human-written code quickstart](/code-reviews/instant-ide-mode/instant-actions/quickstart/) for setup.
+Yes. Human-written code reviews are built for this. Right-click any code or press `Ctrl+Shift+K` to trigger a review. No AI assistant needed. See [Human-written code quickstart](/code-reviews/human-written-code/on-demand-reviews/quickstart/) for setup.
 
 ### When should I run an on-demand review?
 
@@ -37,7 +37,7 @@ kluster.ai is language agnostic and can review code in any programming language,
 
 ### Can I review a full codebase?
 
-Yes, using [on-demand reviews for human-written code](/code-reviews/instant-ide-mode/instant-actions/quickstart/). You can review individual files, selected code blocks, or all uncommitted changes. For large codebases, we recommend reviewing file-by-file or focusing on changed files.
+Yes, using [on-demand reviews for human-written code](/code-reviews/human-written-code/on-demand-reviews/quickstart/). You can review individual files, selected code blocks, or all uncommitted changes. For large codebases, we recommend reviewing file-by-file or focusing on changed files.
 
 ### Can I use kluster.ai with any AI model?
 
@@ -77,7 +77,7 @@ For AI-generated code, reviews trigger automatically when your AI coding assista
 
 ### How does AI-generated code review handle intent verification differently than human-written code review?
 
-AI-generated code reviews see your original prompt to the AI, so they can verify the AI did what you asked—not just that the code runs. If you asked for Firebase auth but the AI used localStorage, the review catches it. Human-written code reviews cannot check intent because they only see the code, not your request. See [this example](/code-reviews/agent-mode/examples/cursor-firebase-nextjs/) for a real case.
+AI-generated code reviews see your original prompt to the AI, so they can verify the AI did what you asked—not just that the code runs. If you asked for Firebase auth but the AI used localStorage, the review catches it. Human-written code reviews cannot check intent because they only see the code, not your request. See [this example](/code-reviews/ai-generated-code/examples/cursor-firebase-nextjs/) for a real case.
 
 ### Does kluster.ai apply changes automatically?
 

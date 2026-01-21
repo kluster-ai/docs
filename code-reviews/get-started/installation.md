@@ -235,6 +235,6 @@ Before getting started, ensure you have:
 
 ## Next steps
 
-- **[Human-written code](/code-reviews/instant-ide-mode/instant-actions/quickstart/)**: Learn about on-demand reviews in your editor
-- **[AI-generated code](/code-reviews/agent-mode/automatic-agent-reviews/quickstart/)**: Learn about automatic reviews for AI-assisted coding
+- **[Human-written code](/code-reviews/human-written-code/on-demand-reviews/quickstart/)**: Learn about on-demand reviews in your editor
+- **[AI-generated code](/code-reviews/ai-generated-code/automatic-reviews/quickstart/)**: Learn about automatic reviews for AI-assisted coding
 - **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Decide which mode fits your workflow
