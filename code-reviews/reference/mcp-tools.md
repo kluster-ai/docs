@@ -19,7 +19,7 @@ This page documents the parameters and response formats you'll see when using th
 
 === "Automatic Reviews and Dependency Validator"
 
-    These tools analyze code changes and dependencies to detect bugs, security vulnerabilities, and other quality issues. Used in Agent Mode.
+    These tools analyze code changes and dependencies to detect bugs, security vulnerabilities, and other quality issues. Used for AI-generated code.
 
     ???+ interface "Parameters"
 
@@ -45,9 +45,9 @@ This page documents the parameters and response formats you'll see when using th
 
         Session identifier returned by previous tool calls. Used to maintain context across multiple review requests.
 
-=== "Manual Review Tool"
+=== "On-demand Review Tool"
 
-    The manual review tool is triggered when explicitly requested. Used in both Agent Mode (when you ask your AI to review code) and Instant IDE Mode (when you use the extension UI).
+    The on-demand review tool is triggered when explicitly requested. Used for both AI-generated code (when you ask your AI to review code) and human-written code (when you use the extension UI).
 
     ???+ interface "Parameters"
 

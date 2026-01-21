@@ -1,8 +1,8 @@
 nav:
   - 'Review modes': review-modes.md
   - 'Get started': get-started
-  - 'Agent Mode': agent-mode
-  - 'Instant IDE Mode': instant-ide-mode
+  - 'Human-written code': human-written-code
+  - 'AI-generated code': ai-generated-code
   - 'Configuration': configuration
   - 'FAQ': faq.md
   - 'Troubleshooting': troubleshooting.md
