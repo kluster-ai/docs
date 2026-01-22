@@ -1,7 +1,7 @@
 ---
 title: On-demand reviews
 description: Ask your AI assistant to review existing code on demand. Audit files, check for security issues, or verify code quality.
-Categories: AI-generated code, On-demand review
+categories: AI-generated code, On-demand review
 ---
 
 # On-demand reviews
