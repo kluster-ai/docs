@@ -1,6 +1,6 @@
 ---
 title: Custom rules
-description: Define code review rules in Kluster—learn how to configure policies, defaults, and enforcement to standardize review quality and team workflows.
+description: Define code review rules in Kluster to configure policies, defaults, and enforcement for team workflows.
 categories: Basics
 ---
 # Custom rules
