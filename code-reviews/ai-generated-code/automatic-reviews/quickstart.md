@@ -1,6 +1,7 @@
 ---
 title: Automatic Reviews Quickstart
 description: Get started with automatic code reviews when using AI assistants. See how kluster.ai reviews code in real-time as your AI generates it.
+Categories: Basics, AI-generated code, Automatic review
 ---
 
 # Automatic Reviews quickstart

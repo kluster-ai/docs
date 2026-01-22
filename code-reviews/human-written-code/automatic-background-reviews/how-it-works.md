@@ -1,6 +1,7 @@
 ---
 title: Background Auto Reviews - How It Works
 description: Understand when background reviews trigger, what changes are included, and how results appear in your IDE.
+categories: Human-written code, Automatic review
 ---
 
 # Background reviews: how it works

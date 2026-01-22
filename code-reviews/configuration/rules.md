@@ -1,3 +1,8 @@
+---
+title: Custom rules
+description: Define code review rules in Kluster—learn how to configure policies, defaults, and enforcement to standardize review quality and team workflows.
+categories: Basics
+---
 # Custom rules
 
 Rules define practices, guidelines, and patterns that maintain code quality for your projects. When connected to GitHub, each repository becomes a project with its own learned rules. You can also create manual rules that apply globally or to specific projects. [kluster.ai](https://kluster.ai){target=_blank} Code Reviews automatically checks code changes against these rules.
