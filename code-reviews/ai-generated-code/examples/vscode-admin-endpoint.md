@@ -1,7 +1,7 @@
 ---
 title: VS Code: Secure Admin Endpoints with Express
 description: Learn how Code Reviews prevents critical security vulnerabilities when AI creates admin endpoints with hardcoded credentials
-Categories: AI-generated code
+categories: AI-generated code
 ---
 
 # VS Code: Secure Admin Endpoints
