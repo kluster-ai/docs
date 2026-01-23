@@ -29,17 +29,25 @@ Before getting started, ensure you have:
 2.  **You trigger review**: Right-click, use a hint button, or click in the sidebar.
 3.  **kluster.ai analyzes**: Results appear with issues and suggested fixes.
 
-## Instant review
+## Sidebar review
 
-Open the kluster.ai extension to access the **Instant Review** section in the sidebar. Click the dropdown button to choose:
+Open the kluster.ai extension to access the **On-Demand Review** section in the sidebar. Use the **Mode** dropdown to choose what to review:
 
 - **Review current file**: Verifies only the file currently open in the editor.
 - **Review uncommitted changes**: Verifies all uncommitted changes across multiple files.
+- **Review all branch changes**: Verifies all changes made since the branch was created.
 
-![Instant Review section in the kluster.ai sidebar](/images/code-reviews/human-written-code/on-demand-reviews/manual-review-this-code-extension.webp)
+![On-Demand Review section showing the Mode dropdown options](/images/code-reviews/human-written-code/on-demand-reviews/manual-review-this-code-extension.webp)
 
-!!! info "Accessing Instant Review"
-    You can also access Instant Review from the **Home** and **Git** tabs. Expand the kluster.ai section if collapsed.
+Then choose your analysis depth:
+
+- **Instant Review**: Fast analysis optimized for quick feedback during iterative development.
+- **Deep Review**: Comprehensive analysis that examines more code paths and edge cases.
+
+![On-Demand Review section showing Instant Review and Deep Review buttons](/images/code-reviews/human-written-code/on-demand-reviews/manual-review-this-code-extension-deep-vs-instant.webp)
+
+!!! info "Accessing On-Demand Review"
+    You can also access On-Demand Review from the **Home** and **Git** tabs. Expand the kluster.ai section if collapsed.
 
 After the review completes, kluster.ai displays any issues found. You can click **Fix with AI** to automatically resolve them.
 
@@ -69,6 +77,7 @@ Select any code in your editor, right-click, and choose **Review with kluster.ai
 
 You can customize how on-demand reviews work in your [configuration options](/code-reviews/configuration/options/):
 
+- **Analysis level**: Set default depth for Instant vs Deep reviews.
 - **Enabled tools**: Toggle Code Review and Dependency Analysis on/off.
 - **Sensitivity**: Adjust how strictly issues are flagged (Low → Critical).
 - **Bug check types**: Select which issue types to check (Security, Logic, Performance, etc.).
