@@ -1,11 +1,11 @@
 ---
 title: Options
-description: Configure kluster.ai Code Review settings, from sensitivity levels to issue types and enabled tools used to verify code across your workflow.
+description: Configure kluster.ai Code Review settings, from analysis depth and sensitivity levels to issue types and enabled tools used to verify code across your workflow.
 ---
 
 # Options
 
-You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Code Reviews behavior through the platform settings or directly in your IDE. This allows you to tailor the review process to your specific needs, such as configuring sensitivity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
+You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Code Reviews behavior through the platform settings or directly in your IDE. This allows you to tailor the review process to your specific needs, such as choosing between fast or deep analysis, configuring sensitivity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
 
 ![Code Review Options interface showing three numbered sections: Sensitivity Settings, Code Review Scope, and Enabled Tools](/images/code-reviews/configuration/configuration-1.webp)
 
@@ -41,6 +41,35 @@ Control which review tools run in your development environment. Enable or disabl
 - `Real-time Code Review`: For code quality reviews.
 - `Dependency Analysis`: For package and dependency security.
 - `Ambient Background Reviews (Beta, Enterprise plan)`: Automatic reviews that run in the background after you pause typing.
+
+## 4. Analysis level
+
+Control review depth to balance between speed and thoroughness. You can configure different analysis levels for human-driven and AI-driven development workflows.
+
+![Analysis Level settings showing options for Human-Driven and AI-Driven Development](/images/code-reviews/configuration/configuration-analysys-level-01.webp)
+
+- `Instant`: Fast analysis optimized for quick feedback. Best for iterative development where speed matters.
+- `Deep`: Comprehensive analysis that examines more code paths and edge cases. Best for critical code or pre-commit reviews.
+
+### Human-driven development
+
+Configure analysis depth for reviews you trigger directly in your IDE:
+
+|              Setting               |                     Description                      |
+|:----------------------------------:|:----------------------------------------------------:|
+| When I click Review button in IDE  | Analysis level for on-demand reviews you trigger manually |
+|          When I type code          | Analysis level for background reviews as you write code |
+
+### AI-driven development
+
+Configure analysis depth for reviews triggered through AI assistants:
+
+|                Setting                 |                        Description                        |
+|:--------------------------------------:|:---------------------------------------------------------:|
+|       When AI agent writes code        | Analysis level for automatic reviews of AI-generated code |
+| When I ask AI agent to review code     | Analysis level for on-demand reviews requested via AI     |
+
+The default configuration uses **Deep** for human-driven workflows (where you explicitly request a review) and **Instant** for AI-driven workflows (for faster iteration with AI assistants). Adjust based on your preference for speed versus thoroughness.
 
 ## Next steps
 
