@@ -48,8 +48,8 @@ Control review depth to balance between speed and thoroughness. You can configur
 
 ![Analysis Level settings showing options for Human-Driven and AI-Driven Development](/images/code-reviews/configuration/configuration-analysys-level-01.webp)
 
-- `Instant`: Fast analysis optimized for quick feedback. Best for iterative development where speed matters.
-- `Deep`: Comprehensive analysis that examines more code paths and edge cases. Best for critical code or pre-commit reviews.
+- `Instant`: Completes in ~5 seconds. Catches nearly all issues and is perfect for quick review-fix-review cycles.
+- `Deep`: Takes up to a few minutes. Digs deeper to find even the smallest edge cases—great for critical code or final reviews.
 
 ### Human-driven development
 
@@ -69,7 +69,7 @@ Configure analysis depth for reviews triggered through AI assistants:
 |       When AI agent writes code        | Analysis level for automatic reviews of AI-generated code |
 | When I ask AI agent to review code     | Analysis level for on-demand reviews requested via AI     |
 
-The default configuration uses **Deep** for human-driven workflows (where you explicitly request a review) and **Instant** for AI-driven workflows (for faster iteration with AI assistants). Adjust based on your preference for speed versus thoroughness.
+The default configuration uses **Deep** for human-driven workflows and **Instant** for AI-driven workflows. However, **Deep** is recommended for critical code regardless of workflow—use it for final reviews, production code, or when thoroughness matters more than speed.
 
 ## Next steps
 
