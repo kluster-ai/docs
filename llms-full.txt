@@ -675,9 +675,9 @@ Select which types of issues real-time Code Review detects during analysis. Each
 
 Control which review tools run in your development environment. Enable or disable each tool based on your project's specific needs and workflow.
 
-- **Real-time Code Review**: For code quality reviews.
-- **Dependency Analysis**: For package and dependency security.
-- **Ambient Background Reviews (Beta, Enterprise plan)**: Automatically review your code for issues and suggestions as you work, without requiring you to trigger anything.
+- `Real-time Code Review`: For code quality reviews.
+- `Dependency Analysis`: For package and dependency security.
+- `Ambient Background Reviews (Beta, Enterprise plan)`: Automatic reviews that run in the background after you pause typing.
 
 ## Next steps
 
