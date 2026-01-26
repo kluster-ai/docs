@@ -682,7 +682,7 @@ Control which review tools run in your development environment. Enable or disabl
 
 Control review depth to balance between speed and thoroughness. You can configure different analysis levels for human-driven and AI-driven development workflows.
 
-![Analysis Level settings showing options for Human-Driven and AI-Driven Development](/images/code-reviews/configuration/configuration-analysys-level-01.webp)
+![Analysis Level settings showing options for Human-Driven and AI-Driven Development](/images/code-reviews/configuration/configuration-analysis-level-01.webp)
 
 - `Instant`: Completes in ~5 seconds. Catches nearly all issues and is perfect for quick review-fix-review cycles.
 - `Deep`: Takes up to a few minutes. Digs deeper to find even the smallest edge cases—great for critical code or final reviews.
@@ -1427,7 +1427,7 @@ Open the kluster.ai extension to access the **On-Demand Review** section in the 
 
 - **Review current file**: Verifies only the file currently open in the editor.
 - **Review uncommitted changes**: Verifies all uncommitted changes across multiple files.
-- **Review all branch changes**: Verifies all changes made since the branch was created.
+- **Review all branch changes**: Verifies all changes compared against the selected base branch.
 
 ![On-Demand Review section showing the Mode dropdown options](/images/code-reviews/human-written-code/on-demand-reviews/manual-review-this-code-extension.webp)
 

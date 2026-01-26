@@ -35,7 +35,7 @@ Open the kluster.ai extension to access the **On-Demand Review** section in the 
 
 - **Review current file**: Verifies only the file currently open in the editor.
 - **Review uncommitted changes**: Verifies all uncommitted changes across multiple files.
-- **Review all branch changes**: Verifies all changes made since the branch was created.
+- **Review all branch changes**: Verifies all changes compared against the selected base branch.
 
 ![On-Demand Review section showing the Mode dropdown options](/images/code-reviews/human-written-code/on-demand-reviews/manual-review-this-code-extension.webp)
 

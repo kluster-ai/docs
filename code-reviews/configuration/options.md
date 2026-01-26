@@ -46,7 +46,7 @@ Control which review tools run in your development environment. Enable or disabl
 
 Control review depth to balance between speed and thoroughness. You can configure different analysis levels for human-driven and AI-driven development workflows.
 
-![Analysis Level settings showing options for Human-Driven and AI-Driven Development](/images/code-reviews/configuration/configuration-analysys-level-01.webp)
+![Analysis Level settings showing options for Human-Driven and AI-Driven Development](/images/code-reviews/configuration/configuration-analysis-level-01.webp)
 
 - `Instant`: Completes in ~5 seconds. Catches nearly all issues and is perfect for quick review-fix-review cycles.
 - `Deep`: Takes up to a few minutes. Digs deeper to find even the smallest edge cases—great for critical code or final reviews.
