@@ -1,0 +1,4 @@
+title: Automatic reviews
+nav:
+  - 'Quickstart': quickstart.md
+  - 'Dependency checks': dependency-checks.md

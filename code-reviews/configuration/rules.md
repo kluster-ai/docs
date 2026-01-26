@@ -36,4 +36,4 @@ To accommodate different workflows, Code Reviews supports two types of rules:
 ## Next steps
 
 - **[Installation guide](/code-reviews/get-started/installation/)**: Set up Code Reviews in your preferred IDE.
-- **[See real examples](/code-reviews/agent-mode/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
+- **[See real examples](/code-reviews/ai-generated-code/examples/cursor-firebase-nextjs/)**: Walk through a complete Firebase migration case study.
