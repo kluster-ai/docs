@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const copiedToClipboard = document.querySelector('.md-dialog');
       try {
         const response = await fetch(
-          'https://docs.kluster.ai/llms-full.txt',
+          'https://docs.kluster.ai/llms-full.jsonl',
         );
         const text = await response.text();
         await navigator.clipboard.writeText(text);
