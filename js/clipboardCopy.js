@@ -4,9 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     .addEventListener('click', async (event) => {
       const copiedToClipboard = document.querySelector('.md-dialog');
       try {
-        const response = await fetch(
-          'https://docs.kluster.ai/llms-full.jsonl',
-        );
+        const llmsUrl = new URL('/ai/llms-full.jsonl', window.location.origin);
+          const response = await fetch(llmsUrl, { credentials: 'omit' });
         const text = await response.text();
         await navigator.clipboard.writeText(text);
         
