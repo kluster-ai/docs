@@ -17,7 +17,7 @@ To accommodate different workflows, Code Reviews supports two types of rules:
 
 1. Access the platform by navigating to [**Custom Code Review Rules**](https://platform.kluster.ai/custom-code-review-rules){target=\_blank}.
 
-2. Connect your GitHub account (Optional) to enable project-specific rules. In this context, each GitHub repository is treated as a 'project' - Code Reviews learns patterns from each repository and applies those specific rules when reviewing code for that project.
+2. (Optional) Connect your GitHub account to enable project-specific rules. In this context, each GitHub repository is treated as a 'project' - Code Reviews learns patterns from each repository and applies those specific rules when reviewing code for that project.
 
     ![Connect to GitHub](/images/code-reviews/configuration/rules/rules-01.webp)
 
