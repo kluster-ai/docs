@@ -1,6 +1,7 @@
 ---
 title: Get started with Code Reviews
 description: Set up kluster.ai Code Reviews in minutes. Scan code for errors, vulnerabilities, and performance issues in Cursor, VS Code, Claude Code, and more.
+categories: Basics
 ---
 
 # Get started with Code Reviews

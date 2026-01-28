@@ -1,6 +1,7 @@
 ---
 title: Pick your workflow
 description: Choose between human-written code and AI-generated code reviews based on how you write code. Or use both.
+categories: Basics
 ---
 
 # Pick your workflow

@@ -1,6 +1,7 @@
 ---
 title: Response Schema
 description: Understand the response format from kluster.ai Code Reviews—issue structure, severity levels, priority system, and suggested fixes.
+categories: Reference
 ---
 
 # Response Schema

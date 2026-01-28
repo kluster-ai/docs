@@ -1,6 +1,7 @@
 ---
 title: Cursor: Firebase Authentication with Next.js
 description: See how Code Reviews catches critical issues in real-time while migrating from localStorage to Firebase authentication
+categories: AI-generated code
 ---
 
 # Cursor: Firebase authentication

@@ -1,6 +1,7 @@
 ---
 title: Dependency Checks
 description: Learn how kluster.ai validates packages and dependencies before installation, catching vulnerabilities and license issues automatically.
+categories: AI-generated code, Automatic review
 ---
 
 # Dependency Checks

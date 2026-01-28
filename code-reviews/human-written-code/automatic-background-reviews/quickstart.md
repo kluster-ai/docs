@@ -1,6 +1,7 @@
 ---
 title: Background Auto Reviews Quickstart
 description: Enable background auto reviews to automatically scan your uncommitted changes after you stop typing, and get notified only when issues are found.
+categories: Basics, Human-written code, Automatic review
 ---
 
 # Background reviews quickstart
