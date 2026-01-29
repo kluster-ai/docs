@@ -13,10 +13,10 @@ You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Code 
 
 Configure the minimum sensitivity level for Code Reviews issue reporting. Set your threshold based on your team's needs:
 
-- `Low`: Detects even the smallest potential issues.
-- `Medium`: Suitable for projects requiring strong security and high code quality.
-- `High`: (Recommended) Strong protection against security and quality issues while maintaining good performance.
-- `Critical`: Focuses only on critical issues for faster iteration and smoother coding experience.
+- **Low**: Detects even the smallest potential issues.
+- **Medium**: Suitable for projects requiring strong security and high code quality.
+- **High**: (Recommended) Strong protection against security and quality issues while maintaining good performance.
+- **Critical**: Focuses only on critical issues for faster iteration and smoother coding experience.
 
 The ideal setting depends on your use case. For example, a **High** level is a good starting point, but you might want to set it to **Medium** for production code.
 
@@ -38,9 +38,9 @@ Select which types of issues Code Reviews detects during code analysis. You have
 
 Control which review tools run in your development environment. Enable or disable each tool based on your project's specific needs and workflow.
 
-- `Real-time Code Review`: For code quality reviews.
-- `Dependency Analysis`: For package and dependency security.
-- `Ambient Background Reviews (Beta, Enterprise plan)`: Automatic reviews that run in the background after you pause typing.
+- **Real-time Code Review**: For code quality reviews.
+- **Dependency Analysis**: For package and dependency security.
+- **Ambient Background Reviews (Beta, Enterprise plan)**: Automatic reviews that run in the background after you pause typing.
 
 ## 4. Analysis level
 
@@ -48,8 +48,7 @@ Control review depth to balance between speed and thoroughness. You can configur
 
 ![Analysis Level settings showing options for Human-Driven and AI-Driven Development](/images/code-reviews/configuration/configuration-analysis-level-01.webp)
 
-- `Instant`: Completes in about five seconds. Detects most issues and is suited for fast review and iteration cycles.
-- `Deep`: Takes up to a few minutes. Conducts deeper analysis to uncover even subtle edge cases, ideal for critical code and final reviews.
+--8<-- 'text/code-reviews/instant-vs-deep.md'
 
 ### Human-driven development
 
