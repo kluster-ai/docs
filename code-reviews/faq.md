@@ -7,7 +7,7 @@ description: Find answers to common questions about kluster.ai Code Review, cove
 
 ## General
 
-### What's the difference between human-written code and AI-generated code reviews?
+### What is the difference between human-written code and AI-generated code reviews?
 
 - **Human-written code**: Direct editor integration. You trigger reviews yourself by right-clicking code, using keyboard shortcuts, or clicking buttons in the extension sidebar. No AI assistant needed—review any code directly.
 - **AI-generated code**: For AI-assisted workflows. Reviews trigger automatically when AI generates code, or when you ask your AI assistant to review existing code. Works with Claude Code, Codex CLI, Cursor, VS Code, and other AI assistants.
@@ -138,7 +138,7 @@ Yes. Select the code you want to review, then right-click and choose **Review wi
 
 Yes. In the kluster.ai extension sidebar, open the **On-Demand Review** section, select **Review uncommitted changes** from the Mode dropdown, then click **Instant Review** or **Deep Review**. This reviews all staged and unstaged changes across your repository.
 
-### What's the difference between on-demand reviews and background auto reviews?
+### What is the difference between on-demand reviews and background auto reviews?
 
 - **On-demand reviews**: You click a button or use a shortcut to trigger a review.
 - **Background auto reviews (Beta, Enterprise plan)**: Automatically review your code for issues and suggestions as you work, without requiring you to trigger anything. Enable it from the **Enabled Tools** section in [Options](/code-reviews/configuration/options/).
