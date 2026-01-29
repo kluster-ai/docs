@@ -69,9 +69,9 @@ Yes. When you connect your GitHub repositories, kluster.ai learns rules from you
 
 We also continuously improve our engine to perform deeper reviews, optimizing for common issues our users encounter. If you have suggestions for improvement, contact us at [support@kluster.ai](mailto:support@kluster.ai).
 
-### What's the difference between Instant and Deep analysis?
+### What is the difference between Instant and Deep analysis?
 
-- **Instant**: Completes in ~5 seconds. Catches nearly all issues and is perfect for quick review-fix-review cycles.
+- **Instant**: Completes in about five seconds. Catches nearly all issues and is perfect for quick review-fix-review cycles.
 - **Deep**: Takes up to a few minutes. Digs deeper to find even the smallest edge cases—great for critical code or final reviews.
 
 Use **Instant** for fast iteration during development. Use **Deep** for final reviews, production code, or when thoroughness matters more than speed. You can configure the default for each workflow in [Options](/code-reviews/configuration/options/#4-analysis-level).

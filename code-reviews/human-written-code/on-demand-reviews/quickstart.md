@@ -41,7 +41,7 @@ Open the kluster.ai extension to access the **On-Demand Review** section in the 
 
 Then choose your analysis depth:
 
-- **Instant Review**: Completes in ~5 seconds. Catches nearly all issues—perfect for quick review-fix-review cycles.
+- **Instant Review**: Completes in about five seconds. Detects most issues and supports fast iteration during development.
 - **Deep Review**: Takes up to a few minutes. Finds even the smallest edge cases—great for critical code or final reviews.
 
 ![On-Demand Review section showing Instant Review and Deep Review buttons](/images/code-reviews/human-written-code/on-demand-reviews/manual-review-this-code-extension-deep-vs-instant.webp)
