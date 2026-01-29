@@ -69,6 +69,12 @@ Yes. When you connect your GitHub repositories, kluster.ai learns rules from you
 
 We also continuously improve our engine to perform deeper reviews, optimizing for common issues our users encounter. If you have suggestions for improvement, contact us at [support@kluster.ai](mailto:support@kluster.ai).
 
+### What is the difference between Instant and Deep analysis for code reviews?
+
+--8<-- 'text/code-reviews/instant-vs-deep.md'
+
+Use **Instant** for fast iteration during development. Use **Deep** for final reviews, production code, or when thoroughness matters more than speed. You can configure the default for each workflow in [Options](/code-reviews/configuration/options/#4-analysis-level).
+
 ## AI-generated code
 
 ### What triggers an automatic review?
@@ -117,7 +123,7 @@ Yes. Check out the PR locally and either:
 You can trigger an on-demand review in three ways:
 
 1. **Right-click** selected code → **Review with kluster.ai**.
-2. Use the extension sidebar. Open the **Instant Review** dropdown and choose a file or uncommitted changes.
+2. Use the extension sidebar. Open the **On-Demand Review** section, select a mode, and click **Instant Review** or **Deep Review**.
 3. Select code and use the **hint** button. This option is not available in Cursor yet.
 
 ### Can I review code I didn't write?
@@ -130,7 +136,7 @@ Yes. Select the code you want to review, then right-click and choose **Review wi
 
 ### Can I review uncommitted changes?
 
-Yes. In the kluster.ai extension sidebar, click **Instant Review** and select **Review uncommitted changes**. This reviews all staged and unstaged changes across your repository.
+Yes. In the kluster.ai extension sidebar, open the **On-Demand Review** section, select **Review uncommitted changes** from the Mode dropdown, then click **Instant Review** or **Deep Review**. This reviews all staged and unstaged changes across your repository.
 
 ### What's the difference between on-demand reviews and background auto reviews?
 

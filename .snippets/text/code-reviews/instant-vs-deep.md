@@ -1,0 +1,2 @@
+- **Instant**: Completes in about five seconds. Detects most issues and is suited for fast review and iteration cycles.
+- **Deep**: Takes up to a few minutes. Conducts deeper analysis to uncover even subtle edge cases, ideal for critical code and final reviews.
