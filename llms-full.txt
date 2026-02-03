@@ -641,13 +641,13 @@ description: Configure kluster.ai Code Review settings, from analysis depth and 
 
 # Options
 
-You can customize the [kluster.ai](https://www.kluster.ai/){target=\_blank} Code Review behavior through the platform settings or directly in your IDE. The options page is available in the left-hand menu under **Review options**, where you can configure sensitivity levels for issue reporting, select which types of bug checks to run, and enable or disable specific MCP tools to match your development workflow.
+You can customize the [kluster.ai](https://www.kluster.ai/){target=\_blank} Code Reviews behavior through the platform settings or directly in your IDE. The options page is available in the left-hand menu under **Review options**, where you can configure sensitivity levels for issue reporting, select which types of bug checks to run, and enable or disable specific MCP tools to match your development workflow.
 
 ![Code Review Options interface](/images/code-reviews/configuration/configuration-01.webp)
 
 ## Sensitivity settings
 
-Configure the minimum sensitivity level for the real-time Code Review issue reporting. Set your threshold based on your team's requirements:
+Configure the minimum sensitivity level for the real-time Code Reviews issue reporting. Set your threshold based on your team's requirements:
 
 - **Low**: Detects even the smallest potential issues.
 - **Medium**: Suitable for projects requiring strong security and high code quality.
@@ -679,11 +679,11 @@ Control which review tools run in your development environment. Enable or disabl
 - **Dependency Analysis**: For package and dependency security.
 - **Ambient Background Reviews (Beta, Enterprise plan)**: Automatic reviews that run in the background after you pause typing.
 
-## 4. Analysis level
+## Analysis level
 
 Control review depth to balance between speed and thoroughness. You can configure different analysis levels for human-driven and AI-driven development workflows.
 
-![Analysis Level settings showing options for Human-Driven and AI-Driven Development](/images/code-reviews/configuration/configuration-analysis-level-01.webp)
+![Analysis Level settings showing options for Human-Driven and AI-Driven Development](/images/code-reviews/configuration/configuration-02.webp)
 
 -- **Instant**: Completes in about five seconds. Detects most issues and is suited for fast review and iteration cycles.
 - **Deep**: Takes up to a few minutes. Conducts deeper analysis to uncover even subtle edge cases, ideal for critical code and final reviews.
@@ -732,7 +732,7 @@ To accommodate different workflows, Code Reviews supports two types of rules:
 
 1. Access the platform by navigating to [**Custom Code Review Rules**](https://platform.kluster.ai/custom-code-review-rules){target=\_blank}.
 
-2. Connect your GitHub account (Optional) to enable project-specific rules. In this context, each GitHub repository is treated as a 'project' - Code Reviews learns patterns from each repository and applies those specific rules when reviewing code for that project.
+2. (Optional) Connect your GitHub account to enable project-specific rules. In this context, each GitHub repository is treated as a 'project' - Code Reviews learns patterns from each repository and applies those specific rules when reviewing code for that project.
 
     ![Connect to GitHub](/images/code-reviews/configuration/rules/rules-01.webp)
 
