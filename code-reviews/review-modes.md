@@ -1,6 +1,7 @@
 ---
 title: Code Reviews
 description: Learn how to use kluster.ai's Code Reviews to validate your code in real time—detecting bugs, security issues, and quality problems so you can ship safely.
+categories: Basics
 ---
 
 # Code Reviews
