@@ -6,13 +6,13 @@ categories: Basics
 
 # Code Reviews
 
-Code Reviews analyzes your code for bugs, security vulnerabilities, and quality issues. It works for both **human-written code** and **AI-generated code**, with review modes tailored to each workflow.
+Code Reviews analyzes your code for bugs, security vulnerabilities, and quality issues. It works for **human-written code**, **AI-generated code**, and **repo reviews**, with review modes tailored to each workflow.
 
-The service integrates directly into your IDE or CLI (Cursor, VS Code, Windsurf, Claude Code, and others), analyzing code as you work.
+For in-editor reviews, the service integrates directly into your IDE or CLI (Cursor, VS Code, Windsurf, Claude Code, and others), analyzing code as you work. For system-wide analysis, repo reviews scan your entire repository through the web dashboard.
 
 ## Key features
 
-- **Flexible review modes**: Reviews for human-written code and AI-generated code.
+- **Flexible review modes**: Reviews for human-written code, AI-generated code, and system-wide repo analysis.
 - **Comprehensive issue detection**: Analyzes 7 issue types — *Semantic, Intent, Logical, Security, Knowledge, Performance,* and *Quality*.
 - **Customizable sensitivity**: Configure detection sensitivity from *Low* to *Critical*.
 - **Dual analysis tools**: Real-time Code Review and Dependency Analysis for complete coverage.
