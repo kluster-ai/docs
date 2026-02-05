@@ -6,7 +6,7 @@ categories: Basics
 
 # Pick your workflow
 
-Code Reviews offers two distinct modes that adapt to how you work. Whether you're coding with an AI assistant or writing code directly, this guide helps you understand which mode fits your workflow—and why most developers use both.
+Code Reviews offers three distinct modes that adapt to how you work. Whether you're coding with an AI assistant, writing code directly, or analyzing your entire codebase, this guide helps you understand which mode fits your workflow—and why many developers use all three.
 
 ## Choose your mode
 
@@ -28,6 +28,14 @@ Code Reviews offers two distinct modes that adapt to how you work. Whether you'r
 
     [:octicons-arrow-right-24: Learn more](#ai-generated-code)
 
+-   **Repo reviews**
+
+    ---
+
+    For analyzing your entire codebase. Find bugs that emerge from interactions across modules—issues that survive individual PR reviews because they're only visible at the system level.
+
+    [:octicons-arrow-right-24: Learn more](#repo-reviews)
+
 </div>
 
 ## Human-written code
@@ -41,7 +49,7 @@ Use it to review code you wrote yourself, audit files before committing, or chec
 !!! info "Not available for CLI tools"
     Human-written code reviews require an IDE extension. For CLI tools like Claude Code or Codex CLI, use AI-generated code reviews instead.
 
-[:octicons-arrow-right-24: Get started with human-written code reviews](/code-reviews/human-written-code/on-demand-reviews/quickstart/)
+[:octicons-arrow-right-24: Get started with human-written code reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/)
 
 
 ## AI-generated code
@@ -55,16 +63,44 @@ This mode is designed for developers who code with AI assistants like Claude Cod
 - **IDE extensions**: Cursor, VS Code, Windsurf, Antigravity.
 - **CLI tools**: Claude Code, Codex CLI.
 
-[:octicons-arrow-right-24: Get started with AI-generated code reviews](/code-reviews/ai-generated-code/automatic-reviews/quickstart/)
+[:octicons-arrow-right-24: Get started with AI-generated code reviews](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/quickstart/)
 
 
-## Using both modes
+## Repo reviews
 
-If you use Cursor, VS Code, Windsurf, or Antigravity, you get the best of both worlds. Install kluster.ai once and both modes are available—switch seamlessly between AI-assisted coding and manual reviews without changing tools.
+Repo reviews take a fundamentally different approach: instead of reviewing individual changes, it analyzes your entire repository as a complete system. This reveals bugs and risks that don't belong to any single PR or file—issues that only become visible when you examine how multiple parts of your code interact.
 
-Use AI-generated code reviews when pair-programming with AI, switch to human-written code reviews when writing code yourself, and run **Review uncommitted changes** before every commit to catch anything missed.
+Use repo reviews to catch problems that slip through PR-level reviews:
+
+- **Cross-module interactions**: Code paths that work in isolation but break when components interact.
+- **System-wide vulnerabilities**: Security checks that exist in some code paths but are bypassed in others.
+- **State management issues**: State that becomes inconsistent under edge cases like retries or partial failures.
+- **Assumption violations**: Logic that depends on constraints enforced elsewhere in the codebase.
+
+Repo reviews complement your existing review workflow. Run them periodically to surface issues that already exist in your codebase—problems that would otherwise remain hidden until they cause production incidents.
+
+**Available on**: Web dashboard at [platform.kluster.ai/repo-reviews](https://platform.kluster.ai/repo-reviews){target=_blank} (requires GitHub/GitLab connection).
+
+!!! note "Usage limits"
+    Pro plans include 1 repo review per month. Enterprise plans include higher limits. [Contact us](https://kluster.ai/contact){target=_blank} to learn more.
+
+[:octicons-arrow-right-24: Get started with repo reviews](/code-reviews/repo-reviews/quickstart/)
+
+
+## Using multiple modes
+
+Most teams use all three review modes together:
+
+- **Human-written code reviews**: For reviewing code you write directly in your editor.
+- **AI-generated code reviews**: For catching issues as your AI assistant generates code.
+- **Repo reviews**: For periodic system-wide analysis to catch cross-module bugs.
+
+If you use Cursor, VS Code, Windsurf, or Antigravity, you get both human-written and AI-generated code reviews in a single installation—switch seamlessly between AI-assisted coding and manual reviews without changing tools.
+
+Add repo reviews to your workflow by running them periodically to surface issues that survive individual code reviews. Think of it as a safety net that catches problems only visible when you step back and look at your entire system.
 
 ## Next steps
 
-- **[Human-written code quickstart](/code-reviews/human-written-code/on-demand-reviews/quickstart/)**: Set up on-demand reviews in your editor.
-- **[AI-generated code quickstart](/code-reviews/ai-generated-code/automatic-reviews/quickstart/)**: Set up automatic reviews for AI-assisted coding.
+- **[Human-written code quickstart](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/)**: Set up on-demand reviews in your editor.
+- **[AI-generated code quickstart](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/quickstart/)**: Set up automatic reviews for AI-assisted coding.
+- **[Repo reviews quickstart](/code-reviews/repo-reviews/quickstart/)**: Run your first system-wide codebase analysis.

@@ -17,10 +17,10 @@ Code Reviews protects you when starting new projects or adding libraries by vali
 
 When the AI suggests a package version with a known vulnerability, kluster.ai alerts you immediately, preventing the risk from entering your codebase.
 
-![Dependency Analysis Example](/images/code-reviews/ai-generated-code/automatic-reviews/dependency-analysis.webp)
+![Dependency Analysis Example](/images/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/dependency-analysis.webp)
 
 
 ## Next steps
 
-- **[On-demand reviews](/code-reviews/ai-generated-code/on-demand-reviews/)**: Review existing code on demand.
+- **[On-demand reviews](/code-reviews/ide-reviews/ai-generated-code/on-demand-reviews/)**: Review existing code on demand.
 - **[Configuration](/code-reviews/configuration/options/)**: Customize dependency check behavior.

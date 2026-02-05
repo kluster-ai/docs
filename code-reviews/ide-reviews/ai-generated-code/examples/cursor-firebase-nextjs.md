@@ -30,7 +30,7 @@ We used **Gemini 2.5 Flash** (Cursor's standard free model) in **agentic mode** 
 
 Our prompt was to _implement a real user login with Firebase_ + Firebase default app setting file.
 
-![Cursor showing e-commerce app and AI's Firebase implementation plan](/images/code-reviews/ai-generated-code/examples/cursor/example-cursor-1.webp)
+![Cursor showing e-commerce app and AI's Firebase implementation plan](/images/code-reviews/ide-reviews/ai-generated-code/examples/cursor/example-cursor-1.webp)
 
 The AI responded confidently with a detailed 5-step plan:
 
@@ -120,7 +120,7 @@ export async function POST(req: NextRequest) {
 
 The screenshot below shows Cursor's interface with Code Reviews's alert panel displaying a critical P1 Intent violation. The alert clearly identifies that the AI removed working Firebase authentication logic from the login API route, replacing functional code with a placeholder response.
 
-![Code Reviews alert showing breaking changes detected in login API route](/images/code-reviews/ai-generated-code/examples/cursor/example-cursor-2.webp){ width="75%" }
+![Code Reviews alert showing breaking changes detected in login API route](/images/code-reviews/ide-reviews/ai-generated-code/examples/cursor/example-cursor-2.webp){ width="75%" }
 
 Code Reviews provided the following response:
 
@@ -209,7 +209,7 @@ const login = async (email: string, password: string) => {
 
 The screenshot below displays Cursor with Code Reviews's alert highlighting a P1 Intent violation. The alert detects that the AI has regressed the authentication architecture by reverting from the Firebase implementation back to the original localStorage and API-based approach, undoing the intended migration.
 
-![Code Reviews alert showing architecture regression from Firebase back to localStorage](/images/code-reviews/ai-generated-code/examples/cursor/example-cursor-3.webp){ width="75%" }
+![Code Reviews alert showing architecture regression from Firebase back to localStorage](/images/code-reviews/ide-reviews/ai-generated-code/examples/cursor/example-cursor-3.webp){ width="75%" }
 
 
 Code Reviews provided the following response:
@@ -244,11 +244,11 @@ By following Code Reviews's guidance at each step, Gemini 2.5 Flash completed th
 
 The following image shows the Firebase console showing the `code@verify.com` user creation:
 
-![Firebase Authentication console showing successfully created users](/images/code-reviews/ai-generated-code/examples/cursor/example-cursor-4.webp)
+![Firebase Authentication console showing successfully created users](/images/code-reviews/ide-reviews/ai-generated-code/examples/cursor/example-cursor-4.webp)
 
 Users can now successfully login into the e-commerce app and Firebase user created:
 
-![E-commerce app showing successful login with code@verify.com user](/images/code-reviews/ai-generated-code/examples/cursor/example-cursor-5.webp)
+![E-commerce app showing successful login with code@verify.com user](/images/code-reviews/ide-reviews/ai-generated-code/examples/cursor/example-cursor-5.webp)
 
 The migration from `localStorage` to Firebase authentication was completed without the typical debugging cycles. [Code Reviews](/code-reviews/) caught each issue in real-time, allowing us to fix problems immediately rather than discovering them during testing.
 

@@ -15,7 +15,7 @@ categories: Reference
 
 ### I mostly write code without AI—is kluster.ai useful for me?
 
-Yes. Human-written code reviews are built for this. Right-click any code or press `Ctrl+Shift+K` to trigger a review. No AI assistant needed. See [Human-written code quickstart](/code-reviews/human-written-code/on-demand-reviews/quickstart/) for setup.
+Yes. Human-written code reviews are built for this. Right-click any code or press `Ctrl+Shift+K` to trigger a review. No AI assistant needed. See [Human-written code quickstart](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/) for setup.
 
 ### When should I run an on-demand review?
 
@@ -38,7 +38,9 @@ kluster.ai is language agnostic and can review code in any programming language,
 
 ### Can I review a full codebase?
 
-Yes, using [on-demand reviews for human-written code](/code-reviews/human-written-code/on-demand-reviews/quickstart/). You can review individual files, selected code blocks, or all uncommitted changes. For large codebases, we recommend reviewing file-by-file or focusing on changed files.
+Yes. For system-wide analysis, use [Repo Reviews](/code-reviews/repo-reviews/quickstart/) to scan your entire repository and find bugs that emerge from cross-module interactions. Repo reviews are designed specifically for analyzing your complete codebase as a system.
+
+For reviewing specific changes, use [on-demand reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/) to check individual files, code blocks, or uncommitted changes.
 
 ### Can I use kluster.ai with any AI model?
 
@@ -84,7 +86,7 @@ For AI-generated code, reviews trigger automatically when your AI coding assista
 
 ### How does AI-generated code review handle intent verification differently than human-written code review?
 
-AI-generated code reviews see your original prompt to the AI, so they can verify the AI did what you asked—not just that the code runs. If you asked for Firebase auth but the AI used localStorage, the review catches it. Human-written code reviews cannot check intent because they only see the code, not your request. See [this example](/code-reviews/ai-generated-code/examples/cursor-firebase-nextjs/) for a real case.
+AI-generated code reviews see your original prompt to the AI, so they can verify the AI did what you asked—not just that the code runs. If you asked for Firebase auth but the AI used localStorage, the review catches it. Human-written code reviews cannot check intent because they only see the code, not your request. See [this example](/code-reviews/ide-reviews/ai-generated-code/examples/cursor-firebase-nextjs/) for a real case.
 
 ### Does kluster.ai apply changes automatically?
 
@@ -143,3 +145,23 @@ Yes. In the kluster.ai extension sidebar, open the **On-Demand Review** section,
 
 - **On-demand reviews**: You click a button or use a shortcut to trigger a review.
 - **Background auto reviews (Beta, Enterprise plan)**: Automatically review your code for issues and suggestions as you work, without requiring you to trigger anything. Enable it from the **Enabled Tools** section in [Options](/code-reviews/configuration/options/).
+
+## Repo reviews
+
+### What are repo reviews and how are they different from other review modes?
+
+Repo reviews analyze your entire codebase as a system instead of reviewing individual changes. They find bugs that emerge from interactions across modules—issues that don't show up in PR-level reviews because they're only visible when you examine how multiple parts of your code work together.
+
+Other review modes (on-demand and automatic) check specific changes you make. Repo reviews scan everything to catch cross-module bugs, state inconsistencies, bypassed validation checks, and system-wide problems.
+
+### How long does a repo review take?
+
+Depending on repository size, repo reviews take several minutes. You'll receive an email notification once the analysis completes. You can close the page and come back later—the review continues running in the background.
+
+### Can I run repo reviews on private repositories?
+
+Yes. Repo reviews work with both public and private repositories on GitHub and GitLab. The connection is secure and respects your repository permissions.
+
+### Where can I access repo reviews?
+
+Repo reviews are available only through the web dashboard at [platform.kluster.ai/repo-reviews](https://platform.kluster.ai/repo-reviews){target=_blank}. You need to connect your GitHub or GitLab account first. Repo reviews are not available in IDE extensions or CLI tools.

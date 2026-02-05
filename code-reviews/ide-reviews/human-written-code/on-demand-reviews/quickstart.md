@@ -38,20 +38,20 @@ Open the kluster.ai extension to access the **On-Demand Review** section in the 
 - **Review uncommitted changes**: Verifies all uncommitted changes across multiple files.
 - **Review all branch changes**: Verifies all changes compared against the selected base branch.
 
-![On-Demand Review section showing the Mode dropdown options](/images/code-reviews/human-written-code/on-demand-reviews/manual-review-this-code-extension.webp)
+![On-Demand Review section showing the Mode dropdown options](/images/code-reviews/ide-reviews/human-written-code/on-demand-reviews/manual-review-this-code-extension.webp)
 
 Then choose your analysis depth for your code reviews:
 
 --8<-- 'text/code-reviews/instant-vs-deep.md'
 
-![On-Demand Review section showing Instant Review and Deep Review buttons](/images/code-reviews/human-written-code/on-demand-reviews/manual-review-this-code-extension-deep-vs-instant.webp)
+![On-Demand Review section showing Instant Review and Deep Review buttons](/images/code-reviews/ide-reviews/human-written-code/on-demand-reviews/manual-review-this-code-extension-deep-vs-instant.webp)
 
 !!! info "Accessing On-Demand Review"
     You can also access On-Demand Review from the **Home** and **Git** tabs. Expand the kluster.ai section if collapsed.
 
 After the review completes, kluster.ai displays any issues found. You can click **Fix with AI** to automatically resolve them.
 
-![Review results showing issues found](/images/code-reviews/human-written-code/on-demand-reviews/manual-review-this-code-extension-results.webp)
+![Review results showing issues found](/images/code-reviews/ide-reviews/human-written-code/on-demand-reviews/manual-review-this-code-extension-results.webp)
 
 ## Code block review
 
@@ -61,7 +61,7 @@ Select any code in your editor, right-click, and choose **Review with kluster.ai
 - Checking code during merge conflict resolution.
 - Getting a quick security check before moving on.
 
-![Right-click to review selected code](/images/code-reviews/human-written-code/on-demand-reviews/manual-review-this-code.webp)
+![Right-click to review selected code](/images/code-reviews/ide-reviews/human-written-code/on-demand-reviews/manual-review-this-code.webp)
 
 !!! info "Hint button"
     When you select code, a hint button also appears next to your selection to trigger the review. This hint button is not yet available in Cursor—use the right-click menu or keyboard shortcut instead.
