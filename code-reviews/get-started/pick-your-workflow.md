@@ -68,7 +68,7 @@ This mode is designed for developers who code with AI assistants like Claude Cod
 
 ## Repo reviews
 
-Repo reviews take a fundamentally different approach: instead of reviewing individual changes, they analyze your entire repository as a complete system. This reveals bugs and risks that don't belong to any single PR or file—issues that only become visible when you examine how multiple parts of your code interact.
+Repo reviews take a fundamentally different approach: instead of reviewing individual changes, it analyzes your entire repository as a complete system. This reveals bugs and risks that don't belong to any single PR or file—issues that only become visible when you examine how multiple parts of your code interact.
 
 Use repo reviews to catch problems that slip through PR-level reviews:
 
@@ -82,7 +82,7 @@ Repo reviews complement your existing review workflow. Run them periodically to 
 **Available on**: Web dashboard at [platform.kluster.ai/repo-reviews](https://platform.kluster.ai/repo-reviews){target=_blank} (requires GitHub/GitLab connection).
 
 !!! note "Usage limits"
-    Pro plans include 1 repo review per month. Enterprise plans include higher limits—[contact us](https://kluster.ai/contact){target=_blank} to learn more.
+    Pro plans include 1 repo review per month. Enterprise plans include higher limits. [Contact us](https://kluster.ai/contact){target=_blank} to learn more.
 
 [:octicons-arrow-right-24: Get started with repo reviews](/code-reviews/repo-reviews/quickstart/)
 
