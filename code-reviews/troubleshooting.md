@@ -1,6 +1,7 @@
 ---
 title: Troubleshooting
 description: Solutions for common issues with kluster.ai Code Reviews across all supported IDEs and CLI tools.
+categories: Basics
 ---
 
 # Troubleshooting

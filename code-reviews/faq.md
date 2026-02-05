@@ -1,6 +1,7 @@
 ---
 title: Frequently Asked Questions
 description: Find answers to common questions about kluster.ai Code Review, covering setup, supported IDEs, review modes, security, and troubleshooting topics.
+categories: Reference
 ---
 
 # Frequently Asked Questions
