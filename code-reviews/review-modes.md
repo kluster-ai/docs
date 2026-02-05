@@ -47,6 +47,26 @@ When your AI coding assistant generates or modifies code, kluster.ai automatical
 
 [:octicons-arrow-right-24: Get started with AI-generated code reviews](/code-reviews/ai-generated-code/automatic-reviews/quickstart/)
 
+## Repo reviews
+
+**For system-wide codebase analysis.**
+
+Repo reviews analyze your entire repository as a system, uncovering bugs and risks that don't belong to any single change or PR. These issues only emerge when multiple parts of the code interact—problems that survive individual code reviews because they're invisible in isolation.
+
+Common issues found by repo reviews include:
+
+- **Cross-module bugs**: Code paths that look safe in isolation but break when exercised together.
+- **Silent error propagation**: Errors that propagate silently across modules and only surface in production.
+- **State inconsistencies**: State that becomes inconsistent under retries, partial failures, or restarts.
+- **Bypassed validation**: Security or validation checks applied in one place but bypassed in another.
+- **Assumption violations**: Logic that relies on assumptions enforced elsewhere in the codebase.
+
+Repo reviews complement PR-level reviews by revealing problems that already exist in your system—issues that would remain hidden until something breaks.
+
+**Available on**: Web dashboard only (requires GitHub/GitLab connection)
+
+[:octicons-arrow-right-24: Get started with repo reviews](/code-reviews/repo-reviews/quickstart/)
+
 !!! tip "Need help choosing?"
     See [Pick your workflow](/code-reviews/get-started/pick-your-workflow/) for a detailed comparison and decision guide.
 
@@ -57,4 +77,5 @@ When your AI coding assistant generates or modifies code, kluster.ai automatical
 - **[Installation](/code-reviews/get-started/installation/)**: Install kluster.ai in your IDE or CLI tool.
 - **[Human-written code](/code-reviews/human-written-code/on-demand-reviews/quickstart/)**: Get started with in-editor reviews.
 - **[AI-generated code](/code-reviews/ai-generated-code/automatic-reviews/quickstart/)**: Set up automatic and on-demand reviews.
+- **[Repo reviews](/code-reviews/repo-reviews/quickstart/)**: Analyze your entire codebase for system-wide issues.
 - **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Compare modes and find the right fit.

@@ -1,8 +1,10 @@
 nav:
   - 'Review modes': review-modes.md
   - 'Get started': get-started
-  - 'Human-written code': human-written-code
-  - 'AI-generated code': ai-generated-code
+  - 'Code reviews':
+    - 'Human-written code': human-written-code
+    - 'AI-generated code': ai-generated-code
+  - 'Repo reviews': repo-reviews
   - 'Configuration': configuration
   - 'FAQ': faq.md
   - 'Troubleshooting': troubleshooting.md
