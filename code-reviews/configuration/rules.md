@@ -1,3 +1,8 @@
+---
+title: Custom Rules
+description: Learn how to define and manage custom code review rules to enforce consistent code quality, using manual rules or learned rules from GitHub repositories.
+---
+
 # Custom rules
 
 Rules define the standards and requirements that help maintain consistent code quality across your projects. They give Code Reviews a clear basis for evaluating new code, ensuring it aligns with your defined criteria. [kluster.ai](https://kluster.ai){target=\_blank} Code Reviews automatically check code changes against these rules.
