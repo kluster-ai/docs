@@ -18,11 +18,11 @@ Background reviews watch your uncommitted changes and run automatically in the b
 2.  In **Enabled Tools**, toggle **Ambient Background Reviews (Beta, Enterprise plan)** on.
 3.  Keep coding. Reviews run automatically once enabled.
 
-![Background reviews enabled in Options](/images/code-reviews/human-written-code/background-reviews/background-reviews.webp)
+![Background reviews enabled in Options](/images/code-reviews/ide-reviews/human-written-code/background-reviews/background-reviews.webp)
 
 
 ## Next steps
 
-- **[How it works](/code-reviews/human-written-code/automatic-background-reviews/how-it-works/)**: Learn what triggers a review and what gets included.
-- **[On-demand reviews quickstart](/code-reviews/human-written-code/on-demand-reviews/quickstart/)**: Run reviews manually in your editor.
+- **[How it works](/code-reviews/ide-reviews/human-written-code/automatic-background-reviews/how-it-works/)**: Learn what triggers a review and what gets included.
+- **[On-demand reviews quickstart](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/)**: Run reviews manually in your editor.
 - **[Configuration options](/code-reviews/configuration/options/)**: Adjust sensitivity and issue types.

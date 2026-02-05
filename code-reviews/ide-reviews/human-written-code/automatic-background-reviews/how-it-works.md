@@ -15,7 +15,7 @@ Background reviews include staged, unstaged, untracked, and unsaved editor chang
 Only text files are reviewed. Binary files and common generated files (like `node_modules` or build outputs) are filtered out automatically.
 
 !!! note "Large changesets"
-    If your changes are very large, the review may skip context or fail. Use [on-demand reviews](/code-reviews/human-written-code/on-demand-reviews/quickstart/) to review smaller chunks instead.
+    If your changes are very large, the review may skip context or fail. Use [on-demand reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/) to review smaller chunks instead.
 
 ## Where results appear
 

@@ -29,7 +29,7 @@ The team decided to add an **admin endpoint** to delete all products - a seeming
 
 Our prompt was straightforward: _"Add an admin endpoint to delete all products from the database."_
 
-![VS Code showing the Express API and Copilot Chat with Claude Sonnet's implementation plan](/images/code-reviews/ai-generated-code/examples/vscode/example-vscode-1.webp)
+![VS Code showing the Express API and Copilot Chat with Claude Sonnet's implementation plan](/images/code-reviews/ide-reviews/ai-generated-code/examples/vscode/example-vscode-1.webp)
 
 GitHub Copilot Chat (powered by Claude Sonnet) responded confidently with a 4-step implementation plan:
 
@@ -67,7 +67,7 @@ The line `process.env.ADMIN_KEY || 'admin123'` creates a catastrophic security h
 
 ## Code Reviews catches the vulnerability
 
-![VS Code with Code Reviews alert showing P2 Critical security issue for hardcoded admin credentials](/images/code-reviews/ai-generated-code/examples/vscode/example-vscode-2.webp)
+![VS Code with Code Reviews alert showing P2 Critical security issue for hardcoded admin credentials](/images/code-reviews/ide-reviews/ai-generated-code/examples/vscode/example-vscode-2.webp)
 
 Code Reviews immediately identified the critical security flaw:
 
@@ -115,7 +115,7 @@ if (!adminKey || adminKey !== expectedAdminKey) {
 
 ## Summary of results
 
-![VS Code showing the successfully implemented secure admin endpoint with proper authentication](/images/code-reviews/ai-generated-code/examples/vscode/example-vscode-3.webp)
+![VS Code showing the successfully implemented secure admin endpoint with proper authentication](/images/code-reviews/ide-reviews/ai-generated-code/examples/vscode/example-vscode-3.webp)
 
 Code Reviews prevented a critical security vulnerability from reaching production:
 
