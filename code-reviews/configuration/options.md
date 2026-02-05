@@ -5,36 +5,37 @@ description: Configure kluster.ai Code Review settings, from analysis depth and 
 
 # Options
 
-You can customize the [kluster.ai](https://www.kluster.ai/){target=_blank} Code Reviews behavior through the platform settings or directly in your IDE. This allows you to tailor the review process to your specific needs, such as choosing between fast or deep analysis, configuring sensitivity levels for issue reporting, selecting which types of bug checks to perform, and enabling or disabling specific MCP tools to match your development workflow.
+You can customize the [kluster.ai](https://www.kluster.ai/){target=\_blank} Code Reviews behavior through the platform settings or directly in your IDE. The options page is available in the left-hand menu under **Review options**, where you can configure sensitivity levels for issue reporting, select which types of bug checks to run, and enable or disable specific MCP tools to match your development workflow.
 
-![Code Review Options interface showing three numbered sections: Sensitivity Settings, Code Review Scope, and Enabled Tools](/images/code-reviews/configuration/configuration-1.webp)
+![Code Review Options interface](/images/code-reviews/configuration/configuration-01.webp)
 
-## 1. Sensitivity settings
+## Sensitivity settings
 
-Configure the minimum sensitivity level for Code Reviews issue reporting. Set your threshold based on your team's needs:
+Configure the minimum sensitivity level for the real-time Code Reviews issue reporting. Set your threshold based on your team's requirements:
 
 - **Low**: Detects even the smallest potential issues.
 - **Medium**: Suitable for projects requiring strong security and high code quality.
-- **High**: (Recommended) Strong protection against security and quality issues while maintaining good performance.
+- **High**: (Recommended) Balances strong protection against LLM hallucination and security issues with performance.
 - **Critical**: Focuses only on critical issues for faster iteration and smoother coding experience.
 
-The ideal setting depends on your use case. For example, a **High** level is a good starting point, but you might want to set it to **Medium** for production code.
+!!! info "Choosing a sensitivity level"
+    The ideal setting depends on your use case. In general, a **High** level is a good starting point, but you might want to set it to **Medium** for production workflows.
 
-## 2. Code review scope
+## Code review scope
 
-Select which types of issues Code Reviews detects during code analysis. You have full control over which bug types to check for through simple on/off toggles.
+Select which types of issues real-time Code Review detects during analysis. Each type specifies a category of issues the system can identify.
 
 |     Type      |           Description           |                Example                |
 |:-------------:|:-------------------------------:|:-------------------------------------:|
-|   `intent`    | Code doesn't match user request | User asked for sorting, got filtering |
-|  `semantic`   |    Meaning and type errors      |        Wrong variable type used       |
-|  `knowledge`  |    Best practice violations     |       Not following conventions       |
-| `performance` |       Performance issues        |        Inefficient algorithms         |
-|   `quality`   |      Code quality problems      |        Poor naming, complexity        |
-|   `logical`   |     Control flow errors         |           Off-by-one errors           |
-|  `security`   |    Security vulnerabilities     |          SQL injection risks          |
+|   **Intent**    | Code doesn't match user request | User asked for sorting, got filtering |
+|  **Semantic**   |    Meaning and type errors      |        Wrong variable type used       |
+|  **Knowledge**  |    Best practice violations     |       Not following conventions       |
+| **Performance** |       Performance issues        |        Inefficient algorithms         |
+|   **Quality**   |      Code quality problems      |        Poor naming, complexity        |
+|   **Logical**   |     Control flow errors         |           Off-by-one errors           |
+|  **Security**   |    Security vulnerabilities     |          SQL injection risks          |
 
-## 3. Enabled tools
+## Enabled tools
 
 Control which review tools run in your development environment. Enable or disable each tool based on your project's specific needs and workflow.
 
@@ -42,11 +43,11 @@ Control which review tools run in your development environment. Enable or disabl
 - **Dependency Analysis**: For package and dependency security.
 - **Ambient Background Reviews (Beta, Enterprise plan)**: Automatic reviews that run in the background after you pause typing.
 
-## 4. Analysis level
+## Analysis level
 
 Control review depth to balance between speed and thoroughness. You can configure different analysis levels for human-driven and AI-driven development workflows.
 
-![Analysis Level settings showing options for Human-Driven and AI-Driven Development](/images/code-reviews/configuration/configuration-analysis-level-01.webp)
+![Analysis Level settings showing options for Human-Driven and AI-Driven Development](/images/code-reviews/configuration/configuration-02.webp)
 
 --8<-- 'text/code-reviews/instant-vs-deep.md'
 
