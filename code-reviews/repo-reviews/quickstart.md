@@ -43,13 +43,7 @@ Then choose the repository you want to analyze:
 
 ### 2. Scan repo
 
-Once your repository is connected, the analysis starts automatically. You'll see:
-
-- Your selected repository in the project dropdown.
-- A status indicator showing **"Review in progress..."** with a blue spinner.
-- A message explaining the analysis is running.
-
-The scan runs a deep analysis of your codebase. Depending on repository size, this takes several minutes. You'll receive an email notification once it's done.
+Once your repository is connected, the analysis starts automatically and shows **"Review in progress..."**. The scan runs a deep analysis of your codebase. Depending on repository size, this takes several minutes. You'll receive an email notification once it's done.
 
 You can close the page and come back later.
 
@@ -64,7 +58,7 @@ Each issue displays:
 - **Description**: Summary of the problem.
 - **Severity**: High, Medium, or Low (shown with color badges).
 - **Type**: The category of issue (Security, Logical, Performance, Knowledge, etc.).
-- **Priority**: P3-P4 ranking for triage.
+- **Priority**: P0-P5 ranking for triage.
 
 ### 4. Examine issue details
 
