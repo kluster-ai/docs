@@ -1,6 +1,6 @@
 ---
 title: Custom rules
-description: Define custom kluster.ai code review rules to configure policies, coding standards, defaults, and enforcement for team workflows via manual rules or repository pattern extraction.
+description: Learn how to define and manage custom code review rules to enforce consistent code quality, using manual rules or learned rules from GitHub repositories.
 categories: Basics
 ---
 
