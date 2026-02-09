@@ -1,12 +1,12 @@
 ---
 title: Review Commands
-description: Learn how to review staged changes, diffs, branches, and individual files with kluster-cli. Choose between instant and deep analysis modes.
+description: Review staged changes, diffs, branches, and individual files with kluster-cli. Choose between instant and deep analysis modes.
 categories: CLI, Review
 ---
 
 # Review commands
 
-Learn how to run code reviews from the terminal. kluster-cli provides three ways to review code — staged changes, diffs against branches or commits, and individual files — each suited to a different stage of your workflow. All commands support instant and deep analysis modes.
+kluster-cli provides three ways to review code from the terminal — staged changes, diffs against branches or commits, and individual files — each suited to a different stage of your workflow. All commands support instant and deep analysis modes.
 
 | Command | What it reviews | Requires git? |
 |---------|----------------|:-------------:|

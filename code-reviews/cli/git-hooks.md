@@ -1,6 +1,6 @@
 ---
 title: Git Hooks
-description: Learn how to automate kluster.ai code reviews with git hooks. Install pre-commit or pre-push hooks to catch issues before they reach your repository.
+description: Automate kluster.ai code reviews with git hooks. Install pre-commit or pre-push hooks to catch issues before they reach your repository.
 categories: CLI, Git, Automation
 ---
 

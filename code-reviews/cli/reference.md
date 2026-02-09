@@ -1,6 +1,6 @@
 ---
 title: CLI Reference
-description: Learn about all kluster-cli commands, configuration options, exit codes, and environment variables in one place.
+description: All kluster-cli commands, configuration options, exit codes, and environment variables in one place.
 categories: CLI, Reference
 ---
 

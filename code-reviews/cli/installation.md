@@ -1,6 +1,6 @@
 ---
 title: CLI Installation
-description: Learn how to install kluster-cli on macOS, Linux, or Windows. Set up shell completions, configure your PATH, and keep the CLI up to date.
+description: Install kluster-cli on macOS, Linux, or Windows. Set up shell completions, configure your PATH, and keep the CLI up to date.
 categories: Basics, CLI
 ---
 

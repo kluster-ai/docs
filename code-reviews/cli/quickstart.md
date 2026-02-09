@@ -1,16 +1,16 @@
 ---
 title: CLI Quickstart
-description: Learn how to install kluster-cli, authenticate, and run your first code review from the terminal in under 2 minutes.
+description: Install kluster-cli, authenticate, and run your first code review from the terminal.
 categories: Basics, CLI
 ---
 
 # CLI quickstart
 
-Instant code reviews from your terminal. Install kluster-cli, authenticate with your API key, and run your first review in under 2 minutes. No IDE or CI pipeline required.
+Run [kluster.ai](https://kluster.ai){target=_blank} code reviews straight from your terminal. Install kluster-cli, authenticate with your API key, and review your first changes. No IDE or CI pipeline required.
 
 ## Prerequisites
 
-Before getting started, ensure you have:
+You need:
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you don't have one.
 - **An API key**: Get your API key from the [CLI setup page](https://platform.kluster.ai/cli){target=_blank}.
@@ -56,7 +56,7 @@ kluster review staged
 
 --8<-- 'code/code-reviews/cli/review-staged-example.md'
 
-That's it. kluster.ai analyzes your code and reports any issues found, with severity levels, explanations, and suggested fixes.
+That's it. kluster.ai analyzes your code and flags issues with severity levels, explanations, and suggested fixes.
 
 ## Next steps
 
