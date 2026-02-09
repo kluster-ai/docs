@@ -6,7 +6,7 @@ categories: Basics, CLI
 
 # Installation
 
-kluster-cli is available for macOS, Linux, and Windows. The installer downloads a single binary, adds it to your `PATH`, and you're ready to go. This page covers installation, updates, shell completions, and uninstalling.
+[kluster.ai](https://kluster.ai){target=_blank}'s CLI is available for macOS, Linux, and Windows. The installer downloads a single binary, adds it to your `PATH`, and you're ready to go. This page covers installation, updates, shell completions, and uninstalling.
 
 ## Install kluster-cli
 
@@ -26,10 +26,10 @@ kluster-cli is available for macOS, Linux, and Windows. The installer downloads 
 
     | Flag | Description |
     |------|-------------|
-    | `-b <dir>` | Custom install directory (default: `~/.kluster/cli/bin`) |
-    | `-d` | Enable debug logging |
-    | `-q` | Quiet mode (errors only) |
-    | `-n` | Dry run (no changes) |
+    | `-b <dir>` | Custom install directory (default: `~/.kluster/cli/bin`). |
+    | `-d` | Enable debug logging. |
+    | `-q` | Quiet mode (errors only). |
+    | `-n` | Dry run (no changes). |
 
 === "Windows PowerShell"
 
@@ -149,6 +149,6 @@ Enable tab completion for commands, flags, and git branches.
 
 ## Next steps
 
-- **[Quickstart](/code-reviews/cli/quickstart/)**: Run your first review in under 2 minutes.
+- **[Quickstart](/code-reviews/cli/quickstart/)**: Run your first review from the terminal.
 - **[Review commands](/code-reviews/cli/review-commands/)**: All review options and output formats.
 - **[Reference](/code-reviews/cli/reference/)**: Configuration, exit codes, and full command reference.

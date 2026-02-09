@@ -6,7 +6,7 @@ categories: CLI, Reference
 
 # CLI reference
 
-Complete reference for all kluster-cli commands, configuration options, and exit codes. Use this page for quick lookups on commands, flags, config file settings, and environment variables.
+Complete reference for all [kluster.ai](https://kluster.ai){target=_blank}'s CLI commands, configuration options, and exit codes. Use this page for quick lookups on commands, flags, config file settings, and environment variables.
 
 ## Commands
 
@@ -205,6 +205,6 @@ fi
 
 ## Next steps
 
-- **[Quickstart](/code-reviews/cli/quickstart/)**: Get started in under 2 minutes.
+- **[Quickstart](/code-reviews/cli/quickstart/)**: Get started with your first review.
 - **[Review commands](/code-reviews/cli/review-commands/)**: Detailed usage and examples.
 - **[Git hooks](/code-reviews/cli/git-hooks/)**: Automate reviews in your workflow.

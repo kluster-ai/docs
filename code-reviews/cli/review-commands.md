@@ -6,7 +6,7 @@ categories: CLI, Review
 
 # Review commands
 
-kluster-cli provides three ways to review code from the terminal — staged changes, diffs against branches or commits, and individual files — each suited to a different stage of your workflow. All commands support instant and deep analysis modes.
+[kluster.ai](https://kluster.ai){target=_blank}'s CLI provides three ways to review code from the terminal — staged changes, diffs against branches or commits, and individual files — each suited to a different stage of your workflow. All commands support instant and deep analysis modes.
 
 | Command | What it reviews | Requires git? |
 |---------|----------------|:-------------:|

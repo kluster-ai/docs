@@ -6,7 +6,7 @@ categories: CLI, Git, Automation
 
 # Git hooks
 
-Git hooks allow you to run kluster.ai code reviews automatically every time you commit or push. Set up a pre-commit or pre-push hook and kluster-cli will review your changes in the background, blocking the operation if issues above your severity threshold are found.
+Git hooks allow you to run [kluster.ai](https://kluster.ai){target=_blank} code reviews automatically every time you commit or push. Set up a pre-commit or pre-push hook and kluster-cli will review your changes in the background, blocking the operation if issues above your severity threshold are found.
 
 ## Hook types
 
