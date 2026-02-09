@@ -10,6 +10,13 @@ Complete reference for all [kluster.ai](https://kluster.ai){target=_blank}'s CLI
 
 ## Commands
 
+Tip: Use `--help` on any command to see available flags:
+
+```bash
+kluster --help
+kluster review staged --help
+```
+
 === "Review"
 
     | Command | Description |
@@ -117,6 +124,12 @@ The CLI supports three output formats, configurable globally or per command:
 
     ```bash
     kluster log --output json
+    ```
+
+    Review commands support the same output formats:
+
+    ```bash
+    kluster review staged --output json
     ```
 
 === "Text"

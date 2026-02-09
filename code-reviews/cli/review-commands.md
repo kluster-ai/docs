@@ -77,6 +77,18 @@ kluster review staged --mode deep
 
 The default mode is `instant`.
 
+## CI/CD and scripting
+
+For automation, prefer machine-readable output and check the command exit code.
+
+Example (JSON output via environment variable):
+
+```bash
+KLUSTER_OUTPUT=json kluster review staged
+```
+
+See [CLI reference](/code-reviews/cli/reference/#exit-codes) for exit codes and [Output formats](/code-reviews/cli/reference/#output-formats) for configuration options.
+
 ## Review history
 
 ### List recent reviews

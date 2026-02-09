@@ -43,7 +43,7 @@ categories: Basics, CLI
 
     The installer places the binary at `%USERPROFILE%\.kluster\cli\bin\kluster.exe` and adds it to your `PATH`.
 
-## Verify installation
+### Verify installation
 
 After installation, verify the CLI is working:
 
@@ -52,6 +52,32 @@ kluster version
 ```
 
 --8<-- 'code/code-reviews/cli/version-output.md'
+
+If you get `command not found: kluster`, your `PATH` likely wasn't updated. See [Troubleshooting](/code-reviews/troubleshooting/#command-not-found-kluster).
+
+### Login
+
+Authenticate the CLI with your API key:
+
+```bash
+kluster login
+```
+
+--8<-- 'code/code-reviews/cli/login.md'
+
+Get your API key from the [CLI setup page](https://platform.kluster.ai/cli){target=_blank}.
+
+To authenticate non-interactively (useful for CI/CD):
+
+```bash
+kluster login --api-key kl_your_key_here
+```
+
+To remove stored credentials:
+
+```bash
+kluster logout
+```
 
 ## Supported platforms
 

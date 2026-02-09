@@ -4,7 +4,7 @@ description: Install kluster-cli, authenticate, and run your first code review f
 categories: Basics, CLI
 ---
 
-# CLI quickstart
+# Quickstart
 
 Run [kluster.ai](https://kluster.ai){target=_blank} code reviews straight from your terminal. Install kluster-cli, authenticate with your API key, and review your first changes. No IDE or CI pipeline required.
 
@@ -33,6 +33,8 @@ You need:
 
     --8<-- 'code/code-reviews/cli/install-windows.md'
 
+For installer options, supported platforms, and troubleshooting, see [Installation](/code-reviews/cli/installation/).
+
 ## 2. Login
 
 Authenticate the CLI with your API key:
@@ -43,8 +45,7 @@ kluster login
 
 --8<-- 'code/code-reviews/cli/login.md'
 
-!!! info "Where to find your API key"
-    Go to [platform.kluster.ai/cli](https://platform.kluster.ai/cli){target=_blank}. Your API key is displayed in the setup instructions.
+When prompted, paste the API key from [platform.kluster.ai/cli](https://platform.kluster.ai/cli){target=_blank}.
 
 ## 3. Review your code
 
@@ -58,8 +59,13 @@ kluster review staged
 
 That's it. kluster.ai analyzes your code and flags issues with severity levels, explanations, and suggested fixes.
 
+Want a deeper scan? Re-run the same command with `--mode deep`.
+
+The CLI can do more than review staged changes—you can also [review diffs against branches](/code-reviews/cli/review-commands/#review-a-diff), [review individual files](/code-reviews/cli/review-commands/#review-files), or set up [git hooks](/code-reviews/cli/git-hooks/) to automate reviews on every commit or push.
+
 ## Next steps
 
 - **[Installation](/code-reviews/cli/installation/)**: Shell completions, update system, and advanced install options.
 - **[Review commands](/code-reviews/cli/review-commands/)**: Review diffs, branches, and individual files.
 - **[Git hooks](/code-reviews/cli/git-hooks/)**: Automate reviews on every commit or push.
+- **[Reference](/code-reviews/cli/reference/)**: Configuration, exit codes, and full command reference.

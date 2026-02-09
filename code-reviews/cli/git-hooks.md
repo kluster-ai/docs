@@ -38,7 +38,7 @@ When a hook triggers, the CLI runs a review and checks the results against your 
 Install a single hook:
 
 ```bash
-kluster hooks install pre-push
+kluster hooks install <hook_name>
 ```
 
 --8<-- 'code/code-reviews/cli/hooks-install.md'
