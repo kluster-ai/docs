@@ -160,8 +160,8 @@ Depending on repository size, repo reviews take several minutes. You'll receive 
 
 ### Can I run repo reviews on private repositories?
 
-Yes. Repo reviews work with both public and private repositories on GitHub and GitLab. The connection is secure and respects your repository permissions.
+Yes. Repo reviews work with both public and private repositories on GitHub, GitLab, and Bitbucket. The connection is secure and respects your repository permissions.
 
 ### Where can I access repo reviews?
 
-Repo reviews are available only through the web dashboard at [platform.kluster.ai/repo-reviews](https://platform.kluster.ai/repo-reviews){target=_blank}. You need to connect your GitHub or GitLab account first. Repo reviews are not available in IDE extensions or CLI tools.
+Repo reviews are available only through the web dashboard at [platform.kluster.ai/repo-reviews](https://platform.kluster.ai/repo-reviews){target=_blank}. You need to connect your GitHub, GitLab, or Bitbucket account first. Repo reviews are not available in IDE extensions or CLI tools.
