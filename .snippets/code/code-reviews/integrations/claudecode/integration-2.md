@@ -1,4 +1,4 @@
-<div id="termynal" data-termynal>
+<div data-termynal>
   <span data-ty="input">claude /mcp</span>
   <span data-ty></span>
   <span data-ty>✨ Welcome to Claude Code!</span>

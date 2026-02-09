@@ -1,4 +1,4 @@
-<div id="termynal" data-termynal>
+<div data-termynal>
   <span data-ty="input">kluster log</span>
   <span data-ty>→ Fetching review history...</span>
   <span data-ty></span>

@@ -1,4 +1,4 @@
-<div id="termynal" data-termynal>
+<div data-termynal>
   <span data-ty="input">kluster update</span>
   <span data-ty>→ Checking for updates...</span>
   <span data-ty>Current version: v0.1.0</span>

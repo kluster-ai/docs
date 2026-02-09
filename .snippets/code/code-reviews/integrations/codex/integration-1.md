@@ -1,4 +1,4 @@
-<div id="termynal" data-termynal>
+<div data-termynal>
   <span data-ty="input">npx -y @klusterai/ide-installer YOUR_API_KEY codex</span>
   <span data-ty>🔧 Installing Kluster.ai server...</span>
   <span data-ty>✅ Installation complete!</span>

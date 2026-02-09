@@ -1,4 +1,4 @@
-<div id="termynal" data-termynal>
+<div data-termynal>
   <span data-ty="input">kluster version</span>
   <span data-ty>kluster.ai CLI version 0.1.2</span>
   <span data-ty>  commit: a1b2c3d4e5f6g7h8</span>

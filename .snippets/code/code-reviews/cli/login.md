@@ -1,4 +1,4 @@
-<div id="termynal" data-termynal>
+<div data-termynal>
   <span data-ty="input">kluster login</span>
   <span data-ty>Get your API key at: https://platform.kluster.ai/cli</span>
   <span data-ty="input">Enter your API key: ************************************</span>

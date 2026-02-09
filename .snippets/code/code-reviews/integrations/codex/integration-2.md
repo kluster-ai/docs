@@ -1,4 +1,4 @@
-<div id="termynal" data-termynal>
+<div data-termynal>
   <span data-ty="input">codex /tools</span>
   <span data-ty>╭───────────────────────────────────────────╮</span>
   <span data-ty>│ >_ OpenAI Codex (v0.50.0)                 │</span>

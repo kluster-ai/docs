@@ -1,4 +1,4 @@
-<div id="termynal" data-termynal>
+<div data-termynal>
   <span data-ty="input">kluster review staged</span>
   <span data-ty>→ Reviewing code [████████████████████████████████████████] 100%</span>
   <span data-ty>✓ Reviewing code complete!</span>

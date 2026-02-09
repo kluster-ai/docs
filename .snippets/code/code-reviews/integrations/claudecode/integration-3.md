@@ -1,4 +1,4 @@
-<div id="termynal" data-termynal>
+<div data-termynal>
   <span data-ty>Kluster-verify MCP Server</span>
   <span data-ty>Status: ✔ connected</span>
   <span data-ty>Command: npx</span>

@@ -12,7 +12,7 @@ If you encounter issues with [kluster.ai Code Reviews](https://www.kluster.ai/){
 
 ### Cannot find module './constants'
 
-<div id="termynal" data-termynal>
+<div data-termynal>
   <span data-ty>[info] Starting new stdio process with command: npx -y @klusterai/kluster-verify-code-mcp@latest</span>
   <span data-ty style="color: #ff6b6b;">[error] node:internal/modules/cjs/loader:1247</span>
   <span data-ty style="color: #ff6b6b;">  throw err;</span>
@@ -60,7 +60,7 @@ This helps identify where the installation process is failing.
 
 ### Command not found: kluster
 
-<div id="termynal" data-termynal>
+<div data-termynal>
   <span data-ty="input">kluster version</span>
   <span data-ty>bash: kluster: command not found</span>
 </div>
@@ -81,7 +81,7 @@ The `kluster` binary is not in your `PATH`. Add the install directory:
 
 ### Authentication failed
 
-<div id="termynal" data-termynal>
+<div data-termynal>
   <span data-ty="input">kluster review staged</span>
   <span data-ty style="color: #ff6b6b;">Error: not authenticated. Please run 'kluster login' first</span>
 </div>

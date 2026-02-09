@@ -1,4 +1,4 @@
-<div id="termynal" data-termynal>
+<div data-termynal>
   <span data-ty="input">kluster review diff HEAD~3..HEAD</span>
   <span data-ty>→ Reviewing code [████████████████████████████████████████] 100%</span>
   <span data-ty>✓ Reviewing code complete!</span>
