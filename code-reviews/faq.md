@@ -155,7 +155,7 @@ Yes. The kluster-cli tool provides full code review functionality directly from 
 
 ### How do I automate reviews in my git workflow?
 
-Install git hooks with `kluster hooks install`. Choose `pre-commit` to review before every commit, `pre-push` to review before pushing, or `all` for both. See [Git Hooks](/code-reviews/cli/git-hooks/).
+Install git hooks with `kluster hooks install pre-commit|pre-push|all`. Choose `pre-commit` to review before every commit, `pre-push` to review before pushing, or `all` for both. See [Git Hooks](/code-reviews/cli/git-hooks/).
 
 ### Can I use kluster-cli in CI/CD pipelines?
 
