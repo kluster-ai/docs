@@ -13,13 +13,13 @@ Learn how to run system-wide codebase analysis with [kluster.ai](https://kluster
 Before getting started, ensure you have:
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you don't have one.
-- **A connected repository**: You'll need to connect your GitHub or GitLab repository through the dashboard.
+- **A connected repository**: You'll need to connect your GitHub, GitLab, or Bitbucket repository through the dashboard.
 
 ## How repo reviews work
 
 Repo reviews analyze your entire codebase as a system instead of reviewing individual changes. When multiple parts of your code interact, issues emerge that don't show up in PR-level reviews.
 
-1. **Connect your repository**: Link your GitHub or GitLab repository to kluster.ai.
+1. **Connect your repository**: Link your GitHub, GitLab, or Bitbucket repository to kluster.ai.
 2. **Scan starts automatically**: Wait for the deep analysis to complete.
 3. **Review the findings**: Examine issues grouped by severity and type.
 
@@ -33,7 +33,7 @@ Go to the [Repo Reviews dashboard](https://platform.kluster.ai/repo-reviews){tar
 
 ![Repo Reviews dashboard with Connect Repository button](/images/code-reviews/repo-reviews/repo-reviews-setup-1.webp)
 
-Select your Git provider (GitHub or GitLab):
+Select your Git provider (GitHub, GitLab, or Bitbucket):
 
 ![Select Git provider modal](/images/code-reviews/repo-reviews/repo-reviews-setup-2.webp)
 
@@ -62,15 +62,13 @@ Each issue displays:
 
 ### 4. Examine issue details
 
-Click any issue to see the full analysis:
-
-![Issue detail view with description, explanation, and recommended actions](/images/code-reviews/repo-reviews/repo-reviews-setup-5.webp)
-
-The detail view includes:
+Click a given bug or issue to learn more. The detail view includes:
 
 - **Description**: What the problem is.
 - **Explanation**: Why this is a problem and how it impacts your system.
 - **Recommended Actions**: Steps to fix the issue.
+
+![Issue detail view with description, explanation, and recommended actions](/images/code-reviews/repo-reviews/repo-reviews-setup-5.webp)
 
 ### 5. Take action
 
@@ -79,6 +77,9 @@ For each issue, you have three options:
 - **Copy**: Copy the issue details to share or save.
 - **Fix with AI**: Get a prompt to paste into your AI assistant (Claude, Cursor, etc.) to fix it automatically.
 - **Dismiss**: Mark as false positive or accepted risk.
+
+![Take action on the bugs found by clicking one of the available options](/images/code-reviews/repo-reviews/repo-reviews-setup-6.webp)
+
 
 ## Next steps
 
