@@ -151,4 +151,4 @@ Enable tab completion for commands, flags, and git branches.
 
 - **[Quickstart](/code-reviews/cli/quickstart/)**: Run your first review in under 2 minutes.
 - **[Review commands](/code-reviews/cli/review-commands/)**: All review options and output formats.
-- **[Configuration](/code-reviews/cli/configuration/)**: Customize CLI behavior with config files and environment variables.
+- **[Reference](/code-reviews/cli/reference/)**: Configuration, exit codes, and full command reference.

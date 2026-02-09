@@ -108,5 +108,4 @@ Long output is automatically paged using your system pager (`less`, `more`, or `
 ## Next steps
 
 - **[Git hooks](/code-reviews/cli/git-hooks/)**: Automate reviews on every commit or push.
-- **[Configuration](/code-reviews/cli/configuration/)**: Customize output format, API endpoint, and more.
-- **[Reference](/code-reviews/cli/reference/)**: Full command reference with all flags and exit codes.
+- **[Reference](/code-reviews/cli/reference/)**: Configuration, exit codes, and full command reference.

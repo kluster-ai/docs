@@ -134,5 +134,4 @@ If `core.hooksPath` is not set, hooks are installed in `.git/hooks/`.
 ## Next steps
 
 - **[Review commands](/code-reviews/cli/review-commands/)**: Run reviews manually when you need them.
-- **[Configuration](/code-reviews/cli/configuration/)**: Customize CLI behavior and output.
-- **[Reference](/code-reviews/cli/reference/)**: Exit codes and full command reference.
+- **[Reference](/code-reviews/cli/reference/)**: Configuration, exit codes, and full command reference.

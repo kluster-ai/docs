@@ -1,112 +1,173 @@
 ---
 title: CLI Reference
-description: Learn about all kluster-cli commands, flags, exit codes, severity levels, and issue types in one place.
+description: Learn about all kluster-cli commands, configuration options, exit codes, and environment variables in one place.
 categories: CLI, Reference
 ---
 
 # CLI reference
 
-Complete reference for all kluster-cli commands, flags, exit codes, severity levels, and issue types. Use this page as a cheat sheet for quick lookups.
-
-## Quick reference
-
-```
-# Authentication
-kluster login                           # Authenticate with API key
-kluster logout                          # Remove stored credentials
-
-# Code review
-kluster review staged                   # Review staged changes
-kluster review staged --mode deep       # Deep analysis
-kluster review diff main                # Review diff against branch
-kluster review diff HEAD~3..HEAD        # Review commit range
-kluster review file src/app.go          # Review specific file(s)
-
-# History
-kluster log                             # List recent reviews
-kluster log --limit 5                   # Limit results
-kluster show <review-id>                # View review details
-
-# Git hooks
-kluster hooks install pre-push          # Install a hook
-kluster hooks install all               # Install all hooks
-kluster hooks install pre-push --block-on critical
-kluster hooks install pre-push --warn-only
-kluster hooks uninstall all             # Remove all hooks
-kluster hooks status                    # Show hook status
-
-# Utility
-kluster version                         # Print version info
-kluster update                          # Update to latest version
-kluster update --check                  # Check for updates
-kluster completion bash                 # Generate shell completions
-```
+Complete reference for all kluster-cli commands, configuration options, and exit codes. Use this page for quick lookups on commands, flags, config file settings, and environment variables.
 
 ## Commands
 
-### Authentication
+=== "Review"
 
-| Command | Description |
-|---------|-------------|
-| `kluster login` | Authenticate with your kluster.ai API key |
-| `kluster login --api-key <key>` | Authenticate with key directly (non-interactive) |
-| `kluster logout` | Remove stored credentials |
+    | Command | Description |
+    |---------|-------------|
+    | `kluster review staged` | Review staged changes |
+    | `kluster review staged --mode deep` | Deep analysis mode |
+    | `kluster review diff <target>` | Review diff against branch or commit range |
+    | `kluster review file <path> [paths...]` | Review one or more files |
 
-### Review
+=== "History"
 
-| Command | Description |
-|---------|-------------|
-| `kluster review staged` | Review staged git changes |
-| `kluster review diff <target>` | Review diff against branch or commit range |
-| `kluster review file <path> [paths...]` | Review one or more files |
+    | Command | Description |
+    |---------|-------------|
+    | `kluster log` | List recent reviews (default: 20) |
+    | `kluster log --limit <n>` | Limit results (max: 100) |
+    | `kluster show <review-id>` | View full review details |
 
-**Review flags:**
+=== "Hooks"
 
-| Flag | Values | Default | Description |
-|------|--------|---------|-------------|
-| `--mode` | `instant`, `deep` | `instant` | Analysis depth |
+    | Command | Description |
+    |---------|-------------|
+    | `kluster hooks install <hook>` | Install a hook (`pre-commit`, `pre-push`, `all`) |
+    | `kluster hooks install <hook> --block-on <level>` | Set blocking severity (`critical`, `high`, `medium`, `low`) |
+    | `kluster hooks install <hook> --warn-only` | Show issues without blocking |
+    | `kluster hooks uninstall <hook>` | Remove a hook |
+    | `kluster hooks status` | Show installed hooks |
 
-### History
+=== "Auth"
 
-| Command | Description |
-|---------|-------------|
-| `kluster log` | List recent reviews |
-| `kluster show <review-id>` | Show full review details |
+    | Command | Description |
+    |---------|-------------|
+    | `kluster login` | Authenticate with API key |
+    | `kluster login --api-key <key>` | Authenticate non-interactively |
+    | `kluster logout` | Remove stored credentials |
 
-**Log flags:**
+=== "Utility"
 
-| Flag | Values | Default | Description |
-|------|--------|---------|-------------|
-| `--limit` | `1`–`100` | `20` | Maximum reviews to display |
+    | Command | Description |
+    |---------|-------------|
+    | `kluster version` | Print version info |
+    | `kluster update` | Update to latest version |
+    | `kluster update --check` | Check for updates without installing |
+    | `kluster completion <shell>` | Generate shell completions (`bash`, `zsh`, `fish`, `powershell`) |
 
-### Git hooks
+## Configuration
 
-| Command | Description |
-|---------|-------------|
-| `kluster hooks install <hook>` | Install a git hook |
-| `kluster hooks uninstall <hook>` | Remove a git hook |
-| `kluster hooks status` | Show installed hooks |
+kluster-cli uses a YAML config file with optional environment variable overrides.
 
-Hook values: `pre-commit`, `pre-push`, `all`
+### Config file
 
-**Install flags:**
+The config file is created automatically on first use:
 
-| Flag | Values | Default | Description |
-|------|--------|---------|-------------|
-| `--block-on` | `critical`, `high`, `medium`, `low` | `high` | Minimum severity to block |
-| `--warn-only` | — | `false` | Show issues but don't block |
-| `--force` | — | `false` | Overwrite existing hook |
+| OS | Location |
+|----|----------|
+| macOS / Linux | `~/.kluster/cli/config.yaml` |
+| Windows | `%USERPROFILE%\.kluster\cli\config.yaml` |
 
-### Utility
+**Available settings:**
 
-| Command | Description |
-|---------|-------------|
-| `kluster version` | Print version, commit, build date, platform |
-| `kluster update` | Download and install the latest version |
-| `kluster update --check` | Check for updates without installing |
-| `kluster completion <shell>` | Generate shell completion script |
+| Key | Default | Description |
+|-----|---------|-------------|
+| `api_key` | — | Your kluster.ai API key (set by `kluster login`) |
+| `api_url` | `https://api.kluster.ai` | API endpoint |
+| `output` | `table` | Default output format |
 
-Shell values: `bash`, `zsh`, `fish`, `powershell`
+Example config file:
+
+```yaml
+api_key: kl_your_api_key_here
+api_url: https://api.kluster.ai
+output: table
+```
+
+### Environment variables
+
+Environment variables override config file values. All variables use the `KLUSTER_` prefix:
+
+| Variable | Overrides | Example |
+|----------|-----------|---------|
+| `KLUSTER_API_KEY` | `api_key` | `export KLUSTER_API_KEY=kl_abc123` |
+| `KLUSTER_API_URL` | `api_url` | `export KLUSTER_API_URL=https://custom.endpoint` |
+| `KLUSTER_OUTPUT` | `output` | `export KLUSTER_OUTPUT=json` |
+
+This is useful for CI/CD pipelines where you don't want to store a config file:
+
+```bash
+KLUSTER_API_KEY=kl_abc123 kluster review staged
+```
+
+### Output formats
+
+The CLI supports three output formats, configurable globally or per command:
+
+=== "Table (default)"
+
+    Human-readable format with colors and borders. Best for interactive use.
+
+    ```bash
+    kluster log --output table
+    ```
+
+=== "JSON"
+
+    Machine-readable format. Best for scripts and CI/CD integration.
+
+    ```bash
+    kluster log --output json
+    ```
+
+=== "Text"
+
+    Simple pipe-separated format. Easy to parse with standard Unix tools.
+
+    ```bash
+    kluster log --output text
+    ```
+
+Set the default format globally:
+
+```yaml
+# ~/.kluster/cli/config.yaml
+output: json
+```
+
+Or override per command with the `--output` flag:
+
+```bash
+kluster log --output json
+```
+
+### Configuration priority
+
+When the same setting is defined in multiple places, the CLI uses this order (highest priority first):
+
+1. **Command-line flags** — `--output json`
+2. **Environment variables** — `KLUSTER_OUTPUT=json`
+3. **Config file** — `output: json` in `config.yaml`
+4. **Built-in defaults** — `table`
+
+## Authentication
+
+Your API key is stored in the config file and managed through the `login` and `logout` commands:
+
+```bash
+# Save your API key
+kluster login
+
+# Remove your API key
+kluster logout
+```
+
+Get your API key from the [CLI setup page](https://platform.kluster.ai/cli){target=_blank}.
+
+You can also provide the API key directly without the interactive prompt:
+
+```bash
+kluster login --api-key kl_your_key_here
+```
 
 ## Exit codes
 
@@ -141,46 +202,6 @@ fi
 | Code | Meaning |
 |:----:|---------|
 | `1` | Command error (authentication failure, invalid arguments, etc.) |
-
-## Severity levels
-
-| Level | Color | Priority range | Action |
-|-------|-------|:--------------:|--------|
-| `critical` | Bold red | P0–P2 | Fix immediately |
-| `high` | Red | P3 | Fix before merging |
-| `medium` | Yellow | P4 | Should fix |
-| `low` | Cyan | P5 | Optional improvement |
-
-## Issue types
-
-| Type | Description | Example |
-|------|-------------|---------|
-| `intent` | Code doesn't match the original request | Asked for sorting, got filtering |
-| `semantic` | Meaning and type errors | Wrong variable type used |
-| `logical` | Control flow errors | Off-by-one, wrong conditions |
-| `security` | Security vulnerabilities | SQL injection, XSS |
-| `knowledge` | Best practice violations | Not following conventions |
-| `performance` | Performance issues | N+1 queries, inefficient loops |
-| `quality` | Code quality problems | High complexity, poor naming |
-
-## Environment variables
-
-| Variable | Description |
-|----------|-------------|
-| `KLUSTER_API_KEY` | API authentication key |
-| `KLUSTER_API_URL` | API endpoint (default: `https://api.kluster.ai`) |
-| `KLUSTER_OUTPUT` | Default output format (`table`, `json`, `text`) |
-| `PAGER` | System pager for long output (`less`, `more`, `most`) |
-
-See [Configuration](/code-reviews/cli/configuration/) for details on config file and precedence.
-
-## Supported platforms
-
-| OS | Architectures | Installer |
-|----|---------------|-----------|
-| Linux | amd64, arm64 | `curl ... \| sh` |
-| macOS | amd64 (Intel), arm64 (Apple Silicon) | `curl ... \| sh` |
-| Windows | amd64, arm64 | `irm ... \| iex` |
 
 ## Next steps
 
