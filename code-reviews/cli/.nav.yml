@@ -1,0 +1,7 @@
+nav:
+  - 'Quickstart': quickstart.md
+  - 'Installation': installation.md
+  - 'Review commands': review-commands.md
+  - 'Git hooks': git-hooks.md
+  - 'Configuration': configuration.md
+  - 'Reference': reference.md

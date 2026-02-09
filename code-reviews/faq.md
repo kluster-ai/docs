@@ -29,6 +29,7 @@ No. AI-generated code reviews run when AI generates code. Human-written code rev
 
 - **IDE extensions**: Cursor, VS Code, Windsurf, Antigravity
 - **CLI tools**: Claude Code, Codex CLI
+- **Standalone CLI**: [kluster-cli](/code-reviews/cli/quickstart/) for terminal-only workflows
 
 See [Installation](/code-reviews/get-started/installation/) for setup instructions.
 
@@ -145,6 +146,24 @@ Yes. In the kluster.ai extension sidebar, open the **On-Demand Review** section,
 
 - **On-demand reviews**: You click a button or use a shortcut to trigger a review.
 - **Background auto reviews (Beta, Enterprise plan)**: Automatically review your code for issues and suggestions as you work, without requiring you to trigger anything. Enable it from the **Enabled Tools** section in [Options](/code-reviews/configuration/options/).
+
+## CLI
+
+### Can I use kluster.ai from the command line without an IDE?
+
+Yes. The kluster-cli tool provides full code review functionality directly from the terminal—no IDE or AI assistant needed. Install it, authenticate with your API key, and review staged changes, diffs, or individual files. See [CLI Quickstart](/code-reviews/cli/quickstart/).
+
+### How do I automate reviews in my git workflow?
+
+Install git hooks with `kluster hooks install`. Choose `pre-commit` to review before every commit, `pre-push` to review before pushing, or `all` for both. See [Git Hooks](/code-reviews/cli/git-hooks/).
+
+### Can I use kluster-cli in CI/CD pipelines?
+
+Yes. Use `--output json` for machine-readable output and check exit codes to fail builds on issues. Exit code `0` means no issues, `3` means high severity, and `4` means critical. See [Reference](/code-reviews/cli/reference/#exit-codes) for the full table.
+
+### Can I review files without a git repository?
+
+Yes. Use `kluster review file <path>` to review any file, even outside a git repository. See [Review Commands](/code-reviews/cli/review-commands/#review-files).
 
 ## Repo reviews
 

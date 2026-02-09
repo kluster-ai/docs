@@ -56,6 +56,61 @@ npx -y @klusterai/ide-installer YOUR_API_KEY claude --verbose
 
 This helps identify where the installation process is failing.
 
+## kluster-cli (standalone CLI)
+
+### Command not found: kluster
+
+<div id="termynal" data-termynal>
+  <span data-ty="input">kluster version</span>
+  <span data-ty>bash: kluster: command not found</span>
+</div>
+
+The `kluster` binary is not in your `PATH`. Add the install directory:
+
+=== "macOS / Linux"
+
+    ```bash
+    export PATH="$HOME/.kluster/cli/bin:$PATH"
+    ```
+
+    To make this permanent, add the line to your `~/.bashrc`, `~/.zshrc`, or `~/.profile`.
+
+=== "Windows PowerShell"
+
+    The installer should add `%USERPROFILE%\.kluster\cli\bin` to your user `PATH` automatically. If not, add it manually through **System Properties** > **Environment Variables**.
+
+### Authentication failed
+
+<div id="termynal" data-termynal>
+  <span data-ty="input">kluster review staged</span>
+  <span data-ty style="color: #ff6b6b;">Error: not authenticated. Please run 'kluster login' first</span>
+</div>
+
+Your API key may be missing or invalid. Run `kluster login` to re-authenticate with a valid key from [platform.kluster.ai/cli](https://platform.kluster.ai/cli){target=_blank}.
+
+### Git hook not triggering
+
+If a git hook doesn't run:
+
+1. Check it's installed: `kluster hooks status`
+2. Check file permissions (macOS/Linux): `ls -la .git/hooks/pre-push`
+3. Fix permissions if needed: `chmod +x .git/hooks/pre-push`
+4. If using a custom hooks path, check that `core.hooksPath` is set correctly.
+
+### Review times out on large diffs
+
+Deep mode has a 5-minute timeout. For large diffs, use instant mode instead:
+
+```bash
+kluster review staged --mode instant
+```
+
+Or split the review by reviewing individual files:
+
+```bash
+kluster review file src/large-file.go
+```
+
 ## Need help?
 
 If your issue isn't listed here or you need additional support, join our [Discord community](https://discord.com/invite/klusterai){target=\_blank}.

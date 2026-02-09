@@ -6,9 +6,9 @@ categories: Basics
 
 # Code Reviews
 
-Code Reviews analyzes your code for bugs, security vulnerabilities, and quality issues. It works for **human-written code**, **AI-generated code**, and **repo reviews**, with review modes tailored to each workflow.
+Code Reviews analyzes your code for bugs, security vulnerabilities, and quality issues. It works for **human-written code**, **AI-generated code**, **repo reviews**, and the **standalone CLI**, with review modes tailored to each workflow.
 
-For in-editor reviews, the service integrates directly into your IDE or CLI (Cursor, VS Code, Windsurf, Claude Code, and others), analyzing code as you work. For system-wide analysis, repo reviews scan your entire repository through the web dashboard.
+For in-editor reviews, the service integrates directly into your IDE or CLI (Cursor, VS Code, Windsurf, Claude Code, and others), analyzing code as you work. For terminal-based workflows, the standalone CLI provides reviews directly from the command line. For system-wide analysis, repo reviews scan your entire repository through the web dashboard.
 
 ## Key features
 
@@ -67,6 +67,20 @@ Repo reviews complement PR-level reviews by revealing problems that already exis
 
 [:octicons-arrow-right-24: Get started with repo reviews](/code-reviews/repo-reviews/quickstart/)
 
+## CLI
+
+**For command-line workflows and automation.**
+
+Review code directly from the terminal without an IDE or AI assistant. The kluster-cli tool provides full review functionality with git integration, automated hooks, and machine-readable output formats.
+
+- **On-demand reviews**: Review staged changes, diffs against branches, or individual files.
+- **Git hook automation**: Install pre-commit or pre-push hooks to catch issues automatically.
+- **Scriptable output**: JSON and text output formats for CI/CD integration.
+
+**Available on**: macOS, Linux, Windows
+
+[:octicons-arrow-right-24: Get started with CLI](/code-reviews/cli/quickstart/)
+
 !!! tip "Need help choosing?"
     See [Pick your workflow](/code-reviews/get-started/pick-your-workflow/) for a detailed comparison and decision guide.
 
@@ -78,4 +92,5 @@ Repo reviews complement PR-level reviews by revealing problems that already exis
 - **[Human-written code](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/)**: Get started with in-editor reviews.
 - **[AI-generated code](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/quickstart/)**: Set up automatic and on-demand reviews.
 - **[Repo reviews](/code-reviews/repo-reviews/quickstart/)**: Analyze your entire codebase for system-wide issues.
+- **[CLI](/code-reviews/cli/quickstart/)**: Review code from the terminal with the standalone CLI.
 - **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Compare modes and find the right fit.
