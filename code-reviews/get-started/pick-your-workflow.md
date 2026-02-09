@@ -6,7 +6,7 @@ categories: Basics
 
 # Pick your workflow
 
-Code Reviews offers three distinct modes that adapt to how you work. Whether you're coding with an AI assistant, writing code directly, or analyzing your entire codebase, this guide helps you understand which mode fits your workflow—and why many developers use all three.
+Code Reviews offers four distinct modes that adapt to how you work. Whether you're coding with an AI assistant, writing code directly, reviewing from the terminal, or analyzing your entire codebase, this guide helps you understand which mode fits your workflow—and why many developers use more than one.
 
 ## Choose your mode
 
@@ -27,6 +27,14 @@ Code Reviews offers three distinct modes that adapt to how you work. Whether you
     For developers using AI coding assistants. Your code is reviewed automatically every time your AI generates or modifies code—no manual steps required.
 
     [:octicons-arrow-right-24: Learn more](#ai-generated-code)
+
+-   **CLI**
+
+    ---
+
+    For terminal-based workflows and automation. Review code from the command line, automate with git hooks, or integrate into CI/CD pipelines.
+
+    [:octicons-arrow-right-24: Learn more](#cli)
 
 -   **Repo reviews**
 
@@ -66,6 +74,17 @@ This mode is designed for developers who code with AI assistants like Claude Cod
 [:octicons-arrow-right-24: Get started with AI-generated code reviews](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/quickstart/)
 
 
+## CLI
+
+The kluster-cli tool brings code reviews to your terminal. Review staged changes, diffs against branches, or individual files—all without opening an IDE. Install git hooks to automate reviews on every commit or push, or use JSON output to integrate reviews into scripts and CI/CD pipelines.
+
+Use it when you prefer terminal workflows, need to automate reviews in git hooks, or want to integrate code reviews into CI/CD.
+
+**Available on**: macOS, Linux, Windows.
+
+[:octicons-arrow-right-24: Get started with CLI](/code-reviews/cli/quickstart/)
+
+
 ## Repo reviews
 
 Repo reviews take a fundamentally different approach: instead of reviewing individual changes, it analyzes your entire repository as a complete system. This reveals bugs and risks that don't belong to any single PR or file—issues that only become visible when you examine how multiple parts of your code interact.
@@ -89,18 +108,20 @@ Repo reviews complement your existing review workflow. Run them periodically to 
 
 ## Using multiple modes
 
-Most teams use all three review modes together:
+Most teams combine multiple review modes:
 
 - **Human-written code reviews**: For reviewing code you write directly in your editor.
 - **AI-generated code reviews**: For catching issues as your AI assistant generates code.
+- **CLI**: For terminal workflows, git hook automation, and CI/CD integration.
 - **Repo reviews**: For periodic system-wide analysis to catch cross-module bugs.
 
 If you use Cursor, VS Code, Windsurf, or Antigravity, you get both human-written and AI-generated code reviews in a single installation—switch seamlessly between AI-assisted coding and manual reviews without changing tools.
 
-Add repo reviews to your workflow by running them periodically to surface issues that survive individual code reviews. Think of it as a safety net that catches problems only visible when you step back and look at your entire system.
+Add CLI hooks to enforce reviews on every push, and run repo reviews periodically as a safety net to catch system-wide issues that survive individual code reviews.
 
 ## Next steps
 
 - **[Human-written code quickstart](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/)**: Set up on-demand reviews in your editor.
 - **[AI-generated code quickstart](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/quickstart/)**: Set up automatic reviews for AI-assisted coding.
+- **[CLI quickstart](/code-reviews/cli/quickstart/)**: Review code from the terminal.
 - **[Repo reviews quickstart](/code-reviews/repo-reviews/quickstart/)**: Run your first system-wide codebase analysis.
