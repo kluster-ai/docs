@@ -234,6 +234,32 @@ Before getting started, ensure you have:
 
     ![Codex CLI Installation Demo](/images/code-reviews/get-started/installation/codex-cli/codex-cli.gif)
 
+=== "CLI (Standalone)"
+
+    kluster-cli is a standalone command-line tool that works without an IDE or AI assistant. Install it directly on macOS, Linux, or Windows.
+
+    **macOS / Linux / WSL:**
+
+    ```bash
+    curl -fsSL https://cli.kluster.ai/install.sh | sh
+    ```
+
+    **Windows PowerShell:**
+
+    ```powershell
+    irm https://cli.kluster.ai/install.ps1 | iex
+    ```
+
+    After installing, authenticate with your API key:
+
+    ```bash
+    kluster login
+    ```
+
+    For shell completions, updates, and more, see the full [CLI installation guide](/code-reviews/cli/installation/).
+
+    [:octicons-arrow-right-24: CLI quickstart](/code-reviews/cli/quickstart/)
+
 ## Next steps
 
 - **[Human-written code](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/)**: Learn about on-demand reviews in your editor
