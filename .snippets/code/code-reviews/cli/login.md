@@ -6,6 +6,6 @@
   <span data-ty>✓ Successfully authenticated</span>
   <span data-ty></span>
   <span data-ty>Time to ship better code, try one of these:</span>
-  <span data-ty>  kluster review staged       # Review staged changes</span>
-  <span data-ty>  kluster hooks install       # Auto-review on git push/commit</span>
+  <span data-ty>  kluster review staged             # Review staged changes</span>
+  <span data-ty>  kluster hooks install pre-push   # Auto-review on git push/commit</span>
 </div>

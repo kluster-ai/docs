@@ -1,6 +1,6 @@
 <div data-termynal>
   <span data-ty="input">git push origin feature-branch</span>
-  <span data-ty>kluster.ai: Reviewing changes from a1b2c3d to e4f5g6h...</span>
+  <span data-ty>kluster.ai: Reviewing changes from a1b2c3d to e4f5a6b...</span>
   <span data-ty>→ Reviewing code [████████████████████████████████████████] 100%</span>
   <span data-ty>✓ Reviewing code complete!</span>
   <span data-ty></span>

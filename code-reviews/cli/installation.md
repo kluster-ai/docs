@@ -133,11 +133,11 @@ Enable tab completion for commands, flags, and git branches.
     # Current session only
     source <(kluster completion bash)
 
-    # Permanent (Linux)
-    kluster completion bash > /etc/bash_completion.d/kluster
+    # Permanent (Linux, requires sudo)
+    kluster completion bash | sudo tee /etc/bash_completion.d/kluster > /dev/null
 
     # Permanent (macOS with Homebrew)
-    kluster completion bash > $(brew --prefix)/etc/bash_completion.d/kluster
+    kluster completion bash > "$(brew --prefix)/etc/bash_completion.d/kluster"
     ```
 
 === "Zsh"
