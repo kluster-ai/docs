@@ -6,7 +6,7 @@ categories: CLI, Git, Automation
 
 # Git hooks
 
-Git hooks let you run kluster.ai reviews automatically as part of your git workflow. Issues are caught before code is committed or pushed, without any manual step.
+Git hooks allow you to run kluster.ai code reviews automatically every time you commit or push. Set up a pre-commit or pre-push hook and kluster-cli will review your changes in the background, blocking the operation if issues above your severity threshold are found.
 
 ## Hook types
 
@@ -20,6 +20,18 @@ Git hooks let you run kluster.ai reviews automatically as part of your git workf
 - Use **pre-commit** for fast feedback on every commit. Best for individual workflows.
 - Use **pre-push** to review the full set of changes before they leave your machine. Best for team workflows.
 - Use **both** for maximum coverage.
+
+## How hooks work
+
+When a hook triggers, the CLI runs a review and checks the results against your severity threshold.
+
+**If issues meet the threshold — the operation is blocked:**
+
+--8<-- 'code/code-reviews/cli/hooks-triggered-block.md'
+
+**If no issues meet the threshold — the operation proceeds:**
+
+--8<-- 'code/code-reviews/cli/hooks-triggered-pass.md'
 
 ## Install hooks
 
@@ -66,36 +78,6 @@ kluster hooks install pre-push --warn-only
 ```
 
 In this mode, the review runs and displays any issues found, but the git operation always proceeds.
-
-## How hooks work
-
-When a hook triggers, the CLI runs a review and checks the results against your severity threshold.
-
-**If issues meet the threshold — the operation is blocked:**
-
---8<-- 'code/code-reviews/cli/hooks-triggered-block.md'
-
-**If no issues meet the threshold — the operation proceeds:**
-
---8<-- 'code/code-reviews/cli/hooks-triggered-pass.md'
-
-### Pre-push details
-
-The pre-push hook:
-
-1. Reads the commits being pushed.
-2. Skips branch deletions.
-3. For new branches, finds the merge base against the default branch.
-4. Gets the diff between commits.
-5. Runs the review and checks the severity threshold.
-
-### Pre-commit details
-
-The pre-commit hook:
-
-1. Checks for staged changes.
-2. Gets the staged diff.
-3. Runs the review and checks the severity threshold.
 
 ## Check hook status
 

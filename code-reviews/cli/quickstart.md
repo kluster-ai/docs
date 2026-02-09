@@ -6,7 +6,7 @@ categories: Basics, CLI
 
 # CLI quickstart
 
-Instant code reviews from your terminal. Review local changes on demand or integrate with git workflows for automatic, real-time reviews.
+Instant code reviews from your terminal. Install kluster-cli, authenticate with your API key, and run your first review in under 2 minutes. No IDE or CI pipeline required.
 
 ## Prerequisites
 

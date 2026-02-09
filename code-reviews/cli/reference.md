@@ -6,6 +6,8 @@ categories: CLI, Reference
 
 # CLI reference
 
+Complete reference for all kluster-cli commands, flags, exit codes, severity levels, and issue types. Use this page as a cheat sheet for quick lookups.
+
 ## Quick reference
 
 ```

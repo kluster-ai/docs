@@ -6,7 +6,7 @@ categories: Basics, CLI
 
 # Installation
 
-kluster-cli is available for macOS, Linux, and Windows. The installer downloads a single binary, adds it to your `PATH`, and you're ready to go.
+kluster-cli is available for macOS, Linux, and Windows. The installer downloads a single binary, adds it to your `PATH`, and you're ready to go. This page covers installation, updates, shell completions, and uninstalling.
 
 ## Install kluster-cli
 

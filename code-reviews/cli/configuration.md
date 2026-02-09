@@ -6,7 +6,7 @@ categories: CLI, Configuration
 
 # Configuration
 
-kluster-cli uses a YAML config file with optional environment variable overrides.
+kluster-cli uses a YAML config file with optional environment variable overrides. Configure output format, API endpoint, and authentication. Environment variables and command-line flags take precedence over the config file.
 
 ## Config file
 

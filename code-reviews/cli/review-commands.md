@@ -6,7 +6,7 @@ categories: CLI, Review
 
 # Review commands
 
-kluster-cli provides three ways to review code, each suited to a different stage of your workflow.
+Learn how to run code reviews from the terminal. kluster-cli provides three ways to review code — staged changes, diffs against branches or commits, and individual files — each suited to a different stage of your workflow. All commands support instant and deep analysis modes.
 
 | Command | What it reviews | Requires git? |
 |---------|----------------|:-------------:|
@@ -76,56 +76,6 @@ kluster review staged --mode deep
 --8<-- 'code/code-reviews/cli/review-deep.md'
 
 The default mode is `instant`.
-
-## Understanding the output
-
-Every review starts with a progress bar and completion message, followed by the review ID and issue count:
-
-```
-→ Reviewing code [████████████████████████████████████████] 100%
-✓ Reviewing code complete!
-
-Review: 507f1f77bcf86cd799439011
-
-Found 2 issue(s)
-```
-
-Each issue includes:
-
-- **Severity and priority**: `#1 CRITICAL [P0] security` — issue number, severity level, priority, and type.
-- **Description**: A summary of the problem.
-- **Location**: File path and line range (`at src/db/queries.go:45-52`).
-- **More details**: Extended explanation of why this is a problem.
-- **Fix**: Suggested fix or remediation steps.
-
-Issues are separated by a horizontal line (`────────────`). When no issues are found, the output shows:
-
-```
-✓ Code review complete - no issues found!
-```
-
-### Issue types
-
-| Type | Description |
-|------|-------------|
-| `intent` | Code doesn't match the original request |
-| `semantic` | Meaning and type errors |
-| `logical` | Control flow errors (off-by-one, wrong conditions) |
-| `security` | Security vulnerabilities |
-| `knowledge` | Best practice violations |
-| `performance` | Performance issues |
-| `quality` | Code quality problems |
-
-### Severity levels
-
-| Level | Meaning | Exit code |
-|-------|---------|:---------:|
-| `critical` | Security vulnerability or breaking issue | 4 |
-| `high` | Significant bug or security concern | 3 |
-| `medium` | Quality issue or minor bug | 2 |
-| `low` | Style or minor improvement | 1 |
-
-When no issues are found, the exit code is `0`. See [Reference](/code-reviews/cli/reference/) for the full exit code table.
 
 ## Review history
 
