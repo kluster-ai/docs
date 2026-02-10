@@ -8,6 +8,9 @@ categories: Basics, Human-written code, Automatic review
 
 Background reviews watch your uncommitted changes and run automatically in the background. You do not need to click anything.
 
+!!! tip "Exclude files with .klusterignore"
+    Add a [`.klusterignore`](/code-reviews/configuration/klusterignore/) file to exclude files and folders from background reviews (syntax is the same as `.gitignore`).
+
 ## Prerequisites
 
 --8<-- 'text/quickstart-prerequisites.md'

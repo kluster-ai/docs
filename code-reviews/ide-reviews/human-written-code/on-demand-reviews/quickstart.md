@@ -8,6 +8,9 @@ categories: Basics, Human-written code, On-demand review
 
 With [kluster.ai](https://kluster.ai){target=_blank}, you can trigger reviews three ways: right-click any selection, use hint buttons, or scan uncommitted changes.
 
+!!! tip "Exclude files with .klusterignore"
+    If there are files or folders you never want kluster.ai to review (generated code, build output, vendored dependencies), add them to a [`.klusterignore`](/code-reviews/configuration/klusterignore/) file. On-demand IDE reviews respect `.klusterignore`.
+
 ## Prerequisites
 
 Before getting started, ensure you have:
