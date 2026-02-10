@@ -8,6 +8,16 @@ categories: Basics, Repo reviews
 
 Learn how to run system-wide codebase analysis with [kluster.ai](https://kluster.ai){target=_blank} Repo Reviews. Connect your repository, wait for the deep scan to complete, and review cross-module bugs that slip through PR-level reviews.
 
+<div class="embed-container">
+    <iframe
+        src="https://www.youtube.com/embed/qz32GZkGkqc"
+        title="Repo Reviews with kluster.ai"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        loading="lazy">
+    </iframe>
+</div>
+
 ## Prerequisites
 
 Before getting started, ensure you have:
