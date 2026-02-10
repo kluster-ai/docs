@@ -62,7 +62,7 @@ kluster review file src/auth.go src/middleware.go
 This is useful for reviewing standalone scripts, config files, or code outside a git repository.
 
 !!! tip "Exclude files with .klusterignore"
-    If your repository contains folders you never want kluster.ai to review (for example `dist/`, `vendor/`, or generated files), add them to a [`.klusterignore`](/code-reviews/configuration/klusterignore/) file. CLI review commands respect `.klusterignore`.
+    If your repository contains folders you want to exclude from review (for example `dist/`, `vendor/`, or generated files), add them to a [`.klusterignore`](/code-reviews/configuration/klusterignore/) file. CLI review commands respect `.klusterignore`.
 
 ## Analysis modes
 
