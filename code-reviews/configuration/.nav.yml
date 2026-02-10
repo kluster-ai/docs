@@ -1,3 +1,4 @@
 nav:
   - 'Options': options.md
+  - '.klusterignore': klusterignore.md
   - 'Custom rules': rules.md

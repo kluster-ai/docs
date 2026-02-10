@@ -8,6 +8,9 @@ categories: AI-generated code, Automatic review
 
 Code Reviews protects you when starting new projects or adding libraries by validating dependencies before installation.
 
+!!! note ".klusterignore is not applied in this flow (yet)"
+    Automatic dependency checks triggered by AI assistants currently do **not** use [`.klusterignore`](/code-reviews/configuration/klusterignore/) to exclude files.
+
 ## How dependency checks work
 
 1.  **You prompt**: Ask your AI to start a project (e.g., "Scaffold a Next.js app with Auth.js").
