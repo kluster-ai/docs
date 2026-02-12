@@ -1,5 +1,5 @@
 <div data-termynal>
-  <span data-ty="input">kluster log</span>
+  <span data-ty="input">kluster@Commodore64 % kluster log</span>
   <span data-ty>→ Fetching review history...</span>
   <span data-ty></span>
   <span data-ty>Review: 507f1f77bcf86cd799439011</span>
