@@ -26,7 +26,7 @@ Follow these steps to redeem your activation code:
 
     ![Upgrade button on kluster.ai platform](/images/code-reviews/activation-codes/activation-codes-01.webp)
 
-3. On the plans page, choose the subscription plan you want. Make sure your activation code matches the plan you select, then click **Subscribe**.
+3. On the plans page, click **Start Max Plan**.
 
     ![kluster.ai subscription plans](/images/code-reviews/activation-codes/activation-codes-02.webp)
 
