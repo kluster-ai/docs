@@ -20,7 +20,7 @@ Before redeeming an activation code, ensure you have:
 
 Follow these steps to redeem your activation code:
 
-1. Log in to your [kluster.ai account](https://platform.kluster.ai){target=_blank}. First-time users receive 50 free code reviews under the trial plan.
+1. Log in to your [kluster.ai account](https://platform.kluster.ai){target=_blank}.
 
 2. Click the **upgrade** button in the top right corner of the platform.
 
