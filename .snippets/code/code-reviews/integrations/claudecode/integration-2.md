@@ -1,5 +1,5 @@
 <div data-termynal>
-  <span data-ty="input">kluster@Commodore64 % claude /mcp</span>
+  <span data-ty  ="input"> claude /mcp</span>
   <span data-ty></span>
   <span data-ty>✨ Welcome to Claude Code!</span>
   <span data-ty>/help for help, /status for your current setup</span>
@@ -12,7 +12,7 @@
   <span data-ty>✔ Run /terminal-setup to set up terminal integration</span>
   <span data-ty></span>
 
-  <span data-ty="input">/mcp</span>
+  <span data-ty ="input"> /mcp</span>
   <span data-ty>Manage MCP servers</span>
   <span data-ty>  1. kluster-verify ✔ connected • Enter to view details</span>
   <span data-ty></span>
