@@ -12,7 +12,7 @@
   <span data-ty>✔ Run /terminal-setup to set up terminal integration</span>
   <span data-ty></span>
 
-  <span data-ty="input">kluster@Commodore64 % /mcp</span>
+  <span data-ty="input">/mcp</span>
   <span data-ty>Manage MCP servers</span>
   <span data-ty>  1. kluster-verify ✔ connected • Enter to view details</span>
   <span data-ty></span>
