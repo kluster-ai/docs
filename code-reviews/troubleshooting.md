@@ -62,7 +62,7 @@ This helps identify where the installation process is failing.
 
 <div data-termynal>
   <span data-ty="input">kluster@Commodore64 % kluster version</span>
-  <span data-ty>bash: kluster: command not found</span>
+  <span data-ty>zsh: command not found: kluster</span>
 </div>
 
 The `kluster` binary is not in your `PATH`. Add the install directory:
