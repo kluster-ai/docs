@@ -1,3 +1,3 @@
 ```bash
-curl -s https://platform.kluster.ai/install-kluster-mcp-claude-code.sh | bash -s YOUR_API_KEY
+npx -y @klusterai/ide-installer YOUR_API_KEY claude
 ```
