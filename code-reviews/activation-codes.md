@@ -42,14 +42,6 @@ Follow these steps to redeem your activation code:
 
     Complete the checkout process by clicking **Subscribe**. Your promotional credits will be immediately applied to your account.
 
-## Troubleshooting
-
-If your activation code doesn't work:
-
-- Confirm the code corresponds to the plan you selected. Activation codes are plan-specific (Starter, Team, or Enterprise).
-- Check that the code hasn't expired.
-- Ensure you haven't already used the code on your account.
-
 ## Need help?
 
-If you encounter any issues with activation codes, join the [Discord community](https://discord.com/invite/klusterai){target=_blank} for support.
+If you run into issues redeeming an activation code, click the **Support** button in the lower-right corner of [platform.kluster.ai](https://platform.kluster.ai/){target=_blank}.
