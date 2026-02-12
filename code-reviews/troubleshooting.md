@@ -61,8 +61,8 @@ This helps identify where the installation process is failing.
 ### Command not found: kluster
 
 <div data-termynal>
-  <span data-ty="input">kluster version</span>
-  <span data-ty>bash: kluster: command not found</span>
+  <span data-ty  ="input"> kluster version</span>
+  <span data-ty>bash: command not found: kluster</span>
 </div>
 
 The `kluster` binary is not in your `PATH`. Add the install directory:
@@ -82,7 +82,7 @@ The `kluster` binary is not in your `PATH`. Add the install directory:
 ### Authentication failed
 
 <div data-termynal>
-  <span data-ty="input">kluster review staged</span>
+  <span data-ty  ="input"> kluster review staged</span>
   <span data-ty style="color: #ff6b6b;">Error: not authenticated. Please run 'kluster login' first</span>
 </div>
 

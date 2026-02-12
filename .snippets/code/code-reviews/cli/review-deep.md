@@ -1,5 +1,5 @@
 <div data-termynal>
-  <span data-ty="input">kluster review staged --mode deep</span>
+  <span data-ty  ="input"> kluster review staged --mode deep</span>
   <span data-ty>→ Reviewing code [████████████████████████████████████████] 100%</span>
   <span data-ty>✓ Reviewing code complete!</span>
   <span data-ty></span>

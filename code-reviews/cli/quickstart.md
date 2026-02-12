@@ -18,6 +18,9 @@ You need:
 ## 1. Install
 
 === "macOS / Linux / WSL"
+    
+    Run the following command in your terminal:
+
 
     ```bash
     curl -fsSL https://cli.kluster.ai/install.sh | sh
@@ -26,6 +29,8 @@ You need:
     --8<-- 'code/code-reviews/cli/install-macos.md'
 
 === "Windows PowerShell"
+    
+    Run the following command in PowerShell:
 
     ```powershell
     irm https://cli.kluster.ai/install.ps1 | iex

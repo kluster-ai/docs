@@ -11,7 +11,7 @@ categories: Basics, CLI
 ## Install kluster-cli
 
 === "macOS / Linux / WSL"
-
+    
     Run the following command in your terminal:
 
     ```bash
