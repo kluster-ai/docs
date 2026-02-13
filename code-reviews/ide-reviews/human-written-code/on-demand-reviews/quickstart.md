@@ -52,9 +52,17 @@ Then choose your analysis depth for your code reviews:
 !!! info "Accessing On-Demand Review"
     You can also access On-Demand Review from the **Home** and **Git** tabs. Expand the kluster.ai section if collapsed.
 
-After the review completes, kluster.ai displays any issues found. You can click **Fix with AI** to automatically resolve them.
+After the review completes, kluster.ai displays any issues found. For each issue, you have three actions:
 
-![Review results showing issues found](/images/code-reviews/ide-reviews/human-written-code/on-demand-reviews/manual-review-this-code-extension-results.webp)
+- **Fix with AI**: Generates an AI-powered fix suggestion that you can apply with one click.
+- **Snooze**: Temporarily hides the issue for a selected duration (1 day, 7 days, or 30 days). The issue reappears automatically after the snooze period expires.
+- **Ignore**: Permanently dismisses the issue. It will not reappear in future reviews.
+
+<!-- FIX IMAGE: Update screenshot to show Fix with AI, Snooze, and Ignore buttons -->
+![Review results showing issues found with Fix with AI, Snooze, and Ignore actions](/images/code-reviews/ide-reviews/human-written-code/on-demand-reviews/manual-review-this-code-extension-results.webp)
+
+!!! tip "When to snooze vs. ignore"
+    Use **Snooze** for issues you plan to address later but don't want cluttering your current review. Use **Ignore** for false positives or accepted risks that don't need further attention.
 
 ## Code block review
 
