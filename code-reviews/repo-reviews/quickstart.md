@@ -82,14 +82,18 @@ Click a given bug or issue to learn more. The detail view includes:
 
 ### 5. Take action
 
-For each issue, you have three options:
+For each issue, you have four actions:
 
 - **Copy**: Copy the issue details to share or save.
 - **Fix with AI**: Get a prompt to paste into your AI assistant (Claude, Cursor, etc.) to fix it automatically.
-- **Dismiss**: Mark as false positive or accepted risk.
+- **Snooze**: Temporarily hides the issue for a selected duration (1 day, 7 days, or 30 days). The issue reappears automatically after the snooze period expires.
+- **Ignore**: Permanently dismisses the issue. It will not reappear in future reviews.
 
-![Take action on the bugs found by clicking one of the available options](/images/code-reviews/repo-reviews/repo-reviews-setup-6.webp)
+<!-- FIX IMAGE: Update screenshot to show Snooze and Ignore buttons instead of Dismiss -->
+![Take action on the bugs found by clicking one of the available actions](/images/code-reviews/repo-reviews/repo-reviews-setup-6.webp)
 
+!!! tip "When to snooze vs. ignore"
+    Use **Snooze** for issues you plan to address later but don't want cluttering your current review. Use **Ignore** for false positives or accepted risks that don't need further attention.
 
 ## Next steps
 
