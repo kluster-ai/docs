@@ -58,7 +58,6 @@ After the review completes, kluster.ai displays any issues found. For each issue
 - **Snooze**: Temporarily hides the issue for a selected duration (1 day, 7 days, or 30 days). The issue reappears automatically after the snooze period expires.
 - **Ignore**: Permanently dismisses the issue. It will not reappear in future reviews.
 
-<!-- FIX IMAGE: Update screenshot to show Fix with AI, Snooze, and Ignore buttons -->
 ![Review results showing issues found with Fix with AI, Snooze, and Ignore actions](/images/code-reviews/ide-reviews/human-written-code/on-demand-reviews/manual-review-this-code-extension-results.webp)
 
 !!! tip "When to snooze vs. ignore"

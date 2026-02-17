@@ -89,7 +89,6 @@ For each issue, you have four actions:
 - **Snooze**: Temporarily hides the issue for a selected duration (1 day, 7 days, or 30 days). The issue reappears automatically after the snooze period expires.
 - **Ignore**: Permanently dismisses the issue. It will not reappear in future reviews.
 
-<!-- FIX IMAGE: Update screenshot to show Snooze and Ignore buttons instead of Dismiss -->
 ![Take action on the bugs found by clicking one of the available actions](/images/code-reviews/repo-reviews/repo-reviews-setup-6.webp)
 
 !!! tip "When to snooze vs. ignore"
