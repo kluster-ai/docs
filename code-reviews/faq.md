@@ -67,6 +67,10 @@ kluster.ai sources vulnerability data from public CVE databases that are continu
 
 Each time a code review is done, a feedback option is available from the extension or in the platform. Your feedback helps improve detection accuracy and reduce false positives.
 
+### What should I do if kluster.ai flags a false positive?
+
+In [on-demand IDE reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/) and [repo reviews](/code-reviews/repo-reviews/quickstart/), you can **Ignore** a false positive to permanently dismiss it from future reviews. If you want to revisit the issue later, use **Snooze** to temporarily hide it for 1, 7, or 30 days. Your feedback through these actions helps improve detection accuracy.
+
 ### Do kluster.ai reviews improve over time?
 
 Yes. When you connect your GitHub repositories, kluster.ai learns rules from your repo and applies project-specific configurations. See [Custom Rules](/code-reviews/configuration/rules/) for more details.
@@ -184,3 +188,13 @@ Yes. Repo reviews work with both public and private repositories on GitHub, GitL
 ### Where can I access repo reviews?
 
 Repo reviews are available only through the web dashboard at [platform.kluster.ai/repo-reviews](https://platform.kluster.ai/repo-reviews){target=_blank}. You need to connect your GitHub, GitLab, or Bitbucket account first. Repo reviews are not available in IDE extensions or CLI tools.
+
+### What do the Fix with AI, Snooze, and Ignore actions do?
+
+When reviewing bugs found by kluster.ai, each issue has actions to help you manage findings:
+
+- **Fix with AI**: Generates an AI-powered fix suggestion. In IDE on-demand reviews, the fix is applied with one click. In repo reviews, you get a prompt to paste into your AI assistant.
+- **Snooze**: Temporarily hides the issue for a selected duration (1 day, 7 days, or 30 days). The issue reappears automatically after the snooze period expires. Use this for issues you plan to address later.
+- **Ignore**: Permanently dismisses the issue. It will not reappear in future reviews. Use this for false positives or accepted risks.
+
+These actions are available in [on-demand IDE reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/) and [repo reviews](/code-reviews/repo-reviews/quickstart/).
