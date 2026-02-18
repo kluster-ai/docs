@@ -187,7 +187,7 @@ Yes. Repo reviews work with both public and private repositories on GitHub, GitL
 
 ### Where can I access repo reviews?
 
-Repo reviews are available only through the web dashboard at [platform.kluster.ai/repo-reviews](https://platform.kluster.ai/repo-reviews){target=_blank}. You need to connect your GitHub, GitLab, or Bitbucket account first. Repo reviews are not available in IDE extensions or CLI tools.
+Repo reviews are available in the web dashboard at [platform.kluster.ai/repo-reviews](https://platform.kluster.ai/repo-reviews){target=_blank} and via `kluster-cli`. After connecting your GitHub, GitLab, or Bitbucket repository, you can run `kluster review repo start` to trigger analysis and `kluster review repo show` to check results from terminal. See [Repo reviews from CLI](/code-reviews/repo-reviews/cli/).
 
 ### What do the Fix with AI, Snooze, and Ignore actions do?
 
