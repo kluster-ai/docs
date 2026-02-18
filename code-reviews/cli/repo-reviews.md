@@ -24,7 +24,7 @@ Use this command to start a new repo-wide analysis:
 kluster review repo start
 ```
 
---8<-- 'code/code-reviews/repo-reviews/review-repo-start.md'
+--8<-- 'code/code-reviews/cli/review-repo-start.md'
 
 The review runs asynchronously. You'll get an email when analysis is complete.
 
@@ -36,7 +36,7 @@ Use this command to see the latest review output any time:
 kluster review repo show
 ```
 
---8<-- 'code/code-reviews/repo-reviews/review-repo-show.md'
+--8<-- 'code/code-reviews/cli/review-repo-show.md'
 
 This output shows the last review timestamp and findings grouped by severity and category.
 

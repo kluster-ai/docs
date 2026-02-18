@@ -123,5 +123,5 @@ Long output is automatically paged using your system pager (`less`, `more`, or `
 ## Next steps
 
 - **[Git hooks](/code-reviews/cli/git-hooks/)**: Automate reviews on every commit or push.
-- **[Repo reviews from CLI](/code-reviews/repo-reviews/cli/)**: Start and inspect full-repository reviews from terminal.
+- **[Repo reviews from CLI](/code-reviews/cli/repo-reviews/)**: Start and inspect full-repository reviews from terminal.
 - **[Reference](/code-reviews/cli/reference/)**: Configuration, exit codes, and full command reference.
