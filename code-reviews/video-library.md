@@ -332,6 +332,7 @@ Explore the kluster.ai video library right here in docs. Tap any thumbnail to in
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    var grid = document.querySelector(".video-library-grid");
     var items = Array.from(document.querySelectorAll(".video-library-item"));
     if (!items.length) {
       return;
@@ -445,12 +446,37 @@ Explore the kluster.ai video library right here in docs. Tap any thumbnail to in
       resetPlayback(item);
     }
 
+    function moveAdjacentLeftCardOutOfWay(item) {
+      if (!grid || item.parentElement !== grid) {
+        return;
+      }
+
+      var leftCard = item.previousElementSibling;
+      if (!leftCard || !leftCard.classList.contains("video-library-item")) {
+        return;
+      }
+
+      var itemRect = item.getBoundingClientRect();
+      var leftRect = leftCard.getBoundingClientRect();
+      var sameRow = Math.abs(itemRect.top - leftRect.top) < 10;
+      var itemIsRightColumn = itemRect.left > leftRect.left;
+
+      if (!sameRow || !itemIsRightColumn) {
+        return;
+      }
+
+      // Keep the clicked card in place and move the adjacent left card after it.
+      grid.insertBefore(leftCard, item.nextSibling);
+    }
+
     function openItem(item, autoplay, updateHash, shouldScroll) {
       items.forEach(function (other) {
         if (other !== item) {
           closeItem(other);
         }
       });
+
+      moveAdjacentLeftCardOutOfWay(item);
 
       item.classList.add("is-open");
       var player = getPlayer(item);
