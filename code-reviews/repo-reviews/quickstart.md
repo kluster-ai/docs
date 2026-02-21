@@ -8,6 +8,9 @@ categories: Basics, Repo reviews
 
 Learn how to run system-wide codebase analysis with [kluster.ai](https://kluster.ai){target=_blank} Repo Reviews. Connect your repository, wait for the deep scan to complete, and review cross-module bugs that slip through PR-level reviews.
 
+!!! tip "Prefer terminal workflows?"
+    You can also run repo reviews from CLI with `kluster review repo start` and inspect results with `kluster review repo show`. See [Repo reviews from CLI](/code-reviews/cli/repo-reviews/).
+
 <div class="embed-container">
     <iframe
         src="https://www.youtube.com/embed/qz32GZkGkqc"
@@ -97,5 +100,6 @@ For each issue, you have four actions:
 ## Next steps
 
 - **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Learn when to use repo reviews vs. other review modes.
+- **[Repo reviews from CLI](/code-reviews/cli/repo-reviews/)**: Trigger and inspect repo reviews from the terminal.
 - **[Review modes](/code-reviews/review-modes/)**: Understand all available review types.
 - **[FAQ](/code-reviews/faq/)**: Common questions about kluster.ai code reviews.
