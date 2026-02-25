@@ -18,43 +18,6 @@ Before getting started, ensure you have:
 
 ## Setup instructions
 
-=== "Antigravity"
-
-    1. Click the **Add to Antigravity** button below.
-
-         --8<-- 'text/install-button-antigravity.md'
-
-    2. Antigravity will open and prompt for extension installation.
-
-    3. Click **Install** to add the extension into Antigravity.
-
-        ![Extension Installation Prompt in Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-1.webp)
-
-    Now that the extension is installed, you need to log in with your kluster.ai account:
-
-    1. Click **Sign in** in the bottom left corner.
-
-        ![Sign In](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-2.webp)
-
-    2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account.
-
-        ![Open Pop-up](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-3.webp)
-
-    3. Click **Open Antigravity**.
-
-        ![Open Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-4.webp)
-
-    4. Click **Open** to install the MCP with your kluster.ai API key.
-
-        ![Open and Install MCP](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-5.webp)
-
-    Once installed, verify the setup:
-
-    1. Navigate to **Settings** → **MCP Settings** → **Manage MCP Servers**.
-    2. Verify that **Kluster-Verify-Code** appears with all tools enabled.
-
-        ![Active MCP Tools in Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-6.webp)
-
 === "Cursor"
 
     1. Click the **Add to Cursor** button below.
@@ -163,6 +126,43 @@ Before getting started, ensure you have:
     2. You should see **Kluster-Verify-Code** with all tools enabled.
 
         ![Active MCP Tools in Windsurf](/images/code-reviews/get-started/installation/windsurf/windsurf-integration-7.webp)
+
+=== "Antigravity"
+
+    1. Click the **Add to Antigravity** button below.
+
+         --8<-- 'text/install-button-antigravity.md'
+
+    2. Antigravity will open and prompt for extension installation.
+
+    3. Click **Install** to add the extension into Antigravity.
+
+        ![Extension Installation Prompt in Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-1.webp)
+
+    Now that the extension is installed, you need to log in with your kluster.ai account:
+
+    1. Click **Sign in** in the bottom left corner.
+
+        ![Sign In](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-2.webp)
+
+    2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account.
+
+        ![Open Pop-up](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-3.webp)
+
+    3. Click **Open Antigravity**.
+
+        ![Open Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-4.webp)
+
+    4. Click **Open** to install the MCP with your kluster.ai API key.
+
+        ![Open and Install MCP](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-5.webp)
+
+    Once installed, verify the setup:
+
+    1. Navigate to **Settings** → **MCP Settings** → **Manage MCP Servers**.
+    2. Verify that **Kluster-Verify-Code** appears with all tools enabled.
+
+        ![Active MCP Tools in Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-6.webp)
 
 === "Claude Code"
 
