@@ -107,7 +107,7 @@ Yes. AI-generated code reviews analyze diffs across multiple files in a single r
 
 ### How does dependency checking work?
 
-The Dependency Validator automatically checks packages before installation. When your AI assistant suggests adding a dependency, kluster.ai validates it for known vulnerabilities before the install command runs.
+The `kluster_dependency_check` tool automatically checks packages before installation. When your AI assistant suggests adding a dependency, kluster.ai validates it for known vulnerabilities before the install command runs.
 
 ### How do I rollback changes made based on kluster.ai feedback?
 
