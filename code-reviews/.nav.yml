@@ -1,11 +1,11 @@
 nav:
   - 'Review modes': review-modes.md
-  - 'Video library': video-library.md
   - 'Get started': get-started
   - 'IDE reviews': ide-reviews
   - 'Repo reviews': repo-reviews
   - 'CLI': cli
   - 'Configuration': configuration
+  - 'Video library': video-library.md
   - 'FAQ': faq.md
   - 'Troubleshooting': troubleshooting.md
   - 'Reference': reference
