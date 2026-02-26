@@ -1,0 +1,5 @@
+title: FAQ
+nav:
+  - 'Frequently Asked Questions': index.md
+  - 'How to use activation codes': activation-codes.md
+  - 'Troubleshooting': troubleshooting.md

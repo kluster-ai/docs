@@ -5,7 +5,5 @@ nav:
   - 'Repo reviews': repo-reviews
   - 'CLI': cli
   - 'Configuration': configuration
-  - 'FAQ': faq.md
-  - 'Troubleshooting': troubleshooting.md
+  - 'FAQ': faq
   - 'Reference': reference
-  - 'How to use activation codes': activation-codes.md

@@ -57,7 +57,7 @@ Team management is available on Team and Enterprise plans. Log in to the [kluste
 
 ### How do activation codes work?
 
-Activation codes provide promotional credits for kluster.ai plans. See our detailed guide: [How to use activation codes](/code-reviews/activation-codes/).
+Activation codes provide promotional credits for kluster.ai plans. See our detailed guide: [How to use activation codes](/code-reviews/faq/activation-codes/).
 
 ### How frequently does kluster.ai update its vulnerability detection?
 
