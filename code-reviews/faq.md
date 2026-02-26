@@ -81,7 +81,7 @@ We also continuously improve our engine to perform deeper reviews, optimizing fo
 
 --8<-- 'text/code-reviews/instant-vs-deep.md'
 
-Use **Instant** for fast iteration during development. Use **Deep** for final reviews, production code, or when thoroughness matters more than speed. You can configure the default for each workflow in [Options](/code-reviews/configuration/options/#4-analysis-level).
+Use **Instant** for fast iteration during development. Use **Deep** for final reviews, production code, or when thoroughness matters more than speed. You can configure the default for each workflow in [Options](/code-reviews/configuration/options/#analysis-level).
 
 ## AI-generated code
 
