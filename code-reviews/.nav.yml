@@ -5,6 +5,7 @@ nav:
   - 'Repo reviews': repo-reviews
   - 'CLI': cli
   - 'Configuration': configuration
+  - 'Video library': video-library.md
   - 'FAQ': faq.md
   - 'Troubleshooting': troubleshooting.md
   - 'Reference': reference
