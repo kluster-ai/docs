@@ -56,4 +56,8 @@ videos:
 
 Explore the kluster.ai video library right here in the docs. Tap any thumbnail to instantly transform it into a playable video in the same spot, so you can keep learning without breaking your flow.
 
-## Browse videos
+## Get started
+
+## Review in IDE
+
+## More features
