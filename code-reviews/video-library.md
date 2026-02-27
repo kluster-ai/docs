@@ -3,7 +3,7 @@ title: Video library
 footer_nav: true
 description: Watch all kluster.ai Code Reviews videos in one place with embedded playback and deep-link anchors for each video section.
 template: video-library.html
-categories: Basics, Video library
+categories: Basics
 videos:
   - youtube_id: KLZlNpYbD4g
     title: "kluster in 60 Seconds: World's Fastest AI Code Review"
@@ -54,6 +54,6 @@ videos:
 
 # Video library
 
-Explore the kluster.ai video library right here in docs. Tap any thumbnail to instantly transform it into a playable video in the same spot, so you can keep learning without breaking your flow.
+Explore the kluster.ai video library right here in the docs. Tap any thumbnail to instantly transform it into a playable video in the same spot, so you can keep learning without breaking your flow.
 
 ## Browse videos
