@@ -1,6 +1,8 @@
 # Documentation for kluster.ai
 
-This repository contains documentation for [kluster.ai](https://kluster.ai), the distributed AI platform to efficiently work with large models, free from computational constraints.
+This repository contains documentation for [kluster.ai](https://kluster.ai), real-time code reviews for AI-generated and human-written code that understand your intent and prevent bugs before they ship.
+
+kluster.ai catches logic errors, security risks, and broken assumptions as code is written, right in your IDE.
 
 ## About This Site
 
