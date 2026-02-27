@@ -1,5 +1,6 @@
 ---
 title: Video library
+footer_nav: true
 description: Watch all kluster.ai Code Reviews videos in one place with embedded playback and deep-link anchors for each video section.
 template: video-library.html
 categories: Basics, Video library
