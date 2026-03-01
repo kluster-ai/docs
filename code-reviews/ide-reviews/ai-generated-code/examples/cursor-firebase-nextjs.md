@@ -1,18 +1,18 @@
 ---
-title: Cursor: Firebase Authentication with Next.js
+title: Cursor, Firebase Authentication with Next.js
 description: See how Code Reviews catches critical issues in real-time while migrating from localStorage to Firebase authentication
 categories: AI-generated code
 ---
 
 # Cursor: Firebase authentication
 
-Learn how [Code Reviews](/code-reviews/) acts as your safety net when using Cursor AI to write code. This tutorial demonstrates a real migration from localStorage to Firebase authentication in a buy-sell e-commerce platform, showcasing how AI plans can go wrong and the four critical issues Code Reviews caught.
+Learn how [Code Reviews](/code-reviews/review-modes/) acts as your safety net when using Cursor AI to write code. This tutorial demonstrates a real migration from localStorage to Firebase authentication in a buy-sell e-commerce platform, showcasing how AI plans can go wrong and the four critical issues Code Reviews caught.
 
 ## Prerequisites
 
 --8<-- 'text/kluster-api-onboarding.md'
 
-- [Cursor IDE installed](https://cursor.com/downloads){target="_blank"}
+- [Cursor IDE installed](https://cursor.com/download){target=\_blank}
 
 ## Setup
 

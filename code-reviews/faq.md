@@ -183,7 +183,7 @@ Yes. Repo reviews work with both public and private repositories on GitHub, GitL
 
 ### Where can I access repo reviews?
 
-Repo reviews are available in the web dashboard at [platform.kluster.ai/repo-reviews](https://platform.kluster.ai/repo-reviews){target=_blank} and via `kluster-cli`. After connecting your GitHub, GitLab, or Bitbucket repository, you can run `kluster review repo start` to trigger analysis and `kluster review repo show` to check results from terminal. See [Repo reviews from CLI](/code-reviews/cli/repo-reviews/).
+Repo reviews are available in the web dashboard at [platform.kluster.ai/repo-reviews](https://platform.kluster.ai/repo-reviews){target=\_blank} and via `kluster-cli`. After connecting your GitHub, GitLab, or Bitbucket repository, you can run `kluster review repo start` to trigger analysis and `kluster review repo show` to check results from terminal. See [Repo reviews from CLI](/code-reviews/cli/repo-reviews/).
 
 ### What do the Fix with AI, Snooze, and Ignore actions do?
 
@@ -199,7 +199,7 @@ These actions are available in [on-demand IDE reviews](/code-reviews/ide-reviews
 
 ### What are activation codes?
 
-Activation codes provide promotional credits for [kluster.ai](https://www.kluster.ai/){target=_blank} plans. When you redeem a code during checkout, the credit is applied to your subscription.
+Activation codes provide promotional credits for [kluster.ai](https://www.kluster.ai/){target=\_blank} plans. When you redeem a code during checkout, the credit is applied to your subscription.
 
 ### What do I need before redeeming an activation code?
 
@@ -213,7 +213,7 @@ Before redeeming an activation code, ensure you have:
 
 Follow these steps to redeem your activation code:
 
-1. Log in to your [kluster.ai account](https://platform.kluster.ai){target=_blank}
+1. Log in to your [kluster.ai account](https://platform.kluster.ai){target=\_blank}
 
 2. Click the **upgrade** button in the top right corner of the platform
 

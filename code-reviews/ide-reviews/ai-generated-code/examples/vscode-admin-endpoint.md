@@ -1,19 +1,19 @@
 ---
-title: VS Code: Secure Admin Endpoints with Express
+title: VS Code, Secure Admin Endpoints with Express
 description: Learn how Code Reviews prevents critical security vulnerabilities when AI creates admin endpoints with hardcoded credentials
 categories: AI-generated code
 ---
 
 # VS Code: Secure Admin Endpoints
 
-Discover how [Code Reviews](/code-reviews/) catches critical security flaws when using VS Code with GitHub Copilot Chat to create admin endpoints. This tutorial demonstrates a real scenario where AI introduces a production-breaking security vulnerability while implementing a database reset endpoint.
+Discover how [Code Reviews](/code-reviews/review-modes/) catches critical security flaws when using VS Code with GitHub Copilot Chat to create admin endpoints. This tutorial demonstrates a real scenario where AI introduces a production-breaking security vulnerability while implementing a database reset endpoint.
 
 ## Prerequisites
 
 --8<-- 'text/kluster-api-onboarding.md'
 
-- [VS Code installed](https://code.visualstudio.com/download){target="_blank"}
-- [GitHub Copilot Chat extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat){target="_blank"}
+- [VS Code installed](https://code.visualstudio.com/download){target=\_blank}
+- [GitHub Copilot Chat extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat){target=\_blank}
 
 ## Setup
 
@@ -110,9 +110,6 @@ if (!adminKey || adminKey !== expectedAdminKey) {
 }
 ```
 
-
-
-
 ## Summary of results
 
 ![VS Code showing the successfully implemented secure admin endpoint with proper authentication](/images/code-reviews/ide-reviews/ai-generated-code/examples/vscode/example-vscode-3.webp)
@@ -141,6 +138,6 @@ Admin endpoints require special security attention that AI often misses:
 - **Log admin actions** for audit trails.
 - **Test all scenarios** including misconfiguration.
 
-[Code Reviews](/code-reviews/) acts as your security safety net, catching vulnerabilities that look functional but hide critical flaws. The more powerful the operation, the more critical this protection becomes.
+[Code Reviews](/code-reviews/review-modes/) acts as your security safety net, catching vulnerabilities that look functional but hide critical flaws. The more powerful the operation, the more critical this protection becomes.
 
 **Learn more**: Explore our [MCP tools reference](/code-reviews/reference/mcp-tools/) to understand all vulnerability types that Code Reviews monitors.
