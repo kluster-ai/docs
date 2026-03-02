@@ -53,7 +53,7 @@ kluster version
 
 --8<-- 'code/code-reviews/cli/version-output.md'
 
-If you get `command not found: kluster`, your `PATH` likely wasn't updated. See [Troubleshooting](/code-reviews/troubleshooting/#command-not-found-kluster).
+If you get `command not found: kluster`, your `PATH` likely wasn't updated. See [Troubleshooting](/code-reviews/faq/troubleshooting/#command-not-found-kluster).
 
 ### Login
 
