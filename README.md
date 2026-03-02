@@ -1,6 +1,6 @@
 # Documentation for kluster.ai
 
-This repository contains documentation for [kluster.ai](https://kluster.ai), real-time code reviews for AI-generated and human-written code that understand your intent and prevent bugs before they ship.
+This repository contains documentation for [kluster.ai](https://kluster.ai), a real-time code review platform that understands your intent and prevents bugs in both AI-generated and human-written code before they ship.
 
 kluster.ai catches logic errors, security risks, and broken assumptions as code is written, right in your IDE.
 
