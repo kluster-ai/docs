@@ -1,6 +1,6 @@
 ---
 title: MCP Tools Reference
-description: Learn how kluster.ai Code MCP tools work. Parameters, response formats, issue categories, and settings for real-time code reviews.
+description: Learn how kluster.ai Code MCP tools work, including parameters, response formats, issue categories, and settings for real-time code reviews.
 categories: Reference
 ---
 

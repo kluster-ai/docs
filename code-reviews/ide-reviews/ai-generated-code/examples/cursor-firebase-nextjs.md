@@ -1,12 +1,12 @@
 ---
-title: Cursor, Firebase Authentication with Next.js
-description: See how Code Reviews catches critical issues in real-time while migrating from localStorage to Firebase authentication
+title: Cursor - Firebase Authentication with Next.js
+description: See how Code Reviews catches critical issues in real-time while migrating from local storage to Firebase authentication.
 categories: AI-generated code
 ---
 
 # Cursor: Firebase authentication
 
-Learn how [Code Reviews](/code-reviews/review-modes/) acts as your safety net when using Cursor AI to write code. This tutorial demonstrates a real migration from localStorage to Firebase authentication in a buy-sell e-commerce platform, showcasing how AI plans can go wrong and the four critical issues Code Reviews caught.
+Learn how [Code Reviews](/code-reviews/review-modes/) acts as your safety net when using Cursor AI to write code. This tutorial demonstrates a real migration from local storage to Firebase authentication in a buy-sell e-commerce platform, showcasing how AI plans can go wrong and the four critical issues Code Reviews caught.
 
 ## Prerequisites
 
@@ -207,7 +207,7 @@ const login = async (email: string, password: string) => {
 };
 ```
 
-The screenshot below displays Cursor with Code Reviews' alert highlighting a P1 Intent violation. The alert detects that the AI has regressed the authentication architecture by reverting from the Firebase implementation back to the original localStorage and API-based approach, undoing the intended migration.
+The screenshot below displays Cursor with Code Reviews' alert highlighting a P1 Intent violation. The alert detects that the AI has regressed the authentication architecture by reverting from the Firebase implementation back to the original `localStorage` and API-based approach, undoing the intended migration.
 
 ![Code Reviews alert showing architecture regression from Firebase back to localStorage](/images/code-reviews/ide-reviews/ai-generated-code/examples/cursor/example-cursor-3.webp){ width="75%" }
 
@@ -216,7 +216,7 @@ Code Reviews provided the following response:
 
 ---
 
-**P1 - Intent (High)**: AI reverted Firebase authentication implementation back to using localStorage and API calls.
+**P1 - Intent (High)**: AI reverted Firebase authentication implementation back to using `localStorage` and API calls.
 
 **Why this matters**: Lost all Firebase benefits like real-time auth state, secure token management, and cross-device sessions. Back to the original problems we were trying to solve.
 
