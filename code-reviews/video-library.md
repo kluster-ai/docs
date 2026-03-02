@@ -11,15 +11,15 @@ videos:
     thumbnail: "images/code-reviews/video-library/kluster-in-60-seconds-worlds-fastest-ai-code-review.webp"
     description: "A quick overview of kluster.ai — the fastest AI code review tool that catches issues as you type."
   - youtube_id: ZT8_sZBLYxk
-    title: "Real-time AI Code Review with Verify Code by kluster.ai"
+    title: "Real-time AI Code Reviews by kluster.ai"
     category: "Get Started"
     thumbnail: "images/code-reviews/video-library/real-time-ai-code-review-with-verify-code-by-kluster-ai.webp"
-    description: "See how Verify Code catches bugs, security flaws, and logic errors in AI-generated code before they reach your codebase."
+    description: "See how Code Reviews by kluster.ai surface bugs, security flaws, and logic errors in AI-generated code before they reach your codebase."
   - youtube_id: JFCKcdm_18I
-    title: "Building Open Source Software with Cursor and Verify Code"
+    title: "Building Open Source Software with Cursor and Code Reviews"
     category: "Review in IDE"
     thumbnail: "images/code-reviews/video-library/building-open-source-software-with-cursor-and-verify-code.webp"
-    description: "Watch Verify Code integrate with Cursor to catch bugs in real time."
+    description: "Watch Code Reviews integrate with Cursor to catch bugs in real time."
   - youtube_id: "-V0VsqgTza8"
     title: "Instant Code Reviews in Cursor with kluster"
     category: "Review in IDE"
@@ -36,10 +36,10 @@ videos:
     thumbnail: "images/code-reviews/video-library/on-demand-code-reviews-with-kluster-in-vs-code.webp"
     description: "A quick walkthrough of on-demand code reviews in VS Code, comparing Instant and Deep analysis modes."
   - youtube_id: bCTTE7c1T0I
-    title: "Getting Started with Verify Code for VS Code"
+    title: "Getting Started with Code Reviews for VS Code"
     category: "Review in IDE"
     thumbnail: "images/code-reviews/video-library/getting-started-with-code-reviews-in-vscode.webp"
-    description: "Install the Verify Code extension for VS Code and connect it to your kluster.ai account in minutes."
+    description: "Install the Code Reviews extension for VS Code and connect it to your kluster.ai account in minutes."
   - youtube_id: qz32GZkGkqc
     title: "Introducing Repo Reviews"
     category: "More Features"
