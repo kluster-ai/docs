@@ -55,10 +55,6 @@ Currently, exclusion rules are configured at the project level through the klust
 
 Team management is available on Team and Enterprise plans. Log in to the [kluster.ai platform](https://platform.kluster.ai){target=\_blank} and navigate to your team settings to invite members.
 
-### How do activation codes work?
-
-Activation codes provide promotional credits for kluster.ai plans. See our detailed guide: [How to use activation codes](/code-reviews/activation-codes/).
-
 ### How frequently does kluster.ai update its vulnerability detection?
 
 kluster.ai sources vulnerability data from public CVE databases that are continuously updated. Detection coverage improves as new CVEs are published and ingested, rather than following a fixed update schedule.
@@ -81,7 +77,7 @@ We also continuously improve our engine to perform deeper reviews, optimizing fo
 
 --8<-- 'text/code-reviews/instant-vs-deep.md'
 
-Use **Instant** for fast iteration during development. Use **Deep** for final reviews, production code, or when thoroughness matters more than speed. You can configure the default for each workflow in [Options](/code-reviews/configuration/options/#4-analysis-level).
+Use **Instant** for fast iteration during development. Use **Deep** for final reviews, production code, or when thoroughness matters more than speed. You can configure the default for each workflow in [Options](/code-reviews/configuration/options/#analysis-level).
 
 ## AI-generated code
 
@@ -107,7 +103,7 @@ Yes. AI-generated code reviews analyze diffs across multiple files in a single r
 
 ### How does dependency checking work?
 
-The Dependency Validator automatically checks packages before installation. When your AI assistant suggests adding a dependency, kluster.ai validates it for known vulnerabilities before the install command runs.
+The `kluster_dependency_check` tool automatically checks packages before installation. When your AI assistant suggests adding a dependency, kluster.ai validates it for known vulnerabilities before the install command runs.
 
 ### How do I rollback changes made based on kluster.ai feedback?
 
@@ -187,7 +183,7 @@ Yes. Repo reviews work with both public and private repositories on GitHub, GitL
 
 ### Where can I access repo reviews?
 
-Repo reviews are available in the web dashboard at [platform.kluster.ai/repo-reviews](https://platform.kluster.ai/repo-reviews){target=_blank} and via `kluster-cli`. After connecting your GitHub, GitLab, or Bitbucket repository, you can run `kluster review repo start` to trigger analysis and `kluster review repo show` to check results from terminal. See [Repo reviews from CLI](/code-reviews/cli/repo-reviews/).
+Repo reviews are available in the web dashboard at [platform.kluster.ai/repo-reviews](https://platform.kluster.ai/repo-reviews){target=\_blank} and via `kluster-cli`. After connecting your GitHub, GitLab, or Bitbucket repository, you can run `kluster review repo start` to trigger analysis and `kluster review repo show` to check results from terminal. See [Repo reviews from CLI](/code-reviews/cli/repo-reviews/).
 
 ### What do the Fix with AI, Snooze, and Ignore actions do?
 
@@ -198,3 +194,47 @@ When reviewing bugs found by kluster.ai, each issue has actions to help you mana
 - **Ignore**: Permanently dismisses the issue. It will not reappear in future reviews. Use this for false positives or accepted risks.
 
 These actions are available in [on-demand IDE reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/) and [repo reviews](/code-reviews/repo-reviews/quickstart/).
+
+## Activation codes
+
+### What are activation codes?
+
+Activation codes provide promotional credits for [kluster.ai](https://www.kluster.ai/){target=\_blank} plans. When you redeem a code during checkout, the credit is applied to your subscription.
+
+### What do I need before redeeming an activation code?
+
+Before redeeming an activation code, ensure you have:
+
+- **A kluster.ai account** — Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one
+- **kluster.ai installed in your IDE** — Follow the [Installation guide](/code-reviews/get-started/installation/) to set it up
+- **An activation code** — One that matches the plan you want to subscribe to
+
+### How do I redeem an activation code?
+
+Follow these steps to redeem your activation code:
+
+1. Log in to your [kluster.ai account](https://platform.kluster.ai){target=\_blank}
+
+2. Click the **upgrade** button in the top right corner of the platform
+
+    ![Upgrade button on kluster.ai platform](/images/code-reviews/faq/activation-codes-01.webp)
+
+3. On the plans page, click **Start Max Plan**
+
+    ![kluster.ai subscription plans](/images/code-reviews/faq/activation-codes-02.webp)
+
+    You'll be redirected to the Stripe checkout page.
+
+4. On the Stripe checkout page, click the **Add promotion code** section and paste your activation code
+
+    ![Stripe checkout with promotion code field](/images/code-reviews/faq/activation-codes-03.webp)
+
+5. Once you apply the code, Stripe will validate it and show the discount applied. The total due today will reflect the promotional credit
+
+    ![Activation code applied successfully](/images/code-reviews/faq/activation-codes-04.webp)
+
+    Complete the checkout process by clicking **Subscribe**. Your promotional credits will be immediately applied to your account.
+
+### What if my activation code isn't working?
+
+If you run into issues redeeming an activation code, click the **Support** button in the lower-right corner of [platform.kluster.ai](https://platform.kluster.ai/){target=\_blank} for assistance.

@@ -6,7 +6,7 @@ categories: Basics, AI-generated code, Automatic review
 
 # Automatic Reviews quickstart
 
-Learn how to use [kluster.ai](https://kluster.ai){target=_blank} with your preferred AI assistant to catch bugs, security flaws, and logic errors instantly—as your AI writes code.
+Learn how to use [kluster.ai](https://www.kluster.ai/){target=\_blank} with your preferred AI assistant to catch bugs, security flaws, and logic errors instantly—as your AI writes code.
 
 !!! note ".klusterignore is not applied in this flow (yet)"
     Automatic reviews triggered by AI assistants currently do **not** use [`.klusterignore`](/code-reviews/configuration/klusterignore/) to exclude files.
