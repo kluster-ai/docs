@@ -6,7 +6,7 @@ categories: Basics, CLI
 
 # Installation
 
-[kluster.ai](https://kluster.ai){target=_blank}'s CLI is available for macOS, Linux, and Windows. The installer downloads a single binary, adds it to your `PATH`, and you're ready to go. This page covers installation, updates, shell completions, and uninstalling.
+[kluster.ai](https://www.kluster.ai/){target=\_blank}'s CLI is available for macOS, Linux, and Windows. The installer downloads a single binary, adds it to your `PATH`, and you're ready to go. This page covers installation, updates, shell completions, and uninstalling.
 
 ## Install kluster-cli
 
@@ -65,7 +65,7 @@ kluster login
 
 --8<-- 'code/code-reviews/cli/login.md'
 
-Get your API key from the [CLI setup page](https://platform.kluster.ai/cli){target=_blank}.
+Get your API key from the [CLI setup page](https://platform.kluster.ai/cli){target=\_blank}.
 
 To authenticate non-interactively (useful for CI/CD):
 

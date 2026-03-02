@@ -6,14 +6,14 @@ categories: Basics, CLI
 
 # Quickstart
 
-Run [kluster.ai](https://kluster.ai){target=_blank} code reviews straight from your terminal. Install kluster-cli, authenticate with your API key, and review your first changes. No IDE or CI pipeline required.
+Run [kluster.ai](https://www.kluster.ai/){target=\_blank} code reviews straight from your terminal. Install kluster-cli, authenticate with your API key, and review your first changes. No IDE or CI pipeline required.
 
 ## Prerequisites
 
 You need:
 
-- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you don't have one.
-- **An API key**: Get your API key from the [CLI setup page](https://platform.kluster.ai/cli){target=_blank}.
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
+- **An API key**: Get your API key from the [CLI setup page](https://platform.kluster.ai/cli){target=\_blank}.
 
 ## 1. Install
 
@@ -50,7 +50,7 @@ kluster login
 
 --8<-- 'code/code-reviews/cli/login.md'
 
-When prompted, paste the API key from [platform.kluster.ai/cli](https://platform.kluster.ai/cli){target=_blank}.
+When prompted, paste the API key from [platform.kluster.ai/cli](https://platform.kluster.ai/cli){target=\_blank}.
 
 ## 3. Review your code
 

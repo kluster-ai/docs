@@ -1,5 +1,5 @@
 ---
-title: VS Code: Secure Admin Endpoints with Express
+title: VS Code, Secure Admin Endpoints with Express
 description: Learn how Code Reviews prevents critical security vulnerabilities when AI creates admin endpoints with hardcoded credentials
 categories: AI-generated code
 ---
@@ -12,8 +12,8 @@ Discover how [Code Reviews](/code-reviews/review-modes/) catches critical securi
 
 --8<-- 'text/kluster-api-onboarding.md'
 
-- [VS Code installed](https://code.visualstudio.com/download){target="_blank"}
-- [GitHub Copilot Chat extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat){target="_blank"}
+- [VS Code installed](https://code.visualstudio.com/download){target=\_blank}
+- [GitHub Copilot Chat extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat){target=\_blank}
 
 ## Setup
 
@@ -109,9 +109,6 @@ if (!adminKey || adminKey !== expectedAdminKey) {
   });
 }
 ```
-
-
-
 
 ## Summary of results
 
