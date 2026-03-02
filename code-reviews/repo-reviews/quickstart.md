@@ -6,7 +6,7 @@ categories: Basics, Repo reviews
 
 # Repo Reviews quickstart
 
-Learn how to run system-wide codebase analysis with [kluster.ai](https://kluster.ai){target=_blank} Repo Reviews. Connect your repository, wait for the deep scan to complete, and review cross-module bugs that slip through PR-level reviews.
+Learn how to run system-wide codebase analysis with [kluster.ai](https://www.kluster.ai/){target=\_blank} Repo Reviews. Connect your repository, wait for the deep scan to complete, and review cross-module bugs that slip through PR-level reviews.
 
 !!! tip "Prefer terminal workflows?"
     You can also run repo reviews from CLI with `kluster review repo start` and inspect results with `kluster review repo show`. See [Repo reviews from CLI](/code-reviews/cli/repo-reviews/).
@@ -25,7 +25,7 @@ Learn how to run system-wide codebase analysis with [kluster.ai](https://kluster
 
 Before getting started, ensure you have:
 
-- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=_blank} if you don't have one.
+- **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 - **A connected repository**: You'll need to connect your GitHub, GitLab, or Bitbucket repository through the dashboard.
 
 ## How repo reviews work
@@ -42,7 +42,7 @@ This catches cross-module bugs, state inconsistencies, bypassed validation check
 
 ### 1. Connect your repository
 
-Go to the [Repo Reviews dashboard](https://platform.kluster.ai/repo-reviews){target=_blank} and click **Connect Repository**.
+Go to the [Repo Reviews dashboard](https://platform.kluster.ai/repo-reviews){target=\_blank} and click **Connect Repository**.
 
 ![Repo Reviews dashboard with Connect Repository button](/images/code-reviews/repo-reviews/repo-reviews-setup-1.webp)
 

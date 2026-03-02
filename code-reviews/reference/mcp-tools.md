@@ -1,12 +1,12 @@
 ---
 title: MCP Tools Reference
-description: Learn how kluster.ai Code MCP tools work: parameters, response formats, issue categories, and settings for real-time code reviews.
+description: Learn how kluster.ai Code MCP tools work. Parameters, response formats, issue categories, and settings for real-time code reviews.
 categories: Reference
 ---
 
 # MCP Tools Reference
 
-The [kluster.ai](https://www.kluster.ai/){target=_blank} Code MCP server provides review tools for checking code quality and security. These tools enable real-time code reviews directly within your IDE through MCP integration.
+The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code MCP server provides review tools for checking code quality and security. These tools enable real-time code reviews directly within your IDE through MCP integration.
 
 ## Available tools
 
