@@ -13,7 +13,7 @@ You can trigger and monitor repo reviews directly from `kluster-cli`. This gives
 Before using repo review commands from CLI, make sure you have:
 
 - **kluster-cli installed and authenticated**: See [CLI quickstart](/code-reviews/cli/quickstart/).
-- **A connected repository**: Connect your repository in the [Repo Reviews dashboard](https://platform.kluster.ai/repo-reviews){target=_blank}.
+- **A connected repository**: Connect your repository in the [Repo Reviews dashboard](https://platform.kluster.ai/repo-reviews){target=\_blank}.
 - **An open shell in that repository**: Run commands from the repository root.
 
 ## Start a repo review
