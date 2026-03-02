@@ -13,12 +13,12 @@ videos:
   - youtube_id: ZT8_sZBLYxk
     title: "Real-time AI Code Reviews by kluster.ai"
     category: "Get Started"
-    thumbnail: "images/code-reviews/video-library/real-time-ai-code-review-with-verify-code-by-kluster-ai.webp"
+    thumbnail: "images/code-reviews/video-library/real-time-ai-code-reviews-by-kluster-ai.webp"
     description: "See how Code Reviews by kluster.ai surface bugs, security flaws, and logic errors in AI-generated code before they reach your codebase."
   - youtube_id: JFCKcdm_18I
     title: "Building Open Source Software with Cursor and Code Reviews"
     category: "Review in IDE"
-    thumbnail: "images/code-reviews/video-library/building-open-source-software-with-cursor-and-verify-code.webp"
+    thumbnail: "images/code-reviews/video-library/building-open-source-software-with-cursor-and-code-reviews.webp"
     description: "Watch Code Reviews integrate with Cursor to catch bugs in real time."
   - youtube_id: "-V0VsqgTza8"
     title: "Instant Code Reviews in Cursor with kluster"
