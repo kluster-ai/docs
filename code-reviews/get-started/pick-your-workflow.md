@@ -1,6 +1,6 @@
 ---
 title: Pick your workflow
-description: Choose between human-written code and AI-generated code reviews based on how you write code. Or use both.
+description: Compare the supported Code Reviews modes—human-written, AI-generated, CLI, and repo-wide—and pick the workflow that fits how you write code.
 categories: Basics
 ---
 

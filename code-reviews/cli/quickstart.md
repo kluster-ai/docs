@@ -1,6 +1,6 @@
 ---
 title: CLI Quickstart
-description: Install kluster-cli, authenticate, and run your first code review from the terminal.
+description: Learn how to install kluster-cli, authenticate with your API key, and review your first changes. No IDE or CI pipeline required.
 categories: Basics, CLI
 ---
 

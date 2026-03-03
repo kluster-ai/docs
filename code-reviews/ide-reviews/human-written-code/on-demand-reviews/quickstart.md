@@ -1,6 +1,6 @@
 ---
 title: On-demand reviews quickstart
-description: Write code, verify on your terms. Three ways to trigger reviews in your IDE—right-click any selection, use hint buttons, or scan uncommitted changes before you commit.
+description: Trigger on-demand code reviews in your IDE using right-click, hint buttons, or pre-commit scanning to verify code quality on your own terms.
 categories: Basics, Human-written code, On-demand review
 ---
 
