@@ -1,6 +1,7 @@
 ---
 title: External Knowledge for Code Reviews
 description: Connect external sources like Jira to kluster.ai so code reviews can verify your code against real project requirements and specifications.
+categories: Basics, External Knowledge
 ---
 
 # Quickstart
