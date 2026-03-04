@@ -10,9 +10,9 @@ External Knowledge lets [kluster.ai](https://www.kluster.ai/){target=\_blank} Co
 
 ## Connecting to external tools
 
-1. **Connect an integration**: go to the [External Knowledge](https://platform.kluster.ai/external-knowledge){target=\_blank} page on the kluster.ai platform and connect your tool. [Jira](/code-reviews/external-knowledge/jira/) is the available integration.
+1. **Connect an integration**: Go to the [External Knowledge](https://platform.kluster.ai/external-knowledge){target=\_blank} page on the kluster.ai platform and connect your tool. [Jira](/code-reviews/external-knowledge/jira/) is the available integration.
 
-2. **Make sure the ticket ID is reachable by kluster**: how you do this depends on your tool:
+2. **Make sure the ticket ID is reachable by kluster**: How you do this depends on your tool:
 
     | Tool | What to do |
     |------|------------|

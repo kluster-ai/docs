@@ -53,8 +53,8 @@ For self-hosted or IT-managed Jira instances that do not support OAuth, you can 
 
 Once connected, kluster identifies Jira tickets by their **ticket ID** (e.g., `KAN-2`). The ticket context is automatically included in a code review when any of the following conditions are met:
 
-- **Branch name contains the ticket ID**: for example, a branch named `feature/KAN-2` triggers kluster to pull in the requirements from ticket `KAN-2`.
-- **Ticket ID is mentioned in the chat prompt**: including the ticket ID in your message to the AI assistant (e.g., "Create a Python script that prints Pi (Ticket KAN-2)") links the review to that ticket.
+- **Branch name contains the ticket ID**: For example, a branch named `feature/KAN-2` triggers kluster to pull in the requirements from ticket `KAN-2`.
+- **Ticket ID is mentioned in the chat prompt**: Including the ticket ID in your message to the AI assistant (e.g., "Create a Python script that prints Pi (Ticket KAN-2)") links the review to that ticket.
 
 How kluster detects the ticket depends on your tool:
 
