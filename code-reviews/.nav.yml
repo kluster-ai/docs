@@ -4,6 +4,7 @@ nav:
   - 'IDE reviews': ide-reviews
   - 'Repo reviews': repo-reviews
   - 'CLI': cli
+  - 'External Knowledge': external-knowledge
   - 'Configuration': configuration
   - 'Video library': video-library.md
   - 'FAQ': faq.md
