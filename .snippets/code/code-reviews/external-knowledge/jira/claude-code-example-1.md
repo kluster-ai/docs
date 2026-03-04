@@ -1,7 +1,7 @@
 <div data-termynal>
   <span data-ty>╭─── Claude Code v2.1.63 ────────────────────────────╮</span>
   <span data-ty>│                                                    │</span>
-  <span data-ty>│               Welcome back PaperMoon!              │</span>
+  <span data-ty>│               Welcome back kluster.ai!             │</span>
   <span data-ty>│                                                    │</span>
   <span data-ty>│                     ▐▛███▜▌                        │</span>
   <span data-ty>│                    ▝▜█████▛▘                       │</span>
