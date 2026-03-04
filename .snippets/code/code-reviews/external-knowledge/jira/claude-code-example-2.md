@@ -9,7 +9,7 @@
   <span data-ty>│                                                    │</span>
   <span data-ty>│  Opus 4.6 · Claude Max · kluster's Organization    │</span>
   <span data-ty>│                      /workspace                    │</span>
-  <span data-ty>╰───────────────────────-────────────────────────────╯</span>
+  <span data-ty>╰────────────────────────────────────────────────────╯</span>
   <span data-ty></span>
   <span data-ty>● kluster-verify — kluster_code_review_auto (MCP)</span>
   <span data-ty>  (modified_files_path: "/workspace/print_pi.py")</span>

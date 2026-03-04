@@ -1,6 +1,6 @@
 ---
 title: Jira Integration for Code Reviews
-description: Connect Jira to kluster.ai to review code against ticket requirements. Set up Cloud or self-hosted Jira and learn how ticket context flows into reviews.
+description: Connect Jira to kluster.ai to review code against ticket requirements. Set up Jira Cloud or self-hosted Jira and learn how ticket context flows into reviews.
 ---
 
 # Jira integration
@@ -13,7 +13,7 @@ For example, if a Jira ticket specifies that a function must accept command-line
 
 You can connect Jira from the [External Knowledge](https://platform.kluster.ai/external-knowledge){target=\_blank} page on the kluster.ai platform. The setup process depends on whether you use cloud-hosted Jira or a self-hosted (IT-managed) instance.
 
-### Cloud Jira (OAuth)
+### Jira Cloud (OAuth)
 
 For Jira Cloud instances, kluster uses an OAuth wizard for authentication.
 
