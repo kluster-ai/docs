@@ -1,6 +1,6 @@
 ---
 title: Repo Reviews from CLI
-description: Start and inspect repo reviews directly from the kluster-cli terminal workflow.
+description: Trigger and monitor system-wide repo reviews from your terminal using kluster-cli, with a terminal-first workflow for codebase analysis.
 categories: Repo reviews, CLI
 ---
 
