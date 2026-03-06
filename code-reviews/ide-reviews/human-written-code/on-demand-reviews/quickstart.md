@@ -1,12 +1,12 @@
 ---
 title: On-demand reviews quickstart
-description: Write code, verify on your terms. Three ways to trigger reviews in your IDE—right-click any selection, use hint buttons, or scan uncommitted changes before you commit.
+description: Trigger on-demand code reviews in your IDE using right-click, hint buttons, or pre-commit scanning to verify code quality on your own terms.
 categories: Basics, Human-written code, On-demand review
 ---
 
 # On-demand reviews quickstart
 
-With [kluster.ai](https://kluster.ai){target=_blank}, you can trigger reviews three ways: right-click any selection, use hint buttons, or scan uncommitted changes.
+With [kluster.ai](https://www.kluster.ai/){target=\_blank}, you can trigger reviews three ways: right-click any selection, use hint buttons, or scan uncommitted changes.
 
 !!! tip "Exclude files with .klusterignore"
     If there are files or folders you never want kluster.ai to review (generated code, build output, vendored dependencies), add them to a [`.klusterignore`](/code-reviews/configuration/klusterignore/) file. On-demand IDE reviews respect `.klusterignore`.

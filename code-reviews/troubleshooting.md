@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting
-description: Solutions for common issues with kluster.ai Code Reviews across all supported IDEs and CLI tools.
+description: Fix common problems with kluster.ai Code Reviews—from extension issues to CLI errors—across all supported IDEs and workflows.
 categories: Basics
 ---
 
@@ -86,7 +86,7 @@ The `kluster` binary is not in your `PATH`. Add the install directory:
   <span data-ty style="color: #ff6b6b;">Error: not authenticated. Please run 'kluster login' first</span>
 </div>
 
-Your API key may be missing or invalid. Run `kluster login` to re-authenticate with a valid key from [platform.kluster.ai/cli](https://platform.kluster.ai/cli){target=_blank}.
+Your API key may be missing or invalid. Run `kluster login` to re-authenticate with a valid key from [platform.kluster.ai/cli](https://platform.kluster.ai/cli){target=\_blank}.
 
 ### Git hook not triggering
 

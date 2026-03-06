@@ -1,6 +1,6 @@
 ---
 title: Pick your workflow
-description: Choose between human-written code and AI-generated code reviews based on how you write code. Or use both.
+description: Compare the supported Code Reviews modes—human-written, AI-generated, CLI, and repo-wide—and pick the workflow that fits how you write code.
 categories: Basics
 ---
 
@@ -62,7 +62,7 @@ Use it to review code you wrote yourself, audit files before committing, or chec
 
 ## AI-generated code
 
-AI-generated code reviews integrate directly with your AI coding assistant. When the AI generates or modifies code, [kluster.ai](https://kluster.ai){target=_blank} automatically analyzes the changes in real-time. You can also ask your AI to review existing files on demand—just say "review this file" and the AI triggers an on-demand review.
+AI-generated code reviews integrate directly with your AI coding assistant. When the AI generates or modifies code, [kluster.ai](https://www.kluster.ai/){target=\_blank} automatically analyzes the changes in real-time. You can also ask your AI to review existing files on demand—just say "review this file" and the AI triggers an on-demand review.
 
 This mode is designed for developers who code with AI assistants like Claude Code, Cursor, or Copilot. The review happens seamlessly in the background, catching security vulnerabilities, logic errors, and quality issues before they become problems.
 
@@ -101,7 +101,7 @@ Repo reviews complement your existing review workflow. Run them periodically to 
 **Available on**: Web dashboard and `kluster-cli` (requires GitHub, GitLab, or Bitbucket connection).
 
 !!! note "Usage limits"
-    Pro plans include 1 repo review per month. Enterprise plans include higher limits. [Contact us](https://kluster.ai/contact){target=_blank} to learn more.
+    Pro plans include 1 repo review per month. Enterprise plans include higher limits. [Contact us](https://www.kluster.ai/contact){target=\_blank} to learn more.
 
 [:octicons-arrow-right-24: Get started with repo reviews](/code-reviews/repo-reviews/quickstart/)
 

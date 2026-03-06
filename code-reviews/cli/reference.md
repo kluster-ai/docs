@@ -1,12 +1,12 @@
 ---
 title: CLI Reference
-description: All kluster-cli commands, configuration options, exit codes, and environment variables in one place.
+description: Reference for kluster.ai CLI commands, configuration options, and exit codes, with quick lookups for flags, config settings, and environment variables.
 categories: CLI, Reference
 ---
 
 # CLI reference
 
-Complete reference for all [kluster.ai](https://kluster.ai){target=_blank}'s CLI commands, configuration options, and exit codes. Use this page for quick lookups on commands, flags, config file settings, and environment variables.
+Complete reference for all [kluster.ai](https://www.kluster.ai/){target=\_blank}'s CLI commands, configuration options, and exit codes. Use this page for quick lookups on commands, flags, config file settings, and environment variables.
 
 ## Commands
 
@@ -174,7 +174,7 @@ kluster login
 kluster logout
 ```
 
-Get your API key from the [CLI setup page](https://platform.kluster.ai/cli){target=_blank}.
+Get your API key from the [CLI setup page](https://platform.kluster.ai/cli){target=\_blank}.
 
 You can also provide the API key directly without the interactive prompt:
 

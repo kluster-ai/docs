@@ -1,24 +1,24 @@
 ---
 title: MCP Tools Reference
-description: Learn how kluster.ai Code MCP tools work: parameters, response formats, issue categories, and settings for real-time code reviews.
+description: Learn how kluster.ai Code MCP tools work, including parameters, response formats, issue categories, and settings for real-time code reviews.
 categories: Reference
 ---
 
 # MCP Tools Reference
 
-The [kluster.ai](https://www.kluster.ai/){target=_blank} Code MCP server provides review tools for checking code quality and security. These tools enable real-time code reviews directly within your IDE through MCP integration.
+The [kluster.ai](https://www.kluster.ai/){target=\_blank} Code MCP server provides review tools for checking code quality and security. These tools enable real-time code reviews directly within your IDE through MCP integration.
 
 ## Available tools
 
 - **`kluster_code_review_auto`**: Automatically reviews code quality and detects bugs, including logic errors, security issues, and performance problems. Triggers automatically when code is generated or modified. Best for real-time reviews during active coding sessions, analyzing changes in context of the full conversation and related files.
-- **`kluster_dependency_validator`**: Validates the security and compliance of packages and dependencies. Triggers automatically before package installations or when package files are updated. Best for preventing vulnerable or non-compliant third-party libraries from entering your codebase before installation.
+- **`kluster_dependency_check`**: Validates the security and compliance of packages and dependencies. Triggers automatically before package installations or when package files are updated. Best for preventing vulnerable or non-compliant third-party libraries from entering your codebase before installation.
 - **`kluster_code_review_manual`**: Manually reviews specific files when explicitly requested by the user (e.g., "review this file", "check for bugs"). Best for auditing existing code, reviewing specific modules, or getting fix recommendations for individual files.
 
 This page documents the parameters and response formats you'll see when using these tools in Cursor, Claude Code, or any MCP-compatible client.
 
 ## Parameters
 
-=== "Automatic Reviews and Dependency Validator"
+=== "Automatic Reviews and Dependency Check"
 
     These tools analyze code changes and dependencies to detect bugs, security vulnerabilities, and other quality issues. Used for AI-generated code.
 
