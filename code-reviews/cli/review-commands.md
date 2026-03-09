@@ -1,7 +1,7 @@
 ---
 title: Review Commands
 description: Review staged changes, diffs, branches, and individual files with kluster-cli. Choose between instant and deep analysis modes.
-categories: CLI, Review
+categories: CLI
 ---
 
 # Review commands

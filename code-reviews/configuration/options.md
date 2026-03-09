@@ -1,6 +1,7 @@
 ---
 title: Options
 description: Configure kluster.ai Code Review settings, from analysis depth and sensitivity levels to issue types and enabled tools used to verify code across your workflow.
+categories: Configuration
 ---
 
 # Options

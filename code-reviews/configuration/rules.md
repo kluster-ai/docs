@@ -1,7 +1,7 @@
 ---
 title: Custom rules
 description: Learn how to define and manage custom code review rules to enforce consistent code quality, using manual rules or learned rules from GitHub repositories.
-categories: Basics
+categories: Configuration
 ---
 
 # Custom rules

@@ -1,7 +1,7 @@
 ---
 title: Background Auto Reviews - How It Works
 description: Understand how background auto reviews detect idle time, scan your uncommitted changes, and surface results directly in your IDE.
-categories: Human-written code, Automatic review
+categories: IDE Reviews
 ---
 
 # Background reviews: how it works
