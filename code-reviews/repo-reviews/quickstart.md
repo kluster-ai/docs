@@ -1,7 +1,7 @@
 ---
 title: Repo Reviews Quickstart
 description: Learn how to run system-wide codebase analysis with kluster.ai Repo Reviews to find cross-module bugs that slip through PR-level reviews.
-categories: Basics, Repo reviews
+categories: Basics, Repo Reviews
 ---
 
 # Repo Reviews quickstart

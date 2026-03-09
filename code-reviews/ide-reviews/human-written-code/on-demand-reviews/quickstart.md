@@ -1,7 +1,7 @@
 ---
 title: On-demand reviews quickstart
 description: Trigger on-demand code reviews in your IDE using right-click, hint buttons, or pre-commit scanning to verify code quality on your own terms.
-categories: Basics, Human-written code, On-demand review
+categories: Basics, IDE Reviews
 ---
 
 # On-demand reviews quickstart
