@@ -1,8 +1,9 @@
 nav:
   - 'Review modes': review-modes.md
   - 'Get started': get-started
-  - 'IDE reviews': ide-reviews
-  - 'Repo reviews': repo-reviews
+  - 'IDE Reviews': ide-reviews
+  # - 'PR Reviews': pr-reviews
+  - 'Repo Reviews': repo-reviews
   - 'CLI': cli
   - 'External Knowledge': external-knowledge
   - 'Configuration': configuration

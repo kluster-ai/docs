@@ -14,8 +14,8 @@ Once connected, the bot reviews every new PR and every new commit pushed to an o
 
 Before getting started, ensure you have:
 
-- A [kluster.ai](https://platform.kluster.ai/signup){target=\_blank} account
-- Admin access to the GitHub organization or account where you want to install the bot
+- A [kluster.ai](https://platform.kluster.ai/signup){target=\_blank} account.
+- Admin access to the GitHub organization or account where you want to install the bot.
 
 ## Connect GitHub
 
@@ -37,44 +37,42 @@ You can set up the GitHub integration from the [PR Reviews](https://platform.klu
 
     ![GitHub App installation page with organization and repository selection](/images/code-reviews/pr-reviews/pr-reviews-github-04.webp)
 
-7. You are redirected back to the kluster.ai platform. The GitHub integration shows as **Installed** and is ready to review your pull requests automatically.
+5. You are redirected back to the kluster.ai platform. The GitHub integration shows as **Installed** and is ready to review your pull requests automatically.
 
     ![GitHub integration showing Installed status on kluster.ai](/images/code-reviews/pr-reviews/pr-reviews-github-05.webp)
 
 !!! tip "Limit access to specific repositories"
     If your organization has many repositories, select only the ones you want the bot to review. You can update repository access at any time from your GitHub organization settings under **Installed GitHub Apps**.
 
-## What happens after setup
+## What Happens After Setup
 
 Once the GitHub App is installed, the kluster.ai bot begins reviewing pull requests automatically. No further action is required.
 
-### On new pull requests
+### On New Pull Requests
 
-When a pull request is opened, the bot analyzes all changes using ultra-deep analysis and posts its feedback.
+When a pull request is opened, the bot analyzes all changes using ultra-deep analysis and posts its feedback:
 
-#### Summary comment
+- A **summary comment** titled **kluster.ai PR Review Summary**, which includes a description of the changes (PR Summary), the review result (**All Clear** or a list of detected issues), and a prior review warning if no IDE or CLI reviews were performed on the branch.
 
-The bot posts a **kluster.ai PR Review Summary** comment that includes a description of the changes (PR Summary), the review result (**All Clear** or a list of detected issues), and a prior review warning if no IDE or CLI reviews were performed on the branch.
+    ![Example of a kluster.ai PR Review Summary comment on a GitHub pull request](/images/code-reviews/pr-reviews/pr-reviews-github-06.webp)
 
-![Example of a kluster.ai PR Review Summary comment on a GitHub pull request](/images/code-reviews/pr-reviews/pr-reviews-github-06.webp)
+- **Inline comments** on specific lines where issues were found. Each inline comment includes a severity badge (for example, `knowledge · critical`), a description, a detailed explanation, a recommended action, and quick issue actions to ignore the finding or copy an AI prompt for fixing it.
 
-#### Inline comments
+    ![Example of a kluster.ai inline comment on a specific code line in a pull request](/images/code-reviews/pr-reviews/pr-reviews-github-07.webp)
 
-When issues are detected, the bot posts inline comments on the affected lines of code. Each inline comment includes a severity badge (for example, `knowledge · critical`), a description, a detailed explanation, a recommended action, and quick issue actions to ignore the finding or copy an AI prompt for fixing it.
+    When clicking **Ignore issue** or **Copy AI prompt**, you are taken to the kluster.ai platform. From there, you can access the ignore menu to dismiss the finding or view the prompt needed to feed an AI agent for fixing the issue, which is automatically copied to your clipboard.
 
-![Example of a kluster.ai inline comment on a specific code line in a pull request](/images/code-reviews/pr-reviews/pr-reviews-github-07.webp)
-
-### On new commits
+### On New Commits
 
 When new commits are pushed to an open PR, the bot re-runs its analysis on the updated changes and updates its comments accordingly.
 
-### Prior review detection
+### Prior Review Detection
 
 If kluster was used during development on the branch (via IDE or CLI), the bot's summary comment includes review statistics, such as the number of reviews performed, issues found, and issues left unfixed. If no prior reviews were detected, the bot includes a note encouraging earlier use of kluster in the development workflow.
 
-## Next steps
+## Next Steps
 
 - **[PR Reviews overview](/code-reviews/pr-reviews/)**: Learn how the bot works across all supported platforms.
-- **[GitLab integration](/code-reviews/pr-reviews/gitlab/)**: Connect the kluster.ai bot to GitLab via API key.
-- **[Bitbucket integration](/code-reviews/pr-reviews/bitbucket/)**: Connect the kluster.ai bot to Bitbucket via API key.
+- **[GitLab integration](/code-reviews/pr-reviews/gitlab/)**: Connect the kluster.ai bot to GitLab via access token.
+- **[Bitbucket integration](/code-reviews/pr-reviews/bitbucket/)**: Connect the kluster.ai bot to Bitbucket via API token.
 - **[Review modes](/code-reviews/review-modes/)**: Understand all available review types.

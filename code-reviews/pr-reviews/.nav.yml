@@ -1,5 +1,5 @@
 nav:
   - 'Overview': index.md
-  - 'GitHub': github.md
-  - 'GitLab': gitlab.md
-  - 'Bitbucket': bitbucket.md
+  - ':simple-github: GitHub': github.md
+  - ':simple-gitlab: GitLab': gitlab.md
+  - ':simple-bitbucket: Bitbucket': bitbucket.md
