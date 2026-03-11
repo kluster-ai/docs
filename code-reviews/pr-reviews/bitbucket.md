@@ -10,6 +10,9 @@ Connect the [kluster.ai](https://www.kluster.ai/){target=\_blank} bot to your Bi
 
 Once connected, the bot reviews every new pull request and every new commit pushed to an open pull request. No additional configuration is needed.
 
+!!! tip "Use PR Reviews as your last line of defense"
+    For the best results, use kluster in your [IDE](/code-reviews/ide/) or [CLI](/code-reviews/cli/) during development. Catching issues early reduces review cycles and keeps pull requests clean. PR Reviews then acts as a safety net for anything missed before merging.
+
 ## Prerequisites
 
 Before getting started, ensure you have:
