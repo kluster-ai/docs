@@ -11,7 +11,7 @@
   }
 
   function ensureDialog() {
-    var dlg = document.querySelector('[data-md-component="dialog"]');
+    var dlg = document.querySelector('.md-dialog');
     if (!dlg) {
       dlg = document.createElement('div');
       dlg.className = 'md-dialog';

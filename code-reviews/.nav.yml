@@ -1,13 +1,13 @@
 nav:
-  - 'Review modes': review-modes.md
-  - 'Get started': get-started
+  - 'Review Modes': review-modes.md
+  - 'Get Started': get-started
   - 'IDE Reviews': ide-reviews
   # - 'PR Reviews': pr-reviews
   - 'Repo Reviews': repo-reviews
   - 'CLI': cli
   - 'External Knowledge': external-knowledge
   - 'Configuration': configuration
-  - 'Video library': video-library.md
+  - 'Video Library': video-library.md
   - 'FAQ': faq.md
   - 'Troubleshooting': troubleshooting.md
   - 'Reference': reference
