@@ -89,7 +89,7 @@ If kluster was used during development on the branch (via IDE or CLI), the bot's
 
 ## Next Steps
 
-- **[PR Reviews overview](/code-reviews/pr-reviews/)**: Learn how the bot works across all supported platforms.
+- **[PR Reviews quickstart](/code-reviews/pr-reviews/quickstart/)**: Learn how the bot works across all supported platforms.
 - **[GitHub integration](/code-reviews/pr-reviews/github/)**: Connect the kluster.ai bot to GitHub via OAuth and the GitHub App.
 - **[Bitbucket integration](/code-reviews/pr-reviews/bitbucket/)**: Connect the kluster.ai bot to Bitbucket via API token.
 - **[Review modes](/code-reviews/review-modes/)**: Understand all available review types.

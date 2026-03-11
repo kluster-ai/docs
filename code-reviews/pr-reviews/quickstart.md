@@ -1,5 +1,5 @@
 ---
-title: PR Reviews
+title: PR Reviews Quickstart
 description: Automatically review every pull request with the kluster.ai bot. Get summary reports and inline comments on GitHub, GitLab, and Bitbucket.
 ---
 
