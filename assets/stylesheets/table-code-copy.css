@@ -1,0 +1,40 @@
+/* Table Code Copy — inline copy button for <code> inside table cells */
+
+.table-code-copy-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  position: relative;
+}
+
+.table-code-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.15rem;
+  border: none;
+  border-radius: 0.2rem;
+  background: transparent;
+  color: var(--md-default-fg-color--lighter);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s, color 0.15s;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.table-code-copy-wrapper:hover .table-code-copy-btn,
+.table-code-copy-wrapper:focus-within .table-code-copy-btn,
+.table-code-copy-btn:focus-visible {
+  opacity: 1;
+}
+
+@media (pointer: coarse) {
+  .table-code-copy-btn {
+    opacity: 1;
+  }
+}
+
+.table-code-copy-btn:hover {
+  color: var(--md-accent-fg-color);
+}
