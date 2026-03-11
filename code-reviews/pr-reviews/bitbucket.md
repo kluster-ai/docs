@@ -33,7 +33,7 @@ The kluster.ai bot requires a Bitbucket API token to access your repositories an
 
     | Category       | Scope                         | Description                                 |
     |:--------------:|:-----------------------------:|:-------------------------------------------:|
-    | Account & User | `read:account`                | View users profiles.                        |
+    | Account & User | `read:account`                | View users' profiles.                       |
     | Account & User | `read:user:bitbucket`         | View user info.                             |
     | Repository     | `read:repository:bitbucket`   | View your repositories.                     |
     | Repository     | `write:repository:bitbucket`  | Modify your repositories.                   |
