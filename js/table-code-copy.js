@@ -24,6 +24,35 @@
     return dlg;
   }
 
+  function copyToClipboard(text) {
+    try {
+      return navigator.clipboard.writeText(text).then(function () {
+        return true;
+      }).catch(function () {
+        return fallbackCopy(text);
+      });
+    } catch (e) {
+      return Promise.resolve(fallbackCopy(text));
+    }
+  }
+
+  function fallbackCopy(text) {
+    var textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    var ok = false;
+    try {
+      ok = document.execCommand('copy');
+    } catch (e) {
+      /* silent */
+    }
+    document.body.removeChild(textarea);
+    return ok;
+  }
+
   function showToast(message) {
     var dlg = ensureDialog();
     var msg = dlg.querySelector('.md-dialog__inner');
@@ -49,8 +78,8 @@
       e.preventDefault();
       e.stopPropagation();
       var text = codeEl.textContent;
-      navigator.clipboard.writeText(text).then(function () {
-        showToast('Copied to clipboard');
+      copyToClipboard(text).then(function (ok) {
+        showToast(ok ? 'Copied to clipboard' : 'Failed to copy');
       });
     });
 
