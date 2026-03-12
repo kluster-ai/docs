@@ -12,7 +12,7 @@ The bot acts as a last line of defense. It catches issues that were missed durin
 !!! tip "Best used as a safety net"
     PR Reviews is most effective when combined with earlier review stages. Install the [kluster.ai extension](/code-reviews/get-started/installation/) in your IDE or set up [CLI hooks](/code-reviews/cli/git-hooks/) to catch issues while you code. The PR bot then confirms nothing was missed.
 
-## How It Works
+## How it works
 
 Once installed, the kluster.ai bot triggers automatically in two situations:
 
@@ -21,7 +21,7 @@ Once installed, the kluster.ai bot triggers automatically in two situations:
 
 Each review produces two types of feedback:
 
-### Summary Comment
+### Summary comment
 
 The bot posts a top-level **kluster.ai PR Review Summary** comment on the pull request.
 
@@ -30,10 +30,10 @@ The bot posts a top-level **kluster.ai PR Review Summary** comment on the pull r
 This comment includes:
 
 - **PR Summary**: A description of what the pull request changes.
-- **Review result**: Either **All Clear** (no issues detected) or a list of issues found, grouped by severity.
+- **Review result**: Either All Clear (no issues detected) or a list of issues found, grouped by severity.
 - **Prior review warning**: If no IDE or CLI reviews were performed on the branch, the summary includes a warning encouraging you to use kluster earlier in your workflow.
 
-### Inline Comments
+### Inline comments
 
 When the bot detects an issue, it posts an inline comment directly on the affected lines of code.
 
@@ -45,7 +45,7 @@ Each inline comment includes:
 - **Description**: A summary of the issue.
 - **Explanation**: A detailed technical analysis of why the code is problematic.
 - **Recommended Action**: A concrete suggestion for how to fix the issue.
-- **Issue Actions**: Quick actions to manage the finding:
+- **Issue Actions**: Quick actions to manage the finding.
     - **Ignore issue**: Dismiss the finding if it is not relevant.
     - **Copy AI prompt**: Copy a pre-built prompt to your clipboard that you can paste into an AI assistant to help fix the issue.
 
@@ -54,7 +54,7 @@ Every PR review runs at the **ultra-deep** analysis level automatically. This is
 !!! tip "Enforce reviews before merging"
     The kluster.ai bot posts its findings as pull request conversations. You can require all conversations to be resolved before a pull request can be merged. This turns the bot's inline comments into a gating mechanism that ensures detected issues are addressed.
 
-## Get Started
+## Get started
 
 <div class="grid cards" markdown>
 
