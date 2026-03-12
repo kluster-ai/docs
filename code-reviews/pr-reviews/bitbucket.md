@@ -6,7 +6,7 @@ categories: PR Reviews
 
 # Bitbucket
 
-Connect the [kluster.ai](https://www.kluster.ai/){target=\_blank} bot to your Bitbucket repositories to automatically review every pull request. The setup uses a token-based integration: provide a Bitbucket API token, select the repositories to monitor, and the bot begins reviewing your pull requests.
+Connect the [kluster.ai](https://www.kluster.ai/){target=\_blank} bot to your Bitbucket repositories to automatically review every pull request. The setup uses a token-based integration that requires providing a Bitbucket API token and selecting the repositories to monitor before the bot begins reviewing your pull requests.
 
 Once connected, the bot reviews every new pull request and every new commit pushed to an open pull request. No additional configuration is needed.
 
@@ -66,19 +66,19 @@ With an [API token](#create-an-api-token) created, you can set up the Bitbucket 
 
     ![Dialog prompting for Bitbucket API credentials](/images/code-reviews/pr-reviews/pr-reviews-bitbucket-01.webp)
 
-3. After the credentials are validated, a message confirms the Bitbucket integration (showing as **Installed**) and the registered workspace(s). By default, kluster has access to all workspaces associated with the API token owner.
+3. After the credentials are validated, a message confirms the Bitbucket integration as **Installed** and lists the registered workspaces. By default, kluster has access to all workspaces associated with the API token owner.
 
     ![Bitbucket integration showing Connected status on kluster.ai](/images/code-reviews/pr-reviews/pr-reviews-bitbucket-02.webp)
 
-## What Happens After Setup
+## What happens after setup
 
 Once the integration is connected, the kluster.ai bot begins reviewing pull requests automatically. No further action is required.
 
-### On New Pull Requests
+### On new pull requests
 
 When a pull request is opened, the bot analyzes all changes using ultra-deep analysis and posts its feedback:
 
-- A **summary comment** titled **kluster.ai PR Review Summary**, which includes a description of the changes, the review result (**All Clear** or a list of detected issues), and a prior review warning if no IDE or CLI reviews were performed on the branch.
+- A **summary comment** titled **kluster.ai PR Review Summary**, which includes a description of the changes, the review result (All Clear or a list of detected issues), and a prior review warning if no IDE or CLI reviews were performed on the branch.
 
     ![Example of a kluster.ai PR Review Summary comment on a Bitbucket pull request](/images/code-reviews/pr-reviews/pr-reviews-bitbucket-04.webp)
 
@@ -91,15 +91,15 @@ When a pull request is opened, the bot analyzes all changes using ultra-deep ana
 !!! warning "Bot comments appear under the token owner's name"
     In Bitbucket, the bot's comments are attributed to the user who created the API token. This is why a dedicated service account is recommended in the [Create an API token](#create-an-api-token) section.
 
-### On New Commits
+### On new commits
 
 When new commits are pushed to an open pull request, the bot re-runs its analysis on the updated changes and updates its comments accordingly.
 
-### Prior Review Detection
+### Prior review detection
 
 If kluster was used during development on the branch (via IDE or CLI), the bot's summary comment includes review statistics, such as the number of reviews performed, issues found, and issues left unfixed. If no prior reviews were detected, the bot includes a note encouraging earlier use of kluster in the development workflow.
 
-## Next Steps
+## Next steps
 
 - **[PR Reviews quickstart](/code-reviews/pr-reviews/quickstart/)**: Learn how the bot works across all supported platforms.
 - **[GitHub integration](/code-reviews/pr-reviews/github/)**: Connect the kluster.ai bot to GitHub via OAuth and the GitHub App.
