@@ -6,7 +6,7 @@ categories: PR Reviews
 
 # GitLab
 
-Connect the [kluster.ai](https://www.kluster.ai/){target=\_blank} bot to your GitLab projects to automatically review every merge request. The setup uses a token-based integration: provide a GitLab access token, select the projects to monitor, and the bot begins reviewing your merge requests.
+Connect the [kluster.ai](https://www.kluster.ai/){target=\_blank} bot to your GitLab projects to automatically review every merge request. The setup uses a token-based integration. Provide a GitLab access token, select the projects to monitor, and the bot begins reviewing your merge requests.
 
 Once connected, the bot reviews every new merge request and every new commit pushed to an open merge request. No additional configuration is needed.
 
@@ -21,7 +21,7 @@ Before getting started, ensure you have:
 - A GitLab account with at least **Developer** access to the projects you want to review.
 - A GitLab access token with the `api` scope. See [Create an access token](#create-an-access-token) for instructions.
 
-## Create an Access Token
+## Create an access token
 
 The kluster.ai bot requires a GitLab access token with the `api` scope to read merge requests and post review comments.
 
@@ -54,19 +54,19 @@ You can set up the GitLab integration from the [PR Reviews](https://platform.klu
 
     ![Dialog prompting for GitLab API token](/images/code-reviews/pr-reviews/pr-reviews-gitlab-01.webp)
 
-3. After the credentials are validated, a message confirms the GitLab integration (showing as **Installed**) and the registered group(s). By default, kluster has access to all groups associated with the API token owner.
+3. After the credentials are validated, a message confirms the GitLab integration as **Installed** and lists the registered workspaces. By default, kluster has access to all groups associated with the API token owner.
 
     ![GitLab integration showing Installed status on kluster.ai](/images/code-reviews/pr-reviews/pr-reviews-gitlab-02.webp)
 
-## What Happens After Setup
+## What happens after setup
 
 Once the integration is connected, the kluster.ai bot begins reviewing merge requests automatically. No further action is required.
 
-### On New Merge Requests
+### On new merge requests
 
 When a merge request is opened, the bot triggers a pipeline that analyzes all changes using ultra-deep analysis. Once the pipeline completes, the bot posts its feedback:
 
-- A **summary comment** titled **kluster.ai PR Review Summary**, which includes a description of the changes, the review result (**All Clear** or a list of detected issues), and a prior review warning if no IDE or CLI reviews were performed on the branch.
+- A **summary comment** titled **kluster.ai PR Review Summary**, which includes a description of the changes, the review result (All Clear or a list of detected issues), and a prior review warning if no IDE or CLI reviews were performed on the branch.
 
     ![Example of a kluster.ai PR Review Summary comment on a GitLab merge request](/images/code-reviews/pr-reviews/pr-reviews-gitlab-03.webp)
 
@@ -79,15 +79,15 @@ When a merge request is opened, the bot triggers a pipeline that analyzes all ch
 !!! warning "Bot comments appear under the token owner's name"
     In GitLab, the bot's comments are attributed to the user who created the access token. This is why a dedicated service account is recommended in the [Create an access token](#create-an-access-token) section.
 
-### On New Commits
+### On new commits
 
 When new commits are pushed to an open merge request, the bot re-runs its analysis on the updated changes and updates its comments accordingly.
 
-### Prior Review Detection
+### Prior review detection
 
 If kluster was used during development on the branch (via IDE or CLI), the bot's summary comment includes review statistics, such as the number of reviews performed, issues found, and issues left unfixed. If no prior reviews were detected, the bot includes a note encouraging earlier use of kluster in the development workflow.
 
-## Next Steps
+## Next steps
 
 - **[PR Reviews quickstart](/code-reviews/pr-reviews/quickstart/)**: Learn how the bot works across all supported platforms.
 - **[GitHub integration](/code-reviews/pr-reviews/github/)**: Connect the kluster.ai bot to GitHub via OAuth and the GitHub App.
