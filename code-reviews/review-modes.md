@@ -6,7 +6,7 @@ categories: Basics
 
 # Code Reviews
 
-Code Reviews analyzes your code for bugs, security vulnerabilities, and quality issues. It works for **human-written code**, **AI-generated code**, **repo reviews**, and the **standalone CLI**, with review modes tailored to each workflow.
+Code Reviews Test analyzes your code for bugs, security vulnerabilities, and quality issues. It works for **human-written code**, **AI-generated code**, **repo reviews**, and the **standalone CLI**, with review modes tailored to each workflow.
 
 For in-editor reviews, the service integrates directly into your IDE or CLI (Cursor, VS Code, Windsurf, Claude Code, and others), analyzing code as you work. For terminal-based workflows, the standalone CLI provides reviews directly from the command line. For system-wide analysis, repo reviews scan your entire repository via the web dashboard or `kluster-cli`.
 
