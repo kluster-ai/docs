@@ -127,8 +127,8 @@ Connect kluster to external tools like Jira so your code reviews include project
 
 ## Next steps
 
-- **[Human-written code quickstart](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/)**: Set up on-demand reviews in your editor.
-- **[AI-generated code quickstart](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/)**: Set up automatic reviews for AI-assisted coding.
+- **[Human-written code](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/)**: Set up on-demand reviews in your editor.
+- **[AI-generated code](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/)**: Set up automatic reviews for AI-assisted coding.
 - **[CLI quickstart](/code-reviews/cli/quickstart/)**: Review code from the terminal.
 - **[Repo reviews quickstart](/code-reviews/repo-reviews/quickstart/)**: Run your first system-wide codebase analysis.
 - **[External Knowledge quickstart](/code-reviews/external-knowledge/quickstart/)**: Connect kluster to Jira for context-aware reviews.

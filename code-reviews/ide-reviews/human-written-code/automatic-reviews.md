@@ -1,15 +1,15 @@
 ---
 title: Automatic reviews
-description: Enable background automatic reviews to scan your uncommitted changes after you stop typing, and understand how kluster.ai detects idle time and surfaces results in your IDE.
+description: Enable automatic reviews to scan your uncommitted changes after you stop typing, and understand how kluster.ai detects idle time and surfaces results in your IDE.
 categories: Basics, IDE Reviews
 ---
 
 # Automatic reviews
 
-Background reviews watch your uncommitted changes and run automatically in the background. You do not need to click anything.
+Automatic reviews watch your uncommitted changes and run in the background. You do not need to click anything.
 
 !!! tip "Exclude files with .klusterignore"
-    Add a [`.klusterignore`](/code-reviews/configuration/klusterignore/) file to exclude files and folders from background reviews (syntax is the same as `.gitignore`).
+    Add a [`.klusterignore`](/code-reviews/configuration/klusterignore/) file to exclude files and folders from automatic reviews (syntax is the same as `.gitignore`).
 
 ## Prerequisites
 
@@ -21,15 +21,18 @@ Background reviews watch your uncommitted changes and run automatically in the b
 2.  In **Enabled Tools**, toggle **Ambient Background Reviews (Beta, Enterprise plan)** on.
 3.  Keep coding. Reviews run automatically once enabled.
 
+!!! note
+    Automatic reviews appear as **Ambient Background Reviews** in the platform UI.
+
 ![Background reviews enabled in Options](/images/code-reviews/ide-reviews/human-written-code/background-reviews/background-reviews.webp)
 
 ## How it works
 
-Background reviews run in the background while you code. The extension periodically checks your diff and resets an idle timer each time it changes. When the timer runs out, [kluster.ai](https://www.kluster.ai/){target=\_blank} scans your uncommitted changes and notifies you only if it finds issues.
+Automatic reviews run in the background while you code. The extension periodically checks your diff and resets an idle timer each time it changes. When the timer runs out, [kluster.ai](https://www.kluster.ai/){target=\_blank} scans your uncommitted changes and notifies you only if it finds issues.
 
 ## What gets reviewed
 
-Background reviews include staged, unstaged, untracked, and unsaved editor changes—basically everything that would show up in `git status` plus your current unsaved work.
+Automatic reviews include staged, unstaged, untracked, and unsaved editor changes—basically everything that would show up in `git status` plus your current unsaved work.
 
 Only text files are reviewed. Binary files and common generated files (like `node_modules` or build outputs) are filtered out automatically.
 
@@ -44,7 +47,7 @@ Results show up in three places:
 - **Gutter icons**: Visual markers next to flagged lines.
 - **Problems panel**: All issues listed in one place.
 
-Background review results are appended to any existing on-demand reviews results—they don't replace them.
+Automatic review results are appended to any existing on-demand review results—they don't replace them.
 
 ## Branch switching
 

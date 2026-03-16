@@ -15,7 +15,7 @@ categories: Troubleshooting
 
 ### I mostly write code without AI—is kluster.ai useful for me?
 
-Yes. Human-written code reviews are built for this. Right-click any code or press `Ctrl+Shift+K` to trigger a review. No AI assistant needed. See [Human-written code quickstart](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/) for setup.
+Yes. Human-written code reviews are built for this. Right-click any code or press `Ctrl+Shift+K` to trigger a review. No AI assistant needed. See [Human-written code reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/) for setup.
 
 ### When should I run an on-demand review?
 
