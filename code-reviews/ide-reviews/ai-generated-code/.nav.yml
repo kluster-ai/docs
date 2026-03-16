@@ -1,4 +1,4 @@
 nav:
   - 'On-demand reviews': on-demand-reviews.md
-  - 'Automatic reviews': automatic-reviews
-  - 'Examples': examples
+  - 'Automatic reviews': automatic-reviews.md
+  - 'Examples': examples.md

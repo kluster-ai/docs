@@ -20,8 +20,8 @@ The syntax and matching behavior are intentionally the same as `.gitignore` (pat
 
 | Tool | Workflow | Reference |
 |---|---|---|
-| IDE | On-demand reviews (human-written code) | [On-demand reviews quickstart](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/) |
-| IDE | Background reviews (human-written code) | [Background reviews quickstart](/code-reviews/ide-reviews/human-written-code/automatic-background-reviews/quickstart/) |
+| IDE | On-demand reviews (human-written code) | [On-demand reviews quickstart](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/) |
+| IDE | Background reviews (human-written code) | [Background reviews quickstart](/code-reviews/ide-reviews/human-written-code/automatic-reviews/) |
 | CLI | kluster.ai CLI | [Review commands](/code-reviews/cli/review-commands/) |
 
 !!! note "Not yet supported"
@@ -78,8 +78,8 @@ When a file matches `.klusterignore`, it is excluded from the review input:
 
 ## Next steps
 
-- **[On-demand reviews quickstart](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/)**: Run manual reviews in your IDE and verify changes on your terms.
-- **[Background reviews quickstart](/code-reviews/ide-reviews/human-written-code/automatic-background-reviews/quickstart/)**: Enable automatic reviews that trigger after you stop typing.
+- **[On-demand reviews quickstart](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/)**: Run manual reviews in your IDE and verify changes on your terms.
+- **[Background reviews quickstart](/code-reviews/ide-reviews/human-written-code/automatic-reviews/)**: Enable automatic reviews that trigger after you stop typing.
 - **[Review commands (CLI)](/code-reviews/cli/review-commands/)**: Review staged changes, diffs, or specific files from the terminal.
 
 ## Troubleshooting

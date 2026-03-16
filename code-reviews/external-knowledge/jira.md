@@ -102,4 +102,4 @@ After the AI coding agent finishes the implementation, kluster performs a follow
 
 - **[Configuration options](/code-reviews/configuration/options/)**: Adjust sensitivity, analysis depth, and enabled tools.
 - **[Custom rules](/code-reviews/configuration/rules/)**: Define additional project-specific review standards.
-- **[Automatic reviews quickstart](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/quickstart/)**: Set up real-time reviews for AI-generated code.
+- **[Automatic reviews quickstart](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/)**: Set up real-time reviews for AI-generated code.
