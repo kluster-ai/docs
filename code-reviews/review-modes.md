@@ -40,7 +40,7 @@ Review code you write yourself with on-demand reviews—no AI assistant needed. 
 
 **Compatible with**: Cursor, VS Code, Windsurf, Antigravity (IDEs only)
 
-[:octicons-arrow-right-24: Get started with human-written code reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/)
+[:octicons-arrow-right-24: Get started with human-written code reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/)
 
 ## AI-generated code
 
@@ -55,7 +55,7 @@ When your AI coding assistant generates or modifies code, kluster.ai automatical
 
 **Compatible with**: Cursor, VS Code, Windsurf, Antigravity (IDEs) and Claude Code, Codex CLI (CLIs)
 
-[:octicons-arrow-right-24: Get started with AI-generated code reviews](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/quickstart/)
+[:octicons-arrow-right-24: Get started with AI-generated code reviews](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/)
 
 ## Repo reviews
 
@@ -91,6 +91,16 @@ Review code directly from the terminal without an IDE or AI assistant. The klust
 
 [:octicons-arrow-right-24: Get started with CLI](/code-reviews/cli/quickstart/)
 
+## External knowledge
+
+**For context-aware reviews using your project management tools.**
+
+External Knowledge connects kluster to external sources like Jira, so code reviews can verify your implementation against real ticket requirements and specifications. Instead of reviewing code in isolation, kluster uses the context from your connected tools to make its analysis more accurate.
+
+**Available integrations**: Jira
+
+[:octicons-arrow-right-24: Set up External Knowledge](/code-reviews/external-knowledge/quickstart/)
+
 !!! tip "Need help choosing?"
     See [Pick your workflow](/code-reviews/get-started/pick-your-workflow/) for a detailed comparison and decision guide.
 
@@ -99,8 +109,9 @@ Review code directly from the terminal without an IDE or AI assistant. The klust
 ## Next steps
 
 - **[Installation](/code-reviews/get-started/installation/)**: Install kluster.ai in your IDE or CLI tool.
-- **[Human-written code](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/)**: Get started with in-editor reviews.
-- **[AI-generated code](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/quickstart/)**: Set up automatic and on-demand reviews.
+- **[Human-written code](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/)**: Get started with in-editor reviews.
+- **[AI-generated code](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/)**: Set up automatic and on-demand reviews.
 - **[Repo reviews](/code-reviews/repo-reviews/quickstart/)**: Analyze your entire codebase for system-wide issues.
 - **[CLI](/code-reviews/cli/quickstart/)**: Review code from the terminal with the standalone CLI.
+- **[External Knowledge](/code-reviews/external-knowledge/quickstart/)**: Connect kluster to Jira for context-aware reviews.
 - **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Compare modes and find the right fit.

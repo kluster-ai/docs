@@ -1,10 +1,10 @@
 ---
-title: On-demand reviews quickstart
+title: On-demand reviews for human-written code
 description: Trigger on-demand code reviews in your IDE using right-click, hint buttons, or pre-commit scanning to verify code quality on your own terms.
 categories: Basics, IDE Reviews
 ---
 
-# On-demand reviews quickstart
+# On-demand reviews 
 
 With [kluster.ai](https://www.kluster.ai/){target=\_blank}, you can trigger reviews three ways: right-click any selection, use hint buttons, or scan uncommitted changes.
 
@@ -78,10 +78,41 @@ Select any code in your editor, right-click, and choose **Review with kluster.ai
 
 ## Compatible with
 
-- Cursor
-- VS Code
-- Windsurf
-- Antigravity
+<div class="grid cards" markdown>
+
+-   :simple-cursor: **Cursor**
+
+    ---
+
+    AI-native code editor with built-in kluster.ai extension support.
+
+    [:octicons-arrow-right-24: Install for Cursor](/code-reviews/get-started/installation/)
+
+-   :material-microsoft-visual-studio-code: **VS Code**
+
+    ---
+
+    Lightweight editor with kluster.ai extension and Copilot integration.
+
+    [:octicons-arrow-right-24: Install for VS Code](/code-reviews/get-started/installation/)
+
+-   :simple-windsurf: **Windsurf**
+
+    ---
+
+    AI-powered IDE by Codeium with kluster.ai extension support.
+
+    [:octicons-arrow-right-24: Install for Windsurf](/code-reviews/get-started/installation/)
+
+-   :antigravity-antigravity: **Antigravity**
+
+    ---
+
+    Next-generation IDE with native MCP integration for kluster.ai.
+
+    [:octicons-arrow-right-24: Install for Antigravity](/code-reviews/get-started/installation/)
+
+</div>
 
 ## Configuration
 
