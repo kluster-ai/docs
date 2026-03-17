@@ -1,6 +1,6 @@
 ---
-title: Automatic reviews
-description: Get started with automatic code reviews and dependency checks when using AI assistants. See how kluster.ai reviews code in real-time as your AI generates it and validates packages before installation.
+title: Automatic reviews for AI-generated code
+description: Set up automatic code reviews and dependency checks for AI-generated code. Reviews run in real-time as your AI writes code.
 categories: Basics, IDE Reviews
 ---
 

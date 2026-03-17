@@ -1,10 +1,10 @@
 ---
-title: On-demand reviews quickstart
+title: On-demand reviews for human-written code
 description: Trigger on-demand code reviews in your IDE using right-click, hint buttons, or pre-commit scanning to verify code quality on your own terms.
 categories: Basics, IDE Reviews
 ---
 
-# On-demand reviews quickstart
+# On-demand reviews 
 
 With [kluster.ai](https://www.kluster.ai/){target=\_blank}, you can trigger reviews three ways: right-click any selection, use hint buttons, or scan uncommitted changes.
 

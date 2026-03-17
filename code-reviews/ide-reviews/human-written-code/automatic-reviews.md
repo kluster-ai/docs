@@ -1,6 +1,6 @@
 ---
-title: Automatic reviews
-description: Enable automatic reviews to scan your uncommitted changes after you stop typing, and understand how kluster.ai detects idle time and surfaces results in your IDE.
+title: Automatic reviews for human-written code
+description: Enable automatic reviews to scan uncommitted changes after you stop typing. Learn how kluster.ai detects idle time and surfaces results.
 categories: Basics, IDE Reviews
 ---
 

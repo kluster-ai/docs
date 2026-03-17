@@ -1,5 +1,5 @@
 ---
-title: On-demand reviews
+title: On-demand reviews for AI-generated code
 description: Ask your AI assistant to review existing code on demand. Audit files, check for security issues, or verify code quality.
 categories: IDE Reviews
 ---
