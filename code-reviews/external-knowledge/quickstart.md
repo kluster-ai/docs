@@ -26,6 +26,14 @@ External Knowledge lets [kluster.ai](https://www.kluster.ai/){target=\_blank} Co
 
 ## Available integrations
 
-| Integration | Description | Status |
-|:-----------:|:-----------:|:------:|
-| **[Jira](/code-reviews/external-knowledge/jira/)** | Pull ticket requirements into code reviews to verify implementation matches specifications | Available |
+<div class="grid cards" markdown>
+
+-   :simple-jira: **Jira**
+
+    ---
+
+    Pull ticket requirements into code reviews to verify your implementation matches specifications.
+
+    [:octicons-arrow-right-24: Set up Jira](/code-reviews/external-knowledge/jira/)
+
+</div>

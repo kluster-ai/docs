@@ -57,7 +57,7 @@ Use it to review code you wrote yourself, audit files before committing, or chec
 !!! info "Not available for CLI tools"
     Human-written code reviews require an IDE extension. For CLI tools like Claude Code or Codex CLI, use AI-generated code reviews instead.
 
-[:octicons-arrow-right-24: Get started with human-written code reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/)
+[:octicons-arrow-right-24: Get started with human-written code reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/)
 
 
 ## AI-generated code
@@ -71,7 +71,7 @@ This mode is designed for developers who code with AI assistants like Claude Cod
 - **IDE extensions**: Cursor, VS Code, Windsurf, Antigravity.
 - **CLI tools**: Claude Code, Codex CLI.
 
-[:octicons-arrow-right-24: Get started with AI-generated code reviews](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/quickstart/)
+[:octicons-arrow-right-24: Get started with AI-generated code reviews](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/)
 
 
 ## CLI
@@ -119,9 +119,16 @@ If you use Cursor, VS Code, Windsurf, or Antigravity, you get both human-written
 
 Add CLI hooks to enforce reviews on every push, and run repo reviews periodically as a safety net to catch system-wide issues that survive individual code reviews.
 
+## Enrich reviews with External Knowledge
+
+Connect kluster to external tools like Jira so your code reviews include project requirements and ticket specifications. When kluster knows what you're building, it can verify that your implementation matches the spec — not just that the code is correct.
+
+[:octicons-arrow-right-24: Set up External Knowledge](/code-reviews/external-knowledge/quickstart/)
+
 ## Next steps
 
-- **[Human-written code quickstart](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/)**: Set up on-demand reviews in your editor.
-- **[AI-generated code quickstart](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/quickstart/)**: Set up automatic reviews for AI-assisted coding.
+- **[Human-written code](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/)**: Set up on-demand reviews in your editor.
+- **[AI-generated code](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/)**: Set up automatic reviews for AI-assisted coding.
 - **[CLI quickstart](/code-reviews/cli/quickstart/)**: Review code from the terminal.
 - **[Repo reviews quickstart](/code-reviews/repo-reviews/quickstart/)**: Run your first system-wide codebase analysis.
+- **[External Knowledge quickstart](/code-reviews/external-knowledge/quickstart/)**: Connect kluster to Jira for context-aware reviews.

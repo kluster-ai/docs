@@ -10,8 +10,7 @@ Connect the [kluster.ai](https://www.kluster.ai/){target=\_blank} bot to your Bi
 
 Once connected, the bot reviews every new pull request and every new commit pushed to an open pull request. No additional configuration is needed.
 
-!!! tip "Use PR Reviews as your last line of defense"
-    For the best results, use kluster in your [IDE](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/quickstart/) or [CLI](/code-reviews/cli/quickstart/) during development. Catching issues early reduces review cycles and keeps pull requests clean. PR Reviews then acts as a safety net for anything missed before merging.
+--8<-- 'text/code-reviews/pr-reviews-tip.md'
 
 ## Prerequisites
 
@@ -34,22 +33,22 @@ The kluster.ai bot requires a Bitbucket API token to access your repositories an
 4. When prompted to choose a product, select **Bitbucket**.
 5. Grant the token the scopes listed in the following table. All scopes are required for the bot to analyze code, post review comments, and manage webhooks:
 
-    | Category       | Scope                         | Description                                 |
-    |:--------------:|:-----------------------------:|:-------------------------------------------:|
-    | Account & User | `read:account`                | View users' profiles.                       |
-    | Account & User | `read:user:bitbucket`         | View user info.                             |
-    | Repository     | `read:repository:bitbucket`   | View your repositories.                     |
-    | Repository     | `write:repository:bitbucket`  | Modify your repositories.                   |
-    | Pull Requests  | `read:pullrequest:bitbucket`  | View your pull requests.                    |
-    | Pull Requests  | `write:pullrequest:bitbucket` | Modify your pull requests.                  |
-    | Issues         | `read:issue:bitbucket`        | View your issues.                           |
-    | Issues         | `write:issue:bitbucket`       | Modify your issues.                         |
-    | Workspace      | `read:workspace:bitbucket`    | View your workspaces.                       |
-    | Workspace      | `admin:project:bitbucket`     | Administer your projects.                   |
-    | Webhooks       | `read:webhook:bitbucket`      | View your webhooks.                         |
-    | Webhooks       | `write:webhook:bitbucket`     | Modify your webhooks.                       |
-    | Pipelines      | `read:pipeline:bitbucket`     | View your pipelines.                        |
-    | Pipelines      | `read:runner:bitbucket`       | View your workspaces/repositories' runners. |
+    |    Category    |                    Scope                     |                 Description                 |
+    |:--------------:|:--------------------------------------------:|:-------------------------------------------:|
+    | Account & User |        <pre>```read:account```</pre>         |            View users' profiles.            |
+    | Account & User |     <pre>```read:user:bitbucket```</pre>     |               View user info.               |
+    |   Repository   |  <pre>```read:repository:bitbucket```</pre>  |           View your repositories.           |
+    |   Repository   | <pre>```write:repository:bitbucket```</pre>  |          Modify your repositories.          |
+    | Pull Requests  | <pre>```read:pullrequest:bitbucket```</pre>  |          View your pull requests.           |
+    | Pull Requests  | <pre>```write:pullrequest:bitbucket```</pre> |         Modify your pull requests.          |
+    |     Issues     |    <pre>```read:issue:bitbucket```</pre>     |              View your issues.              |
+    |     Issues     |    <pre>```write:issue:bitbucket```</pre>    |             Modify your issues.             |
+    |   Workspace    |  <pre>```read:workspace:bitbucket```</pre>   |            View your workspaces.            |
+    |   Workspace    |   <pre>```admin:project:bitbucket```</pre>   |          Administer your projects.          |
+    |    Webhooks    |   <pre>```read:webhook:bitbucket```</pre>    |             View your webhooks.             |
+    |    Webhooks    |   <pre>```write:webhook:bitbucket```</pre>   |            Modify your webhooks.            |
+    |   Pipelines    |   <pre>```read:pipeline:bitbucket```</pre>   |            View your pipelines.             |
+    |   Pipelines    |    <pre>```read:runner:bitbucket```</pre>    | View your workspaces/repositories' runners. |
 
     !!! tip "Copy scopes to find them quickly"
         Click the copy button next to each scope in the table and paste it into the search field on the Bitbucket token creation page to locate the permission.

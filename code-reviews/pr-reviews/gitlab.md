@@ -10,8 +10,7 @@ Connect the [kluster.ai](https://www.kluster.ai/){target=\_blank} bot to your Gi
 
 Once connected, the bot reviews every new merge request and every new commit pushed to an open merge request. No additional configuration is needed.
 
-!!! tip "Use PR Reviews as your last line of defense"
-    For the best results, use kluster in your [IDE](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/quickstart/) or [CLI](/code-reviews/cli/quickstart/) during development. Catching issues early reduces review cycles and keeps merge requests clean. PR Reviews then acts as a safety net for anything missed before merging.
+--8<-- 'text/code-reviews/pr-reviews-tip.md'
 
 ## Prerequisites
 

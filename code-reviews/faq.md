@@ -15,7 +15,7 @@ categories: Troubleshooting
 
 ### I mostly write code without AI—is kluster.ai useful for me?
 
-Yes. Human-written code reviews are built for this. Right-click any code or press `Ctrl+Shift+K` to trigger a review. No AI assistant needed. See [Human-written code quickstart](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/) for setup.
+Yes. Human-written code reviews are built for this. Right-click any code or press `Ctrl+Shift+K` to trigger a review. No AI assistant needed. See [Human-written code reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/) for setup.
 
 ### When should I run an on-demand review?
 
@@ -41,7 +41,7 @@ kluster.ai is language agnostic and can review code in any programming language,
 
 Yes. For system-wide analysis, use [Repo Reviews](/code-reviews/repo-reviews/quickstart/) to scan your entire repository and find bugs that emerge from cross-module interactions. Repo reviews are designed specifically for analyzing your complete codebase as a system.
 
-For reviewing specific changes, use [on-demand reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/) to check individual files, code blocks, or uncommitted changes.
+For reviewing specific changes, use [on-demand reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/) to check individual files, code blocks, or uncommitted changes.
 
 ### Can I use kluster.ai with any AI model?
 
@@ -65,7 +65,7 @@ Each time a code review is done, a feedback option is available from the extensi
 
 ### What should I do if kluster.ai flags a false positive?
 
-In [on-demand IDE reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/) and [repo reviews](/code-reviews/repo-reviews/quickstart/), you can **Ignore** a false positive to permanently dismiss it from future reviews. If you want to revisit the issue later, use **Snooze** to temporarily hide it for 1, 7, or 30 days. Your feedback through these actions helps improve detection accuracy.
+In [on-demand IDE reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/) and [repo reviews](/code-reviews/repo-reviews/quickstart/), you can **Ignore** a false positive to permanently dismiss it from future reviews. If you want to revisit the issue later, use **Snooze** to temporarily hide it for 1, 7, or 30 days. Your feedback through these actions helps improve detection accuracy.
 
 ### Do kluster.ai reviews improve over time?
 
@@ -193,7 +193,7 @@ When reviewing bugs found by kluster.ai, each issue has actions to help you mana
 - **Snooze**: Temporarily hides the issue for a selected duration (1 day, 7 days, or 30 days). The issue reappears automatically after the snooze period expires. Use this for issues you plan to address later.
 - **Ignore**: Permanently dismisses the issue. It will not reappear in future reviews. Use this for false positives or accepted risks.
 
-These actions are available in [on-demand IDE reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/quickstart/) and [repo reviews](/code-reviews/repo-reviews/quickstart/).
+These actions are available in [on-demand IDE reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/) and [repo reviews](/code-reviews/repo-reviews/quickstart/).
 
 ## Activation codes
 
