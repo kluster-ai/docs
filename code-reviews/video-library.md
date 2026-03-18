@@ -41,12 +41,6 @@ videos:
     badges: ["VS Code", "On-Demand", "Short"]
     thumbnail: "images/code-reviews/video-library/on-demand-code-reviews-with-kluster-in-vs-code.webp"
     description: "Learn how to perform on-demand code reviews directly in VS Code using kluster.ai. Get instant or deep analysis and fix issues with AI."
-  - youtube_id: bCTTE7c1T0I
-    title: "Getting Started with Code Reviews for VS Code"
-    category: "Review in IDE"
-    badges: ["VS Code", "Quickstart"]
-    thumbnail: "images/code-reviews/video-library/getting-started-with-code-reviews-in-vscode.webp"
-    description: "Install the Code Reviews extension for VS Code and connect it to your kluster.ai account in minutes."
   - youtube_id: B2x8OkPI1sc
     title: "Unleash Terminal-Based Code Reviews with kluster.ai CLI!"
     category: "CLI"
