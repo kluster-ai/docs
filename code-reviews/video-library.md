@@ -52,7 +52,7 @@ videos:
     category: "CLI"
     badges: ["Git Hooks"]
     thumbnail: "images/code-reviews/video-library/automate-code-reviews-with-kluster-ai-git-hooks.webp"
-    description: "Boost your code quality! Learn how to use kluster.ai CLI Git Hooks for automatic code reviews on every commit and push. Prevent issues before they ship."
+    description: "Boost your code quality. Learn how to use kluster.ai CLI Git Hooks for automatic code reviews on every commit and push. Prevent issues before they ship."
   - youtube_id: qz32GZkGkqc
     title: "kluster.ai Repo Reviews: System-wide Code Analysis for Bugs & Risks"
     category: "Integrations & More"
@@ -83,4 +83,4 @@ Explore the kluster.ai video library right here in the docs. Tap any thumbnail t
 
 ## CLI
 
-## Integrations & more
+## Integrations and more
