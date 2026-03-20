@@ -1,16 +1,13 @@
 <div data-termynal>
   <span data-ty  ="input"> codex /tools</span>
   <span data-ty>╭───────────────────────────────────────────╮</span>
-  <span data-ty>│ >_ OpenAI Codex (v0.50.0)                 │</span>
-  <span data-ty>│                                           │</span>
-  <span data-ty>│ model:     gpt-5-codex   /model to change │</span>
-  <span data-ty>│ directory: ~/workspace/codex              │</span>
+  <span data-ty>│ >_ OpenAI Codex (v0.50.0)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│</span>
+  <span data-ty>│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│</span>
+  <span data-ty>│ model:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gpt-5-codex&nbsp;&nbsp;&nbsp;/model to change │</span>
+  <span data-ty>│ directory: ~/workspace/codex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│</span>
   <span data-ty>╰───────────────────────────────────────────╯</span>
-
   <span data-ty>› /tools</span>
-
   <span data-ty>• Available tools right now:</span>
-
   <span data-ty>  - shell: run terminal commands via execvp (use ["bash","-lc", "..."] and set</span>
   <span data-ty>    workdir).</span>
   <span data-ty>  - list_mcp_resources, list_mcp_resource_templates, read_mcp_resource: browse/</span>
@@ -26,4 +23,3 @@
   <span data-ty>      - mcp__kluster-verify__kluster_dependency_check (before dependency</span>
   <span data-ty>        operations)</span>
 </div>
-
