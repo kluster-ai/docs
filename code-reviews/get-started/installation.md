@@ -55,9 +55,10 @@ Before getting started, ensure you have:
 
     5. To complete the setup, click **Install** to accept the MCP configuration for Code Reviews.
 
-         ![Install MCP](/images/code-reviews/get-started/installation/vscode/vscode-integration-6.webp)
+        ![Install MCP](/images/code-reviews/get-started/installation/vscode/vscode-integration-6.webp)
     6. Press **Trust** to Install the MCP server.
-    ![MCP Server Trust Installation in VS Code](/images/code-reviews/get-started/installation/vscode/vscode-integration-7.webp)
+    
+        ![MCP Server Trust Installation in VS Code](/images/code-reviews/get-started/installation/vscode/vscode-integration-7.webp)
 
     Once installed, verify the setup:
 
