@@ -1,5 +1,5 @@
 ---
-title: External Knowledge for Code Reviews
+title: External Knowledge Quickstart for kluster.ai Reviews
 description: Connect external sources like Jira to kluster.ai so code reviews can verify your code against real project requirements and specifications.
 categories: Basics, External Knowledge
 ---
@@ -16,7 +16,7 @@ External Knowledge lets [kluster.ai](https://www.kluster.ai/){target=\_blank} Co
 
     | Tool | What to do |
     |------|------------|
-    | Cursor, VS Code, Windsurf | Check out a branch with the ticket ID in the name (e.g., `feat/KAN-2`) — kluster detects it automatically. |
+    | Cursor, VS Code, Windsurf, JetBrains, Antigravity | Check out a branch with the ticket ID in the name (e.g., `feat/KAN-2`) — kluster detects it automatically. |
     | Claude Code, Codex CLI | Include the ticket ID in your prompt (e.g., "...Ticket KAN-2"). |
 
 3. **Ask your AI assistant to write code as usual**: kluster automatically includes the ticket requirements in the review and flags any gaps between the specification and the generated code.
