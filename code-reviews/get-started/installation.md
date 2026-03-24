@@ -1,6 +1,6 @@
 ---
-title: Get started with Code Reviews
-description: Set up kluster.ai Code Reviews in minutes. Scan code for errors, vulnerabilities, and performance issues in Cursor, VS Code, Claude Code, and more.
+title: Install kluster.ai Code Reviews for Your IDE or CLI
+description: Set up kluster.ai Code Reviews in minutes. Scan code for errors, vulnerabilities, and performance issues in Cursor, VS Code, JetBrains, and more.
 categories: Basics
 ---
 
@@ -18,64 +18,7 @@ Before getting started, ensure you have:
 
 ## Setup instructions
 
-=== "Antigravity"
-
-    1. Click the **Add to Antigravity** button below.
-
-         --8<-- 'text/install-button-antigravity.md'
-
-    2. Antigravity will open and prompt for extension installation.
-
-    3. Click **Install** to add the extension into Antigravity.
-
-        ![Extension Installation Prompt in Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-1.webp)
-
-    Now that the extension is installed, you need to log in with your kluster.ai account:
-
-    1. Click **Sign in** in the bottom left corner.
-
-        ![Sign In](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-2.webp)
-
-    2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account.
-
-        ![Open Pop-up](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-3.webp)
-
-    3. Click **Open Antigravity**.
-
-        ![Open Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-4.webp)
-
-    4. Click **Open** to install the MCP with your kluster.ai API key.
-
-        ![Open and Install MCP](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-5.webp)
-
-    Once installed, verify the setup:
-
-    1. Navigate to **Settings** → **MCP Settings** → **Manage MCP Servers**.
-    2. Verify that **Kluster-Verify-Code** appears with all tools enabled.
-
-        ![Active MCP Tools in Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-6.webp)
-
-=== "Cursor"
-
-    1. Click the **Add to Cursor** button below.
-
-         --8<-- 'text/install-button-cursor.md'
-
-    2. Cursor will open and prompt for extension installation.
-
-    3. Click **Install** to add the extension into Cursor.
-
-        ![Extension Installation Prompt in Cursor](/images/code-reviews/get-started/installation/cursor/cursor-integration-1.webp)
-
-    Once installed, you can verify the setup:
-
-    1. Open **Cursor Settings**. You can use the gear icon in the top right corner to do so.
-    2. Navigate to **Tools & Integrations** → **MCP Tools**.
-    3. You should see **extension-Kluster-Code-Reviews** with all tools enabled:
-
-        --8<-- 'text/code-reviews/code-tools.md'
-
-        ![Active MCP Tools in Cursor](/images/code-reviews/get-started/installation/cursor/cursor-integration-2.webp)
+### IDE extensions
 
 === "VS Code / Codex VS Code"
 
@@ -123,6 +66,69 @@ Before getting started, ensure you have:
 
         ![Active MCP Tools in VS Code](/images/code-reviews/get-started/installation/vscode/vscode-integration-8.webp)
 
+=== "Cursor"
+
+    1. Click the **Add to Cursor** button below.
+
+         --8<-- 'text/install-button-cursor.md'
+
+    2. Cursor will open and prompt for extension installation.
+
+    3. Click **Install** to add the extension into Cursor.
+
+        ![Extension Installation Prompt in Cursor](/images/code-reviews/get-started/installation/cursor/cursor-integration-1.webp)
+
+    Once installed, you can verify the setup:
+
+    1. Open **Cursor Settings**. You can use the gear icon in the top right corner to do so.
+    2. Navigate to **Tools & Integrations** → **MCP Tools**.
+    3. You should see **extension-Kluster-Code-Reviews** with all tools enabled:
+
+        --8<-- 'text/code-reviews/code-tools.md'
+
+        ![Active MCP Tools in Cursor](/images/code-reviews/get-started/installation/cursor/cursor-integration-2.webp)
+
+=== "JetBrains"
+
+    !!! warning "AI coding agent support"
+        kluster.ai MCP integration in JetBrains requires the **Junie** AI agent. Install Junie separately from **Settings** :material-cog: → **Plugins** → **Marketplace** by searching for **Junie**. Other JetBrains AI agents are not supported.
+
+    kluster.ai supports JetBrains IDEs such as IntelliJ IDEA and WebStorm. Open the JetBrains IDE of your choice, and go to **Settings** :material-cog: → **Plugins** → **Marketplace**.
+    
+    1. Search for **kluster**.
+    2. Click **Install**.
+    3. Click **Accept** when the third-party plugin notice appears, then restart the IDE if prompted.
+
+        ![Install kluster.ai plugin from JetBrains Marketplace](/images/code-reviews/get-started/installation/jetbrains/jetbrains-integration-1.webp)
+
+    !!! tip "Alternative: install from the JetBrains Marketplace website"
+        You can also install the plugin from the [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/30646-kluster-ai){target=\_blank} website. Click **Install** on the plugin page and follow the prompts to open your IDE.
+
+    Now that the plugin is installed, you need to log in with your kluster.ai account:
+
+    1. Click **Sign in to kluster** in the plugin panel.
+
+        ![Sign in to kluster in JetBrains](/images/code-reviews/get-started/installation/jetbrains/jetbrains-integration-2.webp)
+
+    2. A browser window opens and takes you to your kluster.ai account. Once you authorize, a success notification appears.
+
+        ![Browser authorization success for kluster.ai](/images/code-reviews/get-started/installation/jetbrains/jetbrains-integration-3.webp)
+
+    3. Return to your IDE. You are now logged in.
+
+        ![Successfully logged in to kluster.ai in JetBrains](/images/code-reviews/get-started/installation/jetbrains/jetbrains-integration-4.webp)
+
+    **Alternative: log in with an API key**
+
+    If the browser sign-in flow is unavailable, you can log in using an API key. Retrieve your key from the [kluster.ai platform](https://platform.kluster.ai){target=\_blank} and paste it into the API key field in the plugin panel.
+
+    Once installed, verify the setup:
+
+    1. Open the kluster.ai plugin panel from the right sidebar.
+    2. Confirm that your account is connected and the plugin is active.
+
+        ![Active kluster.ai plugin in JetBrains](/images/code-reviews/get-started/installation/jetbrains/jetbrains-integration-5.webp)
+
 === "Windsurf"
 
     1. Click the **Add to Windsurf** button below.
@@ -163,6 +169,45 @@ Before getting started, ensure you have:
     2. You should see **Kluster-Verify-Code** with all tools enabled.
 
         ![Active MCP Tools in Windsurf](/images/code-reviews/get-started/installation/windsurf/windsurf-integration-7.webp)
+
+=== "Antigravity"
+
+    1. Click the **Add to Antigravity** button below.
+
+         --8<-- 'text/install-button-antigravity.md'
+
+    2. Antigravity will open and prompt for extension installation.
+
+    3. Click **Install** to add the extension into Antigravity.
+
+        ![Extension Installation Prompt in Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-1.webp)
+
+    Now that the extension is installed, you need to log in with your kluster.ai account:
+
+    1. Click **Sign in** in the bottom left corner.
+
+        ![Sign In](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-2.webp)
+
+    2. Choose **Open**. A browser pop-up window will take you to your kluster.ai account.
+
+        ![Open Pop-up](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-3.webp)
+
+    3. Click **Open Antigravity**.
+
+        ![Open Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-4.webp)
+
+    4. Click **Open** to install the MCP with your kluster.ai API key.
+
+        ![Open and Install MCP](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-5.webp)
+
+    Once installed, verify the setup:
+
+    1. Navigate to **Settings** → **MCP Settings** → **Manage MCP Servers**.
+    2. Verify that **Kluster-Verify-Code** appears with all tools enabled.
+
+        ![Active MCP Tools in Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-6.webp)
+
+### Terminal tools
 
 === "Claude Code"
 

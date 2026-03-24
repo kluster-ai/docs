@@ -102,6 +102,14 @@ In this example, the AI creates an API endpoint but makes a critical security er
 
     [:octicons-arrow-right-24: Install for Codex CLI](/code-reviews/get-started/installation/)
 
+-   :simple-jetbrains: **JetBrains**
+
+    ---
+
+    JetBrains IDEs (IntelliJ IDEA, WebStorm, and others) with kluster.ai plugin support.
+
+    [:octicons-arrow-right-24: Install for JetBrains](/code-reviews/get-started/installation/)
+
 </div>
 
 ## Configuration

@@ -1,5 +1,5 @@
 ---
-title: Code Reviews
+title: kluster.ai Code Reviews - Modes, Features, and Setup
 description: Learn how to use kluster.ai's Code Reviews to validate your code in real time—detecting bugs, security issues, and quality problems so you can ship safely.
 categories: Basics
 ---
@@ -8,7 +8,7 @@ categories: Basics
 
 Code Reviews analyzes your code for bugs, security vulnerabilities, and quality issues. It works for **human-written code**, **AI-generated code**, **repo reviews**, and the **standalone CLI**, with review modes tailored to each workflow.
 
-For in-editor reviews, the service integrates directly into your IDE or CLI (Cursor, VS Code, Windsurf, Claude Code, and others), analyzing code as you work. For terminal-based workflows, the standalone CLI provides reviews directly from the command line. For system-wide analysis, repo reviews scan your entire repository via the web dashboard or `kluster-cli`.
+For in-editor reviews, the service integrates directly into your IDE or CLI (Cursor, VS Code, Windsurf, JetBrains, Claude Code, and others), analyzing code as you work. For terminal-based workflows, the standalone CLI provides reviews directly from the command line. For system-wide analysis, repo reviews scan your entire repository via the web dashboard or `kluster-cli`.
 
 <div class="embed-container">
     <iframe
@@ -38,7 +38,7 @@ Review code you write yourself with on-demand reviews—no AI assistant needed. 
 - **Current file review**: Analyze the file you're working on.
 - **Uncommitted changes review**: Check all modified files before committing.
 
-**Compatible with**: Cursor, VS Code, Windsurf, Antigravity (IDEs only)
+**Compatible with**: Cursor, VS Code, Windsurf, Antigravity, JetBrains (IDEs only)
 
 [:octicons-arrow-right-24: Get started with human-written code reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/)
 
@@ -53,7 +53,7 @@ When your AI coding assistant generates or modifies code, kluster.ai automatical
 - **Automatic reviews**: Triggered automatically when AI generates code.
 - **On-demand reviews**: Triggered when you ask your AI to review existing code.
 
-**Compatible with**: Cursor, VS Code, Windsurf, Antigravity (IDEs) and Claude Code, Codex CLI (CLIs)
+**Compatible with**: Cursor, VS Code, Windsurf, Antigravity, JetBrains (IDEs) and Claude Code, Codex CLI (CLIs)
 
 [:octicons-arrow-right-24: Get started with AI-generated code reviews](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/)
 

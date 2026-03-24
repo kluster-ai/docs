@@ -1,5 +1,5 @@
 ---
-title: Frequently Asked Questions
+title: Frequently Asked Questions about kluster.ai Code Reviews
 description: Find answers to common questions about kluster.ai Code Review, covering setup, supported IDEs, review modes, security, and troubleshooting topics.
 categories: Troubleshooting
 ---
@@ -27,7 +27,7 @@ No. AI-generated code reviews run when AI generates code. Human-written code rev
 
 ### What IDEs and CLI tools are supported?
 
-- **IDE extensions**: Cursor, VS Code, Windsurf, Antigravity
+- **IDE extensions**: Cursor, VS Code, Windsurf, Antigravity, JetBrains
 - **CLI tools**: Claude Code, Codex CLI
 - **Standalone CLI**: [kluster-cli](/code-reviews/cli/quickstart/) for terminal-only workflows
 

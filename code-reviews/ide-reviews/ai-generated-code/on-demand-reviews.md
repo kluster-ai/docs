@@ -68,6 +68,14 @@ On-demand reviews let you ask your AI assistant to review existing code—not ju
 
     [:octicons-arrow-right-24: Install for Codex CLI](/code-reviews/get-started/installation/)
 
+-   :simple-jetbrains: **JetBrains**
+
+    ---
+
+    JetBrains IDEs (IntelliJ IDEA, WebStorm, and others) with kluster.ai plugin support.
+
+    [:octicons-arrow-right-24: Install for JetBrains](/code-reviews/get-started/installation/)
+
 </div>
 
 ## Next steps

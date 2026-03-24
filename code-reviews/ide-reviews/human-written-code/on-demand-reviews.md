@@ -112,6 +112,14 @@ Select any code in your editor, right-click, and choose **Review with kluster.ai
 
     [:octicons-arrow-right-24: Install for Antigravity](/code-reviews/get-started/installation/)
 
+-   :simple-jetbrains: **JetBrains**
+
+    ---
+
+    JetBrains IDEs (IntelliJ IDEA, WebStorm, and others) with kluster.ai plugin support.
+
+    [:octicons-arrow-right-24: Install for JetBrains](/code-reviews/get-started/installation/)
+
 </div>
 
 ## Configuration

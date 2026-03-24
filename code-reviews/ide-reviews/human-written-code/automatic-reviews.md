@@ -89,6 +89,14 @@ When you switch git branches, kluster.ai resets its tracking state. This prevent
 
     [:octicons-arrow-right-24: Install for Antigravity](/code-reviews/get-started/installation/)
 
+-   :simple-jetbrains: **JetBrains**
+
+    ---
+
+    JetBrains IDEs (IntelliJ IDEA, WebStorm, and others) with kluster.ai plugin support.
+
+    [:octicons-arrow-right-24: Install for JetBrains](/code-reviews/get-started/installation/)
+
 </div>
 
 ## Next steps

@@ -1,5 +1,5 @@
 ---
-title: Jira Integration for Code Reviews
+title: Set Up Jira Integration for kluster.ai Code Reviews
 description: Connect Jira to kluster.ai to review code against ticket requirements. Set up Jira Cloud or self-hosted Jira and learn how ticket context flows into reviews.
 categories: External Knowledge
 ---
@@ -60,7 +60,7 @@ How kluster detects the ticket depends on your tool:
 
 | Tool | How the ticket is detected |
 |------|---------------------------|
-| Cursor, VS Code, Windsurf | Branch name is detected automatically — check out a branch like `feat/KAN-2` and kluster picks it up. |
+| Cursor, VS Code, Windsurf, JetBrains, Antigravity | Branch name is detected automatically — check out a branch like `feat/KAN-2` and kluster picks it up. |
 | Claude Code, Codex CLI | Branch is not detected automatically — include the ticket ID in your prompt or paste the ticket link. |
 
 !!! note "When Jira context is not included"
