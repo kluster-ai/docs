@@ -1,5 +1,5 @@
 ---
-title: Set Up Jira Integration for kluster.ai Code Reviews
+title: Set Up Jira Integration for Code Reviews
 description: Connect Jira to kluster.ai to review code against ticket requirements. Set up Jira Cloud or self-hosted Jira and learn how ticket context flows into reviews.
 categories: External Knowledge
 ---
