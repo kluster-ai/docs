@@ -1,5 +1,5 @@
 ---
-title: External Knowledge Quickstart for kluster.ai Reviews
+title: External Knowledge Quickstart for Reviews
 description: Connect external sources like Jira to kluster.ai so code reviews can verify your code against real project requirements and specifications.
 categories: Basics, External Knowledge
 ---

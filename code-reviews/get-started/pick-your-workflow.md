@@ -1,5 +1,5 @@
 ---
-title: Pick Your Workflow - kluster.ai Code Review Modes Compared
+title: Pick Your Code Review Workflow
 description: Compare the supported Code Reviews modes—human-written, AI-generated, CLI, and repo-wide—and pick the workflow that fits how you write code.
 categories: Basics
 ---

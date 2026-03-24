@@ -1,5 +1,5 @@
 ---
-title: kluster.ai Code Reviews - Modes, Features, and Setup
+title: Code Reviews - Modes, Features, and Setup
 description: Learn how to use kluster.ai's Code Reviews to validate your code in real time—detecting bugs, security issues, and quality problems so you can ship safely.
 categories: Basics
 ---
