@@ -49,7 +49,7 @@ Before getting started, ensure you have:
 
         ![Open and Install MCP](/images/code-reviews/get-started/installation/vscode/vscode-integration-5.webp)
 
-    To enable kluster.ai in chat sessions, take the following steps:
+    To enable kluster.ai in the VS Code agent chat window, take the following steps:
 
     1. Open a Copilot chat window and select the **Tools** button on the bottom right corner.
     2. Search for **kluster** or scroll down the list until you find **Kluster-Verify-Tool**.
