@@ -1,4 +1,15 @@
 nav:
  - 'Home': index.md
- - 'Code Reviews': code-reviews
+ - ':custom-sparkles: Review Modes': code-reviews/review-modes.md
+ - ':custom-rocket: Get Started': code-reviews/get-started
+ - ':custom-monitor: IDE Reviews': code-reviews/ide-reviews
+# - ':custom-git: PR Reviews': code-reviews/pr-reviews
+ - ':custom-folder: Repo Reviews': code-reviews/repo-reviews
+ - ':custom-terminal: CLI': code-reviews/cli
+ - ':custom-database: External Knowledge': code-reviews/external-knowledge
+ - ':custom-settings: Configuration': code-reviews/configuration
+ - 'Video Library': code-reviews/video-library.md
+ - ':custom-faq: FAQ': code-reviews/faq.md
+ - ':custom-alert: Troubleshooting': code-reviews/troubleshooting.md
+ - 'Reference': code-reviews/reference
  - 'AI Resources': ai-resources.md
