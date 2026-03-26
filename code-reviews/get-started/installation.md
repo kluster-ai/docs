@@ -55,7 +55,7 @@ Before getting started, ensure you have:
     2. Search for **kluster** or scroll down the list until you find **Kluster-Verify-Tool**.
     3. Check the **Kluster-Verify-Tool** box.
 
-        ![Active MCP Tools in VS Code](/images/code-reviews/get-started/installation/vscode/vscode-integration-6.webp)
+    ![Active MCP Tools in VS Code](/images/code-reviews/get-started/installation/vscode/vscode-integration-6.webp)
 
 === "Cursor"
 
