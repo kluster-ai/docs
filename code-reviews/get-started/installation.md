@@ -30,7 +30,7 @@ Before getting started, ensure you have:
 
     3. Click **Install** to get the extension.
 
-        ![Install Extension](/images/code-reviews/get-started/installation/vscode/vscode-integration-0.webp)
+        ![Install Extension](/images/code-reviews/get-started/installation/vscode/vscode-integration-1.webp)
 
     Now that the extension is installed, you need to log in with your kluster.ai account:
 
