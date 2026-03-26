@@ -30,11 +30,7 @@ Before getting started, ensure you have:
 
     3. Click **Install** to get the extension.
 
-        ![Install Extension](/images/code-reviews/get-started/installation/vscode/vscode-integration-0.webp)
-
-    4. Select **Trust Publisher & Install**.
-
-        ![Trust publisher](/images/code-reviews/get-started/installation/vscode/vscode-integration-1.webp)
+        ![Install Extension](/images/code-reviews/get-started/installation/vscode/vscode-integration-1.webp)
 
     Now that the extension is installed, you need to log in with your kluster.ai account:
 
@@ -53,19 +49,13 @@ Before getting started, ensure you have:
 
         ![Open and Install MCP](/images/code-reviews/get-started/installation/vscode/vscode-integration-5.webp)
 
-    5. To complete the setup, click **Install** to accept the MCP configuration for Code Reviews.
-
-        ![Install MCP](/images/code-reviews/get-started/installation/vscode/vscode-integration-6.webp)
-    6. Press **Trust** to Install the MCP server.
-    
-        ![MCP Server Trust Installation in VS Code](/images/code-reviews/get-started/installation/vscode/vscode-integration-7.webp)
-
-    Once installed, verify the setup:
+    Once signed in, to enable kluster.ai in the VS Code agent chat window, take the following steps:
 
     1. Open a Copilot chat window and select the **Tools** button on the bottom right corner.
-    2. Scroll down the list and **Kluster-Code-Reviews-MCP** should appear. Make sure all tools are enabled.
+    2. Search for **kluster** or scroll down the list until you find **Kluster-Verify-Tool**.
+    3. Check the **Kluster-Verify-Tool** box.
 
-        ![Active MCP Tools in VS Code](/images/code-reviews/get-started/installation/vscode/vscode-integration-8.webp)
+    ![Active MCP Tools in VS Code](/images/code-reviews/get-started/installation/vscode/vscode-integration-6.webp)
 
 === "Cursor"
 
