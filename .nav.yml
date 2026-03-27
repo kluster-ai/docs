@@ -13,3 +13,4 @@ nav:
  - ':custom-alert: Troubleshooting': code-reviews/troubleshooting.md
  - 'Reference': code-reviews/reference
  - 'AI Resources': ai-resources.md
+ - 'Changelog': code-reviews/changelogs.md
