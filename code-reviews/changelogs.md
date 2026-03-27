@@ -13,14 +13,6 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
 
 ::timeline::
 
-- title: Updated trial behavior
-  sub_title: "2026-03-27"
-  content: Background reviews run less frequently during trial. Free accounts stop processing code after trial expiration. Trials last 7 days.
-
-- title: Improved account and data management
-  sub_title: "2026-03-26"
-  content: Improved account and data management flows, including clearer self-service guidance for account deletion and enterprise data requests.
-
 - title: Pause reviews during AI-assisted workflows
   sub_title: "2026-03-25"
   content: Added the ability to pause kluster reviews during AI-assisted workflows.
@@ -28,14 +20,6 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
 - title: Cleaner GitHub comment threads
   sub_title: "2026-03-25"
   content: Improved GitHub comment-thread handling so outdated kluster review threads are resolved or updated more cleanly.
-
-- title: Fixed sign-up modal behavior
-  sub_title: "2026-03-25"
-  content: Fixed an issue where the email sign-up modal could remain open after registration completed.
-
-- title: Fixed Ignore and Snooze in IDE reviews
-  sub_title: "2026-03-24"
-  content: Fixed Ignore and Snooze actions in the IDE review workflow.
 
 - title: Expanded review context for GitHub and GitLab
   sub_title: "2026-03-23"
@@ -71,14 +55,6 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
   sub_title: "2026-02-18"
   content: Added Ignore and Snooze controls to repository reviews.
 
-- title: Fixed project scan connection issue
-  sub_title: "2026-02-18"
-  content: Fixed a project-scan issue that could leave some source control connections stuck during setup.
-
-- title: Fixed usage page for enterprise users
-  sub_title: "2026-02-13"
-  content: Fixed the Usage page for enterprise users.
-
 - title: Ignore and Snooze for IDE review findings
   sub_title: "2026-02-12"
   content: Added Ignore and Snooze controls for review findings in the IDE workflow.
@@ -86,10 +62,6 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
 - title: Branch selection for repository reviews
   sub_title: "2026-02-11"
   content: Added branch selection for repository reviews and changed the default review cadence to once per month.
-
-- title: Improved team setup for proof of concept
-  sub_title: "2026-02-11"
-  content: Improved team setup by allowing extended review context to be enabled at the start of a proof of concept.
 
 - title: Added .klusterignore support
   sub_title: "2026-02-10"
@@ -129,25 +101,9 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
 
 ::timeline::
 
-- title: Verified Publisher on VS Code Marketplace
-  sub_title: "2026-01-28"
-  content: Received Verified Publisher status on the VS Code Marketplace.
-
-- title: Released Max pricing plan
-  sub_title: "2026-01-27"
-  content: Released the new Max pricing plan.
-
-- title: Review Effort controls
-  sub_title: "2026-01-22"
-  content: Added Review Effort controls so users can choose between faster and deeper analysis by review type.
-
 - title: Separate Instant and Deep review actions
   sub_title: "2026-01-22"
   content: Updated the extension UI to support separate Instant and Deep manual review actions.
-
-- title: Improved reliability for large diffs
-  sub_title: "2026-01-19"
-  content: Improved reliability for large diffs and longer-running manual reviews.
 
 - title: Increased maximum review size
   sub_title: "2026-01-15"
@@ -187,19 +143,11 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
   sub_title: "2025-12-03"
   content: Added the ability to review a selected code block directly from VS Code-based IDEs.
 
-- title: Improved prompt quality and issue-card responsiveness
-  sub_title: "2025-12-03"
-  content: Improved prompt quality and issue-card responsiveness across supported IDE workflows.
-
 ::/timeline::
 
 ## November 2025
 
 ::timeline::
-
-- title: Scoped rules configuration
-  sub_title: "2025-11-28"
-  content: Added support for scoped rules configuration.
 
 - title: Claude Code custom commands
   sub_title: "2025-11-28"
@@ -217,17 +165,9 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
   sub_title: "2025-11-24"
   content: Improved Claude Code setup on Windows.
 
-- title: Improved platform review UI
-  sub_title: "2025-11-21"
-  content: Improved the platform review UI with better patch highlighting and context display for manual reviews.
-
 - title: Manual review for uncommitted changes
   sub_title: "2025-11-20"
   content: Added manual review for uncommitted changes and the open file directly from VS Code, Cursor, and Windsurf extensions.
-
-- title: Updated home and installation pages
-  sub_title: "2025-11-19"
-  content: Released updated Home and Installation pages.
 
 - title: Improved Claude Code support on Windows
   sub_title: "2025-11-14"
@@ -341,18 +281,6 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
   sub_title: "2025-09-30"
   content: Released local context generation behind a feature flag to improve review context.
 
-- title: Fixed team-invite issue
-  sub_title: "2025-09-30"
-  content: Fixed a team-invite issue affecting some coupon-based team setups and improved invite acceptance feedback in the UI.
-
-- title: Updated overage billing behavior
-  sub_title: "2025-09-29"
-  content: Updated overage billing behavior to avoid very small charges.
-
-- title: Renamed Pro plan to Starter
-  sub_title: "2025-09-24"
-  content: Renamed the Pro plan to Starter, expanded Starter to 5 seats, and updated the website to match.
-
 - title: Updated Windows IDE login redirect
   sub_title: "2025-09-22"
   content: Updated the Windows IDE login-redirect experience.
@@ -368,14 +296,6 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
 - title: Rules management and GitHub connection in extensions
   sub_title: "2025-09-18"
   content: Released rules management and GitHub connection support in the VS Code and Cursor extensions.
-
-- title: Fixed global rules application
-  sub_title: "2025-09-16"
-  content: Fixed rules application for globally configured rules and improved Claude Code diff generation.
-
-- title: Updated rules management and trial notifications
-  sub_title: "2025-09-15"
-  content: Released updated rules management, automatic rules extraction with GitHub, and new trial-limit email notifications.
 
 - title: Improved VS Code extension setup
   sub_title: "2025-09-08"
