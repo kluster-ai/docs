@@ -138,6 +138,12 @@ When the AI suggests a package version with a known vulnerability, kluster.ai al
 
 ![Dependency Analysis Example](/images/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/dependency-analysis.webp)
 
+## Pause reviews
+
+--8<-- 'text/code-reviews/ide-reviews/ide-pause.md'
+
+--8<-- 'text/code-reviews/ide-reviews/cli-pause.md'
+
 ## Next steps
 
 - **[On-demand reviews](/code-reviews/ide-reviews/ai-generated-code/on-demand-reviews/)**: Review existing code on demand.

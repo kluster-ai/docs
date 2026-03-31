@@ -99,6 +99,10 @@ When you switch git branches, kluster.ai resets its tracking state. This prevent
 
 </div>
 
+## Pause reviews
+
+--8<-- 'text/code-reviews/ide-reviews/ide-pause.md'
+
 ## Next steps
 
 - **[On-demand reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/)**: Run reviews manually in your editor.
