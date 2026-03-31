@@ -7,8 +7,11 @@ You can temporarily pause all kluster code reviews for the current project. Whil
 3. Choose a duration from the available options.
 4. Verify that kluster is paused by the pause icon in the kluster.ai IDE status bar.
 
-<video autoplay loop muted playsinline style="max-width: 100%; border-radius: 8px;">
+<video autoplay loop muted playsinline controls style="max-width: 100%; border-radius: 8px;">
   <source src="/images/code-reviews/ide-reviews/pause-reviews/pause-reviews.webm" type="video/webm">
+  Your browser does not support the video tag. You can
+  <a href="/images/code-reviews/ide-reviews/pause-reviews/pause-reviews.webm">download the pause reviews demo video</a>
+  instead.
 </video>
 
 Reviews resume automatically when the selected duration expires. Select **Indefinitely (disable)** to keep reviews paused until you re-enable them manually.
