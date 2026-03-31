@@ -4,7 +4,7 @@ description: Trigger on-demand code reviews in your IDE using right-click, hint 
 categories: Basics, IDE Reviews
 ---
 
-# On-demand reviews 
+# On-demand reviews
 
 With [kluster.ai](https://www.kluster.ai/){target=\_blank}, you can trigger reviews three ways: right-click any selection, use hint buttons, or scan uncommitted changes.
 
