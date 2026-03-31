@@ -27,8 +27,7 @@ To pause reviews, ask your agent to pause kluster. The following example shows t
   <span data-ty></span>
   <span data-ty>  ⎿  kluster code review has been paused for 1 hour for this</span>
   <span data-ty>     project. Reviews will resume automatically after 60</span>
-  <span data-ty>     minutes. To re-enable sooner, type "resume kluster</span>
-  <span data-ty>     verification".</span>
+  <span data-ty>     minutes. To re-enable sooner, type "resume kluster".</span>
   <span data-ty></span>
   <span data-ty>● kluster reviews have been paused for 1 hour. Automated code</span>
   <span data-ty>  reviews will resume automatically after that, or you can say</span>
