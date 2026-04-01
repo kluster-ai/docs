@@ -50,6 +50,9 @@ Select your Git provider (GitHub, GitLab, or Bitbucket):
 
 ![Select Git provider modal](/images/code-reviews/repo-reviews/repo-reviews-setup-2.webp)
 
+!!! note "Trouble connecting to GitHub?"
+    If your organization uses OAuth app access restrictions, you may need an org admin to approve the kluster.ai OAuth app before it can access your repositories. Refer to GitHub's guide on [approving OAuth apps for your organization](https://docs.github.com/en/organizations/managing-oauth-access-to-your-organizations-data/approving-oauth-apps-for-your-organization){target=\_blank} for details.
+
 Then choose the repository you want to analyze:
 
 ![Select repository from dropdown](/images/code-reviews/repo-reviews/repo-reviews-setup-3.webp)

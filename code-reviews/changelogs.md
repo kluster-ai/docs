@@ -13,6 +13,14 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
 
 ::timeline::
 
+- title: Azure DevOps support for PR bot
+  sub_title: "2026-03-31"
+  content: Added Azure DevOps support for PR bot.
+
+- title: Azure DevOps support for repository reviews
+  sub_title: "2026-03-31"
+  content: Added Azure DevOps support for repository reviews.
+
 - title: Pause reviews during AI-assisted workflows
   sub_title: "2026-03-25"
   content: Added the ability to pause kluster reviews during AI-assisted workflows.
