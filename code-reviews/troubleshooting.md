@@ -38,13 +38,44 @@ This error occurs when npx caches a broken or incomplete package download. Clear
 
 After clearing the cache, restart your IDE or CLI tool.
 
+### Auto-update fails with npm cache error
+
+<div data-termynal>
+  <span data-ty>[info] Starting new stdio process with command: npx -y @klusterai/kluster-verify-node-mcp@latest</span>
+  <span data-ty style="color: #ff6b6b;">npm error ENOTEMPTY: directory not empty, rename '/Users/.../.npm/_npx/.../node_modules/@klusterai/...' -> '...'</span>
+</div>
+
+The npm client sometimes fails to update cached packages when temporary directories or lock files from a previous run are left behind. This typically produces `ENOTEMPTY`, `EEXIST`, or `EPERM` errors. When the auto-update fails, the MCP server cannot start because the package download is interrupted.
+
+Run the following command to clear the npm cache:
+
+```bash
+npm cache clean --force
+```
+
+After clearing the cache, restart your IDE or CLI tool. The next MCP invocation downloads a fresh copy of the package.
+
+If the error persists, remove the npx cache directory manually (same step as for the [Cannot find module](#cannot-find-module-constants) error, but here it serves as a fallback after `npm cache clean`):
+
+=== "macOS / Linux"
+
+    ```bash
+    rm -rf ~/.npm/_npx
+    ```
+
+=== "Windows"
+
+    ```powershell
+    Remove-Item -Recurse -Force "$env:LOCALAPPDATA\npm-cache\_npx"
+    ```
+
 ### Claude Code MCP server shows "failed"
 
 In Claude Code, the MCP server may show `✘ failed` on the first connection attempt. This happens because Claude Code has a 10-second timeout for MCP startup, and the initial npx download can take longer when there's no cache.
 
-Simply restart Claude Code. The second attempt will use the cached package and connect successfully. Run `/mcp` to verify the MCP server is connected:
+Restart Claude Code. The second attempt will use the cached package and connect successfully. Run `/mcp` to verify the MCP server is connected:
 
-![Claude Code MCP server status showing connected](/images/code-reviews/get-started/installation/troubleshooting/troubleshooting-1.webp)
+--8<-- 'code/code-reviews/troubleshooting/mcp-connected.md'
 
 ### Debugging CLI installation issues
 
