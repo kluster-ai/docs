@@ -73,7 +73,7 @@ Common issues found by repo reviews include:
 
 Repo reviews complement PR-level reviews by revealing problems that already exist in your system—issues that would remain hidden until something breaks.
 
-**Available on**: Web dashboard and kluster-cli (requires GitHub, GitLab, or Bitbucket connection)
+**Available on**: Web dashboard and kluster-cli (requires GitHub, GitLab, Bitbucket, or Azure DevOps connection)
 
 [:octicons-arrow-right-24: Get started with repo reviews](/code-reviews/repo-reviews/quickstart/)
 

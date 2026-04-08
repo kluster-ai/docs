@@ -98,7 +98,7 @@ Use repo reviews to catch problems that slip through PR-level reviews:
 
 Repo reviews complement your existing review workflow. Run them periodically to surface issues that already exist in your codebase—problems that would otherwise remain hidden until they cause production incidents.
 
-**Available on**: Web dashboard and `kluster-cli` (requires GitHub, GitLab, or Bitbucket connection).
+**Available on**: Web dashboard and `kluster-cli` (requires GitHub, GitLab, Bitbucket, or Azure DevOps connection).
 
 !!! note "Usage limits"
     Pro plans include 1 repo review per month. Enterprise plans include higher limits. [Contact us](https://www.kluster.ai/contact){target=\_blank} to learn more.
