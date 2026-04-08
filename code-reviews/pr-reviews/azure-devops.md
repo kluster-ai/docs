@@ -14,7 +14,7 @@ Once connected, the bot reviews every new pull request and every new commit push
 
 --8<-- 'text/code-reviews/pr-reviews-tip.md'
 
-!!! note "Custom rules not supported"
+!!! warning "Custom rules not supported"
     [Custom rules](/code-reviews/configuration/rules/) — including learned rules extracted from repositories — are not currently supported for Azure DevOps. Reviews use the default kluster analysis without project-specific rule customization.
 
 ## Prerequisites
