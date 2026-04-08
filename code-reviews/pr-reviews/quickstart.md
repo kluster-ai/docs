@@ -1,6 +1,6 @@
 ---
 title: PR Reviews Quickstart
-description: Automatically review every pull request with the kluster.ai bot. Get summary reports and inline comments on GitHub, GitLab, and Bitbucket.
+description: Automatically review every pull request with the kluster.ai bot. Get summary reports and inline comments on GitHub, GitLab, Bitbucket, and Azure DevOps.
 categories: PR Reviews
 ---
 
@@ -82,5 +82,13 @@ Every PR review runs at the **ultra-deep** analysis level automatically. This is
     Connect using a Bitbucket API token with repository and pull request permissions. Select the workspaces or repositories to monitor.
 
     [:octicons-arrow-right-24: Set up Bitbucket](/code-reviews/pr-reviews/bitbucket/)
+
+-   :material-microsoft-azure-devops: **Azure DevOps**
+
+    ---
+
+    Connect using an Azure DevOps personal access token. An admin must first grant consent on the Azure site.
+
+    [:octicons-arrow-right-24: Set up Azure DevOps](/code-reviews/pr-reviews/azure-devops/)
 
 </div>

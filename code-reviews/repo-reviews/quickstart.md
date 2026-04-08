@@ -26,13 +26,13 @@ Learn how to run system-wide codebase analysis with [kluster.ai](https://www.klu
 Before getting started, ensure you have:
 
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
-- **A connected repository**: You'll need to connect your GitHub, GitLab, or Bitbucket repository through the dashboard.
+- **A connected repository**: You'll need to connect your GitHub, GitLab, Bitbucket, or Azure DevOps repository through the dashboard.
 
 ## How repo reviews work
 
 Repo reviews analyze your entire codebase as a system instead of reviewing individual changes. When multiple parts of your code interact, issues emerge that don't show up in PR-level reviews.
 
-1. **Connect your repository**: Link your GitHub, GitLab, or Bitbucket repository to kluster.ai.
+1. **Connect your repository**: Link your GitHub, GitLab, Bitbucket, or Azure DevOps repository to kluster.ai.
 2. **Scan starts automatically**: Wait for the deep analysis to complete.
 3. **Review the findings**: Examine issues grouped by severity and type.
 
@@ -46,12 +46,15 @@ Go to the [Repo Reviews dashboard](https://platform.kluster.ai/repo-reviews){tar
 
 ![Repo Reviews dashboard with Connect Repository button](/images/code-reviews/repo-reviews/repo-reviews-setup-1.webp)
 
-Select your Git provider (GitHub, GitLab, or Bitbucket):
+Select your Git provider (GitHub, GitLab, Bitbucket, or Azure DevOps):
 
-![Select Git provider modal](/images/code-reviews/repo-reviews/repo-reviews-setup-2.webp)
+![Select Git provider dialog showing GitHub, GitLab, Bitbucket, and Azure DevOps](/images/code-reviews/repo-reviews/repo-reviews-setup-2.webp)
 
 !!! note "Trouble connecting to GitHub?"
     If your organization uses OAuth app access restrictions, you may need an org admin to approve the kluster.ai OAuth app before it can access your repositories. Refer to GitHub's guide on [approving OAuth apps for your organization](https://docs.github.com/en/organizations/managing-oauth-access-to-your-organizations-data/approving-oauth-apps-for-your-organization){target=\_blank} for details.
+
+!!! note "Connecting to Azure DevOps?"
+    Azure DevOps requires a one-time admin consent step before connecting. When you select Azure DevOps as your provider, the connection dialog shows an **Admin consent required** step. If you are the organization admin, click **Open** to accept the required permissions. If not, click **Copy link** and share it with your admin. This only needs to be done once for both PR reviews and repo reviews. See [Azure DevOps setup](/code-reviews/pr-reviews/azure-devops/#admin-consent) for details.
 
 Then choose the repository you want to analyze:
 
