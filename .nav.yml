@@ -8,7 +8,6 @@ nav:
  - ':custom-terminal: CLI': code-reviews/cli
  - ':custom-database: External Knowledge': code-reviews/external-knowledge
  - ':custom-settings: Configuration': code-reviews/configuration
- - 'Video Library': code-reviews/video-library.md
  - ':custom-faq: FAQ': code-reviews/faq.md
  - ':custom-alert: Troubleshooting': code-reviews/troubleshooting.md
  - 'Reference': code-reviews/reference
