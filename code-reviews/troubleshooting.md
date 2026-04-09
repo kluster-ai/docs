@@ -142,6 +142,23 @@ Or split the review by reviewing individual files:
 kluster review file src/large-file.go
 ```
 
+## PR Reviews
+
+### Azure DevOps PR reviews not appearing
+
+After connecting Azure DevOps, pull request reviews may not appear if the account used to generate the personal access token lacks the required permissions to install webhooks.
+
+To fix this:
+
+1. Navigate to **Azure DevOps** > **Organization Settings** > **Security** > **Permissions**.
+2. Find the user account that generated the personal access token.
+3. Open the **Member of** tab and add the user to **Project Collection Administrators**.
+4. Return to the [PR Reviews](https://platform.kluster.ai/pr-bot-installation){target=\_blank} page in the kluster.ai platform and click **Re-install** on the Azure DevOps integration.
+
+After re-installing, each new pull request should receive review comments from kluster.
+
+For more details on the required permissions, see the [Azure DevOps setup guide](/code-reviews/pr-reviews/azure-devops/).
+
 ## Need help?
 
 If your issue isn't listed here or you need additional support, join our [Discord community](https://discord.com/invite/klusterai){target=\_blank}.
