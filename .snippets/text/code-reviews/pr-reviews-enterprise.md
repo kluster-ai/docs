@@ -1,2 +1,2 @@
 !!! note "Enterprise plan"
-    PR Reviews is available exclusively on the Enterprise plan. To enable PR Reviews for your organization, contact the kluster.ai team at [info@kluster.ai](mailto:info@kluster.ai){target=\_blank}.
+    PR Reviews is available exclusively on the Enterprise plan. To enable PR Reviews for your organization, contact the kluster.ai team at [sales@kluster.ai](mailto:sales@kluster.ai){target=\_blank}.
