@@ -155,7 +155,7 @@ To fix this:
 3. Open the **Member of** tab and add the user to **Project Collection Administrators**.
 4. Return to the [PR Reviews](https://platform.kluster.ai/pr-bot-installation){target=\_blank} page in the kluster.ai platform and click **Re-install** on the Azure DevOps integration.
 
-After re-installing, each new pull request should receive review comments from kluster.
+After re-installing, each new pull request should receive review comments from the kluster.ai bot.
 
 For more details on the required permissions, see the [Azure DevOps setup guide](/code-reviews/pr-reviews/azure-devops/).
 
