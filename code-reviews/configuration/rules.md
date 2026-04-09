@@ -28,7 +28,7 @@ To accommodate different workflows, Code Reviews supports two types of rules:
     ![Connect to GitHub](/images/code-reviews/configuration/rules/rules-01.webp)
 
     !!! note
-        Rule extraction and project-specific learned rules are currently available for GitHub repositories only. Azure DevOps, GitLab, and Bitbucket repositories do not support automatic rule extraction at this time.
+        Rule extraction and project-specific learned rules are currently available for GitHub repositories only. GitLab and Bitbucket do not support automatic rule extraction at this time. Azure DevOps does not support custom rules of any kind, including manual rules.
 
 3. Click **Add review rule** to create custom rules.
 
