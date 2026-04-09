@@ -8,7 +8,7 @@ categories: PR Reviews
 
 Connect the [kluster.ai](https://www.kluster.ai/){target=\_blank} Code Review solution to your Azure DevOps repositories to automatically review every pull request. The setup uses a token-based integration that requires a personal access token and your organization URL before the bot can begin reviewing your pull requests.
 
-Before connecting, an administrator in your Azure DevOps organization must complete a one-time consent step directly from the kluster.ai platform. After that, any team member with the right permissions can generate a token and finish the setup.
+Before connecting, an administrator in your Azure DevOps organization must complete a one-time consent step directly from the kluster.ai platform. After that, any member of **Project Collection Administrators** can generate a token and finish the setup.
 
 Once connected, the bot reviews every new pull request and every new commit pushed to an open pull request. No additional configuration is needed.
 
