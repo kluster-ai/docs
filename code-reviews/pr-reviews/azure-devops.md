@@ -8,7 +8,7 @@ categories: PR Reviews
 
 Connect the [kluster.ai](https://www.kluster.ai/){target=\_blank} Code Review solution to your Azure DevOps repositories to automatically review every pull request. The setup uses a token-based integration that requires a personal access token and your organization URL before the bot can begin reviewing your pull requests.
 
-Before connecting, an administrator in your Azure DevOps organization must complete a one-time consent step directly from the kluster.ai platform. After that, any team member with the right permissions can generate a token and finish the setup.
+Before connecting, an administrator in your Azure DevOps organization must complete a one-time consent step directly from the kluster.ai platform. After that, any member of **Project Collection Administrators** can generate a token and finish the setup.
 
 Once connected, the bot reviews every new pull request and every new commit pushed to an open pull request. No additional configuration is needed.
 
@@ -16,19 +16,13 @@ Once connected, the bot reviews every new pull request and every new commit push
 
 --8<-- 'text/code-reviews/pr-reviews-tip.md'
 
-!!! warning "Custom rules not supported"
-    [Custom rules](/code-reviews/configuration/rules/) — including learned rules extracted from repositories — are not currently supported for Azure DevOps. Reviews use the default kluster analysis without project-specific rule customization.
-
 ## Prerequisites
 
 Before getting started, ensure you have:
 
 - A [kluster.ai](https://platform.kluster.ai/signup){target=\_blank} account.
-- An Azure DevOps account that is a member of **Project Collection Administrators** in your organization.
+- An Azure DevOps account that is a member of **Project Collection Administrators** in your organization. This role is required to install webhooks. If the account has insufficient permissions, webhook installation will fail silently and pull request reviews will not appear. To fix this, navigate to **Organization Settings** > **Security** > **Permissions**, find the user, and add them to **Project Collection Administrators**. After updating permissions, click **Re-install** on the PR Reviews page in the kluster.ai platform.
 - A personal access token with the required scopes. See [Create a personal access token](#create-a-personal-access-token) for instructions.
-
-!!! warning "Verify account permissions"
-    The account that generates the personal access token must be a member of **Project Collection Administrators**. Having the correct token scopes is not enough — the account itself needs this role to install webhooks. If the account has insufficient permissions, webhook installation will fail silently and pull request reviews will not appear. To fix this, navigate to **Organization Settings** > **Security** > **Permissions**, find the user, and add them to **Project Collection Administrators**. After updating permissions, click **Re-install** on the PR Reviews page in the kluster.ai platform to complete the setup.
 
 ## Admin consent
 
@@ -37,7 +31,7 @@ Before anyone in your organization can connect kluster to Azure DevOps, an admin
 The admin consent step appears as step 1 when you begin the Azure DevOps connection flow on the kluster.ai platform (see [Connect Azure DevOps](#connect-azure-devops)). If you are the organization admin, click **Open** to review and accept the required permissions. If you are not, click **Copy link** and share it with your organization admin to complete the consent.
 
 !!! note
-    Admin consent only needs to be completed once. After the admin accepts, all team members in the organization can connect their projects without repeating this step.
+    Admin consent only needs to be completed once. After the admin accepts, any member of **Project Collection Administrators** in the organization can connect projects without repeating the consent step. See [Prerequisites](#prerequisites) for the required role. Note that [custom rules](/code-reviews/configuration/rules/) — including learned rules — are not currently supported for Azure DevOps.
 
 ## Create a personal access token
 
