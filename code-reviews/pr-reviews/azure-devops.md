@@ -37,7 +37,7 @@ Before anyone in your organization can connect kluster to Azure DevOps, an admin
 The admin consent step appears as step 1 when you begin the Azure DevOps connection flow on the kluster.ai platform (see [Connect Azure DevOps](#connect-azure-devops)). If you are the organization admin, click **Open** to review and accept the required permissions. If you are not, click **Copy link** and share it with your organization admin to complete the consent.
 
 !!! note
-    Admin consent only needs to be completed once. After the admin accepts, any **Project Collection Administrator** in the organization can connect projects without repeating the consent step. See [Verify account permissions](#prerequisites) for the required role.
+    Admin consent only needs to be completed once. After the admin accepts, any member of **Project Collection Administrators** in the organization can connect projects without repeating the consent step. See [Prerequisites](#prerequisites) for the required role.
 
 ## Create a personal access token
 
