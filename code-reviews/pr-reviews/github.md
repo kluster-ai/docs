@@ -10,6 +10,8 @@ Connect the [kluster.ai](https://www.kluster.ai/){target=\_blank} bot to your Gi
 
 Once connected, the bot reviews every new PR and every new commit pushed to an open PR. No additional configuration is needed.
 
+--8<-- 'text/code-reviews/pr-reviews-enterprise.md'
+
 --8<-- 'text/code-reviews/pr-reviews-tip.md'
 
 ## Prerequisites

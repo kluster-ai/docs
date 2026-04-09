@@ -10,6 +10,8 @@ Connect the [kluster.ai](https://www.kluster.ai/){target=\_blank} bot to your Bi
 
 Once connected, the bot reviews every new pull request and every new commit pushed to an open pull request. No additional configuration is needed.
 
+--8<-- 'text/code-reviews/pr-reviews-enterprise.md'
+
 --8<-- 'text/code-reviews/pr-reviews-tip.md'
 
 ## Prerequisites

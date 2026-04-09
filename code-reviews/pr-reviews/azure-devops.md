@@ -12,6 +12,8 @@ Before connecting, an administrator in your Azure DevOps organization must compl
 
 Once connected, the bot reviews every new pull request and every new commit pushed to an open pull request. No additional configuration is needed.
 
+--8<-- 'text/code-reviews/pr-reviews-enterprise.md'
+
 --8<-- 'text/code-reviews/pr-reviews-tip.md'
 
 !!! warning "Custom rules not supported"
