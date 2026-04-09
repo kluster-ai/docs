@@ -20,6 +20,9 @@ Before getting started, ensure you have:
 - A Bitbucket account with **developer** access to the repositories you want to review.
 - A Bitbucket API token. See [Create an API token](#create-an-api-token) for instructions.
 
+!!! warning "Verify account permissions"
+    The account that generates the API token must have at least **developer** access to the target repositories. Having the correct token scopes is not enough — the account itself needs developer-level permissions. If the account has insufficient access, webhook installation will fail and pull request reviews will not appear. After fixing the account's permissions, click **Re-install** on the PR Reviews page in the kluster.ai platform to complete the setup.
+
 ## Create an API token
 
 The kluster.ai bot requires a Bitbucket API token to access your repositories and post review comments. Tokens are created through your Atlassian account settings.

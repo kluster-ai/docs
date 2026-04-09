@@ -20,6 +20,9 @@ Before getting started, ensure you have:
 - A GitLab account with at least **Developer** access to the projects you want to review.
 - A GitLab access token with the `api` scope. See [Create an access token](#create-an-access-token) for instructions.
 
+!!! warning "Verify account permissions"
+    The account that generates the access token must have at least **Developer** role in the target project or group. Having the correct token scopes (such as `api`) is not enough — the account itself needs Developer-level permissions. If the account only has Guest access, webhook installation will fail silently and PR reviews will not appear. After fixing the account's role, click **Re-install** on the PR Reviews page in the kluster.ai platform to complete the setup.
+
 ## Create an access token
 
 The kluster.ai bot requires a GitLab access token with the `api` scope to read merge requests and post review comments.
