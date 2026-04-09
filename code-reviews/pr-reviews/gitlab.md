@@ -10,6 +10,8 @@ Connect the [kluster.ai](https://www.kluster.ai/){target=\_blank} bot to your Gi
 
 Once connected, the bot reviews every new merge request and every new commit pushed to an open merge request. No additional configuration is needed.
 
+--8<-- 'text/code-reviews/pr-reviews-enterprise.md'
+
 --8<-- 'text/code-reviews/pr-reviews-tip.md'
 
 ## Prerequisites
@@ -19,6 +21,9 @@ Before getting started, ensure you have:
 - A [kluster.ai](https://platform.kluster.ai/signup){target=\_blank} account.
 - A GitLab account with at least **Developer** access to the projects you want to review.
 - A GitLab access token with the `api` scope. See [Create an access token](#create-an-access-token) for instructions.
+
+!!! warning "Verify account permissions"
+    The account that generates the access token must have at least **Developer** role in the target project or group. Having the correct token scopes (such as `api`) is not enough — the account itself needs Developer-level permissions. If the account only has Guest access, webhook installation will fail silently and PR reviews will not appear. After fixing the account's role, click **Re-install** on the PR Reviews page in the kluster.ai platform to complete the setup.
 
 ## Create an access token
 

@@ -10,6 +10,8 @@ PR Reviews connects a [kluster.ai](https://www.kluster.ai/){target=\_blank} bot 
 
 The bot acts as a last line of defense. It catches issues that were missed during development, whether you used IDE reviews, CLI checks, or no kluster tooling at all. Every PR gets an ultra-deep analysis that examines your changes for bugs, security vulnerabilities, and quality problems before they reach your main branch.
 
+--8<-- 'text/code-reviews/pr-reviews-enterprise.md'
+
 !!! tip "Best used as a safety net"
     PR Reviews is most effective when combined with earlier review stages. Install the [kluster.ai extension](/code-reviews/get-started/installation/) in your IDE or set up [CLI hooks](/code-reviews/cli/git-hooks/) to catch issues while you code. The PR bot then confirms nothing was missed.
 

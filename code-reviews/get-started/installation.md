@@ -57,6 +57,10 @@ Before getting started, ensure you have:
 
     ![Active MCP Tools in VS Code](/images/code-reviews/get-started/installation/vscode/vscode-integration-6.webp)
 
+    **Uninstall**
+
+    To remove kluster.ai from VS Code, open the Extensions panel, find **Kluster Code Reviews**, and click **Uninstall**.
+
 === "Cursor"
 
     1. Click the **Add to Cursor** button below.
@@ -78,6 +82,10 @@ Before getting started, ensure you have:
         --8<-- 'text/code-reviews/code-tools.md'
 
         ![Active MCP Tools in Cursor](/images/code-reviews/get-started/installation/cursor/cursor-integration-2.webp)
+
+    **Uninstall**
+
+    To remove kluster.ai from Cursor, open **Settings** > **Extensions**, find **Kluster Code Reviews**, and click **Uninstall**.
 
 === "JetBrains"
 
@@ -120,6 +128,10 @@ Before getting started, ensure you have:
 
         ![Active kluster.ai plugin in JetBrains](/images/code-reviews/get-started/installation/jetbrains/jetbrains-integration-5.webp)
 
+    **Uninstall**
+
+    To remove kluster.ai from your JetBrains IDE, go to **Settings** > **Plugins**, find **kluster.ai**, and click **Uninstall**. Restart the IDE when prompted.
+
 === "Windsurf"
 
     1. Click the **Add to Windsurf** button below.
@@ -161,6 +173,10 @@ Before getting started, ensure you have:
 
         ![Active MCP Tools in Windsurf](/images/code-reviews/get-started/installation/windsurf/windsurf-integration-7.webp)
 
+    **Uninstall**
+
+    To remove kluster.ai from Windsurf, open the Extensions panel, find **Kluster Code Reviews**, and click **Uninstall**.
+
 === "Antigravity"
 
     1. Click the **Add to Antigravity** button below.
@@ -197,6 +213,10 @@ Before getting started, ensure you have:
     2. Verify that **Kluster-Verify-Code** appears with all tools enabled.
 
         ![Active MCP Tools in Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-6.webp)
+
+    **Uninstall**
+
+    To remove kluster.ai from Antigravity, open the Extensions panel, find **Kluster Code Reviews**, and click **Uninstall**.
 
 ### Terminal tools
 
@@ -237,6 +257,14 @@ Before getting started, ensure you have:
 
     ![Claude Code Installation Demo](/images/code-reviews/get-started/installation/claudecode/claude.gif)
 
+    **Uninstall**
+
+    To remove kluster.ai from Claude Code, run:
+
+    ```bash
+    npx -y @klusterai/ide-installer@latest uninstall claude
+    ```
+
 === "Codex CLI"
 
     **Terminal installation**
@@ -270,6 +298,14 @@ Before getting started, ensure you have:
 
     ![Codex CLI Installation Demo](/images/code-reviews/get-started/installation/codex-cli/codex-cli.gif)
 
+    **Uninstall**
+
+    To remove kluster.ai from Codex CLI, run:
+
+    ```bash
+    npx -y @klusterai/ide-installer@latest uninstall codex
+    ```
+
 === "CLI (Standalone)"
 
     kluster-cli is a standalone command-line tool that works without an IDE or AI assistant. Install it directly on macOS, Linux, or Windows.
@@ -295,6 +331,10 @@ Before getting started, ensure you have:
     For shell completions, updates, and more, see the full [CLI installation guide](/code-reviews/cli/installation/).
 
     [:octicons-arrow-right-24: CLI quickstart](/code-reviews/cli/quickstart/)
+
+    **Uninstall**
+
+    To remove the kluster CLI, see the [CLI installation guide](/code-reviews/cli/installation/) for platform-specific uninstall instructions.
 
 ## Next steps
 

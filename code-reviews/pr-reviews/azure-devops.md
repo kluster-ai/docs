@@ -12,6 +12,8 @@ Before connecting, an administrator in your Azure DevOps organization must compl
 
 Once connected, the bot reviews every new pull request and every new commit pushed to an open pull request. No additional configuration is needed.
 
+--8<-- 'text/code-reviews/pr-reviews-enterprise.md'
+
 --8<-- 'text/code-reviews/pr-reviews-tip.md'
 
 !!! warning "Custom rules not supported"
@@ -22,8 +24,11 @@ Once connected, the bot reviews every new pull request and every new commit push
 Before getting started, ensure you have:
 
 - A [kluster.ai](https://platform.kluster.ai/signup){target=\_blank} account.
-- An Azure DevOps account with at least **Basic** access to the projects you want to review.
+- An Azure DevOps account that is a member of **Project Collection Administrators** in your organization.
 - A personal access token with the required scopes. See [Create a personal access token](#create-a-personal-access-token) for instructions.
+
+!!! warning "Verify account permissions"
+    The account that generates the personal access token must be a member of **Project Collection Administrators**. Having the correct token scopes is not enough — the account itself needs this role to install webhooks. If the account has insufficient permissions, webhook installation will fail silently and pull request reviews will not appear. To fix this, navigate to **Organization Settings** > **Security** > **Permissions**, find the user, and add them to **Project Collection Administrators**. After updating permissions, click **Re-install** on the PR Reviews page in the kluster.ai platform to complete the setup.
 
 ## Admin consent
 

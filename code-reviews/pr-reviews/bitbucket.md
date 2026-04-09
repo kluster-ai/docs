@@ -10,6 +10,8 @@ Connect the [kluster.ai](https://www.kluster.ai/){target=\_blank} bot to your Bi
 
 Once connected, the bot reviews every new pull request and every new commit pushed to an open pull request. No additional configuration is needed.
 
+--8<-- 'text/code-reviews/pr-reviews-enterprise.md'
+
 --8<-- 'text/code-reviews/pr-reviews-tip.md'
 
 ## Prerequisites
@@ -19,6 +21,9 @@ Before getting started, ensure you have:
 - A [kluster.ai](https://platform.kluster.ai/signup){target=\_blank} account.
 - A Bitbucket account with **developer** access to the repositories you want to review.
 - A Bitbucket API token. See [Create an API token](#create-an-api-token) for instructions.
+
+!!! warning "Verify account permissions"
+    The account that generates the API token must have at least **developer** access to the target repositories. Having the correct token scopes is not enough — the account itself needs developer-level permissions. If the account has insufficient access, webhook installation will fail and pull request reviews will not appear. After fixing the account's permissions, click **Re-install** on the PR Reviews page in the kluster.ai platform to complete the setup.
 
 ## Create an API token
 
