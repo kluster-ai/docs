@@ -1,4 +1,0 @@
-footer_nav: true
-nav:
-  - 'MCP tools': mcp-tools.md
-  - 'Response schema': response-schema.md
