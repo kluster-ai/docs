@@ -41,6 +41,12 @@ videos:
     badges: ["VS Code", "On-Demand", "Short"]
     thumbnail: "images/code-reviews/video-library/on-demand-code-reviews-with-kluster-in-vs-code.webp"
     description: "Learn how to perform on-demand code reviews directly in VS Code using kluster.ai. Get instant or deep analysis and fix issues with AI."
+  - youtube_id: kKmSagZ2zjc
+    title: "kluster.ai Code Reviews with Claude Code: Automated Security & Performance fixes"
+    category: "Review in IDE"
+    badges: ["Claude", "Auto Review"]
+    thumbnail: "images/code-reviews/video-library/kluster-code-reviews-with-claude-code.webp"
+    description: "See how kluster.ai Code Reviews automatically finds and fixes critical security and performance issues with Claude Code. Secure your AI-generated code!"
   - youtube_id: B2x8OkPI1sc
     title: "Unleash Terminal-Based Code Reviews with kluster.ai CLI!"
     category: "CLI"
@@ -71,12 +77,6 @@ videos:
     badges: ["Jira"]
     thumbnail: "images/code-reviews/video-library/jira-integration-code-reviews-ticket-specs.webp"
     description: "Enhance code reviews with kluster.ai's Jira integration. Verify code against ticket specs, ensuring accuracy and compliance in real-time."
-  - youtube_id: kKmSagZ2zjc
-    title: "kluster.ai Code Reviews with Claude Code: Automated Security & Performance fixes"
-    category: "Review in IDE"
-    badges: ["Claude", "Auto Review"]
-    thumbnail: "images/code-reviews/video-library/kluster-code-reviews-with-claude-code.webp"
-    description: "See how kluster.ai Code Reviews automatically finds and fixes critical security and performance issues with Claude Code. Secure your AI-generated code!"
 ---
 
 # Video library
