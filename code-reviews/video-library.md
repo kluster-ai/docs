@@ -71,6 +71,12 @@ videos:
     badges: ["Jira"]
     thumbnail: "images/code-reviews/video-library/jira-integration-code-reviews-ticket-specs.webp"
     description: "Enhance code reviews with kluster.ai's Jira integration. Verify code against ticket specs, ensuring accuracy and compliance in real-time."
+  - youtube_id: kKmSagZ2zjc
+    title: "kluster.ai Code Reviews with Claude Code: Automated Security & Performance fixes"
+    category: "Review in IDE"
+    badges: ["Claude", "Auto Review"]
+    thumbnail: "images/code-reviews/video-library/kluster-code-reviews-with-claude-code.webp"
+    description: "See how kluster.ai Code Reviews automatically finds and fixes critical security and performance issues with Claude Code. Secure your AI-generated code!"
 ---
 
 # Video library
