@@ -11,5 +11,5 @@ nav:
  - ':custom-history: Changelog': code-reviews/changelogs.md
  - ':custom-faq: FAQ': code-reviews/faq.md
  - ':custom-alert: Troubleshooting': code-reviews/troubleshooting.md
- - 'Reference': code-reviews/reference
+ - ':custom-file: Reference': code-reviews/reference.md
  - 'AI Resources': ai-resources.md
