@@ -42,7 +42,7 @@ videos:
     thumbnail: "images/code-reviews/video-library/on-demand-code-reviews-with-kluster-in-vs-code.webp"
     description: "Learn how to perform on-demand code reviews directly in VS Code using kluster.ai. Get instant or deep analysis and fix issues with AI."
   - youtube_id: kKmSagZ2zjc
-    title: "kluster.ai Code Reviews with Claude Code: Automated Security & Performance fixes"
+    title: "kluster.ai Code Reviews with Claude Code: Automated Security & Performance Fixes"
     category: "Review in IDE"
     badges: ["Claude", "Auto Review"]
     thumbnail: "images/code-reviews/video-library/kluster-code-reviews-with-claude-code.webp"
