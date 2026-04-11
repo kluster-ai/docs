@@ -1,6 +1,6 @@
 ---
 title: PR Reviews Quickstart
-description: Automatically review every pull request with the kluster.ai bot. Get summary reports and inline comments on GitHub, GitLab, and Bitbucket.
+description: Automatically review every pull request with the kluster.ai bot. Get summary reports and inline comments on GitHub, GitLab, Bitbucket, and Azure DevOps.
 categories: PR Reviews
 ---
 
@@ -9,6 +9,8 @@ categories: PR Reviews
 PR Reviews connects a [kluster.ai](https://www.kluster.ai/){target=\_blank} bot to your source control platform. The bot automatically reviews every pull request and each subsequent commit, posting detailed feedback directly in the PR. No manual steps are needed once the integration is set up.
 
 The bot acts as a last line of defense. It catches issues that were missed during development, whether you used IDE reviews, CLI checks, or no kluster tooling at all. Every PR gets an ultra-deep analysis that examines your changes for bugs, security vulnerabilities, and quality problems before they reach your main branch.
+
+--8<-- 'text/code-reviews/pr-reviews-enterprise.md'
 
 !!! tip "Best used as a safety net"
     PR Reviews is most effective when combined with earlier review stages. Install the [kluster.ai extension](/code-reviews/get-started/installation/) in your IDE or set up [CLI hooks](/code-reviews/cli/git-hooks/) to catch issues while you code. The PR bot then confirms nothing was missed.
@@ -82,5 +84,13 @@ Every PR review runs at the **ultra-deep** analysis level automatically. This is
     Connect using a Bitbucket API token with repository and pull request permissions. Select the workspaces or repositories to monitor.
 
     [:octicons-arrow-right-24: Set up Bitbucket](/code-reviews/pr-reviews/bitbucket/)
+
+-   :material-microsoft-azure-devops: **Azure DevOps**
+
+    ---
+
+    Connect using an Azure DevOps personal access token. An admin must first grant consent on the Azure site.
+
+    [:octicons-arrow-right-24: Set up Azure DevOps](/code-reviews/pr-reviews/azure-devops/)
 
 </div>

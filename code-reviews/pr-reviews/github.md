@@ -10,6 +10,8 @@ Connect the [kluster.ai](https://www.kluster.ai/){target=\_blank} bot to your Gi
 
 Once connected, the bot reviews every new PR and every new commit pushed to an open PR. No additional configuration is needed.
 
+--8<-- 'text/code-reviews/pr-reviews-enterprise.md'
+
 --8<-- 'text/code-reviews/pr-reviews-tip.md'
 
 ## Prerequisites
@@ -80,4 +82,5 @@ If kluster was used during development on the branch (via IDE or CLI), the bot's
 - **[PR Reviews quickstart](/code-reviews/pr-reviews/quickstart/)**: Learn how the bot works across all supported platforms.
 - **[GitLab integration](/code-reviews/pr-reviews/gitlab/)**: Connect the kluster.ai bot to GitLab via access token.
 - **[Bitbucket integration](/code-reviews/pr-reviews/bitbucket/)**: Connect the kluster.ai bot to Bitbucket via API token.
+- **[Azure DevOps integration](/code-reviews/pr-reviews/azure-devops/)**: Connect the kluster.ai bot to Azure DevOps via personal access token.
 - **[Review modes](/code-reviews/review-modes/)**: Understand all available review types.

@@ -8,6 +8,16 @@ categories: Changelog
 
 Stay up to date with the latest changes to kluster.ai Code Reviews. This page lists new features, improvements, and bug fixes in reverse chronological order. Entries are grouped by month so you can quickly find what changed and when.
 
+## April 2026
+
+::timeline::
+
+- title: Custom AI rules support for code reviews
+  sub_title: "2026-04-06"
+  content: Added the ability to include project and global AI rules (such as AGENTS.md and CLAUDE.md) as part of code review. Supported in VS Code-based IDEs, MCP integrations, and JetBrains.
+
+::/timeline::
+
 ## March 2026
 
 ::timeline::
