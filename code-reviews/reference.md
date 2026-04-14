@@ -1,6 +1,6 @@
 ---
 title: Reference
-description: Technical reference for kluster.ai Code Reviews MCP tools and response schema, including parameters, issue types, severity levels, and priority guidance.
+description: Find answers to common questions about kluster.ai Code Review, covering setup, supported IDEs, review modes, security, and troubleshooting topics.
 categories: Reference
 ---
 
