@@ -1,18 +1,16 @@
 ---
-title: Reference
-description: Find answers to common questions about kluster.ai Code Review, covering setup, supported IDEs, review modes, security, and troubleshooting topics.
+title: MCP Tools Reference
+description: Learn how kluster.ai Code MCP tools work, including parameters, response formats, issue categories, and settings for real-time code reviews.
 categories: Reference
 ---
 
-# Reference
+# MCP Tools Reference
 
-This page provides the technical reference for the [kluster.ai](https://www.kluster.ai/){target=\_blank} Code MCP server, including available tools, request parameters, and the response schema returned by code reviews. Use it as a quick lookup when working in Cursor, Claude Code, or any MCP-compatible client.
+This page provides the technical reference for the [kluster.ai](https://www.kluster.ai/){target=\_blank} Code MCP server, including available tools, request parameters, and the response format returned by code reviews. Use it as a quick lookup when working in Cursor, Claude Code, or any MCP-compatible client.
 
-## MCP tools
+## Available tools
 
 The Code MCP server provides review tools for checking code quality and security. These tools enable real-time code reviews directly within your IDE through MCP integration.
-
-### Available tools
 
 - **`kluster_code_review_auto`**: Automatically reviews code quality and detects bugs, including logic errors, security issues, and performance problems. Triggers automatically when code is generated or modified. Best for real-time reviews during active coding sessions, analyzing changes in context of the full conversation and related files.
 - **`kluster_dependency_check`**: Validates the security and compliance of packages and dependencies. Triggers automatically before package installations or when package files are updated. Best for preventing vulnerable or non-compliant third-party libraries from entering your codebase before installation.
@@ -20,7 +18,7 @@ The Code MCP server provides review tools for checking code quality and security
 
 This page documents the parameters and response formats you'll see when using these tools in Cursor, Claude Code, or any MCP-compatible client.
 
-### Parameters
+## Parameters
 
 === "Automatic Reviews and Dependency Check"
 
@@ -78,7 +76,7 @@ This page documents the parameters and response formats you'll see when using th
 
         Session identifier returned by previous tool calls. Used to maintain context across multiple review requests.
 
-## Response schema
+## Response format
 
 All kluster.ai code review tools return the same response structure. This section documents the fields you'll see in review responses.
 
