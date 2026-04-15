@@ -1,12 +1,12 @@
 ---
 title: GitLab PR Reviews Setup
-description: Connect the kluster.ai bot to GitLab to automatically review every merge request. Use a personal or group access token to set up.
+description: Connect the kluster.ai bot to GitLab to automatically review every merge request. Set up the integration with a personal access token.
 categories: PR Reviews
 ---
 
 # GitLab
 
-Connect the [kluster.ai](https://www.kluster.ai/){target=\_blank} bot to your GitLab projects to automatically review every merge request. The setup uses a token-based integration. Provide a GitLab personal or group access token, select the projects to monitor, and the bot begins reviewing your merge requests.
+Connect the [kluster.ai](https://www.kluster.ai/){target=\_blank} bot to your GitLab projects to automatically review every merge request. The setup uses a token-based integration. Provide a GitLab personal access token, select the projects to monitor, and the bot begins reviewing your merge requests.
 
 Once connected, the bot reviews every new merge request and every new commit pushed to an open merge request. No additional configuration is needed.
 
@@ -20,76 +20,65 @@ Before getting started, ensure you have:
 
 - A [kluster.ai](https://platform.kluster.ai/signup){target=\_blank} account.
 - A GitLab account with at least **Developer** access to the projects you want to review.
-- A GitLab **Personal** or **Group** access token with the `api` scope. See [Create an access token](#create-an-access-token) for instructions.
+- A GitLab personal access token with the `api` scope. See [Create an access token](#create-an-access-token) for instructions.
 
 !!! warning "Verify account permissions"
     The account that generates the access token must have at least **Developer** role in the target project or group. Having the correct token scopes (such as `api`) is not enough. The account itself needs Developer-level permissions. If the account only has Guest access, webhook installation will fail silently and PR reviews will not appear. After fixing the account's role, click **Re-install** on the PR Reviews page in the kluster.ai platform to complete the setup.
 
 ## Create an access token
 
-The kluster.ai bot requires a GitLab personal or group access token with the `api` scope to read merge requests and post review comments.
+The kluster.ai bot requires a GitLab personal access token with the `api` scope to read merge requests and post review comments.
 
 !!! warning "Project access tokens are not supported"
-    kluster requires a **Personal access token** or a **Group access token**. Do not use a **Project access token**. These look similar in the GitLab UI but do not provide the permissions kluster needs to install webhooks across your projects. If you previously configured kluster with a project access token and reviews are not appearing, generate a new personal or group access token, then click **Re-install** on the PR Reviews page in the kluster.ai platform.
+    kluster requires a **Personal access token**. Do not use a **Project access token**. These look similar in the GitLab UI but do not provide the permissions kluster needs to install webhooks across your projects. If you previously configured kluster with a project access token and reviews are not appearing, generate a new personal access token, then click **Re-install** on the PR Reviews page in the kluster.ai platform.
 
 !!! tip "Use a dedicated service account"
     Reviews posted by the bot are attributed to the token owner. To avoid reviews appearing under a personal account, create a dedicated GitLab service account for kluster and generate the token from that account.
 
-=== "Personal access token"
+The kluster.ai bot uses a **Legacy** personal access token. GitLab now shows two options when you create a token: **Legacy token** and **Fine-grained token (Beta)**. Select **Legacy token** to follow the recommended setup below; it includes all the permissions kluster needs by default.
 
-    kluster uses a **Legacy** personal access token. GitLab now shows two options when you create a token: **Legacy token** and **Fine-grained token (Beta)**. Select **Legacy token** to follow the recommended setup below; it includes all the permissions kluster needs by default.
+1. Sign in to the GitLab account that will be associated with the kluster.ai bot reviews.
+2. Open the [Personal access tokens](https://gitlab.com/-/user_settings/personal_access_tokens){target=\_blank} page and click **Add new token**.
+3. When prompted to choose a token type, select **Legacy token**.
+4. Enter a descriptive name (for example, "kluster.ai PR Reviews"), set an expiration date, and select the following scopes: `api`, `read_api`, and `read_user`.
+5. Click **Generate token**, then copy the token immediately. The token value is only displayed once and cannot be retrieved later.
 
-    1. Sign in to the GitLab account that will be associated with the kluster.ai bot reviews.
-    2. Open the [Personal access tokens](https://gitlab.com/-/user_settings/personal_access_tokens){target=\_blank} page and click **Add new token**.
-    3. When prompted to choose a token type, select **Legacy token**.
-    4. Enter a descriptive name (for example, "kluster.ai PR Reviews"), set an expiration date, and select the following scopes: `api`, `read_api`, and `read_user`.
-    5. Click **Generate token**, then copy the token immediately. The token value is only displayed once and cannot be retrieved later.
+??? note "Alternative: fine-grained personal access token (Beta)"
+    If you want to restrict kluster to specific repositories, you can use a fine-grained personal access token instead. Fine-grained tokens let you choose exactly which projects kluster can access, but you must manually enable every required permission.
 
-    ??? note "Alternative: fine-grained personal access token (Beta)"
-        If you want to restrict kluster to specific repositories, you can use a fine-grained personal access token instead. Fine-grained tokens let you choose exactly which projects kluster can access, but you must manually enable every required permission.
+    To create a fine-grained token:
 
-        To create a fine-grained token:
+    1. On the [Personal access tokens](https://gitlab.com/-/user_settings/personal_access_tokens){target=\_blank} page, click **Add new token** and select **Fine-grained token (Beta)**.
+    2. Enter a descriptive name and set an expiration date.
+    3. Under **Group and project permissions**, enable the following scopes:
 
-        1. On the [Personal access tokens](https://gitlab.com/-/user_settings/personal_access_tokens){target=\_blank} page, click **Add new token** and select **Fine-grained token (Beta)**.
-        2. Enter a descriptive name and set an expiration date.
-        3. Under **Group and project permissions**, enable the following scopes:
+        | Category | Scope | Access |
+        |:---:|:---:|:---:|
+        | Projects | Page | Read |
+        | Repository | Code Download | Read |
+        | Repository | Commit | Read |
+        | Repository | Merge Request Approval Rule | Create, Read, Update |
+        | Repository | Merge Request Approval Status | Read |
+        | Repository | Merge Request Approval | Read |
+        | Repository | Repository | Create, Read, Update |
+        | System Migration and Integration | Webhook | Create, Delete, Read, Update |
+        | System Migration and Integration | Webhook Log | Read |
+        | System Migration and Integration | Webhook Subscription | Read |
+        | System Migration and Integration | Webhook Event | Create |
+        | System Migration and Integration | Webhook URL variable | Create, Read, Update |
 
-            | Category | Scope | Access |
-            |:---:|:---:|:---:|
-            | Projects | Page | Read |
-            | Repository | Code Download | Read |
-            | Repository | Commit | Read |
-            | Repository | Merge Request Approval Rule | Create, Read, Update |
-            | Repository | Merge Request Approval Status | Read |
-            | Repository | Merge Request Approval | Read |
-            | Repository | Repository | Create, Read, Update |
-            | System Migration and Integration | Webhook | Create, Delete, Read, Update |
-            | System Migration and Integration | Webhook Log | Read |
-            | System Migration and Integration | Webhook Subscription | Read |
-            | System Migration and Integration | Webhook Event | Create |
-            | System Migration and Integration | Webhook URL variable | Create, Read, Update |
+    4. Under **User permissions**, enable the following scopes:
 
-        4. Under **User permissions**, enable the following scopes:
+        | Scope | Access |
+        |:---:|:---:|
+        | Merge Request | Read |
+        | User | Read |
+        | Project | Read |
 
-            | Scope | Access |
-            |:---:|:---:|
-            | Merge Request | Read |
-            | User | Read |
-            | Project | Read |
+    5. Click **Generate token**, then copy the token immediately.
 
-        5. Click **Generate token**, then copy the token immediately.
-
-        !!! tip
-            The Legacy token is recommended for most users because it includes all required permissions by default. Use a fine-grained token only if limiting repository access is a priority for your organization.
-
-=== "Group access token"
-
-    Group access tokens are available on GitLab Premium or Ultimate. They are scoped to a specific group and automatically create a bot user for reviews.
-
-    1. Navigate to the group, then go to **Settings > Access Tokens**.
-    2. Create a token with the `api` scope and **Developer** access.
-
-    Each group requires its own token.
+    !!! tip
+        The Legacy token is recommended for most users because it includes all required permissions by default. Use a fine-grained token only if limiting repository access is a priority for your organization.
 
 ## Connect GitLab
 
