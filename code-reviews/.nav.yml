@@ -6,7 +6,6 @@ nav:
   - 'CLI': cli
   - 'External Knowledge': external-knowledge
   - 'Configuration': configuration
-  - 'Video Library': video-library.md
   - 'FAQ': faq.md
   - 'Troubleshooting': troubleshooting.md
-  - 'Reference': reference
+  - 'Reference': reference.md

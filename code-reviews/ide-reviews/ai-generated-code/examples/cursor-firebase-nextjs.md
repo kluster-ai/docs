@@ -258,4 +258,4 @@ Even with clear prompts and detailed plans, AI execution can go wrong. Code Revi
 
 The more complex the task, the more valuable this real-time verification becomes.
 
-**Learn more**: Explore our [MCP tools reference](/code-reviews/reference/mcp-tools/) to understand all issue types and priority levels that Code Reviews monitors.
+**Learn more**: Explore our [MCP tools reference](/code-reviews/reference/#mcp-tools) to understand all issue types and priority levels that Code Reviews monitors.

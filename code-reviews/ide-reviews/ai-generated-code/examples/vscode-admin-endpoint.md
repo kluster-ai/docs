@@ -140,4 +140,4 @@ Admin endpoints require special security attention that AI often misses:
 
 [Code Reviews](/code-reviews/review-modes/) acts as your security safety net, catching vulnerabilities that look functional but hide critical flaws. The more powerful the operation, the more critical this protection becomes.
 
-**Learn more**: Explore our [MCP tools reference](/code-reviews/reference/mcp-tools/) to understand all vulnerability types that Code Reviews monitors.
+**Learn more**: Explore our [MCP tools reference](/code-reviews/reference/#mcp-tools) to understand all vulnerability types that Code Reviews monitors.

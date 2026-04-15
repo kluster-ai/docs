@@ -71,5 +71,5 @@ The default configuration uses **Deep** for human-driven workflows and **Instant
 ## Next steps
 
 - [Create custom rules](/code-reviews/configuration/rules/): Add project-specific development standards.
-- [View MCP tools reference](/code-reviews/reference/mcp-tools/): Understand the technical API details.
+- [View MCP tools reference](/code-reviews/reference/#mcp-tools): Understand the technical API details.
 - [Installation guide](/code-reviews/get-started/installation/): Set up Code Reviews in your IDE.

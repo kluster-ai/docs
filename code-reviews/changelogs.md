@@ -2,7 +2,6 @@
 title: kluster Code Reviews Changelog
 description: A chronological record of kluster.ai Code Reviews product updates, including new features, bug fixes, and improvements across all releases.
 categories: Changelog
-footer_nav: true
 ---
 
 # Product changelog

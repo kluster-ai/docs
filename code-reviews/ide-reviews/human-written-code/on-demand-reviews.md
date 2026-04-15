@@ -133,5 +133,5 @@ You can customize how on-demand reviews work in your [configuration options](/co
 
 ## Next steps
 
-- **[MCP Tools Reference](/code-reviews/reference/mcp-tools/)**: Deep dive into all MCP tools and parameters.
+- **[MCP Tools Reference](/code-reviews/reference/#mcp-tools)**: Deep dive into all MCP tools and parameters.
 - **[Configuration Options](/code-reviews/configuration/options/)**: Customize Code Reviews behavior for your workflow.
