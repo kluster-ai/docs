@@ -36,6 +36,10 @@ The kluster.ai bot requires a Bitbucket API token to access your repositories an
 2. Open the [API tokens](https://id.atlassian.com/manage-profile/security/api-tokens){target=\_blank} page in your Atlassian account settings.
 3. Click **Create token**. Enter a descriptive label (for example, "kluster.ai PR Reviews") and choose an expiration date that aligns with your security policy.
 4. When prompted to choose a product, select **Bitbucket**.
+
+    <!-- TODO: add proper image - Atlassian API token product selection page with Bitbucket selected -->
+    ![Atlassian API token product selection with Bitbucket selected](/images/code-reviews/pr-reviews/pr-reviews-bitbucket-05.webp)
+
 5. Grant the token the scopes listed in the following table. All scopes are required for the bot to analyze code, post review comments, and manage webhooks:
 
     |    Category    |                    Scope                     |                 Description                 |
@@ -57,6 +61,9 @@ The kluster.ai bot requires a Bitbucket API token to access your repositories an
 
     !!! tip "Copy scopes to find them quickly"
         Click the copy button next to each scope in the table and paste it into the search field on the Bitbucket token creation page to locate the permission.
+
+    <!-- TODO: add proper image - Bitbucket token scopes page with all required permissions checked -->
+    ![Bitbucket token scopes page with required permissions enabled](/images/code-reviews/pr-reviews/pr-reviews-bitbucket-06.webp)
 
 6. Click **Create**, then copy the token immediately. The token value is only displayed once and cannot be retrieved later.
 

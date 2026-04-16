@@ -40,7 +40,15 @@ The kluster.ai bot uses a **Legacy** personal access token. GitLab now shows two
 1. Sign in to the GitLab account that will be associated with the kluster.ai bot reviews.
 2. Open the [Personal access tokens](https://gitlab.com/-/user_settings/personal_access_tokens){target=\_blank} page and click **Add new token**.
 3. When prompted to choose a token type, select **Legacy token**.
+
+    <!-- TODO: add proper image - GitLab token type selection showing Legacy token and Fine-grained token (Beta) options -->
+    ![GitLab token type selection showing Legacy and Fine-grained options](/images/code-reviews/pr-reviews/pr-reviews-gitlab-05.webp)
+
 4. Enter a descriptive name (for example, "kluster.ai PR Reviews"), set an expiration date, and select the following scopes: `api`, `read_api`, and `read_user`.
+
+    <!-- TODO: add proper image - GitLab personal access token form with name, expiration, and scopes (api, read_api, read_user) selected -->
+    ![GitLab token form with api, read_api, and read_user scopes selected](/images/code-reviews/pr-reviews/pr-reviews-gitlab-06.webp)
+
 5. Click **Generate token**, then copy the token immediately. The token value is only displayed once and cannot be retrieved later.
 
 ??? note "Alternative: fine-grained personal access token (Beta)"
