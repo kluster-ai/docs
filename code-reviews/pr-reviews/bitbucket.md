@@ -32,33 +32,48 @@ The kluster.ai bot requires a Bitbucket API token to access your repositories an
 !!! tip "Use a dedicated service account"
     Reviews posted by the bot are attributed to the API token owner. To avoid reviews appearing under a personal account, create a dedicated Atlassian account for kluster and generate the API token from that account.
 
+Bitbucket offers two methods for creating API tokens: **Create API token** and **Create API token with scopes**. Select **Create API token** to follow the recommended setup below; it grants all required permissions by default.
+
 1. Sign in to the Atlassian account that will be associated with the kluster.ai bot reviews.
-2. Open the [API tokens](https://id.atlassian.com/manage-profile/security/api-tokens){target=\_blank} page in your Atlassian account settings.
-3. Click **Create token**. Enter a descriptive label (for example, "kluster.ai PR Reviews") and choose an expiration date that aligns with your security policy.
-4. When prompted to choose a product, select **Bitbucket**.
-5. Grant the token the scopes listed in the following table. All scopes are required for the bot to analyze code, post review comments, and manage webhooks:
+2. Open the [API tokens](https://id.atlassian.com/manage-profile/security/api-tokens){target=\_blank} page in your Atlassian account settings and click **Create API token**.
+3. Enter a descriptive name (for example, "kluster.ai PR Reviews"), choose an expiration date that aligns with your security policy, and click **Create**.
 
-    |    Category    |                    Scope                     |                 Description                 |
-    |:--------------:|:--------------------------------------------:|:-------------------------------------------:|
-    | Account & User |        <pre>```read:account```</pre>         |            View users' profiles.            |
-    | Account & User |     <pre>```read:user:bitbucket```</pre>     |               View user info.               |
-    |   Repository   |  <pre>```read:repository:bitbucket```</pre>  |           View your repositories.           |
-    |   Repository   | <pre>```write:repository:bitbucket```</pre>  |          Modify your repositories.          |
-    | Pull Requests  | <pre>```read:pullrequest:bitbucket```</pre>  |          View your pull requests.           |
-    | Pull Requests  | <pre>```write:pullrequest:bitbucket```</pre> |         Modify your pull requests.          |
-    |     Issues     |    <pre>```read:issue:bitbucket```</pre>     |              View your issues.              |
-    |     Issues     |    <pre>```write:issue:bitbucket```</pre>    |             Modify your issues.             |
-    |   Workspace    |  <pre>```read:workspace:bitbucket```</pre>   |            View your workspaces.            |
-    |   Workspace    |   <pre>```admin:project:bitbucket```</pre>   |          Administer your projects.          |
-    |    Webhooks    |   <pre>```read:webhook:bitbucket```</pre>    |             View your webhooks.             |
-    |    Webhooks    |   <pre>```write:webhook:bitbucket```</pre>   |            Modify your webhooks.            |
-    |   Pipelines    |   <pre>```read:pipeline:bitbucket```</pre>   |            View your pipelines.             |
-    |   Pipelines    |    <pre>```read:runner:bitbucket```</pre>    | View your workspaces/repositories' runners. |
+    ![Create an API token dialog with name, expiration, and Create button](/images/code-reviews/pr-reviews/pr-reviews-bitbucket-05.webp)
 
-    !!! tip "Copy scopes to find them quickly"
-        Click the copy button next to each scope in the table and paste it into the search field on the Bitbucket token creation page to locate the permission.
+4. Copy the token immediately. The token value is only displayed once and cannot be retrieved later.
 
-6. Click **Create**, then copy the token immediately. The token value is only displayed once and cannot be retrieved later.
+??? note "Alternative: Create API token with scopes"
+    If you want granular control over which permissions the token has, select **Create API token with scopes** instead. This method uses a multi-step wizard where you choose the app, then select individual scopes.
+
+    1. On the [API tokens](https://id.atlassian.com/manage-profile/security/api-tokens){target=\_blank} page, click **Create API token with scopes**.
+    2. Enter a descriptive name and set an expiration date, then click **Next**.
+    3. Under **Select the app**, choose **Bitbucket**, then click **Next**.
+    4. Enable the scopes listed in the following table. All scopes are required for the bot to analyze code, post review comments, and manage webhooks:
+
+        |    Category    |                    Scope                     |                 Description                 |
+        |:--------------:|:--------------------------------------------:|:-------------------------------------------:|
+        | Account & User |        <pre>```read:account```</pre>         |            View users' profiles.            |
+        | Account & User |     <pre>```read:user:bitbucket```</pre>     |               View user info.               |
+        |   Repository   |  <pre>```read:repository:bitbucket```</pre>  |           View your repositories.           |
+        |   Repository   | <pre>```write:repository:bitbucket```</pre>  |          Modify your repositories.          |
+        | Pull Requests  | <pre>```read:pullrequest:bitbucket```</pre>  |          View your pull requests.           |
+        | Pull Requests  | <pre>```write:pullrequest:bitbucket```</pre> |         Modify your pull requests.          |
+        |     Issues     |    <pre>```read:issue:bitbucket```</pre>     |              View your issues.              |
+        |     Issues     |    <pre>```write:issue:bitbucket```</pre>    |             Modify your issues.             |
+        |   Workspace    |  <pre>```read:workspace:bitbucket```</pre>   |            View your workspaces.            |
+        |   Workspace    |   <pre>```admin:project:bitbucket```</pre>   |          Administer your projects.          |
+        |    Webhooks    |   <pre>```read:webhook:bitbucket```</pre>    |             View your webhooks.             |
+        |    Webhooks    |   <pre>```write:webhook:bitbucket```</pre>   |            Modify your webhooks.            |
+        |   Pipelines    |   <pre>```read:pipeline:bitbucket```</pre>   |            View your pipelines.             |
+        |   Pipelines    |    <pre>```read:runner:bitbucket```</pre>    | View your workspaces/repositories' runners. |
+
+        !!! tip "Copy scopes to find them quickly"
+            Click the copy button next to each scope in the table and paste it into the search field on the Bitbucket token creation page to locate the permission.
+
+    5. Click **Next**, then copy the token immediately. The token value is only displayed once and cannot be retrieved later.
+
+    !!! tip
+        The standard API token is recommended for most users because it includes all required permissions by default. Use a scoped token only if limiting specific permissions is a priority for your organization.
 
 ## Connect Bitbucket
 

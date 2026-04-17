@@ -20,14 +20,14 @@ Before getting started, ensure you have:
 
 - A [kluster.ai](https://platform.kluster.ai/signup){target=\_blank} account.
 - A GitLab account with at least **Developer** access to the projects you want to review.
-- A GitLab personal access token with the `api` scope. See [Create an access token](#create-an-access-token) for instructions.
+- A GitLab personal access token with the `api`, `read_api`, and `read_user` scopes. See [Create an access token](#create-an-access-token) for instructions.
 
 !!! warning "Verify account permissions"
     The account that generates the access token must have at least **Developer** role in the target project or group. Having the correct token scopes (such as `api`) is not enough. The account itself needs Developer-level permissions. If the account only has Guest access, webhook installation will fail silently and PR reviews will not appear. After fixing the account's role, click **Re-install** on the PR Reviews page in the kluster.ai platform to complete the setup.
 
 ## Create an access token
 
-The kluster.ai bot requires a GitLab personal access token with the `api` scope to read merge requests and post review comments.
+The kluster.ai bot requires a GitLab personal access token with the `api`, `read_api`, and `read_user` scopes to read merge requests and post review comments.
 
 !!! warning "Project access tokens are not supported"
     kluster requires a **Personal access token**. Do not use a **Project access token**. These look similar in the GitLab UI but do not provide the permissions kluster needs to install webhooks across your projects. If you previously configured kluster with a project access token and reviews are not appearing, generate a new personal access token, then click **Re-install** on the PR Reviews page in the kluster.ai platform.
@@ -38,9 +38,15 @@ The kluster.ai bot requires a GitLab personal access token with the `api` scope 
 The kluster.ai bot uses a **Legacy** personal access token. GitLab now shows two options when you create a token: **Legacy token** and **Fine-grained token (Beta)**. Select **Legacy token** to follow the recommended setup below; it includes all the permissions kluster needs by default.
 
 1. Sign in to the GitLab account that will be associated with the kluster.ai bot reviews.
-2. Open the [Personal access tokens](https://gitlab.com/-/user_settings/personal_access_tokens){target=\_blank} page and click **Add new token**.
+2. Open the [Personal access tokens](https://gitlab.com/-/user_settings/personal_access_tokens){target=\_blank} page and click **Generate token**.
 3. When prompted to choose a token type, select **Legacy token**.
+
+    ![GitLab token type selection showing Legacy and Fine-grained options](/images/code-reviews/pr-reviews/pr-reviews-gitlab-05.webp)
+
 4. Enter a descriptive name (for example, "kluster.ai PR Reviews"), set an expiration date, and select the following scopes: `api`, `read_api`, and `read_user`.
+
+    ![GitLab token form with api, read_api, and read_user scopes selected](/images/code-reviews/pr-reviews/pr-reviews-gitlab-06.webp)
+
 5. Click **Generate token**, then copy the token immediately. The token value is only displayed once and cannot be retrieved later.
 
 ??? note "Alternative: fine-grained personal access token (Beta)"
@@ -48,7 +54,7 @@ The kluster.ai bot uses a **Legacy** personal access token. GitLab now shows two
 
     To create a fine-grained token:
 
-    1. On the [Personal access tokens](https://gitlab.com/-/user_settings/personal_access_tokens){target=\_blank} page, click **Add new token** and select **Fine-grained token (Beta)**.
+    1. On the [Personal access tokens](https://gitlab.com/-/user_settings/personal_access_tokens){target=\_blank} page, click **Generate token** and select **Fine-grained token (Beta)**.
     2. Enter a descriptive name and set an expiration date.
     3. Under **Group and project permissions**, enable the following scopes:
 
