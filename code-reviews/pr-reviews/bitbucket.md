@@ -39,7 +39,7 @@ Bitbucket offers two methods for creating API tokens: **Create API token** and *
 3. Enter a descriptive name (for example, "kluster.ai PR Reviews"), choose an expiration date that aligns with your security policy, and click **Create**.
 
     ![Create an API token dialog with name, expiration, and Create button](/images/code-reviews/pr-reviews/pr-reviews-bitbucket-05.webp)
-    
+
 4. Copy the token immediately. The token value is only displayed once and cannot be retrieved later.
 
 ??? note "Alternative: Create API token with scopes"
