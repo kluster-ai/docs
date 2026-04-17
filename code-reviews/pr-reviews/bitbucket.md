@@ -36,11 +36,10 @@ Bitbucket offers two methods for creating API tokens: **Create API token** and *
 
 1. Sign in to the Atlassian account that will be associated with the kluster.ai bot reviews.
 2. Open the [API tokens](https://id.atlassian.com/manage-profile/security/api-tokens){target=\_blank} page in your Atlassian account settings and click **Create API token**.
-
-    <!-- TODO: add proper image - Atlassian API Tokens page showing Create API token and Create API token with scopes buttons -->
-    ![Atlassian API Tokens page with Create API token and Create API token with scopes options](/images/code-reviews/pr-reviews/pr-reviews-bitbucket-05.webp)
-
 3. Enter a descriptive name (for example, "kluster.ai PR Reviews"), choose an expiration date that aligns with your security policy, and click **Create**.
+
+    ![Create an API token dialog with name, expiration, and Create button](/images/code-reviews/pr-reviews/pr-reviews-bitbucket-05.webp)
+    
 4. Copy the token immediately. The token value is only displayed once and cannot be retrieved later.
 
 ??? note "Alternative: Create API token with scopes"
