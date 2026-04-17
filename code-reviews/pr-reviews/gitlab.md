@@ -54,7 +54,7 @@ The kluster.ai bot uses a **Legacy** personal access token. GitLab now shows two
 
     To create a fine-grained token:
 
-    1. On the [Personal access tokens](https://gitlab.com/-/user_settings/personal_access_tokens){target=\_blank} page, click **Add new token** and select **Fine-grained token (Beta)**.
+    1. On the [Personal access tokens](https://gitlab.com/-/user_settings/personal_access_tokens){target=\_blank} page, click **Generate token** and select **Fine-grained token (Beta)**.
     2. Enter a descriptive name and set an expiration date.
     3. Under **Group and project permissions**, enable the following scopes:
 
