@@ -67,14 +67,12 @@ You can provide feedback on code review results from your IDE or from the kluste
 
 In the kluster.ai extension sidebar, open **Recent Reviews** to see your latest review results. Click on a review to open its details, then use the thumbs up or thumbs down buttons on any issue to rate the finding.
 
-<!-- TODO: add proper image - kluster.ai IDE extension showing review details with thumbs up and thumbs down feedback buttons on an issue -->
 ![kluster.ai review details in IDE with feedback buttons on an issue](/images/code-reviews/faq/faq-feedback-01.webp)
 
 **From the kluster.ai platform**
 
 Open [Review History](https://platform.kluster.ai/dashboards/logs){target=\_blank} in the kluster.ai platform to see all past code reviews. Click on any review to open its details. In the **Your Feedback** section, select **Yes** (thumbs up) or **No** (thumbs down) to rate the review, and optionally add comments before clicking **Submit Feedback**.
 
-<!-- TODO: add proper image - kluster.ai platform Review History detail page showing the Your Feedback section with Yes/No buttons and comments field -->
 ![kluster.ai platform review detail page with Your Feedback section](/images/code-reviews/faq/faq-feedback-02.webp)
 
 Your feedback helps improve detection accuracy and reduce false positives across future reviews.
