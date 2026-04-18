@@ -85,9 +85,9 @@ With an [API token](#create-an-api-token) created, you can set up the Bitbucket 
 
     ![Dialog prompting for Bitbucket API credentials](/images/code-reviews/pr-reviews/pr-reviews-bitbucket-01.webp)
 
-3. After the credentials are validated, a message confirms the Bitbucket integration as **Installed** and lists the registered workspaces. By default, kluster has access to all workspaces associated with the API token owner.
+3. After the credentials are validated, a confirmation banner shows the Bitbucket integration with the **Installed** status and lists the registered workspaces. By default, kluster has access to all workspaces associated with the API token owner.
 
-    ![Bitbucket integration showing Connected status on kluster.ai](/images/code-reviews/pr-reviews/pr-reviews-bitbucket-02.webp)
+    ![Bitbucket integration showing Installed status on kluster.ai](/images/code-reviews/pr-reviews/pr-reviews-bitbucket-02.webp)
 
 ## What happens after setup
 

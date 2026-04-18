@@ -64,13 +64,13 @@ kluster.ai sources vulnerability data from public CVE databases that are continu
 
 You can provide feedback on code review results from your IDE or from the kluster.ai platform.
 
-**From your IDE**
+#### From your IDE
 
 In the kluster.ai extension sidebar, open **Recent Reviews** to see your latest review results. Click on a review to open its details, then use the thumbs up or thumbs down buttons on any issue to rate the finding.
 
 ![kluster.ai review details in IDE with feedback buttons on an issue](/images/code-reviews/faq/faq-feedback-01.webp)
 
-**From the kluster.ai platform**
+#### From the kluster.ai platform
 
 Open [Review History](https://platform.kluster.ai/dashboards/logs){target=\_blank} in the kluster.ai platform to see all past code reviews. Click on any review to open its details. In the **Your Feedback** section, select **Yes** (thumbs up) or **No** (thumbs down) to rate the review, and optionally add comments before clicking **Submit Feedback**.
 

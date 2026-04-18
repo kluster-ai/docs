@@ -1,6 +1,6 @@
 ---
 title: GitLab PR Reviews Setup
-description: Connect the kluster.ai bot to GitLab to automatically review every merge request. Set up the integration with a personal access token.
+description: Connect the kluster.ai bot to GitLab to automatically review merge requests. Set up a personal access token, configure permissions, and install the integration.
 categories: PR Reviews
 ---
 
@@ -35,7 +35,7 @@ The kluster.ai bot requires a GitLab personal access token with the `api`, `read
 !!! tip "Use a dedicated service account"
     Reviews posted by the bot are attributed to the token owner. To avoid reviews appearing under a personal account, create a dedicated GitLab service account for kluster and generate the token from that account.
 
-The kluster.ai bot uses a **Legacy** personal access token. GitLab now shows two options when you create a token: **Legacy token** and **Fine-grained token (Beta)**. Select **Legacy token** to follow the recommended setup below; it includes all the permissions kluster needs by default.
+The kluster.ai bot uses a **Legacy** personal access token. GitLab provides two options when you create a token: **Legacy token** and **Fine-grained token (Beta)**. Select **Legacy token** to follow the recommended setup below; it includes all the permissions kluster needs by default.
 
 1. Sign in to the GitLab account that will be associated with the kluster.ai bot reviews.
 2. Open the [Personal access tokens](https://gitlab.com/-/user_settings/personal_access_tokens){target=\_blank} page and click **Generate token**.
@@ -92,11 +92,11 @@ You can set up the GitLab integration from the [PR Reviews](https://platform.klu
 
 1. Navigate to [PR Reviews](https://platform.kluster.ai/pr-bot-installation){target=\_blank} in the kluster.ai platform. The PR Bot Installation page displays the available integrations, including GitLab. Click **Connect GitLab**.
 
-2. A dialog appears prompting you to enter your GitLab API token. Enter your credentials and click **Save & Install**.
+2. A dialog appears prompting you to enter your GitLab personal access token. Enter your credentials and click **Save & Install**.
 
-    ![Dialog prompting for GitLab API token](/images/code-reviews/pr-reviews/pr-reviews-gitlab-01.webp)
+    ![Dialog prompting for GitLab personal access token](/images/code-reviews/pr-reviews/pr-reviews-gitlab-01.webp)
 
-3. After the credentials are validated, a message confirms the GitLab integration as **Installed** and lists the registered workspaces. By default, kluster has access to all groups associated with the API token owner.
+3. After the credentials are validated, a confirmation banner shows the GitLab integration with the **Installed** status and lists the registered workspaces. By default, kluster has access to all groups associated with the API token owner.
 
     ![GitLab integration showing Installed status on kluster.ai](/images/code-reviews/pr-reviews/pr-reviews-gitlab-02.webp)
 

@@ -73,7 +73,7 @@ Every PR review runs at the **ultra-deep** analysis level automatically. This is
 
     ---
 
-    Connect using a GitLab personal access token with the `api` scope. Select the groups or projects to monitor.
+    Connect using a GitLab personal access token with the `api`, `read_api`, and `read_user` scopes. Select the groups or projects to monitor.
 
     [:octicons-arrow-right-24: Set up GitLab](/code-reviews/pr-reviews/gitlab/)
 
