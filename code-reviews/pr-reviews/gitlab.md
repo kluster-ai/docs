@@ -96,7 +96,7 @@ You can set up the GitLab integration from the [PR Reviews](https://platform.klu
 
     ![Dialog prompting for GitLab personal access token](/images/code-reviews/pr-reviews/pr-reviews-gitlab-01.webp)
 
-3. After the credentials are validated, a confirmation banner shows the GitLab integration with the **Installed** status and lists the registered workspaces. By default, kluster has access to all groups associated with the API token owner.
+3. After the credentials are validated, a confirmation banner shows the GitLab integration with the **Installed** status and lists the available groups and projects. By default, kluster has access to all groups associated with the personal access token owner.
 
     ![GitLab integration showing Installed status on kluster.ai](/images/code-reviews/pr-reviews/pr-reviews-gitlab-02.webp)
 
