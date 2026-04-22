@@ -44,7 +44,7 @@ You can set up the GitHub integration from the [PR Reviews](https://platform.klu
     !!! note "Trouble installing the GitHub App?"
         If you run into issues while installing the kluster.ai GitHub App, refer to GitHub's guide on [reviewing and modifying installed GitHub Apps](https://docs.github.com/en/apps/using-github-apps/reviewing-and-modifying-installed-github-apps){target=\_blank} to check permissions and resolve common setup problems.
 
-5. You are redirected back to the kluster.ai platform. A confirmation banner shows the GitHub integration with the **Installed** status and confirms that it is ready to review your pull requests automatically.
+5. You are redirected back to the kluster.ai platform. A confirmation banner shows the GitHub integration with the **Installed** status, indicating that it is ready to review your pull requests automatically.
 
     ![GitHub integration showing Installed status on kluster.ai](/images/code-reviews/pr-reviews/pr-reviews-github-05.webp)
 
