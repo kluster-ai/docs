@@ -21,7 +21,11 @@ Once connected, the bot reviews every new pull request and every new commit push
 Before getting started, ensure you have:
 
 - A [kluster.ai](https://platform.kluster.ai/signup){target=\_blank} account.
-- An Azure DevOps account that is a member of **Project Collection Administrators** in your organization. This role is required to install webhooks. If the account has insufficient permissions, webhook installation will fail silently and pull request reviews will not appear. To fix this, navigate to **Organization Settings** > **Security** > **Permissions**, find the user, and add them to **Project Collection Administrators**. After updating permissions, click **Re-install** on the PR Reviews page in the kluster.ai platform.
+- An Azure DevOps account that is a member of **Project Collection Administrators** in your organization.
+
+    !!! warning "Verify account permissions"
+        The account used for setup must have sufficient organization-level permissions to install webhooks. If the account has insufficient permissions, webhook installation will fail silently and pull request reviews will not appear. To fix this, navigate to **Organization Settings** > **Security** > **Permissions**, find the user, and add them to **Project Collection Administrators**. After updating permissions, click **Re-install** on the PR Reviews page in the kluster.ai platform.
+
 - A personal access token with the required scopes. See [Create a personal access token](#create-a-personal-access-token) for instructions.
 
 ## Admin consent
@@ -67,7 +71,7 @@ With a [personal access token](#create-a-personal-access-token) ready, you can s
 
     ![PR Bot Installation page showing Azure DevOps setup with Save & Install button](/images/code-reviews/pr-reviews/pr-reviews-azure-devops-01.webp)
 
-4. After the credentials are validated, a message confirms that the Azure DevOps integration is **Installed** and is ready to review your pull requests automatically.
+4. After the credentials are validated, a confirmation banner shows the Azure DevOps integration with the **Installed** status, indicating that it is ready to review your pull requests automatically.
 
     ![Azure DevOps integration showing Installed status on kluster.ai](/images/code-reviews/pr-reviews/pr-reviews-azure-devops-02.webp)
 
