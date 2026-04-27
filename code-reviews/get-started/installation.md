@@ -134,8 +134,9 @@ Before getting started, ensure you have:
 
 === "Visual Studio"
 
-    !!! warning "Node.js required"
-        The kluster.ai Visual Studio extension uses the Kluster-Verify-Code MCP package, which runs through `npx`. Install [Node.js](https://nodejs.org/){target=\_blank} before installing the extension.
+    !!! warning "Prerequisites"
+        - **Windows x64**: The kluster.ai Visual Studio extension is only available for Windows x64. macOS and Linux are not supported.
+        - **Node.js**: The Kluster-Verify-Code MCP package runs through `npx`. Install [Node.js](https://nodejs.org/){target=\_blank} before installing the extension.
 
     kluster.ai supports Visual Studio 2026 (the full IDE, not Visual Studio Code).
 

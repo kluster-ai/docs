@@ -14,7 +14,7 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
 
 - title: Visual Studio support
   sub_title: "2026-04-27"
-  content: Released the kluster.ai extension for Visual Studio with instant and deep code reviews and GitHub Copilot Chat integration.
+  content: Released the kluster.ai extension for Visual Studio (Windows x64 only) with instant and deep code reviews and GitHub Copilot Chat integration.
 
 - title: Filtering and CSV export for repo reviews
   sub_title: "2026-04-27"
