@@ -116,7 +116,7 @@ In this example, the AI creates an API endpoint but makes a critical security er
 
     Microsoft Visual Studio with kluster.ai extension and GitHub Copilot Chat integration.
 
-    [:octicons-arrow-right-24: Install for Visual Studio](/code-reviews/get-started/installation/#__tabbed_1_4)
+    [:octicons-arrow-right-24: Install for Visual Studio](/code-reviews/get-started/installation/)
 
 </div>
 

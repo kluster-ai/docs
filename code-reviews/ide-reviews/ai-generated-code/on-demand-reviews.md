@@ -82,7 +82,7 @@ On-demand reviews let you ask your AI assistant to review existing code—not ju
 
     Microsoft Visual Studio with kluster.ai extension and GitHub Copilot Chat integration.
 
-    [:octicons-arrow-right-24: Install for Visual Studio](/code-reviews/get-started/installation/#__tabbed_1_4)
+    [:octicons-arrow-right-24: Install for Visual Studio](/code-reviews/get-started/installation/)
 
 </div>
 

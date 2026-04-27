@@ -126,7 +126,7 @@ Select any code in your editor, right-click, and choose **Review with kluster.ai
 
     Microsoft Visual Studio with kluster.ai extension and GitHub Copilot Chat integration.
 
-    [:octicons-arrow-right-24: Install for Visual Studio](/code-reviews/get-started/installation/#__tabbed_1_4)
+    [:octicons-arrow-right-24: Install for Visual Studio](/code-reviews/get-started/installation/)
 
 </div>
 

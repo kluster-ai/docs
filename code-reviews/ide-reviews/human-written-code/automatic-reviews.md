@@ -103,7 +103,7 @@ When you switch git branches, kluster.ai resets its tracking state. This prevent
 
     Microsoft Visual Studio with kluster.ai extension and GitHub Copilot Chat integration.
 
-    [:octicons-arrow-right-24: Install for Visual Studio](/code-reviews/get-started/installation/#__tabbed_1_4)
+    [:octicons-arrow-right-24: Install for Visual Studio](/code-reviews/get-started/installation/)
 
 </div>
 
