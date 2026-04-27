@@ -12,6 +12,18 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
 
 ::timeline::
 
+- title: Visual Studio support
+  sub_title: "2026-04-27"
+  content: Released the kluster.ai extension for Visual Studio (Windows x64 only) with instant and deep code reviews and GitHub Copilot Chat integration.
+
+- title: Filtering and CSV export for repo reviews
+  sub_title: "2026-04-27"
+  content: Added filtering controls on the repo reviews screen and the ability to download repo review results as CSV.
+
+- title: Per-repo PR Reviews controls
+  sub_title: "2026-04-27"
+  content: Added per-repo controls to enable or disable PR Reviews and to configure which branch names trigger reviews.
+
 - title: Custom AI rules support for code reviews
   sub_title: "2026-04-06"
   content: Added the ability to include project and global AI rules (such as AGENTS.md and CLAUDE.md) as part of code review. Supported in VS Code-based IDEs, MCP integrations, and JetBrains.

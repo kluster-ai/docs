@@ -132,6 +132,70 @@ Before getting started, ensure you have:
 
     To remove kluster.ai from your JetBrains IDE, go to **Settings** > **Plugins**, find **kluster.ai**, and click **Uninstall**. Restart the IDE when prompted.
 
+=== "Visual Studio"
+
+    !!! warning "Prerequisites"
+        - **Windows x64**: The kluster.ai Visual Studio extension is only available for Windows x64. macOS and Linux are not supported.
+        - **Node.js**: The Kluster-Verify-Code MCP package runs through `npx`. Install [Node.js](https://nodejs.org/){target=\_blank} before installing the extension.
+
+    kluster.ai supports Visual Studio 2026 (the full IDE, not Visual Studio Code).
+
+    1. Open Visual Studio. From the menu bar, choose **Extensions** → **Manage Extensions**.
+    2. In the **Browse** tab, search for `kluster`.
+    3. Select **kluster.ai** in the results, then click **Install**.
+
+        ![Install kluster.ai extension from Visual Studio Marketplace](/images/code-reviews/get-started/installation/visualstudio/visualstudio-integration-1.webp)
+
+    4. A notification prompts you to close Visual Studio so the installation can complete. Close Visual Studio.
+
+    5. The **VSIX Installer** dialog opens. Click **Modify** to apply the scheduled installation.
+
+        ![VSIX Installer Modify dialog](/images/code-reviews/get-started/installation/visualstudio/visualstudio-integration-2.webp){ width="50%" }
+
+    6. When the **Modifications Complete** dialog appears, click **Close**.
+
+        ![VSIX Installer Modifications Complete dialog](/images/code-reviews/get-started/installation/visualstudio/visualstudio-integration-3.webp){ width="50%" }
+
+    7. Reopen Visual Studio.
+
+    !!! tip "If the kluster.ai panel does not appear automatically"
+        Most users see the kluster.ai tool window automatically after restart. If it does not appear, open it manually one time: from the menu bar, choose **View** → **Other Windows** → **kluster.ai**. Once shown, the panel docks like any other tool window.
+
+        ![Open the kluster.ai panel manually from the View menu](/images/code-reviews/get-started/installation/visualstudio/visualstudio-integration-4.webp)
+
+    Now that the extension is installed, you need to log in with your kluster.ai account:
+
+    1. Click **Sign in** in the kluster.ai panel.
+    2. A browser window opens. Authorize with your kluster.ai account.
+    3. Return to Visual Studio. The panel shows "Signed in as `<your-email>`."
+
+    **Alternative: log in with an API key**
+
+    If the browser sign-in flow is unavailable, you can log in using an API key:
+
+    1. Open the [kluster.ai platform](https://platform.kluster.ai){target=\_blank} and sign in.
+    2. Click your user menu in the top-right corner.
+    3. Select **Manual IDE login**.
+    4. Copy the displayed key.
+    5. Paste the key into the API key field in the Visual Studio panel.
+
+    **Enable kluster tools in Copilot Chat**
+
+    1. Open the **GitHub Copilot Chat** panel from **View** → **GitHub Copilot Chat** (or use Ctrl+\\, C).
+    2. Click the **Filter tools** icon (wrench/funnel) in the chat input area.
+    3. Under **Added**, check **Kluster-Verify-Code**. The badge should show **4/4** sub-tools enabled.
+
+        ![Enable Kluster-Verify-Code tools in GitHub Copilot Chat](/images/code-reviews/get-started/installation/visualstudio/visualstudio-integration-5.webp)
+
+    4. Close the popup. The Copilot Chat agent can now invoke kluster reviews.
+
+    !!! info "Why this step is required"
+        Microsoft requires manual opt-in for newly added tools in GitHub Copilot Chat. There is no way for kluster.ai to enable itself automatically.
+
+    **Uninstall**
+
+    To remove kluster.ai from Visual Studio, open **Extensions** → **Manage Extensions** → **Installed**, find **kluster.ai**, then click **Uninstall**. Close Visual Studio so the **VSIX Installer** can complete the removal.
+
 === "Windsurf"
 
     1. Click the **Add to Windsurf** button below.

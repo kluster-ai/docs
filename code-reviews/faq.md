@@ -12,7 +12,7 @@ faq: categorized
 ### What is the difference between human-written code and AI-generated code reviews?
 
 - **Human-written code**: Direct editor integration. You trigger reviews yourself by right-clicking code, using keyboard shortcuts, or clicking buttons in the extension sidebar. No AI assistant needed—review any code directly.
-- **AI-generated code**: For AI-assisted workflows. Reviews trigger automatically when AI generates code, or when you ask your AI assistant to review existing code. Works with Claude Code, Codex CLI, Cursor, VS Code, and other AI assistants.
+- **AI-generated code**: For AI-assisted workflows. Reviews trigger automatically when AI generates code, or when you ask your AI assistant to review existing code. Works with Claude Code, Codex CLI, Cursor, VS Code, Visual Studio, and other AI assistants.
 
 ### I mostly write code without AI—is kluster.ai useful for me?
 
@@ -28,7 +28,7 @@ No. AI-generated code reviews run when AI generates code. Human-written code rev
 
 ### What IDEs and CLI tools are supported?
 
-- **IDE extensions**: Cursor, VS Code, Windsurf, Antigravity, JetBrains
+- **IDE extensions**: Cursor, VS Code, Visual Studio, Windsurf, Antigravity, JetBrains
 - **CLI tools**: Claude Code, Codex CLI
 - **Standalone CLI**: [kluster-cli](/code-reviews/cli/quickstart/) for terminal-only workflows
 
