@@ -63,7 +63,7 @@ When you switch git branches, kluster.ai resets its tracking state. This prevent
 
     AI-native code editor with built-in kluster.ai extension support.
 
-    [:octicons-arrow-right-24: Install for Cursor](/code-reviews/get-started/installation/)
+    [:octicons-arrow-right-24: Install for Cursor](/code-reviews/get-started/installation/#__tabbed_1_2)
 
 -   :material-microsoft-visual-studio-code: **VS Code**
 
@@ -71,7 +71,7 @@ When you switch git branches, kluster.ai resets its tracking state. This prevent
 
     Lightweight editor with kluster.ai extension and Copilot integration.
 
-    [:octicons-arrow-right-24: Install for VS Code](/code-reviews/get-started/installation/)
+    [:octicons-arrow-right-24: Install for VS Code](/code-reviews/get-started/installation/#__tabbed_1_1)
 
 -   :simple-windsurf: **Windsurf**
 
@@ -79,7 +79,7 @@ When you switch git branches, kluster.ai resets its tracking state. This prevent
 
     AI-powered IDE by Codeium with kluster.ai extension support.
 
-    [:octicons-arrow-right-24: Install for Windsurf](/code-reviews/get-started/installation/)
+    [:octicons-arrow-right-24: Install for Windsurf](/code-reviews/get-started/installation/#__tabbed_1_5)
 
 -   :antigravity-antigravity: **Antigravity**
 
@@ -87,7 +87,7 @@ When you switch git branches, kluster.ai resets its tracking state. This prevent
 
     Next-generation IDE with native MCP integration for kluster.ai.
 
-    [:octicons-arrow-right-24: Install for Antigravity](/code-reviews/get-started/installation/)
+    [:octicons-arrow-right-24: Install for Antigravity](/code-reviews/get-started/installation/#__tabbed_1_6)
 
 -   :simple-jetbrains: **JetBrains**
 
@@ -95,7 +95,7 @@ When you switch git branches, kluster.ai resets its tracking state. This prevent
 
     JetBrains IDEs (IntelliJ IDEA, WebStorm, and others) with kluster.ai plugin support.
 
-    [:octicons-arrow-right-24: Install for JetBrains](/code-reviews/get-started/installation/)
+    [:octicons-arrow-right-24: Install for JetBrains](/code-reviews/get-started/installation/#__tabbed_1_3)
 
 -   :material-microsoft-visual-studio: **Visual Studio**
 
@@ -103,7 +103,7 @@ When you switch git branches, kluster.ai resets its tracking state. This prevent
 
     Microsoft Visual Studio with kluster.ai extension and GitHub Copilot Chat integration.
 
-    [:octicons-arrow-right-24: Install for Visual Studio](/code-reviews/get-started/installation/)
+    [:octicons-arrow-right-24: Install for Visual Studio](/code-reviews/get-started/installation/#__tabbed_1_4)
 
 </div>
 

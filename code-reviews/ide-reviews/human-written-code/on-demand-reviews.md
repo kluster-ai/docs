@@ -86,7 +86,7 @@ Select any code in your editor, right-click, and choose **Review with kluster.ai
 
     AI-native code editor with built-in kluster.ai extension support.
 
-    [:octicons-arrow-right-24: Install for Cursor](/code-reviews/get-started/installation/)
+    [:octicons-arrow-right-24: Install for Cursor](/code-reviews/get-started/installation/#__tabbed_1_2)
 
 -   :material-microsoft-visual-studio-code: **VS Code**
 
@@ -94,7 +94,7 @@ Select any code in your editor, right-click, and choose **Review with kluster.ai
 
     Lightweight editor with kluster.ai extension and Copilot integration.
 
-    [:octicons-arrow-right-24: Install for VS Code](/code-reviews/get-started/installation/)
+    [:octicons-arrow-right-24: Install for VS Code](/code-reviews/get-started/installation/#__tabbed_1_1)
 
 -   :simple-windsurf: **Windsurf**
 
@@ -102,7 +102,7 @@ Select any code in your editor, right-click, and choose **Review with kluster.ai
 
     AI-powered IDE by Codeium with kluster.ai extension support.
 
-    [:octicons-arrow-right-24: Install for Windsurf](/code-reviews/get-started/installation/)
+    [:octicons-arrow-right-24: Install for Windsurf](/code-reviews/get-started/installation/#__tabbed_1_5)
 
 -   :antigravity-antigravity: **Antigravity**
 
@@ -110,7 +110,7 @@ Select any code in your editor, right-click, and choose **Review with kluster.ai
 
     Next-generation IDE with native MCP integration for kluster.ai.
 
-    [:octicons-arrow-right-24: Install for Antigravity](/code-reviews/get-started/installation/)
+    [:octicons-arrow-right-24: Install for Antigravity](/code-reviews/get-started/installation/#__tabbed_1_6)
 
 -   :simple-jetbrains: **JetBrains**
 
@@ -118,7 +118,7 @@ Select any code in your editor, right-click, and choose **Review with kluster.ai
 
     JetBrains IDEs (IntelliJ IDEA, WebStorm, and others) with kluster.ai plugin support.
 
-    [:octicons-arrow-right-24: Install for JetBrains](/code-reviews/get-started/installation/)
+    [:octicons-arrow-right-24: Install for JetBrains](/code-reviews/get-started/installation/#__tabbed_1_3)
 
 -   :material-microsoft-visual-studio: **Visual Studio**
 
@@ -126,7 +126,7 @@ Select any code in your editor, right-click, and choose **Review with kluster.ai
 
     Microsoft Visual Studio with kluster.ai extension and GitHub Copilot Chat integration.
 
-    [:octicons-arrow-right-24: Install for Visual Studio](/code-reviews/get-started/installation/)
+    [:octicons-arrow-right-24: Install for Visual Studio](/code-reviews/get-started/installation/#__tabbed_1_4)
 
 </div>
 
