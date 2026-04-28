@@ -1,12 +1,12 @@
 ---
 title: Repo Reviews from CLI
-description: Trigger and monitor system-wide repo reviews from your terminal using kluster-cli, with a terminal-first workflow for codebase analysis.
+description: Trigger and monitor system-wide Repo Reviews from your terminal using kluster-cli, with a terminal-first workflow for codebase analysis.
 categories: Repo Reviews, CLI
 ---
 
-# Repo reviews from CLI
+# Repo Reviews from CLI
 
-You can trigger and monitor repo reviews directly from `kluster-cli`. This gives you a terminal-first workflow for system-wide analysis without opening the dashboard.
+You can trigger and monitor Repo Reviews directly from `kluster-cli`. This gives you a terminal-first workflow for system-wide analysis without opening the dashboard.
 
 ## Prerequisites
 
@@ -44,4 +44,4 @@ This output shows the last review timestamp and findings grouped by severity and
 
 - **[Repo Reviews quickstart](/code-reviews/repo-reviews/quickstart/)**: Learn the full dashboard workflow and issue actions.
 - **[CLI quickstart](/code-reviews/cli/quickstart/)**: Install and authenticate kluster-cli.
-- **[Review modes](/code-reviews/review-modes/)**: Compare repo reviews with other review workflows.
+- **[Review modes](/code-reviews/review-modes/)**: Compare Repo Reviews with other review workflows.

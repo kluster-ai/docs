@@ -30,7 +30,7 @@ Before getting started, ensure you have:
 
 ## Admin consent
 
-Before anyone in your organization can connect kluster to Azure DevOps, an administrator or organization owner must grant consent. This is a one-time step per organization that applies to both PR reviews and repo reviews.
+Before anyone in your organization can connect kluster to Azure DevOps, an administrator or organization owner must grant consent. This is a one-time step per organization that applies to both PR Reviews and Repo Reviews.
 
 The admin consent step appears as step 1 when you begin the Azure DevOps connection flow on the kluster.ai platform (see [Connect Azure DevOps](#connect-azure-devops)). If you are the organization admin, click **Open** to review and accept the required permissions. If you are not, click **Copy link** and share it with your organization admin to complete the consent.
 
@@ -63,13 +63,13 @@ The kluster.ai bot requires an Azure DevOps personal access token to access your
 
 With a [personal access token](#create-a-personal-access-token) ready, you can set up the Azure DevOps integration from the [PR Reviews](https://platform.kluster.ai/pr-bot-installation){target=\_blank} page on the kluster.ai platform.
 
-1. Navigate to [PR Reviews](https://platform.kluster.ai/pr-bot-installation){target=\_blank} in the kluster.ai platform. The PR Bot Installation page displays the Azure DevOps integration with two setup steps: **Admin consent required** and **Enter your Azure DevOps credentials**.
+1. Navigate to [PR Reviews](https://platform.kluster.ai/pr-bot-installation){target=\_blank} in the kluster.ai platform. The PR Bot Configuration page displays the Azure DevOps integration with two setup steps: **Admin consent required** and **Enter your Azure DevOps credentials**.
 
 2. **Complete admin consent** (one-time per organization). If you are the organization admin, click **Open** to review and accept the required permissions on the Azure DevOps site. If you are not an admin, click **Copy link** and share it with your organization admin. Once consent is granted, proceed to the next step.
 
 3. **Enter your Azure DevOps credentials**. Provide your organization URL (for example, `https://dev.azure.com/kluster-ai`) and your personal access token. Click **Save & Install**.
 
-    ![PR Bot Installation page showing Azure DevOps setup with Save & Install button](/images/code-reviews/pr-reviews/pr-reviews-azure-devops-01.webp)
+    ![PR Bot Configuration page showing Azure DevOps setup with Save & Install button](/images/code-reviews/pr-reviews/pr-reviews-azure-devops-01.webp)
 
 4. After the credentials are validated, a confirmation banner shows the Azure DevOps integration with the **Installed** status, indicating that it is ready to review your pull requests automatically.
 

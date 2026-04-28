@@ -79,7 +79,7 @@ Bitbucket offers two methods for creating API tokens: **Create API token** and *
 
 With an [API token](#create-an-api-token) created, you can set up the Bitbucket integration from the [PR Reviews](https://platform.kluster.ai/pr-bot-installation){target=\_blank} page on the kluster.ai platform.
 
-1. Navigate to [PR Reviews](https://platform.kluster.ai/pr-bot-installation){target=\_blank} in the kluster.ai platform. The PR Bot Installation page displays the available integrations, including Bitbucket. Click **Connect to Bitbucket**.
+1. Navigate to [PR Reviews](https://platform.kluster.ai/pr-bot-installation){target=\_blank} in the kluster.ai platform. The PR Bot Configuration page displays the available integrations, including Bitbucket. Click **Connect to Bitbucket**.
 
 2. A dialog appears prompting you to enter your Bitbucket email and API token. Enter your credentials and click **Save & Install**.
 

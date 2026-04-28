@@ -40,7 +40,7 @@ kluster.ai is language agnostic and can review code in any programming language,
 
 ### Can I review a full codebase?
 
-Yes. For system-wide analysis, use [Repo Reviews](/code-reviews/repo-reviews/quickstart/) to scan your entire repository and find bugs that emerge from cross-module interactions. Repo reviews are designed specifically for analyzing your complete codebase as a system.
+Yes. For system-wide analysis, use [Repo Reviews](/code-reviews/repo-reviews/quickstart/) to scan your entire repository and find bugs that emerge from cross-module interactions. Repo Reviews are designed specifically for analyzing your complete codebase as a system.
 
 For reviewing specific changes, use [on-demand reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/) to check individual files, code blocks, or uncommitted changes.
 
@@ -80,7 +80,7 @@ Your feedback helps improve detection accuracy and reduce false positives across
 
 ### What should I do if kluster.ai flags a false positive?
 
-In [on-demand IDE reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/) and [repo reviews](/code-reviews/repo-reviews/quickstart/), you can **Ignore** a false positive to permanently dismiss it from future reviews. If you want to revisit the issue later, use **Snooze** to temporarily hide it for 1, 7, or 30 days. Your feedback through these actions helps improve detection accuracy.
+In [on-demand IDE reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/) and [Repo Reviews](/code-reviews/repo-reviews/quickstart/), you can **Ignore** a false positive to permanently dismiss it from future reviews. If you want to revisit the issue later, use **Snooze** to temporarily hide it for 1, 7, or 30 days. Your feedback through these actions helps improve detection accuracy.
 
 ### Do kluster.ai reviews improve over time?
 
@@ -180,25 +180,25 @@ Yes. Use `--output json` for machine-readable output and check exit codes to fai
 
 Yes. Use `kluster review file <path>` to review any file, even outside a git repository. See [Review Commands](/code-reviews/cli/review-commands/#review-files).
 
-## Repo reviews
+## Repo Reviews
 
-### What are repo reviews and how are they different from other review modes?
+### What are Repo Reviews and how are they different from other review modes?
 
-Repo reviews analyze your entire codebase as a system instead of reviewing individual changes. They find bugs that emerge from interactions across modules—issues that don't show up in PR-level reviews because they're only visible when you examine how multiple parts of your code work together.
+Repo Reviews analyze your entire codebase as a system instead of reviewing individual changes. They find bugs that emerge from interactions across modules—issues that don't show up in PR-level reviews because they're only visible when you examine how multiple parts of your code work together.
 
-Other review modes (on-demand and automatic) check specific changes you make. Repo reviews scan everything to catch cross-module bugs, state inconsistencies, bypassed validation checks, and system-wide problems.
+Other review modes (on-demand and automatic) check specific changes you make. Repo Reviews scan everything to catch cross-module bugs, state inconsistencies, bypassed validation checks, and system-wide problems.
 
 ### How long does a repo review take?
 
 Depending on repository size, repo reviews take several minutes. You'll receive an email notification once the analysis completes. You can close the page and come back later—the review continues running in the background.
 
-### Can I run repo reviews on private repositories?
+### Can I run Repo Reviews on private repositories?
 
-Yes. Repo reviews work with both public and private repositories on GitHub, GitLab, Bitbucket, and Azure DevOps. The connection is secure and respects your repository permissions.
+Yes. Repo Reviews work with both public and private repositories on GitHub, GitLab, Bitbucket, and Azure DevOps. The connection is secure and respects your repository permissions.
 
-### Where can I access repo reviews?
+### Where can I access Repo Reviews?
 
-Repo reviews are available in the web dashboard at [platform.kluster.ai/repo-reviews](https://platform.kluster.ai/repo-reviews){target=\_blank} and via `kluster-cli`. After connecting your GitHub, GitLab, Bitbucket, or Azure DevOps repository, you can run `kluster review repo start` to trigger analysis and `kluster review repo show` to check results from terminal. See [Repo reviews from CLI](/code-reviews/cli/repo-reviews/).
+Repo Reviews are available in the web dashboard at [platform.kluster.ai/repo-reviews](https://platform.kluster.ai/repo-reviews){target=\_blank} and via `kluster-cli`. After connecting your GitHub, GitLab, Bitbucket, or Azure DevOps repository, you can run `kluster review repo start` to trigger analysis and `kluster review repo show` to check results from terminal. See [Repo Reviews from CLI](/code-reviews/cli/repo-reviews/).
 
 ### What do the Fix with AI, Snooze, and Ignore actions do?
 
@@ -208,7 +208,7 @@ When reviewing bugs found by kluster.ai, each issue has actions to help you mana
 - **Snooze**: Temporarily hides the issue for a selected duration (1 day, 7 days, or 30 days). The issue reappears automatically after the snooze period expires. Use this for issues you plan to address later.
 - **Ignore**: Permanently dismisses the issue. It will not reappear in future reviews. Use this for false positives or accepted risks.
 
-These actions are available in [on-demand IDE reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/) and [repo reviews](/code-reviews/repo-reviews/quickstart/).
+These actions are available in [on-demand IDE reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/) and [Repo Reviews](/code-reviews/repo-reviews/quickstart/).
 
 ## Activation codes
 

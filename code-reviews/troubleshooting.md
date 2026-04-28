@@ -144,7 +144,7 @@ kluster review file src/large-file.go
 
 ## PR Reviews
 
-### Azure DevOps PR reviews not appearing
+### Azure DevOps PR Reviews not appearing
 
 After connecting Azure DevOps, pull request reviews may not appear if the account used to generate the personal access token lacks the required permissions to install webhooks.
 

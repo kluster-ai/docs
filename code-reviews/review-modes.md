@@ -6,9 +6,9 @@ categories: Basics
 
 # Code Reviews
 
-Code Reviews analyzes your code for bugs, security vulnerabilities, and quality issues. It works for **human-written code**, **AI-generated code**, **repo reviews**, and the **standalone CLI**, with review modes tailored to each workflow.
+Code Reviews analyzes your code for bugs, security vulnerabilities, and quality issues. It works for **human-written code**, **AI-generated code**, **Repo Reviews**, and the **standalone CLI**, with review modes tailored to each workflow.
 
-For in-editor reviews, the service integrates directly into your IDE or CLI (Cursor, VS Code, Visual Studio, Windsurf, JetBrains, Claude Code, and others), analyzing code as you work. For terminal-based workflows, the standalone CLI provides reviews directly from the command line. For system-wide analysis, repo reviews scan your entire repository via the web dashboard or `kluster-cli`.
+For in-editor reviews, the service integrates directly into your IDE or CLI (Cursor, VS Code, Visual Studio, Windsurf, JetBrains, Claude Code, and others), analyzing code as you work. For terminal-based workflows, the standalone CLI provides reviews directly from the command line. For system-wide analysis, Repo Reviews scan your entire repository via the web dashboard or `kluster-cli`.
 
 <div class="embed-container">
     <iframe
@@ -57,13 +57,13 @@ When your AI coding assistant generates or modifies code, kluster.ai automatical
 
 [:octicons-arrow-right-24: Get started with AI-generated code reviews](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/)
 
-## Repo reviews
+## Repo Reviews
 
 **For system-wide codebase analysis.**
 
-Repo reviews analyze your entire repository as a system, uncovering bugs and risks that don't belong to any single change or PR. These issues only emerge when multiple parts of the code interact—problems that survive individual code reviews because they're invisible in isolation.
+Repo Reviews analyze your entire repository as a system, uncovering bugs and risks that don't belong to any single change or PR. These issues only emerge when multiple parts of the code interact—problems that survive individual code reviews because they're invisible in isolation.
 
-Common issues found by repo reviews include:
+Common issues found by Repo Reviews include:
 
 - **Cross-module bugs**: Code paths that look safe in isolation but break when exercised together.
 - **Silent error propagation**: Errors that propagate silently across modules and only surface in production.
@@ -71,11 +71,11 @@ Common issues found by repo reviews include:
 - **Bypassed validation**: Security or validation checks applied in one place but bypassed in another.
 - **Assumption violations**: Logic that relies on assumptions enforced elsewhere in the codebase.
 
-Repo reviews complement PR-level reviews by revealing problems that already exist in your system—issues that would remain hidden until something breaks.
+Repo Reviews complement PR-level reviews by revealing problems that already exist in your system—issues that would remain hidden until something breaks.
 
 **Available on**: Web dashboard and kluster-cli (requires GitHub, GitLab, Bitbucket, or Azure DevOps connection)
 
-[:octicons-arrow-right-24: Get started with repo reviews](/code-reviews/repo-reviews/quickstart/)
+[:octicons-arrow-right-24: Get started with Repo Reviews](/code-reviews/repo-reviews/quickstart/)
 
 ## CLI
 
@@ -111,7 +111,7 @@ External Knowledge connects kluster to external sources like Jira, so code revie
 - **[Installation](/code-reviews/get-started/installation/)**: Install kluster.ai in your IDE or CLI tool.
 - **[Human-written code](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/)**: Get started with in-editor reviews.
 - **[AI-generated code](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/)**: Set up automatic and on-demand reviews.
-- **[Repo reviews](/code-reviews/repo-reviews/quickstart/)**: Analyze your entire codebase for system-wide issues.
+- **[Repo Reviews](/code-reviews/repo-reviews/quickstart/)**: Analyze your entire codebase for system-wide issues.
 - **[CLI](/code-reviews/cli/quickstart/)**: Review code from the terminal with the standalone CLI.
 - **[External Knowledge](/code-reviews/external-knowledge/quickstart/)**: Connect kluster to Jira for context-aware reviews.
 - **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Compare modes and find the right fit.
