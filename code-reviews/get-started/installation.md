@@ -129,7 +129,7 @@ Before getting started, ensure you have:
 
         ![Successfully logged in to kluster.ai in JetBrains](/images/code-reviews/get-started/installation/jetbrains/jetbrains-integration-4.webp)
 
-    **Alternative log in: with an API key**
+    **Alternative login: with an API key**
 
     If the browser sign-in flow is unavailable, you can log in using an API key. Retrieve your key from the [kluster.ai platform](https://platform.kluster.ai){target=\_blank} and paste it into the API key field in the plugin panel.
 
@@ -185,7 +185,7 @@ Before getting started, ensure you have:
     2. A browser window opens. Authorize with your kluster.ai account.
     3. Return to Visual Studio. The panel shows "Signed in as `<your-email>`."
 
-    **Alternative log in: with an API key**
+    **Alternative login: with an API key**
 
     If the browser sign-in flow is unavailable, you can log in using an API key:
 
