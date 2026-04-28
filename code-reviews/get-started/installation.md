@@ -22,6 +22,8 @@ Before getting started, ensure you have:
 
 === "VS Code / Codex VS Code"
 
+    **Install**
+
     1. Click the **Add to VS Code** button below:
 
          --8<-- 'text/install-button-vscode.md'
@@ -31,6 +33,8 @@ Before getting started, ensure you have:
     3. Click **Install** to get the extension.
 
         ![Install Extension](/images/code-reviews/get-started/installation/vscode/vscode-integration-1.webp)
+
+    **Log in**
 
     Now that the extension is installed, you need to log in with your kluster.ai account:
 
@@ -49,6 +53,8 @@ Before getting started, ensure you have:
 
         ![Open and Install MCP](/images/code-reviews/get-started/installation/vscode/vscode-integration-5.webp)
 
+    **Enable**
+
     Once signed in, to enable kluster.ai in the VS Code agent chat window, take the following steps:
 
     1. Open a Copilot chat window and select the **Tools** button on the bottom right corner.
@@ -62,6 +68,8 @@ Before getting started, ensure you have:
     To remove kluster.ai from VS Code, open the Extensions panel, find **Kluster Code Reviews**, and click **Uninstall**.
 
 === "Cursor"
+
+    **Install**
 
     1. Click the **Add to Cursor** button below.
 
@@ -92,6 +100,8 @@ Before getting started, ensure you have:
     !!! warning "AI coding agent support"
         kluster.ai MCP integration in JetBrains requires the **Junie** AI agent. Install Junie separately from **Settings** :material-cog: → **Plugins** → **Marketplace** by searching for **Junie**. Other JetBrains AI agents are not supported.
 
+    **Install**
+
     kluster.ai supports JetBrains IDEs such as IntelliJ IDEA and WebStorm. Open the JetBrains IDE of your choice, and go to **Settings** :material-cog: → **Plugins** → **Marketplace**.
     
     1. Search for **kluster**.
@@ -102,6 +112,8 @@ Before getting started, ensure you have:
 
     !!! tip "Alternative: install from the JetBrains Marketplace website"
         You can also install the plugin from the [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/30646-kluster-ai){target=\_blank} website. Click **Install** on the plugin page and follow the prompts to open your IDE.
+
+    **Log in**
 
     Now that the plugin is installed, you need to log in with your kluster.ai account:
 
@@ -117,7 +129,7 @@ Before getting started, ensure you have:
 
         ![Successfully logged in to kluster.ai in JetBrains](/images/code-reviews/get-started/installation/jetbrains/jetbrains-integration-4.webp)
 
-    **Alternative: log in with an API key**
+    **Alternative login: with an API key**
 
     If the browser sign-in flow is unavailable, you can log in using an API key. Retrieve your key from the [kluster.ai platform](https://platform.kluster.ai){target=\_blank} and paste it into the API key field in the plugin panel.
 
@@ -137,6 +149,8 @@ Before getting started, ensure you have:
     !!! warning "Prerequisites"
         - **Windows x64**: The kluster.ai Visual Studio extension is only available for Windows x64. macOS and Linux are not supported.
         - **Node.js**: The Kluster-Verify-Code MCP package runs through `npx`. Install [Node.js](https://nodejs.org/){target=\_blank} before installing the extension.
+
+    **Install**
 
     kluster.ai supports Visual Studio 2026 (the full IDE, not Visual Studio Code).
 
@@ -163,13 +177,15 @@ Before getting started, ensure you have:
 
         ![Open the kluster.ai panel manually from the View menu](/images/code-reviews/get-started/installation/visualstudio/visualstudio-integration-4.webp)
 
+    **Log in**
+
     Now that the extension is installed, you need to log in with your kluster.ai account:
 
     1. Click **Sign in** in the kluster.ai panel.
     2. A browser window opens. Authorize with your kluster.ai account.
     3. Return to Visual Studio. The panel shows "Signed in as `<your-email>`."
 
-    **Alternative: log in with an API key**
+    **Alternative login: with an API key**
 
     If the browser sign-in flow is unavailable, you can log in using an API key:
 
@@ -179,7 +195,9 @@ Before getting started, ensure you have:
     4. Copy the displayed key.
     5. Paste the key into the API key field in the Visual Studio panel.
 
-    **Enable kluster tools in Copilot Chat**
+    **Enable**
+
+    To enable kluster tools in Copilot Chat:
 
     1. Open the **GitHub Copilot Chat** panel from **View** → **GitHub Copilot Chat** (or use Ctrl+\\, C).
     2. Click the **Filter tools** icon (wrench/funnel) in the chat input area.
@@ -198,6 +216,8 @@ Before getting started, ensure you have:
 
 === "Windsurf"
 
+    **Install**
+
     1. Click the **Add to Windsurf** button below.
 
          --8<-- 'text/install-button-windsurf.md'
@@ -211,6 +231,8 @@ Before getting started, ensure you have:
     4. Select **Trust Publisher & Install**.
 
         ![Trust publisher](/images/code-reviews/get-started/installation/windsurf/windsurf-integration-2.webp)
+
+    **Log in**
 
     Now that the extension is installed, you need to log in with your kluster.ai account:
 
@@ -243,6 +265,8 @@ Before getting started, ensure you have:
 
 === "Antigravity"
 
+    **Install**
+
     1. Click the **Add to Antigravity** button below.
 
          --8<-- 'text/install-button-antigravity.md'
@@ -252,6 +276,8 @@ Before getting started, ensure you have:
     3. Click **Install** to add the extension into Antigravity.
 
         ![Extension Installation Prompt in Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-1.webp)
+
+    **Log in**
 
     Now that the extension is installed, you need to log in with your kluster.ai account:
 
@@ -372,19 +398,21 @@ Before getting started, ensure you have:
 
 === "CLI (Standalone)"
 
+    **Terminal installation**
+
     kluster-cli is a standalone command-line tool that works without an IDE or AI assistant. Install it directly on macOS, Linux, or Windows.
 
-    **macOS / Linux / WSL:**
+    === "macOS / Linux / WSL"
 
-    ```bash
-    curl -fsSL https://cli.kluster.ai/install.sh | sh
-    ```
+        ```bash
+        curl -fsSL https://cli.kluster.ai/install.sh | sh
+        ```
 
-    **Windows PowerShell:**
+    === "Windows PowerShell"
 
-    ```powershell
-    irm https://cli.kluster.ai/install.ps1 | iex
-    ```
+        ```powershell
+        irm https://cli.kluster.ai/install.ps1 | iex
+        ```
 
     After installing, authenticate with your API key:
 
@@ -402,6 +430,6 @@ Before getting started, ensure you have:
 
 ## Next steps
 
-- **[Human-written code](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/)**: Learn about on-demand reviews in your editor
-- **[AI-generated code](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/)**: Learn about automatic reviews for AI-assisted coding
-- **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Decide which mode fits your workflow
+- **[Human-written code](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/)**: Learn about on-demand reviews in your editor.
+- **[AI-generated code](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/)**: Learn about automatic reviews for AI-assisted coding.
+- **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Decide which mode fits your workflow.
