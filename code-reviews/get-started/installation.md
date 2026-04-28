@@ -147,7 +147,7 @@ Before getting started, ensure you have:
 === "Visual Studio"
 
     !!! warning "Prerequisites"
-        - **Windows x64**: The kluster.ai Visual Studio extension is only available for Windows x64. macOS and Linux are not supported.
+        - **Windows x64**: The kluster.ai Visual Studio extension is only available for Windows x64. Windows ARM is not supported.
         - **Node.js**: The Kluster-Verify-Code MCP package runs through `npx`. Install [Node.js](https://nodejs.org/){target=\_blank} before installing the extension.
 
     **Install**
