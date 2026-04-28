@@ -16,9 +16,9 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
   sub_title: "2026-04-27"
   content: Released the kluster.ai extension for Visual Studio (Windows x64 only) with instant and deep code reviews and GitHub Copilot Chat integration.
 
-- title: Filtering and CSV export for repo reviews
+- title: Filtering and CSV export for Repo Reviews
   sub_title: "2026-04-27"
-  content: Added filtering controls on the repo reviews screen and the ability to download repo review results as CSV.
+  content: Added filtering controls on the Repo Reviews screen and the ability to download Repo Reviews results as CSV.
 
 - title: Per-repo PR Reviews controls
   sub_title: "2026-04-27"
@@ -34,13 +34,13 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
 
 ::timeline::
 
-- title: Azure DevOps support for PR bot
+- title: Azure DevOps support for PR Review bot
   sub_title: "2026-03-31"
-  content: Added Azure DevOps support for PR bot.
+  content: Added Azure DevOps support for PR Review bot.
 
-- title: Azure DevOps support for repository reviews
+- title: Azure DevOps support for Repo Reviews
   sub_title: "2026-03-31"
-  content: Added Azure DevOps support for repository reviews.
+  content: Added Azure DevOps support for Repo Reviews.
 
 - title: Pause reviews during AI-assisted workflows
   sub_title: "2026-03-25"
@@ -66,9 +66,9 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
   sub_title: "2026-03-16"
   content: Improved review quality in VS Code-based IDEs by expanding context for manual and background reviews.
 
-- title: PR bot support for GitLab and Bitbucket
+- title: PR Review bot support for GitLab and Bitbucket
   sub_title: "2026-03-10"
-  content: Expanded PR bot support to GitLab and Bitbucket. Added Ignore and Fix with AI actions for PR bot findings.
+  content: Expanded PR Review bot support to GitLab and Bitbucket. Added Ignore and Fix with AI actions for PR Review bot findings.
 
 - title: Jira integration and new manual review UI
   sub_title: "2026-03-02"
@@ -80,17 +80,17 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
 
 ::timeline::
 
-- title: Ignore and Snooze for repository reviews
+- title: Ignore and Snooze for Repo Reviews
   sub_title: "2026-02-18"
-  content: Added Ignore and Snooze controls to repository reviews.
+  content: Added Ignore and Snooze controls to Repo Reviews.
 
 - title: Ignore and Snooze for IDE review findings
   sub_title: "2026-02-12"
   content: Added Ignore and Snooze controls for review findings in the IDE workflow.
 
-- title: Branch selection for repository reviews
+- title: Branch selection for Repo Reviews
   sub_title: "2026-02-11"
-  content: Added branch selection for repository reviews and changed the default review cadence to once per month.
+  content: Added branch selection for Repo Reviews and changed the default review cadence to once per month.
 
 - title: Added .klusterignore support
   sub_title: "2026-02-10"
@@ -100,9 +100,9 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
   sub_title: "2026-02-06"
   content: Added team-admin visibility into team review history.
 
-- title: Bitbucket support for project rules and repo reviews
+- title: Bitbucket support for project rules and Repo Reviews
   sub_title: "2026-02-06"
-  content: Released Bitbucket support for project rules and repository reviews.
+  content: Released Bitbucket support for project rules and Repo Reviews.
 
 - title: Released kluster CLI
   sub_title: "2026-02-06"
@@ -112,9 +112,9 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
   sub_title: "2026-02-05"
   content: Improved first-time install reliability for Codex users.
 
-- title: Released repository reviews
+- title: Released Repo Reviews
   sub_title: "2026-02-03"
-  content: Released repository reviews for full-project scanning.
+  content: Released Repo Reviews for full-project scanning.
 
 - title: Improved VS Code and Cursor extension behavior
   sub_title: "2026-02-03"

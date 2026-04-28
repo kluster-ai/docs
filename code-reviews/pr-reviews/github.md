@@ -25,9 +25,9 @@ Before getting started, ensure you have:
 
 You can set up the GitHub integration from the [PR Reviews](https://platform.kluster.ai/pr-bot-installation){target=\_blank} page on the kluster.ai platform.
 
-1. Navigate to [PR Reviews](https://platform.kluster.ai/pr-bot-installation){target=\_blank} in the kluster.ai platform. The PR Bot Installation page displays the GitHub integration with two setup steps: **Authorize** and **Install**. First, click **Authorize**.
+1. Navigate to [PR Reviews](https://platform.kluster.ai/pr-bot-installation){target=\_blank} in the kluster.ai platform. The PR Bot Configuration page displays the GitHub integration with two setup steps: **Authorize** and **Install**. First, click **Authorize**.
 
-    ![PR Bot Installation page showing GitHub setup steps](/images/code-reviews/pr-reviews/pr-reviews-github-01.webp)
+    ![PR Bot Configuration page showing GitHub setup steps](/images/code-reviews/pr-reviews/pr-reviews-github-01.webp)
 
 2. You are redirected to GitHub to sign in. Enter your GitHub credentials. Next, select the organization/account you want to target and click **Authorize**.
 

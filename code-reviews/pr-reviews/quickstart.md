@@ -13,7 +13,7 @@ The bot acts as a last line of defense. It catches issues that were missed durin
 --8<-- 'text/code-reviews/pr-reviews-enterprise.md'
 
 !!! tip "Best used as a safety net"
-    PR Reviews is most effective when combined with earlier review stages. Install the [kluster.ai extension](/code-reviews/get-started/installation/) in your IDE or set up [CLI hooks](/code-reviews/cli/git-hooks/) to catch issues while you code. The PR bot then confirms nothing was missed.
+    PR Reviews is most effective when combined with earlier review stages. Install the [kluster.ai extension](/code-reviews/get-started/installation/) in your IDE or set up [CLI hooks](/code-reviews/cli/git-hooks/) to catch issues while you code. The PR Review bot then confirms nothing was missed.
 
 ## How it works
 

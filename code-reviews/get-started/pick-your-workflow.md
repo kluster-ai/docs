@@ -36,7 +36,7 @@ Code Reviews offers four distinct modes that adapt to how you work. Whether you'
 
     [:octicons-arrow-right-24: Learn more](#cli)
 
--   **Repo reviews**
+-   **Repo Reviews**
 
     ---
 
@@ -85,25 +85,25 @@ Use it when you prefer terminal workflows, need to automate reviews in git hooks
 [:octicons-arrow-right-24: Get started with CLI](/code-reviews/cli/quickstart/)
 
 
-## Repo reviews
+## Repo Reviews
 
-Repo reviews take a fundamentally different approach: instead of reviewing individual changes, it analyzes your entire repository as a complete system. This reveals bugs and risks that don't belong to any single PR or file—issues that only become visible when you examine how multiple parts of your code interact.
+Repo Reviews take a fundamentally different approach: instead of reviewing individual changes, it analyzes your entire repository as a complete system. This reveals bugs and risks that don't belong to any single PR or file—issues that only become visible when you examine how multiple parts of your code interact.
 
-Use repo reviews to catch problems that slip through PR-level reviews:
+Use Repo Reviews to catch problems that slip through PR-level reviews:
 
 - **Cross-module interactions**: Code paths that work in isolation but break when components interact.
 - **System-wide vulnerabilities**: Security checks that exist in some code paths but are bypassed in others.
 - **State management issues**: State that becomes inconsistent under edge cases like retries or partial failures.
 - **Assumption violations**: Logic that depends on constraints enforced elsewhere in the codebase.
 
-Repo reviews complement your existing review workflow. Run them periodically to surface issues that already exist in your codebase—problems that would otherwise remain hidden until they cause production incidents.
+Repo Reviews complement your existing review workflow. Run them periodically to surface issues that already exist in your codebase—problems that would otherwise remain hidden until they cause production incidents.
 
 **Available on**: Web dashboard and `kluster-cli` (requires GitHub, GitLab, Bitbucket, or Azure DevOps connection).
 
 !!! note "Usage limits"
     Pro plans include 1 repo review per month. Enterprise plans include higher limits. [Contact us](https://www.kluster.ai/contact){target=\_blank} to learn more.
 
-[:octicons-arrow-right-24: Get started with repo reviews](/code-reviews/repo-reviews/quickstart/)
+[:octicons-arrow-right-24: Get started with Repo Reviews](/code-reviews/repo-reviews/quickstart/)
 
 
 ## Using multiple modes
@@ -113,11 +113,11 @@ Most teams combine multiple review modes:
 - **Human-written code reviews**: For reviewing code you write directly in your editor.
 - **AI-generated code reviews**: For catching issues as your AI assistant generates code.
 - **CLI**: For terminal workflows, git hook automation, and CI/CD integration.
-- **Repo reviews**: For periodic system-wide analysis to catch cross-module bugs.
+- **Repo Reviews**: For periodic system-wide analysis to catch cross-module bugs.
 
 If you use Cursor, VS Code, Visual Studio, Windsurf, Antigravity, or JetBrains, you get both human-written and AI-generated code reviews in a single installation—switch seamlessly between AI-assisted coding and manual reviews without changing tools.
 
-Add CLI hooks to enforce reviews on every push, and run repo reviews periodically as a safety net to catch system-wide issues that survive individual code reviews.
+Add CLI hooks to enforce reviews on every push, and run Repo Reviews periodically as a safety net to catch system-wide issues that survive individual code reviews.
 
 ## Enrich reviews with External Knowledge
 
@@ -130,5 +130,5 @@ Connect kluster to external tools like Jira so your code reviews include project
 - **[Human-written code](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/)**: Set up on-demand reviews in your editor.
 - **[AI-generated code](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/)**: Set up automatic reviews for AI-assisted coding.
 - **[CLI quickstart](/code-reviews/cli/quickstart/)**: Review code from the terminal.
-- **[Repo reviews quickstart](/code-reviews/repo-reviews/quickstart/)**: Run your first system-wide codebase analysis.
+- **[Repo Reviews quickstart](/code-reviews/repo-reviews/quickstart/)**: Run your first system-wide codebase analysis.
 - **[External Knowledge quickstart](/code-reviews/external-knowledge/quickstart/)**: Connect kluster to Jira for context-aware reviews.

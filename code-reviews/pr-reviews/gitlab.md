@@ -90,7 +90,7 @@ The kluster.ai bot uses a **Legacy** personal access token. GitLab provides two 
 
 You can set up the GitLab integration from the [PR Reviews](https://platform.kluster.ai/pr-bot-installation){target=\_blank} page on the kluster.ai platform.
 
-1. Navigate to [PR Reviews](https://platform.kluster.ai/pr-bot-installation){target=\_blank} in the kluster.ai platform. The PR Bot Installation page displays the available integrations, including GitLab. Click **Connect GitLab**.
+1. Navigate to [PR Reviews](https://platform.kluster.ai/pr-bot-installation){target=\_blank} in the kluster.ai platform. The PR Bot Configuration page displays the available integrations, including GitLab. Click **Connect GitLab**.
 
 2. A dialog appears prompting you to enter your GitLab personal access token. Enter your credentials and click **Save & Install**.
 

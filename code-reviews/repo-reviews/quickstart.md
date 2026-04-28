@@ -9,7 +9,7 @@ categories: Basics, Repo Reviews
 Learn how to run system-wide codebase analysis with [kluster.ai](https://www.kluster.ai/){target=\_blank} Repo Reviews. Connect your repository, wait for the deep scan to complete, and review cross-module bugs that slip through PR-level reviews.
 
 !!! tip "Prefer terminal workflows?"
-    You can also run repo reviews from CLI with `kluster review repo start` and inspect results with `kluster review repo show`. See [Repo reviews from CLI](/code-reviews/cli/repo-reviews/).
+    You can also run repo reviews from CLI with `kluster review repo start` and inspect results with `kluster review repo show`. See [Repo Reviews from CLI](/code-reviews/cli/repo-reviews/).
 
 <div class="embed-container">
     <iframe
@@ -28,9 +28,9 @@ Before getting started, ensure you have:
 - **A kluster.ai account**: Sign up on the [kluster.ai platform](https://platform.kluster.ai/signup){target=\_blank} if you don't have one.
 - **A connected repository**: You'll need to connect your GitHub, GitLab, Bitbucket, or Azure DevOps repository through the dashboard.
 
-## How repo reviews work
+## How Repo Reviews work
 
-Repo reviews analyze your entire codebase as a system instead of reviewing individual changes. When multiple parts of your code interact, issues emerge that don't show up in PR-level reviews.
+Repo Reviews analyze your entire codebase as a system instead of reviewing individual changes. When multiple parts of your code interact, issues emerge that don't show up in PR-level reviews.
 
 1. **Connect your repository**: Link your GitHub, GitLab, Bitbucket, or Azure DevOps repository to kluster.ai.
 2. **Scan starts automatically**: Wait for the deep analysis to complete.
@@ -38,7 +38,7 @@ Repo reviews analyze your entire codebase as a system instead of reviewing indiv
 
 This catches cross-module bugs, state inconsistencies, bypassed validation checks, and other system-wide problems that slip through regular code reviews.
 
-## Running your first repo review
+## Running your first Repo Review
 
 ### 1. Connect your repository
 
@@ -54,7 +54,7 @@ Select your Git provider (GitHub, GitLab, Bitbucket, or Azure DevOps):
     If your organization uses OAuth app access restrictions, you may need an org admin to approve the kluster.ai OAuth app before it can access your repositories. Refer to GitHub's guide on [approving OAuth apps for your organization](https://docs.github.com/en/organizations/managing-oauth-access-to-your-organizations-data/approving-oauth-apps-for-your-organization){target=\_blank} for details.
 
 !!! note "Connecting to Azure DevOps?"
-    Azure DevOps requires a one-time admin consent step before connecting. When you select Azure DevOps as your provider, the connection dialog shows an **Admin consent required** step. If you are the organization admin, click **Open** to accept the required permissions. If not, click **Copy link** and share it with your admin. This only needs to be done once for both PR reviews and repo reviews. See [Azure DevOps setup](/code-reviews/pr-reviews/azure-devops/#admin-consent) for details.
+    Azure DevOps requires a one-time admin consent step before connecting. When you select Azure DevOps as your provider, the connection dialog shows an **Admin consent required** step. If you are the organization admin, click **Open** to accept the required permissions. If not, click **Copy link** and share it with your admin. This only needs to be done once for both PR Reviews and Repo Reviews. See [Azure DevOps setup](/code-reviews/pr-reviews/azure-devops/#admin-consent) for details.
 
 Then choose the repository you want to analyze:
 
@@ -105,7 +105,7 @@ For each issue, you have four actions:
 
 ## Next steps
 
-- **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Learn when to use repo reviews vs. other review modes.
-- **[Repo reviews from CLI](/code-reviews/cli/repo-reviews/)**: Trigger and inspect repo reviews from the terminal.
+- **[Pick your workflow](/code-reviews/get-started/pick-your-workflow/)**: Learn when to use Repo Reviews vs. other review modes.
+- **[Repo Reviews from CLI](/code-reviews/cli/repo-reviews/)**: Trigger and inspect repo reviews from the terminal.
 - **[Review modes](/code-reviews/review-modes/)**: Understand all available review types.
 - **[FAQ](/code-reviews/faq/)**: Common questions about kluster.ai code reviews.
