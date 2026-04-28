@@ -80,7 +80,7 @@ Before getting started, ensure you have:
     3. Click **Install** to add the extension into Cursor.
 
         ![Extension Installation Prompt in Cursor](/images/code-reviews/get-started/installation/cursor/cursor-integration-1.webp)
-    
+
     Once installed, you can verify the setup:
 
     1. Open **Cursor Settings**. You can use the gear icon in the top right corner to do so.
