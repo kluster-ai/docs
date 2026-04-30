@@ -52,6 +52,7 @@ jobs:
       PR_SELECTOR: ${{ github.event.inputs.pr_selector }}
       IS_MANUAL_RUN: ${{ github.event_name == 'workflow_dispatch' && github.actor != 'github-actions[bot]' }}
       TRIGGER_SOURCE: ${{ github.event.inputs.trigger_source }}
+      N8N_ROSE_LANGUAGES: ${{ vars.N8N_ROSE_LANGUAGES }}
     steps:
       - name: Validate dispatcher permissions
         if: ${{ github.event_name == 'workflow_dispatch' && github.actor != 'github-actions[bot]' }}

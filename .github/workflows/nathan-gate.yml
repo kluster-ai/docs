@@ -61,18 +61,9 @@ jobs:
           PR_NUMBER: ${{ github.event_name == 'issue_comment' && github.event.issue.number || github.event.pull_request.number }}
           CURRENT_COMMENT_ID: ${{ github.event.comment.id }}
           COOLDOWN_MINUTES: '2'
-          ACTOR_PERMISSION: ${{ steps.perm.outputs.permission }}
         shell: bash
         run: |
           set -euo pipefail
-
-          case "${ACTOR_PERMISSION:-}" in
-            admin|maintain|write)
-              echo "blocked=false" >> "$GITHUB_OUTPUT"
-              echo "✅ ${ACTOR_PERMISSION} permission; skipping cooldown."
-              exit 0
-              ;;
-          esac
 
           if [[ -z "${PR_NUMBER:-}" || ! "${PR_NUMBER}" =~ ^[0-9]+$ ]]; then
             echo "blocked=false" >> "$GITHUB_OUTPUT"
