@@ -12,6 +12,10 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
 
 ::timeline::
 
+- title: Kiro support
+  sub_title: "2026-04-30"
+  content: Released the kluster.ai extension for Kiro with automatic and on-demand code reviews via MCP integration.
+
 - title: Visual Studio support
   sub_title: "2026-04-27"
   content: Released the kluster.ai extension for Visual Studio (Windows x64 only) with instant and deep code reviews and GitHub Copilot Chat integration.

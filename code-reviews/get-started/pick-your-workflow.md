@@ -52,7 +52,7 @@ Human-written code reviews give you direct control over when reviews happen. Sel
 
 Use it to review code you wrote yourself, audit files before committing, or check legacy code you inherited. The reviews run the same comprehensive analysis as AI-generated code reviews, just triggered manually instead of automatically.
 
-**Compatible with**: Cursor, VS Code, Visual Studio, Windsurf, Antigravity, JetBrains (IDEs only).
+**Compatible with**: Cursor, VS Code, Visual Studio, Windsurf, Antigravity, Kiro, JetBrains (IDEs only).
 
 !!! info "Not available for CLI tools"
     Human-written code reviews require an IDE extension. For CLI tools like Claude Code or Codex CLI, use AI-generated code reviews instead.
@@ -68,7 +68,7 @@ This mode is designed for developers who code with AI assistants like Claude Cod
 
 **Compatible with**:
 
-- **IDE extensions**: Cursor, VS Code, Visual Studio, Windsurf, Antigravity, JetBrains.
+- **IDE extensions**: Cursor, VS Code, Visual Studio, Windsurf, Antigravity, Kiro, JetBrains.
 - **CLI tools**: Claude Code, Codex CLI.
 
 [:octicons-arrow-right-24: Get started with AI-generated code reviews](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/)
@@ -115,7 +115,7 @@ Most teams combine multiple review modes:
 - **CLI**: For terminal workflows, git hook automation, and CI/CD integration.
 - **Repo Reviews**: For periodic system-wide analysis to catch cross-module bugs.
 
-If you use Cursor, VS Code, Visual Studio, Windsurf, Antigravity, or JetBrains, you get both human-written and AI-generated code reviews in a single installation—switch seamlessly between AI-assisted coding and manual reviews without changing tools.
+If you use Cursor, VS Code, Visual Studio, Windsurf, Antigravity, Kiro, or JetBrains, you get both human-written and AI-generated code reviews in a single installation—switch seamlessly between AI-assisted coding and manual reviews without changing tools.
 
 Add CLI hooks to enforce reviews on every push, and run Repo Reviews periodically as a safety net to catch system-wide issues that survive individual code reviews.
 
