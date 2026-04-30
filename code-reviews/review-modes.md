@@ -38,7 +38,7 @@ Review code you write yourself with on-demand reviews—no AI assistant needed. 
 - **Current file review**: Analyze the file you're working on.
 - **Uncommitted changes review**: Check all modified files before committing.
 
-**Compatible with**: Cursor, VS Code, Visual Studio, Windsurf, Antigravity, JetBrains (IDEs only)
+**Compatible with**: Cursor, VS Code, Visual Studio, Windsurf, Antigravity, Kiro, JetBrains (IDEs only)
 
 [:octicons-arrow-right-24: Get started with human-written code reviews](/code-reviews/ide-reviews/human-written-code/on-demand-reviews/)
 
@@ -53,7 +53,7 @@ When your AI coding assistant generates or modifies code, kluster.ai automatical
 - **Automatic reviews**: Triggered automatically when AI generates code.
 - **On-demand reviews**: Triggered when you ask your AI to review existing code.
 
-**Compatible with**: Cursor, VS Code, Visual Studio, Windsurf, Antigravity, JetBrains (IDEs) and Claude Code, Codex CLI (CLIs)
+**Compatible with**: Cursor, VS Code, Visual Studio, Windsurf, Antigravity, Kiro, JetBrains (IDEs) and Claude Code, Codex CLI (CLIs)
 
 [:octicons-arrow-right-24: Get started with AI-generated code reviews](/code-reviews/ide-reviews/ai-generated-code/automatic-reviews/)
 

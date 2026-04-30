@@ -308,6 +308,65 @@ Before getting started, ensure you have:
 
     To remove kluster.ai from Antigravity, open the Extensions panel, find **Kluster Code Reviews**, and click **Uninstall**.
 
+=== "Kiro"
+
+    **Install**
+
+    1. Click the **Add to Kiro** button below.
+
+         --8<-- 'text/install-button-kiro.md'
+
+    2. Kiro will open and prompt for extension installation.
+
+    3. Click **Install** to add the extension into Kiro.
+
+        ![Extension Installation Prompt in Kiro](/images/code-reviews/get-started/installation/kiro/kiro-integration-1.webp)
+
+    4. When Kiro asks **Do you trust the publisher "kluster.ai"?**, click **Trust Publisher & Install** to complete the installation.
+
+    **Log in**
+
+    Once the extension is installed, sign in with your kluster.ai account:
+
+    1. Click **Sign in** in the kluster.ai notification (or open the **kluster.ai** panel from the activity bar and click **Sign in**).
+
+        ![Sign In](/images/code-reviews/get-started/installation/kiro/kiro-integration-2.webp)
+
+    2. When Kiro asks to open an external website, click **Open** to continue to your kluster.ai account.
+
+        ![Approve external website in Kiro](/images/code-reviews/get-started/installation/kiro/kiro-integration-3.webp)
+
+    3. In the browser pop-up that appears, click **Open Kiro.app** to hand control back to Kiro.
+
+        ![Open Kiro.app browser handoff](/images/code-reviews/get-started/installation/kiro/kiro-integration-4.webp)
+
+    4. Back in Kiro, click **Open** to allow the kluster.ai extension to install the MCP with your API key.
+
+        ![Authorize MCP install in Kiro](/images/code-reviews/get-started/installation/kiro/kiro-integration-5.webp)
+
+    **Enable MCP**
+
+    By default, Kiro disables MCP for all extensions. You must enable it before kluster can run. This is a one-time setup at the IDE level — once you click **Enable MCP**, every current and future MCP-based extension in Kiro can run, so you don't need to repeat this step for other tools.
+
+    !!! note "A project must be open"
+        The **Enable MCP** button only appears when a workspace is open in Kiro. Open or create a project before continuing.
+
+    1. Open the **Kiro** panel by clicking the Kiro icon in the activity bar, then locate the **MCP SERVERS** section.
+    2. Click **Enable MCP**. This enables MCP for every installed extension in Kiro.
+
+        ![Enable MCP in Kiro sidebar](/images/code-reviews/get-started/installation/kiro/kiro-integration-6.webp)
+
+    Once MCP is enabled, the **MCP SERVERS** section in the **Kiro** panel shows **Kluster-Verify-Code** as **Connected** with a green check.
+
+    ![Kluster-Verify-Code connected in Kiro](/images/code-reviews/get-started/installation/kiro/kiro-integration-7.webp)
+
+    !!! warning "Custom shell prompts can break terminal commands in Kiro"
+        Kiro cannot parse output from heavily customized shells. If you use frameworks like **bash-it** for Bash or **oh-my-posh** for Zsh, terminal commands run by Kiro (including kluster reviews that touch the terminal) may freeze or fail to return output. Disable the customization for the Kiro terminal, or follow Kiro's [troubleshooting guidance](https://kiro.dev/docs/troubleshooting/#kiro-stuck-in-working-status-on-terminal-commands-or-kiro-does-not-see-terminal-output){target=\_blank}.
+
+    **Uninstall**
+
+    To remove kluster.ai from Kiro, open the Extensions panel, find **Kluster Code Reviews**, and click **Uninstall**.
+
 ### Terminal tools
 
 === "Claude Code"

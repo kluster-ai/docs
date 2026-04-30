@@ -28,7 +28,7 @@ No. AI-generated code reviews run when AI generates code. Human-written code rev
 
 ### What IDEs and CLI tools are supported?
 
-- **IDE extensions**: Cursor, VS Code, Visual Studio, Windsurf, Antigravity, JetBrains
+- **IDE extensions**: Cursor, VS Code, Visual Studio, Windsurf, Antigravity, Kiro, JetBrains
 - **CLI tools**: Claude Code, Codex CLI
 - **Standalone CLI**: [kluster-cli](/code-reviews/cli/quickstart/) for terminal-only workflows
 
