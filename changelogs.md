@@ -1,12 +1,26 @@
 ---
-title: kluster Code Reviews Changelog
-description: A chronological record of kluster.ai Code Reviews product updates, including new features, bug fixes, and improvements across all releases.
+title: kluster.ai Platform Changelog
+description: A chronological record of kluster.ai platform updates, including new features, bug fixes, and improvements across all releases.
 categories: Changelog
 ---
 
 # Product changelog
 
-Stay up to date with the latest changes to kluster.ai Code Reviews. This page lists new features, improvements, and bug fixes in reverse chronological order. Entries are grouped by month so you can quickly find what changed and when.
+Stay up to date with the latest changes to the kluster.ai platform. This page lists new features, improvements, and bug fixes in reverse chronological order. Entries are grouped by month so you can quickly find what changed and when.
+
+## May 2026
+
+::timeline::
+
+- title: Unfold Chrome extension
+  sub_title: "2026-05-06"
+  content: Released the kluster.ai Unfold [Chrome extension](https://chromewebstore.google.com/detail/klusterai-unfold/dhdhbbdfikiobniicblikkhfifaijaoh){target=\_blank}.
+
+- title: Light mode for Unfold
+  sub_title: "2026-05-01"
+  content: Added light mode to Unfold.
+
+::/timeline::
 
 ## April 2026
 
@@ -28,6 +42,10 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
   sub_title: "2026-04-27"
   content: Added per-repo controls to enable or disable PR Reviews and to configure which branch names trigger reviews.
 
+- title: Unfold closed beta
+  sub_title: "2026-04-08"
+  content: Introduced [Unfold](https://unfold.kluster.ai){target=\_blank} in closed beta — a GitHub PR review experience powered by the kluster.ai Code Review engine, adding AI summaries, before-and-after context, a navigable outline, and severity-ranked bug detection.
+
 - title: Custom AI rules support for code reviews
   sub_title: "2026-04-06"
   content: Added the ability to include project and global AI rules (such as AGENTS.md and CLAUDE.md) as part of code review. Supported in VS Code-based IDEs, MCP integrations, and JetBrains.
@@ -48,15 +66,15 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
 
 - title: Pause reviews during AI-assisted workflows
   sub_title: "2026-03-25"
-  content: Added the ability to pause kluster reviews during AI-assisted workflows.
+  content: Added the ability to pause kluster code reviews during AI-assisted workflows.
 
 - title: Cleaner GitHub comment threads
   sub_title: "2026-03-25"
-  content: Improved GitHub comment-thread handling so outdated kluster review threads are resolved or updated more cleanly.
+  content: Improved GitHub comment-thread handling so outdated kluster code review threads are resolved or updated more cleanly.
 
-- title: Expanded review context for GitHub and GitLab
+- title: Expanded code review context for GitHub and GitLab
   sub_title: "2026-03-23"
-  content: Improved review quality for GitHub and GitLab by expanding the context available during analysis.
+  content: Improved code review quality for GitHub and GitLab by expanding the context available during analysis.
 
 - title: Improved Claude Code review reliability in Cursor
   sub_title: "2026-03-19"
@@ -100,9 +118,9 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
   sub_title: "2026-02-10"
   content: Added .klusterignore support so teams can exclude files and folders from reviews using gitignore-style rules.
 
-- title: Team admin review history
+- title: Team admin code review history
   sub_title: "2026-02-06"
-  content: Added team-admin visibility into team review history.
+  content: Added team-admin visibility into team code review history.
 
 - title: Bitbucket support for project rules and Repo Reviews
   sub_title: "2026-02-06"
@@ -138,9 +156,9 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
   sub_title: "2026-01-22"
   content: Updated the extension UI to support separate Instant and Deep manual review actions.
 
-- title: Increased maximum review size
+- title: Increased maximum code review size
   sub_title: "2026-01-15"
-  content: Increased the maximum review size for manual reviews and improved handling of oversized or minified files.
+  content: Increased the maximum code review size for manual reviews and improved handling of oversized or minified files.
 
 ::/timeline::
 
@@ -164,13 +182,13 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
   sub_title: "2025-12-09"
   content: Added Instant Review tabs to the main IDE view and SCM view in VS Code-based IDEs.
 
-- title: Improved extension performance and usability
+- title: Improved Code Reviews extension performance and usability
   sub_title: "2025-12-05"
-  content: Improved extension performance and usability, including smoother navigation between tabs and better handling of large highlighted code blocks.
+  content: Improved Code Reviews extension performance and usability, including smoother navigation between tabs and better handling of large highlighted code blocks.
 
-- title: New review-actions UI
+- title: New code review actions UI
   sub_title: "2025-12-04"
-  content: Released a new review-actions UI for current file, uncommitted changes, and review launch from the extension.
+  content: Released a new code review actions UI for current file, uncommitted changes, and review launch from the Code Reviews extension.
 
 - title: Code block review from VS Code
   sub_title: "2025-12-03"
@@ -192,7 +210,7 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
 
 - title: New get started experience
   sub_title: "2025-11-26"
-  content: Added a new Get Started experience in the extension.
+  content: Added a new Get Started experience in the Code Reviews extension.
 
 - title: Improved Claude Code setup on Windows
   sub_title: "2025-11-24"
@@ -208,19 +226,19 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
 
 - title: Improved diff generation and embeddings quality
   sub_title: "2025-11-13"
-  content: Improved diff generation and embeddings quality.
+  content: Improved diff generation and embeddings quality for code reviews.
 
-- title: Improved extension networking reliability
+- title: Improved Code Reviews extension networking reliability
   sub_title: "2025-11-06"
-  content: Improved extension networking reliability.
+  content: Improved Code Reviews extension networking reliability.
 
 - title: Windsurf integration
   sub_title: "2025-11-04"
   content: Released Windsurf integration.
 
-- title: Improved extension discovery and issue visibility
+- title: Improved Code Reviews extension discovery and issue visibility
   sub_title: "2025-11-04"
-  content: Improved extension discovery and issue visibility with automatic panel expansion, login reminders, and related UI fixes.
+  content: Improved Code Reviews extension discovery and issue visibility with automatic panel expansion, login reminders, and related UI fixes.
 
 - title: Agent rules support for Windsurf
   sub_title: "2025-11-03"
@@ -266,7 +284,7 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
 
 - title: Automatic sign-in from website
   sub_title: "2025-10-21"
-  content: Added automatic sign-in to the extension when installation starts from the website.
+  content: Added automatic sign-in to the Code Reviews extension when installation starts from the website.
 
 - title: Improved setup checks and Windows Claude Code support
   sub_title: "2025-10-16"
@@ -282,7 +300,7 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
 
 - title: Team Rules experience
   sub_title: "2025-10-14"
-  content: Released the Team Rules experience.
+  content: Released the Team Rules experience for Code Reviews.
 
 - title: Improved Windows support for Claude Code
   sub_title: "2025-10-13"
@@ -296,9 +314,9 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
   sub_title: "2025-10-09"
   content: Simplified installing the Claude Code integration from the website.
 
-- title: Extension version 0.0.31
+- title: Code Reviews extension version 0.0.31
   sub_title: "2025-10-03"
-  content: Released extension version 0.0.31 with review-card and review-details improvements.
+  content: Released Code Reviews extension version 0.0.31 with review-card and review-details improvements.
 
 - title: Improved Cursor history extraction
   sub_title: "2025-10-01"
@@ -312,15 +330,15 @@ Stay up to date with the latest changes to kluster.ai Code Reviews. This page li
 
 - title: Local context generation
   sub_title: "2025-09-30"
-  content: Released local context generation behind a feature flag to improve review context.
+  content: Released local context generation behind a feature flag to improve code review context.
 
-- title: Updated Windows IDE login redirect
+- title: Updated Windows Code Reviews IDE login redirect
   sub_title: "2025-09-22"
-  content: Updated the Windows IDE login-redirect experience.
+  content: Updated the Windows Code Reviews IDE login-redirect experience.
 
 - title: Post-trial tool access
   sub_title: "2025-09-22"
-  content: Allowed users whose trial had ended to continue running kluster tools while reviewing results manually.
+  content: Allowed users whose trial had ended to continue running kluster code review tools while reviewing results manually.
 
 - title: Improved VS Code prompt stability
   sub_title: "2025-09-19"
