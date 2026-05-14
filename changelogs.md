@@ -12,6 +12,18 @@ Stay up to date with the latest changes to the kluster.ai platform. This page li
 
 ::timeline::
 
+- title: Weekly end-to-end dependency analysis
+  sub_title: "2026-05-11"
+  content: Added weekly end-to-end dependency analysis to Repo Reviews scheduled scans.
+
+- title: End-to-end dependency scans in PR Review bot
+  sub_title: "2026-05-11"
+  content: Added end-to-end dependency scans to PR Review bot reviews, posted as a separate comment on the pull request.
+
+- title: PR Review bot and Repo Review improvements
+  sub_title: "2026-05-11"
+  content: General improvements to the PR Review bot and Repo Review experience.
+
 - title: Unfold Chrome extension
   sub_title: "2026-05-06"
   content: Released the kluster.ai Unfold [Chrome extension](https://chromewebstore.google.com/detail/klusterai-unfold/dhdhbbdfikiobniicblikkhfifaijaoh){target=\_blank}.
