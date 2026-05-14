@@ -22,7 +22,7 @@ Stay up to date with the latest changes to the kluster.ai platform. This page li
 
 - title: PR Review bot and Repo Review improvements
   sub_title: "2026-05-11"
-  content: Improved the PR Review bot so that threads resolved by developers are muted for 7 days, preventing the same issue from being re-reported on subsequent PRs. Also refreshed the Repo Review UI for a cleaner, easier-to-use experience.
+  content: General improvements to the PR Review bot and Repo Review experience.
 
 - title: Unfold Chrome extension
   sub_title: "2026-05-06"
