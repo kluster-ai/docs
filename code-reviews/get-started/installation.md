@@ -20,7 +20,7 @@ Before getting started, ensure you have:
 
 ### IDE extensions
 
-=== "VS Code / Codex VS Code"
+=== "VS Code / Codex"
 
     **Install**
 
