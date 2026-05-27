@@ -53,6 +53,9 @@ Before getting started, ensure you have:
 
         ![Open and Install MCP](/images/code-reviews/get-started/installation/vscode/vscode-integration-5.webp)
 
+    !!! tip "Sign-in not working?"
+        If the browser sign-in handoff doesn't complete, [log in manually with an API key](#__tabbed_1_8) instead.
+
     **Enable**
 
     Once signed in, to enable kluster.ai in the VS Code agent chat window, take the following steps:
@@ -90,6 +93,9 @@ Before getting started, ensure you have:
         --8<-- 'text/code-reviews/code-tools.md'
 
         ![Active MCP Tools in Cursor](/images/code-reviews/get-started/installation/cursor/cursor-integration-2.webp)
+
+    !!! tip "Sign-in not working?"
+        If the browser sign-in handoff doesn't complete, [log in manually with an API key](#__tabbed_1_8) instead.
 
     **Uninstall**
 
@@ -259,6 +265,9 @@ Before getting started, ensure you have:
 
         ![Active MCP Tools in Windsurf](/images/code-reviews/get-started/installation/windsurf/windsurf-integration-7.webp)
 
+    !!! tip "Sign-in not working?"
+        If the browser sign-in handoff doesn't complete, [log in manually with an API key](#__tabbed_1_8) instead.
+
     **Uninstall**
 
     To remove kluster.ai from Windsurf, open the Extensions panel, find **Kluster Code Reviews**, and click **Uninstall**.
@@ -304,6 +313,9 @@ Before getting started, ensure you have:
 
         ![Active MCP Tools in Antigravity](/images/code-reviews/get-started/installation/antigravity/antigravity-integration-6.webp)
 
+    !!! tip "Sign-in not working?"
+        If the browser sign-in handoff doesn't complete, [log in manually with an API key](#__tabbed_1_8) instead.
+
     **Uninstall**
 
     To remove kluster.ai from Antigravity, open the Extensions panel, find **Kluster Code Reviews**, and click **Uninstall**.
@@ -344,6 +356,9 @@ Before getting started, ensure you have:
 
         ![Authorize MCP install in Kiro](/images/code-reviews/get-started/installation/kiro/kiro-integration-5.webp)
 
+    !!! tip "Sign-in not working?"
+        If the browser sign-in handoff doesn't complete, [log in manually with an API key](#__tabbed_1_8) instead.
+
     **Enable MCP**
 
     By default, Kiro disables MCP for all extensions. You must enable it before kluster can run. This is a one-time setup at the IDE level — once you click **Enable MCP**, every current and future MCP-based extension in Kiro can run, so you don't need to repeat this step for other tools.
@@ -366,6 +381,12 @@ Before getting started, ensure you have:
     **Uninstall**
 
     To remove kluster.ai from Kiro, open the Extensions panel, find **Kluster Code Reviews**, and click **Uninstall**.
+
+=== "Manual login"
+
+    Most IDEs sign you in through a browser handoff. If that flow is unavailable or fails in your editor (VS Code, Cursor, Windsurf, Antigravity, or Kiro), use the manual API-key login below.
+
+    --8<-- 'text/install-manual-login.md'
 
 ### Terminal tools
 
